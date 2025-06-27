@@ -1,47 +1,52 @@
-name          Billy
-type          player
+################################################################     USE OPENBOR 3.0 Original     #################################################################################
+
+name          Billy   #-player character
+type          player  #--player control
 candamage     enemy obstacle pshot npc
-running       12 2.2 1.5 1 0 
-subject_to_obstacle 0
-health        250
-mp            100
-falldie       2
-jugglepoints  15
-chargerate    5
-speed         7
-throw         2 3
-throwdamage   20
-holdblock     1
-jumpheight    2.43
-jumpspeed     8
-grabdistance  35
-shadow        0
-gfxshadow     1
-noquake       1
-makeinv       1
-nodieblink    1
-antigravity   40
-atchain       1 2 3 4 0
-riseinv       1
-weapons       Billy3 Billy2 BillyN BillyB BillyK BillyR BillyD Billyboo BillyW none Billy
+running       12 2.2 1.5 1 0   #--12=run anim, 2.2=run speed 1.5=jump multipier 1=speed mulitplier 0=no cancel (run attakc works though, engine script ovride?) 1=cancelable
+subject_to_obstacle 0  #--allows Billy to ignore obstacles and move freely through them.obstacles are probably the background immages and weapons 1=no walk through
+health        250   #--HPmax
+mp            100   #--MPmax
+falldie       2     #---- 0 = die immediately, 1=die specific state or event, 2=die only on knockdown health can be 0HP
+jugglepoints  15    #juggle hp before entity can no longer be juggled
+chargerate    0     #MP rate of charge
+speed         7     #charater movement speed max is 20
+throw         2 3   #Billy can throw an enemy within a range of 2 units using the throw animation or type 3. Increase first number to throw farther, second for anim.
+throwdamage   20    #throw damage
+holdblock     1     #maintain block stance by holding block "s" button 0=false, 1=true
+jumpheight    2.43  #jump height max 4.0 -  higher number = higher jump
+jumpspeed     8     #speed to max jump height, (min jump speed 4, max jump speed 12)
+grabdistance  35    #grab distance based on screen pixels 35 is recmmended and feels good no min or max
+shadow        0     #determines if player has shadow on grounnd 0=false, 1= true
+gfxshadow     1     # 0 = engine shadow   1 = custom sprite shadow
+noquake       1     #--Billy will not trigger screen shake effects during his actions, even if his attacks or landings would normally cause one. CYCLONE DOES DD2!!!
+makeinv       1     #------ (1 true, 0 false) invincible (cannot take damage) during specific states or actions, depending on how the engine interprets this flag.
+nodieblink    1     # 0 = blink when killed 1 = no blink when killed
+antigravity   40    #---Jump Hang time Max = 100
+atchain       1 2 3 4 0   #---sets Billy's basic combo to use attack animations 1, 2, 3, and 4 in sequence. The 0 marks the end of the combo chain. multi chanin is possible
+riseinv       1                   #------ (1 true, 0 false) invincible (cannot take damage)
+
+#-useable weapon, left to right order may determine item pick up in case weapon spries overlap Billy likes chucks!
+weapons       Billy3 Billy2 BillyN BillyB BillyK BillyR BillyD Billyboo BillyW none Billy  
+# billy=super billy=dd2 billy3=dd13 n=nunchucks k=knife b=bo d=oildrum r=rock boo-boomerang none=unarmed
+
+
 icon          data/chars/1billy/icon.gif 1
 #parrow         
 #parrow2 
 
 #-------Kit's Additions---------------------------------------------------------------------------------
 
-blockback     	1
-blockratio      1
-mprate       	1
-mpblock 		1
-grabwalk 		1
-grabturn 		0
-grabbackwalk    1
-guardpoints 	0
-noaircancel     1
-nocheats        0
-nodebug        0
-jumpmove        1          #-------change orientation in mid air during jump 
+blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
+#blockratio     1          #Percent chance AI or NPC helper will  block attacks, typically when controlled by AI.  100 = always block, 0 = never block
+mpblock         1          #MP cost for guarding.according to 3.0 6258 engine build
+grabwalk 		1          #move while grabbing "grabdrag", "walk" and "grabwaL" are the engine defined anim constanr, not in 3.0 builds?
+grabturn 		0          #face target when grabbing 0==false 1=true
+grabbackwalk    walk
+noaircancel     0          #0=air canceling allowed multiple kick in a single jump 1=0 no air canceling
+nocheats        0          #enable cheats 0=true 1=false
+nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
+jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
 
 
 onmoveascript	   data/scripts/hithead.c
@@ -52,73 +57,10 @@ ondrawscript	   data/scripts/shadowon.c
 onblockWscript     data/scripts/spikesw2.c 
 ondoattackscript   data/scripts/multihits.c
 ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
-onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
-#ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
+#onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
 
-anim freespecial98
-	 loop       0
-	 delay      5
-	 offset     80 120
-	bbox.position.x 79
-	bbox.position.y 82
-	bbox.size.x 6
-	bbox.size.y 17
-	 landframe  9
-	 dropframe  8
-	 energycost 25
-	 mponly     1
-@cmd toss0001 110
-	 sound      data/sounds/hurric.wav
-	attack.effect.hit.sound.path data/sounds/beats.wav
-         frame      data/chars/1billy/hk04.gif
-         frame      data/chars/1billy/hk05.gif
-	attack.block.penetrate 1
-	attack.damage.force 9
-	attack.damage.type 13
-	attack.effect.hit.flash.disable 1
-	attack.position.x 80
-	attack.position.y 92
-	attack.reaction.fall.force 1
-	attack.reaction.fall.velocity.x 1.5
-	attack.reaction.fall.velocity.y 2.0
-	attack.reaction.fall.velocity.z 0.0
-	attack.reaction.pause.time 8
-	attack.size.x 37
-	attack.size.y 32
-	attack.size.z.background 5
-         frame      data/chars/1billy/hk07.gif
-	 attack13   0 0 0 0 
-         frame      data/chars/1billy/hk09.gif
-         frame      data/chars/1billy/hk10.gif
-	attack.block.penetrate 1
-	attack.damage.force 9
-	attack.damage.type 13
-	attack.effect.hit.flash.disable 0
-	attack.position.x 48
-	attack.position.y 81
-	attack.reaction.fall.force 1
-	attack.reaction.fall.velocity.x 1.5
-	attack.reaction.fall.velocity.y 2.0
-	attack.reaction.fall.velocity.z 0.0
-	attack.reaction.pause.time 8
-	attack.size.x 31
-	attack.size.y 39
-	attack.size.z.background 5
-         frame      data/chars/1billy/hk11.gif
-	 attack13   0 0 0 0 
-         frame      data/chars/1billy/hk12.gif
-@cmd	updateframe getlocalvar("self") 2
-	 delay      1
-	bbox.position.x 68
-	bbox.position.y 83
-	bbox.size.x 24
-	bbox.size.y 44
-         frame      data/chars/1billy/ju01.gif
-	 offset     80 129
-	 delay      999
-         frame      data/chars/1billy/ju01.gif
-	 delay      14
-         frame      data/chars/1billy/rise02.gif
+
+
 
 
 
@@ -2874,7 +2816,7 @@ anim freespecial2
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+3); 
+changeentityproperty(self, "mp", power+0); 
 @end_script
 	 weaponframe 9 1
 	 cancel     0 5 0 j  freespecial100
@@ -2906,7 +2848,7 @@ anim freespecial3
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+3); 
+changeentityproperty(self, "mp", power+0); 
 @end_script
 	 weaponframe 9 2
 	 cancel     0 4 0 j  freespecial100
@@ -4225,10 +4167,10 @@ anim freespecial62
 	 bbox       68 83 24 44
 	 hitflash   Qflash2
 	 fastattack 1
-	 cancel     13 15 2 b f   a   freespecial64   #classic subzero linker 1
-	 cancel     13 15 2 b f   a2  freespecial65   #super slide linker 1
+	 cancel     13 15 2 f f   a   freespecial64   #classic subzero linker 1
+	 cancel     13 15 2 f f   a2  freespecial65   #super slide linker 1
 	 cancel     13 15 2 d f   a   freespecial66   #EX CHARIOT TACKLE SUPER LINKER 1
-	 cancel     13 15 2 f d b a2  freespecial80   #EX WIND KICK SUPER LINKER 1
+	 cancel     13 15 2 d f   a2  freespecial80   #EX WIND KICK SUPER LINKER 1
          frame      data/chars/1billy/a101.gif
          frame      data/chars/1billy/a401.gif
 	 delay      5
@@ -8515,6 +8457,84 @@ sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/siss08.gif
 	 delay      13
          frame      data/chars/1billy/coltos00.gif
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+anim freespecial98
+	 loop       0
+	 delay      5
+	 offset     80 120
+	bbox.position.x 79
+	bbox.position.y 82
+	bbox.size.x 6
+	bbox.size.y 17
+	 landframe  9
+	 dropframe  8
+	 energycost 25
+	 mponly     1
+@cmd toss0001 110
+	 sound      data/sounds/hurric.wav
+	attack.effect.hit.sound.path data/sounds/beats.wav
+         frame      data/chars/1billy/hk04.gif
+         frame      data/chars/1billy/hk05.gif
+	attack.block.penetrate 1
+	attack.damage.force 9
+	attack.damage.type 13
+	attack.effect.hit.flash.disable 1
+	attack.position.x 80
+	attack.position.y 92
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 37
+	attack.size.y 32
+	attack.size.z.background 5
+         frame      data/chars/1billy/hk07.gif
+	 attack13   0 0 0 0 
+         frame      data/chars/1billy/hk09.gif
+         frame      data/chars/1billy/hk10.gif
+	attack.block.penetrate 1
+	attack.damage.force 9
+	attack.damage.type 13
+	attack.effect.hit.flash.disable 0
+	attack.position.x 48
+	attack.position.y 81
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 31
+	attack.size.y 39
+	attack.size.z.background 5
+         frame      data/chars/1billy/hk11.gif
+	 attack13   0 0 0 0 
+         frame      data/chars/1billy/hk12.gif
+@cmd	updateframe getlocalvar("self") 2
+	 delay      1
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+         frame      data/chars/1billy/ju01.gif
+	 offset     80 129
+	 delay      999
+         frame      data/chars/1billy/ju01.gif
+	 delay      14
+         frame      data/chars/1billy/rise02.gif
 
 
 
