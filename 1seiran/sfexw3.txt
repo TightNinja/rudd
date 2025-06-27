@@ -1,0 +1,67 @@
+name    sfexw3
+health  1
+type	text
+facing  1
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+animationscript   data/scripts/lib001.c
+
+load    sfexw4
+load    quake01
+
+palette  data/chars/1seiran/sfex04.gif
+anim idle
+@script
+void vSelf = getlocalvar("self");
+if(frame==1)
+{
+fademusic(20, "data/music/SFEXWIN.ogg", 0,0);
+}
+@end_script
+	 loop    0
+	 delay   7
+	 offset  128 228
+	 quakeframe 16 5 -1
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      20
+         frame      data/chars/1seiran/sfex04.gif
+         frame      data/chars/1seiran/sfex05.gif
+         frame      data/chars/1seiran/sfex06.gif
+	 delay      70
+	 drawmethod alpha 0
+@cmd spawn044 "sfexw4" 378 0 228
+         frame      data/chars/1seiran/sfex06.gif
+	 delay      50
+         frame      data/chars/1seiran/sfex06.gif
+	 delay      680
+         frame      data/chars/1seiran/sfex08.gif
+	 delay      50
+	 sound      data/sounds/sfexgofor.wav
+         frame      data/chars/1seiran/sfex09.gif
+	 delay      3
+         frame      data/chars/1seiran/sfex10.gif
+         frame      data/chars/1seiran/sfex11.gif
+         frame      data/chars/1seiran/sfex12.gif
+         frame      data/chars/1seiran/sfex13.gif
+         frame      data/chars/1seiran/sfex14.gif
+         frame      data/chars/1seiran/sfex15.gif
+         frame      data/chars/1seiran/sfex16.gif
+         frame      data/chars/1seiran/sfex17.gif
+	 sound      data/sounds/sfexgate.wav
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+         frame      data/chars/1seiran/sfex18.gif
+	 delay      100
+         frame      data/chars/1seiran/sfex18.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

@@ -1,0 +1,18 @@
+name     rste
+type     none
+shadow   0
+lifespan 1
+subject_to_gravity 0
+
+anim idle
+	loop	 0
+	offset   39 62
+	delay    4
+	drawmethod alpha 6
+	drawmethod channel 0.35
+	sound    data/sounds/rste.wav
+	frame    data/chars/0weap/rste01.gif
+	frame    data/chars/0weap/rste02.gif
+	frame    data/chars/0weap/rste03.gif
+	frame    data/chars/0weap/rste04.gif
+	frame    data/chars/0weap/empty.gif

@@ -1,0 +1,57 @@
+name	staint7
+type	text
+subtype  noskip
+setlayer 999999999
+animationscript   data/scripts/lib001.c
+
+palette     data/chars/misc/staint/m1010.gif
+anim idle
+	 loop      0
+	 delay     100
+	 offset    0 228
+	 @cmd Pause 1
+	 @cmd Join 1
+	 frame     data/chars/0misc/empty.gif
+	 delay     4
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.30
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.70
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 frame     data/chars/misc/staint/m7010.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.90
+	 frame     data/chars/misc/staint/m7010.gif
+         delay     200
+	 drawmethod alpha 0
+	 frame     data/chars/misc/staint/m7010.gif
+         delay     1
+	 @cmd Pause 0
+	 @cmd Join 0
+	 frame     data/chars/misc/staint/m7010.gif
+@cmd killentity getlocalvar("self")
+	   frame     data/chars/0misc/empty.gif
+
+
+
+
+
+

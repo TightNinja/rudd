@@ -1,0 +1,28 @@
+name        bfield
+health      1
+type	    npc
+shootnum    1
+speed	    0
+nomove      1
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+lifespan    5
+
+anim spawn
+	loop	 1
+	offset   80 129
+	delay    7
+	bbox     0
+	fastattack 1
+	hitflash  Qflash2
+	hitfx    data/sounds/beat2.wav
+	attack   60 70 50 54 15 1 1 0 20 5
+	dropv    1.5 1.8 0
+	drawmethod alpha 6
+	drawmedtho channel 0.75
+	frame    data/chars/2duke/bfield1.gif
+	frame    data/chars/2duke/bfield2.gif
+

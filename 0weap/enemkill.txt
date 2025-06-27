@@ -1,0 +1,22 @@
+name	enemkill
+type    none
+health		100
+shadow  0
+offscreenkill 7000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+hostile obstacle
+
+animationscript data/scripts/cas_kill.c
+
+anim idle
+	loop	1
+	delay	1
+	offset	1 1
+      @cmd  enemkill 2000 600
+      frame  data/chars/misc/empty.gif
+      @cmd  enemkill 2000 600
+      frame  data/chars/misc/empty.gif
+
+

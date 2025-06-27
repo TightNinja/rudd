@@ -1,0 +1,32 @@
+name	 knife01
+health   0
+type     item
+counter  999
+subtype  weapon
+candamage  enemy 
+shootnum 1
+weapnum  5
+remove   1
+noquake  1 1
+nolife   1
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    9 10
+	 bbox      0
+	 frame     data/chars/0weap/knife01.gif
+	 frame     data/chars/0weap/knife02.gif
+	 frame     data/chars/0weap/knife03.gif
+	 frame     data/chars/0weap/knife04.gif
+	 frame     data/chars/0weap/knife05.gif
+	 frame     data/chars/0weap/knife06.gif
+	 frame     data/chars/0weap/knife01.gif
+	 frame     data/chars/0weap/knife02.gif
+	 delay     5
+	 frame     data/chars/0weap/knife03.gif
+	 frame     data/chars/0weap/knife04.gif
+	 frame     data/chars/0weap/knife05.gif
+	 frame     data/chars/0weap/knife06.gif
+	 bbox      9 9 1 1
+	 frame     data/chars/0weap/knife01.gif

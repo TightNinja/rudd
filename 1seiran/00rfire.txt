@@ -1,0 +1,67 @@
+name    00rfire
+health  0
+type	npc
+candamage enemy obstacle
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim spawn
+	 loop    0
+	 delay   2
+	 offset  75 220
+	 bbox    0	
+	 hitflash Qflash2
+	 fastattack 1
+	 sound   data/sounds/bang1.wav
+	 hitfx   data/sounds/beatexp1.wav
+	 attack  60 191 29 30 10 1 1 0 25 5 
+	 forcedirection -1
+	 dropv   1 0.2 0
+	 frame   data/chars/1seiran/rfire01.gif
+	 attack  0
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire02.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  37 145 75 69 10 1 1 0 25 5 
+	 forcedirection -1
+	 dropv   1 0.2 0
+	 frame   data/chars/1seiran/rfire03.gif
+	 attack  0
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire04.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  33 133 84 82 10 1 1 0 25 5 
+	 forcedirection -1
+	 dropv   1 0.2 0
+	 frame   data/chars/1seiran/rfire05.gif
+	 attack  0
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire06.gif
+	 attack  34 118 89 97 10 1 1 0 25 5 
+	 forcedirection -1
+	 dropv   1 0.2 0
+	 frame   data/chars/0misc/empty.gif
+	 attack  0
+	 frame   data/chars/1seiran/rfire07.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire08.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  36 111 81 97 20 1 1 0 25 5 
+	 forcedirection -1
+	 dropv   2.3 1 0
+	 frame   data/chars/1seiran/rfire09.gif
+	 attack  0
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire10.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire11.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire12.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/rfire13.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,91 @@
+name    itemcess
+health  1
+type	text
+facing  1
+setlayer 999999999
+subtype noskip
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+
+palette        data/chars/misc/ess/alter01.gif    
+alternatepal   data/chars/misc/ess/alter02.gif   
+alternatepal   data/chars/misc/ess/alter03.gif   
+alternatepal   data/chars/misc/ess/alter04.gif   
+alternatepal   data/chars/misc/ess/alter05.gif   
+alternatepal   data/chars/misc/ess/alter06.gif   
+alternatepal   data/chars/misc/ess/alter07.gif   
+alternatepal   data/chars/misc/ess/alter08.gif   
+alternatepal   data/chars/misc/ess/alter09.gif   
+alternatepal   data/chars/misc/ess/alter10.gif   
+
+
+anim idle
+	 loop       0
+	 delay      6
+	 offset     130 228
+	 bbox       0
+quakeframe 18 15 2
+         frame      data/chars/misc/ess/itemc01.gif
+         frame      data/chars/misc/ess/itemc04.gif
+         frame      data/chars/misc/ess/itemc02.gif
+         frame      data/chars/misc/ess/itemc04.gif
+         frame      data/chars/misc/ess/itemc03.gif
+         frame      data/chars/misc/ess/itemc04.gif
+         frame      data/chars/misc/ess/itemc05.gif
+         frame      data/chars/misc/ess/itemc06.gif
+         frame      data/chars/misc/ess/itemc05.gif
+         frame      data/chars/misc/ess/itemc06.gif
+         frame      data/chars/misc/ess/itemc05.gif
+         frame      data/chars/misc/ess/itemc06.gif
+         frame      data/chars/misc/ess/itemc07.gif
+         frame      data/chars/misc/ess/itemc08.gif
+	 delay	    12
+         frame      data/chars/misc/ess/itemc09.gif
+         frame      data/chars/misc/ess/itemc10.gif
+	 delay	    25
+         frame      data/chars/misc/ess/itemc11.gif
+	 delay	    6
+         frame      data/chars/misc/ess/itemc12.gif
+sound      data/chars/misc/ess/essbla5.wav
+         frame      data/chars/misc/ess/itemc13.gif
+sound      data/chars/misc/ess/essbla6.wav
+         frame      data/chars/misc/ess/itemc14.gif
+         frame      data/chars/misc/ess/itemc15.gif
+         frame      data/chars/misc/ess/itemc16.gif
+         frame      data/chars/misc/ess/itemc17.gif
+         frame      data/chars/misc/ess/itemc14.gif
+         frame      data/chars/misc/ess/itemc15.gif
+         frame      data/chars/misc/ess/itemc16.gif
+         frame      data/chars/misc/ess/itemc17.gif
+         frame      data/chars/misc/ess/itemc14.gif
+         frame      data/chars/misc/ess/itemc15.gif
+         frame      data/chars/misc/ess/itemc16.gif
+         frame      data/chars/misc/ess/itemc17.gif
+         frame      data/chars/misc/ess/itemc14.gif
+         frame      data/chars/misc/ess/itemc15.gif
+         frame      data/chars/misc/ess/itemc16.gif
+         frame      data/chars/misc/ess/itemc17.gif
+         frame      data/chars/misc/ess/itemc13.gif
+	 delay	    9
+         frame      data/chars/misc/ess/itemc12.gif
+         frame      data/chars/misc/ess/itemc11.gif
+         frame      data/chars/misc/ess/itemc10.gif
+	 delay	    25
+         frame      data/chars/misc/ess/itemc18.gif
+	 delay	    5
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/misc/ess/itemc18.gif
+	 drawmethod channel 0.6
+         frame      data/chars/misc/ess/itemc18.gif
+	 drawmethod channel 0.4
+         frame      data/chars/misc/ess/itemc18.gif
+	 drawmethod channel 0.2
+         frame      data/chars/misc/ess/itemc18.gif
+	@cmd killentity getlocalvar("self")
+	 delay     14
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif

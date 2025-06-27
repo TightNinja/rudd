@@ -1,0 +1,116 @@
+name    crain
+type	none
+subject_to_hole 0
+#subject_to_obstacle 1
+subject_to_platform 1
+#subject_to_gravity 1
+subject_to_wall 1
+
+anim idle
+	 loop    1
+	 offset  35 182
+	 delay   5
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+	 drawmethod scalex 0.8
+	 drawmethod scaley 1.3
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame   data/chars/0misc/crain01.gif
+	 frame   data/chars/0misc/crain02.gif
+	 frame   data/chars/0misc/crain03.gif
+	 frame   data/chars/0misc/crain04.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

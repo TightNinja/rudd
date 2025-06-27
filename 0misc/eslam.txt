@@ -1,0 +1,53 @@
+name	   eslam
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+type	   none
+shadow	   0
+alpha      1
+candamage  enemy obstacle
+lifespan   1
+
+anim idle
+	loop      0
+	delay     3
+	offset    74 89
+	quakeframe 0 2 -2
+	hitfx     data/sounds/nw1.wav
+	attack    52 83 47 12 0 1 1 0 0 5
+	dropv     1 1 0
+	drawmethod scale 0.7 0.7
+	frame     data/chars/0misc/eslam01.gif
+	attack    43 82 64 15 0 1 1 0 0 5
+	dropv     1 1 0
+	frame     data/chars/0misc/eslam02.gif
+	attack    31 78 89 19 0 1 1 0 0 5
+	dropv     1 1 0
+	frame     data/chars/0misc/eslam03.gif
+	attack    0 0 0 0 
+	dropv     1 1 0
+	frame     data/chars/0misc/eslam04.gif
+	frame     data/chars/0misc/eslam05.gif
+	attack    0 0 0 0 
+	frame     data/chars/0misc/eslam06.gif
+	delay     1
+	frame     data/chars/0misc/eslam07.gif
+	delay     1
+	@cmd killentity getlocalvar("self")
+	frame     data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

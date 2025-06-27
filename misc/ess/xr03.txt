@@ -1,0 +1,34 @@
+name	xr03
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+subject_to_wall 0
+no_adjust_base 1
+
+animationscript   data/scripts/lib001.c
+
+
+anim idle
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/misc/ess/xrspe01.gif 
+         frame      data/chars/misc/ess/xrspe02.gif 
+         frame      data/chars/misc/ess/xrspe03.gif 
+         frame      data/chars/misc/ess/xrspe04.gif 
+         frame      data/chars/misc/ess/xrspe05.gif 
+	 delay      20
+         frame      data/chars/misc/ess/xrspe06.gif 
+	 delay      4
+         frame      data/chars/misc/ess/xrspe07.gif 
+         frame      data/chars/misc/ess/xrspe08.gif 
+         frame      data/chars/misc/ess/xrspe09.gif 
+         frame      data/chars/misc/ess/xrspe02.gif 
+         frame      data/chars/misc/ess/xrspe01.gif 
+
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+

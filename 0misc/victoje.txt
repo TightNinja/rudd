@@ -1,0 +1,77 @@
+name    victoJe
+facing  1
+type	panel
+speed     10
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+no_adjust_base 0
+setlayer 888888888
+
+
+palette        data/chars/2jeff/icon.gif    
+alternatepal   data/chars/2jeff/alter06.gif   
+alternatepal   data/chars/2jeff/alter07.gif   
+alternatepal   data/chars/2jeff/alter08.gif   
+alternatepal   data/chars/2jeff/alter09.gif  
+alternatepal   data/chars/2jeff/alter10.gif  
+alternatepal   data/chars/2jeff/alter11.gif  
+alternatepal   data/chars/2jeff/alter12.gif  
+alternatepal   data/chars/2jeff/alter13.gif  
+alternatepal   data/chars/2jeff/alter14.gif  
+alternatepal   data/chars/2jeff/alter15.gif  
+alternatepal   data/chars/2jeff/alter16.gif  
+alternatepal   data/chars/2jeff/alter17.gif  
+alternatepal   data/chars/2jeff/alter18.gif  
+alternatepal   data/chars/2jeff/alter19.gif  
+alternatepal   data/chars/2jeff/alter20.gif  
+alternatepal   data/chars/2jeff/alter21.gif  
+alternatepal   data/chars/2jeff/alter22.gif  
+alternatepal   data/chars/2jeff/alter23.gif  
+alternatepal   data/chars/2jeff/alter24.gif  
+alternatepal   data/chars/2jeff/alter25.gif   
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  128 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame   data/chars/0misc/victo09.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame   data/chars/0misc/victo09.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/victo09.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 frame   data/chars/0misc/victo09.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 frame   data/chars/0misc/victo09.gif
+	 delay   15
+	 drawmethod alpha 0
+	 frame   data/chars/0misc/victo09.gif
+	 delay   3
+	 sound   data/sounds/vic01.wav
+	 frame   data/chars/0misc/victo10.gif
+	 frame   data/chars/0misc/victo09.gif
+	 frame   data/chars/0misc/victo10.gif
+	 frame   data/chars/0misc/victo09.gif
+	 frame   data/chars/0misc/victo10.gif
+	 frame   data/chars/0misc/victo09.gif
+	 frame   data/chars/0misc/victo10.gif
+	 frame   data/chars/0misc/victo09.gif
+	 delay   20
+	 frame   data/chars/0misc/victo10.gif
+	 delay   4
+	 sound   data/sounds/vic02.wav
+	 frame   data/chars/0misc/victo11.gif
+	 frame   data/chars/0misc/victo12.gif
+	 frame   data/chars/0misc/victo11.gif
+	 frame   data/chars/0misc/victo12.gif
+	 frame   data/chars/0misc/victo11.gif
+	 frame   data/chars/0misc/victo12.gif
+	 frame   data/chars/0misc/victo11.gif

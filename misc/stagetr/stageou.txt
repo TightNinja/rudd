@@ -1,0 +1,53 @@
+name	stageou
+type	text
+subtype  noskip
+setlayer  999999999
+nodieblink 3
+
+animationscript  data/scripts/lib001.c
+
+	 load   stageblk
+anim idle
+	 loop      0
+	 delay     2
+	 health    7
+	 offset    0 228
+	 custentity stageblk
+	 spawnframe 31 0 0 0 0
+	 @cmd Join 1
+	 @cmd Pause 1
+	 frame     data/chars/misc/stagetr/0032.gif
+	 delay     2
+	 frame     data/chars/misc/stagetr/0031.gif
+	 frame     data/chars/misc/stagetr/0030.gif
+	 frame     data/chars/misc/stagetr/0029.gif
+	 frame     data/chars/misc/stagetr/0028.gif
+	 frame     data/chars/misc/stagetr/0027.gif
+	 frame     data/chars/misc/stagetr/0026.gif
+	 frame     data/chars/misc/stagetr/0025.gif
+	 frame     data/chars/misc/stagetr/0024.gif
+	 frame     data/chars/misc/stagetr/0023.gif
+	 frame     data/chars/misc/stagetr/0022.gif
+	 frame     data/chars/misc/stagetr/0021.gif
+	 frame     data/chars/misc/stagetr/0020.gif
+	 frame     data/chars/misc/stagetr/0019.gif
+	 frame     data/chars/misc/stagetr/0018.gif
+	 frame     data/chars/misc/stagetr/0017.gif
+	 frame     data/chars/misc/stagetr/0016.gif
+	 frame     data/chars/misc/stagetr/0015.gif
+	 frame     data/chars/misc/stagetr/0014.gif
+	 frame     data/chars/misc/stagetr/0013.gif
+	 frame     data/chars/misc/stagetr/0012.gif
+	 frame     data/chars/misc/stagetr/0011.gif
+	 frame     data/chars/misc/stagetr/0010.gif
+	 frame     data/chars/misc/stagetr/0009.gif
+	 frame     data/chars/misc/stagetr/0008.gif
+	 frame     data/chars/misc/stagetr/0007.gif
+	 frame     data/chars/misc/stagetr/0006.gif
+	 frame     data/chars/misc/stagetr/0005.gif
+	 frame     data/chars/misc/stagetr/0004.gif
+	 frame     data/chars/misc/stagetr/0003.gif
+	 frame     data/chars/misc/stagetr/0002.gif
+	 frame     data/chars/misc/stagetr/0001.gif
+
+

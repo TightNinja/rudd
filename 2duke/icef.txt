@@ -1,0 +1,52 @@
+name        icef
+health      1
+type	    pshot
+shootnum    1
+speed	    0
+nomove      1
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+
+
+anim idle
+	loop	 0
+	offset   95 157
+	delay    3
+	bbox     0
+	hitflash Qflash2
+	drawmethod alpha 6
+	drawmethod channel 0.75
+	hitfx    data/sounds/dukesfx6.wav
+	frame    data/chars/2duke/icef01.gif
+	frame    data/chars/2duke/icef02.gif
+	freeze   59 81 74 75 0 2 1 1 8 5
+	forcedirection -1
+	dropv    1.3 1.6 0
+	frame    data/chars/2duke/icef03.gif
+	freeze   38 63 114 96 0 2 1 1 8 5
+	forcedirection -1
+	dropv    1.3 1.6 0
+	frame    data/chars/2duke/icef04.gif
+	freeze   21 46 148 113 0 2 1 1 8 5
+	forcedirection -1
+	dropv    1.3 1.6 0
+	frame    data/chars/2duke/icef05.gif
+	freeze   9 34 175 125 0 2 1 1 8 5
+	forcedirection -1
+	dropv    1.3 1.6 0
+	frame    data/chars/2duke/icef06.gif
+	freeze   2 28 186 131 0 2 1 1 8 5
+	forcedirection -1
+	dropv    1.3 1.6 0
+	frame    data/chars/2duke/icef07.gif
+	frame    data/chars/2duke/icef08.gif
+	frame    data/chars/2duke/icef09.gif
+	frame    data/chars/2duke/icef10.gif
+	frame    data/chars/0misc/empty.gif
+	freeze   0
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

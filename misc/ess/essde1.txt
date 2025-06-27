@@ -1,0 +1,61 @@
+name	essde1
+type	none
+speed   10
+subject_to_wall 0
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+gfxshadow 0
+lifespan 1
+
+
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop      0
+	 delay     3
+	 offset    110 190
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+         frame     data/chars/misc/ess/de01.gif
+	 drawmethod channel 0.40
+         frame     data/chars/misc/ess/de01.gif
+	 drawmethod channel 0.60
+         frame     data/chars/misc/ess/de01.gif
+	 drawmethod channel 0.80
+         frame     data/chars/misc/ess/de01.gif
+	 drawmethod alpha 0
+	 delay     2
+         frame     data/chars/misc/ess/de01.gif
+	 delay     4
+         frame     data/chars/misc/ess/de02.gif
+	 delay     7
+         frame     data/chars/misc/ess/de03.gif   #delay 25!
+	 delay     5
+         frame     data/chars/misc/ess/de04.gif
+         frame     data/chars/misc/ess/de05.gif
+	 delay     10
+         frame     data/chars/misc/ess/de06.gif
+	 delay     5
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+         frame     data/chars/misc/ess/de06.gif
+	 drawmethod channel 0.60
+         frame     data/chars/misc/ess/de06.gif
+	 drawmethod channel 0.40
+         frame     data/chars/misc/ess/de06.gif
+	 drawmethod channel 0.20
+         frame     data/chars/misc/ess/de06.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+

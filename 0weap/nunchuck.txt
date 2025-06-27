@@ -1,0 +1,26 @@
+name	 Nunchuck
+health   0
+type     item
+counter  9999
+subtype  weapon
+weapnum  3
+nolife   1
+shootnum 1
+
+anim idle
+	loop   0
+	delay  4
+	offset 16 10
+	bbox   0 0 0 0
+	sound  data/sounds/weap2.wav
+	frame  data/chars/0weap/nunchu02.gif
+	frame  data/chars/0weap/nunchu03.gif
+	frame  data/chars/0weap/nunchu04.gif
+	frame  data/chars/0weap/nunchu03.gif
+	frame  data/chars/0weap/nunchu02.gif
+	frame  data/chars/0weap/nunchu03.gif
+	frame  data/chars/0weap/nunchu04.gif
+	bbox   16 9 1 1
+	frame  data/chars/0weap/nunchu01.gif
+
+

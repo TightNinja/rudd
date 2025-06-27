@@ -1,0 +1,68 @@
+name     rose
+type     npc
+shadow   0
+facing   1
+subject_to_gravity 1
+animationscript	data/scripts/lib001.c
+
+palette         data/chars/2duke/rose1.gif
+alternatepal    data/chars/2duke/rose7.gif
+alternatepal    data/chars/2duke/rose8.gif
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==8){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	 0
+	offset   10 30
+	delay    70
+	bbox     0
+	landframe 8
+load  roseb
+@cmd velo001 0 0 -0.4
+	sound    data/sounds/roseta.wav
+	frame    data/chars/2duke/rose1.gif
+	delay    8
+	frame    data/chars/2duke/rose2.gif
+@cmd spawn001 "roseb" "roseb" 0 0 15 0 0
+	frame    data/chars/2duke/rose3.gif
+	frame    data/chars/2duke/rose4.gif
+@cmd spawn001 "roseb" "roseb" 0 0 15 0 0
+	frame    data/chars/2duke/rose5.gif
+	frame    data/chars/2duke/rose6.gif
+@cmd spawn001 "roseb" "roseb" 0 0 15 0 0
+	delay    70
+	frame    data/chars/2duke/rose1.gif
+@cmd	updateframe getlocalvar("self") 2
+	frame    data/chars/2duke/rose6.gif
+	delay    7
+	drawmethod alpha 6
+	drawmethod channel 0.8
+	sound    data/sounds/rospow.wav
+@cmd velo001 0 0 0 
+	frame    data/chars/2duke/rose2.gif
+	drawmethod channel 0.6
+	frame    data/chars/2duke/rose3.gif
+	drawmethod channel 0.4
+	frame    data/chars/2duke/rose4.gif
+	drawmethod channel 0.2
+	frame    data/chars/2duke/rose5.gif
+	drawmethod channel 0.5
+	frame    data/chars/2duke/rose6.gif
+@cmd killentity getlocalvar("self")
+        frame     data/chars/0weap/empty.gif
+
+

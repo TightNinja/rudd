@@ -1,0 +1,29 @@
+name	thunder
+type	panel
+speed   10
+setlayer 999999999
+alpha   5
+offscreenkill 900
+
+palette        data/chars/0misc/thun01.gif
+
+anim idle
+	 loop      1
+	 delay     100
+	 offset    0 687
+	 frame     data/chars/0misc/empty.gif
+	 sound     data/sounds/lightn3.wav
+	 delay     3
+	 frame     data/chars/0misc/thun01.gif
+	 frame     data/chars/0misc/thun02.gif
+	 frame     data/chars/0misc/thun03.gif
+	 frame     data/chars/0misc/thun04.gif
+	 frame     data/chars/0misc/thun03.gif
+	 frame     data/chars/0misc/thun02.gif
+	 frame     data/chars/0misc/thun03.gif
+	 frame     data/chars/0misc/thun04.gif
+	 frame     data/chars/0misc/thun03.gif
+	 frame     data/chars/0misc/thun02.gif
+	 frame     data/chars/0misc/thun01.gif
+	 delay     800
+	 frame     data/chars/0misc/empty.gif

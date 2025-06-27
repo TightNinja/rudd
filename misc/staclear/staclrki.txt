@@ -1,0 +1,167 @@
+name	staclrki
+type	text
+subtype noskip
+setlayer 999999999
+nodieblink 3
+alpha   0
+animationscript   data/scripts/lib001.c 
+
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    256 232
+	 flipframe 0
+drawmethod alpha 6
+drawmethod channel 0.10
+#	 sound     data/music/results.wav
+	 @cmd Pause 1
+	 @cmd Join 1
+	 frame     data/chars/misc/staclear/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 sound     data/sounds/kisupr.wav
+	 frame     data/chars/misc/staclear/ki02.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclear/ki03.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclear/ki04.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclear/ki05.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclear/ki06.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclear/ki07.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclear/ki08.gif
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclear/ki09.gif
+drawmethod alpha 0
+	 frame     data/chars/misc/staclear/ki10.gif
+	 frame     data/chars/misc/staclear/ki11.gif
+	 frame     data/chars/misc/staclear/ki12.gif
+	 frame     data/chars/misc/staclear/ki13.gif
+	 frame     data/chars/misc/staclear/ki14.gif
+	 frame     data/chars/misc/staclear/ki15.gif
+	 frame     data/chars/misc/staclear/ki16.gif
+	 frame     data/chars/misc/staclear/ki17.gif
+	 frame     data/chars/misc/staclear/ki18.gif
+	 frame     data/chars/misc/staclear/ki19.gif
+	 frame     data/chars/misc/staclear/ki20.gif
+	 frame     data/chars/misc/staclear/ki21.gif
+	 frame     data/chars/misc/staclear/ki22.gif
+	 frame     data/chars/misc/staclear/ki23.gif
+	 frame     data/chars/misc/staclear/ki24.gif
+	 frame     data/chars/misc/staclear/ki25.gif
+	 frame     data/chars/misc/staclear/ki26.gif
+	 frame     data/chars/misc/staclear/ki27.gif
+	 frame     data/chars/misc/staclear/ki01.gif
+	 frame     data/chars/misc/staclear/ki02.gif
+	 frame     data/chars/misc/staclear/ki03.gif
+	 frame     data/chars/misc/staclear/ki04.gif
+	 frame     data/chars/misc/staclear/ki05.gif
+	 frame     data/chars/misc/staclear/ki06.gif
+	 frame     data/chars/misc/staclear/ki07.gif
+	 frame     data/chars/misc/staclear/ki08.gif
+	 frame     data/chars/misc/staclear/ki09.gif
+	 frame     data/chars/misc/staclear/ki10.gif
+	 frame     data/chars/misc/staclear/ki11.gif
+	 frame     data/chars/misc/staclear/ki12.gif
+	 frame     data/chars/misc/staclear/ki13.gif
+	 frame     data/chars/misc/staclear/ki14.gif
+	 frame     data/chars/misc/staclear/ki15.gif
+	 frame     data/chars/misc/staclear/ki16.gif
+	 frame     data/chars/misc/staclear/ki17.gif
+	 frame     data/chars/misc/staclear/ki18.gif
+	 frame     data/chars/misc/staclear/ki19.gif
+	 frame     data/chars/misc/staclear/ki20.gif
+	 frame     data/chars/misc/staclear/ki21.gif
+	 frame     data/chars/misc/staclear/ki22.gif
+	 frame     data/chars/misc/staclear/ki23.gif
+	 frame     data/chars/misc/staclear/ki24.gif
+	 frame     data/chars/misc/staclear/ki25.gif
+	 frame     data/chars/misc/staclear/ki26.gif
+	 frame     data/chars/misc/staclear/ki27.gif
+	 frame     data/chars/misc/staclear/ki11.gif
+	 frame     data/chars/misc/staclear/ki12.gif
+	 frame     data/chars/misc/staclear/ki13.gif
+	 frame     data/chars/misc/staclear/ki14.gif
+	 frame     data/chars/misc/staclear/ki15.gif
+	 frame     data/chars/misc/staclear/ki16.gif
+	 frame     data/chars/misc/staclear/ki17.gif
+	 frame     data/chars/misc/staclear/ki18.gif
+	 frame     data/chars/misc/staclear/ki19.gif
+	 frame     data/chars/misc/staclear/ki20.gif
+	 frame     data/chars/misc/staclear/ki21.gif
+	 frame     data/chars/misc/staclear/ki22.gif
+	 frame     data/chars/misc/staclear/ki23.gif
+	 frame     data/chars/misc/staclear/ki24.gif
+	 frame     data/chars/misc/staclear/ki25.gif
+	 frame     data/chars/misc/staclear/ki26.gif
+	 frame     data/chars/misc/staclear/ki27.gif
+	 frame     data/chars/misc/staclear/ki01.gif
+	 frame     data/chars/misc/staclear/ki02.gif
+	 frame     data/chars/misc/staclear/ki03.gif
+	 frame     data/chars/misc/staclear/ki04.gif
+	 frame     data/chars/misc/staclear/ki05.gif
+	 frame     data/chars/misc/staclear/ki06.gif
+	 frame     data/chars/misc/staclear/ki07.gif
+	 frame     data/chars/misc/staclear/ki08.gif
+	 frame     data/chars/misc/staclear/ki09.gif
+	 frame     data/chars/misc/staclear/ki10.gif
+	 frame     data/chars/misc/staclear/ki11.gif
+	 frame     data/chars/misc/staclear/ki12.gif
+	 frame     data/chars/misc/staclear/ki13.gif
+	 frame     data/chars/misc/staclear/ki14.gif
+	 frame     data/chars/misc/staclear/ki15.gif
+	 frame     data/chars/misc/staclear/ki16.gif
+	 frame     data/chars/misc/staclear/ki17.gif
+	 frame     data/chars/misc/staclear/ki18.gif
+	 frame     data/chars/misc/staclear/ki19.gif
+	 frame     data/chars/misc/staclear/ki20.gif
+	 frame     data/chars/misc/staclear/ki21.gif
+	 frame     data/chars/misc/staclear/ki22.gif
+	 frame     data/chars/misc/staclear/ki23.gif
+	 frame     data/chars/misc/staclear/ki24.gif
+	 frame     data/chars/misc/staclear/ki25.gif
+	 frame     data/chars/misc/staclear/ki26.gif
+	 frame     data/chars/misc/staclear/ki27.gif
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclear/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclear/ki02.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclear/ki03.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclear/ki04.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclear/ki05.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclear/ki06.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclear/ki07.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclear/ki08.gif
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclear/ki09.gif
+@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+

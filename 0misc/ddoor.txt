@@ -1,0 +1,39 @@
+name       ddoor
+type       enemy
+falldie    1
+facing     1
+cantgrab   1
+setlayer   20
+nomove     1
+lifespan   1
+
+
+anim spawn
+	loop 0
+	offset	35 75
+	bbox    0
+  	frame   data/chars/0misc/empty.gif
+
+
+anim idle
+	loop 0
+	offset	35 75
+	bbox    0
+  	frame   data/chars/0misc/empty.gif
+ 
+anim death
+	loop 0
+	delay   7
+	offset	35 75
+#	load    dbranch
+#	subentity dbranch
+#	spawnframe 4 0 0 0 0
+	sound     data/sounds/door.wav
+# 	frame   data/chars/0misc/empty.gif
+  	frame   data/chars/0misc/empty.gif
+ 	frame   data/chars/0misc/empty.gif
+  	frame   data/chars/0misc/empty.gif
+  	frame   data/chars/0misc/empty.gif
+  	frame   data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,102 @@
+name    tsflash
+health  1
+type	text
+facing  1
+setlayer 999999999
+subtype noskip
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim idle
+	 loop    0
+	 delay   2
+	 offset  128 112
+	 bbox    0 0 0 0	
+	 sound   data/chars/misc/esq/tsflash.wav
+	 drawmethod scale 0.1 0.1
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.95
+	 drawmethod scale 0.15 0.15
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.90
+	 drawmethod scale 0.2 0.2
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+	 drawmethod scale 0.25 0.25
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 drawmethod scale 0.3 0.3
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+	 drawmethod scale 0.35 0.35
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.70
+	 drawmethod scale 0.4 0.4
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.65
+	 drawmethod scale 0.45 0.45
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 drawmethod scale 0.5 0.5
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.55
+	 drawmethod scale 0.55 0.55
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 drawmethod scale 0.6 0.6
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.45
+	 drawmethod scale 0.65 0.65
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 drawmethod scale 0.7 0.7
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.35
+	 drawmethod scale 0.75 0.75
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.30
+	 drawmethod scale 0.8 0.8
+	 frame   data/chars/misc/esq/tsflash.gif
+	 delay   3
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+	 drawmethod scale 0.85 0.85
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 drawmethod scale 0.9 0.9
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.15
+	 drawmethod scale 0.95 0.95
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 drawmethod scale 1 1
+	 frame   data/chars/misc/esq/tsflash.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.05
+	 drawmethod scale 1.1 1.1
+	 frame   data/chars/misc/esq/tsflash.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/misc/esq/empty.gif
+
+
+#	 drawmethod alpha 6
+#	 drawmethod channel 0.10

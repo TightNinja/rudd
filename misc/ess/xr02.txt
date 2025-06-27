@@ -1,0 +1,49 @@
+name	xr02
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+subject_to_wall 0
+no_adjust_base 1
+
+animationscript   data/scripts/lib001.c
+
+
+anim idle
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/misc/ess/xrhan01.gif 
+         frame      data/chars/misc/ess/xrhan02.gif 
+         frame      data/chars/misc/ess/xrhan03.gif 
+         frame      data/chars/misc/ess/xrhan04.gif 
+	 delay      15
+         frame      data/chars/misc/ess/xrhan05.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xrhan06.gif 
+	 delay      15
+         frame      data/chars/misc/ess/xrhan07.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xrhan08.gif 
+         frame      data/chars/misc/ess/xrhan09.gif 
+	 delay      15
+         frame      data/chars/misc/ess/xrhan10.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xrhan11.gif 
+         frame      data/chars/misc/ess/xrhan12.gif 
+         frame      data/chars/misc/ess/xrhan09.gif 
+         frame      data/chars/misc/ess/xrhan07.gif 
+	 delay      15
+         frame      data/chars/misc/ess/xrhan06.gif
+	 delay      6
+         frame      data/chars/misc/ess/xrhan05.gif 
+         frame      data/chars/misc/ess/xrhan04.gif 
+         frame      data/chars/misc/ess/xrhan03.gif 
+         frame      data/chars/misc/ess/xrhan02.gif 
+         frame      data/chars/misc/ess/xrhan01.gif 
+
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+

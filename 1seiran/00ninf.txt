@@ -1,0 +1,26 @@
+name     00ninf
+type     npc
+candamage enemy
+shadow   0
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+lifespan 3
+
+anim idle
+	 loop    1
+	 offset  25 25
+	 delay   1
+	 drawmethod scale 1.2
+	 hitfx   data/sounds/beatnj1.wav
+	 attack16   10 13 28 28 3 1 1 0 0 5
+	 forcedirection -1
+	 dropv   1 1.2 0
+	 frame   data/chars/1seiran/ninf01.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/ninf02.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/ninf03.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/1seiran/ninf04.gif
+	 frame   data/chars/0misc/empty.gif
+

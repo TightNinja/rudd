@@ -1,0 +1,49 @@
+name      essaw1
+health    0
+speed     10
+type      npc
+shootnum    1
+candamage   enemy 
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_hole 1
+subject_to_wall 1
+subject_to_basemap 1
+subject_to_obstacle 0
+lifespan 1
+
+script  data/scripts/bounce3.c
+animationscript    data/scripts/lib001.c
+
+anim idle
+	   loop      1
+	   delay     3
+	   offset    30 30
+	   hitflash  Bflash
+	   fastattack 1
+@cmd velo001 0.4 0 0
+	   attack    0
+	   frame     data/chars/misc/ess/essaw01.gif
+	   frame     data/chars/misc/ess/essaw00.gif
+	   hitfx     data/sounds/beatnw3.wav
+	   attack90  12 12 46 47 2 0 1 0 8 5
+	   jugglecost 1
+	   forcedirection -1
+	   dropv     1.6 0 0
+	   frame     data/chars/misc/ess/essaw02.gif
+	   frame     data/chars/misc/ess/essaw00.gif
+	   attack    0
+	   frame     data/chars/misc/ess/essaw03.gif
+	   frame     data/chars/misc/ess/essaw00.gif
+	   hitfx     data/sounds/beatnw3.wav
+	   attack90  12 12 46 47 2 0 1 0 8 5
+	   forcedirection -1
+	   dropv     1.6 0 0
+	   frame     data/chars/misc/ess/essaw04.gif
+	   frame     data/chars/misc/ess/essaw00.gif
+
+
+
+
+
+

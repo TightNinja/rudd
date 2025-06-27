@@ -1,0 +1,41 @@
+name    scnkq4
+health  1
+type	text
+subtype noskip
+#alpha   1
+lifespan 2
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  130 150
+	 bbox    0 0 0 0
+	 sound   data/sounds/super2.wav	
+	 frame   data/chars/0misc/hy01.gif
+	 frame   data/chars/0misc/hy02.gif
+	 frame   data/chars/0misc/hy03.gif
+	 frame   data/chars/0misc/hy04.gif
+	 frame   data/chars/0misc/hy05.gif
+	 delay   3
+	 frame   data/chars/0misc/hy06.gif
+	 frame   data/chars/0misc/hy07.gif
+	 frame   data/chars/0misc/hy08.gif
+	 frame   data/chars/0misc/hy09.gif
+	 frame   data/chars/0misc/hy10.gif
+	 frame   data/chars/0misc/hy11.gif
+	 frame   data/chars/0misc/hy12.gif
+	 frame   data/chars/0misc/hy13.gif
+	 frame   data/chars/0misc/hy14.gif
+	 frame   data/chars/0misc/hy15.gif
+	 frame   data/chars/0misc/hy16.gif
+	 frame   data/chars/0misc/hy17.gif
+	 frame   data/chars/0misc/hy18.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

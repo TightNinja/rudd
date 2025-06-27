@@ -1,0 +1,14 @@
+name slow3
+type none
+shadow 0
+lifespan 1.3
+
+
+load slowt
+
+anim idle
+    subentity slowt
+    spawnframe 0
+    loop 1
+    delay 0.02
+    frame data/chars/0misc/empty.gif

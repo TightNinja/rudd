@@ -1,0 +1,160 @@
+name	dukein
+type	panel
+speed   10
+shadow  0
+facing  1
+setlayer 999999999
+lifespan 7
+animationscript   data/scripts/lib001.c
+load    danger02
+anim idle
+	loop        1 60 108
+	delay       85
+	offset      130 244
+	custentity  danger02
+	summonframe  0 0 0 0 0 
+	delay       3
+	sound       data/sounds/lisfx3.wav
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	delay       75
+	frame       data/chars/0weap/empty.gif
+#10
+	delay       3
+	sound       data/sounds/lisfx1.wav
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	delay       75
+	frame       data/chars/0weap/empty.gif
+#20
+	delay       3
+	sound       data/sounds/lisfx3.wav
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	frame       data/chars/0weap/dukein09.gif
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	frame       data/chars/0weap/dukein09.gif
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	frame       data/chars/0weap/dukein09.gif
+	delay       25
+	frame       data/chars/0weap/empty.gif
+#30
+	delay       3
+	sound       data/sounds/lisfx2.wav
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	delay       25
+	frame       data/chars/0weap/empty.gif
+#40
+	delay       3
+	sound       data/sounds/lisfx1.wav
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	delay       25
+	frame       data/chars/0weap/empty.gif
+#50
+	delay       3
+	sound       data/sounds/lisfx2.wav
+	frame       data/chars/0weap/dukein16.gif
+	frame       data/chars/0weap/dukein17.gif
+	frame       data/chars/0weap/dukein18.gif
+	frame       data/chars/0weap/dukein16.gif
+	frame       data/chars/0weap/dukein17.gif
+	frame       data/chars/0weap/dukein18.gif
+	frame       data/chars/0weap/dukein16.gif
+	frame       data/chars/0weap/dukein17.gif
+	frame       data/chars/0weap/dukein18.gif
+	delay       25
+	frame       data/chars/0weap/empty.gif
+#60
+	delay       4
+	sound       data/sounds/lisfx4.wav
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	sound       data/sounds/lisfx1.wav
+	frame       data/chars/0weap/dukein09.gif
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	frame       data/chars/0weap/dukein16.gif
+#76
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	sound       data/sounds/lisfx2.wav
+	frame       data/chars/0weap/dukein09.gif
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	frame       data/chars/0weap/dukein16.gif
+#92
+	frame       data/chars/0weap/dukein01.gif
+	frame       data/chars/0weap/dukein02.gif
+	frame       data/chars/0weap/dukein03.gif
+	frame       data/chars/0weap/dukein04.gif
+	frame       data/chars/0weap/dukein05.gif
+	frame       data/chars/0weap/dukein06.gif
+	frame       data/chars/0weap/dukein07.gif
+	frame       data/chars/0weap/dukein08.gif
+	sound       data/sounds/lisfx3.wav
+	frame       data/chars/0weap/dukein09.gif
+	frame       data/chars/0weap/dukein10.gif
+	frame       data/chars/0weap/dukein11.gif
+	frame       data/chars/0weap/dukein12.gif
+	frame       data/chars/0weap/dukein13.gif
+	frame       data/chars/0weap/dukein14.gif
+	frame       data/chars/0weap/dukein15.gif
+	frame       data/chars/0weap/dukein16.gif
+#108
+	frame       data/chars/0weap/empty.gif
+
+
+
+

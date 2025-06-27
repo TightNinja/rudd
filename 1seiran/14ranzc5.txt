@@ -1,0 +1,71 @@
+name    14ranzc5
+health  0
+type	none
+antigravity   40
+gfxshadow 1
+subject_to_gravity 1
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Screen", 0);
+    }
+    if(frame==6){
+      changeentityproperty(self, "Subject_to_Screen", 1);
+    }
+@end_script
+	 loop       0
+	 delay      100
+	 offset     96 166
+	 jumpframe  1 2 0 0
+	 landframe  17
+         frame      data/chars/1seiran/rukyo09.gif
+         frame      data/chars/1seiran/rta12.gif
+         frame      data/chars/1seiran/rukyo09.gif
+         frame      data/chars/1seiran/rta12.gif
+         frame      data/chars/1seiran/rukyo09.gif
+         frame      data/chars/1seiran/rta12.gif
+
+@cmd jump001 1.5 -0.2 0
+	 delay      3
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rak05.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rak05.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rak05.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rak05.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+         frame      data/chars/1jimmy/tr07.gif
+

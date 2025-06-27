@@ -1,0 +1,34 @@
+name       Levelxxd
+type       endlevel
+branch     xbtoads
+lifespan   13
+offscreenkill 1500
+
+anim idle
+	loop  0
+	delay  1200
+	bbox   91 167 27 30
+	offset 104 193
+	flipframe 0
+        frame   data/chars/0misc/toads.gif
+	delay   3
+	bbox    0
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif
+        frame   data/chars/0misc/toads.gif
+        frame   data/chars/0misc/empty.gif

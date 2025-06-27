@@ -1,0 +1,52 @@
+name	mmxinl
+type	text
+speed   10
+shadow  0
+facing  1
+setlayer 999999999
+lifespan 2
+animationscript   data/scripts/lib001.c
+
+anim idle
+	loop        0
+	delay       4
+	offset      128 244
+	sound       data/sounds/dukelife.wav
+	frame       data/chars/0weap/mmx01.gif
+	frame       data/chars/0weap/mmx02.gif
+	frame       data/chars/0weap/mmx03.gif
+	frame       data/chars/0weap/mmx04.gif
+	frame       data/chars/0weap/mmx05.gif
+	frame       data/chars/0weap/mmx06.gif
+	frame       data/chars/0weap/mmx07.gif
+	frame       data/chars/0weap/mmx08.gif
+	frame       data/chars/0weap/mmx09.gif
+	frame       data/chars/0weap/mmx10.gif
+	frame       data/chars/0weap/mmx11.gif
+	frame       data/chars/0weap/mmx12.gif
+	frame       data/chars/0weap/mmx13.gif
+	frame       data/chars/0weap/mmx14.gif
+	frame       data/chars/0weap/mmx15.gif
+	frame       data/chars/0weap/mmx16.gif
+	frame       data/chars/0weap/mmx17.gif
+	frame       data/chars/0weap/mmx18.gif
+	frame       data/chars/0weap/mmx19.gif
+	frame       data/chars/0weap/mmx20.gif
+	frame       data/chars/0weap/mmx21.gif
+	frame       data/chars/0weap/mmx22.gif
+	frame       data/chars/0weap/mmx23.gif
+	frame       data/chars/0weap/mmx24.gif
+	frame       data/chars/0weap/mmx25.gif
+	frame       data/chars/0weap/mmx26.gif
+	frame       data/chars/0weap/mmx27.gif
+	frame       data/chars/0weap/mmx28.gif
+	frame       data/chars/0weap/mmx29.gif
+	frame       data/chars/0weap/mmx30.gif
+	frame       data/chars/0weap/mmx31.gif
+	frame       data/chars/0weap/mmx32.gif
+@cmd killentity getlocalvar("self")
+	frame       data/chars/0weap/empty.gif
+
+
+
+

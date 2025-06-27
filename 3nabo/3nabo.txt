@@ -1,0 +1,286 @@
+name          3nabo
+type          enemy
+subtype	      chase
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         3.5
+jumpheight    1.7
+cantgrab      1
+grabdistance  20
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   50
+atchain       1 2 3 0 0
+offscreen_noatk_factor 1
+falldie       2
+nodieblink    1
+projectilehit enemy obstacle
+
+onmoveascript	data/scripts/hithead.c
+script data/scripts/Custom_chase.c
+animationscript   data/scripts/lib001.c
+takedamagescript data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c
+
+palette        data/chars/3nabo/idle01.gif
+alternatepal   data/chars/3nabo/alter.gif
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/idle01.gif
+         frame      data/chars/3nabo/idle01.gif
+
+anim idle
+	 loop       1
+	 delay      10
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/idle01.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+	 loop       1
+	 delay      17
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/wk01.gif
+	 delay      20
+         frame      data/chars/3nabo/wk02.gif
+	 delay      17
+         frame      data/chars/3nabo/wk01.gif
+	 delay      20
+         frame      data/chars/3nabo/idle01.gif
+
+anim attack1
+	 range      15 30
+	 rangez     -5 5
+	 loop       0
+	 delay      7
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nabo/a101.gif
+	 hitfx      data/sounds/beats2.wav
+	 attack3    48 48 32 8 7 0 0 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1 0.6 0
+         frame      data/chars/3nabo/a102.gif
+	 attack3    0
+	 delay      15
+         frame      data/chars/3nabo/idle01.gif
+
+anim attack2
+	 range      15 30
+	 rangez     -5 5
+	 loop       0
+	 delay      7
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nabo/a103.gif
+	 hitfx      data/sounds/beats2.wav
+	 attack5    48 48 32 8 7 0 0 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1 0.6 0
+         frame      data/chars/3nabo/a104.gif
+	 attack5    0
+	 delay      15
+         frame      data/chars/3nabo/idle01.gif
+
+anim attack3
+	 range      15 30
+	 rangez     -5 5
+	 loop       0
+	 delay      7
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nabo/a101.gif
+	 hitfx      data/sounds/beats2.wav
+	 attack3    48 48 32 8 10 1 1 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1.1 1.2 0
+         frame      data/chars/3nabo/a102.gif
+	 attack3    0
+	 delay      15
+         frame      data/chars/3nabo/idle01.gif
+
+anim freespecial1
+	 range      35 45
+	 rangez     -5 5
+	 loop       0
+	 delay      8
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 sound      data/sounds/punchn1.wav
+@cmd velo001 0.5 0 0
+         frame      data/chars/3nabo/a103.gif
+	 delay      15
+         frame      data/chars/3nabo/a201.gif
+	 delay      15
+@cmd velo001 0 0 0 
+	 hitfx      data/sounds/beatnes3.wav
+	 attack3    47 45 32 14 15 1 1 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/3nabo/a202.gif
+	 attack3    0
+	 delay      20
+         frame      data/chars/3nabo/idle01.gif
+
+anim jump
+
+anim jumpland
+
+anim walkoff
+
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/pain02.gif
+
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/pain01.gif
+
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/3nabo/pain03.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     48 82
+	 bbox 	    37 42 23 42
+         frame      data/chars/3nabo/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/3nabo/pain03.gif
+
+#stunned
+anim pain7
+	 loop       0
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 delay	    15
+         frame      data/chars/3nabo/pain01.gif
+	 delay      65
+         frame      data/chars/3nabo/pain03.gif
+
+anim fall1
+	 loop       0
+	 delay      8
+	 offset     48 82
+	 bbox 	    37 42 23 42
+	 landframe  2
+        frame       data/chars/3nabo/pain03.gif
+	 delay	    999
+         frame      data/chars/3nabo/fall01.gif
+	 delay      3
+	 bbox       0 
+	 sound      data/sounds/falln1.wav
+         frame      data/chars/3nabo/fall01.gif
+	 delay      12
+         frame      data/chars/3nabo/fall02.gif
+
+anim rise
+	 loop       0
+	 delay      13
+	 offset     48 82
+	 bbox       0 0
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/land.gif
+
+anim death
+	 loop       0
+	 delay      100
+	 offset     48 82
+	 bbox 	    0
+load     portal1
+custentity portal1
+spawnframe 2 128 200 0 1
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+         frame      data/chars/3nabo/fall02.gif
+	delay	    1050
+         frame      data/chars/3nabo/fall02.gif
+	 sound      data/sounds/tel01.wav
+	delay	    4
+	drawmethod alpha 6
+	drawmethod channel 0.8
+         frame      data/chars/3nabo/fall02.gif
+ 	drawmethod channel 0.6
+         frame      data/chars/3nabo/fall02.gif
+	drawmethod channel 0.4
+         frame      data/chars/3nabo/fall02.gif
+	drawmethod channel 0.2
+         frame      data/chars/3nabo/fall02.gif
+	delay	   100
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+
+
+
+

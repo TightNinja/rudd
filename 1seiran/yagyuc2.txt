@@ -1,0 +1,536 @@
+name          yagyuC2
+candamage     enemy
+hostile       enemy
+running       12 2.2 1.5 1 0 
+type          npc
+subject_to_obstacle 0
+health        10
+falldie       2
+speed         7
+throw         2 3
+throwdamage   20
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+atchain       1 2 0 0 
+grabforce     -1
+lifespan      7
+falldie       1
+nodieblink    2
+alpha         6
+
+onmoveascript	data/scripts/hithead.c
+script data/scripts/spawn.c
+animationscript   data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+#didhitscript      data/scripts/didhit.c
+onblockWscript         data/scripts/spikesw2.c
+
+palette            data/chars/1seiran/alterclo.gif      
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     96 166
+	 bbox       0  
+@cmd velo001 1 0 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+@cmd velo001 0.5 0 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+@cmd velo001 0
+	 delay      50
+         frame      data/chars/1seiran/rwin06.gif
+
+anim death
+	 loop       0
+	 delay      5
+	 offset     96 166
+	 bbox       0
+         frame      data/chars/1seiran/rwin00.gif
+         frame      data/chars/1seiran/rtel02.gif
+	 delay      3
+	 sound      data/sounds/ninja01.wav
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "00sbomb" "00sbomb" 0 0 0 0
+         frame      data/chars/1seiran/rwin06.gif
+         frame      data/chars/0misc/empty.gif
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      200
+	 offset     96 166
+	 bbox       82 123 29 42
+         frame      data/chars/1seiran/ridle01.gif
+	 delay      300
+         frame      data/chars/1seiran/ridle02.gif
+	 delay      200
+         frame      data/chars/1seiran/ridle01.gif
+	 delay      300
+         frame      data/chars/1seiran/ridle02.gif
+	 delay      20
+         frame      data/chars/1seiran/ridle03.gif
+
+anim walk
+@cmd clearL
+	 loop       1
+	 delay      17
+	 offset     96 166
+	 bbox       82 123 29 42
+         frame      data/chars/1seiran/rwk01.gif
+         frame      data/chars/1seiran/rwk02.gif
+         frame      data/chars/1seiran/rwk03.gif
+         frame      data/chars/1seiran/rwk04.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     96 166
+	 bbox       82 123 29 42
+	 cancel     0 4 0 a2  freespecial10
+	 cancel     0 4 0 a4  freespecial11
+         frame      data/chars/1seiran/rrun01.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1seiran/rrun02.gif
+         frame      data/chars/1seiran/rrun03.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1seiran/rrun04.gif
+
+anim attack1
+	 range      10 50
+	 loop       0
+	 delay      12
+	 offset     96 166
+	 bbox       82 123 29 42
+	 energycost 30
+         mponly     1
+	 hitflash   Bflash
+	 sound      data/sounds/punche.wav
+         frame      data/chars/1seiran/ra201.gif
+	 delay      6
+         frame      data/chars/1seiran/ra202.gif
+	 hitfx      data/sounds/beatswd6.wav
+	 hitfx      data/sounds/beatxm1.wav
+	 delay      5
+	 attack7    91 107 66 29 3 0 1 0 7 5
+	 forcedirection -1
+	 jugglecost 8
+	 dropv      1.5 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1seiran/ra203.gif
+	 delay      8
+	 attack7    0
+         frame      data/chars/1seiran/ra204.gif
+	 delay      7
+         frame      data/chars/1seiran/ra205.gif
+         frame      data/chars/1seiran/ra206.gif
+	 
+anim attack2
+	 range      10 50
+	 loop       0
+	 delay      8
+	 offset     96 166
+	 bbox       82 123 29 42
+	 hitflash   Bflash 
+@cmd velo001 1 0 0
+         frame      data/chars/1seiran/ra401.gif
+	 delay      4
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1seiran/ra402.gif
+	 hitfx      data/sounds/beatswd2.wav
+	 hitfx      data/sounds/beatxm2.wav
+	 attack14   105 93 46 66 6 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 15
+	 dropv      1.4 1.7 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1seiran/ra403.gif
+@cmd velo001 0.3 0 0
+	 delay      8
+	 attack14   0
+         frame      data/chars/1seiran/ra405.gif
+@cmd velo001 0 
+	 delay      22
+         frame      data/chars/1seiran/ra405.gif
+	 delay      8
+         frame      data/chars/1seiran/ra205.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     96 166
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1seiran/rju01.gif
+	 delay      10
+         frame      data/chars/1seiran/rland.gif
+
+anim jump
+	 loop       0
+	 delay      22
+	 offset     96 166
+	 bbox       68 83 24 44
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1seiran/rju01.gif
+	 delay      9
+         frame      data/chars/1seiran/rju08.gif
+         frame      data/chars/1seiran/rju09.gif
+         frame      data/chars/1seiran/rju10.gif
+         frame      data/chars/1seiran/rju11.gif
+         frame      data/chars/1seiran/rju01.gif
+
+anim forwardjump
+	 loop       0
+	 delay      19
+	 offset     96 166
+	 bbox       68 83 24 44
+	 cancel     2 5 0 j   freespecial3     #DOUBLE JUMP NORMAL FWD
+	 cancel     1 5 0 a2  freespecial7     #jumping medium slash 1
+	 cancel     2 5 0 s  freespecial91     #air izuna drop
+	 cancel     2 5 0 a4 freespecial95     #tumble high jump kick
+	 sound      data/sounds/punch4.wav   
+         frame      data/chars/1seiran/rju01.gif
+	 delay      9
+         frame      data/chars/1seiran/rju02.gif
+         frame      data/chars/1seiran/rju03.gif
+         frame      data/chars/1seiran/rju04.gif
+         frame      data/chars/1seiran/rju05.gif
+         frame      data/chars/1seiran/rju06.gif
+         frame      data/chars/1seiran/rju01.gif
+
+anim runjump
+	 loop       0
+	 delay      17
+	 offset     96 166
+	 bbox       68 83 24 44
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1seiran/rju01.gif
+	 delay      9
+         frame      data/chars/1seiran/rju02.gif
+         frame      data/chars/1seiran/rju03.gif
+         frame      data/chars/1seiran/rju04.gif
+         frame      data/chars/1seiran/rju05.gif
+         frame      data/chars/1seiran/rju06.gif
+         frame      data/chars/1seiran/rju01.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     96 166
+	 bbox       68 83 24 44
+	 hitfx      data/sounds/beatbr2.wav
+	 attack11   92 133 44 19 10 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+	 jugglecost 12
+         frame      data/chars/1seiran/rak02.gif
+	 delay      15
+	 attack     0
+         frame      data/chars/1seiran/rak01.gif
+         frame      data/chars/1seiran/rju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     96 166
+	 bbox       0 0 0 0
+         frame      data/chars/1seiran/rland.gif
+
+anim pain1
+	 loop       0
+	 delay      7
+	 offset     96 166
+	 bbox       84 119 24 42
+	 cancel     1 4 0 s freespecial90
+         frame      data/chars/1seiran/rpain01.gif
+         frame      data/chars/1seiran/rpain01.gif
+         frame      data/chars/1seiran/rpain01.gif
+	 delay      13
+         frame      data/chars/1seiran/rpain01.gif
+
+#breathless1
+anim pain2
+	 loop       0
+	 delay      27
+	 offset     96 166
+	 bbox       84 119 24 42
+	 cancel     0 1 0 s freespecial90
+         frame      data/chars/1seiran/rpain01.gif
+	 delay      45
+         frame      data/chars/1seiran/rpain03.gif
+
+anim pain3
+	 loop       0
+	 delay      7
+	 offset     96 166
+	 bbox       84 119 24 42
+	 cancel     1 4 0 s freespecial90
+         frame      data/chars/1seiran/rpain02.gif
+         frame      data/chars/1seiran/rpain02.gif
+         frame      data/chars/1seiran/rpain02.gif
+	 delay      13
+         frame      data/chars/1seiran/rpain02.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      27
+	 offset     96 166
+	 bbox       84 119 24 42
+	 cancel     0 1 0 s freespecial90
+         frame      data/chars/1seiran/rpain02.gif
+	 delay      45
+         frame      data/chars/1seiran/rpain03.gif
+
+#stun
+anim pain5
+	 loop       0
+	 delay      19
+	 offset     96 166
+	 bbox       84 119 24 42
+         frame      data/chars/1seiran/rpain04.gif
+         frame      data/chars/1seiran/rpain05.gif
+         frame      data/chars/1seiran/rpain06.gif
+         frame      data/chars/1seiran/rpain05.gif
+         frame      data/chars/1seiran/rpain04.gif
+         frame      data/chars/1seiran/rpain05.gif
+         frame      data/chars/1seiran/rpain06.gif
+         frame      data/chars/1seiran/rpain05.gif
+         frame      data/chars/1seiran/rpain04.gif
+         frame      data/chars/1seiran/rpain05.gif
+         frame      data/chars/1seiran/rpain06.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     96 166
+	 bbox       79 129 33 34
+	 landframe  2
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+	 bbox       75 135 47 23
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+	 bbox       0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall03.gif
+         frame      data/chars/1seiran/rfall04.gif
+
+anim fall6
+	 loop       0
+	 delay      60
+	 offset     96 166
+	 bbox       79 129 33 34
+	 landframe  2
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+         frame      data/chars/1seiran/rfall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall04.gif
+
+#######bossescn
+anim pain8
+	 loop       0
+	 delay      19
+	 offset     96 166
+	 bbox       84 119 24 42
+         frame      data/chars/1seiran/rpain04.gif
+anim pain9
+	 loop       0
+	 delay      19
+	 offset     96 166
+	 bbox       84 119 24 42
+         frame      data/chars/1seiran/rpain05.gif
+anim pain10
+	 loop       0
+	 delay      19
+	 offset     96 166
+	 bbox       84 119 24 42
+         frame      data/chars/1seiran/rpain06.gif
+
+anim fall8
+	 loop       0
+	 delay      60
+	 offset     96 166
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+         frame      data/chars/1seiran/rfall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall04.gif
+anim fall9
+	 loop       0
+	 delay      60
+	 offset     96 166
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+         frame      data/chars/1seiran/rfall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall04.gif
+anim fall10
+	 loop       0
+	 delay      60
+	 offset     96 166
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+         frame      data/chars/1seiran/rfall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall04.gif
+
+#######force push
+anim fall7
+	 loop       0
+	 delay      999
+	 offset     96 166
+	 bbox       79 129 33 34
+	 landframe  2
+@cmd toss0001 200
+@cmd jump001 0 0 0
+         frame      data/chars/1seiran/rfall01.gif
+	 delay      999
+@cmd jump001 0 0 0
+         frame      data/chars/1seiran/rfall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+         frame      data/chars/1seiran/rfall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1seiran/rfall04.gif
+
+anim rise
+	 loop       0
+	 delay      40
+	 offset     96 166
+	 bbox       0 0 0 0
+         frame      data/chars/1seiran/rfall04.gif
+	 delay      6
+         frame      data/chars/1seiran/rrise01.gif
+         frame      data/chars/1seiran/rrise02.gif
+         frame      data/chars/1seiran/rrise03.gif
+         frame      data/chars/1seiran/rrise04.gif
+
+########################### #SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     80 129
+	 bbox       0
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rpain01.gif #follow30
+         frame      data/chars/1seiran/rpain02.gif
+         frame      data/chars/1seiran/rpain03.gif #follow31
+         frame      data/chars/1seiran/rpain04.gif #follow 1 #follow27
+         frame      data/chars/1seiran/rpain05.gif #follow32
+         frame      data/chars/1seiran/rpain06.gif
+         frame      data/chars/0misc/empty.gif   #mcguire megaton press
+         frame      data/chars/2wllms/pain08.gif
+         frame      data/chars/2wllms/pain09.gif
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall01.gif #follow15
+#10
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall03.gif
+         frame      data/chars/2wllms/fall03.gif #follow12
+         frame      data/chars/2wllms/fall04.gif #follow17
+         frame      data/chars/2wllms/fall05.gif
+         frame      data/chars/2wllms/fall06.gif #follow 2
+         frame      data/chars/2wllms/fall07.gif
+         frame      data/chars/2wllms/fall08.gif #follow20 #follow25 #follow26
+         frame      data/chars/2wllms/fall09.gif #follow 7
+         frame      data/chars/2wllms/fall10.gif #follow 8
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall11b.gif #follow 3
+#20
+         @cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall12b.gif #chen special
+         frame      data/chars/1seiran/rfall13b.gif #chen special
+         frame      data/chars/1seiran/rfall15b.gif #chen special
+         frame      data/chars/2wllms/fall16.gif
+         frame      data/chars/2wllms/fall17.gif #follow21
+         frame      data/chars/2wllms/fall18.gif
+         frame      data/chars/2wllms/fall19.gif
+         frame      data/chars/2wllms/fall20.gif
+         frame      data/chars/2wllms/fall21.gif
+         frame      data/chars/2wllms/fall22.gif #follow 9
+#30
+         frame      data/chars/2wllms/fall23.gif #follow28
+         frame      data/chars/2wllms/fall24.gif #follow18 follow19
+         frame      data/chars/2wllms/fall25.gif #follow14
+         frame      data/chars/2wllms/fall26.gif #follow22 #follow23 #follow24
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall27b.gif #follow40
+         frame      data/chars/1seiran/rfall28b.gif #follow38
+         frame      data/chars/2wllms/fall29.gif
+         frame      data/chars/2wllms/fall30.gif
+         frame      data/chars/2wllms/fall31.gif
+         frame      data/chars/1seiran/rbackb01.gif
+#40
+         frame      data/chars/2wllms/painh2.gif #follow34
+         frame      data/chars/2wllms/painh3.gif #follow35
+         frame      data/chars/2wllms/painh4.gif #follow37
+         frame      data/chars/1seiran/rfallc1.gif
+         frame      data/chars/1seiran/rfallc2.gif
+         frame      data/chars/1seiran/rfallc3.gif
+
+@cmd    conditionalflip3
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+         frame      data/chars/1seiran/rfall01.gif #invisible
+@cmd    conditionalflip3
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+         frame      data/chars/1seiran/rfall01.gif #invisible
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall01.gif #invisible
+	 drawmethod alpha 6
+	 drawmethod channel 0.01
+@cmd    conditionalflip3
+         frame      data/chars/1seiran/rfall01.gif #invisible
+
+
+
+
+
+

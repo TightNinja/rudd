@@ -1,0 +1,204 @@
+name    07ranzu2
+health  0
+type	npc
+gfxshadow 1
+candamage enemy
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     96 166
+	 bbox       0
+	 fastattack 1
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 hitflash   Qflash2
+	 fastattack 1
+	 jumpframe  42 3 0.2 0
+	 landframe  58
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt01.gif
+sound    data/chars/1seiran/muchin4.wav  #######################################
+	 drawmethod alpha off
+	 hitfx      data/sounds/beat0.wav
+@cmd shadow 10 25 60 0 2 200 200 200
+	 delay      2
+
+attack3    98 118 32 13 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1seiran/rtatt01.gif
+attack3  0
+	 delay      1
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt01.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt01.gif
+
+
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod alpha off
+	 delay      2
+attack4    125 154 29 13 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1seiran/rtatt02.gif
+attack4  0
+	 delay      1
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt02.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt02.gif
+
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod alpha off
+	 delay      2
+attack3    98 122 31 10 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1seiran/rtatt03.gif
+attack3  0
+	 delay      1
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt03.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt03.gif
+
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod alpha off
+	 delay      2
+attack4    125 113 19 24 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1seiran/rtatt04.gif
+attack4  0
+	 delay      1
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt04.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt04.gif
+
+
+
+	 delay      2
+attack7    96 116 39 19 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1seiran/rtatt05.gif
+attack7  0
+	 delay      1
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt05.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt05.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt05.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt05.gif
+
+delay    70
+	 frame   data/chars/0misc/empty.gif
+delay    1
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt06.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt06.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt06.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt06.gif
+hitflash  Qflash2b
+	 drawmethod alpha off
+	 delay      2
+attack99   100 101 26 35 25 1 1 0 7 5
+	 forcedirection -1
+	 dropv      5.4 0.2 0
+         frame      data/chars/1seiran/rtatt07.gif
+         frame      data/chars/1seiran/rtatt06.gif
+         frame      data/chars/1seiran/rtatt07.gif
+         frame      data/chars/1seiran/rtatt06.gif
+         frame      data/chars/1seiran/rtatt07.gif
+         frame      data/chars/1seiran/rtatt06.gif
+         frame      data/chars/1seiran/rtatt07.gif
+         frame      data/chars/1seiran/rtatt06.gif
+attack91   0
+	 delay      2
+	 attack7    0
+@cmd velo001 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rtatt07.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rtatt06.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rtatt07.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rtatt06.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

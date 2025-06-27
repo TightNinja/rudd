@@ -1,0 +1,527 @@
+name	dukeres1
+health	200
+nolife  1
+type	 npc
+gfxshadow   1
+falldie  1
+nodieblink 2
+nomove 1 1
+nopain  1
+animationscript   data/scripts/lib001.c
+nodrop  2
+palette         data/chars/2duke/idle01.gif   
+alternatepal    data/chars/2duke/alter01.gif   
+
+load     quake01
+load     sa
+load     resur
+
+anim spawn
+	 loop       0
+	 delay      100
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      5
+	 sound      data/sounds/duke01.wav
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      200
+         frame      data/chars/2duke/res01.gif
+
+anim idle
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2duke/res02.gif
+	 delay      9
+         frame      data/chars/2duke/res03.gif
+	 delay      200
+	 bbox       71 79 25 50
+	 sound      data/sounds/duke07.wav
+         frame      data/chars/2duke/ss01.gif
+	 sound      data/sounds/duke08.wav
+##########################################################
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 sound      data/sounds/quake0.wav
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+	 delay      10
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/ss03.gif
+######################################################################
+
+	 sound      data/sounds/hnkpow.wav
+	 delay      5
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res04.gif
+         frame      data/chars/2duke/res05.gif
+######################################################################
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+
+######################################################################
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+#####
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+#####
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+#####
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res06.gif
+         frame      data/chars/2duke/res07.gif
+sound      data/sounds/thund01.wav
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res08.gif
+         frame      data/chars/2duke/res09.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/res10.gif
+         frame      data/chars/2duke/res11.gif
+	 delay      1
+	 bbox       0
+@cmd spawn001 "sa" "sa" 0 0 0 0 0
+         frame      data/chars/2duke/ss01.gif
+	 delay      11
+	 sound      data/sounds/duke15.wav
+         frame      data/chars/2duke/crouch.gif
+	 delay      5
+         frame      data/chars/2duke/ju01.gif
+@cmd spawn001 "resur" "resur" 0 0 0 1 0
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+	 offset     80 130
+         frame      data/chars/2duke/res12.gif
+	 offset     80 129
+	 frame      data/chars/2duke/res12.gif
+@cmd spawn001 "dukeu1" "dukeu1" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+anim death
+	 loop       0
+	 offset     80 129
+	 bbox       71 79 25 50
+	 delay      25
+load     1up
+	 sound      data/sounds/dukered2.wav
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+	 delay      8
+	 sound      data/sounds/shaft.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.9
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.8
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.7
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.6
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.5
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.4
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.3
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.2
+         frame      data/chars/2duke/pup04.gif
+	 drawmethod channel 0.1
+         frame      data/chars/2duke/pup04.gif
+@cmd spawn001 "1up" "1up" 0 0 0 0 0
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+
+

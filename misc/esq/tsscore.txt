@@ -1,0 +1,36 @@
+name	tsscore
+type	panel
+speed   10
+facing  1
+setlayer 999999999
+nodieblink 3
+alpha   0
+animationscript   data/scripts/lib001.c 
+
+
+anim idle
+	 loop      0
+	 delay     1 
+	 offset    128 224
+drawmethod alpha 6
+drawmethod channel 0.01
+	 frame     data/chars/misc/esq/tsscore.gif
+	 delay     200
+drawmethod alpha off
+	 frame     data/chars/misc/esq/tsscore.gif
+	 delay     4
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/esq/tsscore.gif
+drawmethod channel 0.60
+	 frame     data/chars/misc/esq/tsscore.gif
+drawmethod channel 0.40
+	 frame     data/chars/misc/esq/tsscore.gif
+drawmethod channel 0.20
+	 frame     data/chars/misc/esq/tsscore.gif
+
+@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+

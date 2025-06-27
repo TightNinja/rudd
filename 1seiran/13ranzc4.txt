@@ -1,0 +1,101 @@
+name    13ranzc4
+health  0
+type	none
+antigravity   40
+subject_to_gravity 1
+gfxshadow 1
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Screen", 0);
+    }
+    if(frame==6){
+      changeentityproperty(self, "Subject_to_Screen", 1);
+    }
+@end_script
+	 loop       0
+	 delay      50
+	 offset     96 166
+	 jumpframe  1 2 0 0
+	 landframe  17
+         frame      data/chars/0misc/empty.gif
+	 delay      25
+         frame      data/chars/0misc/empty.gif
+@cmd jump001 2 1.5 0
+@cmd toss0001 15
+	 delay      6
+	 sound      data/sounds/puncha.wav
+         frame      data/chars/1seiran/rap18.gif
+	 delay      3
+	 frame      data/chars/1seiran/rap20.gif
+	 frame      data/chars/1seiran/rap19.gif
+	 frame      data/chars/1seiran/rap20.gif
+	 frame      data/chars/1seiran/rap19.gif
+	 frame      data/chars/1seiran/rap20.gif
+	 frame      data/chars/1seiran/rap19.gif
+	 frame      data/chars/1seiran/rap20.gif
+	 frame      data/chars/1seiran/rap19.gif
+	 frame      data/chars/1seiran/rap20.gif
+	 frame      data/chars/1seiran/rap19.gif
+@cmd shadow 0
+	 delay      6
+@cmd jump001 0.5 0.1 0
+	 attack     0
+	 frame      data/chars/1seiran/rju09.gif
+	 frame      data/chars/1seiran/rju10.gif
+	 frame      data/chars/1seiran/rju11.gif
+	 delay      999
+	 frame      data/chars/1seiran/rju01.gif
+@cmd velo001 -0.2 0 0
+	 delay      12
+	 frame      data/chars/1seiran/rland.gif
+	 delay      100
+         frame      data/chars/1seiran/rcharge.gif
+         @cmd velo001 0 0 0
+	 delay      725
+         frame      data/chars/1seiran/ridle03.gif
+	 delay      23
+         frame      data/chars/1seiran/ridle03.gif
+	 delay      3
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rcharge.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+         frame      data/chars/1jimmy/tr07.gif
+

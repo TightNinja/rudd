@@ -1,0 +1,32 @@
+name	QFlash2b
+type	none
+setlayer 999999999
+shadow	0
+toflip  1
+anim idle
+
+palette  data/chars/0misc/qf03b.gif 
+
+	 loop       0
+	 delay      3
+	 offset     56 56
+	 quakeframe 0 3 3
+	 drawmethod alpha 4
+	 drawmethod channel 0.90
+	 frame     data/chars/0misc/qf01.gif
+	 frame     data/chars/0misc/qf02.gif
+	 frame     data/chars/0misc/qf03.gif
+	 frame     data/chars/0misc/qf04.gif
+	 frame     data/chars/0misc/qf05.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+

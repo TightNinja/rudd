@@ -1,0 +1,33 @@
+name	 BoomerangW2
+health    0
+type      item
+subtype   weapon
+grabdistance 35
+counter   999
+typeshot  0
+shootnum  1
+bounce    1
+weapnum   8
+nolife    1
+
+anim spawn
+	loop  0
+	delay  100
+	offset 22 23
+	bbox   1 1 16 6
+	frame  data/chars/0weap/boomer0.gif
+
+anim respawn
+	loop  0
+	delay  100
+	offset 22 23
+	bbox   1 1 16 6
+	frame  data/chars/0weap/boomer0.gif
+
+anim idle
+	loop  1
+	delay  100
+	offset 22 23
+	bbox   1 1 16 6
+	frame  data/chars/0weap/boomer0.gif
+

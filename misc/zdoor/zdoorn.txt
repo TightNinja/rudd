@@ -1,0 +1,40 @@
+name	ZdoorN
+type    endlevel
+facing  1
+branch  NESDD
+Subject_to_Gravity 0
+Subject_to_Wall 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+animationscript	data/scripts/lib001.c
+
+anim idle
+	 loop      0
+	 delay     5
+	 offset    80 129
+drawmethod scale 1.2
+	 sound      data/sounds/portal.wav
+	 frame     Data/Chars/misc/zdoor/zdoor01.gif
+	 frame     Data/Chars/misc/zdoor/zdoor02.gif
+	 frame     Data/Chars/misc/zdoor/zdoor03.gif
+	 frame     Data/Chars/misc/zdoor/zdoor04.gif
+	 frame     Data/Chars/misc/zdoor/zdoor05.gif
+	 frame     Data/Chars/misc/zdoor/zdoor06.gif
+	 frame     Data/Chars/misc/zdoor/zdoor07.gif
+	delay      700
+	bbox       80 119 10 10
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+	bbox       0
+	delay      5
+	drawmethod alpha 6
+	drawmethod channel 0.8
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+	drawmethod channel 0.6
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+	drawmethod channel 0.4
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+	drawmethod channel 0.2
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+@cmd killentity getlocalvar("self")
+	 frame     Data/Chars/misc/zdoor/zdoor08.gif
+

@@ -1,0 +1,52 @@
+name	kifall2
+type	text
+shadow	0
+setlayer 999999999
+subject_to_gravity 1
+subject_to_minz 0
+subject_to_maxz 0
+animationscript   data/scripts/lib001.c
+
+palette data/chars/2duke/fall01.gif
+
+load    kiroutb2
+anim spawn
+	 loop       0
+	 delay      1000
+	 offset     80 129
+	 jumpframe  0 10 0 0.5 0
+	 dropframe  1
+	 landframe  3
+	 quakeframe 3 5 2
+@cmd spawn044 "kiroutb2" 128 0 228
+	 frame     data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall01.gif
+
+	 delay      5
+sound   data/sounds/pain32.wav
+	 frame     data/chars/0misc/empty.gif
+sound     data/sounds/beatkill.wav
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+#	@cmd killentity getlocalvar("self")
+#	 frame     data/chars/0misc/empty.gif
+
+

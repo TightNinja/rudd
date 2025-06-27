@@ -1,0 +1,23 @@
+name	Bflashs
+type	none
+shadow	0
+toflip  1
+#alpha	1
+setlayer 999999999
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    36 39
+load       slow
+custentity slow
+spawnframe 0
+	 frame     data/chars/0misc/bflash1.gif
+	 frame     data/chars/0misc/bflash2.gif
+	 frame     data/chars/0misc/bflash3.gif
+	 frame     data/chars/0misc/bflash4.gif
+	 frame     data/chars/0misc/bflash5.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+

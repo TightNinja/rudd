@@ -1,0 +1,53 @@
+name     dball
+health      1
+type	    pshot
+shootnum    1
+speed	    13
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+
+anim spawn
+	loop	 0
+	offset   25 50
+	delay    5
+	bbox     0
+	hitflash Qflash2
+	drawmethod alpha 6
+	drawmethod channel 0.2
+	frame    data/chars/2duke/dball1.gif
+	frame    data/chars/2duke/dball2.gif
+	drawmethod channel 0.4
+	frame    data/chars/2duke/dball3.gif
+	frame    data/chars/2duke/dball4.gif
+	drawmethod channel 0.6
+	frame    data/chars/2duke/dball5.gif
+	frame    data/chars/2duke/dball1.gif
+	hitfx    data/sounds/beatsf1.wav
+	attack   8 9 33 33 15 1 1 0 18 5
+	forcedirection -1
+	dropv    1.4 1.7 0
+	drawmethod channel 0.8
+	frame    data/chars/2duke/dball2.gif
+	frame    data/chars/2duke/dball3.gif
+	drawmethod alpha 0
+
+
+anim idle
+	loop	 1
+	offset   25 50
+	delay    5
+	bbox     0
+	hitflash Qflash2
+	hitfx    data/sounds/beatsf1.wav
+	attack   8 9 33 33 15 1 1 0 18 5
+	forcedirection -1
+	dropv    1.4 1.7 0
+	frame    data/chars/2duke/dball1.gif
+	frame    data/chars/2duke/dball2.gif
+	frame    data/chars/2duke/dball3.gif
+	frame    data/chars/2duke/dball4.gif
+	frame    data/chars/2duke/dball5.gif
+

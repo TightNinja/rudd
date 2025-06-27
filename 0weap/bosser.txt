@@ -1,0 +1,51 @@
+name bosser
+type none
+lifespan 4
+anim idle
+@script
+    void vSelf = getlocalvar("self");
+if(frame==1)
+{
+      fademusic(2, "data/music/duked1.ogg", 0, 0);
+}@end_script
+
+@script
+    if(frame==1){
+      void vEntity;                                     //Target entity placeholder.
+      int  iEntity;                                     //Entity enumeration holder.
+      int  iType;                                       //Entity type.
+      int  iHP;                                         //Entity HP
+      int  iMax = openborvariant("count_entities");     //Entity count.
+
+       //Enumerate and loop through entity collection.
+      for(iEntity=0; iEntity<iMax; iEntity++){    
+        vEntity = getentity(iEntity);                 //Get target entity from current loop.
+        iType   = getentityproperty(vEntity, "type"); //Get target type.
+        iHP   = getentityproperty(vEntity, "health"); //Get target health
+
+        //Enemy type?
+        if(iType == openborconstant("TYPE_ENEMY") && iHP > 0){
+          damageentity(vEntity, vEntity, 2000, 1, openborconstant("ATK_NORMAL50"));
+        }
+      } 
+      changeopenborvariant("slowmotion", 1);
+    }
+    if(frame==2){
+      void self = getlocalvar("self");
+      changeopenborvariant("slowmotion", 0);
+      killentity(self);
+    }
+@end_script
+	loop 1
+	delay 1
+	offset 1 1 
+	frame	data/chars/misc/empty.gif
+	delay   200
+	frame	data/chars/misc/empty.gif 
+	frame	data/chars/misc/empty.gif
+
+anim	spawn
+	delay	1
+	offset	1 1
+	frame	data/chars/misc/empty.gif
+	frame	data/chars/misc/empty.gif

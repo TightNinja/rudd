@@ -1,0 +1,26 @@
+name     upfire2
+type	    pshot
+shootnum    1
+speed  5
+shadow   0
+nomove   1
+facing   1
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+lifespan 3
+
+palette     data/chars/2duke/upfire7.gif
+
+anim idle
+	loop	 1 
+	offset   80 125
+	delay    5
+	bbox     0
+	drawmethod scale 0.8
+	hitfx    data/sounds/beat2.wav
+	attack   74 59 23 57 10 1 1 0 8 5
+	dropv    1.7 0.9 0
+	frame    data/chars/2duke/upfire7.gif
+	frame    data/chars/2duke/upfire8.gif
+	frame    data/chars/2duke/upfire9.gif
+

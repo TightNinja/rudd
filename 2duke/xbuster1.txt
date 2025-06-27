@@ -1,0 +1,26 @@
+name     xbuster1
+type     none
+shadow   0
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+
+anim spawn
+	loop	 0
+	offset   80 129
+	delay    4
+	bbox     0
+#	sound    data/sounds/xbus02.wav
+	frame    data/chars/2duke/xb01.gif
+	offset   85 129
+	frame    data/chars/2duke/xb02.gif
+	offset   90 129
+	frame    data/chars/2duke/xb03.gif
+	offset   95 129
+	frame    data/chars/2duke/xb04.gif
+	offset   100 129
+	frame    data/chars/2duke/xb05.gif
+	offset   105 129
+	frame    data/chars/2duke/xb06.gif
+@cmd killentity getlocalvar("self")
+        frame     data/chars/0weap/empty.gif

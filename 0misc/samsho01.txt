@@ -1,0 +1,23 @@
+name    samsho01
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  96 166
+	 bbox    0 0 0 0	
+	 sound   data/sounds/samsh01.wav
+	 frame   data/chars/0misc/samsho01.gif
+	 frame   data/chars/0misc/samsho02.gif
+	 frame   data/chars/0misc/samsho03.gif
+	 frame   data/chars/0misc/samsho04.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

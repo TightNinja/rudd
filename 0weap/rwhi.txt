@@ -1,0 +1,90 @@
+name     rwhi
+type     npc
+candamage player
+shadow   0
+setlayer -1
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+anim idle
+	 loop    0
+	 offset  38 54
+	 delay   2
+	 drawmethod alpha 6
+	 drawmethod channel 0.15
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 hitfx   data/sounds/beatnw3.wav
+	 attack  14 43 54 25 8 1 1 0 7 10
+	 forcedirection -1
+	 dropv   1.8 2 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.35
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.35
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 attack  0
+	 drawmethod alpha 6
+	 drawmethod channel 0.25
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.15
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.05
+	 frame   data/chars/0weap/rwhi01.gif
+	 frame   data/chars/0weap/rwhi02.gif
+	 frame   data/chars/0weap/rwhi03.gif
+	 frame   data/chars/0weap/rwhi04.gif
+	 frame   data/chars/0weap/rwhi05.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

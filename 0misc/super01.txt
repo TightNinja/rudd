@@ -1,0 +1,40 @@
+name	super01
+#type	text
+#subtype noskip
+type    panel
+speed   10
+setlayer 99999999
+alpha   1
+animationscript   data/scripts/lib001.c
+#load    slowitm2
+lifespan 1
+facing   1
+
+palette  data/chars/0misc/super01.gif 
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    128 228
+#	 flipframe 1
+	 subentity slowitm2
+#	 spawnframe 0
+	 sound     data/sounds/super01.wav
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/super02.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/super03.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/super04.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/super05.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/super01.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+
+
+
+

@@ -1,0 +1,137 @@
+name	staclmks
+type	text
+subtype noskip
+setlayer 999999999
+nodieblink 3
+alpha   0
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    256 232
+	 quakeframe 29 4 3
+	 flipframe 0
+drawmethod alpha 6
+drawmethod channel 0.10
+	 sound     data/sounds/mkbong.wav
+	 @cmd Pause 1
+	 @cmd Join 1
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclear/mk12.gif
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclear/mk12.gif
+	 delay     100
+drawmethod alpha 0
+	 frame     data/chars/misc/staclear/mk12.gif
+
+	 delay     5
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclear/mk07.gif
+drawmethod alpha 6
+drawmethod channel 0.25
+	 frame     data/chars/misc/staclear/mk07.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclear/mk07.gif
+drawmethod alpha 6
+drawmethod channel 0.75
+	 frame     data/chars/misc/staclear/mk07.gif
+	 delay     50
+drawmethod alpha 0
+	 frame     data/chars/misc/staclear/mk07.gif
+	 delay     200
+	 sound     data/sounds/mksonny.wav
+drawmethod alpha 0
+	 frame     data/chars/misc/staclear/mk08.gif
+
+	 delay     10
+	 sound     data/sounds/mkflaw.wav
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 frame     data/chars/misc/staclear/mk09.gif
+	 frame     data/chars/misc/staclear/mk10.gif
+	 delay     140
+	 frame     data/chars/misc/staclear/mk09.gif
+	 delay     5
+	 sound     data/sounds/stend.wav
+	 frame     data/chars/misc/staclear/mk11.gif
+	 sound     data/sounds/mklaugh.wav
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 frame     data/chars/misc/staclear/mk11.gif
+	 delay     125
+	 frame     data/chars/misc/staclear/mk11.gif
+
+	 delay     2
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclear/mk11.gif
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclear/mk11.gif
+@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+

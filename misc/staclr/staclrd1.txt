@@ -1,0 +1,39 @@
+name	staclrd1
+type	text
+subtype  noskip
+setlayer 9999999999
+nodieblink 3
+alpha   0
+
+anim idle
+	 loop      0
+	 delay     2
+	 health    7
+	 offset    256 228
+	 flipframe 0
+	 frame     data/chars/misc/staclr/mac01.gif
+	 frame     data/chars/misc/staclr/mac02.gif
+	 frame     data/chars/misc/staclr/mac03.gif
+	 frame     data/chars/misc/staclr/mac04.gif
+	 frame     data/chars/misc/staclr/mac05.gif
+	 frame     data/chars/misc/staclr/mac06.gif
+	 frame     data/chars/misc/staclr/mac07.gif
+	 frame     data/chars/misc/staclr/mac08.gif
+	 frame     data/chars/misc/staclr/mac09.gif
+	 frame     data/chars/misc/staclr/mac10.gif
+	 frame     data/chars/misc/staclr/mac11.gif
+	 frame     data/chars/misc/staclr/mac12.gif
+	 frame     data/chars/misc/staclr/mac13.gif
+	 frame     data/chars/misc/staclr/mac14.gif
+	 frame     data/chars/misc/staclr/mac15.gif
+	 frame     data/chars/misc/staclr/mac16.gif
+	 frame     data/chars/misc/staclr/mac17.gif
+	 frame     data/chars/misc/staclr/mac18.gif
+	 frame     data/chars/misc/staclr/mac19.gif
+	 frame     data/chars/misc/staclr/mac20.gif
+	 frame     data/chars/misc/staclr/mac21.gif
+	 delay     500
+	 frame     data/chars/misc/staclr/mac22.gif
+	 delay     5
+	 frame     data/chars/0misc/empty.gif
+

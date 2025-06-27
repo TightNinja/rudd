@@ -1,0 +1,66 @@
+name	sa
+type	text
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+animationscript   data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+setlayer 999999999
+
+load             sab
+palette 	 data/chars/0misc/sa06.gif
+
+
+anim idle
+	 loop    0
+	 delay   2
+	 offset  45 80
+         custentity sab
+	 summonframe 0 128 5 0 1
+@cmd shadow 10 25 60 0 6 80 80 250
+	 sound   data/sounds/sa.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+@cmd spawnbind "zoomin" 0 0 0	
+	 frame   data/chars/0misc/slink36.gif
+	 frame   data/chars/0misc/slink35.gif
+	 frame   data/chars/0misc/slink34.gif
+	 frame   data/chars/0misc/slink33.gif
+	 frame   data/chars/0misc/slink32.gif
+	 frame   data/chars/0misc/slink31.gif
+	 frame   data/chars/0misc/slink30.gif
+	 frame   data/chars/0misc/slink29.gif
+	 frame   data/chars/0misc/slink28.gif
+	 frame   data/chars/0misc/slink27.gif
+	 frame   data/chars/0misc/slink26.gif
+	 frame   data/chars/0misc/slink25.gif
+	 frame   data/chars/0misc/slink24.gif
+	 frame   data/chars/0misc/slink23.gif
+	 frame   data/chars/0misc/slink21.gif
+	 frame   data/chars/0misc/slink20.gif
+@cmd shadow 0
+	 delay   4
+	 offset  75 145	
+	 drawmethod alpha 0
+	 drawmethod scalex 4
+	 frame   data/chars/0misc/sa06.gif
+	 frame   data/chars/0misc/sa07.gif
+	 frame   data/chars/0misc/sa08.gif
+	 frame   data/chars/0misc/sa09.gif
+	 frame   data/chars/0misc/sa10.gif
+	 offset  75 140	
+	 drawmethod scaley 2.5
+	 drawmethod scalex 1
+	 frame   data/chars/0misc/sa01.gif
+	 frame   data/chars/0misc/sa02.gif
+	 frame   data/chars/0misc/sa03.gif
+	 frame   data/chars/0misc/sa04.gif
+	 frame   data/chars/0misc/sa05.gif
+@cmd spawnbind "zoomout" 0 0 0	
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+#	 drawmethod alpha 6
+#	 drawmethod channel 0.10
+

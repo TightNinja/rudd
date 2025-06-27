@@ -1,0 +1,71 @@
+name dukede1
+type text
+subtype noskip
+shadow 0
+setlayer  9999999999999
+lifespan 12
+animationscript   data/scripts/lib001.c
+load slow
+load slow3
+load staclrd1
+
+anim idle
+@script
+    void vSelf = getlocalvar("self");
+if(frame==1)
+{
+      fademusic(2, "data/music/duked1.ogg", 0, 0);
+}@end_script
+    loop 0
+    custentity staclrd1
+    spawnframe 4 256 232 0 1
+    delay 3
+    offset 277 320
+@cmd spawnbind "zoomin" 0 0 -50
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+drawmethod alpha 1
+    frame data/chars/0misc/bnw02.gif
+drawmethod alpha 0
+    frame data/chars/0misc/empty.gif
+    offset 0 0
+    delay 30
+@cmd spawnbind "zoomout" 0 0 -50
+@cmd spawn001 "slow" "slow" 0 0 0 0 0
+@cmd spawn001 "slow3" "slow4" 0 0 0 0 0
+    frame data/chars/0misc/empty.gif
+    frame data/chars/0misc/empty.gif

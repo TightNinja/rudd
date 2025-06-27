@@ -1,0 +1,69 @@
+name    09ranzc2
+health  0
+type	none
+#candamage enemy
+subject_to_gravity 0
+gfxshadow 1
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       1 5 17
+	 delay      70
+	 offset     96 176
+@cmd velo001 0 0.3 0
+	 frame      data/chars/1seiran/rstrid01.gif
+	 delay      15
+@cmd velo001 0 0.3 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.2 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.1 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 -0.1 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 -0.2 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 -0.3 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 -0.2 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 -0.1 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.1 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.2 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.3 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.2 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 0.1 0
+	 frame      data/chars/1seiran/rstrid01.gif
+@cmd velo001 0 
+	 frame      data/chars/1seiran/rstrid01.gif
+

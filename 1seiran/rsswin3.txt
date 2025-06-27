@@ -1,0 +1,35 @@
+name    rsswin3
+health  1
+type	panel 
+speed   10
+facing  1
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+animationscript   data/scripts/lib001.c
+palette           data/chars/1seiran/samsho05.gif
+
+anim idle
+	 loop      0
+	 delay     100
+	 offset    128 228
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+	 load      slow
+@cmd spawn044 "slow" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 delay     150
+         frame     data/chars/1seiran/samsho11.gif
+	 delay     3
+         frame     data/chars/1seiran/samsho07.gif
+         frame     data/chars/1seiran/samsho08.gif
+         frame     data/chars/1seiran/samsho09.gif
+	 delay     140
+	 sound      data/sounds/samsh02.wav
+         frame     data/chars/1seiran/samsho10.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

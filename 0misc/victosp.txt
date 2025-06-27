@@ -1,0 +1,68 @@
+name    victoSP
+facing  1
+type	panel
+speed     10
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+no_adjust_base 0
+setlayer 888888888
+
+
+palette        data/chars/misc/ess/alter01.gif    
+alternatepal   data/chars/misc/ess/alter02.gif   
+alternatepal   data/chars/misc/ess/alter03.gif   
+alternatepal   data/chars/misc/ess/alter04.gif   
+alternatepal   data/chars/misc/ess/alter05.gif   
+alternatepal   data/chars/misc/ess/alter06.gif   
+alternatepal   data/chars/misc/ess/alter07.gif   
+alternatepal   data/chars/misc/ess/alter08.gif   
+alternatepal   data/chars/misc/ess/alter09.gif   
+alternatepal   data/chars/misc/ess/alter10.gif  
+
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  128 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame   data/chars/0misc/victo25.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame   data/chars/0misc/victo25.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/victo25.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 frame   data/chars/0misc/victo25.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 frame   data/chars/0misc/victo25.gif
+	 delay   15
+	 drawmethod alpha 0
+	 frame   data/chars/0misc/victo25.gif
+	 delay   3
+	 sound   data/sounds/vic01.wav
+	 frame   data/chars/0misc/victo26.gif
+	 frame   data/chars/0misc/victo25.gif
+	 frame   data/chars/0misc/victo26.gif
+	 frame   data/chars/0misc/victo25.gif
+	 frame   data/chars/0misc/victo26.gif
+	 frame   data/chars/0misc/victo25.gif
+	 frame   data/chars/0misc/victo26.gif
+	 frame   data/chars/0misc/victo25.gif
+	 delay   20
+	 frame   data/chars/0misc/victo26.gif
+	 delay   4
+	 sound   data/sounds/vic02.wav
+	 frame   data/chars/0misc/victo27.gif
+	 frame   data/chars/0misc/victo28.gif
+	 frame   data/chars/0misc/victo27.gif
+	 frame   data/chars/0misc/victo28.gif
+	 frame   data/chars/0misc/victo27.gif
+	 frame   data/chars/0misc/victo28.gif
+	 frame   data/chars/0misc/victo27.gif
+

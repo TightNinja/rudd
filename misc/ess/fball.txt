@@ -1,0 +1,94 @@
+name          fball
+shootnum      1
+health        1
+antigravity   40
+speed         6
+jumpheight    1
+gfxshadow     0
+candamage     enemy npc obstacle
+nolife        1
+
+noquake  1 1
+
+script  data/scripts/bounce2.c
+animationscript   data/scripts/lib001.c
+
+anim idle
+	   loop      0
+	   delay     4
+	   bbox      0
+	   offset    84 127
+	   landframe 3
+ 	   hitfx     data/sounds/beatbr4.wav
+           frame     data/chars/misc/ess/fball11.gif
+           frame     data/chars/misc/ess/fball12.gif
+@cmd	updateframe getlocalvar("self") 0
+           frame     data/chars/misc/ess/fball12.gif
+	   delay     4
+	   offset    84 131
+	   sound     data/sounds/exp02.wav
+           frame     data/chars/misc/ess/fball13.gif
+	   attack90  70 71 29 60 7 1 1 0 8 5
+	   jugglecost 7
+	   dropv     2.8 0.4 0
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+
+           frame     data/chars/misc/ess/fball14.gif
+           frame     data/chars/misc/ess/fball15.gif
+           frame     data/chars/misc/ess/fball16.gif
+           frame     data/chars/misc/ess/fball17.gif
+           frame     data/chars/misc/ess/fball18.gif
+           frame     data/chars/misc/ess/fball19.gif
+           frame     data/chars/misc/ess/fball13.gif
+#@cmd killentity getlocalvar("self")
+#	   frame     data/chars/0misc/empty.gif
+
+
+
+

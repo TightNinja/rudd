@@ -1,0 +1,33 @@
+name	tomb
+type	npc
+hostile player
+nomove  1
+aggression 40
+noquake  1
+animationscript	data/scripts/lib001.c
+
+
+anim spawn
+	 loop      0
+	 delay     15
+	 offset    50 71
+	 frame     Data/Chars/misc/zdoor/tomb01.gif
+
+anim idle
+	 loop      0 
+	 delay     15
+	 offset    50 71
+	 frame     Data/Chars/misc/zdoor/tomb01.gif
+
+anim attack
+	 loop      0
+	 delay     15
+	 offset    50 71
+load       zdoorc
+custentity zdoorc
+spawnframe 0 0 0 0 0
+	 frame     Data/Chars/misc/zdoor/tomb01.gif
+@cmd killentity getlocalvar("self")
+	 frame     Data/Chars/misc/zdoor/empty.gif
+
+

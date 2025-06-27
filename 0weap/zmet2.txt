@@ -1,0 +1,172 @@
+name      zmet2
+type      npc
+shadow    0
+hostile   player enemy
+speed     5
+animationscript	data/scripts/lib001.c
+
+aimove chase
+anim spawn  
+	 loop    0
+	 delay   4
+	 offset  50 100
+	 bbox    0
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 sound   data/sounds/metroid1.wav
+         frame   data/chars/0weap/bbmet01.gif  
+	 drawmethod channel 0.4 
+         frame   data/chars/0weap/bbmet02.gif  
+	 drawmethod channel 0.6 
+         frame   data/chars/0weap/bbmet03.gif   
+	 drawmethod channel 0.8
+         frame   data/chars/0weap/bbmet04.gif  
+	 drawmethod alpha off 
+         frame   data/chars/0weap/bbmet05.gif   
+
+anim idle  
+	 loop    1
+	 delay   4
+	 offset  50 100
+	 bbox    0
+         frame   data/chars/0weap/bbmet01.gif   
+         frame   data/chars/0weap/bbmet02.gif   
+         frame   data/chars/0weap/bbmet03.gif   
+         frame   data/chars/0weap/bbmet04.gif   
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet12.gif  
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet04.gif 
+         frame   data/chars/0weap/bbmet03.gif   
+         frame   data/chars/0weap/bbmet02.gif   
+
+anim walk
+	 loop    1 
+	 delay   4
+	 offset  50 100
+	 bbox    0
+         frame   data/chars/0weap/bbmet01.gif   
+         frame   data/chars/0weap/bbmet02.gif   
+         frame   data/chars/0weap/bbmet03.gif   
+         frame   data/chars/0weap/bbmet04.gif   
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet12.gif  
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet04.gif 
+         frame   data/chars/0weap/bbmet03.gif  
+	 sound   data/sounds/metroid2.wav 
+         frame   data/chars/0weap/bbmet02.gif   
+
+anim attack1
+	 range   -50 50
+	 rangez  -100 100
+	 loop    0
+	 delay   4
+	 offset  50 100
+	 bbox    0
+load     quake02
+	 drawmethod scale 0.95
+         frame   data/chars/0weap/bbmet01.gif   
+	 drawmethod scale 0.90
+         frame   data/chars/0weap/bbmet02.gif   
+	 drawmethod scale 0.85
+         frame   data/chars/0weap/bbmet03.gif 
+	 drawmethod scale 0.80
+         frame   data/chars/0weap/bbmet04.gif 
+	 drawmethod scale 0.75
+         frame   data/chars/0weap/bbmet05.gif 
+	 drawmethod scale 0.70
+         frame   data/chars/0weap/bbmet06.gif 
+	 drawmethod scale 0.65
+         frame   data/chars/0weap/bbmet07.gif 
+	 delay   12
+	 drawmethod scale 0.60 
+         frame   data/chars/0weap/bbmet08.gif 
+	 delay   4
+	 drawmethod scale 0.65
+         frame   data/chars/0weap/bbmet09.gif  
+	 drawmethod scale 0.70
+         frame   data/chars/0weap/bbmet10.gif
+	 drawmethod scale 0.75   
+         frame   data/chars/0weap/bbmet11.gif  
+	 drawmethod scale 0.80 
+         frame   data/chars/0weap/bbmet12.gif  
+	 drawmethod scale 0.85
+         frame   data/chars/0weap/bbmet11.gif  
+	 drawmethod scale 0.90 
+         frame   data/chars/0weap/bbmet10.gif 
+	 drawmethod scale 0.95  
+         frame   data/chars/0weap/bbmet09.gif
+	 drawmethod scale 1
+         frame   data/chars/0weap/bbmet08.gif 
+	 drawmethod scale 1.05
+	 sound   data/sounds/bbmet.wav
+         frame   data/chars/0weap/bbmet07.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0 
+	 drawmethod scale 1.10  
+         frame   data/chars/0weap/bbmet06.gif   
+	 drawmethod scale 1.05
+         frame   data/chars/0weap/bbmet05.gif  
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0  
+	 drawmethod scale 1
+         frame   data/chars/0weap/bbmet04.gif 
+         frame   data/chars/0weap/bbmet03.gif 
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0   
+         frame   data/chars/0weap/bbmet02.gif  
+	 delay   6
+         frame   data/chars/0weap/bbmet01.gif   
+         frame   data/chars/0weap/bbmet02.gif   
+         frame   data/chars/0weap/bbmet03.gif   
+         frame   data/chars/0weap/bbmet04.gif 
+	 sound   data/sounds/metroid1.wav  
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet12.gif  
+         frame   data/chars/0weap/bbmet11.gif   
+         frame   data/chars/0weap/bbmet10.gif   
+         frame   data/chars/0weap/bbmet09.gif   
+         frame   data/chars/0weap/bbmet08.gif 
+         frame   data/chars/0weap/bbmet07.gif   
+         frame   data/chars/0weap/bbmet06.gif   
+         frame   data/chars/0weap/bbmet05.gif   
+         frame   data/chars/0weap/bbmet04.gif 
+         frame   data/chars/0weap/bbmet03.gif   
+         frame   data/chars/0weap/bbmet02.gif  
+
+  
+
+
+
+
+ 
+
+

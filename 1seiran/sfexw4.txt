@@ -1,0 +1,29 @@
+name	sfexw4
+type	text
+nomove  1
+facing  1
+shadow  0
+alpha   0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+setlayer 999988888
+
+animationscript   data/scripts/lib001.c
+
+
+anim idle
+	 loop      0
+	 delay     100
+	 offset    128 228
+	 @cmd velo001 2.5
+         frame      data/chars/1seiran/sfex07.gif
+	 delay     700
+	 @cmd velo001 0
+         frame      data/chars/1seiran/sfex07.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

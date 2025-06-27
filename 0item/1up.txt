@@ -1,0 +1,47 @@
+name	1up
+health	0
+type	item
+facing  1
+nolife  1
+candamage player
+gfxshadow  1
+
+didhitscript 		data/chars/0item/1up.c
+
+anim spawn
+	loop	0
+	delay	13
+	offset	9 18
+	itembox	0
+	drawmethod alpha 6
+	drawmethod channel 0.25
+	frame	data/chars/0item/1up1.gif
+	frame	data/chars/0weap/empty.gif
+	frame	data/chars/0item/1up1.gif
+	frame	data/chars/0weap/empty.gif
+	frame	data/chars/0item/1up1.gif
+	frame	data/chars/0weap/empty.gif
+	drawmethod channel 0.50
+	frame	data/chars/0item/1up2.gif
+	delay   19
+	drawmethod alpha 6
+	drawmethod channel 0.75
+	frame	data/chars/0item/1up3.gif
+	delay   9
+	drawmethod alpha 0
+	frame	data/chars/0item/1up2.gif
+
+anim idle
+	loop	1
+	delay	13
+	offset	9 18
+	itembox	8 15 4 4
+	frame	data/chars/0item/1up1.gif
+	frame	data/chars/0item/1up2.gif
+	delay   19
+	frame	data/chars/0item/1up3.gif
+	delay   9
+	frame	data/chars/0item/1up2.gif
+
+
+

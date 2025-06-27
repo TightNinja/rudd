@@ -1,0 +1,77 @@
+name	Expflash
+type	none
+shadow	0
+toflip  1
+#alpha	1
+subject_to_gravity 0
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 loop      1
+	 delay     2
+	 offset    20 20
+	 sound     data/sounds/exp01.wav
+	 hitfx     data/sounds/beatbr4.wav
+	 frame     data/chars/0misc/shot1.gif
+	 frame     data/chars/0misc/shot2.gif
+	 frame     data/chars/0misc/shot3.gif
+	 frame     data/chars/0misc/shot4.gif
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 0
+	 move      5
+	 movea     5
+	 frame     data/chars/0misc/shot1.gif
+	 move      0
+	 frame     data/chars/0misc/shot2.gif
+	 frame     data/chars/0misc/shot3.gif
+	 frame     data/chars/0misc/shot4.gif
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 0
+	 move      -10
+	 movea     -10
+	 frame     data/chars/0misc/shot1.gif
+	 move      0
+	 frame     data/chars/0misc/shot2.gif
+	 frame     data/chars/0misc/shot3.gif
+	 frame     data/chars/0misc/shot4.gif
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 0
+	 move      0
+	 movea     10
+	 frame     data/chars/0misc/shot1.gif
+	 move      0
+	 frame     data/chars/0misc/shot2.gif
+	 frame     data/chars/0misc/shot3.gif
+	 frame     data/chars/0misc/shot4.gif
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 0
+	 move      10
+	 movea     -10
+	 frame     data/chars/0misc/shot1.gif
+	 move      0
+	 frame     data/chars/0misc/shot2.gif
+	 frame     data/chars/0misc/shot3.gif
+	 frame     data/chars/0misc/shot4.gif
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/0misc/shot5.gif
+	 drawmethod alpha 0
+	 attack    0
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+

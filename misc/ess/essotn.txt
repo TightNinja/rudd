@@ -1,0 +1,27 @@
+name    essotn
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim spawn
+	 loop       0
+	 delay      3
+	 offset     80 129
+	 drawmethod scale 1.25
+	 quakeframe 0 2 -2
+         frame      data/chars/misc/ess/sotn02.gif
+         frame      data/chars/misc/ess/sotn03.gif
+         frame      data/chars/misc/ess/sotn04.gif
+         frame      data/chars/misc/ess/sotn05.gif
+         frame      data/chars/misc/ess/sotn06.gif
+         frame      data/chars/misc/ess/sotn07.gif
+         frame      data/chars/misc/ess/sotn08.gif
+         frame      data/chars/misc/ess/sotn09.gif
+         frame      data/chars/misc/ess/sotn10.gif
+         frame      data/chars/misc/ess/sotn11.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

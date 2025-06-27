@@ -1,0 +1,6 @@
+name       LevelEnd2
+type       endlevel
+
+anim idle
+   frame   data/chars/0misc/empty.gif
+   frame   data/chars/0misc/empty.gif

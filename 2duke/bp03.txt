@@ -1,0 +1,47 @@
+name          bp03
+type          none
+antigravity   40
+speed         6
+jumpheight    2
+gfxshadow     1
+subject_to_wall 0
+#candamage    player npc obstacle
+nolife        1
+
+noquake  1 1
+
+script  data/scripts/bounce2.c
+animationscript   data/scripts/lib001.c
+
+anim idle
+	   loop      0
+	   delay     8
+	   bbox      0
+	   offset    16 16
+	   landframe 5
+	   frame     Data/chars/2duke/bp31.gif
+	   frame     Data/chars/2duke/bp32.gif
+	   frame     Data/chars/2duke/bp33.gif
+	   frame     Data/chars/2duke/bp34.gif
+@cmd	updateframe getlocalvar("self") 0
+	   frame     Data/Bgs/01wood/det/stone04.gif
+	   delay     6
+	   sound     data/sounds/stone01.wav
+	   frame     Data/chars/2duke/bp31.gif
+	   frame     Data/chars/2duke/bp32.gif
+	   frame     Data/chars/2duke/bp33.gif
+	   frame     Data/chars/2duke/bp34.gif
+	   frame     Data/chars/2duke/bp31.gif
+	   frame     Data/chars/2duke/bp32.gif
+	   delay     500
+	   frame     Data/chars/2duke/bp32.gif
+	   delay     5
+	   frame     data/chars/0misc/empty.gif
+	   frame     Data/chars/2duke/bp32.gif
+	   frame     data/chars/0misc/empty.gif
+	   frame     Data/chars/2duke/bp32.gif
+@cmd killentity getlocalvar("self")
+	   frame     data/chars/0misc/empty.gif
+
+
+

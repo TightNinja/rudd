@@ -1,0 +1,24 @@
+name	stageinT
+#STAGEIN DELAY FOR EARLY SPAWNS IN STAGES
+type	none
+setlayer 9999999999
+nodieblink 3
+lifespan 6
+Subject_to_Gravity 0
+Subject_to_Wall 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+
+load     stagein
+
+anim idle
+	 loop      0
+	 delay     9
+	 offset    0 228
+	 flipframe 0
+	 custentity stagein
+	 spawnframe 1 0 0 0 0
+	 frame     data/chars/misc/stagetr/0001.gif
+	 frame     data/chars/misc/stagetr/0032.gif
+
+

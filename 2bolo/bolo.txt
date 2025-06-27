@@ -1,0 +1,1642 @@
+name          bolo
+type          enemy
+candamage     player obstacle npc
+subject_to_obstacle 0
+score         1 5
+health        100
+jugglepoints  20
+speed         6
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+blockodds     1
+thold         5
+#cantgrab      1
+atchain       1 0 0 0 0
+diesound      data/sounds/pain10.wav
+projectilehit enemy obstacle
+
+nopassiveblock 0
+
+#aggression    60  -  abobo
+aggression    10
+
+aimove     chasez
+aimove     avoidx
+
+onmoveascript	data/scripts/hithead.c
+animationscript   data/scripts/lib001.c
+takedamagescript  data/scripts/finisher.c
+ondrawscript	  data/scripts/shadowon.c
+onblockWscript    data/scripts/spikesw.c 
+
+palette         data/chars/2bolo/idle01.gif   
+alternatepal    data/chars/2bolo/alt01.gif      
+alternatepal    data/chars/2bolo/alt02.gif  
+alternatepal    data/chars/2bolo/alt03.gif  
+alternatepal    data/chars/2bolo/alt04.gif  
+alternatepal    data/chars/2bolo/alterbr.gif 
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      1
+	 offset     80 129
+         frame      data/chars/2bolo/a103.gif  
+         frame      data/chars/2bolo/a103.gif    
+
+anim follow101 # duke's palace elevator
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      200
+	 offset     80 129
+	 jumpframe  1 2 0 0
+	 landframe  2
+	 quakeframe 2 3 2
+	 hitflash   Qflash2
+         frame      data/chars/0misc/empty.gif  
+	 attack     66 78 44 52 15 1 1 0 7 5
+	 delay      999
+         frame      data/chars/2bolo/lift01.gif  
+	 sound      data/sounds/exp03.wav
+	 attack     0
+	 delay      6
+         frame      data/chars/2bolo/rise02.gif  
+         frame      data/chars/2bolo/rise02.gif  
+         frame      data/chars/2bolo/rise02.gif  
+         frame      data/chars/2bolo/rise02.gif  
+         frame      data/chars/2bolo/rise02.gif  
+	 delay      12
+         frame      data/chars/2bolo/rise02.gif  
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/idle01.gif   
+
+anim block
+	 loop       0
+	 delay      2
+	 move       -3
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/block.gif
+         frame      data/chars/2bolo/block.gif
+         frame      data/chars/2bolo/block.gif
+         frame      data/chars/2bolo/block.gif
+         frame      data/chars/2bolo/block.gif
+         frame      data/chars/2bolo/block.gif
+	 delay      15
+         frame      data/chars/2bolo/block.gif
+
+anim walk
+	 loop       1
+	 delay      15
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/wk01.gif
+         frame      data/chars/2bolo/wk02.gif
+         frame      data/chars/2bolo/wk03.gif
+         frame      data/chars/2bolo/wk04.gif
+         frame      data/chars/2bolo/wk05.gif
+         frame      data/chars/2bolo/wk06.gif
+
+anim attack1
+@cmd attackoff
+	 loop       0
+	 delay      4
+	 range      36 47
+	 rangez     -2 2
+	 offset     80 129
+	 bbox       70 68 31 62
+	 fastattack 1
+         frame      data/chars/2bolo/a101.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      6
+	 attack1    85 77 65 18 9 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/a102.gif
+	 delay      4
+	 attack1    0 0 0 0
+         frame      data/chars/2bolo/a103.gif
+         frame      data/chars/2bolo/a201.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      6
+	 attack5    85 77 65 18 9 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/a202.gif
+	 delay      4
+	 attack5    0 0 0 0
+         frame      data/chars/2bolo/a203.gif
+         frame      data/chars/2bolo/a101.gif
+	 hitfx      data/sounds/beatsf1.wav
+	 delay      6
+	 attack     85 77 65 18 9 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/a102.gif
+	 delay      25
+	 attack     0 0 0 0
+         frame      data/chars/2bolo/a103.gif
+
+anim freespecial
+@cmd attackoff
+	 range      48 60
+	 rangez     -2 2
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       70 68 31 62
+	 sound      data/sounds/grunt12.wav
+@cmd ani0020 openborconstant("ANI_FREESPECIAL2") openborconstant("ANI_PAIN5")
+         @cmd velo001 0.5 0 0
+         frame      data/chars/2bolo/a301.gif
+         frame      data/chars/2bolo/a301.gif
+         frame      data/chars/2bolo/a302.gif
+         frame      data/chars/2bolo/a302.gif
+         @cmd velo001 0.3 0 0
+         frame      data/chars/2bolo/a302.gif
+         frame      data/chars/2bolo/a302.gif
+         @cmd velo001 0 0 0
+	 hitfx      data/sounds/beatsf1.wav
+	 delay      25
+	 attack5    81 73 63 26 12 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/a303.gif
+	 attack5    0
+	 delay      10
+	 move       0
+         frame      data/chars/2bolo/a302.gif
+
+anim freespecial2
+	 range      -5 60
+	 rangez     -2 2
+	 bbox       70 68 31 62
+	 delay      7
+	 offset     80 129
+	 move       1
+         frame      data/chars/2bolo/b101.gif
+         frame      data/chars/2bolo/b102.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      15
+	 attack     76 89 54 15 12 1 1 0 8 7
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/b103.gif
+	 move       0
+	 delay      9
+	 attack     0
+         frame      data/chars/2bolo/b102.gif
+         frame      data/chars/2bolo/b101.gif
+
+anim riseattack
+	 range      -5 60
+	 rangez     -2 2
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2bolo/rise01.gif
+	 delay      6
+         frame      data/chars/2bolo/rise02.gif
+	 move       1
+         frame      data/chars/2bolo/b101.gif
+         frame      data/chars/2bolo/b102.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      20
+	 attack     76 89 54 15 12 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1 1.5 0
+         frame      data/chars/2bolo/b103.gif
+	 move       0
+	 delay      9
+	 attack     0
+         frame      data/chars/2bolo/b102.gif
+         frame      data/chars/2bolo/b101.gif
+
+anim upper
+	 range      -5 75
+	 rangez     -2 2
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2bolo/a401.gif
+	 delay      7
+         frame      data/chars/2bolo/a402.gif
+	 hitfx      data/sounds/beatkil2.wav
+	 attack     90 59 53 39 8 1 1 0 10 5
+	 forcedirection -1
+	 dropv      -1 1.8 0
+         frame      data/chars/2bolo/a403.gif
+	 attack     0
+         frame      data/chars/2bolo/a404.gif
+         frame      data/chars/2bolo/a101.gif
+
+anim special
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0
+	 followanim 2
+	 followcond 3
+         frame      data/chars/2bolo/a101.gif
+	 hitfx      data/sounds/grab.wav
+	 attack     90 59 53 39 0 0 1 1 10 5
+	 forcedirection -1
+	 dropv      1 1 0
+         frame      data/chars/2bolo/esc01.gif
+	 delay      20
+	 attack     0
+         frame      data/chars/2bolo/esc02.gif
+anim follow2
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0
+	 attack     0
+@cmd slamstart2
+@cmd antiwall2 17 -9 0
+@cmd position 1 50 5 1 0
+         frame      data/chars/2bolo/esc01.gif
+	 delay      7
+@cmd position 2 45 5 1 0
+         frame      data/chars/2bolo/esc02.gif
+	 sound      data/sounds/grunt12.wav
+	 delay      40
+@cmd position 2 34 55 1 0
+         frame      data/chars/2bolo/esc03.gif
+	 delay      8
+@cmd position 19 -19 50 -0.5 0
+         frame      data/chars/2bolo/esc04.gif
+@cmd position 9 20 50 -0.5 0
+         frame      data/chars/2bolo/esc05.gif
+	 delay      1
+@cmd position 9 42 19 -0.5 0
+         frame      data/chars/2bolo/esc06.gif
+@cmd depost 0
+@cmd finish 15 1 -2 1 0 0
+	 delay      25
+         frame      data/chars/2bolo/esc06.gif
+
+anim jump
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       71 73 28 42
+         frame      data/chars/2bolo/ju01.gif
+         frame      data/chars/2bolo/ju02.gif
+	 delay      99
+         frame      data/chars/2bolo/ju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/rise02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 73 28 42
+	 landframe  1
+         frame      data/chars/2bolo/ju01.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/rise02.gif
+
+anim grabbed
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain06.gif
+	 bbox       82 87 25 21
+         frame      data/chars/2bolo/grbd01.gif
+
+anim spain
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/grbd02.gif
+	 delay      8
+         frame      data/chars/2bolo/pain06.gif
+
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain02.gif
+
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain01.gif
+
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2bolo/pain03.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2bolo/pain03.gif
+
+#stunned
+anim pain7
+	 loop       0
+	 offset     80 129
+	 bbox       70 68 31 62
+	 delay      25
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+
+#breathless3 for dd punch chain
+anim pain8
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       70 68 31 62
+         frame      data/chars/2bolo/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2bolo/pain03.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall04.gif
+
+anim burn
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+load     burn
+@cmd spawn001 "burn" "burn" 0 0 0 0 0
+	 drawmethod remap 5
+         frame      data/chars/2bolo/fall03.gif
+	 drawmethod remap -1
+         frame      data/chars/2bolo/fall03.gif
+@cmd	updateframe getlocalvar("self") 0
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2bolo/fall04.gif
+
+anim rise
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2bolo/fall04.gif
+         frame      data/chars/2bolo/rise01.gif
+         frame      data/chars/2bolo/rise02.gif
+
+#elbow fall
+anim fall5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 landframe  2
+         frame      data/chars/2bolo/fall16.gif
+	 delay      999
+         frame      data/chars/2bolo/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall12.gif
+         frame      data/chars/2bolo/fall13.gif
+
+anim rise5
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2bolo/fall13.gif
+         frame      data/chars/2bolo/rise02.gif
+         frame      data/chars/2bolo/rise03.gif
+
+#uppercut fall
+anim fall6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  4
+         frame      data/chars/2bolo/pain02.gif
+	 delay      30
+	 bbox       65 85 31 36
+         frame      data/chars/2bolo/fall01.gif
+	 delay      15
+	 bbox       62 95 35 24
+         frame      data/chars/2bolo/fall02.gif
+	 delay      999
+	 bbox       69 100 24 33
+         frame      data/chars/2bolo/fall09.gif
+	 delay      9
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall10.gif
+         frame      data/chars/2bolo/fall12.gif
+         frame      data/chars/2bolo/fall13.gif
+
+anim rise6
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2bolo/fall13.gif
+         frame      data/chars/2bolo/rise02.gif
+         frame      data/chars/2bolo/rise03.gif
+
+########anim fall's that don't allow juggling
+
+anim fall3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall04.gif
+
+########double dragons throw
+
+anim fall10
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 73 28 42
+	 landframe  3
+	 flipframe  1
+	 attack3    68 97 42 36 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall17.gif
+	 delay      15
+	 bbox       62 95 35 24
+	 attack3    61 89 42 33 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+	 delay      999
+	 bbox       62 104 33 26
+	 attack3    62 100 38 31 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 attack     0 0 0 0 
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+########double dragons flip throw
+
+anim pain11
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/pain04.gif
+
+anim fall12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  1
+	 sound      data/sounds/pain1.wav
+	 attack     69 11 35 34 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall21.gif
+	 delay      15
+	 attack     69 11 35 34 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+	 delay      999
+	 attack     63 101 28 29 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+########double dragons coop throw billy
+
+anim fall102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 73 28 42
+	 landframe  3
+	 flipframe  1
+	 sound      data/sounds/pain1.wav
+	 attack     69 11 35 34 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall21.gif
+	 delay      15
+	 attack     69 11 35 34 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+	 delay      999
+	 attack     63 101 28 29 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall02.gif
+     bbox       0
+	 delay      12
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#anim rise102
+
+########Billy slam 01
+
+anim fall20
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+         frame      data/chars/2bolo/fall23.gif
+	 delay      10
+         frame      data/chars/2bolo/fall24.gif
+
+anim rise20
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 flipframe  1
+         frame      data/chars/2bolo/fall24.gif
+	 delay      13
+         frame      data/chars/2bolo/rise01.gif
+         frame      data/chars/2bolo/rise02.gif
+
+########Billy slam 02
+
+anim fall21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2bolo/fall04.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+########screw falling
+
+#not juggling
+anim fall13
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  3
+         frame      data/chars/2bolo/fall05.gif
+         frame      data/chars/2bolo/fall06.gif
+	 delay      999
+         frame      data/chars/2bolo/fall07.gif
+	 bbox       0
+	 delay      8
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall13.gif
+	 delay      12
+         frame      data/chars/2bolo/fall13.gif
+
+#big bodies screw falling rise
+anim rise13
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2bolo/fall13.gif
+         frame      data/chars/2bolo/rise02.gif
+         frame      data/chars/2bolo/rise03.gif
+
+#juggling
+anim fall14
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       64 84 32 40
+	 landframe  3
+	 flipframe  3
+         frame      data/chars/2bolo/fall05.gif
+         frame      data/chars/2bolo/fall06.gif
+	 delay      999
+         frame      data/chars/2bolo/fall07.gif
+	 bbox       0
+	 delay      8
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall13.gif
+	 delay      12
+         frame      data/chars/2bolo/fall13.gif
+
+anim rise14
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2bolo/fall13.gif
+         frame      data/chars/2bolo/rise02.gif
+         frame      data/chars/2bolo/rise03.gif
+
+########colossus falling
+
+#not juggling
+anim fall30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+	 hitfx      data/sounds/indirect.wav
+	 attack     63 78 31 41 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall05.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+	 attack     0 0 0 0
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+########double dragons custom combos
+
+#moving backwards A01
+anim pain15
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -2
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain02.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+#moving backwards A02
+anim pain16
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -2
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+	 move       -1
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain01.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+#fast pain1
+anim pain17
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2bolo/pain03.gif
+
+#fast pain2
+anim pain18
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2bolo/pain03.gif
+
+#moving backwards B01 faster
+anim pain25
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -6
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 move       -3
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 move       -1
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain02.gif
+	 delay      24
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+
+#moving backwards B02 slower
+anim pain26
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -4
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain01.gif
+	 delay      40
+         frame      data/chars/2bolo/pain04.gif
+
+anim pain27
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -4
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain02.gif
+	 delay      40
+         frame      data/chars/2bolo/pain04.gif
+
+#stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 jumpframe  0 0.05 0
+         frame      data/chars/2bolo/fall29.gif
+	 delay      25
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+
+########ip man pain
+
+anim pain70
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain01.gif
+	 delay      15
+         frame      data/chars/2bolo/pain03.gif
+
+anim pain71
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+         frame      data/chars/2bolo/pain03.gif
+
+anim pain72
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain07.gif
+	 delay      15
+         frame      data/chars/2bolo/pain09.gif
+
+anim pain73
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/pain08.gif
+	 delay      15
+         frame      data/chars/2bolo/pain09.gif
+
+anim pain74
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/fall03.gif
+	 delay      15
+         frame      data/chars/2bolo/fall04.gif
+	 delay      15
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/fall04.gif
+	 delay      8
+         frame      data/chars/2bolo/rise01.gif
+         frame      data/chars/2bolo/rise02.gif
+
+anim pain75
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/fall04.gif
+	 delay      5
+	 bbox       71 105 33 26
+         frame      data/chars/2bolo/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/rise01.gif
+         frame      data/chars/2bolo/rise02.gif
+
+anim fall101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+	 attack     62 78 36 41 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+         frame      data/chars/2bolo/fall01.gif
+	 attack     63 99 41 31 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2bolo/fall02.gif
+	 attack     0 0 0 0
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#############BILLY & JIMMY ULTRA
+
+#moving backwards C01
+anim pain90
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -1
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain02.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+#moving backwards C02
+anim pain91
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -1
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain01.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+#stomach blows
+anim fall90
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       68 65 33 65
+	 landframe  3
+         frame      data/chars/2bolo/fall29.gif
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall91
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+         frame      data/chars/2bolo/fall29.gif
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#juggle blows
+anim fall92
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2bolo/fall31.gif
+	 delay      21
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall93
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#jimmy super linker 02
+anim pain95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+	 move       -2
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      20
+	 move       0
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain03.gif
+
+#jimmy stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 65 33 65
+         frame      data/chars/2bolo/fall29.gif
+	 delay      19
+	 offset     80 129
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+         frame      data/chars/2bolo/pain03.gif
+
+#falling like a rock
+anim fall99
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 4 1 3
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall9.wav
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall04.gif
+
+falldie  2
+nodieblink 1
+#surrender boss
+anim death50
+	 loop       0
+	 delay      8
+	 offset     80 131
+	 bbox       0 0 0 0
+         frame      data/chars/2bolo/rise02.gif
+	 frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/rise02.gif
+
+#SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2bolo/pain01.gif #follow30
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain03.gif #follow31
+         frame      data/chars/2bolo/pain04.gif #follow 1 #follow27
+         frame      data/chars/2bolo/pain04.gif #follow32
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain07.gif
+         frame      data/chars/2bolo/pain08.gif
+         frame      data/chars/2bolo/pain09.gif
+@cmd    conditionalflip3
+         frame      data/chars/2bolo/fall01.gif #follow15
+#10
+         frame      data/chars/2bolo/fall02.gif
+         frame      data/chars/2bolo/fall03.gif #follow12
+         frame      data/chars/2bolo/fall04.gif #follow17
+         frame      data/chars/2bolo/fall05.gif
+         frame      data/chars/2bolo/fall06.gif #follow 2
+         frame      data/chars/2bolo/fall07.gif
+         frame      data/chars/2bolo/fall08.gif #follow20 #follow25 #follow26
+         frame      data/chars/2bolo/fall09.gif #follow 7
+         frame      data/chars/2bolo/fall10.gif #follow 8
+         frame      data/chars/2bolo/fall11.gif #follow 3
+#20
+         frame      data/chars/2bolo/fall12.gif
+         frame      data/chars/2bolo/fall12.gif
+         frame      data/chars/2bolo/fall12.gif
+         frame      data/chars/2bolo/fall16.gif
+         frame      data/chars/2bolo/fall17.gif #follow21
+         frame      data/chars/2bolo/fall18.gif
+         frame      data/chars/2bolo/fall19.gif
+         frame      data/chars/2bolo/fall20.gif
+         frame      data/chars/2bolo/fall21.gif
+         frame      data/chars/2bolo/fall22.gif #follow 9
+#30
+         frame      data/chars/2bolo/fall23.gif #follow28
+         frame      data/chars/2bolo/fall24.gif #follow18 follow19
+         frame      data/chars/2bolo/fall25.gif #follow14
+         frame      data/chars/2bolo/fall26.gif #follow22 #follow23 #follow24
+@cmd    conditionalflip3
+         frame      data/chars/2bolo/fall27.gif #follow40
+         frame      data/chars/2bolo/fall28.gif #follow38
+@cmd    conditionalflip3
+         frame      data/chars/2bolo/fall29.gif
+         frame      data/chars/2bolo/fall30.gif
+         frame      data/chars/2bolo/fall31.gif
+         frame      data/chars/2bolo/pain01.gif #follow33
+#40
+         frame      data/chars/2bolo/pain02.gif #follow34
+         frame      data/chars/2bolo/pain03.gif #follow35
+         frame      data/chars/2bolo/pain04.gif #follow37
+         frame      data/chars/2bolo/fall27.gif
+         frame      data/chars/2bolo/fall28.gif
+         frame      data/chars/2bolo/fall27.gif
+         frame      data/chars/2bolo/rise01.gif
+
+##################################### pain with voice sfx 
+
+#moving backwards C01
+anim pain50
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       70 68 31 62
+	 move       -1
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain02.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+#moving backwards C02
+anim pain51
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       70 68 31 62
+	 move       -1
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+         frame      data/chars/2bolo/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain01.gif
+	 delay      40
+         frame      data/chars/2bolo/pain03.gif
+
+anim fall50
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall31.gif
+	 delay      21
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall51
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#stunned
+anim pain52
+	 loop       0
+	 offset     80 129
+	 bbox       70 68 31 62
+	 delay      19
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+
+anim fall52
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall31.gif
+	 delay      21
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#jimmy super linker 02
+anim pain53
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       70 68 31 62
+	 move       -2
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+         frame      data/chars/2bolo/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain04.gif
+         frame      data/chars/2bolo/pain05.gif
+         frame      data/chars/2bolo/pain06.gif
+
+anim fall53
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#breathless1
+anim pain54
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       70 68 31 62
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/pain01.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2bolo/pain03.gif
+
+#breathless2
+anim pain55
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 20 49
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/pain02.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2bolo/pain03.gif
+
+anim fall54
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall31.gif
+	 delay      21
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall55
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#jimmy stomach blows
+anim pain56
+	 loop       0
+	 delay      2
+	 offset     80 131
+	 bbox       70 68 31 62
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall29.gif
+	 delay      210
+	 offset     80 129
+         frame      data/chars/2bolo/pain03.gif
+
+anim fall56
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#stomach blows
+anim fall57
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall29.gif
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall58
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall29.gif
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+#juggle blows
+anim fall59
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall31.gif
+	 delay      21
+         frame      data/chars/2bolo/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+anim fall60
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       70 68 31 62
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain24.wav
+         frame      data/chars/2bolo/fall30.gif
+	 delay      21
+         frame      data/chars/2bolo/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2bolo/fall01.gif
+	 delay      999
+         frame      data/chars/2bolo/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2bolo/fall03.gif
+         frame      data/chars/2bolo/fall04.gif
+
+
+

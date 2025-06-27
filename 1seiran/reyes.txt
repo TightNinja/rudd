@@ -1,0 +1,35 @@
+name    reyes
+health  1
+type	text
+facing  1
+setlayer 999988888
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  128 224
+	 bbox    0 0 0 0
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+         frame      data/chars/1seiran/reyes01.gif
+         frame      data/chars/1seiran/reyes02.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

@@ -1,0 +1,36 @@
+name    slink2
+health  1
+type	none
+subtype noskip
+#alpha   1
+lifespan 1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  45 75
+	 bbox    0 0 0 0
+#	 sound   data/sounds/zen01.wav	
+	 frame   data/chars/0misc/slink02.gif
+	 frame   data/chars/0misc/slink03.gif
+	 frame   data/chars/0misc/slink04.gif
+	 frame   data/chars/0misc/slink05.gif
+	 frame   data/chars/0misc/slink06.gif
+	 frame   data/chars/0misc/slink07.gif
+	 frame   data/chars/0misc/slink08.gif
+	 frame   data/chars/0misc/slink09.gif
+	 frame   data/chars/0misc/slink10.gif
+	 frame   data/chars/0misc/slink11.gif
+	 frame   data/chars/0misc/slink12.gif
+	 frame   data/chars/0misc/slink13.gif
+	 frame   data/chars/0misc/slink14.gif
+	 frame   data/chars/0misc/slink15.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

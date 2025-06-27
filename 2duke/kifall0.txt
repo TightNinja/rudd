@@ -1,0 +1,24 @@
+name	kifall0
+type	none
+shadow	0
+setlayer 999999999
+subject_to_minz 0
+subject_to_maxz 0
+subject_to_screen 0
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop       0
+	 delay      100
+	 offset     80 129
+	 jumpframe  0 -3 -1 3 0
+	 landframe  3
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall01.gif
+	 frame     data/chars/0misc/empty.gif
+
+#	@cmd killentity getlocalvar("self")
+#	 frame     data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,20 @@
+name    ranzou04
+health  1
+type	text
+facing  1
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   9000
+	 offset  128 224
+	 bbox    0
+	 sound   data/sounds/beep.wav
+	 frame   data/chars/0misc/ranzou04.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

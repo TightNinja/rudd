@@ -1,0 +1,50 @@
+name    rsswin1
+health  1
+type	text
+facing  1
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+animationscript   data/scripts/lib001.c
+palette           data/chars/1seiran/samsho01.gif
+load    rsswin2
+
+anim idle
+@script
+void vSelf = getlocalvar("self");
+if(frame==1)
+{
+fademusic(10, "data/music/SAMSHOW2.ogg", 0,0);
+}
+@end_script
+	 loop    0
+	 delay   1
+	 offset  128 228
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/samsho01.gif
+	 delay   4
+         frame      data/chars/1seiran/samsho01.gif
+#	 @cmd Pause 1
+#	 @cmd Join 1
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/samsho01.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/samsho01.gif
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/samsho01.gif
+	 delay   70
+	 drawmethod alpha 0
+@cmd spawn044 "rsswin2" 355 0 224
+         frame      data/chars/1seiran/samsho01.gif
+	 delay   50
+         frame      data/chars/1seiran/samsho02.gif
+	 delay   680
+         frame      data/chars/1seiran/samsho03.gif
+
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

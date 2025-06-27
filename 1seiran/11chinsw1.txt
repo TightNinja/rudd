@@ -1,0 +1,72 @@
+name    11chinsw1
+health  0
+type	none
+gfxshadow 1
+#candamage enemy
+subject_to_gravity 0
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       1 16 18
+	 delay      3
+	 offset     96 166
+	 bbox       0
+	 drawmethod alpha 6
+	 drawmethod channel 0.1
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.2
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.3
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.5
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.7
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/cta16.gif
+	 drawmethod channel 0.9
+	 frame      data/chars/1seiran/cta16.gif
+	 delay      15
+	 drawmethod alpha off
+         frame      data/chars/1seiran/cta16.gif
+         frame      data/chars/1seiran/cta12.gif
+	 delay      70
+         frame      data/chars/1seiran/cta13.gif
+	 delay      9
+         frame      data/chars/1seiran/cta12.gif
+         frame      data/chars/1seiran/cbio01.gif
+	 delay      25
+         frame      data/chars/1seiran/cbio02.gif
+	 delay      9
+         frame      data/chars/1seiran/cta26.gif
+load     12chinsw2
+@cmd spawn001 "12chinsw2" "12chinsw2" 0 0 0 0 0
+         frame      data/chars/1seiran/cta27.gif
+         frame      data/chars/1seiran/cta28.gif
+         frame      data/chars/1seiran/cta27.gif
+

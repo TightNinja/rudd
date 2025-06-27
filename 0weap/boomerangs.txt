@@ -1,0 +1,253 @@
+name      	BoomerangS
+type      	npc
+shootnum    1
+gfxshadow 	1
+nolife    	1
+remove		0
+bounce 1
+candamage 	enemy
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_hole 1
+subject_to_wall 1
+subject_to_basemap 1
+subject_to_obstacle 0
+offscreenkill  300
+
+load BoomerangW2
+
+script  data/scripts/bounce3.c
+animationscript   data/scripts/lib001.c
+
+anim idle
+@script
+    void self = getlocalvar("self"); //Get calling entity
+    void Parent = getentityproperty(self, "parent");
+    void P1 = getplayerproperty(0, "entity");
+    void P2 = getplayerproperty(1, "entity");    
+    int Dir = getentityproperty(self,"direction");
+    int x = getentityproperty(self,"x");
+    int z = getentityproperty(self,"z");
+
+    if(P1 && frame>7){
+      int PIndex = getentityproperty(Parent,"playerindex");
+      void P1Anim = getentityproperty(P1, "animationID");
+      void P2Anim = getentityproperty(P2, "animationID");
+      void Model = getentityproperty(P1, "model");
+      int P1x = getentityproperty(P1,"x");
+      int P1z = getentityproperty(P1,"z");
+      int P2x = getentityproperty(P2,"x");
+      int P2z = getentityproperty(P2,"z");
+
+      if(P1x-x<=14 && P1x-x>=-14 && P1z-z<=5 && P1z-z>=-5 && Model=="Billy" && ( P1Anim == openborconstant("ANI_IDLE") || P1Anim == openborconstant("ANI_WALK") && P2Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P1, "velocity", 0, 0, 0);
+        changeentityproperty(P1, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P1x-x<=14 && P1x-x>=-14 && P1z-z<=5 && P1z-z>=-5 && Model=="Jimmy" && ( P1Anim == openborconstant("ANI_IDLE") || P1Anim == openborconstant("ANI_WALK") && P2Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P1, "velocity", 0, 0, 0);
+        changeentityproperty(P1, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P1x-x<=14 && P1x-x>=-14 && P1z-z<=5 && P1z-z>=-5 && Model=="CBilly" && ( P1Anim == openborconstant("ANI_IDLE") || P1Anim == openborconstant("ANI_WALK") && P2Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P1, "velocity", 0, 0, 0);
+        changeentityproperty(P1, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P1x-x<=14 && P1x-x>=-14 && P1z-z<=5 && P1z-z>=-5 && Model=="Sonny" && ( P1Anim == openborconstant("ANI_IDLE") || P1Anim == openborconstant("ANI_WALK") && P2Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P1, "velocity", 0, 0, 0);
+        changeentityproperty(P1, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+    }
+
+    if(P2 && frame>7){
+      int PIndex = getentityproperty(Parent,"playerindex");
+      void P1Anim = getentityproperty(P1, "animationID");
+      void P2Anim = getentityproperty(P2, "animationID");
+      void Model = getentityproperty(P2, "model");
+      int P1x = getentityproperty(P1,"x");
+      int P1z = getentityproperty(P1,"z");
+      int P2x = getentityproperty(P2,"x");
+      int P2z = getentityproperty(P2,"z");
+
+      if(P2x-x<=14 && P2x-x>=-14 && P2z-z<=5 && P2z-z>=-5 && Model=="Billy" && ( P2Anim == openborconstant("ANI_IDLE") || P2Anim == openborconstant("ANI_WALK") && P1Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P2, "velocity", 0, 0, 0);
+        changeentityproperty(P2, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P2x-x<=14 && P2x-x>=-14 && P2z-z<=5 && P2z-z>=-5 && Model=="Jimmy" && ( P2Anim == openborconstant("ANI_IDLE") || P2Anim == openborconstant("ANI_WALK") && P1Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P2, "velocity", 0, 0, 0);
+        changeentityproperty(P2, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P1x-x<=14 && P2x-x>=-14 && P2z-z<=5 && P2z-z>=-5 && Model=="CBilly" && ( P1Anim == openborconstant("ANI_IDLE") || P2Anim == openborconstant("ANI_WALK") && P1Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P2, "velocity", 0, 0, 0);
+        changeentityproperty(P2, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+
+      if(P1x-x<=14 && P2x-x>=-14 && P2z-z<=5 && P2z-z>=-5 && Model=="Sonny" && ( P1Anim == openborconstant("ANI_IDLE") || P2Anim == openborconstant("ANI_WALK") && P1Anim != openborconstant("ANI_FOLLOW58") )){
+        changeentityproperty(P2, "velocity", 0, 0, 0);
+        changeentityproperty(P2, "animation", openborconstant("ANI_FOLLOW58"));
+        killentity(self);
+      }
+    }
+@end_script
+	loop      1 24
+        delay     5
+	offset    13 11
+        attack    13 15 19 14 15 1 0 0 0 5
+	forcedirection -1
+	dropv     1.5 1.5 0
+	jugglecost 5
+        hitfx     data/sounds/beat2.wav
+	frame     data/chars/0weap/boomer1.gif
+sound     data/sounds/boomer1.wav
+	frame     data/chars/0weap/boomer2.gif
+	frame     data/chars/0weap/boomer3.gif
+	frame     data/chars/0weap/boomer4.gif
+	frame     data/chars/0weap/boomer5.gif
+sound     data/sounds/boomer1.wav
+	frame     data/chars/0weap/boomer6.gif
+	frame     data/chars/0weap/boomer7.gif
+	frame     data/chars/0weap/boomer8.gif # 7 from here and on allow to grab
+	@cmd velo001 2.5 0 0
+	frame     data/chars/0weap/boomer1.gif
+sound     data/sounds/boomer1.wav
+	@cmd velo001 2.25 0 0
+	frame     data/chars/0weap/boomer2.gif
+	@cmd velo001 2 0 0
+	frame     data/chars/0weap/boomer3.gif
+	@cmd velo001 1.75 0 0
+	frame     data/chars/0weap/boomer4.gif
+	@cmd velo001 1.5 0 0
+	frame     data/chars/0weap/boomer5.gif
+sound     data/sounds/boomer1.wav
+	@cmd velo001 1 0 0
+	frame     data/chars/0weap/boomer6.gif
+        attack    0
+	@cmd velo001 0.5 0 0
+	frame     data/chars/0weap/boomer7.gif
+	@cmd velo001 0.25 0 0
+	frame     data/chars/0weap/boomer8.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -0.5 0 0
+        attack    13 15 19 14 15 1 0 0 0 5
+	dropv     1.5 1.5 0
+	jugglecost 5
+	frame     data/chars/0weap/boomer1.gif # 16 move back
+sound     data/sounds/boomer1.wav
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -0.75 0 0
+	frame     data/chars/0weap/boomer2.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -1 0 0
+	frame     data/chars/0weap/boomer3.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -1.25 0 0
+	frame     data/chars/0weap/boomer4.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -1.5 0 0
+	frame     data/chars/0weap/boomer5.gif
+sound     data/sounds/boomer1.wav
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -2 0 0
+	frame     data/chars/0weap/boomer6.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -2.25 0 0
+	frame     data/chars/0weap/boomer7.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -2.5 0 0
+	frame     data/chars/0weap/boomer8.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer1.gif
+sound     data/sounds/boomer1.wav
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer2.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer3.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer4.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer5.gif
+sound     data/sounds/boomer1.wav
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer6.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer7.gif
+	@cmd antiwall4 -15 "ANI_FOLLOW2"
+	@cmd velo001 -3 0 0
+	frame     data/chars/0weap/boomer8.gif
+
+anim follow1
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "velocity", 0, 0, 0);
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	   loop      0
+           delay     8
+           offset    22 23
+	   jumpframe 0 1.5 -1 0
+	   landframe 7
+           spawnframe 7 0 0 0 0
+	   custentity BoomerangW2
+	frame     data/chars/0weap/boomer5.gif
+	frame     data/chars/0weap/boomer6.gif
+	frame     data/chars/0weap/boomer7.gif
+	frame     data/chars/0weap/boomer8.gif
+	frame     data/chars/0weap/boomer1.gif
+           frame     data/chars/0weap/boomer1.gif
+           delay     500
+	   frame     data/chars/0weap/boomer2.gif
+           delay     8
+	   frame     data/chars/0weap/empty.gif
+@cmd killentity getlocalvar("self")
+           frame     data/chars/0weap/empty.gif
+
+anim follow2
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "velocity", 0, 0, 0);
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	   loop      0
+           delay     8
+           offset    22 23
+	   flipframe 0
+	   jumpframe 0 1.5 -1 0
+	   landframe 7
+           spawnframe 7 0 0 0 0
+	   custentity BoomerangW2
+	frame     data/chars/0weap/boomer5.gif
+	frame     data/chars/0weap/boomer6.gif
+	frame     data/chars/0weap/boomer7.gif
+	frame     data/chars/0weap/boomer8.gif
+	frame     data/chars/0weap/boomer1.gif
+           frame     data/chars/0weap/boomer1.gif
+           delay     500
+	   frame     data/chars/0weap/boomer2.gif
+           delay     8
+	   frame     data/chars/0weap/empty.gif
+@cmd killentity getlocalvar("self")
+           frame     data/chars/0weap/empty.gif
+

@@ -1,0 +1,197 @@
+name          Wilkni
+type          none
+score         1 5
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         4
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+weaploss      0
+offscreen_noatk_factor 1
+weapons       Williams Awilliam none none none none none Wilboo none none Wilkni
+diesound      data/sounds/pain15.wav
+projectilehit enemy obstacle
+
+animationscript   data/scripts/lib001.c
+takedamagescript data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c 
+
+
+palette        data/chars/2wllms/kniwk4.gif   
+alternatepal   data/chars/2wllms/alter01.gif   
+alternatepal   data/chars/2wllms/alter02.gif   
+alternatepal   data/chars/2wllms/alter03.gif   
+alternatepal   data/chars/2wllms/alter04.gif    
+alternatepal   data/chars/2wllms/alter05.gif   
+alternatepal   data/chars/2wllms/alter06.gif  
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     80 129
+         frame      data/chars/2wllms/idle01.gif
+         frame      data/chars/2wllms/idle01.gif
+
+
+anim follow100 # alternate spawn animation for the last stage.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==9){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+    if(frame==16){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	15
+	offset	80 129
+	jumpframe 9 2.5 1 0
+	landframe 16
+	frame	data/chars/2wllms/idle01.gif
+	@cmd velo001 0.7 0 0
+	frame	data/chars/2wllms/wk01.gif
+	frame	data/chars/2wllms/wk02.gif
+	frame	data/chars/2wllms/wk03.gif
+	frame	data/chars/2wllms/idle01.gif
+	frame	data/chars/2wllms/wk01.gif
+	frame	data/chars/2wllms/wk02.gif
+	frame	data/chars/2wllms/wk03.gif
+	frame	data/chars/2wllms/idle01.gif
+	delay	12
+	@cmd velo001 0 0 0
+	frame	data/chars/2wllms/ju01.gif
+	delay	7
+	frame	data/chars/2wllms/ju02.gif
+	frame	data/chars/2wllms/ju03.gif
+	frame	data/chars/2wllms/ju04.gif
+	frame	data/chars/2wllms/ju05.gif
+	frame	data/chars/2wllms/ju06.gif
+	delay	200
+	frame	data/chars/2wllms/ju01.gif
+	delay	15
+	frame	data/chars/2wllms/b104.gif
+
+anim idle
+@cmd clearL
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/kniwk4.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+	 loop       1
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/kniwk1.gif
+	 delay      20
+         frame      data/chars/2wllms/kniwk2.gif
+	 delay      17
+         frame      data/chars/2wllms/kniwk3.gif
+	 delay      20
+         frame      data/chars/2wllms/kniwk4.gif
+
+anim attack1
+@cmd attackoff
+load	      knife02
+	 range      10 150
+	 rangez     -5 5
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 custknife  knife02
+	 tossframe 2 40	
+         frame      data/chars/2wllms/kni01.gif
+         frame      data/chars/2wllms/kni02.gif
+	 sound      data/sounds/knife1.wav
+@cmd	 vPro001    "knife02" 0 0 40 0 3 0 0
+         frame      data/chars/2wllms/kni03.gif
+	 delay      12
+         frame      data/chars/2wllms/a104.gif
+	 delay      8
+         frame      data/chars/2wllms/idle01.gif
+
+anim attack2
+
+anim jump
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/kni04.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/2wllms/kni05.gif
+         frame      data/chars/2wllms/ju03.gif
+         frame      data/chars/2wllms/ju04.gif
+         frame      data/chars/2wllms/ju05.gif
+         frame      data/chars/2wllms/ju06.gif
+	 delay      99
+	 bbox       68 83 24 44
+         frame      data/chars/2wllms/kni04.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 79 20 49
+	 landframe  1
+         frame      data/chars/2wllms/kni04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+
+

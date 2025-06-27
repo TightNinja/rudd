@@ -1,0 +1,38 @@
+name	esqi
+type	none
+speed   0
+shadow	0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_gravity 0
+lifespan 1
+
+palette          data/chars/misc/bgfx/dragoni.gif
+alternatepal     data/chars/misc/bgfx/ipal01.gif
+
+anim idle
+@script
+  if(frame==5){
+    void self = getlocalvar("self");
+
+    killentity(self); //Suicide!
+  }
+@end_script
+	 loop      1
+	 delay     3
+	 offset    128 204
+	 drawmethod alpha 5
+	 drawmethod channel 0.10
+	 frame     data/chars/misc/bgfx/esq.gif
+	 frame     data/chars/misc/empty.gif
+	 drawmethod alpha 5
+	 drawmethod channel 0.20
+	 frame     data/chars/misc/bgfx/esq.gif
+	 frame     data/chars/misc/empty.gif
+	 drawmethod alpha 5
+	 drawmethod channel 0.30
+	 frame     data/chars/misc/bgfx/esq.gif
+	 frame     data/chars/misc/empty.gif
+
+
+

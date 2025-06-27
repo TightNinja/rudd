@@ -1,0 +1,16 @@
+name	air01
+type	none
+shadow	0
+alpha   0
+
+anim idle
+	 loop      0
+	 delay     6
+	 offset    0 27
+	 frame     data/chars/0misc/air01.gif
+
+
+
+
+
+

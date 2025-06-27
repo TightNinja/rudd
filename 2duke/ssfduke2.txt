@@ -1,0 +1,72 @@
+name    ssfduke2
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim idle
+	 loop    0
+	 delay   2
+	 offset  85 120
+	 bbox    0 0 0 0	
+	 sound   data/sounds/ssf.wav
+	 movea   1
+	 drawmethod scale 0.75
+	 drawmethod alpha 1 
+	 drawmethod channel 0.10
+	 frame   data/chars/2duke/03.gif
+	 drawmethod scale 0.80
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame   data/chars/2duke/03.gif
+	 drawmethod scale 0.85
+	 drawmethod alpha 6
+	 drawmethod channel 0.30
+	 frame   data/chars/2duke/04.gif
+	 drawmethod scale 0.90
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/2duke/03.gif
+	 drawmethod scale 0.95
+	 drawmethod alpha 6 
+	 drawmethod channel 0.50
+	 frame   data/chars/2duke/03.gif
+	 drawmethod scale 1
+	 frame   data/chars/2duke/04.gif
+	 frame   data/chars/2duke/03.gif
+	 frame   data/chars/2duke/03.gif
+	 frame   data/chars/2duke/04.gif
+	 frame   data/chars/2duke/03.gif
+	 frame   data/chars/2duke/03.gif
+	 frame   data/chars/2duke/04.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.40
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.35
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.30
+	 frame   data/chars/2duke/04.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.25
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.20
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.15
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.10
+	 frame   data/chars/2duke/03.gif
+	 drawmethod alpha 6 
+	 drawmethod channel 0.05
+	 frame   data/chars/2duke/03.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

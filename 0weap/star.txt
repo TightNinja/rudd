@@ -1,0 +1,107 @@
+name        Star
+health      1
+type	    npc
+shootnum    1
+remove      1
+nomove 1 1
+candamage  player 
+load knife01
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_hole 1
+subject_to_wall 1
+subject_to_obstacle 0
+subject_to_basemap 1
+
+script  data/scripts/bounce3.c
+
+anim idle
+	   loop      1
+	   delay     5
+	   bbox      3 3 13 12
+	   offset    -5 10
+	followcond 1
+	followanim 2
+	   hitfx     data/sounds/knife2.wav
+	   hitflash  Bflash
+	   attack11  5 5 8 7 7 1 1 0 8 5
+	   dropv     1.3 0.8 0
+	   frame     data/chars/0weap/star01.gif
+	   frame     data/chars/0weap/star02.gif
+	   frame     data/chars/0weap/star03.gif
+	   frame     data/chars/0weap/star02.gif
+
+anim follow2
+	   loop      0
+	   delay     2
+	   offset    -5 10
+     frame     data/chars/0weap/empty.gif
+     @cmd killentity getlocalvar("self")
+     frame     data/chars/0weap/empty.gif
+
+anim follow1
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "velocity", 0, 0, 0);
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	loop      0
+     delay     4
+     offset    -5 10
+	landframe 13
+	jumpframe 0 2 -1 0
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star01.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star02.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star03.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star02.gif
+     offset    9 10
+     move 14
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star01.gif
+     move 0
+     frame     data/chars/0weap/empty.gif
+     frame     data/chars/0weap/star02.gif
+     frame     data/chars/0weap/empty.gif
+     @cmd killentity getlocalvar("self")
+     frame     data/chars/0weap/empty.gif
+
+
+anim fall
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	loop      0
+     delay     4
+     offset    -5 10
+	landframe 13
+	jumpframe 0 2 -1 0
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star01.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star02.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star03.gif
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star02.gif
+     offset    9 10
+     move 14
+     frame     data/chars/0weap/empty.gif
+	frame     data/chars/0weap/star01.gif
+     move 0
+     frame     data/chars/0weap/empty.gif
+     frame     data/chars/0weap/star02.gif
+     frame     data/chars/0weap/empty.gif
+     @cmd killentity getlocalvar("self")
+     frame     data/chars/0weap/empty.gif
+

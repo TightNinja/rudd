@@ -1,0 +1,62 @@
+name	      drum02
+shootnum      1
+health        1
+speed         6
+antigravity   40
+jumpheight    2
+nolife        1
+gfxshadow     1
+no_adjust_base	0
+subject_to_wall 1
+bounce		1
+noquake  1 1
+candamage    player npc obstacle
+
+load drum01
+
+script  data/scripts/bounce2.c
+
+anim idle
+	loop	  1
+	delay	  12
+	offset    24 42
+	bbox	  0 0 0 0
+	hitfx     data/sounds/punch.wav
+	forcedirection -1
+	attack13  13 7 24 36 25 1 1 0 5
+	dropv     2 1 0
+	move      1
+	frame	  data/chars/0weap/drum01.gif
+	frame	  data/chars/0weap/drum02.gif
+	frame	  data/chars/0weap/drum03.gif
+	frame	  data/chars/0weap/drum04.gif
+	frame     data/chars/0weap/drum05.gif
+	frame	  data/chars/0weap/drum06.gif
+	frame  	  data/chars/0weap/drum07.gif
+	frame  	  data/chars/0weap/drum08.gif
+
+anim attack1
+	loop	  0
+	delay	  1
+	offset    24 42
+	bbox	  0 0 0 0
+	sound     data/sounds/klunk.wav
+	spawnframe 0 0 0 0 0
+	subentity  drum01
+	frame	  data/chars/0weap/empty.gif
+
+anim attack2
+	loop	  0
+	delay	  1
+	offset    24 42
+	bbox	  0 0 0 0
+	sound     data/sounds/klunk.wav
+	spawnframe 0 0 0 0 0
+	subentity  drum01
+	frame	  data/chars/0weap/empty.gif
+
+
+
+
+
+

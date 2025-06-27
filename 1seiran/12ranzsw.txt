@@ -1,0 +1,39 @@
+name    12ranzsw
+health  0
+type	none
+facing  1
+gfxshadow 1
+subject_to_obstacle 0
+subject_to_platform 1
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop    0
+	 delay   4
+	 offset  30 51
+@cmd jump001 5 0 0
+	 landframe 6
+	 sound   data/sounds/samsh01.wav
+	 frame   data/chars/1seiran/rswo01.gif
+	 frame   data/chars/1seiran/rswo02.gif
+	 frame   data/chars/1seiran/rswo03.gif
+	 frame   data/chars/1seiran/rswo04.gif
+	 frame   data/chars/1seiran/rswo01.gif
+@cmd	updateframe getlocalvar("self") 1
+
+	 frame   data/chars/1seiran/rswo04.gif
+
+	 sound   data/sounds/run.wav
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     1
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     -1
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     1
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     -1
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     1
+	 frame   data/chars/1seiran/rswo05.gif
+	 move     -1
+	 frame   data/chars/1seiran/rswo05.gif

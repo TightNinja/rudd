@@ -1,0 +1,40 @@
+name    garg
+health  1
+type	text
+subtype noskip
+#alpha   1
+lifespan 2
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   6
+	 offset  130 150
+	 bbox    0 0 0 0
+	 sound   data/sounds/spaw.wav	
+	 frame   data/chars/0misc/garg01.gif
+	 frame   data/chars/0misc/garg02.gif
+	 frame   data/chars/0misc/garg03.gif
+	 frame   data/chars/0misc/garg04.gif
+	 frame   data/chars/0misc/garg05.gif
+	 delay   4
+	 frame   data/chars/0misc/garg06.gif
+	 frame   data/chars/0misc/garg07.gif
+	 frame   data/chars/0misc/garg08.gif
+	 frame   data/chars/0misc/garg09.gif
+	 frame   data/chars/0misc/garg10.gif
+	 frame   data/chars/0misc/garg11.gif
+	 frame   data/chars/0misc/garg12.gif
+	 frame   data/chars/0misc/garg13.gif
+	 frame   data/chars/0misc/garg14.gif
+	 frame   data/chars/0misc/garg15.gif
+	 frame   data/chars/0misc/garg16.gif
+	 frame   data/chars/0misc/garg17.gif
+	 frame   data/chars/0misc/garg18.gif
+	 frame   data/chars/0misc/empty.gif
+
+

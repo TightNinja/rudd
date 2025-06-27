@@ -1,0 +1,21 @@
+name        cgasa
+health      1
+shootnum    1
+remove      1
+nomove 1
+noquake  1 1
+subject_to_gravity 0
+no_adjust_base	0
+subject_to_hole 1
+subject_to_wall 0
+subject_to_basemap 1
+subject_to_platform 0
+
+animationscript   data/scripts/lib001.c
+anim idle
+	   loop      1
+	   delay     1
+	   bbox      0
+	   offset    39 33
+@cmd velo001 -0.8 0 0.3
+	   frame     data/chars/0misc/cgasa.gif

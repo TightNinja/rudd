@@ -1,0 +1,42 @@
+name    sddje01
+health  1
+type	text
+facing  1
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+
+
+anim idle
+	 loop    0
+	 delay   3
+	 offset  128 224
+	 bbox    0 0 0 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame   data/chars/0misc/sddje01.gif
+	 sound   data/sounds/beep.wav
+	 drawmethod channel 0.20
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.30
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.50
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.60
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.70
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.80
+	 frame   data/chars/0misc/sddje01.gif
+	 drawmethod channel 0.90
+	 frame   data/chars/0misc/sddje01.gif
+	 delay   6000
+	 drawmethod alpha 0
+	 frame   data/chars/0misc/sddje01.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

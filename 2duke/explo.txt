@@ -1,0 +1,100 @@
+name	explo
+type	none
+shadow	0
+subject_to_gravity 1
+subject_to_minz 0
+subject_to_maxz 0
+animationscript   data/scripts/lib001.c
+
+
+load     stonew1
+load     stonew2
+load     stonew3
+load     dblow
+load     quake01
+
+anim spawn
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       0
+	 sound      data/chars/2duke/dukeno2.wav
+         frame      data/chars/2duke/explo01.gif
+	 delay      5
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo01.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo01.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo01.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo03.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo03.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo03.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo03.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake01" "quake01" 0 0 0 0 0
+         frame      data/chars/2duke/explo03.gif
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 delay      25
+         frame      data/chars/2duke/explo03.gif
+	 delay      3
+	 offset     81 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     80 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     81 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     80 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     81 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     80 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     81 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     80 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     81 129
+         frame      data/chars/2duke/explo03.gif
+	 offset     80 129
+	 delay      50
+@cmd spawn001 "dblow" "dblow" 0 7 0 1 0
+         frame      data/chars/2duke/explo03.gif
+	 delay      4
+         frame      data/chars/2duke/explo02.gif
+@cmd spawn001 "slow" "slow" 0 0 0 0 0
+@cmd	 tosser     "stonew2" 0 40 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "slow1" "slow1" 0 45 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "stonew3" 0 35 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "stonew1" 0 35 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "stonew2" 0 30 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "stonew3" 0 35 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "stonew1" 0 25 0 0 1.5 0
+	 delay      500
+         frame      data/chars/0misc/empty.gif
+
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+

@@ -1,0 +1,79 @@
+name    10ranzc3
+health  0
+type	none
+gfxshadow 1
+subject_to_gravity 0
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       0
+	 delay      70
+	 offset     96 166
+	 loop       0
+	 delay      1
+         frame      data/chars/1seiran/rgrab02.gif
+	 delay      200
+         frame      data/chars/1seiran/rgrab02.gif
+	 delay      90
+         frame      data/chars/1seiran/rgrab04.gif
+	 delay      80
+         frame      data/chars/1seiran/rgrab02.gif
+	 delay      90
+         frame      data/chars/1seiran/rgrab04.gif
+	 delay      50
+         frame      data/chars/1seiran/rgrab02.gif
+	 delay      70
+         frame      data/chars/1seiran/rgrab04.gif
+	 delay      8
+         frame      data/chars/1seiran/ra101.gif
+	 delay      3
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1seiran/rslash03.gif
+         frame      data/chars/1seiran/rslash04.gif
+         frame      data/chars/1seiran/rslash05.gif
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1seiran/rslash06.gif
+         frame      data/chars/1seiran/rslash03.gif
+         frame      data/chars/1seiran/rslash05.gif
+	 delay      280
+	 sound      data/sounds/sword01.wav
+         frame      data/chars/1seiran/rukyo09.gif
+	 delay      3
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rcharge.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+         frame      data/chars/1jimmy/tr07.gif
+

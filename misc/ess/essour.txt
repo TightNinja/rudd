@@ -1,0 +1,73 @@
+name    essour
+type	none
+speed   10
+subject_to_wall 0
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+gfxshadow 0
+lifespan 1
+
+
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop      0
+	 delay     2
+	 offset    85 120
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+         frame     data/chars/misc/ess/essour01.gif
+         frame     data/chars/misc/ess/essour02.gif
+	 drawmethod channel 0.30
+         frame     data/chars/misc/ess/essour03.gif
+         frame     data/chars/misc/ess/essour04.gif
+	 drawmethod channel 0.50
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+	 drawmethod channel 0.65
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+	 drawmethod channel 0.85
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+	 drawmethod alpha off
+         frame     data/chars/misc/ess/essour02.gif
+         frame     data/chars/misc/ess/essour03.gif
+         frame     data/chars/misc/ess/essour04.gif
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+         frame     data/chars/misc/ess/essour02.gif
+         frame     data/chars/misc/ess/essour03.gif
+         frame     data/chars/misc/ess/essour04.gif
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+         frame     data/chars/misc/ess/essour02.gif
+         frame     data/chars/misc/ess/essour03.gif
+	 drawmethod channel 0.65
+         frame     data/chars/misc/ess/essour04.gif
+         frame     data/chars/misc/ess/essour05.gif
+	 drawmethod channel 0.50
+         frame     data/chars/misc/ess/essour01.gif
+         frame     data/chars/misc/ess/essour02.gif
+	 drawmethod channel 0.30
+         frame     data/chars/misc/ess/essour03.gif
+         frame     data/chars/misc/ess/essour04.gif
+	 drawmethod channel 0.10
+         frame     data/chars/misc/ess/essour05.gif
+         frame     data/chars/misc/ess/essour01.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+

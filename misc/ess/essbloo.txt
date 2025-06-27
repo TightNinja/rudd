@@ -1,0 +1,42 @@
+name	essbloo
+type	none
+speed   10
+subject_to_wall 0
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 0
+subject_to_gravity 0
+gfxshadow 0
+lifespan 1
+
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop      0
+	 delay     3
+	 offset    50 70
+	 quakeframe 0 3 3
+         frame     data/chars/misc/ess/bloo1.gif
+         frame     data/chars/misc/ess/bloo2.gif
+         frame     data/chars/misc/ess/bloo3.gif
+         frame     data/chars/misc/ess/bloo4.gif
+         frame     data/chars/misc/ess/bloo5.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+

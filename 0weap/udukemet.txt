@@ -1,0 +1,58 @@
+name      udukemet
+type      npc
+shadow    0
+nomove    1
+animationscript	data/scripts/lib001.c
+subject_to_gravity 0
+lifespan 4
+
+anim spawn  
+	 loop    1 24 32
+	 delay   4
+	 offset  25 75
+	 bbox    0
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+         frame   data/chars/0weap/met01.gif  
+	 drawmethod channel 0.4 
+         frame   data/chars/0weap/met02.gif  
+	 drawmethod channel 0.6 
+         frame   data/chars/0weap/met03.gif   
+	 drawmethod channel 0.8
+         frame   data/chars/0weap/met04.gif  
+	 drawmethod alpha off 
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif  
+@cmd velo001 0.3 0 0
+         frame   data/chars/0weap/met01.gif   
+         frame   data/chars/0weap/met02.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif  
+@cmd velo001 0.3 0 0.6
+         frame   data/chars/0weap/met01.gif   
+         frame   data/chars/0weap/met02.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif  
+@cmd velo001 0.3 0 1.9
+         frame   data/chars/0weap/met01.gif   
+         frame   data/chars/0weap/met02.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif 
+
+         frame   data/chars/0weap/met02.gif 
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

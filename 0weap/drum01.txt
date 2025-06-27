@@ -1,0 +1,71 @@
+name	      drum01
+health        0
+type          item
+counter       999
+subtype       weapon
+noquake  1 1
+weapnum       7
+shootnum      1
+nolife        1
+gfxshadow     1
+remove	      0
+
+script  data/scripts/bounce.c
+
+anim spawn
+	delay	2
+	offset  24 42
+	bbox    13 7 24 36
+	jumpframe 1 2 0 0
+	frame	data/chars/0weap/drum01.gif
+      move    2
+	frame	data/chars/0weap/drum01.gif
+	frame	data/chars/0weap/drum01.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum06.gif
+	frame	data/chars/0weap/drum06.gif
+	frame	data/chars/0weap/drum06.gif
+	frame	data/chars/0weap/drum07.gif
+	frame	data/chars/0weap/drum07.gif
+	frame	data/chars/0weap/drum07.gif
+	frame	data/chars/0weap/drum08.gif
+	frame	data/chars/0weap/drum08.gif
+	frame	data/chars/0weap/drum08.gif
+	move    1
+	frame	data/chars/0weap/drum01.gif
+	frame	data/chars/0weap/drum01.gif
+	frame	data/chars/0weap/drum01.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum02.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum03.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum04.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum05.gif
+	frame	data/chars/0weap/drum06.gif
+	frame	data/chars/0weap/drum06.gif
+	frame	data/chars/0weap/drum06.gif
+
+anim idle
+	delay	1
+	offset  24 42
+	bbox    13 7 24 36
+	frame	data/chars/0weap/drum07.gif
+
+

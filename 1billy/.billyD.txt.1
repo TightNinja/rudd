@@ -1,0 +1,320 @@
+name          BillyD
+candamage     enemy obstacle pshot npc
+type          none
+walkoffmove 0.5 0
+health        250
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+grabforce    -1
+atchain       1 1 1 1 1
+typeshot      0
+weapons       Billy Billy BillyN BillyB BillyK BillyR Billy Billyboo BillyW none BillyD
+icon          data/chars/1billy/icond.gif 1
+#parrow         
+#parrow2 
+
+#-------Kit's Additions---------------------------------------------------------------------------------
+
+blockback     	1
+blockratio      1
+mprate       	1
+mpblock 		1
+grabwalk 		1
+grabturn 		1
+grabbackwalk    1
+guardpoints 	0
+noaircancel     1
+nocheats        0
+#nodebug        1
+jumpmove 1                 #-------change orientation in mid air during jump 
+
+
+
+
+
+onmoveascript	   data/scripts/hithead.c
+script             data/scripts/spawn.c
+animationscript    data/scripts/lib001.c
+ondrawscript	   data/scripts/shadowon.c
+#didhitscript      data/scripts/didhit.c
+onblockWscript     data/scripts/spikesw2.c 
+ondoattackscript   data/scripts/multihits.c
+ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
+onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
+ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
+
+
+
+#-------Kit's Additions---------------------------------------------------------------------------------
+
+
+load     drum03
+com      a2     freespecial1
+
+palette        data/chars/1billy/icon.gif   
+alternatepal   data/chars/1billy/alter01.gif   
+alternatepal   data/chars/1billy/alter02.gif   
+alternatepal   data/chars/1billy/alter03.gif   
+alternatepal   data/chars/1billy/alter04.gif 
+alternatepal   data/chars/1billy/alter05.gif  
+alternatepal   data/chars/1billy/alter06.gif  
+alternatepal   data/chars/1billy/alter07.gif  
+alternatepal   data/chars/1billy/alter08.gif 
+alternatepal   data/chars/1billy/alter09.gif  
+alternatepal   data/chars/1billy/alter10.gif  
+alternatepal   data/chars/1billy/alter11.gif   
+alternatepal   data/chars/1billy/alter12.gif  
+alternatepal   data/chars/1billy/alter13.gif  
+alternatepal   data/chars/1billy/alter14.gif  
+alternatepal   data/chars/1billy/alter15.gif  
+alternatepal   data/chars/1billy/alter16.gif  
+alternatepal   data/chars/1billy/alter17.gif  
+alternatepal   data/chars/1billy/alter18.gif  
+alternatepal   data/chars/1billy/alter19.gif  
+alternatepal   data/chars/1billy/alter20.gif  
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim spawn
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1billyw/drwk05.gif
+
+anim charge
+
+anim idle
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1billyw/drwk05.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1billyw/drget01.gif
+         frame      data/chars/1billyw/drget02.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1billyw/drwk01.gif
+         frame      data/chars/1billyw/drwk02.gif
+         frame      data/chars/1billyw/drwk03.gif
+         frame      data/chars/1billyw/drwk04.gif
+         frame      data/chars/1billyw/drwk05.gif
+         frame      data/chars/1billyw/drwk06.gif
+
+anim run 
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0 0 0 0
+	 custpbomb  drum03
+	 tossframe  1 35
+         frame      data/chars/1billyw/roa101.gif
+	 delay      27
+         frame      data/chars/1billyw/roa101.gif
+
+#kick button
+anim freespecial1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0 0 0 0
+	 custpbomb  drum03
+	 tossframe  1 35
+         frame      data/chars/1billyw/roa101.gif
+	 delay      15
+         frame      data/chars/1billyw/roa101.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1billyw/drwk05.gif
+	 delay      10
+         frame      data/chars/1billyw/drwk05.gif
+
+anim jump
+
+anim jumpattack
+
+anim jumpattack2
+
+#crouching attack, cancellable into hyper throw & hyper kick
+anim block
+
+#hyper throw
+anim freespecial4
+
+anim freespecial5
+
+anim special
+
+anim grab
+
+anim grabattack
+
+anim grabattack2
+
+anim grabup
+
+anim grabdown
+
+anim grabdown2
+
+#throw
+anim grabbackward
+
+anim pain1
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/pain01.gif
+
+anim pain2
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/pain02.gif
+
+#breathless
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/pain01.gif
+	 delay      45
+         frame      data/chars/1billy/pain03.gif
+
+#stun
+anim pain4
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/pain04.gif
+         frame      data/chars/1billy/pain05.gif
+         frame      data/chars/1billy/pain06.gif
+         frame      data/chars/1billy/pain05.gif
+         frame      data/chars/1billy/pain04.gif
+         frame      data/chars/1billy/pain05.gif
+         frame      data/chars/1billy/pain06.gif
+         frame      data/chars/1billy/pain05.gif
+         frame      data/chars/1billy/pain04.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/fall01.gif
+	 delay      999
+	 bbox       0 0 0 0
+         frame      data/chars/1billy/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1billy/fall02.gif
+         frame      data/chars/1billy/fall03.gif
+
+anim rise
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1billy/fall03.gif
+	 delay      12
+         frame      data/chars/1billy/rise01.gif
+         frame      data/chars/1billy/rise02.gif
+
+#########extra moves
+
+#backfist attack
+anim freespecial4
+
+#one extra backfist attack
+
+#fierce kick attack
+anim freespecial5
+
+#SDD tatsumaki
+anim freespecial6
+
+#double kick
+anim freespecial7
+
+#########styles switch
+
+anim freespecial2
+
+anim freespecial3
+
+#########DD1 style cancels
+
+anim freespecial20
+
+anim freespecial21
+
+anim freespecial22
+
+anim freespecial23
+
+#########DD2 style cancels
+
+anim freespecial15
+
+anim freespecial16
+
+anim freespecial17
+
+anim freespecial18
+
+anim freespecial19
+
+anim freespecial24
+
+anim freespecial25
+
+anim follow6
+
+
+
+
+

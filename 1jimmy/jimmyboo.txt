@@ -1,0 +1,490 @@
+name          Jimmyboo
+candamage     enemy obstacle pshot shot npc
+type          none
+health        100
+subject_to_obstacle 0
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+grabforce    -1
+atchain       1 1 1 1 1
+typeshot      0
+weapons       Jimmy Jimmy JimmyN JimmyB JimmyK JimmyR JimmyD Jimmy JimmyW none Jimmyboo
+icon          data/chars/1jimmy/iconboo.gif 1
+#parrow         
+#parrow2 
+
+animationscript   data/scripts/lib001.c
+#didhitscript      data/scripts/didhit.c
+
+palette        data/chars/1jimmy/icon.gif   
+alternatepal   data/chars/1jimmy/alter01.gif   
+alternatepal   data/chars/1jimmy/alter02.gif   
+alternatepal   data/chars/1jimmy/alter03.gif   
+alternatepal   data/chars/1jimmy/alter04.gif  
+alternatepal   data/chars/1jimmy/alter05.gif   
+alternatepal   data/chars/1jimmy/alter06.gif  
+alternatepal   data/chars/1jimmy/alter07.gif  
+alternatepal   data/chars/1jimmy/alter08.gif   
+alternatepal   data/chars/1jimmy/alter09.gif  
+alternatepal   data/chars/1jimmy/alter10.gif  
+alternatepal   data/chars/1jimmy/alter11.gif  
+alternatepal   data/chars/1jimmy/alter12.gif  
+alternatepal   data/chars/1jimmy/alter13.gif  
+alternatepal   data/chars/1jimmy/alter14.gif  
+alternatepal   data/chars/1jimmy/alter15.gif  
+alternatepal   data/chars/1jimmy/alter16.gif  
+alternatepal   data/chars/1jimmy/alter17.gif  
+alternatepal   data/chars/1jimmy/alter18.gif  
+alternatepal   data/chars/1jimmy/alter19.gif  
+alternatepal   data/chars/1jimmy/alter20.gif  
+
+com      a2     freespecial1
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim spawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame      data/chars/1jimmy/item.gif
+
+anim respawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame	    data/chars/1jimmy/item.gif
+
+anim follow59
+	 loop       0
+	 delay      16
+	 offset     80 129
+         frame      data/chars/1jimmyw/bmg01.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       68 83 24 44
+	 frame	    data/chars/1jimmy/item.gif
+
+anim charge
+
+anim idle
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+	 frame      data/chars/1jimmyw/bmg02.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/bmrwk01.gif
+         frame      data/chars/1jimmyw/bmrwk02.gif
+         frame      data/chars/1jimmyw/bmrwk03.gif
+         frame      data/chars/1jimmyw/bmrwk04.gif
+         frame      data/chars/1jimmyw/bmrwk05.gif
+         frame      data/chars/1jimmyw/bmrwk06.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/bmrrun01.gif
+         frame      data/chars/1jimmyw/bmrrun02.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1jimmyw/bmrrun03.gif
+         frame      data/chars/1jimmyw/bmrrun04.gif
+         frame      data/chars/1jimmyw/bmrrun05.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1jimmyw/bmrrun06.gif
+
+anim runattack
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 throwframe 0 1
+#	 load      empty2
+	 load      BoomerangS
+	 custknife empty2
+@cmd antiwall2 7 -7 0
+         frame      data/chars/1jimmyw/bmra1.gif
+         frame      data/chars/1jimmyw/bmra2.gif
+	 delay      5
+         frame      data/chars/1jimmyw/bmra3.gif
+	 sound      data/sounds/knife1.wav
+@cmd	vPro001 "BoomerangS" 0 5 55 0 3 0 0
+	 bbox       0 
+         frame      data/chars/1jimmyw/bmra4.gif
+         frame      data/chars/1jimmyw/kna105.gif
+	 delay      13
+         frame      data/chars/1jimmy/a204.gif
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 throwframe 0 1
+#	 load      empty2
+	 load      BoomerangS
+	 custknife empty2
+@cmd antiwall2 7 -7 0
+         frame      data/chars/1jimmyw/bmra1.gif
+         frame      data/chars/1jimmyw/bmra2.gif
+	 delay      5
+         frame      data/chars/1jimmyw/bmra3.gif
+	 sound      data/sounds/knife1.wav
+@cmd	vPro001 "BoomerangS" 0 5 55 0 3 0 0
+	 bbox       0 
+         frame      data/chars/1jimmyw/bmra4.gif
+         frame      data/chars/1jimmyw/kna105.gif
+	 delay      13
+         frame      data/chars/1jimmy/a204.gif
+
+#kick button
+anim freespecial1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitfx      data/sounds/beat2.wav
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmyw/bmrbc01.gif
+	 delay      14
+	 attack3    54 90 29 13 10 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife -60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/bmrbc02.gif
+	 delay      10
+	 attack3    0 0 0 0
+         frame      data/chars/1jimmyw/bmrbc01.gif
+
+#kick finisher
+anim follow1
+	 range      -50 50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 flipframe  1
+	 hitfx      data/sounds/beat1.wav
+         frame      data/chars/1jimmyw/bmrbd02.gif
+         frame      data/chars/1jimmyw/bmrbd03.gif
+         frame      data/chars/1jimmyw/bmrbd04.gif
+	 delay      14
+	 attack     76 76 31 27 16 1 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      2.5 0.8 0
+         frame      data/chars/1jimmyw/bmrbd05.gif
+	 delay      8
+	 move       0
+	 attack     0 0 0 0
+         frame      data/chars/1jimmyw/bmrbd04.gif
+         frame      data/chars/1jimmyw/bmrbd03.gif
+	 delay      22
+         frame      data/chars/1jimmyw/bmg02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1jimmyw/bmrju01.gif
+	 delay      10
+         frame      data/chars/1jimmyw/bmrcrouch.gif
+
+anim jump
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/jump1.wav
+	 cancel     1 3 0 a2 freespecial50
+         frame      data/chars/1jimmyw/bmrju01.gif
+	 delay      10
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/bmrju02.gif
+         frame      data/chars/1jimmyw/bmrju03.gif
+         frame      data/chars/1jimmyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/bmrju01.gif
+
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/1jimmyw/bmrwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/bmrju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   83 97 29 17 12 1 0 0 12 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/bmrak01.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmyw/bmrcrouch.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 hitfx      data/sounds/beat2.wav
+	 attack11   83 97 29 17 12 1 0 0 12 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/bmrak01.gif
+	 delay      15
+	 attack11   0 0 0 0 0 0 0 0 0
+         frame      data/chars/1jimmyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/bmrju01.gif
+
+anim freespecial50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch5.wav
+	 hitfx      data/sounds/beat2.wav
+         frame      data/chars/1jimmyw/bmrak02.gif
+         frame      data/chars/1jimmyw/bmrak03.gif
+	 delay      999
+	 attack11   76 102 27 23 9 1 0 0 12 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/bmrak04.gif
+         delay      12
+	 attack11   0 0 0 0
+         frame      data/chars/1jimmyw/bmrcrouch.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 followanim 17
+	 followcond 3
+	 hitfx      data/sounds/beat2.wav
+	 attack92   79 98 33 19 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/bmrak01.gif
+	 delay      15
+	 attack92   0 0 0 0
+         frame      data/chars/1jimmyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/bmrju01.gif
+
+#ENEMY JUMP
+anim follow17
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+#@cmd toss0001 10
+	 flipframe  1
+	 jumpframe  1 1 1 0
+	 landframe  5
+         frame      data/chars/1jimmyw/bmrak01.gif
+         frame      data/chars/1jimmyw/bmrairf01.gif
+	 delay      8
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/bmrairf02.gif
+         frame      data/chars/1jimmyw/bmrairf03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   77 90 33 16 10 1 0 0 10 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/bmrairf04.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmyw/bmrcrouch.gif
+
+#crouching attack, cancellable into hyper throw & hyper kick
+anim block
+
+#hyper throw
+anim freespecial4
+
+anim freespecial5
+
+anim special
+
+anim grab
+
+anim grabattack
+
+anim grabattack2
+
+anim grabup
+
+anim grabdown
+
+anim grabdown2
+
+#throw
+anim grabbackward
+
+anim pain1
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain01.gif
+
+anim pain2
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain02.gif
+
+#breathless
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain01.gif
+	 delay      45
+         frame      data/chars/1jimmy/pain03.gif
+
+#stun
+anim pain4
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall01.gif
+	 delay      999
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmy/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1jimmy/fall02.gif
+         frame      data/chars/1jimmy/fall03.gif
+
+anim rise
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall03.gif
+	 delay      12
+         frame      data/chars/1jimmy/rise01.gif
+         frame      data/chars/1jimmy/rise02.gif
+
+#########extra moves
+
+#backfist attack
+anim freespecial4
+
+#one extra backfist attack
+
+#fierce kick attack
+anim freespecial5
+
+#SDD tatsumaki
+anim freespecial6
+
+#double kick
+anim freespecial7
+
+#########styles switch
+
+anim freespecial2
+
+anim freespecial3
+
+#########DD1 style cancels
+
+anim freespecial20
+
+anim freespecial21
+
+anim freespecial22
+
+anim freespecial23
+
+#########DD2 style cancels
+
+anim freespecial15
+
+anim freespecial16
+
+anim freespecial17
+
+anim freespecial18
+
+anim freespecial19
+
+anim freespecial24
+
+anim freespecial25
+
+anim follow6
+
+
+
+
+

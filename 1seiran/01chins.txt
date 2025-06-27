@@ -1,0 +1,101 @@
+name    01chins
+health  0
+type	npc
+gfxshadow 1
+candamage enemy
+animationscript  data/scripts/lib001.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     96 166
+	 bbox       0
+	 fastattack 1
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 sound      data/sounds/ninja01.wav
+	 frame      data/chars/1seiran/ccharge.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/ccharge.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/ccharge.gif
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/ccharge.gif
+	 drawmethod alpha off
+	 delay      8
+	 frame      data/chars/1seiran/ccharge.gif
+	 delay      6
+
+         frame      data/chars/1seiran/cb301.gif
+         frame      data/chars/1seiran/cb302.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     98 122 40 23 5 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0 0
+         frame      data/chars/1seiran/cb303.gif
+	 delay      5
+	 attack     0
+         frame      data/chars/1seiran/cb302.gif
+         frame      data/chars/1seiran/cb204.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      15
+	 attack7    100 118 41 27 5 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1seiran/cb205.gif
+	 delay      6
+	 attack7    0
+         frame      data/chars/1seiran/cb204.gif
+         frame      data/chars/1seiran/cb202.gif
+	 delay      5
+         frame      data/chars/1seiran/cb201.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1seiran/ca402.gif
+         frame      data/chars/1seiran/ca403.gif
+	 hitfx      data/sounds/beatsf1.wav
+	 delay      12
+	 attack     94 123 45 19 7 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/1seiran/ca404.gif
+	 delay      7
+	 attack     0
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/ca405.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/ca403.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/ca401.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/cidle01.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

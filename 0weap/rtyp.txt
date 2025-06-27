@@ -1,0 +1,26 @@
+name     rtyp
+type     npc
+candamage player
+shadow   0
+offscreenkill 100
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+anim idle
+	loop	 1
+	offset   47 85
+	delay    2
+	drawmethod alpha 6
+	drawmethod channel 0.85
+#@cmd velo001 0.3 0 0
+	sound    data/sounds/rwater2.wav
+	hitfx    data/sounds/beatbr4.wav
+	attack   26 36 30 48 10 1 1 0 7 5
+	forcedirection -1
+	dropv    3.5 0.1 0
+	frame    data/chars/0weap/rtyp01.gif
+	frame    data/chars/0weap/empty.gif
+	frame    data/chars/0weap/rtyp02.gif
+	frame    data/chars/0weap/empty.gif
+
+

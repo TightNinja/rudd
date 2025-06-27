@@ -1,0 +1,42 @@
+name	stend
+type	text
+subtype  noskip
+setlayer  999999999
+nodieblink 3
+Subject_to_Gravity 0
+Subject_to_Wall 0
+Subject_to_MinZ 0
+Subject_to_MaxZ 0
+load    stendb
+
+animationscript   data/scripts/lib001.c
+
+palette     data/chars/misc/stend/0001.gif
+
+anim idle
+	 loop      0
+	 delay     2 
+	 offset    0 228
+	 custentity stendb
+	 spawnframe 12 0 0 0 0
+	 quakeframe 11 5 -3
+	 @cmd Pause 1
+	 @cmd Join 1
+	 frame     data/chars/0misc/empty.gif
+	 delay     2
+	 frame     data/chars/misc/stend/0001.gif
+	 frame     data/chars/misc/stend/0002.gif
+	 frame     data/chars/misc/stend/0003.gif
+	 frame     data/chars/misc/stend/0004.gif
+	 frame     data/chars/misc/stend/0005.gif
+	 frame     data/chars/misc/stend/0006.gif
+	 frame     data/chars/misc/stend/0007.gif
+	 frame     data/chars/misc/stend/0008.gif
+	 frame     data/chars/misc/stend/0009.gif
+	 frame     data/chars/misc/stend/0010.gif
+	 frame     data/chars/misc/stend/0011.gif
+	 sound     data/sounds/stend.wav
+	 frame     data/chars/misc/stend/0012.gif
+	 delay     100
+	 frame     data/chars/misc/stend/0012.gif
+

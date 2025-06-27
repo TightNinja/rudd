@@ -1,0 +1,36 @@
+name        missi01
+health      1
+type	    pshot
+shootnum    999999
+speed	    25
+candamage   player obstacle
+subject_to_hole 0
+subject_to_wall 1
+subject_to_gravity 0
+subject_to_obstacle 1
+
+anim idle
+	   loop      1 1 3
+	   delay     10
+	   bbox      0
+	   offset    49 34 
+	   hitflash  Expflash
+	   followanim 1
+	   followcond 1
+	   sound     data/sounds/missi01.wav
+	   hitfx     data/sounds/exp01.wav
+	   attack11  43 29 13 6 80 1 1 0 7 4
+	   dropv     1.3 0.8 0
+	   forcedirection -1
+	   frame     data/chars/0weap/miss01.gif
+	   delay     5
+	   frame     data/chars/0weap/miss02.gif
+	   frame     data/chars/0weap/miss03.gif
+
+anim follow
+	   loop      0
+	   delay     10
+	   bbox      0
+	   offset    0 0
+	   frame     data/chars/0weap/empty.gif
+

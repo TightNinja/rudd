@@ -1,0 +1,3432 @@
+name          bjackson
+type          enemy
+candamage     player obstacle npc
+subject_to_obstacle 0
+score         1 5
+health        100
+jugglepoints  20
+speed         6
+running       12 2.2 1.5 1 0 
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+blockodds     1
+thold         15
+aggression    40
+atchain       1 2 0 0 0
+diesound      data/sounds/pain18.wav
+projectilehit enemy obstacle
+
+nopassiveblock 0
+aimove        chase 
+
+animationscript   data/scripts/lib001.c
+takedamagescript  data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c 
+
+palette         data/chars/2jackson/idle01.gif   
+alternatepal   data/chars/2jackson/alt01.gif 
+alternatepal   data/chars/2jackson/alt02.gif 
+alternatepal   data/chars/2jackson/alt03.gif 
+alternatepal   data/chars/2jackson/alt04.gif 
+alternatepal   data/chars/2jackson/danger.gif 
+alternatepal   data/chars/2jackson/alterbr.gif 
+
+anim spawn	
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0 
+	 delay      600
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+	 quakeframe 2 2 3
+         frame      data/chars/0misc/empty.gif
+	 delay      99
+         frame      data/chars/2jackson/ju01.gif
+	 delay      18
+	 hitfx      data/sounds/beatkill.wav
+	 attack     61 99 41 31 10 1 1 0 8 5
+	 dropv      1.4 1.7 0
+         frame      data/chars/2jackson/rise02.gif
+	 attack     0
+	 delay      6
+         frame      data/chars/2jackson/wk03.gif
+	 delay      8
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+         frame      data/chars/2jackson/wk03.gif
+	 sound      data/sounds/punch2.wav
+	 delay      8
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+         frame      data/chars/2jackson/wk03.gif
+	 delay      8
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/2jackson/a201.gif
+         frame      data/chars/2jackson/a202.gif
+	 delay      10
+         frame      data/chars/2jackson/a203.gif
+	 delay      5
+         frame      data/chars/2jackson/a203.gif
+	 delay      7
+         frame      data/chars/2jackson/a202.gif
+         frame      data/chars/2jackson/charge.gif
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/idle01.gif   
+         frame      data/chars/2jackson/idle01.gif   
+
+anim block
+	 loop       0
+	 delay      2
+	 move       -3
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/block.gif
+         frame      data/chars/2jackson/block.gif
+         frame      data/chars/2jackson/block.gif
+         frame      data/chars/2jackson/block.gif
+         frame      data/chars/2jackson/block.gif
+         frame      data/chars/2jackson/block.gif
+	 delay      15
+         frame      data/chars/2jackson/block.gif
+
+anim walk
+	 loop       1
+	 delay      9
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/wk01.gif
+         frame      data/chars/2jackson/wk02.gif
+         frame      data/chars/2jackson/wk03.gif
+	 delay      12
+         frame      data/chars/2jackson/idle01.gif
+	 delay      7
+         frame      data/chars/2jackson/wk03.gif
+         frame      data/chars/2jackson/wk02.gif
+
+anim run
+	 loop       1
+	 delay      9
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/wk01.gif
+         frame      data/chars/2jackson/wk02.gif
+         frame      data/chars/2jackson/wk03.gif
+	 delay      12
+         frame      data/chars/2jackson/idle01.gif
+	 delay      7
+         frame      data/chars/2jackson/wk03.gif
+         frame      data/chars/2jackson/wk02.gif
+
+anim attack1
+	 loop       0
+	 delay      6
+	 range      8 32
+	 rangez     -5 5
+	 offset     80 129
+	 bbox       71 79 27 48
+	 hitfx      data/sounds/beatbr3.wav
+         frame      data/chars/2jackson/wk03.gif
+	 delay      8
+	 attack2    86 80 26 11 7 0 0 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+	 attack     0 0 0 0
+         frame      data/chars/2jackson/wk03.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      8
+	 attack4    86 80 26 11 7 0 0 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+	 attack4    0 0 0 0
+         frame      data/chars/2jackson/wk03.gif
+	 hitfx      data/sounds/beatbr3.wav
+	 delay      8
+	 attack5    86 80 26 11 7 0 0 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+	 attack5    0 0 0 0
+         frame      data/chars/2jackson/wk03.gif
+anim attack2
+	 loop       0
+	 delay      8
+	 range      8 32
+	 rangez     -5 5
+	 offset     80 129
+	 bbox       71 79 27 48
+	 hitfx      data/sounds/beatsf1.wav
+         frame      data/chars/2jackson/a201.gif
+	 attack     86 79 27 22 10 1 0 0 8 5
+	 dropv      3 0.5 0
+         frame      data/chars/2jackson/a202.gif
+	 delay      10
+	 attack     85 54 19 39 10 1 0 0 8 5
+	 dropv      2.5 0.5 0
+         frame      data/chars/2jackson/a203.gif
+	 delay      5
+	 attack     0 0 0 0
+         frame      data/chars/2jackson/a203.gif
+	 delay      5
+         frame      data/chars/2jackson/a202.gif
+         frame      data/chars/2jackson/charge.gif
+anim freespecial
+	 loop       0
+	 delay      8
+	 range      80 110
+	 rangez     -5 5
+	 offset     80 129
+	 bbox       0
+	 followanim 42
+	 followcond 3
+	 jumpframe  19 1.1 2.3 0
+	 landframe  20
+	 hitfx      data/sounds/beatsmb1.wav
+	 sound      data/sounds/grunt09.wav
+         frame      data/chars/2jackson/charge.gif
+	 delay      2
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/2jackson/a301.gif
+         frame      data/chars/2jackson/a302.gif
+         frame      data/chars/2jackson/a303.gif
+         frame      data/chars/2jackson/a304.gif
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/2jackson/a301.gif
+         frame      data/chars/2jackson/a302.gif
+         frame      data/chars/2jackson/a303.gif
+         frame      data/chars/2jackson/a304.gif
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/2jackson/a301.gif
+         frame      data/chars/2jackson/a302.gif
+         frame      data/chars/2jackson/a303.gif
+         frame      data/chars/2jackson/a304.gif
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/2jackson/a301.gif
+         frame      data/chars/2jackson/a302.gif
+         frame      data/chars/2jackson/a303.gif
+         frame      data/chars/2jackson/a304.gif
+	 delay      5
+         frame      data/chars/2jackson/charge.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/2jackson/charge2.gif
+	 hitfx      data/sounds/beatsbm3.wav
+	 delay      99
+	 bbox       71 79 27 48
+	 attack5    90 83 31 10 0 0 0 0 8 5
+	 dropv      1.8 2 0  	
+         frame      data/chars/2jackson/charge4.gif
+	 attack5    0
+	 delay      22
+         frame      data/chars/2jackson/hold01.gif
+
+anim follow42
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 0.3 0.7
+	 landframe  2
+	 flipframe  13
+	 fastattack 1
+         frame      data/chars/2jackson/charge4.gif
+ 	 delay      99
+         frame      data/chars/2jackson/ju01.gif
+ 	 delay      5
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/wk03.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      9
+	 attack4    83 79 29 10 3 0 1 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+ 	 delay      5
+	 attack4    0
+         frame      data/chars/2jackson/wk03.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      9
+	 attack2    83 79 29 10 3 0 1 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+ 	 delay      5
+	 attack2    0
+	 hitfx      data/sounds/beatsf4.wav
+         frame      data/chars/2jackson/hold01.gif
+         frame      data/chars/2jackson/hold02.gif
+	 delay      10
+	 attack5    81 80 32 16 3 0 1 0 8 5
+	 dropv      3 0.5 0
+         frame      data/chars/2jackson/a202.gif
+	 attack5    0
+	 delay      8
+         frame      data/chars/2jackson/a201.gif
+         frame      data/chars/2jackson/hold01.gif
+@cmd velo001 0.6 0 0
+         frame      data/chars/2jackson/charge.gif
+	 delay      15
+@cmd velo001 1.3 0 0
+         frame      data/chars/2jackson/turn.gif
+@cmd velo001 1.7 0 0
+         frame      data/chars/2jackson/turn.gif
+@cmd velo001 0 0 0
+	 delay      8
+         frame      data/chars/2jackson/a401.gif
+	 hitfx      data/sounds/beatkill.wav
+	 delay      15
+	 attack2    80 90 31 12 3 0 1 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a401.gif
+	 delay      7
+	 attack2    0
+         frame      data/chars/2jackson/a201.gif
+	 hitfx      data/sounds/beatsbm1.wav
+	 delay      9
+	 attack4    83 79 29 10 3 0 1 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a101.gif
+	 delay      6
+	 attack4    0
+         frame      data/chars/2jackson/hold02.gif
+	 delay      10
+	 attack5    81 80 32 16 3 0 1 0 8 5
+	 dropv      1 0.7 0
+         frame      data/chars/2jackson/a202.gif
+	 delay      6
+	 attack5    0
+         frame      data/chars/2jackson/charge.gif
+	 delay      9
+@cmd velo001 -0.3 0 0
+         frame      data/chars/2jackson/charge2.gif
+@cmd velo001 1.2 0 0
+	 hitfx      data/sounds/beatsf1.wav
+	 delay      15
+	 attack4    83 79 29 10 3 1 1 0 8 5
+	 dropv      1.2 1.5 0
+         frame      data/chars/2jackson/a101.gif
+
+anim upper
+	 range      5 70
+	 rangez     -5 5
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 1.3 -1.5 0
+	 landframe  2
+         frame      data/chars/2jackson/block.gif
+	 delay      99
+         frame      data/chars/2jackson/dodge.gif
+	 delay      12
+         frame      data/chars/2jackson/block.gif
+
+anim freespecial2
+	 range     5 30
+	 rangez     -5 5
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+	 followanim 41
+	 followcond 3
+	 hitfx      data/sounds/grab.wav
+         frame      data/chars/2jackson/block.gif
+	 delay      7
+	 move       2
+         frame      data/chars/2jackson/hold01.gif
+         frame      data/chars/2jackson/hold02.gif
+	 delay      25
+	 attack     83 83 20 20 0 1 1 1 8 5
+	 forcedirection -1
+         frame      data/chars/2jackson/hold03.gif
+
+
+anim follow41
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd slamstart2
+@cmd position 9 25 15 -0.1 0
+	 sound      data/sounds/jacks01.wav
+         frame      data/chars/2jackson/air01.gif
+	 delay      8
+@cmd antiwall2 20 -10 0
+@cmd position 02 20 5 -0.1 0
+         frame      data/chars/2jackson/hold01.gif
+@cmd antiwall2 20 -10 0
+@cmd position 02 18 7 -0.1 0
+         frame      data/chars/2jackson/hold02.gif
+	 sound      data/sounds/beat2.wav
+@cmd spawn001 "flash" "flash" 0 16 30 0 0
+@cmd position 5 20 5 -0.1 0
+         frame      data/chars/2jackson/hold03.gif
+@cmd position 02 20 5 -0.1 0
+         frame      data/chars/2jackson/hold01.gif
+@cmd position 02 18 7 -0.1 0
+         frame      data/chars/2jackson/hold02.gif
+@cmd spawn001 "flash" "flash" 0 16 30 0 0
+	 sound      data/sounds/beat2.wav
+@cmd position 5 20 5 -0.1 0
+         frame      data/chars/2jackson/hold03.gif
+@cmd position 02 20 5 -0.1 0
+         frame      data/chars/2jackson/hold01.gif
+@cmd position 02 18 7 -0.1 0
+         frame      data/chars/2jackson/hold02.gif
+@cmd spawn001 "flash" "flash" 0 16 30 0 0
+	 sound      data/sounds/beat2.wav
+@cmd position 5 20 5 -0.1 0
+         frame      data/chars/2jackson/hold03.gif
+@cmd position 02 20 5 -0.1 0
+         frame      data/chars/2jackson/hold01.gif
+@cmd position 02 18 7 -0.1 0
+         frame      data/chars/2jackson/hold02.gif
+@cmd spawn001 "flash" "flash" 0 16 30 0 0
+	 sound      data/sounds/beat2.wav
+@cmd position 5 20 5 -0.1 0
+         frame      data/chars/2jackson/hold03.gif
+@cmd position 02 20 5 -0.1 0
+         frame      data/chars/2jackson/hold01.gif
+@cmd position 02 18 7 -0.1 0
+         frame      data/chars/2jackson/hold02.gif
+@cmd spawn001 "flash" "flash" 0 16 30 0 0
+	 sound      data/sounds/beat3.wav
+@cmd depost 0
+@cmd finish 17 1 -0.5 2.5 0 0
+         frame      data/chars/2jackson/a202.gif
+	 delay      18
+         frame      data/chars/2jackson/a203.gif
+	 delay      8
+         frame      data/chars/2jackson/a202.gif
+         frame      data/chars/2jackson/charge.gif
+
+anim riseattack
+	 range      5 45
+	 rangez     -2 2
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       0 0 0 0
+	 hitfx      data/sounds/beatsf4.wav
+         frame      data/chars/2jackson/rise02.gif
+	 delay      6
+         frame      data/chars/2jackson/a201.gif
+	 attack     86 79 27 22 10 1 1 0 8 5
+	 dropv      3 0.2 0
+         frame      data/chars/2jackson/a202.gif
+	 delay      10
+	 attack     85 54 19 39 10 1 1 0 8 5
+	 dropv      3 0.2 0
+         frame      data/chars/2jackson/a203.gif
+	 delay      25
+	 attack     0 0 0 0
+         frame      data/chars/2jackson/a203.gif
+	 delay      5
+         frame      data/chars/2jackson/a202.gif
+         frame      data/chars/2jackson/charge.gif
+
+anim special
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 1.3 -1.5 0
+	 landframe  2
+         frame      data/chars/2jackson/block.gif
+	 delay      99
+         frame      data/chars/2jackson/dodge.gif
+	 delay      12
+         frame      data/chars/2jackson/block.gif
+
+anim jump
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/ju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/rise02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 72 27 44
+	 landframe  1
+         frame      data/chars/2jackson/ju01.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/rise02.gif
+
+anim grabbed
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain06.gif
+	 bbox       80 87 28 23
+         frame      data/chars/2jackson/grbd01.gif
+
+anim spain
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/grbd02.gif
+	 delay      8
+         frame      data/chars/2jackson/pain06.gif
+
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/pain02.gif
+
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/pain01.gif
+
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2jackson/pain03.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2jackson/pain03.gif
+
+#stunned
+anim pain7
+	 loop       0
+	 offset     80 129
+	 bbox       71 72 27 44
+	 delay      19
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+
+#breathless3 for dd punch chain
+anim pain8
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 72 27 44
+         frame      data/chars/2jackson/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2jackson/pain03.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2jackson/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+
+anim burn
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+load     burn
+@cmd spawn001 "burn" "burn" 0 0 0 0 0
+	 drawmethod remap 6
+         frame      data/chars/2jackson/fall03.gif
+	 drawmethod remap -1
+         frame      data/chars/2jackson/fall03.gif
+@cmd	updateframe getlocalvar("self") 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall04.gif
+
+anim rise
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+#elbow fall
+anim fall5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 landframe  2
+         frame      data/chars/2jackson/fall16.gif
+	 delay      999
+         frame      data/chars/2jackson/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall12.gif
+         frame      data/chars/2jackson/fall13.gif
+
+anim rise5
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2jackson/fall13.gif
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+#uppercut fall
+anim fall6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  4
+         frame      data/chars/2jackson/pain02.gif
+	 delay      30
+	 bbox       65 85 31 36
+         frame      data/chars/2jackson/fall01.gif
+	 delay      15
+	 bbox       62 95 35 24
+         frame      data/chars/2jackson/fall05.gif
+	 delay      999
+	 bbox       69 100 24 33
+         frame      data/chars/2jackson/fall09.gif
+	 delay      9
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall10.gif
+         frame      data/chars/2jackson/fall11.gif
+         frame      data/chars/2jackson/fall12.gif
+         frame      data/chars/2jackson/fall13.gif
+
+anim rise6
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2jackson/fall13.gif
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+########anim fall's that don't allow juggling
+
+anim fall3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+########double dragons throw
+
+anim fall10
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 102 27 27
+	 landframe  3
+	 flipframe  1
+	 attack3    68 97 42 36 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall17.gif
+	 delay      15
+	 bbox       62 95 35 24
+	 attack3    61 89 42 33 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall02.gif
+	 delay      999
+	 bbox       62 104 33 26
+	 attack3    62 100 38 31 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+########double dragons flip throw
+
+anim pain11
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/pain06.gif
+
+anim fall12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  1
+	 attack     69 11 35 34 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall21.gif
+	 delay      15
+	 attack     69 11 35 34 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall02.gif
+	 delay      999
+	 attack     63 101 28 29 1 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+########double dragons coop throw billy
+
+anim fall102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 102 27 27
+	 landframe  3
+	 flipframe  1
+	 attack3    68 97 42 36 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall17.gif
+	 delay      15
+	 bbox       62 95 35 24
+	 attack3    61 89 42 33 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall02.gif
+	 delay      999
+	 bbox       62 104 33 26
+	 attack3    62 100 38 31 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim rise102
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+########Billy slam 01
+
+anim fall20
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+         frame      data/chars/2jackson/fall23.gif
+	 delay      10
+         frame      data/chars/2jackson/fall24.gif
+
+anim rise20
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 flipframe  1
+         frame      data/chars/2jackson/fall24.gif
+	 delay      13
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+########Billy slam 02
+
+anim fall21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall04.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+########screw falling
+
+#not juggling
+anim fall13
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 landframe  5
+	 attack     68 80 21 38 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall08.gif
+	 attack     66 83 24 34 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall07.gif
+	 attack     69 85 22 35 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall06.gif
+	 attack     64 85 28 27 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall05.gif
+	 bbox       0
+	 attack     0 0 0 0 0 0 0 0 0
+	 delay      999
+         frame      data/chars/2jackson/fall04.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#juggling
+anim fall14
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 landframe  5
+	 bbox       68 80 21 38
+	 attack     68 80 21 38 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall08.gif
+	 bbox       66 83 24 34
+	 attack     66 83 24 34 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall07.gif
+	 bbox       69 85 22 35
+	 attack     69 85 22 35 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall06.gif
+	 bbox       64 85 28 27
+	 attack     64 85 28 27 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall05.gif
+	 bbox       65 85 31 36
+	 attack     0 0 0 0
+	 delay      999
+         frame      data/chars/2jackson/fall01.gif
+	 bbox       0 0 0 0
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death14
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.5 -1.8 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall19
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0
+	 landframe  5
+         frame      data/chars/2jackson/fall08.gif
+         frame      data/chars/2jackson/fall07.gif
+         frame      data/chars/2jackson/fall06.gif
+         frame      data/chars/2jackson/fall05.gif
+@cmd   updateframe getlocalvar("self") 0
+	 delay      12
+         frame      data/chars/2jackson/fall03.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall04.gif
+
+########colossus falling
+
+#not juggling
+anim fall30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+	 hitfx      data/sounds/indirect.wav
+	 attack     63 78 31 41 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall05.gif
+	 delay      12
+	 sound      data/sounds/fall5.wav
+	 attack     0 0 0 0
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+########double dragons custom combos
+
+#moving backwards A01
+anim pain15
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -2
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain02.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+#moving backwards A02
+anim pain16
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -2
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+	 move       -1
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain01.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+#fast pain1
+anim pain17
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2jackson/pain03.gif
+
+#fast pain2
+anim pain18
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2jackson/pain03.gif
+
+#moving backwards B01 faster
+anim pain25
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -6
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 move       -3
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 move       -1
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain02.gif
+	 delay      19
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+
+#moving backwards B02 slower
+anim pain26
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -4
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain01.gif
+	 delay      40
+         frame      data/chars/2jackson/pain04.gif
+
+anim pain27
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -4
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain02.gif
+	 delay      40
+         frame      data/chars/2jackson/pain04.gif
+
+#stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 jumpframe  0 0.05 0
+         frame      data/chars/2jackson/fall29.gif
+	 delay      19
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+
+
+########ip man pain
+
+anim pain70
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain01.gif
+	 delay      15
+         frame      data/chars/2jackson/pain03.gif
+
+anim pain71
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+         frame      data/chars/2jackson/pain03.gif
+
+
+anim pain72
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain07.gif
+	 delay      15
+         frame      data/chars/2jackson/pain09.gif
+
+anim pain73
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/pain08.gif
+	 delay      15
+         frame      data/chars/2jackson/pain09.gif
+
+anim pain74
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2jackson/fall03.gif
+	 delay      15
+         frame      data/chars/2jackson/fall04.gif
+	 delay      15
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/fall04.gif
+	 delay      8
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+anim pain75
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/fall04.gif
+	 delay      5
+	 bbox       71 105 33 26
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+
+anim fall101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+	 attack     62 78 36 41 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jackson/fall01.gif
+	 attack     63 99 41 31 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2jackson/fall03.gif
+	 attack     0 0 0 0
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall3.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#############BILLY & JIMMY ULTRA
+
+#moving backwards C01
+anim pain90
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -1
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain02.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+#moving backwards C02
+anim pain91
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -1
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain01.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+#stomach blows
+anim fall90
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+         frame      data/chars/2jackson/fall29.gif
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall91
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+         frame      data/chars/2jackson/fall29.gif
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#juggle blows
+anim fall92
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2jackson/fall31.gif
+	 delay      21
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall93
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#jimmy super linker 02
+anim pain95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -2
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      20
+	 move       0
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+
+#jimmy stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+         frame      data/chars/2jackson/fall29.gif
+	 delay      19
+	 offset     80 129
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+         frame      data/chars/2jackson/pain03.gif
+
+#falling like a rock
+anim fall99
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 4 1 3
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall9.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+
+falldie  1
+nodieblink 1
+######################## DEATH ULTRA - HIGH 
+anim death99
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU02.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2jackson/fall04.gif
+	 delay      100
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH ULTRA - LOW
+anim death98
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU02.ogg", 0,0);
+}@end_script
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2jackson/fall03.gif
+	 delay      200
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH ULTRA - GRABS
+anim death95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU02.ogg", 0,0);
+}@end_script
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+#NEW
+         frame      data/chars/2jackson/fall03.gif
+	 delay      200
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH BRUTALITY - JEFF
+anim death97
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 7 -0.3 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 5 1 3
+	 dropframe  3
+	 load       staclrmk
+	 subentity  staclrmk
+	 spawnframe 7 256 232 0 1
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ02.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+         frame      data/chars/2jackson/fall04.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH SONIC BLAST MAN - BILLY & JIMMY 
+anim death96
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.3 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+         frame      data/chars/2jackson/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==6)
+{
+      fademusic(0.5, "data/music/CLEARSBM.ogg", 0,0);
+}@end_script
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      200
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH SONIC BLAST MAN - SONNY
+anim death89
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 3 -1 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+         frame      data/chars/2jackson/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2jackson/fall30.gif
+@script
+void vSelf = getlocalvar("self");
+if(frame==7)
+{
+fademusic(0.5, "data/music/CLEARSBM.ogg", 0,0);
+}@end_script
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      200
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH BRUTALITY - SONNY
+anim death88
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 7 -0.3 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 dropframe  3
+	 load       staclmks
+	 subentity  staclmks
+	 spawnframe 7 256 232 0 1
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ02.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+         frame      data/chars/2jackson/fall04.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+##################################### DEATHS WWF BILLY
+
+anim fall103
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death103
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFRAZR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall104
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death104
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFTAKR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+anim fall87
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death87
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFRAZR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+##################################### DEATHS WWF JIMMY
+
+anim fall105
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death105
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHBK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall106
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death106
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHITMN.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall86
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death86
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHBK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 -0.1 -2.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall107
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death107
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFDOINK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH SAMURAI SHODOWN
+
+anim death85
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(20, "data/music/SAMSHOW1.ogg", 0,0);
+}
+@end_script
+load     rsswin1
+load     rsswin3
+load     rsswin4
+load     15ranzc6
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.8 0
+	 landframe  3
+@cmd spawn044 "rsswin4" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "rsswin3" 128 0 228
+         frame      data/chars/2jackson/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 delay      25
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2jackson/pain02.gif
+	 sound      data/sounds/beatswd5.wav
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+         frame      data/chars/2jackson/pain03.gif
+	 sound      data/sounds/beatswd6.wav
+@cmd spawn001 "bflash" "bflash" 0 1 55 0 0
+         frame      data/chars/2jackson/pain02.gif
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2jackson/pain03.gif
+	 sound      data/sounds/beatswd5.wav
+	 delay      10
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 -30 0 -2
+         frame      data/chars/2jackson/pain02.gif
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 30 0 -2
+         frame      data/chars/2jackson/pain02.gif
+	 delay      230
+         frame      data/chars/2jackson/pain02.gif
+	 delay      9
+	 sound      data/sounds/pain18.wav
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd spawn044 "rsswin1" 128 0 228
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH STREET FIGHTER EX
+
+anim death84
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(1, "data/music/00.ogg", 0,0);
+}
+@end_script
+load     sfexw3
+load     sfexw2
+load     sfexw1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.8 0
+	 landframe  3
+@cmd spawn044 "sfexw1" 128 0 228
+         frame      data/chars/2jackson/fall01.gif
+	 delay      60
+         frame      data/chars/2jackson/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "sfexw2" 128 0 228
+         frame      data/chars/2jackson/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall03.gif
+	 sound      data/sounds/sfexthats.wav
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+	 sound      data/sounds/sfexgreat.wav
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+@cmd spawn044 "sfexw3" 128 0 228
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESQ
+anim death83
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrsq
+	 subentity  staclrsq
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIESQ.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2jackson/fall04.gif
+	 delay      100
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS
+anim death82
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW02.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2jackson/fall04.gif
+	 delay      100
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS LOW
+
+anim death79
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW02.ogg", 0,0);
+}@end_script
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2jackson/fall03.gif
+	 delay      200
+         frame      data/chars/2jackson/fall04.gif
+	 delay      10
+         frame      data/chars/2jackson/rise01.gif
+         frame      data/chars/2jackson/rise02.gif
+	 delay      22
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2jackson/pain04.gif
+	 sound      data/sounds/pain18.wav
+	 delay      9
+         frame      data/chars/2jackson/fall01.gif
+         frame      data/chars/2jackson/fall03.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH - KRUSHING BLOW ESS
+anim death81
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 3.3 -0.2 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 5 1 3
+	 dropframe  3
+	 load       kiflash
+	 load       essstc2
+	 subentity  essstc2
+	 spawnframe 7 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2jackson/fall30.gif
+	 delay      2
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+         frame      data/chars/2jackson/fall30.gif
+	 delay      15
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+@cmd velo001 0 0 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      100
+         frame      data/chars/2jackson/fall04.gif
+	 sound      data/chars/misc/ess/essxr2.wav
+	 delay      50
+         frame      data/chars/2jackson/fall04.gif
+	 delay      6
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2jackson/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+################################################# SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/pain01.gif #follow30
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain03.gif #follow31
+         frame      data/chars/2jackson/pain04.gif #follow 1 #follow27
+         frame      data/chars/2jackson/pain05.gif #follow32
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain07.gif
+         frame      data/chars/2jackson/pain08.gif
+         frame      data/chars/2jackson/pain09.gif
+@cmd    conditionalflip3
+         frame      data/chars/2jackson/fall01.gif #follow15
+#10
+         frame      data/chars/2jackson/fall02.gif
+         frame      data/chars/2jackson/fall03.gif #follow12
+         frame      data/chars/2jackson/fall04.gif #follow17
+         frame      data/chars/2jackson/fall05.gif
+         frame      data/chars/2jackson/fall06.gif #follow 2
+         frame      data/chars/2jackson/fall07.gif
+         frame      data/chars/2jackson/fall08.gif #follow20 #follow25 #follow26
+         frame      data/chars/2jackson/fall09.gif #follow 7
+         frame      data/chars/2jackson/fall10.gif #follow 8
+         frame      data/chars/2jackson/fall11.gif #follow 3
+#20
+         frame      data/chars/2jackson/fall12.gif
+         frame      data/chars/2jackson/fall13.gif
+         frame      data/chars/2jackson/fall15.gif
+         frame      data/chars/2jackson/fall16.gif
+         frame      data/chars/2jackson/fall17.gif #follow21
+         frame      data/chars/2jackson/fall18.gif
+         frame      data/chars/2jackson/fall19.gif
+         frame      data/chars/2jackson/fall20.gif
+         frame      data/chars/2jackson/fall21.gif
+         frame      data/chars/2jackson/fall22.gif #follow 9
+#30
+         frame      data/chars/2jackson/fall23.gif #follow28
+         frame      data/chars/2jackson/fall24.gif #follow18 follow19
+         frame      data/chars/2jackson/fall25.gif #follow14
+         frame      data/chars/2jackson/fall26.gif #follow22 #follow23 #follow24
+@cmd    conditionalflip3
+         frame      data/chars/2jackson/fall27.gif #follow40
+         frame      data/chars/2jackson/fall28.gif #follow38
+@cmd    conditionalflip3
+         frame      data/chars/2jackson/fall29.gif
+         frame      data/chars/2jackson/fall30.gif
+         frame      data/chars/2jackson/fall31.gif
+         frame      data/chars/2jackson/painh1.gif #follow33
+#40
+         frame      data/chars/2jackson/painh2.gif #follow34
+         frame      data/chars/2jackson/painh3.gif #follow35
+         frame      data/chars/2jackson/painh4.gif #follow37
+         frame      data/chars/2jackson/fall27.gif
+         frame      data/chars/2jackson/fall28.gif
+         frame      data/chars/2jackson/fall27.gif
+         frame      data/chars/2jackson/rise01.gif
+
+
+##################################### pain with voice sfx 
+
+#moving backwards C01
+anim pain50
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -1
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain02.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+#moving backwards C02
+anim pain51
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -1
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+         frame      data/chars/2jackson/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain01.gif
+	 delay      40
+         frame      data/chars/2jackson/pain03.gif
+
+anim fall50
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall31.gif
+	 delay      21
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall51
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#stunned
+anim pain52
+	 loop       0
+	 offset     80 129
+	 bbox       71 79 27 48
+	 delay      19
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+
+anim fall52
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall31.gif
+	 delay      21
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#jimmy super linker 02
+anim pain53
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 27 48
+	 move       -2
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+         frame      data/chars/2jackson/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain04.gif
+         frame      data/chars/2jackson/pain05.gif
+         frame      data/chars/2jackson/pain06.gif
+
+anim fall53
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#breathless1
+anim pain54
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 27 48
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/pain01.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2jackson/pain03.gif
+
+#breathless2
+anim pain55
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 27 48
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/pain02.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2jackson/pain03.gif
+
+anim fall54
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall31.gif
+	 delay      21
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall55
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#jimmy stomach blows
+anim pain56
+	 loop       0
+	 delay      2
+	 offset     80 131
+	 bbox       71 79 27 48
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall29.gif
+	 delay      210
+	 offset     80 129
+         frame      data/chars/2jackson/pain03.gif
+
+anim fall56
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#stomach blows
+anim fall57
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall29.gif
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall58
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall29.gif
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+#juggle blows
+anim fall59
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall31.gif
+	 delay      21
+         frame      data/chars/2jackson/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim fall60
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain22.wav
+         frame      data/chars/2jackson/fall30.gif
+	 delay      21
+         frame      data/chars/2jackson/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+
+anim death
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 jumpframe  0 1 0.2
+	 landframe  2
+         frame      data/chars/2jackson/fall16.gif
+	 delay      999
+         frame      data/chars/2jackson/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall12.gif
+         frame      data/chars/2jackson/fall13.gif
+
+anim death6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 3 -0.2 0
+	 landframe  4
+         frame      data/chars/2jackson/pain02.gif
+	 delay      30
+         frame      data/chars/2jackson/fall01.gif
+	 delay      15
+         frame      data/chars/2jackson/fall02.gif
+	 delay      999
+         frame      data/chars/2jackson/fall09.gif
+	 delay      9
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2jackson/fall10.gif
+         frame      data/chars/2jackson/fall11.gif
+         frame      data/chars/2jackson/fall12.gif
+         frame      data/chars/2jackson/fall13.gif
+
+anim death3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death10
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall04.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall04.gif
+
+anim death102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall04.gif
+
+anim death20
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall24.gif
+
+anim death21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall04.gif
+
+anim death14
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2jackson/fall04.gif
+
+anim death19
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+	 dropframe  1
+	 jumpframe  0 3 0.1 0
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2jackson/fall04.gif
+
+anim death30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+         frame      data/chars/2jackson/fall05.gif
+	 delay      12
+	 attack     0 0 0 0
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+anim death75
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 jumpframe  0 0.2 -0.2 0
+         frame      data/chars/2jackson/fall03.gif
+	 delay      15
+         frame      data/chars/2jackson/fall04.gif
+
+anim death101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2jackson/fall01.gif
+	 delay      999
+         frame      data/chars/2jackson/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jackson/fall03.gif
+         frame      data/chars/2jackson/fall04.gif
+
+

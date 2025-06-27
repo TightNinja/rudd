@@ -1,0 +1,82 @@
+name	brflaog
+type	none
+facing  1
+shadow	0
+alpha   0
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+lifespan 1
+
+anim idle
+	 loop      0
+	 delay     2
+	 offset    50 170
+	 quakeframe 0 3 3
+	 sound     data/sounds/ogbreak.wav
+	 drawmethod alpha 1 
+	 drawmethod channel 0.10
+	 frame     data/chars/0misc/brfla1.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.20
+	 frame     data/chars/0misc/brfla2.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.30
+	 frame     data/chars/0misc/brfla3.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.40
+	 frame     data/chars/0misc/brfla4.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.50
+	 frame     data/chars/0misc/brfla1.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla2.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla3.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla4.gif
+
+	 frame     data/chars/0misc/brfla1.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla2.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla3.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/brfla4.gif
+
+	 drawmethod alpha 1 
+	 drawmethod channel 0.50
+	 frame     data/chars/0misc/brfla1.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.40
+	 frame     data/chars/0misc/brfla2.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.30
+	 frame     data/chars/0misc/brfla3.gif
+	 frame     data/chars/0misc/empty.gif
+	 drawmethod alpha 1 
+	 drawmethod channel 0.15
+	 frame     data/chars/0misc/brfla4.gif
+
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+

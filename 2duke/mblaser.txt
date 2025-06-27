@@ -1,0 +1,113 @@
+name        mblaser
+health      1
+type	    pshot
+shootnum    1
+speed	    0
+nomove      1
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+lifespan    5
+
+palette        data/chars/2duke/mblaser1.gif
+alternatepal   data/chars/2duke/mblaser2.gif
+alternatepal   data/chars/2duke/mblaser3.gif
+alternatepal   data/chars/2duke/mblaser4.gif
+alternatepal   data/chars/2duke/mblaser5.gif
+
+anim idle
+	loop	 1 6 20
+	offset   0 129
+	delay   2
+	bbox     0
+	fastattack 1
+	hitflash  Qflash2
+	hitfx    data/sounds/beatsbm1.wav
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod alpha 6
+	drawmethod channel 0.75
+	sound    data/sounds/mblaser.wav
+	frame    data/chars/2duke/mblaser1.gif
+	drawmethod remap 1
+	attack    0
+	frame    data/chars/2duke/mblaser2.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 2
+	frame    data/chars/2duke/mblaser3.gif
+	attack    0
+	drawmethod remap 3
+	frame    data/chars/2duke/mblaser4.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 4
+	frame    data/chars/2duke/mblaser5.gif 
+	delay   3
+	attack    0
+	drawmethod remap -1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 2
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 3
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 4
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod alpha 1
+	drawmethod remap -1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 2
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 3
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 4
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod alpha 5
+	drawmethod remap -1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 1
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 2
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0 68 512 30 1 1 1 0 8 5
+	forcedirection -1
+	dropv    0.1 1.5 0
+	drawmethod remap 3
+	frame    data/chars/2duke/mblaser5.gif
+	attack   0
+	drawmethod remap 4
+	frame    data/chars/2duke/mblaser5.gif
+

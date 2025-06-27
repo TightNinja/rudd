@@ -1,0 +1,51 @@
+name	cdslums1
+health	1
+nolife  1
+#noatflash 1
+#flash     Flash
+type	 obstacle
+gfxshadow   1
+falldie  1
+nodieblink 2
+
+palette        data/chars/0misc/mcd01.gif
+
+
+anim idle
+	 loop       1
+	 delay      25
+	 offset     85 92
+	 bbox       77 77 16 16 1
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+
+anim death
+	 loop       0
+	 delay      3
+	 offset     85 92
+	 bbox       0
+         frame      data/chars/0misc/mcd01.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==1)
+{
+      fademusic(0.5, "data/music/MAXCAR01.ogg", 1, 240168.6);
+}@end_script
+         frame      data/chars/0misc/mcd02.gif
+         frame      data/chars/0misc/mcd03.gif
+         frame      data/chars/0misc/mcd04.gif
+         frame      data/chars/0misc/mcd05.gif
+         frame      data/chars/0misc/mcd06.gif
+         frame      data/chars/0misc/mcd07.gif
+         frame      data/chars/0misc/mcd08.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/mcd01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/mcd02.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/mcd03.gif
+	@cmd killentity getlocalvar("self")
+	 delay      10
+         frame      data/chars/0misc/empty.gif
+

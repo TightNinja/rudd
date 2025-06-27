@@ -1,0 +1,21 @@
+name	stendb
+type	none
+setlayer  999999999
+#CORRECT SETLAYER VALUE FOR PI3
+nodieblink 3
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 loop      0
+	 delay     1
+	 health    7
+	 offset    0 228
+	 @cmd Pause 1
+	 @cmd Join 1
+	 frame     data/chars/misc/stend/0012.gif
+	 frame     data/chars/misc/stend/0012.gif
+
+
+
+
+

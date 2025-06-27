@@ -1,0 +1,29 @@
+name	 Whip
+health   0
+type     item
+counter  9999
+subtype  weapon
+weapnum  9
+nolife   1
+shootnum 1
+
+anim idle
+	loop   0
+	delay  3
+	offset 33 26
+	bbox   0
+	jumpframe 0 0.2 0 0
+	landframe 8
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	frame  data/chars/0weap/whip01.gif
+	delay  99
+	frame  data/chars/0weap/whip01.gif
+	delay  3
+	bbox   33 25 2 2
+	frame  data/chars/0weap/whip01.gif
+

@@ -1,0 +1,129 @@
+name    lightnn
+health  0
+type	none
+facing  1
+setlayer 99999999
+subject_to_hole 0
+subject_to_obstacle 1
+subject_to_platform 1
+subject_to_gravity 1
+subject_to_wall 1
+#lifespan 1
+
+animationscript   data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette        data/chars/0misc/lgtn01.gif
+
+anim idle
+	 loop    0
+	 delay   100
+	 offset  95 215
+	 bbox    0 0 0 0	
+         frame   data/chars/0misc/empty.gif 
+	 delay   4
+	 sound   data/sounds/lightn5.wav
+@cmd shadow 10 5 60 6 2 250 250 250
+	 frame   data/chars/0misc/lgtn01.gif
+	 frame   data/chars/0misc/lgtn02.gif
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+@cmd shadow 0
+	 delay   7
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame   data/chars/0misc/lgtn03.gif
+	 frame   data/chars/0misc/lgtn06.gif
+	 frame   data/chars/0misc/lgtn07.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.07
+	 frame   data/chars/0misc/lgtn04.gif
+	 frame   data/chars/0misc/lgtn05.gif
+
+
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

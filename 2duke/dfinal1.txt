@@ -1,0 +1,107 @@
+name    dfinal1
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+lifespan  4
+
+anim idle
+	 loop    1 30 74
+	 delay   3
+	 offset  140 180
+	 bbox    0  
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal5.gif  #30
+	 delay   2
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal5.gif #42
+
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal2.gif #54
+	 frame   data/chars/2duke/dfinal5.gif
+
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal5.gif #63
+
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal5.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal3.gif
+	 frame   data/chars/2duke/dfinal1.gif
+	 frame   data/chars/2duke/dfinal4.gif
+	 frame   data/chars/2duke/dfinal2.gif
+	 frame   data/chars/2duke/dfinal5.gif #74
+
+
+
+
+#@cmd killentity getlocalvar("self")
+#	 frame   data/chars/0misc/empty.gif
+
+

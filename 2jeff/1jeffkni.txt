@@ -1,0 +1,936 @@
+name          1jeffkni
+candamage     enemy pshot npc
+type          none
+walkoffmove 0.5 0
+health        100
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+atchain       1 2 0 0 0
+typeshot      0
+weaploss      0
+weapons       1Jeff none none none 1Jeff none none none 1Jeffgun 1Jeff
+icon          data/chars/2jeff/iconk.gif 1
+#parrow         
+#parrow2 
+
+script data/scripts/spawn.c
+animationscript   data/scripts/lib001.c
+#didhitscript      data/scripts/didhit.c
+onblockWscript         data/scripts/spikesw2.c
+
+load     knife03
+com           a2    freespecial1
+com           a3    freespecial2
+com           a4    freespecial3
+com        b b s    freespecial5
+ 
+palette        data/chars/2jeff/icon.gif    
+alternatepal   data/chars/2jeff/alter06.gif   
+alternatepal   data/chars/2jeff/alter07.gif   
+alternatepal   data/chars/2jeff/alter08.gif   
+alternatepal   data/chars/2jeff/alter09.gif  
+alternatepal   data/chars/2jeff/alter10.gif  
+alternatepal   data/chars/2jeff/alter11.gif  
+alternatepal   data/chars/2jeff/alter12.gif  
+alternatepal   data/chars/2jeff/alter13.gif  
+alternatepal   data/chars/2jeff/alter14.gif  
+alternatepal   data/chars/2jeff/alter15.gif  
+alternatepal   data/chars/2jeff/alter16.gif  
+alternatepal   data/chars/2jeff/alter17.gif  
+alternatepal   data/chars/2jeff/alter18.gif  
+alternatepal   data/chars/2jeff/alter19.gif  
+alternatepal   data/chars/2jeff/alter20.gif  
+alternatepal   data/chars/2jeff/alter21.gif  
+alternatepal   data/chars/2jeff/alter22.gif  
+alternatepal   data/chars/2jeff/alter23.gif  
+alternatepal   data/chars/2jeff/alter24.gif  
+alternatepal   data/chars/2jeff/alter25.gif   
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim spawn
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/knget08.gif
+
+anim charge
+
+anim idle
+	 loop       1
+	 delay      200
+	 offset     80 129
+	 bbox       68 83 24 44
+	 delay      300
+         frame      data/chars/2jeff/knidle01.gif
+	 delay      4
+         frame      data/chars/2jeff/knget01.gif
+         frame      data/chars/2jeff/knget02.gif
+         frame      data/chars/2jeff/knget03.gif
+         frame      data/chars/2jeff/knget04.gif
+         frame      data/chars/2jeff/knget05.gif
+         frame      data/chars/2jeff/knget02.gif
+         frame      data/chars/2jeff/knget07.gif
+	 delay      25
+         frame      data/chars/2jeff/knget08.gif
+anim get
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 cancel     1 8 0 a freespecial5
+         frame      data/chars/2jeff/knget09.gif
+	 delay      4
+         frame      data/chars/2jeff/knget01.gif
+         frame      data/chars/2jeff/knget02.gif
+         frame      data/chars/2jeff/knget03.gif
+         frame      data/chars/2jeff/knget04.gif
+         frame      data/chars/2jeff/knget05.gif
+         frame      data/chars/2jeff/knget02.gif
+         frame      data/chars/2jeff/knget07.gif
+	 delay      25
+         frame      data/chars/2jeff/knget08.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/knwk01.gif
+         frame      data/chars/2jeff/knwk02.gif
+         frame      data/chars/2jeff/knwk03.gif
+         frame      data/chars/2jeff/knwk04.gif
+         frame      data/chars/2jeff/knwk05.gif
+         frame      data/chars/2jeff/knwk06.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/knrun1.gif
+         frame      data/chars/2jeff/knrun2.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/2jeff/knrun3.gif
+         frame      data/chars/2jeff/knrun4.gif
+         frame      data/chars/2jeff/knrun5.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/2jeff/knrun6.gif
+
+anim runattack
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   bflash
+	 fastattack 1
+	 sound      data/sounds/punch1.wav
+@cmd velo001 0.7 0 0
+         frame      data/chars/2jeff/knra01.gif
+	 delay      3
+         frame      data/chars/2jeff/knra02.gif
+	 hitfx      data/sounds/beatnw3.wav
+	 delay      5
+	 attack90   81 92 42 9 2 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.8 0
+         frame      data/chars/2jeff/knra04.gif
+	 delay      3
+	 attack     0 
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/2jeff/knra05.gif
+         frame      data/chars/2jeff/knra06.gif
+	 delay      5
+	 attack91   80 90 43 6 2 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.7 0.8 0
+         frame      data/chars/2jeff/knra07.gif
+	 delay      3
+	 attack     0 
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/2jeff/knra01.gif
+         frame      data/chars/2jeff/knra02.gif
+	 hitfx      data/sounds/beatnw3.wav
+	 delay      5
+	 attack90   84 83 33 23 4 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 8
+	 dropv      1.3 1.6 0
+         frame      data/chars/2jeff/knra03.gif
+	 delay      12
+	 attack     0 
+@cmd velo001 0.3 0 0
+         frame      data/chars/2jeff/knra08.gif
+	 delay      8
+         frame      data/chars/2jeff/knra02.gif
+@cmd velo001 0 0 0
+         frame      data/chars/2jeff/knra01.gif
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   bflash
+	 sound      data/sounds/punch2.wav
+	 hitfx      data/sounds/knife2.wav
+@cmd ani0020 openborconstant("ANI_ATTACK2") openborconstant("ANI_PAIN7")
+         frame      data/chars/2jeff/a104.gif
+         frame      data/chars/2jeff/kna202.gif
+	 delay      12
+	 attack7    95 91 29 12 9 0 1 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2jeff/kna202.gif
+	 delay      8
+	 attack7    0 0 0 0
+         frame      data/chars/2jeff/kna201.gif
+         frame      data/chars/2jeff/a101.gif
+
+anim attack2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   bflash
+	 sound      data/sounds/punch3.wav
+	 hitfx      data/sounds/beatdx.wav
+	 move       3
+         frame      data/chars/2jeff/kna201.gif
+         frame      data/chars/2jeff/kna301.gif
+         frame      data/chars/2jeff/kna302.gif
+	 attack     87 85 32 20 10 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 10
+	 dropv      1.5 1 0
+         frame      data/chars/2jeff/kna302.gif
+	 move       0
+	 attack     0 0 0 0
+         frame      data/chars/2jeff/kna303.gif
+         frame      data/chars/2jeff/kna304.gif
+	 delay      15
+         frame      data/chars/2jeff/kna305.gif
+	 delay      9
+         frame      data/chars/2jeff/kna303.gif
+
+#kick button
+anim freespecial1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 custknife  knife03
+	 tossframe  4 40
+	 sound      data/sounds/jeff04.wav
+         frame      data/chars/2jeff/kna101.gif
+         frame      data/chars/2jeff/kna102.gif
+	 delay      5
+         frame      data/chars/2jeff/kna103.gif
+	 bbox       0 0 0 0
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/2jeff/kna104.gif
+@cmd	 vPro001    "knife03" 0 0 40 0 3 0 0
+         frame      data/chars/2jeff/kna105.gif
+	 delay      13
+         frame      data/chars/2jeff/a101.gif
+
+anim freespecial5
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   bflash
+	 energycost 40
+	 mponly     1
+	 sound      data/sounds/jeff19.wav
+         frame      data/chars/2jeff/knget08.gif
+         frame      data/chars/2jeff/knget01.gif
+	 delay      4	
+         frame      data/chars/2jeff/kna501.gif
+         frame      data/chars/2jeff/kna502.gif
+         frame      data/chars/2jeff/kna503.gif
+	 delay      9
+	 sound      data/sounds/grab.wav
+         frame      data/chars/2jeff/kna504.gif
+	 delay      6
+         frame      data/chars/2jeff/kna505.gif
+	 move       2
+         frame      data/chars/2jeff/kna506.gif
+	 delay      12
+	 hitfx      data/sounds/beatswd1.wav
+	 attack91   86 77 30 28 4 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 10
+	 dropv      2.5 -0.1
+         frame      data/chars/2jeff/kna507.gif
+	 move       0
+	 delay      8
+	 attack     0
+         frame      data/chars/2jeff/kna505.gif
+         frame      data/chars/2jeff/knget08.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/2jeff/knju01.gif
+	 delay      10
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim jump
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/punch5.wav
+	 cancel     1 3 0 a2 freespecial60
+         frame      data/chars/2jeff/knju01.gif
+	 delay      10
+	 bbox       70 85 21 28
+         frame      data/chars/2jeff/knju02.gif
+         frame      data/chars/2jeff/knju03.gif
+         frame      data/chars/2jeff/knju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/knju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/2jeff/knwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/2jeff/knju02.gif
+	 delay      999
+	 hitfx      data/sounds/beatff1.wav
+	 attack11   72 96 38 20 10 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/2jeff/knak01.gif
+	 delay      15
+	 attack11   0 
+	 bbox       0 
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 hitfx      data/sounds/beatff1.wav
+	 attack     72 96 38 20 10 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/2jeff/knak01.gif
+	 delay      15
+	 attack     0 0 0 0 0 0 0 0 0
+         frame      data/chars/2jeff/knju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/knju01.gif
+
+anim jumpattack2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 flipframe  0
+	 hitfx      data/sounds/beat2.wav
+         frame      data/chars/2jeff/knju02.gif
+         frame      data/chars/2jeff/knak02.gif
+         delay      15
+	 attack92   76 102 27 23 6 1 0 0 12 3
+	 dropv      1.5 1.2 0	
+	 forcedirection -1
+         frame      data/chars/2jeff/knak04.gif
+         delay      12
+	 attack92   0 0 0 0
+         frame      data/chars/2jeff/knju01.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       69 88 24 25
+	 landframe  4
+	 followanim 17
+	 followcond 3
+	 hitflash   Bflash
+         frame      data/chars/2jeff/knju04.gif
+         frame      data/chars/2jeff/knju05.gif
+	 sound      data/sounds/punch3.wav
+         frame      data/chars/2jeff/knju06.gif
+	 hitfx      data/sounds/knife2.wav
+	 delay      99
+	 attack92   93 106 16 18 5 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.8 0.8 0
+         frame      data/chars/2jeff/knju07.gif
+	 delay      15
+	 attack92   0
+	 bbox       0
+         frame      data/chars/2jeff/kngrab11.gif
+
+#ENEMY JUMP
+anim follow17
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+#@cmd toss0001 10
+	 jumpframe  0 1.8 0.3 0
+	 landframe  7
+	 cancel     5 6 0 a2 freespecial60
+         frame      data/chars/2jeff/knju07.gif
+         frame      data/chars/2jeff/knju08.gif
+         frame      data/chars/2jeff/knju09.gif
+         frame      data/chars/2jeff/knju10.gif
+         frame      data/chars/2jeff/knju11.gif
+         frame      data/chars/2jeff/knju12.gif
+	 delay      99
+         frame      data/chars/2jeff/knju01.gif
+	 delay      15
+	 bbox       0 
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim freespecial60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatct02.wav
+         frame      data/chars/2jeff/knak02.gif
+         frame      data/chars/2jeff/knak03.gif
+	 delay      999
+	 attack     76 102 27 23 6 1 0 0 12 3
+	 dropv      1.5 1.2 0
+         frame      data/chars/2jeff/knak04.gif
+         delay      12
+	 attack     0 0 0 0
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim block
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+	 weaponframe 1 1jeff
+         frame      data/chars/2jeff/kndrop.gif
+         frame      data/chars/2jeff/idle01.gif
+
+anim freespecial97
+
+anim special
+
+anim grab
+@script
+  if(frame==0){
+    void self = getlocalvar("self");
+    void target = getentityproperty(self, "opponent");
+
+    setlocalvar("Target" + self, target);
+  }
+@end_script
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 cancel     2 3 0 a2 freespecial51
+	 cancel     2 3 0 j  freespecial52
+	 cancel     2 3 0 s  freespecial101
+         frame      data/chars/2jeff/grab01.gif
+	 delay      10
+         frame      data/chars/2jeff/grab01.gif
+         frame      data/chars/2jeff/grab02.gif
+
+anim grabattack
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe 11 1 0.1 0
+	 landframe 15
+	 sound      data/sounds/wcryb.wav
+@cmd slamstart2
+@cmd position 0 20 1 -0.1 0
+         frame      data/chars/2jeff/knair01.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab01.gif
+         frame      data/chars/2jeff/kngrab02.gif
+	 delay      7
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+	 sound      data/sounds/jeff19.wav
+	 delay      15
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab06.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 25 1 2.5 1 0 
+@cmd spawn001 "flash" "flash" 0 15 30 0 0
+	 sound      data/sounds/beatbr2.wav
+         frame      data/chars/2jeff/kngrab07.gif
+         frame      data/chars/2jeff/kngrab08.gif
+         frame      data/chars/2jeff/kngrab09.gif
+	 delay      99
+         frame      data/chars/2jeff/kngrab10.gif
+	 delay      12
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim freespecial51
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe 11 1 0.1 0
+	 landframe 15
+	 sound      data/sounds/wcryb.wav
+@cmd slamstart2
+@cmd position 0 20 1 -0.1 0
+         frame      data/chars/2jeff/knair01.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab01.gif
+         frame      data/chars/2jeff/kngrab02.gif
+	 delay      7
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+	 sound      data/sounds/jeff15.wav
+	 delay      15
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab06.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 25 1 2.5 1 0 
+@cmd spawn001 "flash" "flash" 0 15 30 0 0
+	 sound      data/sounds/beatbr2.wav
+         frame      data/chars/2jeff/kngrab07.gif
+         frame      data/chars/2jeff/kngrab08.gif
+         frame      data/chars/2jeff/kngrab09.gif
+	 delay      99
+         frame      data/chars/2jeff/kngrab10.gif
+	 delay      12
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim freespecial52
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe 11 1 0.1 0
+	 landframe 15
+	 sound      data/sounds/wcryb.wav
+@cmd slamstart2
+@cmd position 0 20 1 -0.1 0
+         frame      data/chars/2jeff/knair01.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab01.gif
+         frame      data/chars/2jeff/kngrab02.gif
+	 delay      7
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+	 sound      data/sounds/jeff05.wav
+	 delay      15
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab06.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 25 1 2.5 1 0 
+@cmd spawn001 "flash" "flash" 0 15 30 0 0
+	 sound      data/sounds/beatbr2.wav
+         frame      data/chars/2jeff/kngrab07.gif
+         frame      data/chars/2jeff/kngrab08.gif
+         frame      data/chars/2jeff/kngrab09.gif
+	 delay      99
+         frame      data/chars/2jeff/kngrab10.gif
+	 delay      12
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim freespecial50
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe 11 1 0.1 0
+	 landframe 15
+	 sound      data/sounds/wcryb.wav
+@cmd slamstart2
+@cmd position 0 20 1 -0.1 0
+         frame      data/chars/2jeff/knair01.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab01.gif
+         frame      data/chars/2jeff/kngrab02.gif
+	 delay      7
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+	 sound      data/sounds/jeff08.wav
+	 delay      15
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab06.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 25 1 2.5 1 0 
+@cmd spawn001 "flash" "flash" 0 15 30 0 0
+	 sound      data/sounds/beatbr2.wav
+         frame      data/chars/2jeff/kngrab07.gif
+         frame      data/chars/2jeff/kngrab08.gif
+         frame      data/chars/2jeff/kngrab09.gif
+	 delay      99
+         frame      data/chars/2jeff/kngrab10.gif
+	 delay      12
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim freespecial101
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe 11 1 0.1 0
+	 landframe 15
+	 sound      data/sounds/wcryb.wav
+@cmd slamstart2
+@cmd position 0 20 1 -0.1 0
+         frame      data/chars/2jeff/knair01.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab01.gif
+         frame      data/chars/2jeff/kngrab02.gif
+	 delay      7
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+@cmd position 6 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab02.gif
+	 sound      data/sounds/knife2.wav
+@cmd spawn001 "bflash" "bflash" 0 15 30 0 0
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab03.gif
+	 sound      data/sounds/jeff01.wav
+	 delay      15
+@cmd position 8 15 1 -0.1 1
+         frame      data/chars/2jeff/kngrab06.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 25 1 2.5 1 0 
+@cmd spawn001 "flash" "flash" 0 15 30 0 0
+	 sound      data/sounds/beatbr2.wav
+         frame      data/chars/2jeff/kngrab07.gif
+         frame      data/chars/2jeff/kngrab08.gif
+         frame      data/chars/2jeff/kngrab09.gif
+	 delay      99
+         frame      data/chars/2jeff/kngrab10.gif
+	 delay      12
+         frame      data/chars/2jeff/kngrab11.gif
+
+anim grabattack2
+anim grabup
+anim grabdown
+anim grabdown2
+anim grabbackward
+
+
+anim pain1
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/pain01.gif
+
+anim pain2
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/pain02.gif
+
+#breathless
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/pain01.gif
+	 delay      45
+         frame      data/chars/2jeff/pain03.gif
+
+#stun
+anim pain4
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/pain04.gif
+         frame      data/chars/2jeff/pain05.gif
+         frame      data/chars/2jeff/pain06.gif
+         frame      data/chars/2jeff/pain05.gif
+         frame      data/chars/2jeff/pain04.gif
+         frame      data/chars/2jeff/pain05.gif
+         frame      data/chars/2jeff/pain06.gif
+         frame      data/chars/2jeff/pain05.gif
+         frame      data/chars/2jeff/pain04.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/fall01.gif
+	 delay      999
+	 bbox       68 83 24 44
+         frame      data/chars/2jeff/fall03.gif
+	 delay      12
+	 bbox       0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2jeff/fall03.gif
+         frame      data/chars/2jeff/fall04.gif
+
+anim rise
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd bind 0 0 0 0 0
+         frame      data/chars/2jeff/fall04.gif
+	 delay      12
+         frame      data/chars/2jeff/rise01.gif
+         frame      data/chars/2jeff/rise02.gif
+
+#########extra moves
+
+#backfist attack
+
+#one extra backfist attack
+
+#fierce kick attack
+
+#SDD tatsumaki
+anim freespecial6
+
+#double kick
+anim freespecial7
+
+#########styles switch
+
+anim freespecial3
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       0 0 0 0
+	 custknife  knife03
+	 tossframe  6 40
+	 flipframe  5
+	 sound      data/sounds/jeff19.wav
+         frame      data/chars/2jeff/kngrab11.gif
+@cmd velo001 2.2 0 0
+	 delay      12
+         frame      data/chars/2jeff/knju12.gif
+	 delay      6
+         frame      data/chars/2jeff/knak03.gif
+         frame      data/chars/2jeff/knak02.gif
+         frame      data/chars/2jeff/knra06.gif
+@cmd velo001 0
+         frame      data/chars/2jeff/knra02.gif
+	 sound      data/sounds/punch2.wav
+	 delay      15
+@cmd	 vPro001    "knife03" 0 0 40 0 3 0 0
+         frame      data/chars/2jeff/mantis05.gif
+	 delay      9
+         frame      data/chars/2jeff/a702.gif
+	 delay      8
+         frame      data/chars/2jeff/idle01.gif
+
+anim freespecial2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       63 122 34 7
+	 move       2
+	 flipframe  21
+	 custknife  knife03
+	 tossframe  14 40
+         frame      data/chars/2jeff/kna101.gif
+@cmd velo001 -2.6 0 0
+	 delay      2
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/2jeff/kna505.gif
+         frame      data/chars/2jeff/spin04.gif
+         frame      data/chars/2jeff/spin05.gif
+         frame      data/chars/2jeff/spin06.gif
+         frame      data/chars/2jeff/spin03k.gif
+         frame      data/chars/2jeff/spin04.gif
+         frame      data/chars/2jeff/spin05.gif
+         frame      data/chars/2jeff/spin06.gif
+         frame      data/chars/2jeff/spin03k.gif
+         frame      data/chars/2jeff/spin04.gif
+         frame      data/chars/2jeff/spin05.gif
+         frame      data/chars/2jeff/spin06.gif
+         frame      data/chars/2jeff/spin03k.gif
+@cmd velo001 0
+	 delay      18
+	 sound      data/sounds/punch3.wav
+@cmd	 vPro001    "knife03" 0 0 30 0 3 0 0
+         frame      data/chars/2jeff/mantis01.gif
+	 delay      9
+         frame      data/chars/2jeff/fin01.gif
+
+#########DD1 style cancels
+
+anim freespecial20
+
+anim freespecial21
+
+anim freespecial22
+
+anim freespecial23
+
+#########DD2 style cancels
+
+anim freespecial15
+
+anim freespecial16
+
+anim freespecial17
+
+anim freespecial18
+
+anim freespecial19
+
+anim freespecial24
+
+anim freespecial25
+
+anim freespecial82
+
+anim freespecial83
+
+anim follow6
+
+
+
+
+

@@ -1,0 +1,65 @@
+name    comult
+facing  1
+type	panel
+speed     10
+lifespan 4
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+no_adjust_base 0
+setlayer 999999997
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  123 82
+	 bbox    0 0 0 0	
+	 frame   data/chars/0misc/kicom01.gif
+	 frame   data/chars/0misc/kicom02.gif
+	 frame   data/chars/0misc/kicom03.gif
+	 frame   data/chars/0misc/kicom04.gif
+	 frame   data/chars/0misc/kicom05.gif
+	 frame   data/chars/0misc/kicom06.gif
+	 frame   data/chars/0misc/kicom07.gif
+	 frame   data/chars/0misc/kicom08.gif
+	 delay   3
+	 sound   data/sounds/kiultra.wav
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.1
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.2
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.3
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.4
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.5
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.4
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.3
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.2
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod scale 1.1
+	 frame   data/chars/0misc/kiultra.gif
+	 delay   70
+drawmethod scale 1
+	 frame   data/chars/0misc/kiultra.gif
+	 delay   5
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod channel 0.75
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod channel 0.60
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod channel 0.45
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod channel 0.30
+	 frame   data/chars/0misc/kiultra.gif
+drawmethod channel 0.15
+	 frame   data/chars/0misc/kiultra.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

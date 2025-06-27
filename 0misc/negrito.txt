@@ -1,0 +1,30 @@
+name	negrito
+health	  1
+nolife    1
+noatflash 1
+type	 obstacle
+gfxshadow   1
+falldie  1
+nodieblink 2
+load    cat1
+
+animationscript     data/scripts/lib001.c
+
+anim idle
+	 loop       0
+	 delay      25
+	 offset     85 92
+	 bbox       77 77 16 16 1
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+
+anim death
+	 loop       0
+	 delay      4
+	 offset     85 92
+	 bbox       0
+	 sound      data/sounds/klunk.wav
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "cat1" "cat1" 0 -20 0 0 0  # map x y z 
+         frame      data/chars/0misc/empty.gif

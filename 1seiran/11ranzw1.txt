@@ -1,0 +1,108 @@
+name    11ranzw1
+health  0
+type	none
+gfxshadow 1
+#candamage enemy
+subject_to_gravity 0
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       1 35 37
+	 delay      3
+	 offset     96 170
+	 bbox       0
+	 flipframe  9
+	 drawmethod alpha 6
+	 drawmethod channel 0.1
+	 frame      data/chars/1seiran/riz01.gif
+	 drawmethod channel 0.2
+	 frame      data/chars/1seiran/riz02.gif
+	 drawmethod channel 0.3
+	 frame      data/chars/1seiran/riz03.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/riz04.gif
+	 drawmethod channel 0.5
+	 frame      data/chars/1seiran/riz01.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/riz02.gif
+	 drawmethod channel 0.7
+	 frame      data/chars/1seiran/riz03.gif
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/riz04.gif
+	 drawmethod channel 0.9
+	 frame      data/chars/1seiran/riz01.gif
+	 offset     96 166
+	 delay      15
+	 drawmethod alpha off
+         frame      data/chars/1seiran/rukyo09.gif
+	 delay      3
+	 sound      data/sounds/yranz02.wav
+         frame      data/chars/1seiran/rukyo02.gif
+         frame      data/chars/1seiran/rukyo03.gif
+         frame      data/chars/1seiran/rukyo04.gif
+         frame      data/chars/1seiran/rukyo05.gif
+         frame      data/chars/1seiran/rukyo06.gif
+         frame      data/chars/1seiran/rukyo07.gif
+         frame      data/chars/1seiran/rukyo08.gif
+         frame      data/chars/1seiran/rukyo09.gif
+	 sound      data/sounds/punch9.wav
+         frame      data/chars/1seiran/rslash01.gif
+	 delay      25
+         frame      data/chars/1seiran/rslash02.gif
+	 delay      3
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1seiran/rslash03.gif
+         frame      data/chars/1seiran/rslash04.gif
+         frame      data/chars/1seiran/rslash05.gif
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1seiran/rslash06.gif
+         frame      data/chars/1seiran/rslash03.gif
+         frame      data/chars/1seiran/rslash05.gif
+	 delay      15
+	 sound      data/sounds/sword01.wav
+         frame      data/chars/1seiran/rukyo09.gif
+	 delay      6
+         frame      data/chars/1seiran/rwin01.gif
+         frame      data/chars/1seiran/rwin02.gif
+         frame      data/chars/1seiran/rwin03.gif
+         frame      data/chars/1seiran/rwin04.gif
+         frame      data/chars/1seiran/rwin05.gif
+	 delay      15
+         frame      data/chars/1seiran/rwin07.gif
+	 delay      8
+	 sound      data/sounds/yranz08.wav
+         frame      data/chars/1seiran/rwin08.gif
+         frame      data/chars/1seiran/rwin07.gif
+         frame      data/chars/1seiran/rwin08.gif
+         frame      data/chars/1seiran/rwin07.gif
+
+
+
+
+
+
+
+
+
+

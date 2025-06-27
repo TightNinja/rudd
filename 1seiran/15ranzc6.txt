@@ -1,0 +1,36 @@
+name    15ranzc6
+health  0
+type	none
+candamage enemy
+alpha   6
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alterclo.gif  
+
+anim spawn
+	 loop       1 13 15
+	 delay      3
+	 offset     96 166
+	 bbox       0
+	 frame      data/chars/1seiran/riz01.gif
+	 frame      data/chars/1seiran/riz02.gif
+	 frame      data/chars/1seiran/riz03.gif
+	 frame      data/chars/1seiran/riz04.gif
+	 frame      data/chars/1seiran/riz01.gif
+	 frame      data/chars/1seiran/riz02.gif
+	 frame      data/chars/1seiran/riz03.gif
+	 delay      25
+	 delay      9
+	 frame      data/chars/1seiran/rwin01.gif
+	 frame      data/chars/1seiran/rwin02.gif
+	 frame      data/chars/1seiran/rwin03.gif
+	 frame      data/chars/1seiran/rwin04.gif
+	 frame      data/chars/1seiran/rwin05.gif
+	 frame      data/chars/1seiran/rwin07.gif
+	 frame      data/chars/1seiran/rwin08.gif
+	 frame      data/chars/1seiran/rwin07.gif
+
+
+
+

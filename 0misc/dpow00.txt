@@ -1,0 +1,22 @@
+name	dpow00
+type	none
+#subtype noskip
+setlayer -1
+lifespan 1
+
+
+
+anim idle
+	 loop      0
+	 delay     3
+	 health    10
+	 offset    128 228
+	 drawmethod alpha 6
+	 drawmethod channel 0.90
+	 frame     data/chars/0misc/agress02.gif
+	 frame     data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 delay     14
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+

@@ -1,0 +1,84 @@
+name	Biker1
+type	enemy
+subtype	arrow
+speed   12
+health	100
+gfxshadow	1
+falldie		1
+nodieblink	1
+offscreenkill   650
+
+animationscript data/scripts/lib001.c
+load	roperb1
+load	roperb2
+load    bikeli
+
+# Not really idle, but what the heck
+anim idle
+	loop	1 17 19
+	delay	110
+	offset	55 77
+	bbox	28 16 28 25
+	attack	50 30 45 48 15 1 1 0 8 5
+	forcedirection -1
+	dropv   1.8 2 0
+	custentity bikeli
+	summonframe 0 21 0 0 0
+	frame	data/chars/2biker1/2biker02.gif
+	delay	5
+	offset	55 78
+	sound   data/sounds/biker1.wav
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker02.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker02.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker02.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker02.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker02.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker03.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker01.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker01.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker01.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker01.gif
+@cmd spawn001 "roperb1" "roperb1" 0 0 25 0 0
+	offset	55 77
+	bbox	0 0 0 0
+	frame	data/chars/2biker1/2biker04.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker04.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker04.gif
+
+anim death
+	loop	1 2 4
+	delay	5
+	bbox	0 0 0 0
+	offset	55 77
+@cmd velo001 1.3 0 0
+@cmd spawn001 "roperb2" "roperb2" 0 0 0 0 0
+	frame	data/chars/2biker1/2biker04.gif
+@cmd velo001 1.3 0 0
+	offset	55 78
+	frame	data/chars/2biker1/2biker04.gif
+	offset	55 77
+	frame	data/chars/2biker1/2biker04.gif
+	offset	55 78
+	frame	data/chars/2biker1/2biker04.gif
+

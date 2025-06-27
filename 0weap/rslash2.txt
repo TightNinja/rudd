@@ -1,0 +1,25 @@
+name     rslash2
+type     npc
+shadow   0
+lifespan 1
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+anim idle
+	loop	 0
+	offset   39 62
+	delay    2
+	drawmethod alpha 6
+	drawmethod channel 0.65
+	move     2
+	frame    data/chars/0weap/rkick01.gif
+	frame    data/chars/0weap/empty.gif
+	frame    data/chars/0weap/rkick02.gif
+	frame    data/chars/0weap/empty.gif
+	frame    data/chars/0weap/rkick03.gif
+	frame    data/chars/0weap/empty.gif
+	frame    data/chars/0weap/rkick04.gif
+	frame    data/chars/0weap/empty.gif
+	frame    data/chars/0weap/rkick05.gif
+	frame    data/chars/0weap/empty.gif
+

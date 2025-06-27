@@ -1,0 +1,50 @@
+name	fogss
+type	panel
+speed   10
+shadow	0
+setlayer -10
+subject_to_wall 0
+subject_to_hole 0
+subject_to_gravity 0
+
+palette  	data/chars/misc/bgfx/fog01.gif
+
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 loop      1 1 13
+	 delay     100
+	 offset    256 226
+	 load      boltss
+	 custentity boltss
+	 spawnframe 0 0 0 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+@cmd velo001 0.3 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.2 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.1 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.0 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 -0.1 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 -0.2 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 -0.3 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 -0.2 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 -0.1 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.1 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.2 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+@cmd velo001 0.3 0 0
+	 frame     data/chars/misc/bgfx/fog01.gif
+
+

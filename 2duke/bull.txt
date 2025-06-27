@@ -1,0 +1,71 @@
+name        bull
+health      1
+type	    pshot
+shootnum    1
+speed	    5
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+
+
+anim idle
+	loop	 0
+	offset   74 130
+	delay    3
+	bbox     0
+	hitflash Qflash2
+	drawmethod alpha 6
+	drawmethod channel 0.20
+	fastattack 1
+	landframe 17
+	dropframe 11
+	sound    data/sounds/bull.wav
+	hitfx    data/sounds/beatsf1.wav
+	attack   64 75 34 54 5 1 1 0 8 7
+	forcedirection -1
+	dropv    1.7 1 0
+	frame    data/chars/2duke/bull01.gif
+	frame    data/chars/2duke/bull02.gif
+	attack   0
+	drawmethod channel 0.40
+	frame    data/chars/2duke/bull01.gif
+	frame    data/chars/2duke/bull02.gif
+	drawmethod channel 0.60
+	attack   64 75 34 54 5 1 1 0 8 7
+	forcedirection -1
+	dropv    1.7 1 0
+	frame    data/chars/2duke/bull01.gif
+	frame    data/chars/2duke/bull02.gif
+	attack   0
+	drawmethod channel 0.80
+	frame    data/chars/2duke/bull01.gif
+	frame    data/chars/2duke/bull02.gif
+@cmd jump001 3.5 0 0
+	attack   76 58 37 37 5 1 1 0 8 7
+	forcedirection -1
+	dropv    1.5 1.8 0
+	drawmethod alpha 0
+	delay    6
+	frame    data/chars/2duke/bull03.gif
+	frame    data/chars/2duke/bull03.gif
+	delay    999
+	frame    data/chars/2duke/bull04.gif
+@cmd velo001 0
+	delay    4
+	attack   0
+	frame    data/chars/2duke/bull03.gif
+	frame    data/chars/2duke/bull05.gif
+	frame    data/chars/2duke/bull06.gif
+	frame    data/chars/2duke/bull07.gif
+	frame    data/chars/2duke/bull08.gif
+	frame    data/chars/2duke/bull09.gif
+	frame    data/chars/0misc/empty.gif
+	frame    data/chars/2duke/bull09.gif
+	frame    data/chars/0misc/empty.gif
+	frame    data/chars/2duke/bull09.gif
+	frame    data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

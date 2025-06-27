@@ -1,0 +1,31 @@
+name	sfexw1
+type	text
+shadow	0
+facing  1
+#alpha	1
+setlayer 999999999
+
+palette       data/chars/1seiran/sfex01.gif
+
+anim idle
+	 loop      0
+	 delay     2
+	 offset    128 228
+	 sound     data/sounds/sfexspe.wav
+         frame     data/chars/1seiran/sfex01.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/sfex01.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/sfex01.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/sfex01.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/sfex01.gif
+	 frame     data/chars/0misc/empty.gif
+	 delay     130
+	 sound     data/sounds/sfexko.wav
+         frame     data/chars/1seiran/sfex01.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+

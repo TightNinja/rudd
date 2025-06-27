@@ -1,0 +1,149 @@
+name    02ranz
+health  0
+type	npc
+gfxshadow 1
+candamage enemy
+animationscript  data/scripts/lib001.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     96 166
+	 bbox       0
+	 fastattack 1
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 hitflash   Bflash
+	 sound      data/sounds/ninja01.wav
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/rcharge.gif
+	 delay      6
+	 drawmethod alpha off
+	 frame      data/chars/1seiran/rcharge.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd2.wav
+	 attack7    106 124 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.1 0
+         frame      data/chars/1seiran/rukyo03.gif
+	 attack7    0
+         frame      data/chars/1seiran/rukyo04.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd3.wav
+	 attack1    106 119 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.1 0
+         frame      data/chars/1seiran/rukyo05.gif
+	 attack1    0
+         frame      data/chars/1seiran/rukyo06.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd4.wav
+	 attack2    106 109 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.1 0
+         frame      data/chars/1seiran/rukyo07.gif
+	 attack2    0
+         frame      data/chars/1seiran/rukyo08.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd2.wav
+	 attack7    106 124 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.1 0
+         frame      data/chars/1seiran/rukyo03.gif
+	 attack7    0
+         frame      data/chars/1seiran/rukyo04.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd3.wav
+	 attack1    106 119 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.1 0
+         frame      data/chars/1seiran/rukyo05.gif
+	 attack1    0
+         frame      data/chars/1seiran/rukyo06.gif
+
+	 delay      2
+         frame      data/chars/1seiran/rukyo01.gif
+         frame      data/chars/1seiran/rukyo02.gif
+	 hitfx      data/sounds/beatswd4.wav
+	 attack2    106 109 67 16 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.8 0.1 0
+         frame      data/chars/1seiran/rukyo07.gif
+	 attack2    0
+         frame      data/chars/1seiran/rukyo08.gif
+	 delay      6
+	 sound      data/sounds/sword01.wav
+         frame      data/chars/1seiran/rukyo09.gif
+
+	 delay      5
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/1seiran/rb201.gif
+         frame      data/chars/1seiran/rb301.gif
+	 hitflash   flash
+	 hitfx      data/sounds/beatsf5.wav
+	 delay      12
+	 attack8    98 119 38 23 13 1 1 0 8 5
+	 dropv      2.8 -0.2 0
+	 forcedirection -1
+         frame      data/chars/1seiran/rb302.gif
+	 delay      6
+	 attack8    0 
+         frame      data/chars/1seiran/rb303.gif
+         frame      data/chars/1seiran/rb204.gif
+
+	 delay      3
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.6
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.4
+         frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.2
+         frame      data/chars/1seiran/rcharge.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,33 @@
+name	Qmkooh
+type	none
+setlayer 999999999
+shadow	0
+toflip  1
+#alpha	1
+
+anim idle
+	 loop       0
+	 delay      2
+	 offset     39 39
+	 quakeframe 0 3 3
+	 frame     data/chars/0misc/flash01.gif
+	 frame     data/chars/0misc/flash02.gif
+	 frame     data/chars/0misc/flash03.gif
+	 frame     data/chars/0misc/flash04.gif
+	 frame     data/chars/0misc/flash05.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+sound    data/sounds/mkooh.wav
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+

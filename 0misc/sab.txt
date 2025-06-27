@@ -1,0 +1,21 @@
+name	sab
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+setlayer -1
+
+anim idle
+	 loop    0
+	 delay   99
+	 offset  160 160
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/sa00.gif
+
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+

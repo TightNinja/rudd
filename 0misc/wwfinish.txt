@@ -1,0 +1,23 @@
+name	wwfinish 
+type	none
+#subtype noskip
+setlayer 999999999
+lifespan 1
+
+anim idle
+	 loop      0
+	 delay     2
+	 health    10
+	 offset    128 228
+	 sound     data/sounds/beatwwf1.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+	 frame     data/chars/0misc/wwfinish.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/0misc/wwfinish.gif
+	 frame     data/chars/0misc/empty.gif
+	@cmd killentity getlocalvar("self")
+	 delay     14
+	 frame     data/chars/0misc/empty.gif
+
+

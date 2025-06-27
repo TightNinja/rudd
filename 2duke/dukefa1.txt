@@ -1,0 +1,2638 @@
+name		dukefa1
+health		50
+nolife  	1
+type		enemy
+nomove  	1
+gfxshadow   	1
+jugglepoints    20
+speed           5
+jumpheight      2.43
+grabdistance    35
+throw           2 3
+throwdamage     20
+nolife          1
+noquake         1
+risetime        30
+paingrab        1
+antigravity     40
+cantgrab        1
+falldie         1
+nodieblink      1
+nodrop          0
+palette         data/chars/2duke/idle01.gif   
+alternatepal    data/chars/2duke/alt01.gif   
+
+animationscript   data/scripts/lib001.c
+takedamagescript  data/scripts/finisher.c
+ondrawscript	  data/scripts/shadowon.c
+onblockWscript         data/scripts/spikesw.c 
+
+anim spawn
+	 loop       0
+	 delay      100
+	 offset     80 129
+	 bbox       0  
+         frame      data/chars/0misc/empty.gif
+	 delay      5
+	 sound      data/sounds/duke01.wav
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/res01.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      200
+         frame      data/chars/2duke/res01.gif
+	 delay      25
+	 sound      data/chars/2duke/dukeno1.wav
+         frame      data/chars/2duke/rst02.gif
+
+anim idle
+	 loop       1
+	 delay      18
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+
+
+######################################################### deaths
+anim death1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.9 -1.3 0
+	 landframe  2
+	 load       kiflash	
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      50
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall9
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.9 -1.3 0
+	 landframe  2
+	 load       kiflash	
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      50
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim death5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 jumpframe  0 1 0.2
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall16.gif
+	 delay      999
+         frame      data/chars/2duke/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall12.gif
+	 delay      100
+         frame      data/chars/2duke/fall13.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim death6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 3 -0.2 0
+	 landframe  4
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/pain02.gif
+	 delay      30
+         frame      data/chars/2duke/fall01.gif
+	 delay      15
+         frame      data/chars/2duke/fall02.gif
+	 delay      999
+         frame      data/chars/2duke/fall09.gif
+	 delay      9
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2duke/fall10.gif
+         frame      data/chars/2duke/fall11.gif
+         frame      data/chars/2duke/fall12.gif
+	 delay      100
+         frame      data/chars/2duke/fall13.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim death3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0  
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0  
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death10
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 load       kiflash
+	 load       explo
+	 landframe  1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall03.gif
+	 sound      data/sounds/fall1.wav
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death12
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 load       kiflash
+	 load       explo
+	 landframe  1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall03.gif
+	 sound      data/sounds/fall1.wav
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 load       kiflash
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall04.gif
+anim death20
+	 loop       0
+	 delay      100
+	 offset     80 129
+	 bbox       0
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall24.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall04.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death14
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death19
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+	 dropframe  1
+	 jumpframe  0 3 0.1 0
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall04.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall05.gif
+	 delay      12
+	 attack     0 0 0 0
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death75
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 jumpframe  0 0.2 -0.2 0
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall03.gif
+	 delay      15
+         frame      data/chars/2duke/fall04.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+anim death101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+	 load       kiflash
+	 load       explo
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH ULTRA - HIGH 
+anim death99
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 load       kiflash
+	 load       kifall1
+	 load       kifall2
+	 load       kidukef
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+@cmd spawn001 "kifall1" "kifall1" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+sound   data/sounds/wind.wav
+         frame      data/chars/0misc/empty.gif
+sound   data/sounds/knoff.wav
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      15
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      112
+	 bbox       0  
+         frame      data/chars/0misc/empty.gif
+	 delay      1
+#NEW
+@cmd spawn044 "kidukef" 128 0 192
+         frame      data/chars/2duke/fall04.gif
+	 delay      30
+@cmd spawn044 "kifall2" 128 0 228
+         frame      data/chars/0misc/empty.gif
+	 delay      50
+	 sound      data/sounds/winner.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH ULTRA - LOW
+anim death98
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 load       kiflash
+	 load       kifall0
+	 load       kifall2
+	 load       kidukef
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+@cmd spawn001 "kifall0" "kifall0" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+sound   data/sounds/wind.wav
+         frame      data/chars/0misc/empty.gif
+sound   data/sounds/knoff.wav
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      15
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      112
+	 bbox       0  
+         frame      data/chars/0misc/empty.gif
+	 delay      1
+#NEW
+@cmd spawn044 "kidukef" 128 0 192
+         frame      data/chars/2duke/fall04.gif
+	 delay      30
+@cmd spawn044 "kifall2" 128 0 228
+         frame      data/chars/0misc/empty.gif
+	 delay      50
+	 sound      data/sounds/winner.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+
+
+######################## DEATH ULTRA - SUPER GRABS
+anim death95
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -1 0.1 0
+	 landframe  1
+	 bouncefactor -2
+	 load       kifall3
+	 load       kiflash
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+@cmd spawn001 "kifall3" "kifall3" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH BRUTALITY - JEFF
+anim death97
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -7 0 0
+	 landframe  1
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall30.gif
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp01" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp02" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp03" 0 20 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp04" 0 15 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp05" 0 20 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp06" 0 15 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp07" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp08" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH SONIC BLAST MAN - BILLY & JIMMY 
+anim death96
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+	 load       beamdu
+         frame      data/chars/2duke/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2duke/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2duke/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==6)
+{
+      fademusic(0.5, "data/music/CLEARSBM.ogg", 0,0);
+}@end_script
+	 delay      999
+         frame      data/chars/2duke/fall30.gif
+	 delay      15
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+@cmd velo001 0 0 0
+	 delay      12
+	 bbox       0  
+	 sound      data/sounds/fall9.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      10
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      22
+         frame      data/chars/2duke/pain04.gif
+	 delay      9
+         frame      data/chars/2duke/fall30.gif
+	 delay      400
+@cmd spawn001 "beamdu" "beamdu" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH SONIC BLAST MAN - SONNY
+anim death89
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 3 -1 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+	 load       beamdu
+         frame      data/chars/2duke/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2duke/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+         frame      data/chars/2duke/fall30.gif
+	 delay      15
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+@cmd velo001 0 0 0
+	 delay      12
+	 bbox       0  
+	 sound      data/sounds/fall9.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      10
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      22
+         frame      data/chars/2duke/pain04.gif
+	 delay      9
+         frame      data/chars/2duke/fall30.gif
+	 delay      400
+@cmd spawn001 "beamdu" "beamdu" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH BRUTALITY - SONNY
+anim death88
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -7 0 0
+	 landframe  1
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ01.ogg", 0,0);
+}@end_script
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp01" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp02" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp03" 0 20 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp04" 0 15 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp05" 0 20 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp06" 0 15 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp07" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp08" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+##################################### DEATHS WWF BILLY
+
+anim fall103
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death103
+load     wwfinish
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 load       kifall3
+	 bouncefactor 3
+	 jumpframe  0 1 0 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+@cmd spawn001 "kifall3" "kifall3" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      60
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      12
+         frame      data/chars/0misc/empty.gif
+	 delay      100
+         frame      data/chars/0misc/empty.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd velo001 0
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall104
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death104
+load     wwfinish
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 load       kifall3
+	 bouncefactor 3
+	 jumpframe  0 1 0 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+@cmd spawn001 "kifall3" "kifall3" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      60
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      12
+         frame      data/chars/0misc/empty.gif
+	 delay      100
+         frame      data/chars/0misc/empty.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd velo001 0
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall87
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death87
+load     wwfinish
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+	 load       kiflash
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn044 "wwfinish" 128 0 228
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp01" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp02" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp03" 0 20 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp04" 0 15 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp05" 0 20 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp06" 0 15 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp07" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp08" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+##################################### DEATHS WWF JIMMY
+
+anim fall105
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death105
+load     wwfinish
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 load       kifall3
+	 bouncefactor 3
+	 jumpframe  0 1 0 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+@cmd spawn001 "kifall3" "kifall3" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      60
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      12
+         frame      data/chars/0misc/empty.gif
+	 delay      100
+         frame      data/chars/0misc/empty.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd velo001 0
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall106
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death106
+load     wwfinish
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  0 -1 0 0
+	 landframe  1
+	 load       kiflash
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn044 "wwfinish" 128 0 228
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 0 1 0 
+@cmd	 tosser     "bp01" 0 0 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 5 0 0 1 0 
+@cmd	 tosser     "bp02" 0 0 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 10 0 0 1 0 
+@cmd	 tosser     "bp03" 0 0 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 15 0 0 1 0 
+@cmd	 tosser     "bp04" 0 0 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -5 0 0 1 0 
+@cmd	 tosser     "bp05" 0 0 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -10 0 0 1 0 
+@cmd	 tosser     "bp06" 0 0 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -15 0 0 1 0 
+@cmd	 tosser     "bp07" 0 0 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "bp08" 0 0 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall86
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death86
+load     wwfinish
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  0 -1 0 0
+	 landframe  1
+	 load       kiflash
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn044 "wwfinish" 128 0 228
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 0 1 0 
+@cmd	 tosser     "bp01" 0 0 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 5 0 0 1 0 
+@cmd	 tosser     "bp02" 0 0 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 10 0 0 1 0 
+@cmd	 tosser     "bp03" 0 0 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 15 0 0 1 0 
+@cmd	 tosser     "bp04" 0 0 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -5 0 0 1 0 
+@cmd	 tosser     "bp05" 0 0 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -10 0 0 1 0 
+@cmd	 tosser     "bp06" 0 0 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" -15 0 0 1 0 
+@cmd	 tosser     "bp07" 0 0 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd	 tosser     "bp08" 0 0 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall107
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim death107
+load     wwfinish
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 load       kifall3
+	 bouncefactor 3
+	 jumpframe  0 1 0 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+@cmd spawn001 "kifall3" "kifall3" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      60
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      12
+         frame      data/chars/0misc/empty.gif
+	 delay      100
+         frame      data/chars/0misc/empty.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/0misc/empty.gif
+@cmd velo001 0
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################################################### DEATH SAMURAI SHODOWN
+
+anim death85
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(20, "data/music/SAMSHOW1.ogg", 0,0);
+}
+@end_script
+load     rsswin1
+load     rsswin3
+load     rsswin4
+load     15ranzc6
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.2 0
+	 landframe  3
+@cmd spawn044 "rsswin4" 128 0 228
+         frame      data/chars/2duke/fall01.gif
+	 delay      60
+         frame      data/chars/2duke/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "rsswin3" 128 0 228
+         frame      data/chars/2duke/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2duke/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/2duke/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      22
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain06.gif
+         frame      data/chars/2duke/pain05.gif
+	 delay      150
+         frame      data/chars/2duke/pain04.gif
+	 delay      25
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2duke/pain02.gif
+	 sound      data/sounds/beatswd5.wav
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+         frame      data/chars/2duke/pain03.gif
+	 sound      data/sounds/beatswd6.wav
+@cmd spawn001 "bflash" "bflash" 0 1 55 0 0
+         frame      data/chars/2duke/pain02.gif
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2duke/pain03.gif
+	 sound      data/sounds/beatswd5.wav
+	 delay      10
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 -30 0 -2
+         frame      data/chars/2duke/pain02.gif
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 30 0 -2
+         frame      data/chars/2duke/pain02.gif
+	 delay      230
+         frame      data/chars/2duke/pain02.gif
+	 delay      9
+	 sound      data/sounds/pain13.wav
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      6
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+@cmd spawn044 "rsswin1" 128 0 228
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH STREET FIGHTER EX
+
+anim death84
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(1, "data/music/00.ogg", 0,0);
+}
+@end_script
+load     sfexw3
+load     sfexw2
+load     sfexw1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.8 0
+	 landframe  3
+@cmd spawn044 "sfexw1" 128 0 228
+         frame      data/chars/2duke/fall01.gif
+	 delay      60
+         frame      data/chars/2duke/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "sfexw2" 128 0 228
+         frame      data/chars/2duke/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2duke/fall03.gif
+	 sound      data/sounds/sfexthats.wav
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/2duke/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      22
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain06.gif
+         frame      data/chars/2duke/pain05.gif
+	 delay      150
+         frame      data/chars/2duke/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2duke/fall01.gif
+         frame      data/chars/2duke/fall03.gif
+	 delay      6
+	 sound      data/sounds/sfexworld.wav
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+@cmd spawn044 "sfexw3" 128 0 228
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2duke/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESQ
+anim death83
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrsq
+	 subentity  staclrsq
+	 load       beamdu
+	 spawnframe 12 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIESQ.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+         frame      data/chars/2duke/fall30.gif
+	 delay      15
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      25
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      100
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2duke/pain04.gif
+	 delay      9
+         frame      data/chars/2duke/fall30.gif
+	 delay      300
+@cmd spawn001 "beamdu" "beamdu" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS
+anim death82
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 load       kiflash
+	 load       kifall1
+	 load       kifall2
+	 load       kidukef
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 9 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+@cmd spawn001 "kifall1" "kifall1" 0 0 0 0 0
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW01.ogg", 0,0);
+}@end_script
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+sound   data/sounds/wind.wav
+         frame      data/chars/0misc/empty.gif
+sound   data/sounds/knoff.wav
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      15
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      112
+	 bbox       0  
+         frame      data/chars/0misc/empty.gif
+	 delay      1
+#NEW
+@cmd spawn044 "kidukef" 128 0 192
+         frame      data/chars/2duke/fall04.gif
+@cmd spawn044 "kifall2" 128 0 228
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+         frame      data/chars/0misc/empty.gif
+	 sound      data/sounds/winner.wav
+
+
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS LOW
+anim death79
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 load       kiflash
+	 load       kifall0
+	 load       kifall2
+	 load       kidukef
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 8 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+@cmd spawn001 "kifall0" "kifall0" 0 0 0 0 0
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW01.ogg", 0,0);
+}@end_script
+         frame      data/chars/0misc/empty.gif
+	 delay      2
+sound   data/sounds/wind.wav
+         frame      data/chars/0misc/empty.gif
+sound   data/sounds/knoff.wav
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      15
+         frame      data/chars/0misc/empty.gif
+	 delay      999
+         frame      data/chars/0misc/empty.gif
+	 delay      112
+	 bbox       0  
+         frame      data/chars/0misc/empty.gif
+	 delay      1
+@cmd spawn044 "kidukef" 128 0 192
+         frame      data/chars/2duke/fall04.gif
+@cmd spawn044 "kifall2" 128 0 228
+         frame      data/chars/0misc/empty.gif
+	 delay      100
+	 sound      data/sounds/winner.wav
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH - KRUSHING BLOW ESS
+anim death81
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -1 0 0
+	 landframe  1
+	 bouncefactor -1
+	 load       kiflash
+	 load       essstc2
+	 subentity  essstc2
+	 spawnframe 12 256 232 0 1
+	 load       essbloo
+	 load       bp01
+	 load       bp02
+	 load       bp03
+	 load       bp04
+	 load       bp05
+	 load       bp06
+	 load       bp07
+	 load       bp08
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall10.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ01.ogg", 0,0);
+}@end_script
+         frame      data/chars/0misc/empty.gif
+	 delay      5
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp01" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp02" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp03" 0 20 0 -0.1 2.1 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp04" 0 15 0 0.2 3.9 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 5 1 0 
+@cmd	 tosser     "bp05" 0 20 0 -0.3 2.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 10 1 0 
+@cmd	 tosser     "bp06" 0 15 0 0 1.5 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 15 1 0 
+@cmd	 tosser     "bp07" 0 20 0 -0.2 3.4 0
+         frame      data/chars/0misc/empty.gif
+@cmd spawn001 "essbloo" "essbloo" 0 0 20 1 0 
+@cmd	 tosser     "bp08" 0 15 0 0.3 4 0
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/0misc/empty.gif
+	 delay      200
+         frame      data/chars/0misc/empty.gif
+	 delay      300
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+################################################################ the rest
+anim walk
+	 loop       1
+	 delay      20
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/wk01.gif
+	 delay      15
+         frame      data/chars/2duke/wk02.gif
+	 delay      20
+         frame      data/chars/2duke/wk03.gif
+	 delay      15
+         frame      data/chars/2duke/wk04.gif
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain02.gif
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain01.gif
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain01.gif
+	 move       0
+	 delay      45 
+         frame      data/chars/2duke/pain03.gif
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2duke/pain03.gif
+#stunned
+anim pain7
+	 loop       0
+	 offset     80 129
+	 bbox       71 79 25 50
+	 delay      19
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+#breathless3 for dd punch chain
+anim pain8
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2duke/pain03.gif
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim rise
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2duke/fall04.gif
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/crouch.gif
+#elbow fall
+anim fall5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 landframe  2
+	 flipframe  2
+	 sound      data/sounds/pain2.wav
+         frame      data/chars/2duke/fall16.gif
+	 delay      999
+         frame      data/chars/2duke/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#################################anim fall's that don't allow juggling
+anim fall3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+########double dragons throw
+
+anim fall10
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2duke/fall21.gif
+	 delay      15
+         frame      data/chars/2duke/fall02.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2duke/fall03.gif
+	 delay      100
+         frame      data/chars/2duke/fall04.gif
+	 delay      12
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/rise02.gif
+	 delay      700
+@cmd spawn001 "explo" "explo" 0 0 0 0 0
+         frame      data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+################################################double dragons flip throw
+anim pain11
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2duke/pain04.gif
+anim fall12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  1
+	 sound      data/sounds/pain1.wav
+	 attack     69 11 35 34 5 1 0 0 8 5
+         frame      data/chars/2duke/fall21.gif
+	 delay      15
+	 attack     69 11 35 34 5 1 0 0 8 5
+         frame      data/chars/2duke/fall02.gif
+	 delay      999
+	 attack     63 101 28 29 5 1 0 0 8 5
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+########Billy slam 01
+
+anim fall20
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+         frame      data/chars/2duke/fall23.gif
+	 delay      10
+         frame      data/chars/2duke/fall24.gif
+
+anim rise20
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 flipframe  1
+         frame      data/chars/2duke/fall24.gif
+	 delay      13
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/crouch.gif
+
+########Billy slam 02
+
+anim fall21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2duke/fall04.gif
+	 delay      999
+         frame      data/chars/2duke/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+########colossus falling
+
+#not juggling
+anim fall30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+         frame      data/chars/2duke/fall05.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+########double dragons custom combos
+
+#moving backwards A01
+anim pain15
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -2
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain02.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+
+#moving backwards A02
+anim pain16
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -2
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+	 move       -1
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain01.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+
+#fast pain1
+anim pain17
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2duke/pain03.gif
+
+#fast pain2
+anim pain18
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2duke/pain03.gif
+
+#moving backwards B01 faster
+anim pain25
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -6
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 move       -3
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 move       -1
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain02.gif
+	 delay      24
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+
+#moving backwards B02 slower
+anim pain26
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -4
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain01.gif
+	 delay      40
+         frame      data/chars/2duke/pain04.gif
+
+anim pain27
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -4
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain02.gif
+	 delay      40
+         frame      data/chars/2duke/pain04.gif
+
+#stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 jumpframe  0 0.05 0
+         frame      data/chars/2duke/fall29.gif
+	 delay      25
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+#####################################################ip man pain
+anim pain70
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain01.gif
+	 delay      15
+         frame      data/chars/2duke/pain03.gif
+anim pain71
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+         frame      data/chars/2duke/pain03.gif
+anim pain72
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain07.gif
+	 delay      15
+         frame      data/chars/2duke/pain09.gif
+anim pain73
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/pain08.gif
+	 delay      15
+         frame      data/chars/2duke/pain09.gif
+anim pain74
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+	 delay      15
+	 bbox       0 0 0 0
+         frame      data/chars/2duke/fall04.gif
+	 delay      8
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/crouch.gif
+anim pain75
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2duke/fall04.gif
+	 delay      5
+	 bbox       71 105 33 26
+         frame      data/chars/2duke/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2duke/rise01.gif
+         frame      data/chars/2duke/crouch.gif
+anim fall101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+	 attack     62 78 36 41 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2duke/fall01.gif
+	 attack     63 99 41 31 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2duke/fall02.gif
+	 attack     0 0 0 0
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#############BILLY & JIMMY ULTRA
+
+#moving backwards C01
+anim pain90
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -1
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain02.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+
+#moving backwards C02
+anim pain91
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -1
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain01.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+
+#stomach blows
+anim fall90
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 30 50
+	 landframe  3
+         frame      data/chars/2duke/fall29.gif
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim fall91
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 30 50
+	 landframe  3
+         frame      data/chars/2duke/fall29.gif
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+#juggle blows
+anim fall92
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       71 79 30 50
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2duke/fall31.gif
+	 delay      21
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+anim fall93
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       71 79 30 50
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+#jimmy super linker 02
+anim pain95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+	 move       -2
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      20
+	 move       0
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain05.gif
+
+#jimmy stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 50
+         frame      data/chars/2duke/fall29.gif
+	 delay      19
+	 offset     80 129
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain03.gif
+
+#falling like a rock
+anim fall99
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 4 1 3
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+
+######################################################## SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2duke/pain01.gif #follow30
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain03.gif #follow31
+         frame      data/chars/2duke/pain04.gif #follow 1 #follow27
+         frame      data/chars/2duke/pain05.gif #follow32
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain07.gif
+         frame      data/chars/2duke/pain08.gif
+         frame      data/chars/2duke/pain09.gif
+@cmd    conditionalflip3
+         frame      data/chars/2duke/fall01.gif #follow15
+#10
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall03.gif #follow12
+         frame      data/chars/2duke/fall04.gif #follow17
+         frame      data/chars/2duke/fall05.gif
+         frame      data/chars/2duke/fall06.gif #follow 2
+         frame      data/chars/2duke/fall07.gif
+         frame      data/chars/2duke/fall08.gif #follow20 #follow25 #follow26
+         frame      data/chars/2duke/fall09.gif #follow 7
+         frame      data/chars/2duke/fall10.gif #follow 8
+         frame      data/chars/2duke/fall11.gif #follow 3
+#20
+         frame      data/chars/2duke/fall12.gif
+         frame      data/chars/2duke/fall12.gif
+         frame      data/chars/2duke/fall15.gif
+         frame      data/chars/2duke/fall16.gif
+         frame      data/chars/2duke/fall17.gif #follow21
+         frame      data/chars/2duke/fall18.gif
+         frame      data/chars/2duke/fall19.gif
+         frame      data/chars/2duke/fall20.gif
+         frame      data/chars/2duke/fall21.gif
+         frame      data/chars/2duke/fall22.gif #follow 9
+#30
+         frame      data/chars/2duke/fall23.gif #follow28
+         frame      data/chars/2duke/fall24.gif #follow18 follow19
+         frame      data/chars/2duke/fall25.gif #follow14
+         frame      data/chars/2duke/fall26.gif #follow22 #follow23 #follow24
+@cmd    conditionalflip3
+         frame      data/chars/2duke/fall27.gif #follow40
+         frame      data/chars/2duke/fall28.gif #follow38
+@cmd    conditionalflip3
+         frame      data/chars/2duke/fall29.gif
+         frame      data/chars/2duke/fall30.gif
+         frame      data/chars/2duke/fall31.gif
+         frame      data/chars/2duke/pain01.gif #follow33
+#40
+         frame      data/chars/2duke/pain02.gif #follow34
+         frame      data/chars/2duke/pain03.gif #follow35
+         frame      data/chars/2duke/pain04.gif #follow37
+         frame      data/chars/2duke/fall27.gif
+         frame      data/chars/2duke/fall28.gif
+         frame      data/chars/2duke/fall27.gif
+         frame      data/chars/2duke/rise01.gif
+
+#################################################### pain with voice sfx 
+#moving backwards C01
+anim pain50
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       72 69 26 60
+	 move       -1
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain02.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+#moving backwards C02
+anim pain51
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       72 69 26 60
+	 move       -1
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+         frame      data/chars/2duke/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain01.gif
+	 delay      40
+         frame      data/chars/2duke/pain03.gif
+anim fall50
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall31.gif
+	 delay      21
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall51
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#stunned
+anim pain52
+	 loop       0
+	 offset     80 129
+	 bbox       72 69 26 60
+	 delay      19
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+anim fall52
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall31.gif
+	 delay      21
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#jimmy super linker 02
+anim pain53
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       72 69 26 60
+	 move       -2
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+         frame      data/chars/2duke/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+         frame      data/chars/2duke/pain03.gif
+         frame      data/chars/2duke/pain04.gif
+anim fall53
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#breathless1
+anim pain54
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       72 69 26 60
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/pain01.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2duke/pain03.gif
+#breathless2
+anim pain55
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       72 69 26 60
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/pain02.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2duke/pain03.gif
+anim fall54
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall31.gif
+	 delay      21
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall55
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#jimmy stomach blows
+anim pain56
+	 loop       0
+	 delay      2
+	 offset     80 131
+	 bbox       72 69 26 60
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall29.gif
+	 delay      210
+	 offset     80 129
+         frame      data/chars/2duke/pain03.gif
+anim fall56
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#stomach blows
+anim fall57
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall29.gif
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall58
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall29.gif
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+#juggle blows
+anim fall59
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall31.gif
+	 delay      21
+         frame      data/chars/2duke/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif
+anim fall60
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain29.wav
+         frame      data/chars/2duke/fall30.gif
+	 delay      21
+         frame      data/chars/2duke/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2duke/fall01.gif
+	 delay      999
+         frame      data/chars/2duke/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2duke/fall03.gif
+         frame      data/chars/2duke/fall04.gif

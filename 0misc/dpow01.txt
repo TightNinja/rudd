@@ -1,0 +1,45 @@
+name    dpow01
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 1
+subject_to_platform 1
+subject_to_gravity 0
+lifespan 2.5
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 load    dpow00
+	 loop    1 10 14
+	 delay   3
+	 offset  70 244
+	 bbox    0
+	 drawmethod alpha 6 
+	 drawmethod channel 0.70
+	 frame   data/chars/0misc/dpow01.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow01.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow01.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow01.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow01.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow02.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow03.gif
+@cmd spawn044 "dpow00" 128 0 228
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow02.gif
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

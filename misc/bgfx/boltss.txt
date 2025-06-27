@@ -1,0 +1,60 @@
+name	boltss
+type	panel
+speed   10
+shadow	0
+setlayer -10
+subject_to_wall 0
+subject_to_hole 0
+subject_to_gravity 0
+
+animationscript   data/scripts/lib001.c
+
+palette    data/chars/misc/bgfx/bolt01.gif
+anim idle
+	 loop      1 2
+	 offset    128 224
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+	 delay     3
+load     lighte
+load     smokess
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+@cmd spawn001 "smokess" "smokess" 1 40 0 -80 0
+@cmd spawn001 "smokess" "smokess" 1 -143 0 -80 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt03.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt01.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt04.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt02.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt06.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt05.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt09.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt08.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 -5 0
+	 frame     data/chars/misc/empty.gif
+@cmd spawn001 "lighte" "lighte" 0 0 0 2 0
+	 frame     data/chars/misc/bgfx/bolt07.gif
+
+

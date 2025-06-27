@@ -1,0 +1,66 @@
+name	      rock01
+health        0
+type          item
+counter       999
+subtype       weapon
+weapnum       6
+shootnum      1
+nolife        1
+gfxshadow     1
+remove	      0
+noquake  1 1
+
+script  data/scripts/bounce.c
+
+anim spawn
+	delay	2
+	offset  24 35
+	bbox    13 14 22 23
+	frame	data/chars/0weap/rock01.gif
+     move    2
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock04.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock05.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock01.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock02.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+	frame	data/chars/0weap/rock03.gif
+
+anim idle
+	delay	1
+	offset  24 35
+	bbox    13 14 22 23
+	frame	data/chars/0weap/rock04.gif
+
+

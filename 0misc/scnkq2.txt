@@ -1,0 +1,52 @@
+name    scnkq2
+health  1
+type	text
+subtype noskip
+#alpha   1
+lifespan 2
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+animationscript   data/scripts/lib001.c
+anim idle
+	 loop    0
+	 delay   6
+	 offset  134 115
+	 bbox    0 0 0 0
+@cmd spawnbind "zoomin" 0 0 -100
+	 sound   data/sounds/bala.wav	
+@script
+    void vSelf = getlocalvar("self");
+if(frame==1)
+{
+      fademusic(10, "data/music/00.ogg", 0, 0);
+}@end_script
+	 frame   data/chars/0misc/hy01.gif
+	 frame   data/chars/0misc/hy02.gif
+	 frame   data/chars/0misc/hy03.gif
+	 frame   data/chars/0misc/hy04.gif
+	 frame   data/chars/0misc/hy05.gif
+	 delay   3
+	 frame   data/chars/0misc/hy06.gif
+	 frame   data/chars/0misc/hy07.gif
+	 frame   data/chars/0misc/hy08.gif
+	 frame   data/chars/0misc/hy09.gif
+	 frame   data/chars/0misc/hy10.gif
+	 frame   data/chars/0misc/hy11.gif
+	 frame   data/chars/0misc/hy12.gif
+	 frame   data/chars/0misc/hy13.gif
+	 delay   2
+	 frame   data/chars/0misc/hy14.gif
+	 frame   data/chars/0misc/hy15.gif
+	 frame   data/chars/0misc/hy16.gif
+	 frame   data/chars/0misc/hy17.gif
+#	 sound   data/sounds/clear.wav
+	 frame   data/chars/0misc/hy18.gif
+@cmd spawnbind "zoomout" 0 0 -100
+	 sound   data/sounds/bala.wav
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

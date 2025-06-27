@@ -1,0 +1,65 @@
+name	bgfx2
+health	10
+type	panel
+speed   5
+shadow  0
+setlayer -2000
+facing  1
+
+anim	idle
+	loop	1
+	offset	1 0
+	delay	200
+	@cmd	changeentityproperty getlocalvar("self") "direction" 1
+	frame	data/chars/misc/bgfx2/01.gif
+	delay	4
+#	@cmd	changeentityproperty getlocalvar("self") "setlayer" -2000
+	frame	data/chars/misc/bgfx2/01.gif
+	frame	data/chars/misc/bgfx2/02.gif
+	frame	data/chars/misc/bgfx2/03.gif
+	frame	data/chars/misc/bgfx2/04.gif
+	frame	data/chars/misc/bgfx2/05.gif
+	frame	data/chars/misc/bgfx2/06.gif
+	frame	data/chars/misc/bgfx2/07.gif
+	frame	data/chars/misc/bgfx2/08.gif
+	frame	data/chars/misc/bgfx2/09.gif
+	frame	data/chars/misc/bgfx2/10.gif
+	frame	data/chars/misc/bgfx2/11.gif
+	frame	data/chars/misc/bgfx2/12.gif
+	frame	data/chars/misc/bgfx2/13.gif
+	frame	data/chars/misc/bgfx2/14.gif
+	frame	data/chars/misc/bgfx2/15.gif
+	delay	200
+	frame	data/chars/misc/bgfx2/01.gif
+	delay	4
+	frame	data/chars/misc/bgfx2/02.gif
+	frame	data/chars/misc/bgfx2/03.gif
+	frame	data/chars/misc/bgfx2/04.gif
+	frame	data/chars/misc/bgfx2/05.gif
+	frame	data/chars/misc/bgfx2/06.gif
+	frame	data/chars/misc/bgfx2/07.gif
+	frame	data/chars/misc/bgfx2/08.gif
+	frame	data/chars/misc/bgfx2/09.gif
+	frame	data/chars/misc/bgfx2/10.gif
+	frame	data/chars/misc/bgfx2/11.gif
+	frame	data/chars/misc/bgfx2/12.gif
+	frame	data/chars/misc/bgfx2/13.gif
+	frame	data/chars/misc/bgfx2/14.gif
+	frame	data/chars/misc/bgfx2/15.gif
+#	delay	50
+	frame	data/chars/misc/bgfx2/01.gif
+	delay	4
+	frame	data/chars/misc/bgfx2/02.gif
+	frame	data/chars/misc/bgfx2/03.gif
+	frame	data/chars/misc/bgfx2/04.gif
+	frame	data/chars/misc/bgfx2/05.gif
+	frame	data/chars/misc/bgfx2/06.gif
+	frame	data/chars/misc/bgfx2/07.gif
+	frame	data/chars/misc/bgfx2/08.gif
+	frame	data/chars/misc/bgfx2/09.gif
+	frame	data/chars/misc/bgfx2/10.gif
+	frame	data/chars/misc/bgfx2/11.gif
+	frame	data/chars/misc/bgfx2/12.gif
+	frame	data/chars/misc/bgfx2/13.gif
+	frame	data/chars/misc/bgfx2/14.gif
+	frame	data/chars/misc/bgfx2/15.gif

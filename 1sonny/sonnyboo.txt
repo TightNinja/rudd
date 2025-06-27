@@ -1,0 +1,434 @@
+name          Sonnyboo
+candamage     enemy obstacle pshot npc
+type          none
+walkoffmove 0.5 0
+health        100
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+grabforce    -1
+atchain       1 1 1 1 1
+typeshot      0
+weapons       Sonny2 none SonnyN SonnyB SonnyK SonnyR SonnyD Sonny SonnyW none SonnyBoo
+icon          data/chars/1sonny/icon.gif 1
+#parrow         
+#parrow2 
+
+animationscript   data/scripts/lib001.c
+#didhitscript      data/scripts/didhit.c
+
+com      a2     freespecial1
+
+script data/scripts/spawn.c
+animationscript   data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+#didhitscript      data/scripts/didhit.c
+onblockWscript         data/scripts/spikesw2.c
+
+fmap   3
+palette             data/chars/1sonny/icon.gif   
+alternatepal        data/chars/1sonny/alter00.gif  #no
+alternatepal        data/chars/1sonny/alter01.gif  #no
+alternatepal        data/chars/1sonny/alterfr.gif  #no
+alternatepal        data/chars/1sonny/alterbr.gif  #no
+alternatepal        data/chars/1sonny/alter02.gif  
+alternatepal        data/chars/1sonny/alter03.gif   
+alternatepal        data/chars/1sonny/alter04.gif  
+alternatepal        data/chars/1sonny/alter05.gif  
+alternatepal        data/chars/1sonny/alter06.gif  
+alternatepal        data/chars/1sonny/alter07.gif  
+alternatepal        data/chars/1sonny/alter08.gif  
+alternatepal        data/chars/1sonny/alter09.gif 
+alternatepal        data/chars/1sonny/alter10.gif 
+alternatepal        data/chars/1sonny/alter11.gif 
+alternatepal        data/chars/1sonny/alter12.gif 
+alternatepal        data/chars/1sonny/alter13.gif 
+alternatepal        data/chars/1sonny/alter14.gif 
+alternatepal        data/chars/1sonny/alter15.gif 
+alternatepal        data/chars/1sonny/alter16.gif 
+alternatepal        data/chars/1sonny/alter17.gif 
+alternatepal        data/chars/1sonny/alter18.gif 
+alternatepal        data/chars/1sonny/alter19.gif 
+alternatepal        data/chars/1sonny/alter20.gif 
+alternatepal        data/chars/1sonny/alter21.gif 
+alternatepal        data/chars/1sonny/alter22.gif 
+
+
+hmap 1 4
+
+#-------Select screen
+
+#-------The rest of the moves
+
+
+anim spawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame      data/chars/1sonny/item.gif
+
+anim respawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame	    data/chars/1sonny/item.gif
+
+anim follow59
+	 loop       0
+	 delay      16
+	 offset     80 129
+         frame      data/chars/1sonnyw/bmg01.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       68 83 24 44
+	 frame	    data/chars/1sonny/item.gif
+
+anim charge
+
+anim idle
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+	 frame      data/chars/1sonnyw/bmg02.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/bmrwk01.gif
+         frame      data/chars/1sonnyw/bmrwk02.gif
+         frame      data/chars/1sonnyw/bmrwk03.gif
+         frame      data/chars/1sonnyw/bmrwk04.gif
+         frame      data/chars/1sonnyw/bmrwk05.gif
+         frame      data/chars/1sonnyw/bmrwk06.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/bmrrun01.gif
+         frame      data/chars/1sonnyw/bmrrun02.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1sonnyw/bmrrun03.gif
+         frame      data/chars/1sonnyw/bmrrun04.gif
+         frame      data/chars/1sonnyw/bmrrun05.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1sonnyw/bmrrun06.gif
+
+anim runattack
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 throwframe 0 1
+#	 load      empty2
+	 load      BoomerangS
+	 custknife empty2
+@cmd antiwall2 7 -7 0
+         frame      data/chars/1sonnyw/bmra1.gif
+         frame      data/chars/1sonnyw/bmra2.gif
+	 delay      5
+         frame      data/chars/1sonnyw/bmra3.gif
+	 sound      data/sounds/knife1.wav
+@cmd	vPro001 "BoomerangS" 0 5 55 0 3 0 0
+	 bbox       0 
+         frame      data/chars/1sonnyw/bmra4.gif
+         frame      data/chars/1sonnyw/kna105.gif
+	 delay      13
+         frame      data/chars/1sonnyw/kna106.gif
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 throwframe 0 1
+#	 load      empty2
+	 load      BoomerangS
+	 custknife empty2
+@cmd antiwall2 7 -7 0
+         frame      data/chars/1sonnyw/bmra1.gif
+         frame      data/chars/1sonnyw/bmra2.gif
+	 delay      5
+         frame      data/chars/1sonnyw/bmra3.gif
+	 sound      data/sounds/knife1.wav
+@cmd	vPro001 "BoomerangS" 0 5 55 0 3 0 0
+	 bbox       0 
+         frame      data/chars/1sonnyw/bmra4.gif
+         frame      data/chars/1sonnyw/kna105.gif
+	 delay      13
+         frame      data/chars/1sonnyw/kna106.gif
+
+#kick button
+anim freespecial1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitfx      data/sounds/beat2.wav
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
+         frame      data/chars/1sonnyw/bmrb502.gif
+	 delay      14
+	 attack3    54 91 31 12 10 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife -60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/bmrb503.gif
+	 delay      10
+	 attack3    0 0 0 0
+         frame      data/chars/1sonnyw/bmrb501.gif
+
+#kick finisher
+anim follow1
+	 range      -50 50
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 flipframe  7
+	 hitfx      data/sounds/beat1.wav
+         frame      data/chars/1sonnyw/bmrb501.gif
+         frame      data/chars/1sonnyw/bmrb502.gif
+	 delay      9
+	 attack     51 75 34 31 16 1 0 0 8 5
+	 jugglecost 5
+	 forcedirection 1
+	 dropv      2.5 0.8 0
+         frame      data/chars/1sonnyw/bmrb504.gif
+	 attack     0 0 0 0 
+         frame      data/chars/1sonnyw/bmrb502.gif
+         frame      data/chars/1sonnyw/bmrb501.gif
+	 frame      data/chars/1sonnyw/bmg02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1sonnyw/bmrju01.gif
+	 delay      10
+         frame      data/chars/1sonnyw/bmrcrouch.gif
+
+anim jump
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/jump1.wav
+	 cancel     1 3 0 a2 freespecial50
+         frame      data/chars/1sonnyw/bmrju01.gif
+	 delay      10
+	 bbox       70 85 21 28
+         frame      data/chars/1sonnyw/bmrju02.gif
+         frame      data/chars/1sonnyw/bmrju03.gif
+         frame      data/chars/1sonnyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/bmrju01.gif
+
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/1sonnyw/bmrwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1sonnyw/bmrju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   79 98 33 19 10 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/bmrak01.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1sonnyw/bmrcrouch.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 hitfx      data/sounds/beat2.wav
+	 attack11   83 97 29 17 12 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/bmrak01.gif
+	 delay      15
+	 attack11   0 0 0 0 0 0 0 0 0
+         frame      data/chars/1sonnyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/bmrju01.gif
+
+anim freespecial50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch5.wav
+	 hitfx      data/sounds/beat2.wav
+         frame      data/chars/1sonnyw/bmrak02.gif
+         frame      data/chars/1sonnyw/bmrak03.gif
+	 delay      999
+	 attack11   76 102 27 23 9 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/bmrak04.gif
+         delay      12
+	 attack11   0 0 0 0
+         frame      data/chars/1sonnyw/bmrcrouch.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 followanim 17
+	 followcond 3
+	 hitfx      data/sounds/beat2.wav
+	 attack92   79 98 33 19 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/bmrak01.gif
+	 delay      15
+	 attack92   0 0 0 0
+         frame      data/chars/1sonnyw/bmrju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/bmrju01.gif
+
+#ENEMY JUMP
+anim follow17
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+#@cmd toss0001 10
+	 flipframe  1
+	 jumpframe  1 1 1 0
+	 landframe  5
+         frame      data/chars/1sonnyw/bmrak01.gif
+         frame      data/chars/1sonnyw/bmrairf01.gif
+	 delay      8
+	 bbox       70 85 21 28
+         frame      data/chars/1sonnyw/bmrairf02.gif
+         frame      data/chars/1sonnyw/bmrairf03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   77 90 33 16 10 1 0 0 10 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/bmrairf04.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1sonnyw/bmrcrouch.gif
+
+#crouching attack, cancellable into hyper throw & hyper kick
+anim block
+
+#hyper throw
+anim freespecial4
+
+anim freespecial5
+
+anim special
+
+anim grab
+
+anim grabattack
+
+anim grabattack2
+
+anim grabup
+
+anim grabdown
+
+anim grabdown2
+
+#throw
+anim grabbackward
+
+#########extra moves
+
+#backfist attack
+anim freespecial4
+
+#one extra backfist attack
+
+#fierce kick attack
+anim freespecial5
+
+#SDD tatsumaki
+anim freespecial6
+
+#double kick
+anim freespecial7
+
+#########styles switch
+
+anim freespecial2
+
+anim freespecial3
+
+#########DD1 style cancels
+
+anim freespecial20
+
+anim freespecial21
+
+anim freespecial22
+
+anim freespecial23
+
+#########DD2 style cancels
+
+anim freespecial15
+
+anim freespecial16
+
+anim freespecial17
+
+anim freespecial18
+
+anim freespecial19
+
+anim freespecial24
+
+anim freespecial25
+
+anim follow6
+
+
+
+
+

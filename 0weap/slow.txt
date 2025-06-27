@@ -1,0 +1,15 @@
+name slow
+type none
+shadow 0
+lifespan 0.3
+
+
+
+load slowt
+
+anim idle
+    subentity slowt
+    spawnframe 0
+    loop 1
+    delay 2
+    frame data/chars/0misc/empty.gif

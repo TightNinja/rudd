@@ -1,0 +1,120 @@
+name          chenclo
+type          enemy
+health        100
+speed         6
+jumpheight    2.43
+score         1 5
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+offscreen_noatk_factor 1
+offscreenkill 100
+
+diesound      data/sounds/jump.wav
+
+script data/scripts/Custom_chase.c
+ondrawscript	  data/scripts/shadowon.c
+animationscript   data/scripts/lib001.c
+takedamagescript  data/scripts/finisher.c
+onblockWscript    data/scripts/spikesw.c 
+
+palette        data/chars/2chen/idle01.gif 
+alternatepal   data/chars/2chen/alt01.gif 
+alternatepal   data/chars/2chen/alt02.gif 
+alternatepal   data/chars/2chen/alt03.gif 
+alternatepal   data/chars/2chen/alt04.gif 
+alternatepal   data/chars/2chen/alt05.gif 
+alternatepal   data/chars/2chen/alt06.gif 
+
+anim spawn
+	 loop       0
+	 delay      200
+	 offset     80 129
+	 bbox       0
+	 flipframe  1
+	 landframe  1
+	 frame      data/chars/0misc/empty.gif
+	 delay      5
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 sound      data/sounds/shaft.wav
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.30
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.70
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+         frame      data/chars/2chen/taunt.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.90
+         frame      data/chars/2chen/taunt.gif
+	 delay      100
+	 drawmethod alpha off
+         frame      data/chars/2chen/taunt.gif
+	 delay      7
+@cmd shadow 10 10 60 6 2 50 50 250
+@cmd velo001 2.5 0 0
+         frame      data/chars/2chen/run01.gif
+         frame      data/chars/2chen/run02.gif
+         frame      data/chars/2chen/run03.gif
+         frame      data/chars/2chen/run02.gif
+
+	 drawmethod alpha 6
+	 drawmethod channel 0.90
+         frame      data/chars/2chen/run01.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+         frame      data/chars/2chen/run02.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.70
+         frame      data/chars/2chen/run03.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+         frame      data/chars/2chen/run02.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.50
+         frame      data/chars/2chen/run01.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+         frame      data/chars/2chen/run02.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.30
+         frame      data/chars/2chen/run03.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+         frame      data/chars/2chen/run02.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+         frame      data/chars/2chen/run01.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.01
+         frame      data/chars/2chen/run02.gif
+         frame      data/chars/2chen/run03.gif
+         frame      data/chars/2chen/run02.gif
+         frame      data/chars/2chen/run01.gif
+         frame      data/chars/2chen/run02.gif
+         frame      data/chars/2chen/run03.gif
+         frame      data/chars/2chen/run02.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

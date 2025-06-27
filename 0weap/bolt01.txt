@@ -1,0 +1,46 @@
+name      bolt01
+type      npc
+candamage player
+shadow    0
+nomove    1
+animationscript	data/scripts/lib001.c
+
+anim spawn  
+	 loop    0
+	 delay   4
+	 offset  45 227
+	 bbox    0
+	 hitflash Qflash2
+	 sound   data/sounds/dd13s1.wav
+	 hitfx   data/sounds/beatpr3.wav
+	 attack  36 0 19 225 25 1 1 0 7 5
+	 dropv   2.3 1 0	
+	 forcedirection 1
+         frame   data/chars/0weap/bolt01.gif   
+         frame   data/chars/0weap/bolt02.gif 
+         frame   data/chars/0weap/bolt03.gif 
+         frame   data/chars/0weap/bolt04.gif 
+	 attack  29 1 29 225 25 1 1 0 7 5
+	 dropv   2.3 1 0
+	 forcedirection 1
+         frame   data/chars/0weap/bolt05.gif 
+	 delay   2
+         frame   data/chars/0weap/bolt06.gif 
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/bolt06.gif 
+	 frame   data/chars/0misc/empty.gif
+	 attack  0
+	 delay   8
+	 drawmethod alpha 6
+	 drawmethod channel 0.9
+         frame   data/chars/0weap/bolt06.gif 
+	 drawmethod channel 0.7
+         frame   data/chars/0weap/bolt06.gif 
+	 drawmethod channel 0.5
+         frame   data/chars/0weap/bolt06.gif 
+	 drawmethod channel 0.3
+         frame   data/chars/0weap/bolt06.gif 
+	 drawmethod channel 0.1
+         frame   data/chars/0weap/bolt06.gif 
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

@@ -1,0 +1,54 @@
+name      rsto
+type      npc
+candamage player
+shadow    0
+nomove    1
+animationscript	data/scripts/lib001.c
+
+anim spawn  
+	 loop    0
+	 delay   3
+	 offset  80 129
+	 bbox    0
+	 hitflash Qflash2
+	 hitfx   data/sounds/beatpr4.wav
+	 sound   data/sounds/exp03.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.85
+	 drawmethod scalex 1.30
+	 drawmethod scaley 1.25
+	 attack  53 99 62 30 23 1 1 0 7 5
+	 dropv   1.4 1.7 0	
+         frame   data/chars/0weap/rsto01.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto01.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  48 66 73 64 23 1 1 0 7 5
+	 dropv   1.4 1.7 0
+         frame   data/chars/0weap/rsto02.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto02.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  52 39 67 91 23 1 1 0 7 5
+	 dropv   1.4 1.7 0
+         frame   data/chars/0weap/rsto03.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto03.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto03.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto03.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto03.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto02.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto02.gif
+	 frame   data/chars/0misc/empty.gif
+	 attack  0
+         frame   data/chars/0weap/rsto01.gif
+	 frame   data/chars/0misc/empty.gif
+         frame   data/chars/0weap/rsto01.gif
+	 frame   data/chars/0misc/empty.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

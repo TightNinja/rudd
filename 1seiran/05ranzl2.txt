@@ -1,0 +1,110 @@
+name    05ranzl2
+health  0
+type	npc
+gfxshadow 1
+candamage enemy
+animationscript  data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+
+palette            data/chars/1seiran/alter01.gif    
+alternatepal       data/chars/1seiran/alter02.gif  
+alternatepal       data/chars/1seiran/alter03.gif    
+alternatepal       data/chars/1seiran/alter04.gif   
+alternatepal       data/chars/1seiran/alter05.gif   
+alternatepal       data/chars/1seiran/alter06.gif  
+alternatepal       data/chars/1seiran/alter07.gif    
+alternatepal       data/chars/1seiran/alter08.gif   
+alternatepal       data/chars/1seiran/alter09.gif  
+alternatepal       data/chars/1seiran/alter10.gif  
+alternatepal       data/chars/1seiran/alter11.gif    
+alternatepal       data/chars/1seiran/alter12.gif   
+alternatepal       data/chars/1seiran/alter13.gif
+alternatepal       data/chars/1seiran/alter14.gif    
+alternatepal       data/chars/1seiran/alter15.gif   
+alternatepal       data/chars/1seiran/alter16.gif  
+alternatepal       data/chars/1seiran/alter17.gif
+alternatepal       data/chars/1seiran/alter18.gif    
+alternatepal       data/chars/1seiran/alter19.gif   
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     96 166
+	 bbox       0
+	 fastattack 1
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 hitflash   Qflash2 
+	 load       slink
+	 custentity slink
+	 spawnframe 5 0 1 0 0
+	 sound      data/sounds/ninja01.wav
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/rcharge.gif
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/rcharge.gif
+	 delay      5
+	 drawmethod alpha off
+	 frame      data/chars/1seiran/rcharge.gif
+@cmd shadow 10 25 60 0 2 200 200 200
+@cmd velo001 2 0 0
+	 delay      4
+	 frame      data/chars/1seiran/rsubsli.gif
+	 frame      data/chars/1seiran/rsubsli.gif
+	 frame      data/chars/1seiran/rsubsli.gif
+	 delay      3
+	 hitfx      data/sounds/beatnw2.wav
+	 attack     84 147 41 20 0 0 1 0 9 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+	 frame      data/chars/1seiran/rsubsli.gif
+	 attack     0
+	 frame      data/chars/1seiran/rsubsli.gif
+
+	 attack2    84 147 41 20 0 0 1 0 9 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+	 frame      data/chars/1seiran/rsubsli.gif
+	 attack2    0
+	 frame      data/chars/1seiran/rsubsli.gif
+
+	 attack     84 147 41 20 0 0 1 0 9 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+	 frame      data/chars/1seiran/rsubsli.gif
+	 attack     0
+	 frame      data/chars/1seiran/rsubsli.gif
+
+	 attack2    84 147 41 20 0 0 1 0 9 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+	 frame      data/chars/1seiran/rsubsli.gif
+	 attack2    0
+	 frame      data/chars/1seiran/rsubsli.gif
+
+	 attack7    84 147 41 20 20 0 1 0 9 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+	 frame      data/chars/1seiran/rsubsli.gif
+
+	 delay      2
+	 attack7    0
+@cmd velo001 0.5 0 0
+	 sound      data/sounds/ninja01.wav
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+	 frame      data/chars/1seiran/rsubsli.gif
+	 drawmethod channel 0.6
+	 frame      data/chars/1seiran/rsubsli.gif
+	 drawmethod channel 0.4
+	 frame      data/chars/1seiran/rsubsli.gif
+	 drawmethod channel 0.2
+	 frame      data/chars/1seiran/rsubsli.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,121 @@
+name	xr01
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+subject_to_wall 1
+no_adjust_base 1
+
+
+animationscript   data/scripts/lib001.c
+onspawnscript     data/scripts/projpal.c
+
+palette        data/chars/misc/ess/alter01.gif    
+alternatepal   data/chars/misc/ess/alter02.gif   
+alternatepal   data/chars/misc/ess/alter03.gif   
+alternatepal   data/chars/misc/ess/alter04.gif   
+alternatepal   data/chars/misc/ess/alter05.gif   
+alternatepal   data/chars/misc/ess/alter06.gif   
+alternatepal   data/chars/misc/ess/alter07.gif   
+alternatepal   data/chars/misc/ess/alter08.gif   
+alternatepal   data/chars/misc/ess/alter09.gif   
+alternatepal   data/chars/misc/ess/alter10.gif   
+
+
+anim idle
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "subject_to_gravity", 1);
+      changeentityproperty(self, "subject_to_wall", 0);
+    }
+    if(frame==7){
+      changeentityproperty(self, "subject_to_gravity", 0);
+    }
+    if(frame==46){
+      changeentityproperty(self, "subject_to_gravity", 1);
+    }
+@end_script
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0
+	 jumpframe  2 3 -0.3 0
+	 dropframe  7
+         frame      data/chars/misc/ess/xr01.gif 
+         frame      data/chars/misc/ess/xr02.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xr03.gif 
+         frame      data/chars/misc/ess/xr04.gif 
+         frame      data/chars/misc/ess/xr05.gif 
+         frame      data/chars/misc/ess/xr06.gif 
+	 delay      999
+         frame      data/chars/misc/ess/xr07.gif 
+	 delay      7
+@cmd jump001 0.1 0 0
+@cmd velo001 0 0 0
+         sound      data/chars/misc/ess/mchgun.wav
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         sound      data/chars/misc/ess/essw4.wav
+         frame      data/chars/misc/ess/xr08.gif          #10
+         frame      data/chars/misc/ess/xr09.gif 
+         sound      data/chars/misc/ess/mchgun.wav
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         sound      data/chars/misc/ess/mchgun.wav
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         frame      data/chars/misc/ess/xr08.gif   #20
+         frame      data/chars/misc/ess/xr09.gif 
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+         frame      data/chars/misc/ess/xr08.gif 
+         frame      data/chars/misc/ess/xr09.gif 
+	 delay      7
+         frame      data/chars/misc/ess/xr10.gif 
+         frame      data/chars/misc/ess/xr11.gif 
+         frame      data/chars/misc/ess/xr12.gif 
+	 delay      15
+         frame      data/chars/misc/ess/xr13.gif 
+	 delay      7
+         frame      data/chars/misc/ess/xr14.gif    #30
+         frame      data/chars/misc/ess/xr15.gif 
+         frame      data/chars/misc/ess/xr16.gif 
+	 delay      40
+         frame      data/chars/misc/ess/xr17.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xr18.gif 
+	 delay      30
+         frame      data/chars/misc/ess/xr19.gif 
+	 delay      6
+         frame      data/chars/misc/ess/xr20.gif 
+         frame      data/chars/misc/ess/xr21.gif 
+         frame      data/chars/misc/ess/xr22.gif 
+         frame      data/chars/misc/ess/xr23.gif 
+	 delay      55
+         frame      data/chars/misc/ess/xr24.gif    #40
+	 delay      6
+         frame      data/chars/misc/ess/xr25.gif 
+         frame      data/chars/misc/ess/xr26.gif 
+         frame      data/chars/misc/ess/xr27.gif 
+         frame      data/chars/misc/ess/xr28.gif 
+         frame      data/chars/misc/ess/xr29.gif 
+         frame      data/chars/misc/ess/xr30.gif
+	 delay      8 
+@cmd jump001 0.8 1.1 0 0
+         frame      data/chars/misc/ess/xr31.gif 
+         frame      data/chars/misc/ess/xr32.gif 
+
+
+
+
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+

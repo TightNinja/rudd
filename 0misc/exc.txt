@@ -1,0 +1,41 @@
+name    exc
+health  1
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+palette   data/chars/0misc/exc01.gif
+alternatepal   data/chars/0misc/exc06.gif
+
+anim idle
+	 loop    0
+	 delay   2
+	 offset  80 134
+	 bbox    0
+drawmethod alpha 6
+drawmethod remap 1
+drawmethod channel 0.75
+drawmethod scale 0.75
+	 sound   data/sounds/exc.wav
+	 frame   data/chars/0misc/exc01.gif
+
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/exc02.gif
+
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/exc03.gif
+
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/exc04.gif
+
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/exc05.gif
+
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+#	 drawmethod alpha 6
+#	 drawmethod channel 0.10

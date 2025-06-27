@@ -1,0 +1,29 @@
+name	lighte
+type	none
+speed   0
+shadow	0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_gravity 0
+alpha   1
+lifespan
+
+
+anim idle
+@script
+  if(frame==1){
+    void self = getlocalvar("self");
+
+    killentity(self); //Suicide!
+  }
+@end_script
+	 loop      1
+	 delay     5
+	 offset    128 224
+	 frame     data/chars/misc/bgfx/lighte.gif
+	 frame     data/chars/misc/empty.gif
+
+
+
+
+

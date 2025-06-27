@@ -1,0 +1,29 @@
+name    tunesq2
+health  0
+type	npc
+gfxshadow 1
+
+anim spawn
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 frame      data/chars/misc/esq/tunesq1.gif
+	 delay      6
+	 drawmethod alpha 6
+	 drawmethod channel 0.8
+	 frame      data/chars/misc/esq/tunesq1.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.6
+	 frame      data/chars/misc/esq/tunesq1.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.4
+	 frame      data/chars/misc/esq/tunesq1.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+	 frame      data/chars/misc/esq/tunesq1.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

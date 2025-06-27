@@ -1,0 +1,52 @@
+name    dpow02
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 1
+subject_to_platform 1
+subject_to_gravity 0
+animationscript   data/scripts/lib001.c
+
+anim idle
+	 loop    0
+	 delay   3
+	 offset  70 244
+	 bbox    0
+	 drawmethod alpha 6 
+	 drawmethod channel 0.70
+	 frame   data/chars/0misc/dpow04.gif
+	 frame   data/chars/0misc/dpow05.gif
+	 frame   data/chars/0misc/dpow06.gif
+	 delay   6
+	 frame   data/chars/0misc/dpow07.gif
+	 frame   data/chars/0misc/dpow08.gif
+	 frame   data/chars/0misc/dpow09.gif
+	 frame   data/chars/0misc/dpow10.gif
+	 frame   data/chars/0misc/dpow11.gif
+	 delay   15
+	 frame   data/chars/0misc/empty.gif
+	 delay   3
+	 frame   data/chars/0misc/dpow04.gif
+	 frame   data/chars/0misc/dpow05.gif
+	 frame   data/chars/0misc/dpow06.gif
+	 delay   6
+	 frame   data/chars/0misc/dpow07.gif
+	 frame   data/chars/0misc/dpow08.gif
+	 frame   data/chars/0misc/dpow09.gif
+	 frame   data/chars/0misc/dpow10.gif
+	 frame   data/chars/0misc/dpow11.gif
+	 delay   6
+	 frame   data/chars/0misc/dpow07.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow08.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow09.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow10.gif
+	 frame   data/chars/0misc/empty.gif
+	 frame   data/chars/0misc/dpow11.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

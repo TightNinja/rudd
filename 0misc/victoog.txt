@@ -1,0 +1,59 @@
+name    victoOG
+facing  1
+type	panel
+speed     10
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+no_adjust_base 0
+setlayer 888888888
+
+
+palette                 data/chars/1billy/alter1x.gif   
+alternatepal            data/chars/1billy/alter2x.gif   
+
+anim idle
+	 loop    0
+	 delay   4
+	 offset  128 0
+	 drawmethod alpha 6
+	 drawmethod channel 0.10
+	 frame   data/chars/0misc/victo17.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.20
+	 frame   data/chars/0misc/victo17.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.40
+	 frame   data/chars/0misc/victo17.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.60
+	 frame   data/chars/0misc/victo17.gif
+	 drawmethod alpha 6
+	 drawmethod channel 0.80
+	 frame   data/chars/0misc/victo17.gif
+	 delay   15
+	 drawmethod alpha 0
+	 frame   data/chars/0misc/victo17.gif
+	 delay   3
+	 sound   data/sounds/vic01.wav
+	 frame   data/chars/0misc/victo18.gif
+	 frame   data/chars/0misc/victo17.gif
+	 frame   data/chars/0misc/victo18.gif
+	 frame   data/chars/0misc/victo17.gif
+	 frame   data/chars/0misc/victo18.gif
+	 frame   data/chars/0misc/victo17.gif
+	 frame   data/chars/0misc/victo18.gif
+	 frame   data/chars/0misc/victo17.gif
+	 delay   20
+	 frame   data/chars/0misc/victo18.gif
+	 delay   4
+	 sound   data/sounds/vic02.wav
+	 frame   data/chars/0misc/victo19.gif
+	 frame   data/chars/0misc/victo20.gif
+	 frame   data/chars/0misc/victo19.gif
+	 frame   data/chars/0misc/victo20.gif
+	 frame   data/chars/0misc/victo19.gif
+	 frame   data/chars/0misc/victo20.gif
+	 frame   data/chars/0misc/victo19.gif
+

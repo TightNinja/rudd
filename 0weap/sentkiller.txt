@@ -1,0 +1,20 @@
+name	sentkiller
+type    none
+health		100
+shadow  0
+offscreenkill 7000
+subject_to_gravity 0
+subject_to_hole 0
+subject_to_wall 0
+
+animationscript data/scripts/cas_kill.c
+
+anim idle
+	loop	1
+	delay	5
+	offset	1 1
+      @cmd  enemkill2 7000 2000
+      frame  data/chars/misc/empty.gif
+      frame  data/chars/misc/empty.gif
+
+

@@ -1,0 +1,36 @@
+name	dragonok
+type	none
+speed   0
+shadow	0
+subject_to_wall 0
+subject_to_hole 0
+subject_to_gravity 0
+
+
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    128 224
+	 drawmethod alpha 5
+	 drawmethod channel 0.10
+	 frame     data/chars/misc/bgfx/dragonok.gif
+	 drawmethod alpha 5
+	 drawmethod channel 0.20
+	 frame     data/chars/misc/bgfx/dragonok.gif
+	 drawmethod alpha 5
+	 drawmethod channel 0.40
+	 frame     data/chars/misc/bgfx/dragonok.gif
+	 drawmethod alpha 5
+	 drawmethod channel 0.60
+	 frame     data/chars/misc/bgfx/dragonok.gif
+	 delay     99
+	 drawmethod alpha 5
+	 drawmethod channel 0.80
+	 frame     data/chars/misc/bgfx/dragonok.gif
+
+
+
+
+
+

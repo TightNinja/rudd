@@ -1,0 +1,57 @@
+name	toki01
+type	text
+subtype  noskip
+shadow	0
+setlayer 999999995
+facing   1
+animationscript   data/scripts/lib001.c
+lifespan  8
+
+
+#palette       data/chars/2duke/special00.gif
+
+anim idle
+	 loop       1 2 18
+	 delay      100
+	 offset     128 224
+load     toki02
+         frame      data/chars/2duke/toki01.gif
+	 delay      25
+@cmd spawn044 "toki02" 133 0 242
+         frame      data/chars/2duke/toki01.gif
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki02.gif
+	 delay      30
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki03.gif
+	 delay      25
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki04.gif
+	 delay      40
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki05.gif
+	 delay      30
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki06.gif
+	 delay      50
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki07.gif
+	 delay      25
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki08.gif
+	 delay      15
+         frame      data/chars/2duke/toki01.gif
+	 delay      3
+         frame      data/chars/2duke/toki09.gif
+	 delay      30
+         frame      data/chars/2duke/toki01.gif
+
+
+

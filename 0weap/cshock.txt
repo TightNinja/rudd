@@ -1,0 +1,32 @@
+name    cshock
+health  1
+type	npc
+candamage player
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim spawn
+	 loop    1
+	 delay   4
+	 offset  24 274
+	 bbox    0
+	 sound   data/sounds/mshock.wav
+	 frame   data/chars/0weap/mshock1.gif
+	 hitfx   data/sounds/beat2.wav
+	 attack  17 1 15 270 25 1 1 0 7 5
+	 dropv   1.5 1.8 0
+	 frame   data/chars/0weap/mshock2.gif
+	 frame   data/chars/0weap/mshock3.gif
+	 frame   data/chars/0weap/mshock4.gif
+	 frame   data/chars/0weap/mshock6.gif
+	 attack  0
+	 frame   data/chars/0weap/mshock7.gif
+
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+#	 drawmethod alpha 6
+#	 drawmethod channel 0.10

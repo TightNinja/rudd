@@ -1,0 +1,74 @@
+name	  nindea
+type	  npc
+health	  1
+nolife    1
+gfxshadow 1
+candamage player
+subject_to_wall 0
+subject_to_minz 0
+subject_to_maxz 0
+subject_to_obstacle 0
+animationscript   data/scripts/lib001.c
+
+palette             data/chars/2abore/idle01.gif  
+alternatepal        data/chars/2abore/alter01.gif  
+alternatepal        data/chars/2abore/alter02.gif  
+alternatepal        data/chars/2abore/alter03.gif  
+
+anim spawn
+	loop       0
+	delay      7
+	offset     80 129
+	bbox       0 
+	jumpframe  5 3.5 -0.3 0
+	landframe  12
+	drawmethod alpha 6
+	drawmethod channel 0.2
+load    smkb01
+	sound      data/sounds/ninja01.wav
+        frame      data/chars/2abore/na201.gif
+	drawmethod alpha 6
+	drawmethod channel 0.4
+        frame      data/chars/2abore/na201.gif
+	drawmethod alpha 6
+	drawmethod channel 0.6
+        frame      data/chars/2abore/na201.gif
+	drawmethod alpha 6
+	drawmethod channel 0.8
+        frame      data/chars/2abore/na201.gif
+	nodrawmethod
+	delay      20
+        frame      data/chars/2abore/na201.gif
+
+	delay      11
+        frame      data/chars/2abore/na106.gif
+	delay      7
+        frame      data/chars/2abore/na401.gif
+        frame      data/chars/2abore/na402.gif
+	sound      data/sounds/ninja01.wav
+@cmd	 tosser     "smkb01" 25 45 0 0.2 0.1 0
+@cmd	 tosser     "smkb01" 25 45 0 0.1 0.1 0
+@cmd	 tosser     "smkb01" 25 45 0 0 0.1 0
+@cmd	 tosser     "smkb01" 25 45 0 -0.1 0.1 0
+@cmd	 tosser     "smkb01" 25 45 0 -0.2 0.1 0
+@cmd	 tosser     "smkb01" 25 45 0 -0.3 0.1 0
+	drawmethod alpha 6
+	drawmethod channel 0.8
+        frame      data/chars/2abore/na403.gif
+	drawmethod alpha 6
+	drawmethod channel 0.6
+        frame      data/chars/2abore/na106.gif
+	drawmethod alpha 6
+	drawmethod channel 0.4
+        frame      data/chars/2abore/na106.gif
+	drawmethod alpha 6
+	drawmethod channel 0.2
+        frame      data/chars/2abore/na106.gif
+	delay      1
+@cmd killentity getlocalvar("self")
+	 frame     Data/chars/0misc/empty.gif
+
+
+
+
+

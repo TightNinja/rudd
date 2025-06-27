@@ -1,0 +1,98 @@
+name	staclrd2
+type	text
+subtype  noskip
+setlayer 9999999999
+nodieblink 3
+alpha   1
+
+palette 	 data/chars/misc/staclr/hbg01.gif
+
+anim idle
+	 loop      0
+	 delay     200
+	 health    7
+	 offset    256 228
+	 flipframe 0
+	 frame     data/chars/0misc/empty.gif
+	 delay     2
+@cmd playwebm "data/chars/misc/staclr/bnw.webm" 1
+	 frame     data/chars/misc/staclr/hbg01.gif
+	 frame     data/chars/misc/staclr/hbg02.gif
+	 frame     data/chars/misc/staclr/hbg03.gif
+	 frame     data/chars/misc/staclr/hbg04.gif
+	 frame     data/chars/misc/staclr/hbg05.gif
+	 frame     data/chars/misc/staclr/hbg06.gif
+	 frame     data/chars/misc/staclr/hbg07.gif
+	 frame     data/chars/misc/staclr/hbg08.gif
+	 frame     data/chars/misc/staclr/hbg09.gif
+	 frame     data/chars/misc/staclr/hbg10.gif
+	 frame     data/chars/misc/staclr/hbg11.gif
+	 frame     data/chars/misc/staclr/hbg12.gif
+	 frame     data/chars/misc/staclr/hbg13.gif
+	 frame     data/chars/misc/staclr/hbg14.gif
+	 frame     data/chars/misc/staclr/hbg15.gif
+	 frame     data/chars/misc/staclr/hbg01.gif
+	 frame     data/chars/misc/staclr/hbg02.gif
+	 frame     data/chars/misc/staclr/hbg03.gif
+	 frame     data/chars/misc/staclr/hbg04.gif
+	 frame     data/chars/misc/staclr/hbg05.gif
+	 frame     data/chars/misc/staclr/hbg06.gif
+	 frame     data/chars/misc/staclr/hbg07.gif
+	 frame     data/chars/misc/staclr/hbg08.gif
+	 frame     data/chars/misc/staclr/hbg09.gif
+	 frame     data/chars/misc/staclr/hbg10.gif
+	 frame     data/chars/misc/staclr/hbg11.gif
+	 frame     data/chars/misc/staclr/hbg12.gif
+	 frame     data/chars/misc/staclr/hbg13.gif
+	 frame     data/chars/misc/staclr/hbg14.gif
+	 frame     data/chars/misc/staclr/hbg15.gif
+	 frame     data/chars/misc/staclr/hbg01.gif
+	 frame     data/chars/misc/staclr/hbg02.gif
+	 frame     data/chars/misc/staclr/hbg03.gif
+	 frame     data/chars/misc/staclr/hbg04.gif
+	 frame     data/chars/misc/staclr/hbg05.gif
+	 frame     data/chars/misc/staclr/hbg06.gif
+	 frame     data/chars/misc/staclr/hbg07.gif
+	 frame     data/chars/misc/staclr/hbg08.gif
+	 frame     data/chars/misc/staclr/hbg09.gif
+	 frame     data/chars/misc/staclr/hbg10.gif
+	 frame     data/chars/misc/staclr/hbg11.gif
+	 frame     data/chars/misc/staclr/hbg12.gif
+	 frame     data/chars/misc/staclr/hbg13.gif
+	 frame     data/chars/misc/staclr/hbg14.gif
+	 frame     data/chars/misc/staclr/hbg15.gif
+	 frame     data/chars/misc/staclr/hbg01.gif
+	 frame     data/chars/misc/staclr/hbg02.gif
+	 frame     data/chars/misc/staclr/hbg03.gif
+	 frame     data/chars/misc/staclr/hbg04.gif
+	 frame     data/chars/misc/staclr/hbg05.gif
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclr/hbg06.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclr/hbg07.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclr/hbg08.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclr/hbg09.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclr/hbg10.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclr/hbg11.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclr/hbg12.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclr/hbg13.gif
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclr/hbg14.gif
+	 delay     7
+	 frame     data/chars/0misc/empty.gif
+

@@ -1,0 +1,24 @@
+name          dminion
+type          enemy
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         0
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+lifespan      21
+
+anim     spawn 
+	 offset 0 0
+	 loop   1
+	 delay  999
+	 frame  data/chars/0misc/empty.gif

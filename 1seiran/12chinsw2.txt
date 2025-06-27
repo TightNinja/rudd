@@ -1,0 +1,15 @@
+name    12chinsw2
+health  0
+type	npc
+facing  1
+setlayer 999977777
+subject_to_gravity 0
+subject_to_platform 1
+
+anim spawn
+	 loop       0
+	 delay      999
+	 offset     96 166
+	 bbox       0
+	 frame      data/chars/1seiran/rdoll01.gif
+

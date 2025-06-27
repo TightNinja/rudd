@@ -1,0 +1,5539 @@
+name          Sonny2
+candamage     enemy obstacle pshot shot npc
+type          none
+subject_to_obstacle 0
+health        100
+mp            100
+falldie       2
+jugglepoints  15
+chargerate    5
+speed         9
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     12
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+riseinv       1
+atchain       1 2 3 4 0
+weapons       Sonny none SonnyN SonnyB SonnyK SonnyR SonnyD SonnyBoo SonnyW none Sonny2
+weaploss      2
+icon          data/chars/1sonny/icon2.gif 1
+#parrow         
+#parrow2 
+
+script data/scripts/spawn.c
+animationscript   data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+#didhitscript      data/scripts/didhit.c
+onblockWscript         data/scripts/spikesw2.c
+ondoattackscript data/scripts/multihits.c
+
+fmap   3
+palette             data/chars/1sonny/icon.gif   
+alternatepal        data/chars/1sonny/alter00.gif  #no
+alternatepal        data/chars/1sonny/alter01.gif  #no
+alternatepal        data/chars/1sonny/alterfr.gif  #no
+alternatepal        data/chars/1sonny/alterbr.gif  #no
+alternatepal        data/chars/1sonny/alter02.gif  
+alternatepal        data/chars/1sonny/alter03.gif   
+alternatepal        data/chars/1sonny/alter04.gif  
+alternatepal        data/chars/1sonny/alter05.gif  
+alternatepal        data/chars/1sonny/alter06.gif  
+alternatepal        data/chars/1sonny/alter07.gif  
+alternatepal        data/chars/1sonny/alter08.gif  
+alternatepal        data/chars/1sonny/alter09.gif 
+alternatepal        data/chars/1sonny/alter10.gif 
+alternatepal        data/chars/1sonny/alter11.gif 
+alternatepal        data/chars/1sonny/alter12.gif 
+alternatepal        data/chars/1sonny/alter13.gif 
+alternatepal        data/chars/1sonny/alter14.gif 
+alternatepal        data/chars/1sonny/alter15.gif 
+alternatepal        data/chars/1sonny/alter16.gif 
+alternatepal        data/chars/1sonny/alter17.gif 
+alternatepal        data/chars/1sonny/alter18.gif 
+alternatepal        data/chars/1sonny/alter19.gif 
+alternatepal        data/chars/1sonny/alter20.gif 
+alternatepal        data/chars/1sonny/alter21.gif 
+alternatepal        data/chars/1sonny/alter22.gif 
+
+
+hmap 1 4
+
+
+com      a2     freespecial1
+com      a3     freespecial2
+com      a4     freespecial3
+com      s + a  freespecial4
+com      j + a2  freespecial5
+com      d u a2 freespecial6
+com      d a2   freespecial7
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim waiting
+	 loop       1
+	 delay      10
+	 offset     40 190
+	 bbox       68 83 24 44
+	 fshadow    0
+         frame      data/chars/1sonny/sel01.gif
+         frame      data/chars/1sonny/sel02.gif
+
+anim select
+	 loop       0
+	 delay      5
+	 offset     40 190
+	 bbox       68 83 24 44
+	 fshadow    0
+         frame      data/chars/1sonny/sel03.gif
+         frame      data/chars/1sonny/sel01.gif
+         frame      data/chars/1sonny/sel03.gif
+         frame      data/chars/1sonny/sel01.gif
+         frame      data/chars/1sonny/sel03.gif
+         frame      data/chars/1sonny/sel01.gif
+         frame      data/chars/1sonny/sel03.gif
+         frame      data/chars/1sonny/sel01.gif
+	 delay      25
+         frame      data/chars/1sonny/sel03.gif
+	 sound      data/sounds/dragonq.wav
+	 delay      5
+         frame      data/chars/1sonny/sel04.gif
+         frame      data/chars/1sonny/sel05.gif
+         frame      data/chars/1sonny/sel06.gif
+         frame      data/chars/misc/empty.gif
+
+anim spawn
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/idle01.gif
+
+anim respawn
+     loop 0
+     delay 1
+     offset 80 129
+     @cmd    stwall 0 0 0
+     @cmd    antiwall5 0 -20 0
+     frame data/chars/misc/empty.gif
+     frame data/chars/misc/empty.gif
+     @cmd    stwall 1 1 1
+     frame data/chars/1sonny/idle01.gif
+
+anim follow100 # player1 move chin05
+	 loop       1 1
+	 delay      50
+	 offset     80 129
+         @cmd velo001 0 0 0
+         frame      data/chars/1sonny/idle01.gif
+	 delay      22
+         @cmd xyleap 100 503 12 22
+         @cmd dash
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+
+anim follow101 # player2 move chin05
+	 loop       1 1
+	 delay      50
+	 offset     80 129
+         @cmd velo001 0 0 0
+         frame      data/chars/1sonny/idle01.gif
+	 delay      22
+         @cmd xyleap 148 503 12 22
+         @cmd dash
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+
+anim follow102 # player1 move chin05
+	 loop       1 1
+	 delay      50
+	 offset     80 129
+         @cmd velo001 0 0 0
+         frame      data/chars/1sonny/idle01.gif
+	 delay      22
+         @cmd xyleap2 100 571 12 22
+         @cmd dash
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+
+anim follow103 # player2 move chin05
+	 loop       1 1
+	 delay      50
+	 offset     80 129
+         @cmd velo001 0 0 0
+         frame      data/chars/1sonny/idle01.gif
+	 delay      22
+         @cmd xyleap2 148 571 12 22
+         @cmd dash
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+
+anim follow104 # players jump chin05
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 2);
+    }
+    if(frame==7){
+      changelevelproperty("scrollspeed", 0.3);
+    }
+@end_script
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 jumpframe     0 2.5 0 0.6
+	 landframe     7
+	 sound      data/sounds/dragonz3.wav
+	 @cmd stwall 0 1 1
+	 @cmd direc 1
+	 @cmd Join 1
+	 frame      data/chars/1sonny/ju01.gif
+	 delay      10
+	 frame      data/chars/1sonny/ju02.gif
+	 frame      data/chars/1sonny/ju03.gif
+	 frame      data/chars/1sonny/ju03.gif
+	 frame      data/chars/1sonny/ju02.gif
+	 frame      data/chars/1sonny/ju02.gif
+	 delay      500
+	 @cmd stwall 1 1 1
+	 @cmd stopz
+	 frame      data/chars/1sonny/ju01.gif
+	 delay      10
+	 @cmd Join 0
+	 frame      data/chars/1sonny/rise02.gif
+	 delay      2
+	 @cmd DeControl 0
+	 frame      data/chars/1sonny/idle01.gif
+
+anim follow105 # players jump chin05
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changelevelproperty("scrollspeed", 2);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+    }
+    if(frame==7){
+      changelevelproperty("scrollspeed", 0.3);
+    }
+    if(frame==8){
+      changeentityproperty(self, "Subject_to_Screen", 0);
+    }
+@end_script
+	 loop       1 8
+	 delay      17
+	 offset     80 129
+	 jumpframe     0 2.5 0 0.6
+	 landframe     7
+	 sound      data/sounds/dragonz3.wav
+	 @cmd stwall 0 1 1
+	 @cmd direc 1
+	 @cmd Join 1
+	 frame      data/chars/1sonny/ju01.gif
+	 delay      10
+	 frame      data/chars/1sonny/ju02.gif
+	 frame      data/chars/1sonny/ju03.gif
+	 frame      data/chars/1sonny/ju03.gif
+	 frame      data/chars/1sonny/ju02.gif
+	 frame      data/chars/1sonny/ju02.gif
+	 delay      500
+	 @cmd stwall 1 1 1
+	 @cmd stopz
+	 frame      data/chars/1sonny/ju01.gif
+	 delay      10
+	 frame      data/chars/1sonny/rise02.gif
+	 delay      7
+	 frame      data/chars/1sonny/idle04.gif
+	 delay      10
+	 frame      data/chars/1sonny/idle04.gif
+
+anim follow106 # player china03/04 spawn
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+    }
+    if(frame==9){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     80 129
+         @cmd Join 1
+         @cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+         frame      data/chars/1sonny/wk01.gif
+	 delay      14
+         @cmd leaper 0.4 0.2 0
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+         @cmd leaper 0.4 0 0
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+         frame      data/chars/1sonny/wk03.gif
+         @cmd velo001 0.4 0 0
+         frame      data/chars/1sonny/wk04.gif
+         @cmd velo001 0.4 0 0
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+         frame      data/chars/1sonny/wk01.gif
+         @cmd velo001 0 -0.4 0
+         frame      data/chars/1sonny/wk02.gif
+         @cmd direc 1
+         frame      data/chars/1sonny/wk03.gif
+         frame      data/chars/1sonny/wk04.gif
+         @cmd velo001 0.4 -0.4 0
+         frame      data/chars/1sonny/wk05.gif
+         frame      data/chars/1sonny/wk06.gif
+         @cmd velo001 0.4 0 0
+         frame      data/chars/1sonny/wk01.gif
+         frame      data/chars/1sonny/wk02.gif
+	 delay      2
+         @cmd velo001 0 0 0
+         @cmd Join 0
+         frame      data/chars/1sonny/wk03.gif
+
+anim follow110 #WIN POSE!
+@cmd changeentityproperty getlocalvar("self") "velocity" 0 0 0
+	 loop       1 10 12
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 load       victoSo
+         frame      data/chars/1sonny/idle04.gif
+	 delay      6
+         frame      data/chars/1sonny/a501.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/a502.gif
+	 delay      12
+         frame      data/chars/1sonny/a503.gif
+         frame      data/chars/1sonny/a504.gif
+         frame      data/chars/1sonny/a505.gif
+	 delay      13
+         frame      data/chars/1sonny/a100.gif
+	 delay      9
+	 load       sonph
+@cmd spawnvic "victoSo" 0 0 5 256 0 5
+         frame      data/chars/1sonny/b104.gif
+	 delay      12
+         frame      data/chars/1sonny/win01.gif
+@cmd spawn001 "sonph" "sonph" 0 15 0 0 0 0
+         frame      data/chars/1sonny/win01.gif
+         frame      data/chars/1sonny/win01.gif
+         frame      data/chars/1sonny/win01.gif
+
+anim freespecial111
+@cmd clearL
+load     sddso04
+load     sddso05
+load     sddso03
+load     sddsbm02
+load     sddmk302
+load     sddbo
+load     sddnun
+load     sddwhi2
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddso04" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddso05" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddso03" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddsbm02" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddmk302" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddbo" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddnun" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+@cmd spawn044 "sddwhi2" 128 0 228
+         frame      data/chars/1sonny/idle04.gif
+
+anim idle
+@cmd clearL
+	 loop       1 3 7
+	 delay      500
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/idle04.gif
+	 delay      9
+         frame      data/chars/1sonny/wait01.gif
+	 delay      10
+         frame      data/chars/1sonny/wait03.gif
+         frame      data/chars/1sonny/wait04.gif
+	 delay      19
+         frame      data/chars/1sonny/wait05.gif
+	 delay      10
+         frame      data/chars/1sonny/wait04.gif
+	 delay      19
+         frame      data/chars/1sonny/wait03.gif
+	 delay      1
+         frame      data/chars/1sonny/wait03.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1sonny/item.gif
+
+anim walk
+@cmd clearL
+	 loop       1
+	 delay      11
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/wk07.gif
+         frame      data/chars/1sonny/wk08.gif
+         frame      data/chars/1sonny/wk09.gif
+	 delay      12
+         frame      data/chars/1sonny/wk10.gif
+
+anim run
+anim runattack
+anim attackbackward
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1sonny/ju01.gif
+	 delay      10
+         frame      data/chars/1sonny/rise02.gif
+
+anim attack1
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+@cmd ani0020 openborconstant("ANI_FREESPECIAL103") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 hitfx      data/sounds/beatbr2.wav
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 jugglecost 5
+	 delay      6
+	 attack     84 95 31 24 1 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa02.gif
+	 delay      3
+	 attack     0 
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 jugglecost 5
+	 delay      6
+	 attack2    81 83 34 13 1 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa04.gif
+	 delay      3
+	 attack2    0 
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 delay      6
+	 attack1    83 95 33 12 2 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa03.gif
+	 attack1    0 
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a100.gif
+
+anim attack2
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+@cmd ani0020 openborconstant("ANI_FREESPECIAL103") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 hitfx      data/sounds/beatbr2.wav
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 jugglecost 5
+	 delay      6
+	 attack2    84 95 31 24 1 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa02.gif
+	 delay      3
+	 attack2    0 
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 jugglecost 5
+	 delay      6
+	 attack1    81 83 34 13 1 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa04.gif
+	 delay      3
+	 attack1    0 
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/aa01.gif
+	 delay      6
+	 attack8    83 95 33 12 2 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/aa03.gif
+	 attack8    0 
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a100.gif
+
+anim attack3
+	 range      -10 60
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+@cmd ani0020 openborconstant("ANI_FREESPECIAL103") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 hitfx      data/sounds/beatsf3.wav
+         frame      data/chars/1sonny/bf01.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf03.gif
+	 delay      7
+	 jugglecost 5
+	 attack7    82 94 38 9 5 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.2 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/bf04x.gif
+	 move       0
+	 delay      6
+	 attack7    0 
+         frame      data/chars/1sonny/bf17.gif
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b303.gif
+	 frame      data/chars/1sonny/b302.gif
+
+anim attack4
+	 range      -10 60
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL103") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 hitfx      data/sounds/beatsf2.wav
+	 sound      data/sounds/dragonz2.wav
+	 move       1
+         frame      data/chars/1sonny/b501.gif
+         frame      data/chars/1sonny/b502.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/b503.gif
+	 delay      12
+	 jugglecost 5
+	 attack14   73 77 35 16 7 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/b505.gif
+	 move       0
+	 delay      8
+	 attack14   0 
+         frame      data/chars/1sonny/b503.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b408.gif
+
+#kick button
+anim freespecial1
+	 range      -10 60
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+@cmd ani0020 openborconstant("ANI_FOLLOW3") openborconstant("ANI_PAIN8")
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/1sonny/ba01.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/ba03.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 delay      9
+	 attack3    80 110 30 9 7 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1 0.1 0
+	 forcedirection -1
+      @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonny/ba04.gif
+	 delay      6
+	 attack3    0 0 0 0
+         frame      data/chars/1sonny/ba03.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/a100.gif
+
+#kick stunner
+anim follow1
+	 range      -10 60
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/ba01.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/ba03.gif
+         frame      data/chars/1sonny/ba05.gif
+	 hitfx      data/sounds/beatnw2.wav
+	 delay      11
+	 attack7    71 78 41 15 9 0 1 0 8 5
+	 jugglecost 5
+	 dropv      2 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/ba06.gif
+	 delay      6
+	 attack7    0 0 0 0
+         frame      data/chars/1sonny/ba05.gif
+         frame      data/chars/1sonny/ba03.gif
+         frame      data/chars/1sonny/ba02.gif
+
+#kick finisher
+anim follow2
+	 range      -10 60
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  2 1 0.1 0
+	 landframe  5
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+	 sound      data/sounds/punch6.wav
+         frame      data/chars/1sonny/siss01.gif
+         frame      data/chars/1sonny/siss02.gif
+	 delay      8
+         frame      data/chars/1sonny/siss03.gif
+         frame      data/chars/1sonny/siss05.gif
+	 delay      99
+	 sound      data/sounds/dragonz9.wav
+         frame      data/chars/1sonny/siss08.gif
+	 delay      14
+	 hitfx      data/sounds/beat3.wav
+	 attack90   85 76 30 21 13 1 1 0 8 5
+	 jugglecost 5
+	 dropv      2.8 0.3 0
+	 forcedirection -1
+         frame      data/chars/1sonny/siss09.gif
+	 attack90   0
+	 delay      8
+         frame      data/chars/1sonny/b503.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/a100.gif
+
+#extra knockdown kick for punch chain
+anim follow3
+	 range      -10 60
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  2 1.3 0.1 0
+	 landframe  8
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+         frame      data/chars/1sonny/b602.gif
+         frame      data/chars/1sonny/b603.gif
+         frame      data/chars/1sonny/b604.gif
+         frame      data/chars/1sonny/b605.gif
+	 hitfx      data/sounds/beatsbm3.wav
+	 delay      8
+	 attack     78 79 32 31 7 1 1 0 8 5
+	 jugglecost 5
+	 dropv      1.3 1.6 0
+	 forcedirection -1
+         frame      data/chars/1sonny/ak16.gif
+	 delay      8
+	 attack     0 
+         frame      data/chars/1sonny/b607.gif
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim attackbackward
+
+anim jump
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/jump2.wav
+	 cancel     2 3 0 a2 freespecial50  #DD3 CHIN KICK
+	 cancel     1 3 0 s  freespecial91  #AIR GRAB
+         frame      data/chars/1sonny/ju01.gif
+	 delay      8
+         frame      data/chars/1sonny/ju01.gif
+	 delay      5
+	 bbox       70 85 21 28
+         frame      data/chars/1sonny/ju02.gif
+         frame      data/chars/1sonny/ju02.gif
+	 delay      10
+         frame      data/chars/1sonny/ju03.gif
+         frame      data/chars/1sonny/ju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/ju01.gif
+
+anim forwardjump
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/jump2.wav
+	 cancel     1 3 0 a2 freespecial121
+	 cancel     2 5 0 s  freespecial91
+         frame      data/chars/1sonny/ju01.gif
+	 delay      13
+         frame      data/chars/1sonny/ju01.gif
+	 delay      4
+         frame      data/chars/1sonny/cff07.gif
+	 delay      3
+         frame      data/chars/1sonny/cff07.gif
+	 delay      7
+         frame      data/chars/1sonny/cff06.gif
+         frame      data/chars/1sonny/rasta03.gif
+         frame      data/chars/1sonny/ak23.gif
+	 delay      99
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/ju01.gif
+
+anim freespecial121
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 20
+	 mponly     1
+	 jumpframe  0 0.8 1.2 0
+	 landframe  3
+	 cancel     2 3 1 a2  freespecial122
+	 cancel     2 3 1 s   freespecial91  #AIR GRAB
+	 sound      data/sounds/dragonz9.wav
+         frame      data/chars/1sonny/ak03.gif
+	 hitfx      data/sounds/beatbr3.wav
+         delay      15
+	 attack90   77 99 36 17 3 1 0 0 6 5
+	 forcedirection -1
+	 dropv      1.3 1.3 0
+         frame      data/chars/1sonny/ak26.gif
+	 delay      99
+	 attack90   0
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim freespecial122
+	 loop       0
+	 delay      3
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  0.8 0.9 1 0
+	 landframe  4
+	 attack     0
+	 cancel     3 4 1 a2  freespecial123
+	 cancel     3 4 1 s   freespecial91  #AIR GRAB
+         frame      data/chars/1sonny/ak26.gif
+	 delay      6
+	 sound      data/sounds/punch3.wav
+         frame      data/chars/1sonny/ak03.gif
+	 hitfx      data/sounds/beatbr3.wav
+         delay      13
+	 attack90   73 93 37 18 3 1 0 0 6 5
+	 forcedirection -1
+	 dropv      1 0.8 0
+         frame      data/chars/1sonny/ak28.gif
+	 delay      99
+	 attack90   0
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim freespecial123
+	 loop       0
+	 delay      3
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  0.8 1 0.8 0
+	 landframe  4
+	 attack     0
+         frame      data/chars/1sonny/ak28.gif
+	 delay      6
+	 sound      data/sounds/punch3.wav
+         frame      data/chars/1sonny/ak03.gif
+	 hitfx      data/sounds/beatkil2.wav
+         delay      13
+	 attack90   77 99 36 17 3 1 0 0 6 5
+	 forcedirection -1
+	 dropv      1 1.4 0
+         frame      data/chars/1sonny/ak29.gif
+	 delay      99
+	 attack90   0
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim jumpattack2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 flipframe  0
+         frame      data/chars/1sonny/ak02.gif
+         frame      data/chars/1sonny/ak03.gif
+	 hitfx      data/sounds/beat2.wav
+         delay      15
+	 attack90   76 99 27 26 6 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonny/ak04.gif
+         delay      12
+	 attack90   0 0 0 0
+         frame      data/chars/1sonny/ju01.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 followanim 17
+	 followcond 3
+	 hitfx      data/sounds/beat2.wav
+	 attack92   79 98 33 19 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonny/ak01.gif
+	 delay      15
+	 attack92   0 0 0 0
+         frame      data/chars/1sonny/ju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/ju01.gif
+
+#ENEMY JUMP
+anim follow17
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+#@cmd toss0001 10
+	 flipframe  1
+	 jumpframe  1 1 1 0
+	 landframe  5
+         frame      data/chars/1sonny/ak01.gif
+         frame      data/chars/1sonny/airf01.gif
+	 delay      8
+	 bbox       70 85 21 28
+         frame      data/chars/1sonny/airf02.gif
+         frame      data/chars/1sonny/airf03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   77 90 33 16 10 1 0 0 10 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonny/airf04.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/rise02.gif
+
+#WALL JUMP
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/1sonny/wallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1sonny/ju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   79 98 33 19 10 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonny/ak01.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/rise02.gif
+
+#AIR GRAB
+anim freespecial91
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       0
+	 followanim 13
+	 followcond 3
+	 landframe  5
+	 move       2
+	 energycost 30
+         mponly     1	 
+	 hitfx      data/sounds/grab.wav
+         frame      data/chars/1sonny/ath01.gif
+	 attack     78 82 24 19 0 0 1 1 12 10
+	 jugglecost 5
+         frame      data/chars/1sonny/ath02.gif
+	 delay      15
+	 attack     0 0 0 0
+         frame      data/chars/1sonny/ath03.gif
+	 move       0
+         frame      data/chars/1sonny/ju02.gif
+	 delay      999
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/ju01.gif
+	 delay      15
+         frame      data/chars/1sonny/rise02.gif
+
+#BRUCE LEE STOMP
+anim follow13
+	 loop       0
+	 delay      16
+	 offset     80 129
+	 bbox       0 0 0 0
+	 load       eslam
+#@cmd toss0001 40
+	 jumpframe  0 2 0 0
+	 landframe  4
+	 attack     0
+@cmd slamstart2
+@cmd antiwall2 36 -37 0
+@cmd position 36 24 5 -0.1 0
+	 quakeframe 4 4 5
+         frame      data/chars/1sonny/ath04.gif
+	 delay      9
+@cmd position 11 11 10 -0.1 0
+         frame      data/chars/1sonny/asto01.gif
+@cmd position 11 3 3 -0.1 0
+         frame      data/chars/1sonny/asto02.gif
+	 sound      data/sounds/nun02.wav
+@cmd jump001 -4 0 0
+	 offset     80 132
+	 delay      999
+@cmd position 11 3 -5 -0.1 0
+         frame      data/chars/1sonny/asto03.gif
+@cmd spawn001 "eslam" "eslam" 0 0 0 -1 0
+	 sound      data/sounds/fall4.wav
+	 delay      5
+@cmd position 11 3 -5 -0.1 0
+         frame      data/chars/1sonny/asto04.gif
+         frame      data/chars/1sonny/asto04.gif
+@cmd position 12 3 -5 -0.1 0
+         frame      data/chars/1sonny/asto04.gif
+         frame      data/chars/1sonny/asto04.gif
+         frame      data/chars/1sonny/asto04.gif
+         frame      data/chars/1sonny/asto04.gif
+         frame      data/chars/1sonny/asto04.gif
+	 delay      60
+         frame      data/chars/1sonny/asto04.gif
+	 delay      9
+         frame      data/chars/1sonny/asto05.gif
+         frame      data/chars/1sonny/asto06.gif
+	 sound      data/sounds/fall4.wav
+@cmd spawn001 "eslam" "eslam" 0 0 0 -1 0
+	 delay      5
+@cmd position 11 3 -5 -0.1 0
+         frame      data/chars/1sonny/asto07.gif
+         frame      data/chars/1sonny/asto07.gif
+         frame      data/chars/1sonny/asto07.gif
+@cmd position 12 3 -5 -0.1 0
+         frame      data/chars/1sonny/asto07.gif
+         frame      data/chars/1sonny/asto07.gif
+         frame      data/chars/1sonny/asto07.gif
+         frame      data/chars/1sonny/asto07.gif
+	 delay      50
+         frame      data/chars/1sonny/asto07.gif
+@cmd position 12 3 0 0 0
+	 delay      1
+         frame      data/chars/1sonny/asto07.gif
+	 delay      35
+@cmd jump001 1 -0.7 0
+	 offset     80 129
+@cmd depost 0
+@cmd finish 12 1 -1.5 1 0 0
+         frame      data/chars/1sonny/ju01.gif
+	 delay      13
+         frame      data/chars/1sonny/rise02.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 hitfx      data/sounds/beat2.wav
+	 attack11   79 98 33 19 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonny/ak01.gif
+	 delay      15
+	 attack11   0 0 0 0
+         frame      data/chars/1sonny/ju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/ju01.gif
+
+#DD3 CHIN KICK
+anim freespecial50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 landframe  8
+	 energycost 30
+	 mponly     1
+         frame      data/chars/1sonny/chin01.gif
+@cmd jump001 0.3 0 0
+	 sound      data/sounds/jump2.wav
+         frame      data/chars/1sonny/chin02.gif
+@cmd toss0001 70
+	 delay      10
+	 hitfx      data/sounds/beats2.wav
+	 attack8    75 78 28 63 0 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/chin03.gif
+         delay      6
+	 attack8    0
+         frame      data/chars/1sonny/chin04.gif
+         frame      data/chars/1sonny/chin05.gif
+	 delay      10
+	 hitfx      data/sounds/beats2.wav
+	 attack90   75 78 28 63 13 1 1 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.3 1.7 0
+         frame      data/chars/1sonny/chin06.gif
+	 attack90   0
+         frame      data/chars/1sonny/chin04.gif
+         delay      99
+         frame      data/chars/1sonny/ju01.gif
+         delay      13
+         frame      data/chars/1sonny/ck00.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/rise02.gif
+
+anim block
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 2 0 u u d d  freespecial111   #movelist
+	 cancel     1 3 0 a3   freespecial70
+	 cancel     1 3 0 a4   freespecial70
+	 cancel     0 2 0 a    freespecial4  #RYO SAKAZAKI HIEN SHIPPUU KYAKU
+	 cancel     0 2 0 a2   freespecial5  #KIM KAPHWAN HANGESTU ZAN
+	 cancel     0 2 0 j    freespecial63 #LEAP ATTACK
+	 cancel     0 2 0 d f d f a4  freespecial88   #CVS ISM SUPER ART I
+	 cancel     0 2 0 d f d f a3  freespecial89   #CVS ISM SUPER ART II
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/block.gif
+
+anim freespecial63
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  5 1.8 1.5 0
+	 landframe  8
+	 dropframe  6
+	 energycost 30
+         mponly     1
+	 sound      data/sounds/punch7.wav
+         frame      data/chars/1sonny/ck00.gif
+	 sound      data/sounds/jump3.wav
+         frame      data/chars/1sonny/rise02.gif
+         frame      data/chars/1sonny/leap01.gif
+         frame      data/chars/1sonny/leap02.gif
+	 delay      10
+         frame      data/chars/1sonny/leap03.gif
+	 hitfx      data/sounds/beatbl3.wav
+	 delay      999
+	 attack3    69 82 39 28 2 0 0 0 12 5
+	 forcedirection -1
+	 dropv      1.3 1.7 0
+         frame      data/chars/1sonny/leap04.gif
+	 delay      12
+	 attack3    0 0 0 0
+         frame      data/chars/1sonny/leap05.gif
+	 delay      999
+         frame      data/chars/1sonny/leap06.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim grab
+@script
+  if(frame==0){
+    void self = getlocalvar("self");
+    void target = getentityproperty(self, "opponent");
+
+    setlocalvar("Target" + self, target);
+  }
+@end_script
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 cancel     1 3 0 a2  freespecial51
+	 cancel     1 3 0 j   freespecial52
+	 cancel     2 3 0 s   freespecial101
+	 cancel     2 3 0 a3  freespecial8
+	 cancel     2 3 0 a4  freespecial58
+         frame      data/chars/1sonny/grab01.gif
+	 delay      10
+         frame      data/chars/1sonny/grab01.gif
+         frame      data/chars/1sonny/grab02.gif
+
+anim freespecial51
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd slamstart
+@cmd antiwall2 85 -10 0
+@cmd position 39 38 1 0 0
+	 sound      data/sounds/grab.wav
+@cmd position 39 38 1 0 0
+         frame      data/chars/1sonny/ho01.gif
+         frame      data/chars/1sonny/ho02.gif
+         frame      data/chars/1sonny/ho06.gif
+	 delay      10
+	 sound      data/sounds/beat2.wav
+@cmd position 40 38 1 0 0
+         frame      data/chars/1sonny/ho07.gif
+	 delay      7
+@cmd position 39 38 1 0 0
+         frame      data/chars/1sonny/ho06.gif
+         frame      data/chars/1sonny/ho02.gif
+         frame      data/chars/1sonny/ho06.gif
+	 delay      10
+	 sound      data/sounds/beat2.wav
+@cmd position 40 38 1 0 0
+         frame      data/chars/1sonny/ho07.gif
+	 delay      8
+@cmd position 39 38 1 0 0
+         frame      data/chars/1sonny/ho06.gif
+         frame      data/chars/1sonny/ho08.gif
+         frame      data/chars/1sonny/ho09.gif
+	 sound      data/sounds/beat2.wav
+@cmd position 41 38 1 0 0
+         frame      data/chars/1sonny/ho10.gif
+@cmd position 42 38 1 0 0
+         frame      data/chars/1sonny/ho11.gif
+	 sound      data/sounds/beat2.wav
+@cmd position 41 38 1 0 0
+         frame      data/chars/1sonny/ho10.gif
+@cmd antiwall2  38 -15 0
+@cmd position 40 38 1 0 0
+         frame      data/chars/1sonny/ho09.gif
+@cmd depost 0
+@cmd finish 15 1 -1.5 2 0 0
+	 sound      data/sounds/beat2.wav
+	 delay      8
+         frame      data/chars/1sonny/ho10.gif
+	 sound      data/sounds/dragonz6.wav
+         frame      data/chars/1sonny/ho11.gif
+         frame      data/chars/1sonny/ho12.gif
+         frame      data/chars/1sonny/ho13.gif
+	 delay      20
+         frame      data/chars/1sonny/ho14.gif
+
+anim freespecial52
+	 delay      9
+	 offset     80 129
+	 bbox       0 0 0 0
+	 flipframe  16
+@cmd slamstart
+@cmd antiwall2 85 -10 0
+@cmd position 36 30 1 0 0
+	 sound      data/sounds/grab.wav
+         frame      data/chars/1sonny/g101.gif
+	 delay      4
+@cmd position 36 33 3 1 0
+         frame      data/chars/1sonny/g202.gif
+	 delay      11
+@cmd position 24 28 30 1 1
+	 sound      data/sounds/beat1.wav
+         frame      data/chars/1sonny/g501.gif
+@cmd position 24 25 28 1 1
+	 delay      4
+         frame      data/chars/1sonny/g202.gif
+@cmd position 20 37 27 1 -1
+         frame      data/chars/1sonny/g203.gif
+	 delay      10
+@cmd position 36 30 1 0 0
+         frame      data/chars/1sonny/grab02.gif
+
+	 delay      4
+@cmd position 36 33 3 1 0
+         frame      data/chars/1sonny/g202.gif
+	 offset     75 129
+@cmd jump001 0.5 0 0
+	 delay      10
+@cmd position 24 33 41 1 1
+	 sound      data/sounds/beat2.wav
+         frame      data/chars/1sonny/g502.gif
+	 sound      data/sounds/dragonz2.wav
+@cmd position 20 41 36 1 -1
+         frame      data/chars/1sonny/g502.gif
+	 offset     80 129
+	 delay      5
+         frame      data/chars/1sonny/g202.gif
+@cmd position 20 37 27 1 -1
+         frame      data/chars/1sonny/g202.gif
+	 delay      13
+@cmd position 36 30 1 0 0
+         frame      data/chars/1sonny/grab02.gif
+
+	 delay      4
+@cmd position 36 33 3 1 0
+         frame      data/chars/1sonny/g202.gif
+@cmd jump001 0.8 0.1 0
+	 offset     75 129
+	 delay      1
+@cmd position 24 33 31 0 1
+	 sound      data/sounds/beat3.wav
+         frame      data/chars/1sonny/g503.gif
+	 sound      data/sounds/dragonz3.wav
+@cmd depost 0
+@cmd finish 15 1 1.5 0.8 0 1
+	 delay      14
+         frame      data/chars/1sonny/g503.gif
+	 offset     80 129
+	 delay      9
+         frame      data/chars/1sonny/g504.gif
+         frame      data/chars/1sonny/g505.gif
+	 delay      15
+         frame      data/chars/1sonny/ck00.gif
+
+#CO-OP THROW
+anim freespecial101
+	 loop       0
+	 delay      8
+	 offset     80 129
+@cmd slamstart
+@cmd antiwall2  -20 5 0
+@cmd position 2 26 0 -0.1 0
+         frame      data/chars/1sonny/b101.gif
+@cmd antiwall2  -20 5 0
+@cmd position 3 26 0 -0.1 0
+         frame      data/chars/1sonny/b201.gif
+	 delay      25
+@cmd antiwall2  -20 5 0
+@cmd position 14 28 7 -0.1 1
+	 sound      data/sounds/grab.wav
+         frame      data/chars/1sonny/b803.gif
+	 sound      data/sounds/dragonz6.wav
+	 delay      8
+@cmd antiwall2  -20 5 0
+@cmd position 14 22 10 -0.1 0
+         frame      data/chars/1sonny/back01.gif
+	 delay      1
+@cmd antiwall2  -21 21 0
+@cmd position 28 -13 26 -0.1 0
+	 move       0
+         frame      data/chars/1sonny/back02.gif
+	 delay      27
+@cmd depost 0
+@cmd throw 10 7 -0.5 2.5 0.01 0
+         frame      data/chars/1sonny/back02.gif
+	 attack10   0 0 0 0 
+	 delay      8
+         frame      data/chars/1sonny/back03.gif
+         frame      data/chars/1sonny/back04.gif
+         frame      data/chars/1sonny/b104.gif
+
+#TAE KWON DO UP KICKS FINISHER
+anim freespecial102
+	 rangex     29 115
+	 rangea     75 108
+	 rangez     -5 5
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0 0 0 0
+	 fastattack 1	
+	 jumpframe  5 2.9 0.3 0
+	 landframe  23
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/tr01.gif
+         frame      data/chars/1sonny/tr02.gif
+         frame      data/chars/1sonny/tr03.gif
+         frame      data/chars/1sonny/tr04.gif
+	 delay      18
+         frame      data/chars/1sonny/tr05.gif
+	 delay      3
+         frame      data/chars/1sonny/ak15.gif
+	 delay      5
+         hitfx      data/sounds/beatkil1.wav
+	 attack92   76 79 33 29 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.5
+         frame      data/chars/1sonny/ak16.gif
+	 delay      2
+	 attack92   0 0 0 0
+         frame      data/chars/1sonny/ak17.gif
+         frame      data/chars/1sonny/ak18.gif
+	 delay      5
+	 attack93   76 79 33 29 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.5
+         frame      data/chars/1sonny/ak19.gif
+	 attack93   0
+	 delay      2
+         frame      data/chars/1sonny/ak14.gif
+         frame      data/chars/1sonny/ak15.gif
+	 delay      5
+	 attack92   76 79 33 29 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.5
+         frame      data/chars/1sonny/ak16.gif
+	 delay      2
+	 attack92   0 0 0 0
+         frame      data/chars/1sonny/ak17.gif
+         frame      data/chars/1sonny/ak18.gif
+	 delay      5
+	 attack93   76 79 33 29 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.4 0.5
+         frame      data/chars/1sonny/ak19.gif
+	 attack93   0
+	 delay      6
+         frame      data/chars/1sonny/ak14.gif
+         frame      data/chars/1sonny/ak20.gif
+         frame      data/chars/1sonny/ak21.gif
+         frame      data/chars/1sonny/ak22.gif
+@cmd jump001 1 -0.1 0
+	 hitfx      data/sounds/beatkil2.wav
+	 attack     76 96 24 35 17 1 1 0 15 5
+	 forcedirection -1
+	 dropv      -2.5 2.1 0
+         frame      data/chars/1sonny/ak23.gif
+	 delay      9
+	 attack     0
+         frame      data/chars/1sonny/ju02.gif
+	 delay      999
+         frame      data/chars/1sonny/ju01.gif
+	 delay      25
+         frame      data/chars/1sonny/ck00.gif
+
+#SHOU RAN KYAKU
+anim freespecial103
+	 rangex     113 133
+	 rangea     75 95
+	 rangez     -5 5
+	 loop       0
+	 delay      18
+	 offset     80 129
+	 bbox       0 0 0 0
+	 followanim 19
+	 followcond 3	
+	 jumpframe  1 2.9 0.3 0
+	 dropframe  2
+	 landframe  4
+	 sound      data/sounds/dragonz9.wav
+         frame      data/chars/1sonny/ck00.gif
+	 hitfx      data/sounds/grab.wav
+	 delay      999
+	 attack     81 83 20 18 0 0 1 1 8 5
+         frame      data/chars/1sonny/rasta00.gif
+	 attack     0
+	 delay      12
+         frame      data/chars/1sonny/ju02.gif
+	 delay      999
+         frame      data/chars/1sonny/ju01.gif
+	 delay      25
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow19
+	 loop       0
+	 delay      14
+	 offset     80 129
+	 bbox       0 
+	 attack     0
+	 landframe  16
+	 sound      data/sounds/dragonx.wav
+@cmd slamstart2
+@cmd antiwall2 36 -37 0
+@cmd position 36 24 5 -0.1 0
+         frame      data/chars/1sonny/ath04.gif
+	 delay      1
+@cmd jump001 0.1 0 0
+         frame      data/chars/1sonny/ath04.gif
+@cmd toss0001 102
+	 delay      6
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 9 30 0 0
+@cmd position 38 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold01.gif
+@cmd position 37 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold02.gif
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 9 28 0 0
+@cmd position 38 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold03.gif
+@cmd position 37 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold02.gif
+#--------
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 9 30 0 0
+@cmd position 38 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold01.gif
+@cmd position 37 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold02.gif
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 9 28 0 0
+@cmd position 38 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold03.gif
+@cmd position 37 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold02.gif
+#--------
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 9 30 0 0
+@cmd position 38 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold01.gif
+@cmd position 37 18 1 -0.1 0
+         frame      data/chars/1sonny/ahold02.gif
+@cmd jump001 1.8 -0.1 0
+         sound      data/sounds/beatbr2.wav
+@cmd spawn001 "flash" "flash" 0 15 15 0 0
+@cmd depost 0
+@cmd finish 17 1 -1.5 1 0 0
+         frame      data/chars/1sonny/ak05.gif
+         frame      data/chars/1sonny/ak03.gif
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim grabattack
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1sonny/g101.gif
+	 delay      15
+	 hitfx      data/sounds/beat2.wav
+	 shock      89 95 14 17 8 0 0 0 12 5
+	 dropv      1.5 0.8 0
+         frame      data/chars/1sonny/g102.gif
+	 delay      8
+	 shock      0 0 0 0
+         frame      data/chars/1sonny/grab01.gif
+
+anim grabattack2
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1sonny/g101.gif
+	 delay      15
+	 hitfx      data/sounds/beat2.wav
+	 shock      89 95 14 17 12 1 0 0 12 5
+	 dropv      1.5 0.8 0
+         frame      data/chars/1sonny/g102.gif
+	 delay      8
+	 shock      0 0 0 0
+         frame      data/chars/1sonny/b101.gif
+
+anim grabup
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/g101.gif
+	 delay      8
+	 hitfx      data/sounds/beat3.wav
+	 attack     84 93 32 15 12 1 0 0 12 5
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/g201.gif
+	 delay      12
+	 attack     0 0 0 0
+         frame      data/chars/1sonny/g202.gif
+         frame      data/chars/1sonny/g203.gif
+
+anim grabdown
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1sonny/g301.gif
+	 delay      15
+	 hitfx      data/sounds/beat2.wav
+	 shock      89 95 14 17 8 0 0 0 12 5
+	 dropv      1.5 0.8 0
+         frame      data/chars/1sonny/g302.gif
+	 delay      8
+	 shock      0 0 0 0
+         frame      data/chars/1sonny/grab01.gif
+
+anim grabdown2
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/g401.gif
+	 delay      15
+	 hitfx      data/sounds/beat3.wav
+	 attack90   82 91 37 12 12 1 0 0 12 5
+	 dropv      1.5 1.9 0
+         frame      data/chars/1sonny/g402.gif
+	 delay      8
+	 attack90   0
+         frame      data/chars/1sonny/g401.gif
+         frame      data/chars/1sonny/b104.gif
+
+#throw
+anim grabbackward
+	 loop       0
+	 delay      3
+	 offset     80 129
+@cmd slamstart
+@cmd antiwall2  -20 5 0
+@cmd position 3 22 5 0 0
+         frame      data/chars/1sonny/th01.gif
+@cmd antiwall2  -20 5 0
+@cmd position 3 22 5 0 0
+         frame      data/chars/1sonny/th01.gif
+@cmd antiwall2  -20 5 0
+@cmd position 3 22 5 0 0
+         frame      data/chars/1sonny/th01.gif
+@cmd antiwall2  -20 5 0
+@cmd position 3 22 5 0 0
+         frame      data/chars/1sonny/th01.gif
+	 delay      7
+	 move       -2
+@cmd position 14 8 7 0 1
+         frame      data/chars/1sonny/th02.gif
+@cmd position 28 -5 18 0 0
+         frame      data/chars/1sonny/th03.gif
+	 delay      1
+@cmd antiwall2  -20 21 0
+@cmd position 28 -13 26 0 0
+         frame      data/chars/1sonny/th03.gif
+	 sound      data/sounds/dragonz6.wav
+	 delay      27
+@cmd depost 0
+@cmd throw 10 4 -1 1.8 0 0
+         frame      data/chars/1sonny/th04.gif
+	 attack10   0 0 0 0 
+	 delay      20
+         frame      data/chars/1sonny/th05.gif
+
+anim pain1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     1 4 0 s freespecial90
+         frame      data/chars/1sonny/pain01.gif
+         frame      data/chars/1sonny/pain01.gif
+         frame      data/chars/1sonny/pain01.gif
+	 delay      13
+         frame      data/chars/1sonny/pain01.gif
+
+#breathless1
+anim pain2
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 1 0 s  freespecial90
+         frame      data/chars/1sonny/pain01.gif
+	 delay      45
+         frame      data/chars/1sonny/pain03.gif
+
+anim pain3
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     1 4 0 s freespecial90
+         frame      data/chars/1sonny/pain02.gif
+         frame      data/chars/1sonny/pain02.gif
+         frame      data/chars/1sonny/pain02.gif
+	 delay      13
+         frame      data/chars/1sonny/pain02.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 1 0 s  freespecial90
+         frame      data/chars/1sonny/pain02.gif
+	 delay      45
+         frame      data/chars/1sonny/pain03.gif
+
+#stun
+anim pain5
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/pain04.gif
+         frame      data/chars/1sonny/pain05.gif
+         frame      data/chars/1sonny/pain06.gif
+         frame      data/chars/1sonny/pain05.gif
+         frame      data/chars/1sonny/pain04.gif
+         frame      data/chars/1sonny/pain05.gif
+         frame      data/chars/1sonny/pain06.gif
+         frame      data/chars/1sonny/pain05.gif
+         frame      data/chars/1sonny/pain04.gif
+         frame      data/chars/1sonny/pain05.gif
+         frame      data/chars/1sonny/pain06.gif
+
+#COMBO BREAKER	
+anim freespecial90
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       0 0 0 0
+	 fastattack 1
+	 energycost 40
+	 mponly     1
+	 jumpframe  2 2.5 0.5 0
+	 dropframe  4
+	 landframe  5
+	 custentity brfla
+	 spawnframe 0 0 -1 0 0
+	 hitflash   Qflash2
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/b302.gif
+	 delay      60
+	 hitfx      data/sounds/beatsf2.wav
+	 attack3    82 94 20 25 0 1 1 0 30 5
+	 forcedirection -1
+	 dropv      3 1 0
+         frame      data/chars/1sonny/ak24.gif
+	 attack3    0
+         frame      data/chars/1sonny/ak24.gif
+	 delay      999
+         frame      data/chars/1sonny/ju01.gif
+	 delay      15
+         frame      data/chars/1sonny/ck00.gif
+	 delay      8
+         frame      data/chars/1sonny/b104.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+	 bbox       0
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1sonny/fall03.gif
+
+anim burn
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+load     burn
+@cmd spawn001 "burn" "burn" 0 0 0 0 0
+	 drawmethod remap 4
+         frame      data/chars/1sonny/fall02.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/fall02.gif
+@cmd	updateframe getlocalvar("self") 0
+         frame      data/chars/1billy/fall02.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1sonny/fall03.gif
+
+anim fall6
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/1sonny/fall03.gif
+
+#######bossescn
+anim pain8
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/pain04.gif
+anim pain9
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/pain05.gif
+anim pain10
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/pain06.gif
+#######dukecn
+anim pain18
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/b104.gif
+
+anim fall8
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/1sonny/fall03.gif
+
+anim fall9
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/1sonny/fall03.gif
+
+anim fall10
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/1sonny/fall03.gif
+
+#######force push
+anim fall7
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       63 83 34 42
+	 landframe  2
+@cmd toss0001 200
+@cmd jump001 0 0 0
+         frame      data/chars/1sonny/fall01.gif
+	 delay      999
+@cmd jump001 0 0 0
+         frame      data/chars/1sonny/fall02.gif
+	 delay      12
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall5.wav
+         frame      data/chars/1sonny/fall03.gif
+
+anim rise
+	 loop       0
+	 delay      40
+	 offset     80 129
+	 bbox       0 0 0 0
+	 cancel     1 2 0 s freespecial8
+         frame      data/chars/1sonny/fall03.gif
+	 delay      12
+         frame      data/chars/1sonny/rise01.gif
+         frame      data/chars/1sonny/rise02.gif
+
+#WAKE UP SHORT TATSU
+anim freespecial8
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  2 1.7 0 0
+	 landframe  18
+	 energycost 25
+	 mponly     1
+	 sound      data/sounds/dragonq.wav
+	 hitfx      data/sounds/beatnw2.wav
+         frame      data/chars/1sonny/rise02.gif
+         frame      data/chars/1sonny/ck00.gif
+	 delay      4
+         frame      data/chars/1sonny/tatsu01.gif
+         frame      data/chars/1sonny/tatsu02.gif
+	 sound      data/sounds/punch2.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 attack     72 97 34 26 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack     0 
+         frame      data/chars/1sonny/tatsu04.gif
+	 sound      data/sounds/punch2.wav
+	 attack     47 95 32 31 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack     0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch2.wav
+	 attack     72 97 34 26 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack     0 
+         frame      data/chars/1sonny/tatsu04.gif
+	 sound      data/sounds/punch2.wav
+	 attack     47 95 32 31 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack     0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch2.wav
+	 attack     72 97 34 26 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack     0 
+         frame      data/chars/1sonny/tatsu04.gif
+	 sound      data/sounds/punch2.wav
+	 attack     47 95 32 31 9 1 1 0 8 3
+	 jugglecost 5
+	 dropv      1.5 2.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack     0
+         frame      data/chars/1sonny/tatsu06.gif
+	 delay      9
+         frame      data/chars/1sonny/tatsu07.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      15
+         frame      data/chars/1sonny/ck00.gif
+
+#########extra moves
+
+#RYO SAKAZAKI HIEN SHIPPUU KYAKU
+anim freespecial4
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 1.1 2 0
+	 landframe  6
+	 energycost 25
+	 mponly     1
+	 followanim 4
+	 followcond 3
+         frame      data/chars/1sonny/rise02.gif
+	 delay      3
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/1sonny/ak02.gif
+         frame      data/chars/1sonny/ak03.gif
+	 delay      45
+	 hitfx      data/sounds/beat2.wav
+	 attack91   75 98 35 18 5 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.5 1.5 0
+	 forcedirection -1
+         frame      data/chars/1sonny/ryo01.gif
+	 delay      8
+	 attack91   0 
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/hk05.gif
+	 delay      14
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow4
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  0 0.8 1.1 0
+	 landframe  7
+         frame      data/chars/1sonny/ryo01.gif
+	 delay      5
+         frame      data/chars/1sonny/b303.gif
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b405.gif
+	 delay      10
+	 hitfx      data/sounds/beat3.wav
+	 attack7    87 79 33 30 4 1 0 0 8 5
+	 jugglecost 5
+	 dropv      1.4 1.8 0
+	 forcedirection -1
+         frame      data/chars/1sonny/b406.gif
+	 attack7    0 
+         frame      data/chars/1sonny/b407.gif
+	 delay      99
+         frame      data/chars/1sonny/hk05.gif
+	 delay      14
+         frame      data/chars/1sonny/ck00.gif
+
+#KIM KAPHWAN HANGESTU ZAN
+anim freespecial5
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 1.3 1.4 0
+	 landframe  11
+	 fastattack 1
+	 energycost 25
+	 mponly     1
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/b501.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b503.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/b704.gif
+	 delay      4
+	 hitfx      data/sounds/beatnw1.wav
+	 attack95   76 65 13 65 3 0 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      0.4 1.7 0
+         frame      data/chars/1sonny/kim01.gif
+	 attack95   0
+         frame      data/chars/1sonny/kim01.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 attack95   71 71 31 49 3 0 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      0.2 1.6 0
+         frame      data/chars/1sonny/kim02.gif
+	 attack95   0
+         frame      data/chars/1sonny/kim02.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 attack90   71 71 31 49 2 0 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      0.1 1.4 0
+         frame      data/chars/1sonny/kim03.gif
+	 attack90   0
+         frame      data/chars/1sonny/kim03.gif
+	 delay      99
+	 hitfx      data/sounds/beatnw2.wav
+	 attack91   70 105 40 26 2 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.2 1.5 0
+         frame      data/chars/1sonny/kim04.gif
+	 delay      12
+	 attack91   0
+         frame      data/chars/1sonny/kim04.gif
+	 delay      8
+         frame      data/chars/1sonny/rise01.gif
+         frame      data/chars/1sonny/rise02.gif
+
+#SDD TATSUMAKI
+anim freespecial6
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       77 79 6 33
+	 energycost 50
+	 mponly     1
+	 jumpframe  3 1.5 1.3 0
+	 landframe  27
+	 sound      data/sounds/dragonz1.wav
+	 hitfx      data/sounds/beatsf3.wav
+         frame      data/chars/1sonny/b601.gif
+	 delay      10
+         frame      data/chars/1sonny/b602.gif
+	 delay      5
+         frame      data/chars/1sonny/b603.gif
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu01.gif
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu02.gif
+	 sound      data/sounds/punch2.wav
+	 attack26   74 96 31 22 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack26   0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 @cmd antibasemap 20 0 0
+@cmd toss0001 180
+	 attack26   47 95 32 32 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch2.wav
+	 attack26   74 96 31 22 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 @cmd antibasemap 20 0 0
+	 attack26   47 95 32 32 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack26   0 0 0 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch2.wav
+	 attack26   74 96 31 22 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 @cmd antibasemap 20 0 0
+	 attack26   47 95 32 32 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch2.wav
+	 attack26   74 96 31 22 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 @cmd antibasemap 20 0 0
+	 attack26   47 95 32 32 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack26   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 hitfx      data/sounds/beat3.wav
+	 sound      data/sounds/punch2.wav
+	 attack26   74 96 31 22 4 1 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack13   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 hitfx      data/sounds/beat3.wav
+	 @cmd antibasemap 20 0 0
+	 attack26   47 95 32 32 4 1 0 0 8 5
+	 forcedirection -1
+	 dropv      2 1.5 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack13   0 0 0 0
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/tatsu07.gif
+	 delay      300
+	 @cmd antibasemap 20 0 0
+         frame      data/chars/1sonny/ju01.gif
+	 delay      20
+         frame      data/chars/1sonny/rise02.gif
+
+anim freespecial7
+
+anim death
+	 delay      40
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/1sonny/fall03.gif
+	 delay      12
+         frame      data/chars/1sonny/rise01.gif
+         frame      data/chars/1sonny/rise02.gif
+	 delay      16
+         frame      data/chars/1sonny/pain01.gif
+         frame      data/chars/1sonny/pain03.gif
+	 delay      20
+	 sound      data/sounds/dragonz9.wav
+         frame      data/chars/1sonny/pain04.gif
+	 delay      10
+         frame      data/chars/1sonny/death01.gif
+	 delay      25
+         frame      data/chars/1sonny/death02.gif
+	 delay      7
+         frame      data/chars/1sonny/death04.gif
+	 delay      60
+         frame      data/chars/1sonny/death05.gif
+	 delay      7
+         frame      data/chars/1sonny/death03.gif
+         frame      data/chars/1sonny/fall02.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1sonny/fall03.gif
+
+#FWD DODGE
+anim freespecial100
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       63 122 34 7
+	 move       2
+	 flipframe  21
+@cmd shadow 10 25 60 0 2 190 190 20
+         frame      data/chars/1sonny/ck00.gif
+	 move       4
+	 delay      2
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/cw05.gif
+         frame      data/chars/1sonny/cw05.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/cw05.gif
+         frame      data/chars/1sonny/cw05.gif
+         frame      data/chars/1sonny/cw04.gif
+         frame      data/chars/1sonny/cw04.gif
+         frame      data/chars/1sonny/cw04.gif
+         frame      data/chars/1sonny/cw04.gif
+         frame      data/chars/1sonny/cw03.gif
+         frame      data/chars/1sonny/cw03.gif
+         frame      data/chars/1sonny/cw03.gif
+         frame      data/chars/1sonny/cw03.gif
+         frame      data/chars/1sonny/cw02.gif
+         frame      data/chars/1sonny/cw02.gif
+         frame      data/chars/1sonny/cw02.gif
+         frame      data/chars/1sonny/cw02.gif
+         frame      data/chars/1sonny/cw01.gif
+         frame      data/chars/1sonny/cw01.gif
+         frame      data/chars/1sonny/cw01.gif
+         frame      data/chars/1sonny/cw01.gif
+	 move       0
+	 delay      15
+         frame      data/chars/1sonny/ck00.gif
+
+#BACK DODGE
+anim freespecial99
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1.5 -1 0
+	 landframe  8
+@cmd shadow 10 25 60 0 2 190 190 20
+         frame      data/chars/1sonny/ck00.gif
+	 sound      data/sounds/dragonz6.wav
+	 delay      9
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/dob01.gif
+         frame      data/chars/1sonny/dob02.gif
+         frame      data/chars/1sonny/dob03.gif
+         frame      data/chars/1sonny/dob04.gif
+         frame      data/chars/1sonny/dob05.gif
+         frame      data/chars/1sonny/dob06.gif
+	 delay      99
+         frame      data/chars/1sonny/dob06.gif
+	 delay      12
+         frame      data/chars/1sonny/rise02.gif
+
+######### DRAGON STANCE & TAEKWONDO TRIGGER
+load ssfs2
+load ssfso
+anim freespecial2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 custentity ssfs2
+	 spawnframe 0 1 -2 0 0
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+3); 
+@end_script
+	 weaponframe 9 1
+	 cancel     0 5 0 j  freespecial100
+	 cancel     0 5 0 s  freespecial99
+	 cancel     4 5 0 a  freespecial33   #SHOULDER TACKLE
+	 cancel     4 5 0 a2 freespecial46   #CAPTAIN AMERICA KICK
+         frame      data/chars/1sonny/idle05.gif
+         frame      data/chars/1sonny/a804.gif
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b301.gif
+	 delay      13
+         frame      data/chars/1sonny/tr12.gif
+	 delay      9
+         frame      data/chars/1sonny/tr20.gif
+         frame      data/chars/1sonny/tr21.gif
+	 delay      13
+         frame      data/chars/1sonny/tr22.gif
+	 delay      8
+         frame      data/chars/1sonny/tr23.gif
+         frame      data/chars/1sonny/b301.gif
+
+anim freespecial3
+	 loop       0
+	 delay      3
+	 offset     80 129
+	 bbox       68 83 24 44
+	 custentity ssfso
+	 spawnframe 0 0 -2 0 0
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+1); 
+@end_script
+#	 weaponframe 10 2
+	 cancel     0 7 0 j  freespecial100
+	 cancel     0 7 0 s  freespecial99
+	 cancel     6 7 0 a  freespecial22
+	 cancel     6 7 0 a2 freespecial15
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/tr05.gif
+         frame      data/chars/1sonny/tr06.gif
+         frame      data/chars/1sonny/tr07.gif
+         frame      data/chars/1sonny/tr08.gif
+         frame      data/chars/1sonny/tr09.gif
+	 delay      20
+         frame      data/chars/1sonny/tr10.gif
+	 delay      10
+         frame      data/chars/1sonny/wait01.gif
+
+######### DRAGON STANCE CANCELS
+
+#SHOULDER TACKLE
+anim freespecial33
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 followanim 24
+	 followcond 3
+	 energycost 35
+	 mponly     1
+         frame      data/chars/1sonny/bf08.gif
+	 delay      2
+	 move       4
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf02.gif
+	 hitfx      data/sounds/beatct03.wav
+	 attack7    78 82 17 43 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+         frame      data/chars/1sonny/stackle1.gif
+	 move       0
+	 delay      12
+	 attack7    0  
+         frame      data/chars/1sonny/wait01.gif
+
+anim follow24
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 move       1
+	 cancel     3 5 0 a   freespecial34   #JHUN HOON COMBO 01
+	 cancel     3 5 0 a2  freespecial37   #DOUBLE ROUNDHOUSE COMBO
+	 cancel     3 5 0 j   freespecial58   #CROSSUP ATTACK
+	 cancel     3 5 0 s   freespecial59   #EX STYLE SWITCH
+	 cancel     3 5 0 a3  freespecial56   #LEGS BACK THROW
+	 cancel     3 5 0 a4  freespecial55   #KNEE BASH THROW
+	 attack7    0 0 0 0
+	 jumpframe  0 0.5 -0.5
+	 landframe  2
+         frame      data/chars/1sonny/stackle1.gif
+	 move       0
+	 delay      999
+	 attack7    0 0 0 0
+         frame      data/chars/1sonny/wait01.gif
+	 delay      5
+         frame      data/chars/1sonny/wait01.gif
+         frame      data/chars/1sonny/wait01.gif
+         frame      data/chars/1sonny/wait01.gif
+
+#JHUN HOON COMBO 01
+anim freespecial34
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     8 10 2 a   freespecial35   #JHUN HOON COMBO 02
+	 cancel     8 10 2 a2  freespecial42   #UPSIDE DOWN KICKS
+	 cancel     8 10 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     8 10 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     8 10 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     8 10 2 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/bd01.gif
+         frame      data/chars/1sonny/bd02.gif
+         frame      data/chars/1sonny/bd03.gif
+	 delay      12
+	 hitfx      data/sounds/beatbl1.wav
+	 attack     78 91 36 13 5 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.8 -0.1 0
+         frame      data/chars/1sonny/bd04.gif
+	 delay      6
+	 attack     0
+         frame      data/chars/1sonny/bd03.gif
+	 delay      12
+	 hitfx      data/sounds/beatbl1.wav
+	 attack7    77 77 34 25 5 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.2 0.1 0
+         frame      data/chars/1sonny/bd05.gif
+	 delay      7
+	 attack7    0
+         frame      data/chars/1sonny/bd06.gif
+         frame      data/chars/1sonny/bd02.gif
+         frame      data/chars/1sonny/bd01.gif
+
+#UPSIDE DOWN KICKS
+anim freespecial42
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     17 19 4 a   freespecial45   #DOUBLE KICK
+	 cancel     17 19 4 a2  freespecial43   #BREAKDANCE!
+	 cancel     17 19 4 j   freespecial58   #CROSSUP ATTACK
+	 cancel     15 19 4 s   freespecial59   #EX STYLE SWITCH
+	 cancel     17 19 4 a3  freespecial56   #LEGS BACK THROW
+	 cancel     17 19 4 a4  freespecial55   #KNEE BASH THROW
+	 fastattack 1
+         frame      data/chars/1sonny/a201.gif
+	 delay      4
+	 sound      data/sounds/dragonz5.wav
+         frame      data/chars/1sonny/fth01.gif
+         frame      data/chars/1sonny/fth02.gif
+         frame      data/chars/1sonny/fth03.gif
+         frame      data/chars/1sonny/fth10.gif
+#-
+	 delay      7
+	 hitfx      data/sounds/beatbr2.wav
+	 attack1    88 79 24 23 2 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/fth11.gif
+	 delay      4
+	 attack1    0
+         frame      data/chars/1sonny/fth12.gif
+	 delay      7
+	 hitfx      data/sounds/beatbr2.wav
+	 attack2    88 79 24 23 2 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/fth13.gif
+	 delay      4
+	 attack2    0
+         frame      data/chars/1sonny/fth10.gif
+#-------
+	 delay      7
+	 hitfx      data/sounds/beatbr2.wav
+	 attack1    88 79 24 23 2 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/fth11.gif
+	 delay      4
+	 attack1    0
+         frame      data/chars/1sonny/fth12.gif
+	 delay      7
+	 hitfx      data/sounds/beatbr2.wav
+	 attack2    88 79 24 23 2 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/fth13.gif
+	 delay      4
+	 attack2    0
+         frame      data/chars/1sonny/fth10.gif
+#-------
+	 delay      7
+	 hitfx      data/sounds/beatbr2.wav
+	 attack7    88 79 24 23 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.3 0 0
+         frame      data/chars/1sonny/fth11.gif
+	 delay      4
+	 attack7    0
+         frame      data/chars/1sonny/fth03.gif
+         frame      data/chars/1sonny/fth02.gif
+         frame      data/chars/1sonny/fth01.gif
+	 delay      9
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/a100.gif
+
+#DOUBLE KICK
+anim freespecial45
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 move       1
+	 sound      data/sounds/dragonz6.wav
+         frame      data/chars/1sonny/bf01.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf03.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf5.wav
+	 attack90   85 93 35 13 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1sonny/bf04x.gif
+	 delay      7
+	 move       0
+	 attack90   0
+         frame      data/chars/1sonny/bf17.gif
+	 delay      14
+         frame      data/chars/1sonny/bf18.gif
+	 delay      6
+         frame      data/chars/1sonny/bf19.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf5.wav
+	 attack14   81 90 29 16 10 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.2 1.5 0
+         frame      data/chars/1sonny/bf20.gif
+	 attack14   0
+         frame      data/chars/1sonny/bf03.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/a201.gif
+
+#BREAKDANCE!
+anim freespecial43	
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 sound      data/sounds/dragonz6.wav
+         frame      data/chars/1sonny/b700.gif
+         frame      data/chars/1sonny/b701.gif
+	 delay      4
+@cmd velo001 0.1 0 0
+#-
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/1sonny/breakd01.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 attack90   54 99 60 20 0 1 1 0 7 5
+	 jugglecost 0
+	 forcedirection -1
+	 dropv      0.6 -1.6 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack90   0
+         frame      data/chars/1sonny/breakd03.gif
+	 hitfx      data/sounds/beatnw2.wav
+	 attack92   53 107 64 17 0 1 1 0 7 5
+	 jugglecost 0
+	 forcedirection -1
+	 dropv      0.4 0.8 0
+         frame      data/chars/1sonny/breakd04.gif
+	 attack92   0 
+         frame      data/chars/1sonny/breakd05.gif
+#-------
+	 sound      data/sounds/punch2.wav
+	 hitfx      data/sounds/beatnw1.wav
+	 attack90   54 99 60 20 0 1 1 0 7 5
+	 jugglecost 0
+	 forcedirection -1
+	 dropv      0.4 -0.8 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack90   0
+         frame      data/chars/1sonny/breakd03.gif
+	 hitfx      data/sounds/beatnw2.wav
+	 attack92   53 107 64 17 0 1 1 0 7 5
+	 jugglecost 0
+	 forcedirection -1
+	 dropv      0.4 0.8 0
+         frame      data/chars/1sonny/breakd04.gif
+	 attack92   0 
+         frame      data/chars/1sonny/breakd05.gif
+#-------
+	 sound      data/sounds/punch2.wav
+	 hitfx      data/sounds/beatnw1.wav
+	 attack90   54 99 60 20 0 1 1 0 7 5
+	 jugglecost 0
+	 forcedirection -1
+	 dropv      0.4 -0.8 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack90   0
+         frame      data/chars/1sonny/breakd03.gif
+	 hitfx      data/sounds/beatnw2.wav
+	 attack92   58 107 64 22 12 1 0 0 7 5
+	 jugglecost 0
+	 dropv      1.5 1.7 0
+         frame      data/chars/1sonny/breakd04.gif
+	 delay      7
+@cmd velo001 -0.1 0 0
+	 attack92   0 
+         frame      data/chars/1sonny/breakd05.gif
+         frame      data/chars/1sonny/item.gif
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/a100.gif
+
+#JHUN HOON COMBO 02
+anim freespecial35
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     10 12 2 a   freespecial36   #JHUN HOON COMBO 03
+	 cancel     10 12 2 a2  freespecial44   #JUGGLING KICKS
+	 cancel     10 12 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     10 12 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     10 12 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     10 12 2 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/bc01.gif
+         frame      data/chars/1sonny/bc02.gif
+	 delay      12
+	 hitfx      data/sounds/beatbl2.wav
+	 attack7    80 84 37 17 10 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1sonny/bc03.gif
+	 delay      5
+	 attack7    0
+         frame      data/chars/1sonny/bc04.gif
+         frame      data/chars/1sonny/bc05.gif
+         frame      data/chars/1sonny/ab01.gif
+         frame      data/chars/1sonny/ab02.gif
+	 delay      12
+	 hitfx      data/sounds/beatbl3.wav
+	 attack93   82 77 36 29 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2.4 0 0
+         frame      data/chars/1sonny/ab03.gif
+	 delay      7
+	 attack93   0
+         frame      data/chars/1sonny/ab02.gif
+         frame      data/chars/1sonny/ab01.gif
+         frame      data/chars/1sonny/tr13.gif
+
+#JHUN HOON COMBO 03
+anim freespecial36
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  1 2.3 0.3 0
+	 landframe  10
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/ck00.gif
+	 delay      6
+         frame      data/chars/1sonny/ak17.gif
+         frame      data/chars/1sonny/ak18.gif
+         frame      data/chars/1sonny/fk01.gif
+	 delay      11
+	 hitfx      data/sounds/beatsf2.wav
+	 attack92   77 78 30 23 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/fk02.gif
+	 delay      7
+	 attack92   0
+         frame      data/chars/1sonny/fk03.gif
+	 delay      11
+	 hitfx      data/sounds/beatsf2.wav
+	 attack     75 92 39 16 10 1 1 0 8 5
+	 forcedirection -1
+	 dropv      -0.8 1.5 0
+         frame      data/chars/1sonny/fk04.gif
+	 delay      7
+	 attack     0
+         frame      data/chars/1sonny/b607.gif
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/item.gif
+
+#JUGGLING KICKS
+anim freespecial44
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  17 1.5 0.3 0
+	 landframe  21
+	 sound      data/sounds/dragonq.wav
+         frame      data/chars/1sonny/tr06.gif
+	 delay      13
+         frame      data/chars/1sonny/tr12.gif
+	 delay      5
+         frame      data/chars/1sonny/tr13.gif
+         frame      data/chars/1sonny/bf01.gif
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/bf02.gif
+	 move       4
+         frame      data/chars/1sonny/bf03.gif
+	 delay      8
+	 hitfx      data/sounds/beat2.wav
+	 attack90   86 79 36 23 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+         frame      data/chars/1sonny/bf06.gif
+	 delay      5
+	 move       0
+	 attack90   0
+         frame      data/chars/1sonny/bf07.gif
+	 sound      data/sounds/punch4.wav
+	 move       4
+         frame      data/chars/1sonny/bf09.gif
+	 delay      8
+	 hitfx      data/sounds/beat2.wav
+	 attack92   86 79 36 23 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+         frame      data/chars/1sonny/bf10.gif
+	 delay      5
+	 move       0
+	 attack92   0
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/bf02.gif
+#--------
+	 move       4
+         frame      data/chars/1sonny/bf03.gif
+	 delay      8
+	 hitfx      data/sounds/beat2.wav
+	 attack90   86 79 36 23 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.5 0.2 0
+         frame      data/chars/1sonny/bf06.gif
+	 delay      5
+	 move       0
+	 attack90   0
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/bf07.gif
+	 move       4
+         frame      data/chars/1sonny/bf09.gif
+	 delay      8
+	 hitfx      data/sounds/beat2.wav
+	 attack92   86 79 36 23 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/bf10.gif
+	 delay      5
+	 move       0
+	 attack92   0
+         frame      data/chars/1sonny/bf02.gif
+	 move       1
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/bf07.gif
+         frame      data/chars/1sonny/hk03.gif
+	 move       0
+	 delay      12
+	 hitfx      data/sounds/beatsf1.wav
+	 attack14   75 94 38 14 10 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/1sonny/hk04.gif
+	 delay      99
+	 attack14   0
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+#DOUBLE ROUNDHOUSE COMBO
+anim freespecial37
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 cancel     11 13 2 a   freespecial41   #AIR RKO
+	 cancel     11 13 2 a2  freespecial38   #FORWARD CHIN SISSORS KICK
+	 cancel     11 13 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     11 13 2 s   freespecial59   #EX STYLE SWITCH
+         frame      data/chars/1sonny/b104.gif
+	 delay      5
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1sonny/b408.gif
+         frame      data/chars/1sonny/b407.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      7
+	 attack2    83 79 36 24 10 0 0 0 15 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b406.gif
+	 delay      4
+	 attack2    0 0 0 0
+         frame      data/chars/1sonny/b405.gif
+	 sound      data/sounds/punch8.wav
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/be01.gif
+         frame      data/chars/1sonny/be02.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      7
+	 attack92   86 87 21 16 0 1 0 0 15 5
+	 forcedirection -1
+	 dropv      2.4 0 0
+         frame      data/chars/1sonny/b803.gif
+	 attack92   0
+         frame      data/chars/1sonny/be02.gif
+         frame      data/chars/1sonny/be01.gif
+	 move       1
+	 delay      8
+         frame      data/chars/1sonny/b104.gif
+
+#AIR RKO
+anim freespecial41
+	 loop       0
+	 delay      18
+	 offset     80 129
+	 bbox       0 0 0 0
+	 followanim 23
+	 followcond 3	
+	 jumpframe  1 2.9 0.3 0
+	 dropframe  2
+	 landframe  4
+	 sound      data/sounds/dragonz9.wav
+         frame      data/chars/1sonny/ck00.gif
+	 hitfx      data/sounds/grab.wav
+	 delay      999
+	 attack     81 83 20 18 0 0 1 1 8 5
+         frame      data/chars/1sonny/rasta00.gif
+	 attack     0
+	 delay      12
+         frame      data/chars/1sonny/ju02.gif
+	 delay      999
+         frame      data/chars/1sonny/ju01.gif
+	 delay      25
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow23
+	 loop       0
+	 delay      14
+	 offset     80 129
+	 bbox       0 
+	 attack     0
+	 jumpframe   0 1 0.1 0
+	 landframe  3
+@cmd slamstart2
+@cmd antiwall2 -20 15 0
+@cmd position 36 24 5 -0.1 0
+         frame      data/chars/1sonny/ath04.gif
+@cmd antiwall2 -20 15 0
+@cmd position 29 0 12 -0.1 0
+         frame      data/chars/1sonny/rko01.gif
+@cmd antiwall2 -20 15 0
+	 delay      99
+@cmd position 29 -17 4 -0.1 0
+         frame      data/chars/1sonny/rko02.gif
+@cmd antiwall2 -20 15 0
+	 delay      5
+@cmd position 29 -17 -5 -0.1 0
+	 sound      data/sounds/fall3.wav
+@cmd spawn001 "eslam" "eslam" 0 0 0 -1 0
+         frame      data/chars/1sonny/rko03.gif
+         frame      data/chars/1sonny/rko03.gif
+         frame      data/chars/1sonny/rko03.gif
+         frame      data/chars/1sonny/rko03.gif
+         frame      data/chars/1sonny/rko03.gif
+         frame      data/chars/1sonny/rko03.gif
+	 delay      1
+@cmd position 29 -17 0 0 0
+         frame      data/chars/1sonny/rko03.gif
+	 delay      7
+@cmd depost 0
+@cmd finish 15 1 1 1 0 0
+         frame      data/chars/1sonny/rise01.gif
+         frame      data/chars/1sonny/rise02.gif
+
+#FORWARD CHIN SISSORS KICK
+anim freespecial38
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  1 2 0.2 0
+	 landframe  10
+	 cancel     10 12 2 a   freespecial41   #AIR RKO
+	 cancel     10 12 2 a2  freespecial39   #SHORT TATSUMAKI
+	 cancel     10 12 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     10 12 2 s   freespecial59   #EX STYLE SWITCH
+         frame      data/chars/1sonny/ck00.gif
+	 delay      17
+	 sound      data/sounds/jump2.wav
+         frame      data/chars/1sonny/ju01.gif
+	 delay      6
+         frame      data/chars/1sonny/chin01.gif
+@cmd jump001 0.3 0 0
+	 sound      data/sounds/jump2.wav
+         frame      data/chars/1sonny/chin02.gif
+@cmd toss0001 70
+	 delay      10
+	 hitfx      data/sounds/beats2.wav
+	 attack92   75 78 28 63 0 1 1 0 7 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/chin03.gif
+         delay      6
+	 attack92   0
+         frame      data/chars/1sonny/chin04.gif
+         frame      data/chars/1sonny/chin05.gif
+	 delay      10
+	 hitfx      data/sounds/beats2.wav
+	 attack90   75 78 28 63 11 1 1 0 7 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2.7 0.1 0
+         frame      data/chars/1sonny/chin06.gif
+	 attack90   0
+         frame      data/chars/1sonny/chin04.gif
+         delay      99
+         frame      data/chars/1sonny/ju01.gif
+         delay      13
+         frame      data/chars/1sonny/ck00.gif
+
+#SHORT TATSUMAKI
+anim freespecial39
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  1 2.3 0.2 0
+	 landframe  14
+	 cancel     14 16 1 a   freespecial41   #AIR RKO
+	 cancel     14 16 1 a2  freespecial40   #RANZOU HEEL KICK
+	 cancel     14 16 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     14 16 1 s   freespecial59   #EX STYLE SWITCH
+         frame      data/chars/1sonny/ck00.gif
+	 delay      15
+	 sound      data/sounds/jump2.wav
+         frame      data/chars/1sonny/ju01.gif
+	 delay      4
+         frame      data/chars/1sonny/tatsu01.gif
+         frame      data/chars/1sonny/tatsu02.gif
+	 sound      data/sounds/punch1.wav
+	 hitfx      data/sounds/beats.wav
+	 attack92   73 96 31 20 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack92   71 84 17 46 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 hitfx      data/sounds/beats.wav
+	 attack92   49 93 29 27 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 sound      data/sounds/punch1.wav
+	 attack92   71 84 17 46 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 sound      data/sounds/punch1.wav
+	 hitfx      data/sounds/beats.wav
+	 attack92   73 96 31 20 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu03.gif
+	 attack92   71 84 17 46 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu04.gif
+	 sound      data/sounds/punch1.wav
+	 hitfx      data/sounds/beats.wav
+	 attack92   49 93 29 27 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu05.gif
+	 attack92   71 84 17 46 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/tatsu06.gif
+	 attack92   0  
+         frame      data/chars/1sonny/tatsu07.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+	 delay      8
+         frame      data/chars/1sonny/a100.gif
+
+#RANZOU HEEL KICK
+anim freespecial40
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  1 2.1 0.2 0
+	 landframe  7
+         frame      data/chars/1sonny/ck00.gif
+	 sound      data/sounds/jump2.wav
+         frame      data/chars/1sonny/ju01.gif
+	 delay      14
+         frame      data/chars/1sonny/ju01.gif
+	 delay      5
+         frame      data/chars/1sonny/cff07.gif
+         frame      data/chars/1sonny/cff06.gif
+         frame      data/chars/1sonny/rasta03.gif
+	 delay      99
+	 hitfx      data/sounds/beats2.wav
+	 attack6    76 87 34 24 7 1 1 0 7 5
+	 forcedirection -1
+	 dropv      -0.8 1.6 0
+         frame      data/chars/1sonny/ranzou01.gif
+	 delay      12
+	 attack6    0
+         frame      data/chars/1sonny/rise01.gif
+	 delay      8
+         frame      data/chars/1sonny/rise02.gif
+
+#CAPTAIN AMERICA KICK
+anim freespecial46
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       69 88 24 25
+	 energycost 35
+	 mponly     1
+	 fastattack 1
+	 cancel     12 14 2 a   freespecial47   #BACK FLIP KICK
+	 cancel     12 14 1 a2  freespecial49   #MK3 KANO KICKS COMBO
+	 cancel     12 14 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     12 14 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     12 14 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     12 14 2 a4  freespecial55   #KNEE BASH THROW
+         frame      data/chars/1sonny/ck00.gif
+	 delay      4
+@cmd velo001 0.7 0 0
+         frame      data/chars/1sonny/a401.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/a402.gif
+         frame      data/chars/1sonny/a403.gif
+         frame      data/chars/1sonny/a404.gif
+         frame      data/chars/1sonny/a405.gif
+         frame      data/chars/1sonny/a406.gif
+         frame      data/chars/1sonny/a407.gif
+@cmd velo001 0 0 0
+	 delay      1
+	 hitfx      data/sounds/beatbr2.wav
+	 attack90   77 83 35 18 4 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1.1 0.1 0
+         frame      data/chars/1sonny/a408.gif
+	 delay      6
+	 attack90   0
+         frame      data/chars/1sonny/a408.gif
+	 delay      7
+	 hitfx      data/sounds/beatsbm3.wav
+	 attack7    83 114 28 12 7 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 0.1 0
+         frame      data/chars/1sonny/a409.gif
+	 delay      12
+	 attack7    0
+         frame      data/chars/1sonny/a410.gif
+	 delay      8
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BACK FLIP KICK
+anim freespecial47
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       69 88 24 25
+	 cancel     16 18 2 a   freespecial48   #FLYING SUPER KICK
+	 cancel     16 18 2 a2  freespecial62   #HYPER KNEE
+	 cancel     16 18 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     16 18 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     16 18 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     16 18 2 a4  freespecial55   #KNEE BASH THROW
+	 fastattack 1
+	 jumpframe  1 1 0.3 0
+	 landframe  8
+         frame      data/chars/1sonny/ck00.gif
+	 delay      4
+	 sound      data/sounds/punchc.wav
+         frame      data/chars/1sonny/a411.gif
+         frame      data/chars/1sonny/a412.gif
+         frame      data/chars/1sonny/a413.gif
+         frame      data/chars/1sonny/a417.gif
+	 hitfx      data/sounds/beatkil1.wav
+	 attack91   73 80 36 23 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1sonny/a418.gif
+	 attack91   0
+         frame      data/chars/1sonny/a419.gif
+	 hitfx      data/sounds/beatkill.wav
+	 attack7    72 95 36 15 8 0 0 0 7 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1sonny/a420.gif
+	 delay      8
+	 attack7    0
+         frame      data/chars/1sonny/a410.gif
+	 delay      4
+         frame      data/chars/1sonny/ac01.gif
+         frame      data/chars/1sonny/ac02.gif
+         frame      data/chars/1sonny/ac03.gif
+         frame      data/chars/1sonny/ac04.gif
+	 delay      9
+	 hitfx      data/sounds/beatkil2.wav
+	 attack92   72 95 36 15 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      2.2 0.5 0
+         frame      data/chars/1sonny/ac05.gif
+	 delay      7
+	 attack92   0
+         frame      data/chars/1sonny/ac04.gif
+         frame      data/chars/1sonny/ac02.gif
+         frame      data/chars/1sonny/ac01.gif
+         frame      data/chars/1sonny/a100.gif
+
+#FLYING SUPER KICK
+anim freespecial48
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       69 88 24 25
+	 fastattack 1
+	 jumpframe  4 1.7 1.6 0
+	 landframe  12
+	 sound      data/sounds/dragonz8.wav
+         frame      data/chars/1sonny/tr05.gif
+         frame      data/chars/1sonny/tr07.gif
+	 delay      10
+         frame      data/chars/1sonny/tr14.gif
+	 delay      4
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/ak02.gif
+	 delay      6
+         frame      data/chars/1sonny/ak03.gif
+	 hitfx      data/sounds/beatsf3.wav
+	 attack92   72 95 36 15 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.3 1 0
+         frame      data/chars/1sonny/ak30.gif
+	 attack92   0
+         frame      data/chars/1sonny/ak30.gif
+	 hitfx      data/sounds/beatsf3.wav
+	 attack91   72 95 36 15 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      0.3 0.7 0
+         frame      data/chars/1sonny/ak30.gif
+	 attack91   0
+         frame      data/chars/1sonny/ak30.gif
+	 hitfx      data/sounds/beatsf1.wav
+	 attack92   72 95 36 15 14 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.2 1.5 0
+         frame      data/chars/1sonny/ak30.gif
+	 delay      99
+	 attack92   0
+         frame      data/chars/1sonny/ak30.gif
+	 delay      12
+         frame      data/chars/1sonny/item.gif
+
+#HYPER KNEE
+anim freespecial62
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  1 1.8 1.1 0
+	 dropframe  2
+	 landframe  3
+	 sound      data/sounds/hknee.wav
+         frame      data/chars/1sonny/item.gif
+	 delay      99
+	 hitfx      data/sounds/beats.wav
+	 attack92   79 92 18 29 10 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.2 1.7 0
+         frame      data/chars/1sonny/a706.gif
+@cmd jump001 0.5 0 0
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+#MK3 KANO KICKS COMBO
+anim freespecial49
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 fastattack 1
+	 hitflash   Qflash
+	 cancel     12 14 3 a   freespecial60   #MK3 KICKS COMBO LAUNCHER
+	 cancel     12 14 3 a2  freespecial61   #MK3 SCORPION KICKS COMBO
+	 cancel     12 14 3 j   freespecial58   #CROSSUP ATTACK
+	 cancel     12 14 3 s   freespecial59   #EX STYLE SWITCH
+	 cancel     12 14 3 a3  freespecial56   #LEGS BACK THROW
+	 cancel     12 14 3 a4  freespecial55   #KNEE BASH THROW
+	 move       1
+         frame      data/chars/1sonny/a101.gif
+         frame      data/chars/1sonny/g101.gif
+         frame      data/chars/1sonny/g102.gif
+	 delay      11
+	 hitfx      data/sounds/beatmk2.wav
+	 attack     72 95 36 15 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0 0
+         frame      data/chars/1sonny/mk01.gif
+	 move       0
+	 delay      7
+	 attack     0
+         frame      data/chars/1sonny/g102.gif
+	 delay      11
+	 hitfx      data/sounds/beatmk1.wav
+	 attack54   72 95 36 15 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0 0
+         frame      data/chars/1sonny/mk01.gif
+	 delay      3
+	 attack54   0
+         frame      data/chars/1sonny/g102.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b503.gif
+	 delay      9
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   72 77 32 20 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0 0
+         frame      data/chars/1sonny/b505.gif
+	 delay      4
+	 attack52   0
+         frame      data/chars/1sonny/b503.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b501.gif
+         frame      data/chars/1sonny/a100.gif
+
+#MK3 KICKS COMBO LAUNCHER
+anim freespecial60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 fastattack 1
+	 hitflash   Qflash
+	 cancel     13 15 3 s   freespecial59   #EX STYLE SWITCH
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/b907.gif
+	 delay      11
+	 hitfx      data/sounds/beatmk2.wav
+	 attack54   84 86 39 16 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0 0
+         frame      data/chars/1sonny/b908.gif
+	 delay      3
+	 attack54   0
+         frame      data/chars/1sonny/b907.gif
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/b907.gif
+	 delay      11
+	 hitfx      data/sounds/beatmk3.wav
+	 attack55   84 86 39 16 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0 0
+         frame      data/chars/1sonny/b908.gif
+	 delay      3
+	 attack55   0
+         frame      data/chars/1sonny/b907.gif
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/bm01.gif
+	 hitflash   Qmkout
+	 delay      11
+	 hitfx      data/sounds/beatmk3.wav
+	 attack52   79 75 26 26 3 1 0 0 8 5
+	 forcedirection -1
+	 dropv      3 0.2 0
+         frame      data/chars/1sonny/bm02.gif
+	 delay      7
+	 attack52   0
+         frame      data/chars/1sonny/bm03.gif
+         frame      data/chars/1sonny/bm04.gif
+         frame      data/chars/1sonny/bm05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+#MK3 SCORPION KICKS COMBO
+anim freespecial61
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 fastattack 1
+	 hitflash   Qflash
+	 sound      data/sounds/punch4.wav
+         frame      data/chars/1sonny/b408.gif
+	 move       1
+         frame      data/chars/1sonny/b407.gif
+	 delay      10
+	 hitfx      data/sounds/beatmk1.wav
+	 attack50    82 78 28 21 0 0 1 0 10 5
+	 jugglecost 2
+	 dropv      0.6 0.2 0
+	 forcedirection -1
+         frame      data/chars/1sonny/mk02.gif
+	 sound      data/sounds/punch4.wav
+	 delay       5
+	 attack50    0 0 0 0
+         frame      data/chars/1sonny/mk03.gif
+	 delay      10
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51    82 78 28 21 0 0 1 0 10 5
+	 jugglecost 2
+	 dropv      0.6 0.2 0
+	 forcedirection -1
+         frame      data/chars/1sonny/mk04.gif
+	 sound      data/sounds/punch4.wav
+	 delay       5
+	 attack51    0 0 0 0
+         frame      data/chars/1sonny/mk03.gif
+	 delay      10
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50    82 78 28 21 0 0 1 0 10 5
+	 jugglecost 2
+	 dropv      0.6 0.2 0
+	 forcedirection -1
+         frame      data/chars/1sonny/mk04.gif
+	 sound      data/sounds/punch4.wav
+	 delay      5
+	 attack50   0 0 0 0
+         frame      data/chars/1sonny/mk03.gif
+	 hitflash   Qmkexe
+	 delay      12
+	 hitfx      data/sounds/beatmk3.wav
+	 attack52   82 78 28 21 10 1 1 0 10 5
+	 jugglecost 2
+	 dropv      1.5 1.7 0
+	 forcedirection -1
+         frame      data/chars/1sonny/mk04.gif
+	 move       0
+	 delay      7
+	 attack52   0 0 0 0
+         frame      data/chars/1sonny/mk03.gif
+         frame      data/chars/1sonny/mk02.gif
+         frame      data/chars/1sonny/b407.gif
+         frame      data/chars/1sonny/b408.gif
+
+######### TAEKWONDO TRIGGER
+
+#KNEE & KICK COMBO
+anim freespecial22
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 35
+	 mponly     1
+	 followanim 20
+	 followcond 1
+	 jumpframe  1 1.3 1.2 0
+	 landframe  7
+         frame      data/chars/1sonny/ck00.gif
+	 delay      4
+         frame      data/chars/1sonny/a701.gif
+         frame      data/chars/1sonny/a702.gif
+         frame      data/chars/1sonny/a703.gif
+         frame      data/chars/1sonny/a704.gif
+	 delay      17
+	 hitfx      data/sounds/beatbr2.wav
+	 attack90   78 93 17 22 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0.2 0
+         frame      data/chars/1sonny/a705.gif
+	 delay      99
+	 attack90   0
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow20
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 83 24 44
+	 attack     0 
+	 jumpframe  0 0.5 -0.4 0
+	 landframe  5
+	 cancel     8 10 1 a   freespecial23   #TRIPLE TAEKWONDO KICKS
+	 cancel     8 10 1 a2  freespecial26   #KICKS COMBI 01
+	 cancel     8 10 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     8 10 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     8 10 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     8 10 1 a4  freespecial55   #KNEE BASH THROW
+         frame      data/chars/1sonny/a705.gif
+	 delay      7
+         frame      data/chars/1sonny/b303.gif
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b405x.gif
+	 delay      99
+         frame      data/chars/1sonny/b405xx.gif
+	 delay      10
+	 hitfx      data/sounds/beatnw2.wav
+	 attack7    85 80 33 20 5 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 -0.1 0
+         frame      data/chars/1sonny/b406.gif
+	 delay      7
+	 attack7    0
+         frame      data/chars/1sonny/b407.gif
+         frame      data/chars/1sonny/b408.gif
+	 delay      10
+         frame      data/chars/1sonny/a100.gif
+
+#KICKS COMBI 01
+anim freespecial26
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     8 10 1 a   freespecial32   #TIGER KNEE
+	 cancel     8 10 1 a2  freespecial27   #KICKS COMBI 02
+	 cancel     8 10 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     8 10 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     8 10 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     8 10 1 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/a100.gif
+@cmd velo001 0.7 0 0
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 delay      5
+	 hitfx      data/sounds/beatbl3.wav
+	 attack     85 73 26 29 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2.3 0.2 0
+         frame      data/chars/1sonny/b904.gif
+	 delay      5
+	 attack     82 66 17 37 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2.3 0.2 0
+         frame      data/chars/1sonny/b903.gif
+	 delay      10
+@cmd velo001 0 0 0
+         frame      data/chars/1sonny/b903.gif
+	 delay      6
+	 attack90   0
+         frame      data/chars/1sonny/b904.gif
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/b104.gif
+
+#KICKS COMBI 02
+anim freespecial27
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 0.6 0.3 0
+	 landframe  2
+	 cancel     6 8 1 a   freespecial32   #TIGER KNEE
+	 cancel     6 8 1 a2  freespecial28   #KICKS COMBI 03
+	 cancel     6 8 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     6 8 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     6 8 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     6 8 1 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/a100.gif
+	 delay      99
+         frame      data/chars/1sonny/b101.gif
+	 delay      7
+         frame      data/chars/1sonny/b201.gif
+	 delay      11
+	 hitfx      data/sounds/beatnw2.wav
+	 attack90   85 80 33 20 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.9 0.1 0
+         frame      data/chars/1sonny/b804.gif
+	 delay      7
+	 attack90   0
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#KICKS COMBI 03
+anim freespecial28
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 0.6 0.3 0
+	 landframe  2
+	 cancel     6 8 1 a   freespecial32   #TIGER KNEE
+	 cancel     6 8 1 a2  freespecial29   #KICKS COMBI 04
+	 cancel     6 8 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     6 8 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     6 8 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     6 8 1 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz4.wav
+         frame      data/chars/1sonny/a100.gif
+	 delay      99
+         frame      data/chars/1sonny/b101.gif
+	 delay      7
+         frame      data/chars/1sonny/b201.gif
+	 delay      11
+	 hitfx      data/sounds/beatbr2.wav
+	 attack90   85 80 33 20 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.9 0.1 0
+         frame      data/chars/1sonny/b202.gif
+	 delay      7
+	 attack90   0
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#KICKS COMBI 04
+anim freespecial29
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 0.6 0.3 0
+	 landframe  2
+	 cancel     6 8 1 a   freespecial32   #TIGER KNEE
+	 cancel     6 8 1 a2  freespecial30   #KICKS COMBI 05
+	 cancel     6 8 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     6 8 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     6 8 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     6 8 1 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz5.wav
+         frame      data/chars/1sonny/a100.gif
+	 delay      99
+         frame      data/chars/1sonny/b101.gif
+	 delay      7
+         frame      data/chars/1sonny/b201.gif
+	 delay      11
+	 hitfx      data/sounds/beatnw1.wav
+	 attack90   85 80 33 20 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.7 0.1 0
+         frame      data/chars/1sonny/b805.gif
+	 delay      7
+	 attack90   0
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#KICKS COMBI 05
+anim freespecial30
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 0.6 0.4 0
+	 landframe  2
+	 cancel     6 8 1 a   freespecial32   #TIGER KNEE
+	 cancel     6 8 1 a2  freespecial31   #KICKS COMBI 06
+	 cancel     6 8 1 j   freespecial58   #CROSSUP ATTACK
+	 cancel     6 8 1 s   freespecial59   #EX STYLE SWITCH
+	 cancel     6 8 1 a3  freespecial56   #LEGS BACK THROW
+	 cancel     6 8 1 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz6.wav
+         frame      data/chars/1sonny/a100.gif
+	 delay      99
+         frame      data/chars/1sonny/b101.gif
+	 delay      7
+         frame      data/chars/1sonny/b201.gif
+	 delay      11
+	 hitfx      data/sounds/beatsf2.wav
+	 attack90   85 80 33 20 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.9 0.1 0
+         frame      data/chars/1sonny/b803.gif
+	 delay      7
+	 attack90   0
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#KICKS COMBI 06
+anim freespecial31
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 0.7 0.3 0
+	 landframe  5
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/ck00.gif
+	 delay      6
+         frame      data/chars/1sonny/a701.gif
+         frame      data/chars/1sonny/ak11.gif
+         frame      data/chars/1sonny/bb01.gif
+	 delay      99
+         frame      data/chars/1sonny/bb02.gif
+	 delay      12
+	 hitfx      data/sounds/beatkil2.wav
+	 attack     85 80 33 20 3 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1 1.6 0
+         frame      data/chars/1sonny/b806.gif
+	 delay      6
+	 attack     0
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/ba02.gif
+         frame      data/chars/1sonny/tr07.gif
+         frame      data/chars/1sonny/tr08.gif
+         frame      data/chars/1sonny/tr09.gif
+	 delay      17
+         frame      data/chars/1sonny/tr10.gif
+	 delay      6
+         frame      data/chars/1sonny/b104.gif
+
+#TIGER KNEE
+anim freespecial32
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  2 2.2 1 0
+	 landframe  9
+	 sound      data/sounds/dragonq.wav
+         frame      data/chars/1sonny/tknee01.gif
+	 delay      5
+         frame      data/chars/1sonny/tknee02.gif
+	 movea      1
+	 hitfx      data/sounds/beatsf2.wav
+	 attack90   75 91 23 19 0 1 0 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/tknee03.gif
+	 attack90   76 94 23 18 0 1 0 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/tknee04.gif
+	 delay      8
+	 attack90   0
+         frame      data/chars/1sonny/tknee04.gif
+	 delay      12
+@cmd toss0001 25
+@cmd jump001 0.1 0.1 0
+	 attack92   76 94 23 18 6 1 1 0 8 5
+	 forcedirection -1
+	 dropv      -0.3 2 0
+         frame      data/chars/1sonny/tknee05.gif
+	 attack92   0
+	 movea      0
+	 delay      7
+         frame      data/chars/1sonny/ju03.gif
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+#TRIPLE TAEKWONDO KICKS
+anim freespecial23
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  6 1.4 0.1 0
+	 landframe  14
+	 cancel     18 20 2 a   freespecial24   #GTFO OF MY FACE!
+	 cancel     18 20 2 a2  freespecial25   #FLYING DRAGON!
+	 cancel     18 20 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     18 20 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     18 20 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     18 20 2 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz8.wav
+         frame      data/chars/1sonny/ck00.gif
+	 delay      5
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatbl1.wav
+	 attack7    82 77 32 21 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.2 0 0
+         frame      data/chars/1sonny/b202.gif
+	 attack7    0
+         frame      data/chars/1sonny/b203.gif
+         frame      data/chars/1sonny/b301.gif
+	 delay      9
+         frame      data/chars/1sonny/b302.gif
+	 delay      5
+         frame      data/chars/1sonny/b604.gif
+         frame      data/chars/1sonny/a801.gif
+	 hitfx      data/sounds/beatbl2.wav
+	 attack90   78 93 34 13 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.4 0 0
+         frame      data/chars/1sonny/a802.gif
+	 delay      6
+	 attack90   0
+         frame      data/chars/1sonny/a803.gif
+         frame      data/chars/1sonny/a804.gif
+         frame      data/chars/1sonny/a805.gif
+         frame      data/chars/1sonny/bi03.gif
+	 delay      99
+         frame      data/chars/1sonny/bi04.gif
+	 delay      10
+	 hitfx      data/sounds/beatbl3.wav
+	 attack7    82 77 32 21 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.4 0.1 0
+         frame      data/chars/1sonny/bi05.gif
+	 delay      7
+	 attack7    0
+         frame      data/chars/1sonny/bi04.gif
+         frame      data/chars/1sonny/bi03.gif
+         frame      data/chars/1sonny/bi01.gif
+	 delay      8
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#GTFO OF MY FACE!
+anim freespecial24
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/a201.gif
+	 move       3
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b907.gif
+	 delay      10
+	 hitfx      data/sounds/beatsf2.wav
+	 attack90   80 78 34 21 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.4 0 0
+         frame      data/chars/1sonny/bf10.gif
+	 move       0
+	 delay      6
+	 attack90   2
+         frame      data/chars/1sonny/bf11.gif
+	 move       3
+         frame      data/chars/1sonny/bf03.gif
+	 delay      10
+	 hitfx      data/sounds/beatsf2.wav
+	 attack15   80 78 34 21 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.1 0 0
+         frame      data/chars/1sonny/bf06.gif
+	 delay      6
+	 attack15   0
+         frame      data/chars/1sonny/bf07.gif
+	 move       0
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/b901.gif
+	 delay      10
+         frame      data/chars/1sonny/b903.gif
+	 delay      5
+         frame      data/chars/1sonny/b904.gif
+	 delay      13
+	 hitfx      data/sounds/beatbl2.wav
+	 attack7    88 94 32 11 3 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0 0
+         frame      data/chars/1sonny/b905.gif
+	 delay      6
+	 attack7    0
+	 sound      data/sounds/dragonz5.wav
+         frame      data/chars/1sonny/b905x.gif
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/b907.gif
+	 delay      12
+	 hitfx      data/sounds/beatff1.wav
+	 attack     87 86 36 16 6 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.4 1.7 0
+         frame      data/chars/1sonny/b908.gif
+	 delay      8
+	 attack     0
+         frame      data/chars/1sonny/b907.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b104.gif
+
+#FLYING DRAGON!
+anim freespecial25
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  11 2 0.9 0
+	 landframe  16
+	 move       1
+         frame      data/chars/1sonny/a901.gif
+         frame      data/chars/1sonny/a902.gif
+	 hitfx      data/sounds/beatsbm1.wav
+	 delay      8
+	 attack91   74 118 38 11 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      1.4 0.1 0
+         frame      data/chars/1sonny/a903.gif
+	 move       0
+	 delay      6
+	 attack91   0
+         frame      data/chars/1sonny/rise02.gif
+	 delay      5
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/be01.gif
+         frame      data/chars/1sonny/be02.gif
+	 hitfx      data/sounds/beatkill.wav
+	 delay      10
+	 attack92   89 76 35 26 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.8 -0.1 0
+         frame      data/chars/1sonny/be03.gif
+	 delay      6
+	 attack92   0
+         frame      data/chars/1sonny/be02.gif
+         frame      data/chars/1sonny/b104.gif
+	 delay      12
+         frame      data/chars/1sonny/tr10.gif
+	 sound      data/sounds/dragonz7.wav
+	 delay      7
+         frame      data/chars/1sonny/ak12.gif
+         frame      data/chars/1sonny/ak18.gif
+	 delay      25
+	 hitfx      data/sounds/beatsf1.wav
+	 attack90   74 91 37 26 11 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.6 2 0
+         frame      data/chars/1sonny/ak25.gif
+	 delay      7
+	 attack90   0 
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/item.gif
+
+#---------------------------------------
+
+#TRIPLE KICK OPENER
+anim freespecial15
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 35
+	 mponly     1
+	 cancel     9 11 2 a   freespecial18   #FLIP KICK & DONKEY KICK COMBO
+	 cancel     9 11 2 a2  freespecial16   #DOUBLE JUMPING HARD KICKS
+	 cancel     9 11 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     9 11 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     9 11 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     9 11 2 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a202.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 delay      10
+	 attack     81 96 34 13 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0 0
+         frame      data/chars/1sonny/a205.gif
+	 delay      4
+	 attack     0
+         frame      data/chars/1sonny/a202.gif
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a202.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 delay      10
+	 attack2    81 96 34 13 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.1 0 0
+         frame      data/chars/1sonny/a207.gif
+	 delay      5
+	 attack2    0
+         frame      data/chars/1sonny/a203.gif
+	 hitfx      data/sounds/beatnw2.wav
+	 delay      10
+	 attack7    80 80 33 18 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.1 0
+         frame      data/chars/1sonny/a206.gif
+	 delay      7
+	 attack7    0
+         frame      data/chars/1sonny/a203.gif
+         frame      data/chars/1sonny/a203.gif
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/b104.gif
+
+#FLIP KICK & DONKEY KICK COMBO
+anim freespecial18
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  1 1 0.3 0
+	 landframe  7
+	 cancel     17 19 2 a   freespecial19   #RYUUSEI RAKU
+	 cancel     17 19 2 a2  freespecial20   #NANTO HAKURO KEN OUGI - REKKYAKU KUBU
+	 cancel     17 19 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     17 19 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     17 19 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     17 19 2 a4  freespecial55   #KNEE BASH THROW
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/ck00.gif
+	 delay      5
+         frame      data/chars/1sonny/a401.gif
+         frame      data/chars/1sonny/a402.gif
+         frame      data/chars/1sonny/a403.gif
+         frame      data/chars/1sonny/a404.gif
+         frame      data/chars/1sonny/a405.gif
+         frame      data/chars/1sonny/a406.gif
+         frame      data/chars/1sonny/a407.gif
+	 hitfx      data/sounds/beatsbm1.wav
+	 delay      4
+	 attack90   78 85 34 18 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.1 0 0
+         frame      data/chars/1sonny/a408.gif
+	 attack90   0
+         frame      data/chars/1sonny/a408.gif
+	 hitfx      data/sounds/beatsbm1.wav
+	 delay      4
+	 attack16   79 108 32 21 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.1 0 0
+         frame      data/chars/1sonny/a409.gif
+	 attack16   0
+         frame      data/chars/1sonny/a409.gif
+	 delay      9
+         frame      data/chars/1sonny/a410.gif
+	 delay      7
+         frame      data/chars/1sonny/bi01.gif
+         frame      data/chars/1sonny/ck08.gif
+	 hitfx      data/sounds/beatbl3.wav
+	 delay      13
+	 attack7    87 92 41 10 3 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.1 0 0
+         frame      data/chars/1sonny/ck09.gif
+	 delay      8
+	 attack7    0
+         frame      data/chars/1sonny/ck08.gif
+         frame      data/chars/1sonny/bi01.gif
+         frame      data/chars/1sonny/a100.gif
+
+#RYUUSEI RAKU
+anim freespecial19
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  4 1.6 0.2 0
+	 dropframe  5
+	 landframe  8
+         frame      data/chars/1sonny/ck00.gif
+@cmd velo001 1.7 0 0
+         frame      data/chars/1sonny/b701.gif
+	 delay      35
+	 hitfx      data/sounds/beatnw2.wav
+	 delay      8
+	 attack90   80 114 35 18 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2.3 0.3 0
+         frame      data/chars/1sonny/b702.gif
+	 delay      20
+@cmd velo001 0 0 0
+	 attack90   0
+         frame      data/chars/1sonny/rise02.gif
+	 delay      99
+         frame      data/chars/1sonny/b703.gif
+	 delay      4
+	 sound      data/sounds/dragonq.wav
+         frame      data/chars/1sonny/b704.gif
+	 hitfx      data/sounds/beatbl3.wav
+	 delay      8
+	 attack6    87 92 41 10 7 1 1 0 8 5
+	 forcedirection -1
+	 dropv      -1 3.5 0
+         frame      data/chars/1sonny/b705.gif
+	 delay      99
+	 attack6    0
+         frame      data/chars/1sonny/b706.gif
+	 delay      13
+         frame      data/chars/1sonny/ck00.gif
+
+#NANTO HAKURO KEN OUGI - REKKYAKU KUBU
+anim freespecial20
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  1 0.7 0.2 0
+	 landframe  2
+         frame      data/chars/1sonny/b501.gif
+	 delay      99
+         frame      data/chars/1sonny/b101.gif
+	 delay      6
+	 sound      data/sounds/dragonz4.wav
+         frame      data/chars/1sonny/a501.gif
+         frame      data/chars/1sonny/a502.gif
+	 hitfx      data/sounds/beatsf1.wav
+	 delay      12
+	 attack     87 92 41 10 7 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2.8 0.5 0
+         frame      data/chars/1sonny/a503.gif
+	 delay      8
+	 attack     0
+         frame      data/chars/1sonny/a504.gif
+         frame      data/chars/1sonny/a505.gif
+	 delay      13
+         frame      data/chars/1sonny/ck00.gif
+
+#DOUBLE JUMPING HARD KICKS
+anim freespecial16
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 1.7 0.1 0
+	 landframe  9
+	 cancel     9 11 2 a   freespecial21  #TAE KWONDO JUGGLING KICKS
+	 cancel     9 11 2 a2  freespecial17  #NEO TRIPLE KICK
+	 cancel     9 11 2 j   freespecial58   #CROSSUP ATTACK
+	 cancel     9 11 2 s   freespecial59   #EX STYLE SWITCH
+	 cancel     9 11 2 a3  freespecial56   #LEGS BACK THROW
+	 cancel     9 11 2 a4  freespecial55   #KNEE BASH THROW
+         frame      data/chars/1sonny/ck00.gif
+	 delay      5
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/hk01.gif
+         frame      data/chars/1sonny/hk02.gif
+         frame      data/chars/1sonny/hk03.gif
+         frame      data/chars/1sonny/bi04.gif
+	 hitfx      data/sounds/beatkill.wav
+	 delay      11
+	 attack90   77 100 37 17 0 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0.1 0
+         frame      data/chars/1sonny/hk06.gif
+	 delay      8
+         attack90   0
+         frame      data/chars/1sonny/bi04.gif
+	 hitfx      data/sounds/beatkil2.wav
+	 delay      10
+	 attack7    78 90 39 22 9 0 0 0 10 5
+	 forcedirection -1
+	 dropv      1.5 0.1 0
+         frame      data/chars/1sonny/hk07.gif
+	 attack7    0
+	 delay      99
+         frame      data/chars/1sonny/hk05.gif
+	 delay      9
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/b104.gif
+
+#NEO TRIPLE KICK
+anim freespecial17
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  10 1.6 0.2 0
+	 landframe  19
+	 cancel     9 11 2 a2 freespecial17
+         frame      data/chars/1sonny/bf01.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf03.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack15   85 79 37 24 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0.1 0
+         frame      data/chars/1sonny/bf06.gif
+	 delay      7
+	 attack15   0
+         frame      data/chars/1sonny/bf07.gif
+	 move       4
+         frame      data/chars/1sonny/bf08.gif
+         frame      data/chars/1sonny/bf09.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack7    85 79 37 24 4 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 0 0
+         frame      data/chars/1sonny/bf10.gif
+	 move       0
+	 delay      6
+	 attack7    0
+         frame      data/chars/1sonny/bf11.gif
+	 delay      15
+         frame      data/chars/1sonny/bf12.gif
+	 delay      5
+	 sound      data/sounds/dragonz6.wav
+         frame      data/chars/1sonny/a301.gif
+         frame      data/chars/1sonny/a302.gif
+         frame      data/chars/1sonny/a303.gif
+         frame      data/chars/1sonny/a304.gif
+         frame      data/chars/1sonny/a305.gif
+	 hitfx      data/sounds/beatkill.wav
+	 delay      11
+	 attack7    76 97 32 15 5 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/a306.gif
+	 delay      7
+	 attack7    0
+         frame      data/chars/1sonny/a307.gif
+         frame      data/chars/1sonny/ak11.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      13
+         frame      data/chars/1sonny/ck00.gif
+
+#TAE KWONDO JUGGLING KICKS
+anim freespecial21
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 fastattack 1
+	 jumpframe  10 2.3 0.2 0
+	 landframe  24
+         frame      data/chars/1sonny/a100.gif
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/a601.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 delay      9
+	 attack     94 96 25 23 5 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.1 0
+         frame      data/chars/1sonny/a602.gif
+	 delay      6
+	 attack     0
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      9
+	 attack90   84 77 30 24 0 1 1 0 8 5
+	 forcedirection -1
+	 dropv      2 0 0
+         frame      data/chars/1sonny/a603.gif
+	 delay      6
+	 attack90   0
+         frame      data/chars/1sonny/b201.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b501.gif
+	 delay      15
+         frame      data/chars/1sonny/ck00.gif
+	 delay      3
+	 sound      data/sounds/dragonz3.wav
+         frame      data/chars/1sonny/b601.gif
+         frame      data/chars/1sonny/b602.gif
+         frame      data/chars/1sonny/b603.gif
+         frame      data/chars/1sonny/b604.gif
+	 hitfx      data/sounds/beatsbm1.wav
+         frame      data/chars/1sonny/b605.gif
+	 delay      7
+	 attack92   79 101 33 17 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/b606.gif
+	 delay      4
+	 attack92   0
+         frame      data/chars/1sonny/ck02.gif
+	 delay      7
+	 attack90   79 98 30 17 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/ck03.gif
+	 delay      4
+	 attack90   0
+         frame      data/chars/1sonny/b605.gif
+	 delay      7
+	 attack92   79 101 33 17 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.8 0.2 0
+         frame      data/chars/1sonny/b606.gif
+	 delay      4
+	 attack92   0
+         frame      data/chars/1sonny/ak02.gif
+@cmd jump001 0.5 -0.1 0
+	 hitfx      data/sounds/beatsbm3.wav
+	 delay      7
+	 attack90   78 99 26 26 10 1 1 0 8 5
+	 forcedirection -1
+	 dropv      -1.2 2 0
+         frame      data/chars/1sonny/ak04.gif
+	 delay      6
+	 attack90   0
+         frame      data/chars/1sonny/ak02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      13
+         frame      data/chars/1sonny/item.gif
+
+#CROSSUP ATTACK
+anim freespecial58
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 1.8 1.5 0 0
+	 landframe  6
+         frame      data/chars/1sonny/ck00.gif
+	 delay      6
+         frame      data/chars/1sonny/ak18.gif
+         frame      data/chars/1sonny/ak17.gif
+	 delay      17
+	 hitfx      data/sounds/beatsf3.wav
+	 attack     69 90 41 23 5 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0.2 0
+         frame      data/chars/1sonny/ak25.gif
+	 delay      8
+	 attack     0
+         frame      data/chars/1sonny/ju02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+#EX STYLE SWITCH
+anim freespecial59
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 load       exc
+	 load       phoenix
+	 custentity phoenix
+	 spawnframe 0 0 0.5 0 0
+	 weaponframe 9 1
+	 drawmethod remap 1
+@cmd spawn001 "exc" "exc" 0 0 0 -1 0
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 0
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 0
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ac01.gif
+	 drawmethod remap 0
+         frame      data/chars/1sonny/ac01.gif
+         frame      data/chars/1sonny/ac01.gif
+
+#KNEE BASH THROW
+anim freespecial55
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 83 24 44
+	 attackone  1
+	 hitfx      data/sounds/grab.wav
+	 followanim 21
+	 followcond 3
+ 	 move       2
+         frame      data/chars/1sonny/cth01.gif
+         frame      data/chars/1sonny/cth01.gif
+	 move       1
+         frame      data/chars/1sonny/cth01.gif
+	 delay      10
+	 attack     89 80 18 14 0 0 0 1 5 5
+	 forcedirection -1
+         frame      data/chars/1sonny/grab01.gif
+ 	 move       0
+	 delay      20
+	 attack     0 0 0 0 0 0 0 0
+         frame      data/chars/1sonny/cth03.gif
+
+anim follow21
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1.5 0 0
+	 landframe  4
+	 quakeframe 5 3 1
+@cmd slamstart2
+@cmd antiwall2 35 -35 0
+@cmd position 36 30 5 -0.1 0
+         frame      data/chars/1sonny/grab01.gif
+	 delay      7
+@cmd position 38 17 5 -0.1 0
+         frame      data/chars/1sonny/g101.gif
+@cmd position 38 24 8 -0.1 0
+         frame      data/chars/1sonny/fth07.gif
+	 delay      99
+@cmd position 19 35 29 -0.1 0
+         frame      data/chars/1sonny/fth08.gif
+	 delay      1
+@cmd position 19 32 13 -0.1 0
+@cmd spawn001 "flash" "flash" 0 13 14 0 0
+         frame      data/chars/1sonny/fth09.gif
+	 delay      5
+	 sound      data/sounds/beatbr1.wav
+         frame      data/chars/1sonny/fth09.gif
+         frame      data/chars/1sonny/fth09.gif
+@cmd position 19 32 13 0 0
+         frame      data/chars/1sonny/fth09.gif
+@cmd depost 0
+@cmd finish 15 1 -1.3 1 0 0
+         frame      data/chars/1sonny/fth09.gif
+         frame      data/chars/1sonny/fth09.gif
+         frame      data/chars/1sonny/fth09.gif
+	 delay      7
+         frame      data/chars/1sonny/rise02.gif
+         frame      data/chars/1sonny/a100.gif
+
+#LEG BACK THROW
+anim freespecial56
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 attackone  1
+	 hitfx      data/sounds/grab.wav
+	 followanim 22
+	 followcond 3
+         frame      data/chars/1sonny/item.gif
+	 delay      4
+	 move       1
+         frame      data/chars/1sonny/fth01.gif
+         frame      data/chars/1sonny/fth02.gif
+         frame      data/chars/1sonny/fth03.gif
+	 delay      13
+	 attack     88 81 25 19 0 0 0 1 5 5
+	 forcedirection -1
+         frame      data/chars/1sonny/fth04.gif
+	 move       0
+	 delay      9
+	 attack     0 
+         frame      data/chars/1sonny/fth05.gif
+         frame      data/chars/1sonny/fth03.gif
+         frame      data/chars/1sonny/fth02.gif
+         frame      data/chars/1sonny/fth01.gif
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow22
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       0
+	 load       colat2
+@cmd slamstart2
+@cmd antiwall2 -35 10 0
+@cmd position 36 30 5 -0.1 0
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+         frame      data/chars/1sonny/fth04.gif
+	 delay      7
+         frame      data/chars/1sonny/fth04.gif
+	 sound      data/sounds/punchc.wav
+	 delay      8
+@cmd position 19 13 30 -0.1 0
+         frame      data/chars/1sonny/fth05.gif
+	 delay      1
+@cmd position 19 13 25 0 0
+@cmd spawn001 "colat2" "colat2" 0 -26 0 0 0
+         frame      data/chars/1sonny/fth03.gif
+	 delay      8
+@cmd depost 0
+@cmd throw 15 4 1.7 0.8 0 0
+         frame      data/chars/1sonny/fth03.gif
+         frame      data/chars/1sonny/fth02.gif
+         frame      data/chars/1sonny/fth01.gif
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+
+
+
+###################################### SONIC BLAST MAN SUBSYSTEM #################################
+
+#SPECIALS TRIGGER	
+anim freespecial70
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       68 83 24 44
+	 load       sonicbm
+	 custentity sonicbm
+	 spawnframe 1 4 -1 3 0
+	 cancel     12 15 0 a   freespecial71 #STINGRAY ATOMIC DIVER
+	 cancel     12 15 0 a2  freespecial72 #M BISON KNEE PRESS NIGHTMARE
+	 cancel     12 15 0 s   freespecial73 #SOR3 SKATE BREAK DANCE SPECIAL
+	 sound      data/sounds/sonicbm.wav
+         frame      data/chars/1sonny/b301.gif
+	 delay      4
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 1
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap 2
+         frame      data/chars/1sonny/ch01.gif
+	 drawmethod remap -1
+         frame      data/chars/1sonny/ch01.gif
+
+#SBM MOVE - STINGRAY ATOMIC DIVER
+anim freespecial71
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       0
+	 followanim 30
+	 followcond 3
+	 load       critic
+	 custentity critic
+	 spawnframe 0 1 0 0 0
+	 energycost 85
+	 mponly     1
+	 hitfx      data/sounds/grab.wav
+@cmd spawnbind "zoomin" 0 0 0
+         frame      data/chars/1sonny/ck00.gif
+@cmd spawnbind "zoomout" 0 0 0
+@cmd velo001 1.6 0 0
+	 delay      25
+	 attack3    79 85 10 18 0 0 1 1 5 5
+	 forcedirection -1
+         frame      data/chars/1sonny/stingr01.gif
+	 delay      15
+	 bbox       68 83 24 44
+	 attack3    0   
+@cmd velo001 0.8 0 0
+         frame      data/chars/1sonny/airf03.gif
+@cmd velo001 0 0 0
+	 delay      12
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow30
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       0
+@cmd velo001 0 0 0
+	 followanim 31
+	 followcond 3
+	 jumpframe  1 1.2 0.6 0
+	 dropframe  4
+	 landframe  5
+	 hitflash   Qflash2
+         frame      data/chars/1sonny/ck00.gif
+	 delay      12
+         frame      data/chars/1sonny/ju02.gif
+	 hitfx      data/sounds/beatsf3.wav
+	 delay      25
+	 attack7    89 85 10 18 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/1sonny/stingr02.gif
+	 delay      99
+	 attack7    0
+         frame      data/chars/1sonny/stingr02.gif
+	 delay      99
+         frame      data/chars/1sonny/ju01.gif
+	 delay      12
+         frame      data/chars/1sonny/item.gif
+
+anim follow31
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       0
+	 followanim 32
+	 followcond 1
+	 jumpframe  1 3.5 0 0
+	 dropframe  3
+	 landframe  9
+	 hitflash   Qflash2
+@cmd jump001 0.8 0.5 0
+         frame      data/chars/1sonny/stingr02.gif
+	 sound      data/sounds/dragonz7.wav
+         frame      data/chars/1sonny/stingr03.gif
+	 delay      99
+         frame      data/chars/1sonny/stingr04.gif
+	 delay      7
+         frame      data/chars/1sonny/rasta01.gif
+         frame      data/chars/1sonny/rasta02.gif
+	 sound      data/sounds/punch1.wav
+	 delay      5
+	 hitfx      data/sounds/beatsf4.wav
+	 attack89   67 107 25 19 40 1 1 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/1sonny/stingr05.gif
+         frame      data/chars/1sonny/stingr06.gif
+         frame      data/chars/1sonny/stingr07.gif
+@cmd	updateframe getlocalvar("self") 5
+         frame      data/chars/1sonny/stingr07.gif
+	 attack89   0
+	 delay      15
+         frame      data/chars/1sonny/item.gif
+
+anim follow32
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 followanim 32
+	 followcond 3
+	 jumpframe  2 1 -0.7 0
+	 landframe  6
+         frame      data/chars/1sonny/stingr07.gif
+	 delay      5
+@cmd toss0001 20
+         frame      data/chars/1sonny/stingr07.gif
+	 delay      1
+         frame      data/chars/1sonny/stingr07.gif
+	 delay      10
+         frame      data/chars/1sonny/rasta02.gif
+         frame      data/chars/1sonny/rasta01.gif
+	 delay      99
+         frame      data/chars/1sonny/hk05.gif
+	 delay      12
+         frame      data/chars/1sonny/item.gif
+
+#SBM MOVE - M BISON KNEE PRESS NIGHTMARE
+anim freespecial72
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       0
+	 fastattack 1
+	 energycost 50
+	 mponly     1
+	 hitflash   Qflash2
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/airf03.gif
+	 delay      6
+@cmd jump001 1.2 1 0
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1sonny/cff07.gif
+         frame      data/chars/1sonny/cff06.gif
+	 delay      3
+	 hitfx      data/sounds/beatnw2.wav
+	 attack16   71 73 21 37 5 0 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1 0
+         frame      data/chars/1sonny/cff05.gif
+	 attack16   0
+         frame      data/chars/1sonny/cff05.gif
+	 delay      7
+	 hitfx      data/sounds/beatnw2.wav
+	 attack25   74 86 34 22 5 0 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1 0
+         frame      data/chars/1sonny/cff08.gif
+	 delay      8
+	 attack25   0
+         frame      data/chars/1sonny/cff08.gif
+	 delay      2
+	 move       2
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 hitfx      data/sounds/beatsf3.wav
+	 attack27   74 96 24 35 5 0 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1 0
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 attack27   0
+	 move       1
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 delay      2
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/ck00.gif
+	 delay      5
+	 move       0
+#-
+	 sound      data/sounds/punch1.wav
+@cmd jump001 1.2 1 0
+         frame      data/chars/1sonny/cff07.gif
+         frame      data/chars/1sonny/cff06.gif
+	 delay      3
+	 hitfx      data/sounds/beatnw2.wav
+	 attack16   71 73 21 37 5 0 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1 0
+         frame      data/chars/1sonny/cff05.gif
+	 attack16   0
+         frame      data/chars/1sonny/cff05.gif
+	 delay      7
+	 hitfx      data/sounds/beatnw2.wav
+	 attack25   74 86 34 22 5 0 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1 0
+         frame      data/chars/1sonny/cff08.gif
+	 delay      8
+	 attack25   0
+         frame      data/chars/1sonny/cff08.gif
+	 delay      2
+	 move       2
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 hitfx      data/sounds/beatsf2.wav
+	 attack     74 96 24 35 5 1 1 0 5 5
+	 forcedirection -1
+	 dropv      1.3 1.6 0
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 attack     0
+	 move       1
+         frame      data/chars/1sonny/cff09.gif
+         frame      data/chars/1sonny/cff09.gif
+	 delay      2
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/ck00.gif
+	 delay      12
+	 move       0
+         frame      data/chars/1sonny/ck00.gif
+
+#SBM MOVE - SOR3 SKATE BREAK DANCE SPECIAL
+anim freespecial73
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0
+	 energycost 50
+	 mponly     1
+	 hitflash   Qflash2
+	 sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/breakd01.gif
+	 sound      data/sounds/punch1.wav
+	 delay      4
+	 hitfx      data/sounds/beatpr3.wav
+	 attack14   47 101 67 19 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack14   70 98 30 30 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd03.gif
+	 attack14   51 101 66 22 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd04.gif
+	 attack14   60 97 29 32 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd05.gif
+#-
+	 sound      data/sounds/punch1.wav
+	 attack14   47 101 67 19 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack14   70 98 30 30 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd03.gif
+	 attack14   51 101 66 22 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd04.gif
+	 attack14   60 97 29 32 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd05.gif
+#-
+	 sound      data/sounds/punch1.wav
+	 attack14   47 101 67 19 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd02.gif
+	 attack14   70 98 30 30 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd03.gif
+	 attack14   51 101 66 22 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd04.gif
+	 attack14   60 97 29 32 5 1 0 0 5 5
+	 dropv      1.3 1.8 0
+         frame      data/chars/1sonny/breakd05.gif
+#-
+	 attack14   0
+	 delay      9
+         frame      data/chars/1sonny/item.gif
+         frame      data/chars/1sonny/ck00.gif
+
+###################################### BRUTALITY SUBSYSTEM ##################################
+###################################### P K P K K P K P K S J 
+
+#BRUTALITY STARTER  
+com      b b s freespecial74
+anim freespecial74
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 followanim 15
+	 followcond 3
+	 energycost 85
+         mponly     1
+	 load       agress
+	 custentity agress
+	 spawnframe 3 0 -30 0 0
+	 hitflash   Qflash
+	 fastattack 1
+         frame      data/chars/1sonny/b408.gif
+         frame      data/chars/1sonny/b407.gif
+         frame      data/chars/1sonny/tr11.gif
+         frame      data/chars/1sonny/tr12.gif
+	 @cmd velo001 1.8 0 0
+         frame      data/chars/1sonny/tr27.gif
+	 hitfx      data/sounds/beatkill.wav
+	 delay      20
+	 attack7    78 83 16 42 5 0 0 0 7 5
+	 forcedirection -1
+	 dropv      0.5 0.1 0
+         frame      data/chars/1sonny/tr27.gif
+	 delay      10
+	 @cmd velo001 1 0 0
+         frame      data/chars/1sonny/tr27.gif
+	 delay      7
+	 @cmd velo001 0.8 0 0
+         frame      data/chars/1sonny/tr27.gif
+	 @cmd velo001 0.5 0 0
+         frame      data/chars/1sonny/tr27.gif
+	 delay      10
+	 attack7    0
+	 @cmd velo001 0 0 0
+         frame      data/chars/1sonny/ck00.gif
+
+anim follow15
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0
+	 attack7    0 0 0 0
+	 jumpframe  0 0.5 -0.1
+	 landframe  2
+	 cancel     2 5 0 a  freespecial75    #BRUTALITY 01
+         frame      data/chars/1sonny/tr27.gif
+	 move       0
+	 delay      999
+	 attack7    0 0 0 0
+         frame      data/chars/1sonny/tr27.gif
+	 delay      4
+         frame      data/chars/1sonny/tr13.gif
+         frame      data/chars/1sonny/tr13.gif
+         frame      data/chars/1sonny/tr13.gif
+
+#BRUTALITY 01
+anim freespecial75
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     5 6 1 a2 freespecial76    #BRUTALITY 02
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk1.wav
+	 delay      7
+	 attack91   82 76 32 23 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.5 0.1 0
+	 jugglecost 60
+         frame      data/chars/1sonny/b202.gif
+	 move       0
+	 delay      2
+	 attack91   0
+         frame      data/chars/1sonny/b203.gif
+         frame      data/chars/1sonny/b301.gif
+	 delay      8
+         frame      data/chars/1sonny/b104.gif
+
+#BRUTALITY 02
+anim freespecial76
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     6 7 1 a  freespecial77   #BRUTALITY 03
+         frame      data/chars/1sonny/b501.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b503.gif
+	 move       0
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack50   69 78 34 19 0 0 1 0 8 5
+	 jugglecost 2
+	 forcedirection -1
+	 dropv      0.5 0.1 0
+         frame      data/chars/1sonny/b504.gif
+	 delay      2
+	 attack50   0 
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b501.gif
+	 delay      7
+         frame      data/chars/1sonny/b104.gif
+
+#BRUTALITY 03
+anim freespecial77
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     7 7 1 a2  freespecial78   #BRUTALITY 04
+         frame      data/chars/1sonny/bf01.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf03.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   88 100 26 23 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/bf04.gif
+	 move       0
+	 delay      3
+	 attack51   0
+         frame      data/chars/1sonny/bf03.gif
+         frame      data/chars/1sonny/bf02.gif
+         frame      data/chars/1sonny/bf01.gif
+	 delay      8
+         frame      data/chars/1sonny/b104.gif
+
+#BRUTALITY 04
+anim freespecial78
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     5 7 1 a2  freespecial79   #BRUTALITY 05
+         frame      data/chars/1sonny/a501.gif
+         frame      data/chars/1sonny/a502.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   87 76 34 22 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/a503.gif
+	 attack51   0 0 0 0
+         frame      data/chars/1sonny/a504.gif
+	 move       0
+         frame      data/chars/1sonny/a505.gif
+	 delay      4
+         frame      data/chars/1sonny/ac01.gif
+	 delay      8
+         frame      data/chars/1sonny/tr20.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY 05
+anim freespecial79
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     6 8 1 a  freespecial80   #BRUTALITY 06
+         frame      data/chars/1sonny/a100.gif
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/b907.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   84 84 39 10 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/b908.gif
+	 attack50   0 
+	 delay      5
+         frame      data/chars/1sonny/b907.gif
+         frame      data/chars/1sonny/b906.gif
+	 delay      7
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY 06
+anim freespecial80
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   Qflash
+@cmd shadow 0
+	 move       1
+	 cancel     5 8 1 a2  freespecial81   #BRUTALITY 07
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a202.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack51   81 98 34 12 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/a208.gif
+	 move       0
+	 delay      5
+	 attack51   0 
+         frame      data/chars/1sonny/a202.gif
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY 07
+anim freespecial81
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   Qflash
+@cmd shadow 0
+	 move       1
+	 cancel     4 6 1 a   freespecial82   #BRUTALITY 08
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a203.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack51   78 81 36 15 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/a206.gif
+	 move       1
+	 delay      5
+	 attack51   0 
+         frame      data/chars/1sonny/a203.gif
+         frame      data/chars/1sonny/a202.gif
+         frame      data/chars/1sonny/a201.gif
+
+#BRUTALITY 08
+anim freespecial82
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     5 8 1 a2  freespecial83   #BRUTALITY 09
+         frame      data/chars/1sonny/b303.gif
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b405.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack50   84 79 34 17 0 0 1 0 8 5
+	 jugglecost 2
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b406.gif
+	 move       0
+	 delay      3
+	 attack50   0 
+         frame      data/chars/1sonny/b407.gif
+         frame      data/chars/1sonny/b408.gif
+	 delay      5
+         frame      data/chars/1sonny/tr13.gif
+	 delay      7
+         frame      data/chars/1sonny/b104.gif
+
+#BRUTALITY 09
+anim freespecial83
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     4 7 1 s  freespecial84   #BRUTALITY 10
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b806.gif
+	 attack50   0
+	 delay      4
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY 10
+anim freespecial84
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 cancel     4 7 1 j  freespecial85  #BRUTALITY 11
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b804.gif
+	 attack51   0
+	 delay      4
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY 11
+anim freespecial85
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       1
+	 hitflash   Qflash
+@cmd shadow 0
+	 followanim 18
+	 followcond 1
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b803.gif
+	 attack50   0
+	 delay      4
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/a100.gif
+
+#BRUTALITY FINISHER
+anim follow18
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       0
+	 move       2
+	 fastattack 1
+	 hitflash   Qflash
+@cmd shadow 0
+@cmd setmusicvolume 10 10 #music going silent
+	 sound      data/sounds/mkfatal.wav
+	 cancel     62 64 10 s    freespecial86  #TAUNT MK WIN
+         frame      data/chars/1sonny/b803.gif
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b104.gif
+	 move       1
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack91   82 76 32 23 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.5 0.1 0
+	 jugglecost 60
+         frame      data/chars/1sonny/b202.gif
+	 move       0
+	 delay      2
+	 attack91   0
+         frame      data/chars/1sonny/b203.gif
+         frame      data/chars/1sonny/b301.gif
+#--------2
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b501.gif
+         frame      data/chars/1sonny/b502.gif
+         frame      data/chars/1sonny/b503.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      7
+	 attack50   69 78 34 19 0 0 1 0 8 5
+	 jugglecost 2
+	 forcedirection -1
+	 dropv      0.5 0.1 0
+         frame      data/chars/1sonny/b504.gif
+	 move       0
+	 delay      2
+	 attack50   0 
+         frame      data/chars/1sonny/b502.gif
+#--------3
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/bf01.gif
+         frame      data/chars/1sonny/bf03.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   88 100 26 23 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/bf04.gif
+	 move       0
+	 delay      3
+	 attack51   0
+         frame      data/chars/1sonny/bf03.gif
+         frame      data/chars/1sonny/bf02.gif
+#--------4
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/a501.gif
+         frame      data/chars/1sonny/a502.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   87 76 34 22 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/a503.gif
+	 move       0
+	 attack51   0 0 0 0
+         frame      data/chars/1sonny/a504.gif
+         frame      data/chars/1sonny/a505.gif
+#--------5
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b906.gif
+         frame      data/chars/1sonny/b907.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   84 84 39 10 0 0 1 0 8 5
+	 dropv      0.8 0.1 0
+	 forcedirection -1
+         frame      data/chars/1sonny/b908.gif
+	 move       0
+	 attack50   0 
+	 delay      3
+         frame      data/chars/1sonny/b907.gif
+         frame      data/chars/1sonny/b906.gif
+#--------6
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a202.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      5
+	 attack51   81 98 34 12 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/a208.gif
+	 move       0
+	 delay      3
+	 attack51   0 
+         frame      data/chars/1sonny/a202.gif
+         frame      data/chars/1sonny/a201.gif
+#--------7
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/a201.gif
+         frame      data/chars/1sonny/a203.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      5
+	 attack51   78 81 36 15 0 0 1 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/a206.gif
+	 move       0
+	 delay      3
+	 attack51   0 
+         frame      data/chars/1sonny/a203.gif
+         frame      data/chars/1sonny/a202.gif
+#--------8
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b404.gif
+         frame      data/chars/1sonny/b405.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 delay      4
+	 attack50   84 79 34 17 0 0 1 0 8 5
+	 jugglecost 2
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b406.gif
+	 move       0
+	 attack50   0 
+	 delay      3
+         frame      data/chars/1sonny/b407.gif
+         frame      data/chars/1sonny/b408.gif
+#--------9
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack50   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b806.gif
+	 attack50   0
+	 delay      2
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+#--------9
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b804.gif
+	 attack51   0
+	 delay      2
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+#--------10
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/b101.gif
+         frame      data/chars/1sonny/b201.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack51   76 76 37 14 0 0 1 0 8 5
+	 forcedirection -1
+	 dropv      0.9 0.1 0
+         frame      data/chars/1sonny/b803.gif
+	 attack51   0
+	 move       0
+	 delay      2
+         frame      data/chars/1sonny/b901.gif
+         frame      data/chars/1sonny/b201.gif
+#--------
+load     agress02
+	 move       1
+	 delay      3
+         frame      data/chars/1sonny/item.gif
+         frame      data/chars/1sonny/upper1.gif
+         frame      data/chars/1sonny/upper2.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack88   87 67 14 40 50 1 1 0 8 5
+	 dropv      5 0.2 0
+	 forcedirection -1
+         frame      data/chars/1sonny/upper3.gif
+	 move       0
+@cmd spawn044 "agress02" 128 0 228
+@cmd setmusicvolume 100 100 #music going silent
+	 attack88   0 
+	 delay      25
+         frame      data/chars/1sonny/upper3.gif
+	 delay      9
+         frame      data/chars/1sonny/upper2.gif
+         frame      data/chars/1sonny/b104.gif
+         frame      data/chars/1sonny/a100.gif
+
+#TAUNT MK WIN
+anim freespecial86
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+1); 
+@end_script
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonny/tr24.gif
+         frame      data/chars/1sonny/tr25.gif
+	 sound      data/sounds/mkbrutal.wav
+	 delay      11
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+         frame      data/chars/1sonny/tr26.gif
+	 delay      8
+         frame      data/chars/1sonny/tr25.gif
+         frame      data/chars/1sonny/a100.gif
+
+######################################################### CVS-ISM SUPER
+
+#JAGUAR REVOLVER
+anim freespecial88
+	 loop       0
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 50
+	 mponly     1
+	 jumpframe  2 1.4 0.2
+	 landframe  13
+	 delay      5
+	 fastattack 1
+	 hitflash   Qflash2
+load     sa
+custentity sa
+spawnframe 0 0 0 0 0
+	 fastattack 1
+@cmd shadow 10 25 60 0 2 190 190 20
+	 sound      data/sounds/draado01.wav
+         frame      data/chars/1sonny/bc05.gif
+         frame      data/chars/1sonny/sfad00.gif
+	 delay      5
+         frame      data/chars/1sonny/sfad01.gif
+         frame      data/chars/1sonny/sfad02.gif
+         frame      data/chars/1sonny/sfad03.gif
+         frame      data/chars/1sonny/sfad04.gif
+         frame      data/chars/1sonny/sfad05.gif
+	 delay      3
+@cmd velo001 1 0 -0.7
+	 hitfx      data/sounds/beatsf5.wav
+	 attack90   66 64 45 35 2 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.5 0
+         frame      data/chars/1sonny/sfad06x.gif
+	 attack90   0
+         frame      data/chars/1sonny/sfad06.gif
+	 attack91   74 66 43 54 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.9 0.6 0
+         frame      data/chars/1sonny/sfad07x.gif
+	 attack     0
+         frame      data/chars/1sonny/sfad07.gif
+	 hitfx      data/sounds/beatsf5.wav
+	 attack90   76 82 39 45 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      1.2 0.2 0
+         frame      data/chars/1sonny/sfad08x.gif
+	 delay      999
+	 attack     0
+         frame      data/chars/1sonny/sfad08.gif
+	 delay      8
+@cmd velo001 0 
+         frame      data/chars/1sonny/sfad08.gif
+         frame      data/chars/1sonny/sfad00.gif
+	 sound      data/sounds/draado02.wav
+@cmd jump001 0.7 0.9 0
+	 delay      3
+         frame      data/chars/1sonny/sfad01.gif
+         frame      data/chars/1sonny/sfad02.gif
+         frame      data/chars/1sonny/sfad03.gif
+         frame      data/chars/1sonny/sfad04.gif
+         frame      data/chars/1sonny/sfad05.gif
+	 delay      3
+@cmd velo001 1.8 0 -0.7
+	 attack90   66 64 45 35 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.8 0
+         frame      data/chars/1sonny/sfad06x.gif
+	 attack     0
+         frame      data/chars/1sonny/sfad06.gif
+	 attack91   74 66 43 54 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.8 0
+         frame      data/chars/1sonny/sfad07x.gif
+	 attack     0
+         frame      data/chars/1sonny/sfad07.gif
+	 attack90   76 82 39 45 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.7 0.8 0
+         frame      data/chars/1sonny/sfad08x.gif
+	 delay      6
+@cmd velo001 0 
+         frame      data/chars/1sonny/sfad08.gif
+         frame      data/chars/1sonny/sfad00.gif
+	 sound      data/sounds/draado03.wav
+@cmd jump001 0.7 1 0
+	 delay      2
+         frame      data/chars/1sonny/sfad01.gif
+         frame      data/chars/1sonny/sfad02.gif
+         frame      data/chars/1sonny/sfad03.gif
+         frame      data/chars/1sonny/sfad04.gif
+         frame      data/chars/1sonny/sfad05.gif
+	 delay      3
+@cmd velo001 1.9 0 -0.7
+	 attack90   66 64 45 35 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.8 0
+         frame      data/chars/1sonny/sfad06x.gif
+	 attack     0
+         frame      data/chars/1sonny/sfad06.gif
+	 attack91   74 66 43 54 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      0.3 0.8 0
+         frame      data/chars/1sonny/sfad07x.gif
+	 attack     0
+         frame      data/chars/1sonny/sfad07.gif
+	 attack14   76 82 39 45 5 1 0 0 7 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/1sonny/sfad08x.gif
+	 delay      6
+@cmd velo001 0 
+	 attack     0
+         frame      data/chars/1sonny/sfad08.gif
+         frame      data/chars/1sonny/sfad00.gif
+
+#HO-OH TEMBU KYAKU
+anim freespecial89
+	 loop       0
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 40
+	 mponly     1
+	 jumpframe  2.8 2 0.2
+	 landframe  30
+	 delay      5
+	 fastattack 1
+	 hitflash   Qflash2
+load     sa
+custentity sa
+spawnframe 0 0 0 0 0
+	 fastattack 1
+@cmd shadow 10 25 60 0 2 190 190 20
+sound      data/sounds/dragonz2.wav
+         frame      data/chars/1sonny/tr12.gif
+sound      data/sounds/dragonf.wav
+         frame      data/chars/1sonny/ck00.gif
+         frame      data/chars/1sonny/a707.gif
+	 delay      4
+         frame      data/chars/1sonny/ak15.gif
+	 hitfx      data/sounds/beatsf5.wav
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.6 0.1 0
+         frame      data/chars/1sonny/ak16.gif
+sound      data/sounds/dragong.wav
+	 attack     0
+         frame      data/chars/1sonny/ak17.gif
+
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.6 0.1 0
+         frame      data/chars/1sonny/ak19.gif
+	 attack     0
+
+@cmd jump001 1.3 0.3 0
+         frame      data/chars/1sonny/ak15.gif
+sound      data/sounds/dragong.wav
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.6 0.1 0
+         frame      data/chars/1sonny/ak16.gif
+	 attack     0
+         frame      data/chars/1sonny/ak17.gif
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.6 0.1 0
+         frame      data/chars/1sonny/ak19.gif
+	 attack     0
+
+sound      data/sounds/dragong.wav
+@cmd jump001 1.3 0.3 0
+         frame      data/chars/1sonny/ak15.gif
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.4 0.1 0
+         frame      data/chars/1sonny/ak16.gif
+	 attack     0
+         frame      data/chars/1sonny/ak17.gif
+sound      data/sounds/dragong.wav
+	 attack90   74 78 35 24 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.6 0.1 0
+         frame      data/chars/1sonny/ak19.gif
+	 attack     0
+
+	 delay      6
+@cmd toss0001 120
+@cmd velo001 0 0 0
+         frame      data/chars/1sonny/a303.gif
+         frame      data/chars/1sonny/a304.gif
+sound      data/sounds/dragong.wav
+         frame      data/chars/1sonny/a305.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf1.wav
+	 attack90   75 95 32 14 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.4 0 0
+         frame      data/chars/1sonny/a306.gif
+	 delay      6
+	 attack     0
+         frame      data/chars/1sonny/a307.gif
+
+sound      data/sounds/dragong.wav
+	 delay      6
+         frame      data/chars/1sonny/ak03.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf2.wav
+	 attack90   74 100 29 25 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.1 0.1 0
+         frame      data/chars/1sonny/ak04.gif
+	 attack     0
+
+sound      data/sounds/dragong.wav
+	 delay      6
+         frame      data/chars/1sonny/ak08.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf2.wav
+	 attack90   74 100 29 25 0 1 1 0 7 5
+	 forcedirection -1
+	 dropv      0.1 0.1 0
+         frame      data/chars/1sonny/ak08.gif
+	 attack     0
+
+	 sound      data/sounds/dragonz8.wav
+	 delay      6
+         frame      data/chars/1sonny/b604.gif
+         frame      data/chars/1sonny/b605.gif
+	 delay      7
+	 hitfx      data/sounds/beatsf4.wav
+@cmd jump001 -0.8 0.5 0
+	 attack14   73 98 38 18 40 1 1 0 7 5
+	 forcedirection -1
+	 dropv      -0.6 1.5 0
+         frame      data/chars/1sonny/b606.gif
+	 delay      6
+	 attack     0
+         frame      data/chars/1sonny/b607.gif
+         frame      data/chars/1sonny/a702.gif
+	 delay      999
+         frame      data/chars/1sonny/ju01.gif
+
+	 delay      11
+         frame      data/chars/1sonny/ck00.gif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

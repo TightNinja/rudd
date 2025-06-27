@@ -1,0 +1,39 @@
+name          smkb01
+shootnum      1
+health        1
+antigravity   40
+speed         6
+jumpheight    1
+gfxshadow     0
+nolife        1
+
+noquake  1 1
+
+script  data/scripts/bounce2.c
+animationscript   data/scripts/lib001.c
+
+anim idle
+	   loop      0
+	   delay     999
+	   bbox      0
+	   offset    36 126
+	   landframe 1
+	   frame     data/chars/0weap/smkb01.gif
+	   delay     3
+	   frame     data/chars/0weap/smkb02.gif
+	   frame     data/chars/0weap/smkb03.gif
+	   frame     data/chars/0weap/smkb04.gif
+	   frame     data/chars/0weap/smkb05.gif
+	   frame     data/chars/0weap/smkb06.gif
+	   frame     data/chars/0weap/smkb07.gif
+	   frame     data/chars/0weap/smkb08.gif
+	   frame     data/chars/0weap/smkb09.gif
+	   frame     data/chars/0weap/smkb10.gif
+@cmd killentity getlocalvar("self")
+	   frame     data/chars/0misc/empty.gif
+
+
+
+
+
+

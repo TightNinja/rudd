@@ -1,0 +1,20 @@
+name          Jeffpose
+type          none
+gfxshadow     1
+lifespan      5
+subject_to_wall 0
+
+anim idle
+	 loop       0
+	 delay      400
+	 offset     80 129
+	 bbox       0
+	 jumpframe  2 6.5 0 0
+         frame      data/chars/2jeff/pose01.gif
+	 delay      15
+         frame      data/chars/2jeff/rise03.gif
+	 delay      999
+	 sound      data/sounds/punch3.wav
+         frame      data/chars/2jeff/ju01.gif
+
+

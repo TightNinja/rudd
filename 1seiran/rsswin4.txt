@@ -1,0 +1,34 @@
+name	rsswin4
+type	text
+shadow	0
+facing  1
+#alpha	1
+setlayer 999999999
+
+anim idle
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(20, "data/music/00.ogg", 0,0);
+}
+@end_script
+	 loop      0
+	 delay     2
+	 offset    128 228
+         frame     data/chars/1seiran/samsho05.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/samsho05.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/samsho05.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/samsho05.gif
+	 frame     data/chars/0misc/empty.gif
+         frame     data/chars/1seiran/samsho05.gif
+	 frame     data/chars/0misc/empty.gif
+	 delay     130
+         frame     data/chars/1seiran/samsho06.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+

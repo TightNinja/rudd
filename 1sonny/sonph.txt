@@ -1,0 +1,46 @@
+name	sonph
+type	none
+shadow	0
+alpha   0
+
+anim idle
+	 loop      0
+	 delay     3
+	 offset    17 83
+	 drawmethod alpha 6
+	 drawmethod channel 0.5
+	 frame     data/chars/1sonny/sonph1.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/1sonny/sonph1.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/1sonny/sonph1.gif
+	 frame     data/chars/0misc/empty.gif
+	 frame     data/chars/1sonny/sonph1.gif
+
+	 delay     6
+	 drawmethod channel 0.75
+	 frame     data/chars/1sonny/sonph2.gif
+	 frame     data/chars/1sonny/sonph3.gif
+	 sound     data/sounds/punch4.wav
+	 frame     data/chars/1sonny/sonph4.gif
+	 frame     data/chars/1sonny/sonph3.gif
+
+	 frame     data/chars/1sonny/sonph2.gif
+	 frame     data/chars/1sonny/sonph3.gif
+	 sound     data/sounds/punch4.wav
+	 frame     data/chars/1sonny/sonph4.gif
+	 frame     data/chars/1sonny/sonph3.gif
+
+	 delay     9
+	 drawmethod channel 0.75
+	 frame     data/chars/1sonny/sonph2.gif
+	 frame     data/chars/1sonny/sonph3.gif
+	 sound     data/sounds/punch4.wav
+	 frame     data/chars/1sonny/sonph4.gif
+	 frame     data/chars/1sonny/sonph3.gif
+
+	 delay     99
+	 frame     data/chars/1sonny/sonph1.gif
+
+
+

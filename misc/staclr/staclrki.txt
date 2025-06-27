@@ -1,0 +1,91 @@
+name	staclrki
+type	text
+subtype noskip
+setlayer 999999999
+nodieblink 3
+alpha   0
+
+anim idle
+	 loop      0
+	 delay     4
+	 offset    256 228
+	 flipframe 0
+	 sound      data/music/results.wav
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 0
+	 frame     data/chars/misc/staclr/ki01.gif
+	 sound     data/sounds/supreme.wav
+	 delay     25
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/misc/staclr/ki02.gif
+	 delay     3
+drawmethod alpha 6
+drawmethod channel 0.90
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.80
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.70
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.60
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.50
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.40
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.30
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.20
+	 frame     data/chars/misc/staclr/ki01.gif
+drawmethod alpha 6
+drawmethod channel 0.10
+	 frame     data/chars/misc/staclr/ki01.gif
+	 frame     data/chars/0misc/empty.gif
+
+
+

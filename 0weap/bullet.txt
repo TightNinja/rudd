@@ -1,0 +1,23 @@
+name        bullet
+health      1
+type	    pshot
+shootnum    999999
+speed	    50
+candamage   player obstacle
+subject_to_hole 0
+subject_to_wall 1
+subject_to_gravity 0
+subject_to_obstacle 1
+
+anim idle
+	   loop      1
+	   delay     5
+	   bbox      0
+	   offset    9 6
+	   hitfx     data/sounds/knife2.wav
+	   hitflash  Bflash
+	   attack11  0 3 14 5 40 1 1 0 7 4
+	   dropv     1.3 0.8 0
+	   forcedirection -1
+	   frame     data/chars/0weap/bullet.gif
+

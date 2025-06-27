@@ -1,0 +1,27 @@
+name	 Bo
+health   0
+type     item
+counter  9999
+subtype  weapon
+weapnum  4
+nolife   1
+shootnum 1
+
+anim idle
+	loop   0
+	delay  3
+	offset 40 14
+	bbox   0 0 0 0
+	move   0
+	sound  data/sounds/weap1.wav
+	frame  data/chars/0weap/bo01.gif
+	frame  data/chars/0weap/bo02.gif
+	frame  data/chars/0weap/bo01.gif
+	frame  data/chars/0weap/bo03.gif
+	frame  data/chars/0weap/bo01.gif
+	frame  data/chars/0weap/bo02.gif
+	frame  data/chars/0weap/bo01.gif
+	frame  data/chars/0weap/bo03.gif
+	bbox   39 13 1 1
+	frame  data/chars/0weap/bo01.gif
+

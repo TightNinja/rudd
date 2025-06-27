@@ -1,0 +1,11 @@
+name       Levelxnd
+type       endlevel
+branch     xtmnt
+
+anim idle
+	loop 1
+	delay  6
+	bbox  17 19 12 17
+	offset	22 41
+        frame   data/chars/0misc/go01.gif
+        frame   data/chars/0misc/empty.gif

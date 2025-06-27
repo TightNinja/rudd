@@ -1,0 +1,57 @@
+name	  xforce
+health    0
+speed     20
+type      enemy
+subtype   chase
+hostile   obstacle
+setlayer  999999999
+antigravity 100
+lifespan  3
+
+anim idle
+	loop	0
+	delay	4
+	offset	8 8
+	drawmethod alpha 6
+	drawmethod channel 0.25
+	jumpframe 0 1 -1 0
+	frame	data/chars/2chen/xforce1.gif
+	drawmethod alpha 6
+	drawmethod channel 0.50
+	frame	data/chars/2chen/xforce2.gif
+	drawmethod alpha 6
+	drawmethod channel 0.75
+	frame	data/chars/2chen/xforce3.gif
+	drawmethod alpha off
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce1.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce3.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce1.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce3.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce1.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce3.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce1.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce3.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce1.gif
+	frame	data/chars/2chen/xforce2.gif
+	frame	data/chars/2chen/xforce3.gif
+	frame	data/chars/2chen/xforce2.gif
+	drawmethod alpha 6
+	drawmethod channel 0.75
+	frame	data/chars/2chen/xforce1.gif
+	drawmethod alpha 6
+	drawmethod channel 0.50
+	frame	data/chars/2chen/xforce2.gif
+	drawmethod alpha 6
+	drawmethod channel 0.25
+	frame	data/chars/2chen/xforce3.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif

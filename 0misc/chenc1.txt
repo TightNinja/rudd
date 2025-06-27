@@ -1,0 +1,37 @@
+name          chenc1
+type          none
+gfxshadow     1
+antigravity   40
+
+anim spawn
+	 loop       0
+	 delay      21
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 3.2 3.5 0
+	 landframe  7
+	 delay      35
+#	 sound      data/sounds/wcry1.wav
+         frame      data/chars/2chen/ju01.gif
+	 delay      20
+         frame      data/chars/2chen/ju02.gif
+	 delay      999
+         frame      data/chars/2chen/ak01.gif
+	 delay      25
+         frame      data/chars/2chen/b104.gif
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2chen/idle01.gif 
+
+anim death
+	 loop       0
+	 delay      2
+	 move       -3
+	 offset     80 129
+	 bbox       0 0 0 0
+

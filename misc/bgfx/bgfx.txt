@@ -1,0 +1,31 @@
+name	bgfx
+health	1
+type	panel
+speed 10
+shadow 0
+setlayer -2000
+facing 0
+
+palette none
+animationscript data/scripts/lib001.c
+load    fogss
+
+anim	idle
+	loop	1 1 5
+	offset	1 0
+	delay	8
+custentity fogss
+spawnframe 0 128 224 1
+	sound   data/sounds/welcome.wav
+	@cmd	changeentityproperty getlocalvar("self") "direction" 1
+	frame	data/chars/misc/bgfx/01.gif
+	@cmd	changeentityproperty getlocalvar("self") "setlayer" -2000
+	frame	data/chars/misc/bgfx/01.gif
+	frame	data/chars/misc/bgfx/01.gif
+	frame	data/chars/misc/bgfx/01.gif
+	frame	data/chars/misc/bgfx/01.gif
+
+
+
+
+

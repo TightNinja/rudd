@@ -1,0 +1,57 @@
+name      zmet
+type      npc
+shadow    0
+hostile   player enemy
+speed     12
+animationscript	data/scripts/lib001.c
+
+aimove wander
+
+anim spawn  
+	 loop    0
+	 delay   4
+	 offset  25 75
+	 bbox    0
+	 drawmethod alpha 6
+	 drawmethod channel 0.2
+         frame   data/chars/0weap/met01.gif  
+	 drawmethod channel 0.4 
+         frame   data/chars/0weap/met02.gif  
+	 drawmethod channel 0.6 
+         frame   data/chars/0weap/met03.gif   
+	 drawmethod channel 0.8
+         frame   data/chars/0weap/met04.gif  
+	 drawmethod alpha off 
+         frame   data/chars/0weap/met05.gif   
+
+anim idle  
+	 loop    1
+	 delay   4
+	 offset  25 75
+	 bbox    0
+         frame   data/chars/0weap/met01.gif   
+         frame   data/chars/0weap/met02.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif  
+
+anim walk
+	 loop    1 
+	 delay   4
+	 offset  25 75
+	 bbox    0
+         frame   data/chars/0weap/met01.gif   
+         frame   data/chars/0weap/met02.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met05.gif   
+         frame   data/chars/0weap/met04.gif   
+         frame   data/chars/0weap/met03.gif   
+         frame   data/chars/0weap/met02.gif 
+
+ 
+
+

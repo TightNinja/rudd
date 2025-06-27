@@ -1,0 +1,868 @@
+name          SonnyW
+candamage     enemy obstacle pshot shot npc
+type          none
+subject_to_obstacle 0
+health        100
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+grabforce    -1
+atchain       1 2 0 0 0
+typeshot      0
+weaploss      0
+weapons       Sonny Sonny2 SonnyN SonnyB SonnyK none SonnyD SonnyBoo Sonny none sonnyW
+icon          data/chars/1sonny/iconW.gif 1
+#parrow         
+#parrow2 
+
+animationscript   data/scripts/lib001.c
+#didhitscript      data/scripts/didhit.c
+
+fmap   3
+palette             data/chars/1sonny/icon.gif   
+alternatepal        data/chars/1sonny/alter00.gif  #no
+alternatepal        data/chars/1sonny/alter01.gif  #no
+alternatepal        data/chars/1sonny/alterfr.gif  #no
+alternatepal        data/chars/1sonny/alterbr.gif  #no
+alternatepal        data/chars/1sonny/alter02.gif  
+alternatepal        data/chars/1sonny/alter03.gif   
+alternatepal        data/chars/1sonny/alter04.gif  
+alternatepal        data/chars/1sonny/alter05.gif  
+alternatepal        data/chars/1sonny/alter06.gif  
+alternatepal        data/chars/1sonny/alter07.gif  
+alternatepal        data/chars/1sonny/alter08.gif  
+alternatepal        data/chars/1sonny/alter09.gif 
+alternatepal        data/chars/1sonny/alter10.gif 
+alternatepal        data/chars/1sonny/alter11.gif 
+alternatepal        data/chars/1sonny/alter12.gif 
+alternatepal        data/chars/1sonny/alter13.gif 
+alternatepal        data/chars/1sonny/alter14.gif 
+alternatepal        data/chars/1sonny/alter15.gif 
+alternatepal        data/chars/1sonny/alter16.gif 
+alternatepal        data/chars/1sonny/alter17.gif 
+alternatepal        data/chars/1sonny/alter18.gif 
+alternatepal        data/chars/1sonny/alter19.gif 
+alternatepal        data/chars/1sonny/alter20.gif 
+alternatepal        data/chars/1sonny/alter21.gif 
+alternatepal        data/chars/1sonny/alter22.gif 
+
+
+hmap 1 4
+
+
+com      a2       freespecial1
+com      a3       freespecial2
+com      a4       freespecial3
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim spawn
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wiidle.gif
+
+anim charge
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wiidle.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wiwk01.gif
+         frame      data/chars/1sonnyw/wiwk02.gif
+         frame      data/chars/1sonnyw/wiwk03.gif
+         frame      data/chars/1sonnyw/wiwk04.gif
+         frame      data/chars/1sonnyw/wiwk05.gif
+         frame      data/chars/1sonnyw/wiwk06.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 6 0 a2 freespecial6
+         frame      data/chars/1sonnyw/wirun01.gif
+         frame      data/chars/1sonnyw/wirun02.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1sonnyw/wirun03.gif
+         frame      data/chars/1sonnyw/wirun04.gif
+         frame      data/chars/1sonnyw/wirun05.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1sonnyw/wirun06.gif
+
+anim runattack
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       68 83 24 44
+	 move       6
+	 cancel     7 8 0 a freespecial11
+ 	 sound      data/sounds/slide01.wav
+         frame      data/chars/1sonnyw/wislide01.gif
+         frame      data/chars/1sonnyw/wislide01.gif
+	 hitfx      data/sounds/beatsf3.wav
+	 attack90   75 117 37 16 5 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.2 1 0
+         frame      data/chars/1sonnyw/wislide02.gif
+         frame      data/chars/1sonnyw/wislide02.gif
+         frame      data/chars/1sonnyw/wislide02.gif
+         frame      data/chars/1sonnyw/wislide02.gif
+         frame      data/chars/1sonnyw/wislide02.gif
+	 move       3
+         frame      data/chars/1sonnyw/wislide02.gif
+         frame      data/chars/1sonnyw/wislide02.gif
+	 attack2    0 0 0 0
+	 delay      20
+         frame      data/chars/1sonnyw/wislide02.gif
+	 delay      14
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim freespecial11
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 attack     0
+	 jumpframe  1 1.6 1.2 0
+	 landframe  3
+ 	 sound      data/sounds/punch2.wav
+         frame      data/chars/1sonnyw/wislide03.gif
+	 delay      25
+	 hitfx      data/sounds/beatbr2.wav
+	 attack     71 103 42 15 3 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.3 2 0
+         frame      data/chars/1sonnyw/wislide04.gif
+	 delay      99
+	 attack     74 104 31 22 3 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.3 1.5 0
+         frame      data/chars/1sonnyw/wislide05.gif
+	 delay      13
+	 attack     0
+         frame      data/chars/1sonnyw/wislide06.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim freespecial6
+	 loop       0
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 3.3 0.2 0	
+	 landframe  19
+	 fastattack 1
+	 energycost 60
+	 mponly     1
+         frame      data/chars/1sonnyw/wicrouch.gif
+	 delay      7
+	 sound      data/sounds/screw1.wav
+         frame      data/chars/1sonnyw/wira01.gif
+	 delay      5
+	 hitfx      data/sounds/whip06.wav
+	 attack92   62 79 49 51 1 1 0 0 5 5
+	 dropv      2.5 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira02.gif
+	 attack92   0
+         frame      data/chars/1sonnyw/wira03.gif
+	 attack93   62 79 49 51 1 1 0 0 5 5
+	 dropv      2.5 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira04.gif
+	 attack93   0
+         frame      data/chars/1sonnyw/wira05.gif
+	 attack92   62 79 49 51 1 1 0 0 5 5
+	 dropv      2 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira06.gif
+	 attack92   0
+         frame      data/chars/1sonnyw/wira07.gif
+	 attack93   62 79 49 51 1 1 0 0 5 5
+	 dropv      1.5 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira08.gif
+	 attack93   0
+         frame      data/chars/1sonnyw/wira09.gif
+	 attack92   62 79 49 51 1 1 0 0 5 5
+	 dropv      1 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira02.gif
+	 attack92   0
+         frame      data/chars/1sonnyw/wira03.gif
+	 attack93   62 79 49 51 1 1 0 0 5 5
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira04.gif
+	 attack93   0
+         frame      data/chars/1sonnyw/wira05.gif
+	 attack92   62 79 49 51 1 1 0 0 5 5
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira06.gif
+	 attack92   0
+         frame      data/chars/1sonnyw/wira07.gif
+	 attack     62 79 49 51 5 1 0 0 5 5
+	 dropv      -6 3 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wira08.gif
+         frame      data/chars/1sonnyw/wira09.gif
+	 attack     0
+	 delay      99
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      9
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     6 7 1 a2 freespecial7 #whip chain2
+@cmd ani0020 openborconstant("ANI_ATTACK2") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_ATTACK2") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_ATTACK2") openborconstant("ANI_PAIN7")
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia01.gif
+         frame      data/chars/1sonnyw/wia02.gif
+         frame      data/chars/1sonnyw/wia03.gif
+         frame      data/chars/1sonnyw/wia04.gif
+	 delay      17
+	 attack     84 90 82 5 5 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia05.gif
+	 delay      4
+	 attack8    0
+         frame      data/chars/1sonnyw/wia06.gif
+	 delay      5
+         frame      data/chars/1sonnyw/wia07.gif
+
+anim attack2
+	 range      5 60
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia01.gif
+         frame      data/chars/1sonnyw/wia02.gif
+         frame      data/chars/1sonnyw/wia03.gif
+         frame      data/chars/1sonnyw/wia04.gif
+	 delay      17
+	 attack     84 90 82 5 5 1 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 1.5 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia05.gif
+	 delay      4
+	 attack8    0
+         frame      data/chars/1sonnyw/wia06.gif
+	 delay      5
+         frame      data/chars/1sonnyw/wia07.gif
+
+anim freespecial7
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     6 7 1 a freespecial8 #whip chain2
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia16.gif
+         frame      data/chars/1sonnyw/wia17.gif
+	 delay      6
+         frame      data/chars/1sonnyw/wia18.gif
+@cmd velo001 0.3 0 0
+	 delay      4
+         frame      data/chars/1sonnyw/wia19.gif
+@cmd velo001 0
+	 delay      17
+	 attack90   83 83 81 12 5 0 0 0 8 5
+	 dropv      1.3 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia20.gif
+	 delay      4
+	 attack90  0
+         frame      data/chars/1sonnyw/wia21.gif
+	 delay      5
+         frame      data/chars/1sonnyw/wia22.gif
+         frame      data/chars/1sonnyw/wia16.gif
+
+anim freespecial8
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     6 7 1 a  freespecial9 #whip chain2
+	 cancel     6 7 1 a2 freespecial9 #whip chain2
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia28.gif
+         frame      data/chars/1sonnyw/wia29.gif
+@cmd velo001 0.3 0 0
+         frame      data/chars/1sonnyw/wia30.gif
+         frame      data/chars/1sonnyw/wia31.gif
+@cmd velo001 0 
+	 delay      17
+	 attack91   83 83 81 12 5 0 0 0 8 5
+	 dropv      1.3 0.2 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia32.gif
+	 delay      4
+	 attack91   0
+         frame      data/chars/1sonnyw/wia06.gif
+	 delay      5
+         frame      data/chars/1sonnyw/wia07.gif
+
+anim freespecial9
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia16.gif
+@cmd velo001 0.3 0 0
+         frame      data/chars/1sonnyw/wia23.gif
+         frame      data/chars/1sonnyw/wia24.gif
+         frame      data/chars/1sonnyw/wia25.gif
+@cmd velo001 0 
+	 delay      17
+	 attack14   79 88 83 7 5 1 0 0 8 5
+	 jugglecost 10
+	 dropv      1.3 1.5 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia26.gif
+	 delay      4
+	 attack14   0
+         frame      data/chars/1sonnyw/wia27.gif
+	 delay      15
+         frame      data/chars/1sonnyw/wia38.gif
+	 delay      5
+         frame      data/chars/1sonnyw/wia07.gif
+
+#kick button
+anim freespecial1
+	 range      5 60
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       68 83 24 44
+	 range      -10 50
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
+         frame      data/chars/1sonnyw/wib01.gif
+         frame      data/chars/1sonnyw/wib02.gif
+	 hitfx      data/sounds/beat2.wav
+	 delay      14
+	 attack3    85 78 24 26 9 0 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 0.5 0
+      @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wib03.gif
+	 delay      9
+	 attack3    0 0 0 0 
+         frame      data/chars/1sonnyw/wib04.gif
+
+anim follow1
+	 range      -10 60
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     4 6 0 b f s freespecial10
+         frame      data/chars/1sonnyw/wib01.gif
+         frame      data/chars/1sonnyw/wib05.gif
+	 delay      10
+	 attack     85 78 24 26 14 1 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      2 0.7 0
+         frame      data/chars/1sonnyw/wib06.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/1sonnyw/wib07.gif
+         frame      data/chars/1sonnyw/wib04.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      10
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim jump
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/jump1.wav
+	 cancel     1 3 0 a2 freespecial50
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      10
+	 bbox       70 85 21 28
+         frame      data/chars/1sonnyw/wiju02.gif
+         frame      data/chars/1sonnyw/wiju03.gif
+         frame      data/chars/1sonnyw/wiju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wiju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/1sonnyw/wiwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1sonnyw/wiju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   76 101 27 24 12 1 0 0 12 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/wiak04.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim jumpattack
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       69 88 24 25
+	 landframe  7
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia08.gif
+         frame      data/chars/1sonnyw/wia09.gif
+         frame      data/chars/1sonnyw/wia10.gif
+	 delay      15
+	 attack     87 91 81 7 5 1 0 0 8 5
+	 jugglecost 10
+	 dropv      1.1 1.3 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia11.gif
+	 delay      4
+	 attack8    0
+         frame      data/chars/1sonnyw/wia12.gif
+         frame      data/chars/1sonnyw/wiju02.gif
+	 delay      99
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      12
+         frame      data/chars/1sonnyw/wia07.gif
+
+anim jumpattack2
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       69 88 24 25
+	 landframe  7
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia12.gif
+         frame      data/chars/1sonnyw/wia08.gif
+         frame      data/chars/1sonnyw/wia14.gif
+	 delay      15
+	 attack     94 101 48 46 5 1 0 0 8 5
+	 jugglecost 10
+	 dropv      1.1 1.3 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia15.gif
+	 delay      4
+	 attack8    0
+         frame      data/chars/1sonnyw/wia12.gif
+         frame      data/chars/1sonnyw/wiju02.gif
+	 delay      99
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      12
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       69 88 24 25
+	 landframe  7
+	 sound      data/sounds/whip05.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia12.gif
+         frame      data/chars/1sonnyw/wia08.gif
+         frame      data/chars/1sonnyw/wia13x.gif
+	 delay      15
+	 attack     93 39 47 45 5 1 0 0 8 5
+	 jugglecost 10
+	 dropv      1.1 1.3 0
+	 forcedirection -1
+@cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1sonnyw/wia13.gif
+	 delay      4
+	 attack8    0
+         frame      data/chars/1sonnyw/wia12.gif
+         frame      data/chars/1sonnyw/wiju02.gif
+	 delay      99
+         frame      data/chars/1sonnyw/wiju01.gif
+	 delay      12
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+#DIVE KICK
+anim freespecial50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch1.wav
+	 hitfx      data/sounds/beat2.wav
+         frame      data/chars/1sonnyw/wiak02.gif
+         frame      data/chars/1sonnyw/wiak03.gif
+	 delay      999
+	 attack11   79 99 24 29 9 1 0 0 12 5
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1sonnyw/wiak04.gif
+         delay      12
+	 attack11   0 0 0 0
+         frame      data/chars/1sonnyw/wicrouch.gif
+
+anim block
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       69 105 24 25
+	 weaponframe 1 sonny
+         frame      data/chars/1sonnyw/wicrouch.gif
+         frame      data/chars/1sonny/idle01.gif
+
+anim special
+
+anim grab
+
+anim grabattack
+
+anim grabattack2
+
+anim grabup
+
+anim grabdown
+
+anim grabdown2
+
+#throw
+anim grabbackward
+
+anim pain1
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1sonny/pain01.gif
+
+anim pain2
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1sonny/pain02.gif
+
+#breathless
+anim pain3
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1sonny/pain01.gif
+	 delay      45
+         frame      data/chars/1sonny/pain03.gif
+
+#stun
+anim pain4
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1sonny/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall01.gif
+	 delay      999
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmy/fall02.gif
+	 delay      12
+         frame      data/chars/1jimmy/fall02.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1jimmy/fall03.gif
+
+anim rise
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall03.gif
+	 delay      12
+         frame      data/chars/1jimmy/rise01.gif
+         frame      data/chars/1jimmy/rise02.gif
+
+#########extra moves
+
+#backfist attack
+#one extra backfist attack
+anim follow4
+#fierce kick attack
+anim freespecial5
+anim follow5
+
+com      b b s freespecial10
+#SCORPION SPEAR WHIP
+anim freespecial10
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 40
+	 mponly     1
+	 followanim 6
+	 followcond 3
+	 sound      data/sounds/whip08.wav
+	 hitfx      data/sounds/whip06.wav
+         frame      data/chars/1sonnyw/wia16.gif
+         frame      data/chars/1sonnyw/wisp01.gif
+	 delay      3
+         frame      data/chars/1sonnyw/wisp02.gif
+         frame      data/chars/1sonnyw/wisp03.gif
+         frame      data/chars/1sonnyw/wisp04.gif
+         frame      data/chars/1sonnyw/wisp05.gif
+         frame      data/chars/1sonnyw/wisp06.gif
+	 delay      15
+	 attack14   107 81 62 8 3 1 0 0 8 5
+	 jugglecost 5
+	 dropv      2 -0.3
+         frame      data/chars/1sonnyw/wisp07.gif
+	 delay      8
+	 attack14   0
+         frame      data/chars/1sonnyw/wia21.gif
+         frame      data/chars/1sonnyw/wia22.gif
+         frame      data/chars/1sonnyw/wia16.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wib04.gif
+
+anim follow6
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wisp07.gif
+         frame      data/chars/1sonnyw/wisp08.gif
+         frame      data/chars/1sonnyw/wisp09.gif
+	 delay      12
+         frame      data/chars/1sonnyw/wia38.gif
+	 delay      7
+         frame      data/chars/1sonnyw/wib04.gif
+         frame      data/chars/1sonnyw/wia07.gif
+
+anim freespecial2
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+5); 
+@end_script
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1sonnyw/wia28.gif
+	 delay      4
+         sound	    data/sounds/weap01.wav
+         frame      data/chars/1sonnyw/wia29.gif
+         frame      data/chars/1sonnyw/wia30.gif
+         frame      data/chars/1sonnyw/wia31.gif
+         frame      data/chars/1sonnyw/wia32x1.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wia33.gif
+	 delay      4
+         sound	    data/sounds/weap02.wav
+         frame      data/chars/1sonnyw/wia34.gif
+         frame      data/chars/1sonnyw/wia35x1.gif
+         frame      data/chars/1sonnyw/wia36.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wia37.gif
+	 delay      4
+         frame      data/chars/1sonnyw/wia28.gif
+         sound	    data/sounds/weap01.wav
+         frame      data/chars/1sonnyw/wia29.gif
+         frame      data/chars/1sonnyw/wia30.gif
+         frame      data/chars/1sonnyw/wia31.gif
+         frame      data/chars/1sonnyw/wia32x1.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wia33.gif
+	 delay      4
+         sound	    data/sounds/weap02.wav
+         frame      data/chars/1sonnyw/wia34.gif
+         frame      data/chars/1sonnyw/wia35x1.gif
+         frame      data/chars/1sonnyw/wia36.gif
+	 delay      8
+         frame      data/chars/1sonnyw/wia37.gif
+	 delay      15
+         frame      data/chars/1sonnyw/wia38.gif
+	 delay      6
+         frame      data/chars/1sonnyw/wib04.gif
+
+anim freespecial3
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 hitflash   Qflash2
+ 	 energycost 80
+         mponly     1
+	 jumpframe  2 1.4 1.5 0
+	 landframe  12
+	 move       3
+         sound	    data/sounds/puncha.wav
+         frame      data/chars/1sonnyw/wirun04.gif
+         frame      data/chars/1sonnyw/wirun05.gif
+	 delay      5
+         hitfx	    data/sounds/beatbr2.wav
+	 attack14   56 71 49 54 7 1 0 0 8 5
+	 jugglecost 10
+	 dropv      1.5 1.5 0
+	 forcedirection 1
+         frame      data/chars/1sonnyw/wisp10.gif
+         frame      data/chars/1sonnyw/wisp11.gif
+         frame      data/chars/1sonnyw/wisp10.gif
+         frame      data/chars/1sonnyw/wisp12.gif
+         frame      data/chars/1sonnyw/wisp10.gif
+         frame      data/chars/1sonnyw/wisp13.gif
+         frame      data/chars/1sonnyw/wisp10.gif
+         frame      data/chars/1sonnyw/wisp14.gif
+         frame      data/chars/1sonnyw/wisp10.gif
+@cmd	updateframe getlocalvar("self") 3
+         frame      data/chars/1sonnyw/wisp14.gif
+@cmd velo001 0.8 0 0
+	 delay      8
+	 attack14   0
+         frame      data/chars/1sonnyw/wisp15.gif
+@cmd velo001 0
+	 delay      14
+         frame      data/chars/1sonnyw/wia38.gif
+	 delay      6
+         frame      data/chars/1sonnyw/wib04.gif
+
+
+#########DD1 style cancels
+
+anim freespecial20
+
+anim freespecial21
+
+anim freespecial22
+
+#########DD2 style cancels
+
+anim freespecial23
+
+anim freespecial24
+
+anim freespecial25
+
+anim freespecial26
+
+anim freespecial27
+
+anim freespecial28
+
+anim follow7
+
