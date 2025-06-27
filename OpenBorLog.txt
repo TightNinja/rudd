@@ -1,0 +1,2403 @@
+Total Ram: 17005608960 Bytes
+ Free Ram: 8347508736 Bytes
+ Used Ram: 14376960 Bytes
+
+debug:nativeWidth, nativeHeight, bpp, Hz  2048, 1152, 24, 170
+OpenBoR v3.0 Build , Compile Date: Aug 29 2018
+
+Game Selected: ./Paks/MyGame.pak
+
+FileCaching System Init......	Disabled
+Initializing video............
+Reading video settings from 'data/video.txt'.
+
+Colordepth is depreciated. All modules are displayed with a 32bit color screen.
+
+
+Using debug video mode: 256 x 224
+Initialized video.............	256x224 (Mode: 255)
+
+Loading menu.txt.............	Done!
+Loading fonts................	1 2 3 4 Done!
+Timer init...................	Done!
+Initialize Sound..............	
+Loading sprites..............	Done!
+Loading level order..........	Done!
+Loading model constants......	Done!
+Loading script settings......	Done!
+Loading scripts..............	Done!
+Loading models...............
+
+Joystick: "UNKNOWN" connected at port: 0 at 2025-06-27 00:32:29
+Joystick: "UNKNOWN" connected at port: 1 at 2025-06-27 00:32:29
+Cacheing 'Flash' from data/chars/0misc/Flash.txt
+Cacheing 'Qflash' from data/chars/0misc/QFlash.txt
+Cacheing 'Qmkout' from data/chars/0misc/Qmkout.txt
+Cacheing 'Qmkooh' from data/chars/0misc/Qmkooh.txt
+Cacheing 'Qmkexe' from data/chars/0misc/Qmkexe.txt
+Cacheing 'Qmksup' from data/chars/0misc/Qmksup.txt
+Cacheing 'Qflash2' from data/chars/0misc/QFlash2.txt
+Cacheing 'Qflash2b' from data/chars/0misc/QFlash2b.txt
+Cacheing 'Expflash' from data/chars/0misc/expflash.txt
+Cacheing 'Fflash' from data/chars/0misc/Fflash.txt
+Cacheing 'Bflash' from data/chars/0misc/Bflash.txt
+Cacheing 'BflashS' from data/chars/0misc/Bflashs.txt
+Cacheing 'wflash' from data/chars/0misc/wflash.txt
+Cacheing 'Brfla' from data/chars/0misc/brfla.txt
+Cacheing 'Brfla2' from data/chars/0misc/brfla2.txt
+Cacheing 'Brflaog' from data/chars/0misc/brflaog.txt
+Cacheing 'Brfladu' from data/chars/0misc/brfladu.txt
+Cacheing 'moron' from data/chars/0misc/moron.txt
+Cacheing 'comult' from data/chars/0misc/comult.txt
+Cacheing 'comult2' from data/chars/0misc/comult2.txt
+Cacheing 'common' from data/chars/0misc/common.txt
+Cacheing 'common2' from data/chars/0misc/common2.txt
+Cacheing 'comkil' from data/chars/0misc/comkil.txt
+Cacheing 'comkil2' from data/chars/0misc/comkil2.txt
+Cacheing 'commas' from data/chars/0misc/commas.txt
+Cacheing 'comhyp' from data/chars/0misc/comhyp.txt
+Cacheing 'combla' from data/chars/0misc/combla.txt
+Cacheing 'combla2' from data/chars/0misc/combla2.txt
+Cacheing 'combru' from data/chars/0misc/combru.txt
+Cacheing 'comkin' from data/chars/0misc/comkin.txt
+Cacheing 'comutm' from data/chars/0misc/comutm.txt
+Cacheing 'comosom' from data/chars/0misc/comosom.txt
+Cacheing 'comwwf' from data/chars/0misc/comwwf.txt
+Cacheing 'victoBi' from data/chars/0misc/victoBi.txt
+Cacheing 'victoJi' from data/chars/0misc/victoJi.txt
+Cacheing 'victoJe' from data/chars/0misc/victoJe.txt
+Cacheing 'victoSo' from data/chars/0misc/victoSo.txt
+Cacheing 'victoOG' from data/chars/0misc/victoOG.txt
+Cacheing 'victoCR' from data/chars/0misc/victoCR.txt
+Cacheing 'victoSP' from data/chars/0misc/victoSP.txt
+Cacheing 'victoSQ' from data/chars/0misc/victoSQ.txt
+Cacheing 'bolt01' from data/chars/0weap/bolt01.txt
+Cacheing 'bolt02' from data/chars/0weap/bolt02.txt
+Cacheing 'bosser' from data/chars/0weap/bosser.txt
+Cacheing 'scnkq3' from data/chars/0misc/scnkq3.txt
+Cacheing 'scnkq4' from data/chars/0misc/scnkq4.txt
+Cacheing 'super01' from data/chars/0misc/super01.txt
+Cacheing 'eslam' from data/chars/0misc/eslam.txt
+Cacheing 'levelxnd' from data/chars/0misc/levelxnd.txt
+Cacheing 'levelxxd' from data/chars/0misc/levelxxd.txt
+Cacheing 'ssf1' from data/chars/0misc/ssf1.txt
+Cacheing 'ssf2' from data/chars/0misc/ssf2.txt
+Cacheing 'ssfd' from data/chars/0misc/ssfd.txt
+Cacheing 'ssj1' from data/chars/0misc/ssj1.txt
+Cacheing 'ssj2' from data/chars/0misc/ssj2.txt
+Cacheing 'ssfs' from data/chars/0misc/ssfs.txt
+Cacheing 'ssfs2' from data/chars/0misc/ssfs2.txt
+Cacheing 'ssfso' from data/chars/0misc/ssfso.txt
+Cacheing 'seiransw' from data/chars/0misc/seiransw.txt
+Cacheing 'colat1' from data/chars/0misc/colat1.txt
+Cacheing 'colat2' from data/chars/0misc/colat2.txt
+Cacheing 'slink' from data/chars/0misc/slink.txt
+Cacheing 'slink2' from data/chars/0misc/slink2.txt
+Cacheing 'sonicbm' from data/chars/0misc/sonicbm.txt
+Cacheing 'sa' from data/chars/0misc/sa.txt
+Cacheing 'Jimmysa' from data/chars/1jimmy/jimmysa.txt
+Cacheing 'sab' from data/chars/0misc/sab.txt
+Cacheing 'critic' from data/chars/0misc/critic.txt
+Cacheing 'quake01' from data/chars/0misc/quake01.txt
+Cacheing 'quake02' from data/chars/0misc/quake02.txt
+Cacheing 'ndra' from data/chars/1ndra/ndra.txt
+Cacheing 'ndra2' from data/chars/1ndra/ndra2.txt
+Cacheing 'Billy' from data/chars/1billy/billy.txt
+Cacheing 'Billy2' from data/chars/1billy/billy2.txt
+Cacheing 'Billy3' from data/chars/1billy/billy3.txt
+Cacheing 'Jimmy' from data/chars/1jimmy/jimmy.txt
+Cacheing 'Jimmy2' from data/chars/1jimmy/jimmy2.txt
+Cacheing 'Jimmy3' from data/chars/1jimmy/jimmy3.txt
+Cacheing '1Jeff' from data/chars/2jeff/1jeff.txt
+Cacheing 'Sonny' from data/chars/1sonny/sonny.txt
+Cacheing 'Sonny2' from data/chars/1sonny/sonny2.txt
+Cacheing 'Chinsei' from data/chars/1seiran/chinsei.txt
+Cacheing 'CBilly' from data/chars/1billy/cbilly.txt
+Cacheing 'ess' from data/chars/misc/ess/ess.txt
+Cacheing 'esq' from data/chars/misc/esq/esq.txt
+Cacheing 'BillyN' from data/chars/1billy/billyN.txt
+Cacheing 'BillyB' from data/chars/1billy/billyB.txt
+Cacheing 'CBillyB' from data/chars/1billy/CbillyB.txt
+Cacheing 'CBillyBoo' from data/chars/1billy/Cbillyboo.txt
+Cacheing 'CBillyN' from data/chars/1billy/CbillyN.txt
+Cacheing 'CBillyK' from data/chars/1billy/CbillyK.txt
+Cacheing 'CBillyD' from data/chars/1billy/CbillyD.txt
+Cacheing 'CBillyR' from data/chars/1billy/CbillyR.txt
+Cacheing 'CBillyW' from data/chars/1billy/CbillyW.txt
+Cacheing 'BillyK' from data/chars/1billy/billyK.txt
+Cacheing 'BillyR' from data/chars/1billy/billyR.txt
+Cacheing 'BillyD' from data/chars/1billy/billyD.txt
+Cacheing 'BillyBoo' from data/chars/1billy/billyboo.txt
+Cacheing 'BillyW' from data/chars/1billy/billyW.txt
+Cacheing 'JimmyN' from data/chars/1jimmy/JimmyN.txt
+Cacheing 'JimmyB' from data/chars/1jimmy/JimmyB.txt
+Cacheing 'JimmyK' from data/chars/1jimmy/JimmyK.txt
+Cacheing 'JimmyR' from data/chars/1jimmy/JimmyR.txt
+Cacheing 'JimmyD' from data/chars/1jimmy/JimmyD.txt
+Cacheing 'Jimmyboo' from data/chars/1jimmy/Jimmyboo.txt
+Cacheing 'JimmyW' from data/chars/1jimmy/JimmyW.txt
+Cacheing '1Jeffkni' from data/chars/2jeff/1jeffkni.txt
+Cacheing '1Jeffgun' from data/chars/2jeff/1jeffgun.txt
+Cacheing 'SonnyB' from data/chars/1sonny/sonnyB.txt
+Cacheing 'SonnyW' from data/chars/1sonny/sonnyW.txt
+Cacheing 'SonnyN' from data/chars/1sonny/sonnyN.txt
+Cacheing 'SonnyK' from data/chars/1sonny/sonnyK.txt
+Cacheing 'SonnyR' from data/chars/1sonny/sonnyR.txt
+Cacheing 'SonnyD' from data/chars/1sonny/sonnyD.txt
+Cacheing 'SonnyBoo' from data/chars/1sonny/sonnyBoo.txt
+Cacheing 'Yagyura' from data/chars/1seiran/Yagyura.txt
+Cacheing '00charge' from data/chars/1seiran/00charge.txt
+Cacheing '00ranoob' from data/chars/1seiran/00ranoob.txt
+Cacheing '00bak' from data/chars/1seiran/00bak.txt
+Cacheing '00rfire' from data/chars/1seiran/00rfire.txt
+Cacheing '00ninf' from data/chars/1seiran/00ninf.txt
+Cacheing '00sbomb' from data/chars/1seiran/00sbomb.txt
+Cacheing '00rwood' from data/chars/1seiran/00rwood.txt
+Cacheing 'yagyuC1' from data/chars/1seiran/yagyuC1.txt
+Cacheing 'yagyuC2' from data/chars/1seiran/yagyuC2.txt
+Cacheing '01ranz' from data/chars/1seiran/01ranz.txt
+Cacheing '02ranz' from data/chars/1seiran/02ranz.txt
+Cacheing '03ranz' from data/chars/1seiran/03ranz.txt
+Cacheing '04ranzl1' from data/chars/1seiran/04ranzl1.txt
+Cacheing '04chinsl1' from data/chars/1seiran/04chinsl1.txt
+Cacheing '05ranzl2' from data/chars/1seiran/05ranzl2.txt
+Cacheing '05chinsl2' from data/chars/1seiran/05chinsl2.txt
+Cacheing '06ranzu1' from data/chars/1seiran/06ranzu1.txt
+Cacheing '07ranzu2' from data/chars/1seiran/07ranzu2.txt
+Cacheing '08ranzc1' from data/chars/1seiran/08ranzc1.txt
+Cacheing '09ranzc2' from data/chars/1seiran/09ranzc2.txt
+Cacheing '10ranzc3' from data/chars/1seiran/10ranzc3.txt
+Cacheing '12ranzsw' from data/chars/1seiran/12ranzsw.txt
+Cacheing '13ranzc4' from data/chars/1seiran/13ranzc4.txt
+Cacheing '14ranzc5' from data/chars/1seiran/14ranzc5.txt
+Cacheing '15ranzc6' from data/chars/1seiran/15ranzc6.txt
+Cacheing '11ranzw1' from data/chars/1seiran/11ranzw1.txt
+Cacheing '11chinsw1' from data/chars/1seiran/11chinsw1.txt
+Cacheing '12chinsw2' from data/chars/1seiran/12chinsw2.txt
+Cacheing '01chins' from data/chars/1seiran/01chins.txt
+Cacheing '02chins' from data/chars/1seiran/02chins.txt
+Cacheing '06chinsu1' from data/chars/1seiran/06chinsu1.txt
+Cacheing 'samsho01' from data/chars/0misc/samsho01.txt
+Cacheing 'exsuper' from data/chars/0misc/exsuper.txt
+Cacheing 'mulf' from data/chars/0misc/mulf.txt
+Cacheing 'reyes' from data/chars/1seiran/reyes.txt
+Cacheing 'rsswin1' from data/chars/1seiran/rsswin1.txt
+Cacheing 'rsswin2' from data/chars/1seiran/rsswin2.txt
+Cacheing 'rsswin3' from data/chars/1seiran/rsswin3.txt
+Cacheing 'rsswin4' from data/chars/1seiran/rsswin4.txt
+Cacheing 'yrstar' from data/chars/0weap/yrstar.txt
+Cacheing 'sfexw1' from data/chars/1seiran/sfexw1.txt
+Cacheing 'sfexw2' from data/chars/1seiran/sfexw2.txt
+Cacheing 'sfexw3' from data/chars/1seiran/sfexw3.txt
+Cacheing 'sfexw4' from data/chars/1seiran/sfexw4.txt
+Cacheing 'chin01' from data/chars/0misc/chin01.txt
+Cacheing 'chin02' from data/chars/0misc/chin02.txt
+Cacheing 'chin03' from data/chars/0misc/chin03.txt
+Cacheing 'chin04' from data/chars/0misc/chin04.txt
+Cacheing 'chin05' from data/chars/0misc/chin05.txt
+Cacheing 'chin07' from data/chars/0misc/chin07.txt
+Cacheing 'ranzou01' from data/chars/0misc/ranzou01.txt
+Cacheing 'ranzou02' from data/chars/0misc/ranzou02.txt
+Cacheing 'ranzou03' from data/chars/0misc/ranzou03.txt
+Cacheing 'ranzou04' from data/chars/0misc/ranzou04.txt
+Cacheing 'ranzou05' from data/chars/0misc/ranzou05.txt
+Cacheing 'wbot' from data/chars/misc/esq/wbot.txt
+Cacheing 'kabom' from data/chars/misc/esq/kabom.txt
+Cacheing 'sesq1' from data/chars/misc/esq/sesq1.txt
+Cacheing 'sesq2' from data/chars/misc/esq/sesq2.txt
+Cacheing 'wball' from data/chars/misc/esq/wball.txt
+Cacheing 'wball2' from data/chars/misc/esq/wball2.txt
+Cacheing 'wball3' from data/chars/misc/esq/wball3.txt
+Cacheing 'tsflash' from data/chars/misc/esq/tsflash.txt
+Cacheing 'tunesq1' from data/chars/misc/esq/tunesq1.txt
+Cacheing 'tunesq2' from data/chars/misc/esq/tunesq2.txt
+Cacheing 'tunesq3' from data/chars/misc/esq/tunesq3.txt
+Cacheing 'tunesq4' from data/chars/misc/esq/tunesq4.txt
+Cacheing 'tsscore' from data/chars/misc/esq/tsscore.txt
+Cacheing 'exsuper2' from data/chars/0misc/exsuper2.txt
+Cacheing 'esscro' from data/chars/misc/ess/esscro.txt
+Cacheing 'essfpi' from data/chars/misc/ess/essfpi.txt
+Cacheing 'essfla' from data/chars/misc/ess/essfla.txt
+Cacheing 'essour' from data/chars/misc/ess/essour.txt
+Cacheing 'esseker' from data/chars/misc/ess/seek.txt
+Cacheing 'essde1' from data/chars/misc/ess/essde1.txt
+Cacheing 'essde2' from data/chars/misc/ess/essde2.txt
+Cacheing 'essde3' from data/chars/misc/ess/essde3.txt
+Cacheing 'fball' from data/chars/misc/ess/fball.txt
+Cacheing 'itemcess' from data/chars/misc/ess/itemcess.txt
+Cacheing 'essaw1' from data/chars/misc/ess/essaw1.txt
+Cacheing 'esseker2' from data/chars/misc/ess/esseker2.txt
+Cacheing 'essotn' from data/chars/misc/ess/essotn.txt
+Cacheing 'essbloo' from data/chars/misc/ess/essbloo.txt
+Cacheing 'xr01' from data/chars/misc/ess/xr01.txt
+Cacheing 'xr02' from data/chars/misc/ess/xr02.txt
+Cacheing 'xr03' from data/chars/misc/ess/xr03.txt
+Cacheing 'hellt' from data/chars/misc/ess/hellt.txt
+Cacheing 'bgfx' from data/chars/misc/bgfx/bgfx.txt
+Cacheing 'fogss' from data/chars/misc/bgfx/fogss.txt
+Cacheing 'boltss' from data/chars/misc/bgfx/boltss.txt
+Cacheing 'smokess' from data/chars/misc/bgfx/smokess.txt
+Cacheing 'lighte' from data/chars/misc/bgfx/lighte.txt
+Cacheing 'dragoni' from data/chars/misc/bgfx/dragoni.txt
+Cacheing 'dragonok' from data/chars/misc/bgfx/dragonok.txt
+Cacheing 'phoenok' from data/chars/misc/bgfx/phoeok.txt
+Cacheing 'ogi' from data/chars/misc/bgfx/ogi.txt
+Cacheing 'phoenixi' from data/chars/misc/bgfx/phoenixi.txt
+Cacheing 'dragoxok' from data/chars/misc/bgfx/dragoxok.txt
+Cacheing 'jeffi' from data/chars/misc/bgfx/jeffi.txt
+Cacheing 'jeffok' from data/chars/misc/bgfx/jeffok.txt
+Cacheing 'seirani' from data/chars/misc/bgfx/seirani.txt
+Cacheing 'seiranok' from data/chars/misc/bgfx/seiranok.txt
+Cacheing 'esqi' from data/chars/misc/bgfx/esqi.txt
+Cacheing 'esqok' from data/chars/misc/bgfx/esqok.txt
+Cacheing 'essi' from data/chars/misc/bgfx/essi.txt
+Cacheing 'essok' from data/chars/misc/bgfx/essok.txt
+Cacheing 'bgfx2' from data/chars/misc/bgfx2/bgfx2.txt
+Cacheing 'options' from data/chars/misc/options.txt
+Cacheing 'zoomin' from data/chars/0misc/zoomin.txt
+Cacheing 'zoomout' from data/chars/0misc/zoomout.txt
+Cacheing 'ulf1' from data/chars/0misc/ulf1.txt
+Cacheing 'ulf2' from data/chars/0misc/ulf2.txt
+Cacheing 'ulf3' from data/chars/0misc/ulf3.txt
+Cacheing 'ulf4' from data/chars/0misc/ulf4.txt
+Cacheing 'ulf5' from data/chars/0misc/ulf5.txt
+Cacheing 'ulf6' from data/chars/0misc/ulf6.txt
+Cacheing 'uwwf' from data/chars/0misc/uwwf.txt
+Cacheing 'dx' from data/chars/0misc/dx.txt
+Cacheing 'agress' from data/chars/0misc/agress.txt
+Cacheing 'agress02' from data/chars/0misc/agress02.txt
+Cacheing 'wwfinish' from data/chars/0misc/wwfinish.txt
+Cacheing 'sonph' from data/chars/1sonny/sonph.txt
+Cacheing 'phoenix' from data/chars/0misc/phoenix.txt
+Cacheing 'exc' from data/chars/0misc/exc.txt
+Cacheing 'negrito' from data/chars/0misc/negrito.txt
+Cacheing 'secret02' from data/chars/0misc/secret02.txt
+Cacheing 'secret03' from data/chars/0misc/secret03.txt
+Cacheing 'secret04' from data/chars/0misc/secret04.txt
+Cacheing 'lightnn' from data/chars/0misc/lightnn.txt
+Cacheing 'torn01' from data/chars/0misc/torn01.txt
+Cacheing 'crain' from data/chars/0misc/crain.txt
+Cacheing 'cgasa' from data/chars/0misc/cgasa.txt
+Cacheing 'lightnn2' from data/chars/0misc/lightnn2.txt
+Cacheing 'lightnn3' from data/chars/0misc/lightnn3.txt
+Cacheing 'cshock' from data/chars/0weap/cshock.txt
+Cacheing 'torn02' from data/chars/0misc/torn02.txt
+Cacheing 'rste' from data/chars/0weap/rste.txt
+Cacheing 'rslash1' from data/chars/0weap/rslash1.txt
+Cacheing 'rslash2' from data/chars/0weap/rslash2.txt
+Cacheing 'rtyp' from data/chars/0weap/rtyp.txt
+Cacheing 'rwhi' from data/chars/0weap/rwhi.txt
+Cacheing 'xportal' from data/chars/2chen/xportal.txt
+Cacheing 'xvani' from data/chars/2chen/xvani.txt
+Cacheing 'xforce' from data/chars/2chen/xforce.txt
+Cacheing 'xforcec' from data/chars/2chen/xforcec.txt
+Cacheing 'xseal' from data/chars/2chen/xseal.txt
+Cacheing 'thunder' from data/chars/0misc/thunder.txt
+Cacheing 'tcrash' from data/chars/0misc/tcrash.txt
+Cacheing 'tcrash2' from data/chars/0misc/tcrash2.txt
+Cacheing 'slowitm' from data/chars/0weap/slowitm.txt
+Cacheing 'slowitmX1' from data/chars/0weap/slowitx1.txt
+Cacheing 'slowitm2' from data/chars/0weap/slowitm2.txt
+Cacheing 'slowitm3' from data/chars/0weap/slowitm3.txt
+Cacheing 'slowitmX2' from data/chars/0weap/slowitx2.txt
+Cacheing 'slowitmL' from data/chars/0weap/slowitmL.txt
+Cacheing 'slowitmXL' from data/chars/0weap/slowitxL.txt
+Cacheing 'slowitmXA' from data/chars/0weap/slowitxA.txt
+Cacheing 'sentkiller' from data/chars/0weap/sentkiller.txt
+Cacheing 'slowitmA' from data/chars/0weap/slowitmA.txt
+Cacheing 'stclearA' from data/chars/misc/staclear/stclearA.txt
+Cacheing 'enemkill' from data/chars/0weap/enemkill.txt
+Cacheing 'dpow00' from data/chars/0misc/dpow00.txt
+Cacheing 'dpow01' from data/chars/0misc/dpow01.txt
+Cacheing 'dpow02' from data/chars/0misc/dpow02.txt
+Cacheing 'slow' from data/chars/0weap/slow.txt
+Cacheing 'slow2' from data/chars/0weap/slow2.txt
+Cacheing 'slow3' from data/chars/0weap/slow3.txt
+Cacheing 'slow5' from data/chars/0weap/slow5.txt
+Cacheing 'slowt' from data/chars/0weap/slowt.txt
+Cacheing 'bossdef' from data/chars/0misc/bossdef.txt
+Cacheing 'burn' from data/chars/0misc/burn.txt
+Cacheing 'sddb01' from data/chars/0misc/sddb01.txt
+Cacheing 'sddba01' from data/chars/0misc/sddba01.txt
+Cacheing 'sddba02' from data/chars/0misc/sddba02.txt
+Cacheing 'sddbki01' from data/chars/0misc/sddbki01.txt
+Cacheing 'sddbki02' from data/chars/0misc/sddbki02.txt
+Cacheing 'dd2b01' from data/chars/0misc/dd2b01.txt
+Cacheing 'dd2bwfb01' from data/chars/0misc/dd2bwfb01.txt
+Cacheing 'dd3b01' from data/chars/0misc/dd3b01.txt
+Cacheing 'dd3sbmb01' from data/chars/0misc/dd3sbmb01.txt
+Cacheing 'sddbo' from data/chars/0misc/sddbo.txt
+Cacheing 'sddnun' from data/chars/0misc/sddnun.txt
+Cacheing 'sddwhi' from data/chars/0misc/sddwhi.txt
+Cacheing 'sddwhi2' from data/chars/0misc/sddwhi2.txt
+Cacheing 'sddjkni' from data/chars/0misc/sddjkni.txt
+Cacheing 'sddjgun' from data/chars/0misc/sddjgun.txt
+Cacheing 'sddj01' from data/chars/0misc/sddj01.txt
+Cacheing 'dd2j01' from data/chars/0misc/dd2j01.txt
+Cacheing 'dd2Jwf01' from data/chars/0misc/dd2Jwf01.txt
+Cacheing 'dd3j01' from data/chars/0misc/dd3j01.txt
+Cacheing 'dd3sbmj01' from data/chars/0misc/dd3sbmj01.txt
+Cacheing 'sddje01' from data/chars/0misc/sddje01.txt
+Cacheing 'sddje02' from data/chars/0misc/sddje02.txt
+Cacheing 'sddje03' from data/chars/0misc/sddje03.txt
+Cacheing 'sddjki02' from data/chars/0misc/sddjki02.txt
+Cacheing 'sddsbm01' from data/chars/0misc/sddsbm01.txt
+Cacheing 'sddmk301' from data/chars/0misc/sddmk301.txt
+Cacheing 'sddso01' from data/chars/0misc/sddso01.txt
+Cacheing 'sddso02' from data/chars/0misc/sddso02.txt
+Cacheing 'sddso03' from data/chars/0misc/sddso03.txt
+Cacheing 'sddso04' from data/chars/0misc/sddso04.txt
+Cacheing 'sddso05' from data/chars/0misc/sddso05.txt
+Cacheing 'sddski02' from data/chars/0misc/sddski02.txt
+Cacheing 'sddmk302' from data/chars/0misc/sddmk302.txt
+Cacheing 'sddsbm02' from data/chars/0misc/sddsbm02.txt
+Cacheing 'sddog1' from data/chars/0misc/sddog1.txt
+Cacheing 'sddog2' from data/chars/0misc/sddog2.txt
+Cacheing 'ess01' from data/chars/0misc/ess01.txt
+Cacheing 'ess02' from data/chars/0misc/ess02.txt
+Cacheing 'ess03' from data/chars/0misc/ess03.txt
+Cacheing 'ess04' from data/chars/0misc/ess04.txt
+Cacheing 'ess05' from data/chars/0misc/ess05.txt
+Cacheing 'ess06' from data/chars/0misc/ess06.txt
+Cacheing 'esq01' from data/chars/0misc/esq01.txt
+Cacheing 'esq02' from data/chars/0misc/esq02.txt
+Cacheing 'esq03' from data/chars/0misc/esq03.txt
+Cacheing 'esq04' from data/chars/0misc/esq04.txt
+Cacheing 'esq05' from data/chars/0misc/esq05.txt
+Cacheing 'esq06' from data/chars/0misc/esq06.txt
+Cacheing 'Williams' from data/chars/2wllms/wllms.txt
+Cacheing 'WilliamsH' from data/chars/2wllms/wllmsh.txt
+Cacheing 'Awilliam' from data/chars/2wllms/awilliam.txt
+Cacheing 'Wilkni' from data/chars/2wllms/wilkni.txt
+Cacheing 'Wilboo' from data/chars/2wllms/wilboo.txt
+Cacheing 'Roper' from data/chars/2roper/roper.txt
+Cacheing 'bottle' from data/chars/2roper/bottle.txt
+Cacheing 'Aroper' from data/chars/2roper/aroper.txt
+Cacheing 'Ropbo' from data/chars/2roper/ropbo.txt
+Cacheing 'Ropnu' from data/chars/2roper/ropnu.txt
+Cacheing 'RoperT' from data/chars/2roper/ropert.txt
+Cacheing 'Willtrn' from data/chars/2wllms/willtrn.txt
+Cacheing 'Willtrn' from data/chars/2wllms/willtrn.txt
+Cacheing 'Ropertrn' from data/chars/2roper/ropertrn.txt
+Cacheing 'Ropertrn' from data/chars/2roper/ropertrn.txt
+Cacheing 'RoperH' from data/chars/2roper/roperH.txt
+Cacheing 'biker1' from data/chars/2biker1/biker1.txt
+Cacheing 'Roperb1' from data/chars/2biker1/roperb1.txt
+Cacheing 'Roperb2' from data/chars/2biker1/roperb2.txt
+Cacheing 'bikeli' from data/chars/2biker1/bikeli.txt
+Cacheing 'Baker' from data/chars/2baker/baker.txt
+Cacheing 'BakerH' from data/chars/2baker/bakerH.txt
+Cacheing 'Gunguy' from data/chars/2gunguy/gunguy.txt
+Cacheing 'GunguyG' from data/chars/2gunguy/gunguyG.txt
+Cacheing 'Gunguyj1' from data/chars/2gunguy/gunguyj1.txt
+Cacheing 'gsmoke' from data/chars/2gunguy/gsmoke.txt
+Cacheing 'egre01' from data/chars/0weap/egre01.txt
+Cacheing 'emiss01' from data/chars/0weap/emiss01.txt
+Cacheing 'Linda' from data/chars/2linda1/linda1.txt
+Cacheing 'LindaH' from data/chars/2linda1/lindah.txt
+Cacheing 'Linda1W' from data/chars/2linda1/linda1W.txt
+Cacheing 'Steve' from data/chars/2steve/steve.txt
+Cacheing 'Jeff' from data/chars/2jeff/jeff.txt
+Cacheing 'Jeffj1' from data/chars/2jeff/jeffj1.txt
+Cacheing 'jeffpose' from data/chars/2jeff/jeffpose.txt
+Cacheing 'Jeffg' from data/chars/2jeff/Jeffg.txt
+Cacheing 'Jefstone' from data/chars/2jeff/jefstone.txt
+Cacheing 'Jackson' from data/chars/2jackson/jackson.txt
+Cacheing 'Chen1' from data/chars/2chen/chen1.txt
+Cacheing 'Chen2' from data/chars/2chen/chen2.txt
+Cacheing 'Chen2ch' from data/chars/2chen/chen2ch.txt
+Cacheing 'Chen3' from data/chars/2chen/chen3.txt
+Cacheing 'Chen3ch' from data/chars/2chen/chen3ch.txt
+Cacheing 'Chen4' from data/chars/2chen/chen4.txt
+Cacheing 'Chen4b' from data/chars/2chen/chen4b.txt
+Cacheing 'Chenclo' from data/chars/2chen/chenclo.txt
+Cacheing 'Mcguire' from data/chars/2mcguire/mcguire.txt
+Cacheing 'Carlem' from data/chars/2carlem/carlem.txt
+Cacheing 'DukeU1' from data/chars/2duke/dukeU1.txt
+Cacheing 'DukeU2' from data/chars/2duke/dukeU2.txt
+Cacheing 'DukeU3' from data/chars/2duke/dukeU3.txt
+Cacheing 'DukeU4' from data/chars/2duke/dukeU4.txt
+Cacheing 'DukeU5' from data/chars/2duke/dukeU5.txt
+Cacheing 'DukeU6' from data/chars/2duke/dukeU6.txt
+Cacheing 'DukeU7' from data/chars/2duke/dukeU7.txt
+Cacheing 'DukeU8' from data/chars/2duke/dukeU8.txt
+Cacheing 'Dukeres1' from data/chars/2duke/dukeres1.txt
+Cacheing 'Dukeres2' from data/chars/2duke/dukeres2.txt
+Cacheing 'Dukefa1' from data/chars/2duke/dukefa1.txt
+Cacheing 'Dukefa2' from data/chars/2duke/dukefa2.txt
+Cacheing 'kifall0' from data/chars/2duke/kifall0.txt
+Cacheing 'kifall1' from data/chars/2duke/kifall1.txt
+Cacheing 'kifall2' from data/chars/2duke/kifall2.txt
+Cacheing 'kifall3' from data/chars/2duke/kifall3.txt
+Cacheing 'kidukef' from data/chars/2duke/kidukef.txt
+Cacheing 'kiroutb1' from data/chars/2duke/kiroutb1.txt
+Cacheing 'kiroutb2' from data/chars/2duke/kiroutb2.txt
+Cacheing 'bp01' from data/chars/2duke/bp01.txt
+Cacheing 'bp02' from data/chars/2duke/bp02.txt
+Cacheing 'bp03' from data/chars/2duke/bp03.txt
+Cacheing 'bp04' from data/chars/2duke/bp04.txt
+Cacheing 'bp05' from data/chars/2duke/bp05.txt
+Cacheing 'bp06' from data/chars/2duke/bp06.txt
+Cacheing 'bp07' from data/chars/2duke/bp07.txt
+Cacheing 'bp08' from data/chars/2duke/bp08.txt
+Cacheing 'beamdu' from data/chars/2duke/beamdu.txt
+Cacheing 'ssfduke1' from data/chars/2duke/ssfduke1.txt
+Cacheing 'ssfduke2' from data/chars/2duke/ssfduke2.txt
+Cacheing 'ssfduke3' from data/chars/2duke/ssfduke3.txt
+Cacheing 'ssfduke4' from data/chars/2duke/ssfduke4.txt
+Cacheing 'suich' from data/chars/2duke/suich.txt
+Cacheing 'dminion' from data/chars/2duke/dminion.txt
+Cacheing 'resur' from data/chars/0weap/resur.txt
+Cacheing 'dukeli' from data/chars/0weap/dukeli.txt
+Cacheing 'dukein' from data/chars/0weap/dukein.txt
+Cacheing 'garg' from data/chars/0misc/garg.txt
+Cacheing 'dblow' from data/chars/2duke/dblow.txt
+Cacheing 'explo' from data/chars/2duke/explo.txt
+Cacheing 'firebi' from data/chars/0weap/firebi.txt
+Cacheing 'rsto' from data/chars/0weap/rsto.txt
+Cacheing 'mmxinl' from data/chars/0weap/mmxinl.txt
+Cacheing 'udukemet' from data/chars/0weap/udukemet.txt
+Cacheing 'uduketel' from data/chars/0weap/uduketel.txt
+Cacheing 'armain' from data/chars/2duke/armain.txt
+Cacheing 'fflashbg' from data/chars/2duke/fflashbg.txt
+Cacheing 'fflashat' from data/chars/2duke/fflashat.txt
+Cacheing 'fflashbe' from data/chars/2duke/fflashbe.txt
+Cacheing 'xbuster1' from data/chars/2duke/xbuster1.txt
+Cacheing 'xbuster2' from data/chars/2duke/xbuster2.txt
+Cacheing 'mbchar' from data/chars/2duke/mbchar.txt
+Cacheing 'mblaser' from data/chars/2duke/mblaser.txt
+Cacheing 'bfield' from data/chars/2duke/bfield.txt
+Cacheing 'mtensei1' from data/chars/2duke/mtensei1.txt
+Cacheing 'upfire1' from data/chars/2duke/upfire1.txt
+Cacheing 'upfire2' from data/chars/2duke/upfire2.txt
+Cacheing 'dball' from data/chars/2duke/dball.txt
+Cacheing 'dtel' from data/chars/2duke/dtel.txt
+Cacheing 'icef' from data/chars/2duke/icef.txt
+Cacheing 'bull' from data/chars/2duke/bull.txt
+Cacheing 'pbomb1' from data/chars/2duke/pbomb1.txt
+Cacheing 'pbomb2' from data/chars/2duke/pbomb2.txt
+Cacheing 'clashb1' from data/chars/2duke/clashb1.txt
+Cacheing 'rose' from data/chars/2duke/rose.txt
+Cacheing 'roseb' from data/chars/2duke/roseb.txt
+Cacheing 'dtor' from data/chars/2duke/dtor.txt
+Cacheing 'tmnti' from data/chars/2duke/tmnti.txt
+Cacheing 'dfinal1' from data/chars/2duke/dfinal1.txt
+Cacheing 'dtel2' from data/chars/2duke/dtel2.txt
+Cacheing 'toki01' from data/chars/2duke/toki01.txt
+Cacheing 'toki02' from data/chars/2duke/toki02.txt
+Cacheing 'toki03' from data/chars/2duke/toki03.txt
+Cacheing 'sgsabo' from data/chars/2duke/sgsabo.txt
+Cacheing 'mtduke2' from data/chars/2duke/mtduke2.txt
+Cacheing 'mtduke3' from data/chars/2duke/mtduke3.txt
+Cacheing 'mtduke4' from data/chars/2duke/mtduke4.txt
+Cacheing 'mtduke5' from data/chars/2duke/mtduke5.txt
+Cacheing 'Duke2' from data/chars/2duke2/duke2.txt
+Cacheing 'Duke3' from data/chars/2duke3/duke3.txt
+Cacheing 'Duke4' from data/chars/2duke4/duke4.txt
+Cacheing 'Duke5' from data/chars/2duke5/duke5.txt
+Cacheing 'Abobo' from data/chars/2abobo/abobo.txt
+Cacheing 'Bolo' from data/chars/2bolo/bolo.txt
+Cacheing 'Boloch' from data/chars/2bolo/boloch.txt
+Cacheing 'Ohara' from data/chars/2ohara/ohara.txt
+Cacheing 'Jick' from data/chars/2jick/jick.txt
+Cacheing 'BJick' from data/chars/2jick/Bjick.txt
+Cacheing 'BSteve' from data/chars/2steve/BSteve.txt
+Cacheing 'BJackson' from data/chars/2jackson/bjackson.txt
+Cacheing 'BMcguire' from data/chars/2mcguire/bmcguire.txt
+Cacheing 'Bcarlem' from data/chars/2carlem/bcarlem.txt
+Cacheing 'taimei1' from data/chars/2taimei/taimei1.txt
+Cacheing 'taimei2' from data/chars/2taimei/taimei2.txt
+Cacheing 'burnov' from data/chars/2burnov/burnov.txt
+Cacheing 'bburnov' from data/chars/2burnov/bburnov.txt
+Cacheing 'burnov2' from data/chars/2burnov/burnov2.txt
+Cacheing 'bburnov2' from data/chars/2burnov/bburnov2.txt
+Cacheing 'abore' from data/chars/2abore/abore.txt
+Cacheing 'ninspe' from data/chars/2abore/ninspe.txt
+Cacheing 'ninair' from data/chars/2abore/ninair.txt
+Cacheing 'ninsla' from data/chars/2abore/ninsla.txt
+Cacheing 'nindea' from data/chars/2abore/nindea.txt
+Cacheing 'smkb01' from data/chars/0weap/smkb01.txt
+Cacheing 'Star' from data/chars/0weap/Star.txt
+Cacheing 'knife02' from data/chars/0weap/knife02.txt
+Cacheing 'drum02' from data/chars/0weap/drum02.txt
+Cacheing 'rock02' from data/chars/0weap/rock02.txt
+Cacheing 'Bullet' from data/chars/0weap/bullet.txt
+Cacheing 'Bullet2' from data/chars/0weap/bullet2.txt
+Cacheing 'Missi01' from data/chars/0weap/missi01.txt
+Cacheing 'mgs' from data/chars/0misc/mgs.txt
+Cacheing 'nunchuck' from data/chars/0weap/nunchuck.txt
+Cacheing 'bo' from data/chars/0weap/bo.txt
+Cacheing 'knife01' from data/chars/0weap/knife01.txt
+Cacheing 'knife03' from data/chars/0weap/knife03.txt
+Cacheing 'rock01' from data/chars/0weap/rock01.txt
+Cacheing 'rock03' from data/chars/0weap/rock03.txt
+Cacheing 'drum01' from data/chars/0weap/drum01.txt
+Cacheing 'drum03' from data/chars/0weap/drum03.txt
+Cacheing 'BoomerangW' from data/chars/0weap/BoomerangW.txt
+Cacheing 'BoomerangW2' from data/chars/0weap/BoomerangW2.txt
+Cacheing 'BoomerangS' from data/chars/0weap/BoomerangS.txt
+Cacheing 'BoomerangS2' from data/chars/0weap/BoomerangS2.txt
+Cacheing 'empty2' from data/chars/0weap/empty2.txt
+Cacheing 'whip' from data/chars/0weap/whip.txt
+Cacheing 'gun01' from data/chars/0weap/gun01.txt
+Cacheing '1up' from data/chars/0item/1up.txt
+Cacheing 'aichange' from data/chars/misc/aichange.txt
+Cacheing 'stagein' from data/chars/misc/stagetr/stagein.txt
+Cacheing 'stageinT' from data/chars/misc/stagetr/stageinT.txt
+Cacheing 'stageou' from data/chars/misc/stagetr/stageou.txt
+Cacheing 'stageblk' from data/chars/misc/stagetr/stageblk.txt
+Cacheing 'stend' from data/chars/misc/stend/stend.txt
+Cacheing 'stendb' from data/chars/misc/stend/stendb.txt
+Cacheing 'stclear' from data/chars/misc/staclear/stclear.txt
+Cacheing 'stclear2' from data/chars/misc/staclear/stclear2.txt
+Cacheing 'stclearL' from data/chars/misc/staclear/stclearL.txt
+Cacheing 'staclrmk' from data/chars/misc/staclear/staclrmk.txt
+Cacheing 'staclmks' from data/chars/misc/staclear/staclmks.txt
+Cacheing 'staclrki' from data/chars/misc/staclear/staclrki.txt
+Cacheing 'kiflash' from data/chars/0misc/kiflash.txt
+Cacheing 'sbflash' from data/chars/0misc/sbflash.txt
+Cacheing 'staclwfb1' from data/chars/misc/staclear/staclwfb1.txt
+Cacheing 'staclwfj1' from data/chars/misc/staclear/staclwfj1.txt
+Cacheing 'mpsecret' from data/chars/misc/stend/mpsecret.txt
+Cacheing 'stclbur' from data/chars/misc/staclear/stclbur.txt
+Cacheing 'staclrsq' from data/chars/misc/staclear/staclrsq.txt
+Cacheing 'essstc1' from data/chars/misc/ess/essstc1.txt
+Cacheing 'essstc2' from data/chars/misc/ess/essstc2.txt
+Cacheing 'levelend2' from data/chars/0misc/levelend2.txt
+Cacheing 'staint1' from data/chars/misc/staint/staint1.txt
+Cacheing 'staint2' from data/chars/misc/staint/staint2.txt
+Cacheing 'staint3' from data/chars/misc/staint/staint3.txt
+Cacheing 'staint4' from data/chars/misc/staint/staint4.txt
+Cacheing 'staint5' from data/chars/misc/staint/staint5.txt
+Cacheing 'staint6' from data/chars/misc/staint/staint6.txt
+Cacheing 'staint7' from data/chars/misc/staint/staint7.txt
+Cacheing 'staclrd1' from data/chars/misc/staclr/staclrd1.txt
+Cacheing 'staclrd3' from data/chars/misc/staclr/staclrd3.txt
+Cacheing 'staclrd2' from data/chars/misc/staclr/staclrd2.txt
+Cacheing 'tbox1' from data/Bgs/dojo/tbox1.txt
+Cacheing 'tbox2' from data/Bgs/dojo/tbox2.txt
+Cacheing 'tbox2b' from data/Bgs/dojo/tbox2b.txt
+Cacheing 'tbox3' from data/Bgs/dojo/tbox3.txt
+Cacheing 'tbox3b' from data/Bgs/dojo/tbox3b.txt
+Cacheing 'tbox4' from data/Bgs/dojo/tbox4.txt
+Cacheing 'tbox4b' from data/Bgs/dojo/tbox4b.txt
+Cacheing 'tbox5' from data/Bgs/dojo/tbox5.txt
+Cacheing 'tbox5b' from data/Bgs/dojo/tbox5b.txt
+Cacheing 'tbox6' from data/Bgs/dojo/tbox6.txt
+Cacheing 'tbox6b' from data/Bgs/dojo/tbox6b.txt
+Cacheing 'tbox7' from data/Bgs/dojo/tbox7.txt
+Cacheing 'tbox7b' from data/Bgs/dojo/tbox7b.txt
+Cacheing 'tbox8' from data/Bgs/dojo/tbox8.txt
+Cacheing 'tbox8b' from data/Bgs/dojo/tbox8b.txt
+Cacheing 'tbox9' from data/Bgs/dojo/tbox9.txt
+Cacheing 'tbox9b' from data/Bgs/dojo/tbox9b.txt
+Cacheing 'tboxa' from data/Bgs/dojo/tboxa.txt
+Cacheing 'tboxab' from data/Bgs/dojo/tboxab.txt
+Cacheing 'tboxb' from data/Bgs/dojo/tboxb.txt
+Cacheing 'tboxbb' from data/Bgs/dojo/tboxbb.txt
+Cacheing 'tboxc' from data/Bgs/dojo/tboxc.txt
+Cacheing 'tboxcb' from data/Bgs/dojo/tboxcb.txt
+Cacheing 'tboxd' from data/Bgs/dojo/tboxd.txt
+Cacheing 'tboxdb' from data/Bgs/dojo/tboxdb.txt
+Cacheing 'tboxe' from data/Bgs/dojo/tboxe.txt
+Cacheing 'tboxeb' from data/Bgs/dojo/tboxeb.txt
+Cacheing 'tboxg' from data/Bgs/dojo/tboxg.txt
+Cacheing 'tboxgb' from data/Bgs/dojo/tboxgb.txt
+Cacheing 'tboxf' from data/Bgs/dojo/tboxf.txt
+Cacheing 'tboxfb' from data/Bgs/dojo/tboxfb.txt
+Cacheing 'tboxh' from data/Bgs/dojo/tboxh.txt
+Cacheing 'tboxhb' from data/Bgs/dojo/tboxhb.txt
+Cacheing 'tboxi' from data/Bgs/dojo/tboxi.txt
+Cacheing 'tboxib' from data/Bgs/dojo/tboxib.txt
+Cacheing 'tboxj' from data/Bgs/dojo/tboxj.txt
+Cacheing 'tboxjb' from data/Bgs/dojo/tboxjb.txt
+Cacheing 'tboxk' from data/Bgs/dojo/tboxk.txt
+Cacheing 'tboxkb' from data/Bgs/dojo/tboxkb.txt
+Cacheing 'tboxl' from data/Bgs/dojo/tboxl.txt
+Cacheing 'tboxlb' from data/Bgs/dojo/tboxlb.txt
+Cacheing 'tboxm' from data/Bgs/dojo/tboxm.txt
+Cacheing 'tboxmb' from data/Bgs/dojo/tboxmb.txt
+Cacheing 'tboxn' from data/Bgs/dojo/tboxn.txt
+Cacheing 'tboxnb' from data/Bgs/dojo/tboxnb.txt
+Cacheing 'tboxo' from data/Bgs/dojo/tboxo.txt
+Cacheing 'tboxob' from data/Bgs/dojo/tboxob.txt
+Cacheing 'tboxp' from data/Bgs/dojo/tboxp.txt
+Cacheing 'tboxpb' from data/Bgs/dojo/tboxpb.txt
+Cacheing 'tboxq' from data/Bgs/dojo/tboxq.txt
+Cacheing 'tboxqb' from data/Bgs/dojo/tboxqb.txt
+Cacheing 'tboxr' from data/Bgs/dojo/tboxr.txt
+Cacheing 'tboxrb' from data/Bgs/dojo/tboxrb.txt
+Cacheing 'tboxs' from data/Bgs/dojo/tboxs.txt
+Cacheing 'tboxsb' from data/Bgs/dojo/tboxsb.txt
+Cacheing 'tboxt' from data/Bgs/dojo/tboxt.txt
+Cacheing 'tboxtb' from data/Bgs/dojo/tboxtb.txt
+Cacheing 'tboxu' from data/Bgs/dojo/tboxu.txt
+Cacheing 'tboxub' from data/Bgs/dojo/tboxub.txt
+Cacheing 'tboxv' from data/Bgs/dojo/tboxv.txt
+Cacheing 'tboxvb' from data/Bgs/dojo/tboxvb.txt
+Cacheing 'tboxw' from data/Bgs/dojo/tboxw.txt
+Cacheing 'tboxwb' from data/Bgs/dojo/tboxwb.txt
+Cacheing 'tboxx' from data/Bgs/dojo/tboxx.txt
+Cacheing 'tboxxb' from data/Bgs/dojo/tboxxb.txt
+Cacheing 'tboxy' from data/Bgs/dojo/tboxy.txt
+Cacheing 'tboxyb' from data/Bgs/dojo/tboxyb.txt
+Cacheing 'tboxz' from data/Bgs/dojo/tboxz.txt
+Cacheing 'tboxzb' from data/Bgs/dojo/tboxzb.txt
+Cacheing 'intro01' from data/Bgs/stgin/intro01.txt
+Cacheing 'air01' from data/Bgs/stgin/air01.txt
+Cacheing 'chi01' from data/Bgs/stgin/chi01.txt
+Cacheing 'tru01' from data/Bgs/stgin/tru01.txt
+Cacheing 'slu01' from data/Bgs/stgin/slu01.txt
+Cacheing 'woo01' from data/Bgs/stgin/woo01.txt
+Cacheing 'woo02' from data/Bgs/stgin/woo02.txt
+Cacheing 'ucx' from data/Bgs/stgin/ucx.txt
+Cacheing 'pal01' from data/Bgs/stgin/pal01.txt
+Cacheing 'intro03' from data/Bgs/stgin/intro03.txt
+Cacheing 'intro04' from data/Bgs/stgin/intro04.txt
+Cacheing 'introcas' from data/Bgs/stgin/introcas.txt
+Cacheing 'introair' from data/Bgs/stgin/introair.txt
+Cacheing 'introchi' from data/Bgs/stgin/introchi.txt
+Cacheing 'introtru' from data/Bgs/stgin/introtru.txt
+Cacheing 'introslu' from data/Bgs/stgin/introslu.txt
+Cacheing 'introwoo' from data/Bgs/stgin/introwoo.txt
+Cacheing 'sunset1' from data/Bgs/stgin/sunset1.txt
+Cacheing 'sunset2' from data/Bgs/stgin/sunset2.txt
+Cacheing 'sunset2k' from data/Bgs/stgin/sunset2k.txt
+Cacheing 'sunset3' from data/Bgs/stgin/sunset3.txt
+Cacheing 'sunset4' from data/Bgs/stgin/sunset4.txt
+Cacheing 'sunset5' from data/Bgs/stgin/sunset5.txt
+Cacheing 'intropal' from data/Bgs/stgin/intropal.txt
+Cacheing '00incas' from data/bgs/01lasv/det/00incas.txt
+Cacheing 'cas01' from data/bgs/01lasv/det/cas01.txt
+Cacheing 'caskiller' from data/Bgs/01lasv/det/caskiller.txt
+Cacheing 'cas02' from data/bgs/01lasv/det/cas02.txt
+Cacheing 'kun01' from data/bgs/01lasv/det/kun01.txt
+Cacheing 'kun02' from data/bgs/01lasv/det/kun02.txt
+Cacheing 'kun03' from data/bgs/01lasv/det/kun03.txt
+Cacheing 'kun04' from data/bgs/01lasv/det/kun04.txt
+Cacheing 'kun05' from data/bgs/01lasv/det/kun05.txt
+Cacheing 'elv01' from data/bgs/02lasv/det/elv01.txt
+Cacheing 'elvd' from data/bgs/02lasv/det/elvd.txt
+Cacheing 'elvhole' from data/bgs/02lasv/det/elvhole.txt
+Cacheing 'fworkf' from data/bgs/03lasv/det/fworkf.txt
+Cacheing 'fworks' from data/bgs/03lasv/det/fworks.txt
+Cacheing 'fglas3' from data/Bgs/03lasv/fglas3.txt
+Cacheing '00inair' from data/bgs/01airp/det/00inair.txt
+Cacheing 'gbelter5' from data/Bgs/02airp/gbelter5.txt
+Cacheing 'gbelter6' from data/Bgs/02airp/gbelter6.txt
+Cacheing 'aguy1' from data/Bgs/01airp/det/aguy1.txt
+Cacheing 'coin' from data/Bgs/01airp/det/coin.txt
+Cacheing 'delay' from data/chars/misc/delay.txt
+Cacheing 'delay2' from data/chars/misc/delay2.txt
+Cacheing 'delaydra' from data/chars/misc/delaydra.txt
+Cacheing 'lugg1' from data/Bgs/02airp/det/lugg1.txt
+Cacheing 'lugg2' from data/Bgs/02airp/det/lugg2.txt
+Cacheing 'apeeps' from data/Bgs/02airp/det/apeeps.txt
+Cacheing 'apchairs' from data/Bgs/02airp/det/apchairs.txt
+Cacheing 'fgair1' from data/Bgs/02airp/fgair1.txt
+Cacheing 'fgair2' from data/Bgs/02airp/fgair2.txt
+Cacheing 'fgair3' from data/Bgs/02airp/fgair3.txt
+Cacheing 'belt2' from data/Bgs/02airp/belt2.txt
+Cacheing 'belt3' from data/Bgs/02airp/belt3.txt
+Cacheing 'gbelter2' from data/Bgs/02airp/gbelter2.txt
+Cacheing 'gbelter3' from data/Bgs/02airp/gbelter3.txt
+Cacheing 'gbelter4' from data/Bgs/02airp/gbelter4.txt
+Cacheing 'scrmove' from data/Bgs/02airp/scrmove.txt
+Cacheing 'scrmove2' from data/Bgs/02airp/scrmove2.txt
+Cacheing 'scrmove3' from data/Bgs/02airp/scrmove3.txt
+Cacheing 'spawair' from data/Bgs/02airp/spawair.txt
+Cacheing 'spawair2' from data/Bgs/02airp/spawair2.txt
+Cacheing 'movezblo' from data/Bgs/02airp/movezblo.txt
+Cacheing 'blkille' from data/Bgs/02airp/blkiller.txt
+Cacheing 'delay6' from data/Bgs/02airp/delay6.txt
+Cacheing 'subjpp' from data/Bgs/02airp/subjpp.txt
+Cacheing 'pplane' from data/Bgs/03airp/det/pplane.txt
+Cacheing 'bplane' from data/Bgs/03airp/det/bplane.txt
+Cacheing 'bplane2' from data/Bgs/03airp/det/bplane2.txt
+Cacheing 'bchoppes' from data/Bgs/03airp/det/bchoppes.txt
+Cacheing 'bchopper' from data/Bgs/03airp/det/bchopper.txt
+Cacheing 'hdust' from data/Bgs/03airp/det/hdust.txt
+Cacheing 'hduke' from data/Bgs/03airp/det/hduke.txt
+Cacheing 'hduke2' from data/Bgs/03airp/det/hduke2.txt
+Cacheing 'airphe1' from data/Bgs/03airp/det/airphe1.txt
+Cacheing 'airphe2' from data/Bgs/03airp/det/airphe2.txt
+Cacheing 'airphe3' from data/Bgs/03airp/det/airphe3.txt
+Cacheing 'airphe4' from data/Bgs/03airp/det/airphe4.txt
+Cacheing 'airphe5' from data/Bgs/03airp/det/airphe5.txt
+Cacheing 'airpheL' from data/Bgs/03airp/det/airpheL.txt
+Cacheing '00inchi' from data/bgs/01chin/det/00inchi.txt
+Cacheing 'cmouse' from data/bgs/01chin/det/cmouse.txt
+Cacheing 'chpeep' from data/bgs/01chin/det/chpeep.txt
+Cacheing 'light01' from data/bgs/01chin/det/light01.txt
+Cacheing 'truck01' from data/bgs/01chin/det/truck01.txt
+Cacheing 'rainb' from data/Bgs/01chin/det/rainb.txt
+Cacheing 'rains1' from data/Bgs/01chin/det/rains1.txt
+Cacheing 'rains2' from data/Bgs/01chin/det/rains2.txt
+Cacheing 'doorch' from data/Bgs/01chin/det/doorch.txt
+Cacheing 'doorch2' from data/Bgs/01chin/det/doorch2.txt
+Cacheing 'stai' from data/Bgs/02chin/stai.txt
+Cacheing 'fgchi' from data/Bgs/02chin/fgchi.txt
+Cacheing 'Pball' from data/Bgs/02chin/det/pball.txt
+Cacheing 'Pbag' from data/Bgs/03chin/det/pbag.txt
+Cacheing 'fgsti' from data/Bgs/03chin/fgsti.txt
+Cacheing 'pcpiece1' from data/Bgs/03chin/det/pcpiece1.txt
+Cacheing 'pcpiece2' from data/Bgs/03chin/det/pcpiece2.txt
+Cacheing 'pcurt01' from data/Bgs/03chin/det/pcurt01.txt
+Cacheing 'pcurt02' from data/Bgs/03chin/det/pcurt02.txt
+Cacheing 'fgsti2' from data/Bgs/04chin/fgsti2.txt
+Cacheing 'fgchi4' from data/Bgs/04chin/fgchi4.txt
+Cacheing 'cwindow' from data/Bgs/04chin/det/cwindow.txt
+Cacheing 'rain' from data/Bgs/05chin/det/rain.txt
+Cacheing 'fgchi5' from data/Bgs/05chin/fgchi5.txt
+Cacheing 'playmove' from data/Bgs/05chin/playmove.txt
+Cacheing 'playju' from data/Bgs/05chin/playju.txt
+Cacheing 'truckch5' from data/Bgs/05chin/truckch5.txt
+Cacheing 'trckrain' from data/Bgs/06chin/det/trckrain.txt
+Cacheing '00intrk2' from data/bgs/01trck/det/00intrk2.txt
+Cacheing '00intrk3' from data/bgs/01trck/det/00intrk3.txt
+Cacheing 'struck' from data/bgs/01trck/det/struck.txt
+Cacheing 'chenc1' from data/bgs/02trck/det/chenc1.txt
+Cacheing 'chenc2' from data/bgs/02trck/det/chenc2.txt
+Cacheing 'chenc3' from data/bgs/02trck/det/chenc3.txt
+Cacheing 'mcguic1' from data/bgs/02trck/det/mcguic1.txt
+Cacheing 'carlemc1' from data/bgs/02trck/det/carlemc1.txt
+Cacheing 'dukec1' from data/bgs/02trck/det/dukec1.txt
+Cacheing 'dukec2' from data/bgs/02trck/det/dukec2.txt
+Cacheing 'dukecL' from data/bgs/02trck/det/dukecL.txt
+Cacheing 'dukecUJ' from data/bgs/02trck/det/dukecUJ.txt
+Cacheing 'bossescn' from data/bgs/02trck/det/bossescn.txt
+Cacheing 'trwa' from data/bgs/02trck/det/trwa.txt
+Cacheing 'trwdeb1' from data/bgs/02trck/det/trwdeb1.txt
+Cacheing 'trwdeb2' from data/bgs/02trck/det/trwdeb2.txt
+Cacheing '00inslu' from data/Bgs/02slum/det/00inslu.txt
+Cacheing 'staisl2' from data/Bgs/01slum/det/fac01.txt
+Cacheing 'fgslu' from data/Bgs/02slum/fgslu.txt
+Cacheing 'slwall' from data/Bgs/02slum/slwall.txt
+Cacheing 'slwall2' from data/Bgs/02slum/slwall2.txt
+Cacheing 'fgslu2' from data/Bgs/03slum/fgslu2.txt
+Cacheing 'staisl' from data/Bgs/02slum/staisl.txt
+Cacheing 'staisl2' from data/Bgs/02slum/staisl2.txt
+Cacheing 'windg' from data/Bgs/02slum/det/windg.txt
+Cacheing 'trash1' from data/Bgs/02slum/det/trash1.txt
+Cacheing 'trash2' from data/Bgs/02slum/det/trash2.txt
+Cacheing 'trash3' from data/Bgs/02slum/det/trash3.txt
+Cacheing 'trash4' from data/Bgs/02slum/det/trash4.txt
+Cacheing 'trash5' from data/Bgs/02slum/det/trash5.txt
+Cacheing 'cat1' from data/Bgs/02slum/det/cat1.txt
+Cacheing 'post1' from data/Bgs/02slum/det/post1.txt
+Cacheing 'fac01' from data/Bgs/01slum/det/fac01.txt
+Cacheing 'cdslums1' from data/chars/0misc/cdslums1.txt
+Cacheing '00inwoo' from data/Bgs/01wood/det/00inwoo.txt
+Cacheing 'wfall1' from data/Bgs/01wood/det/wfall1.txt
+Cacheing 'wfall2' from data/Bgs/01wood/det/wfall2.txt
+Cacheing 'wfall3' from data/Bgs/01wood/det/wfall3.txt
+Cacheing 'wfall4' from data/Bgs/01wood/det/wfall4.txt
+Cacheing 'fog1' from data/Bgs/01wood/det/fog1.txt
+Cacheing 'tree1' from data/Bgs/01wood/det/tree1.txt
+Cacheing 'tree2' from data/Bgs/01wood/det/tree2.txt
+Cacheing 'tree3' from data/Bgs/01wood/det/tree3.txt
+Cacheing 'birds0' from data/Bgs/01wood/det/birds0.txt
+Cacheing 'birds1' from data/Bgs/01wood/det/birds1.txt
+Cacheing 'birdM' from data/Bgs/01wood/det/birdM.txt
+Cacheing 'leaf0' from data/Bgs/01wood/det/leaf0.txt
+Cacheing 'heliw1' from data/Bgs/01wood/det/heliw1.txt
+Cacheing 'heliw2' from data/Bgs/01wood/det/heliw2.txt
+Cacheing 'heliw3' from data/Bgs/01wood/det/heliw3.txt
+Cacheing 'shothw' from data/Bgs/01wood/det/shothw.txt
+Cacheing 'shotar1' from data/Bgs/01wood/det/shotar1.txt
+Cacheing 'shotar2' from data/Bgs/01wood/det/shotar2.txt
+Cacheing 'aimheli' from data/Bgs/01wood/det/aimheli.txt
+Cacheing 'statuew' from data/Bgs/01wood/det/statuew.txt
+Cacheing 'stonew1' from data/Bgs/01wood/det/stonew1.txt
+Cacheing 'stonew2' from data/Bgs/01wood/det/stonew2.txt
+Cacheing 'stonew2' from data/Bgs/01wood/det/stonew3.txt
+Cacheing 'cdchina1' from data/chars/0misc/cdchina1.txt
+Cacheing 'cdwood1' from data/chars/0misc/cdwood1.txt
+Cacheing 'lasst' from data/Bgs/01palc/det/lasst.txt
+Cacheing 'y2fen' from data/Bgs/02palc/det/y2fen.txt
+Cacheing 'y2fenr' from data/Bgs/02palc/det/y2fenr.txt
+Cacheing 'pilar01' from data/Bgs/03palc/det/pilar01.txt
+Cacheing 'torch01' from data/Bgs/03palc/det/torch01.txt
+Cacheing 'flare01' from data/Bgs/03palc/det/flare01.txt
+Cacheing 'doorp01' from data/Bgs/03palc/det/doorp01.txt
+Cacheing 'Y3light' from data/Bgs/03palc/det/y3light.txt
+Cacheing 'Y3hor1' from data/Bgs/03palc/det/y3hor1.txt
+Cacheing 'Y3hor2' from data/Bgs/03palc/det/y3hor2.txt
+Cacheing 'Y3hor3' from data/Bgs/03palc/det/y3hor3.txt
+Cacheing 'Y3hor4' from data/Bgs/03palc/det/y3hor4.txt
+Cacheing 'trap01' from data/Bgs/06palc/det/trap01.txt
+Cacheing 'fwall' from data/Bgs/06palc/det/fwall.txt
+Cacheing 'jumper' from data/Bgs/06palc/det/jumper.txt
+Cacheing 'danger02' from data/Bgs/06palc/det/danger02.txt
+Cacheing 'fball0' from data/Bgs/06palc/det/fball0.txt
+Cacheing 'fballst' from data/Bgs/06palc/det/fballst.txt
+Cacheing 'fball1' from data/Bgs/06palc/det/fball1.txt
+Cacheing 'fball2' from data/Bgs/06palc/det/fball2.txt
+Cacheing 'bfr' from data/Bgs/06palc/det/bfr.txt
+Cacheing 'bfrf' from data/Bgs/06palc/det/bfrf.txt
+Cacheing 'slasher' from data/Bgs/06palc/det/slasher.txt
+Cacheing 'y4tel' from data/Bgs/06palc/det/y4tel.txt
+Cacheing 'y4tel' from data/Bgs/06palc/det/y4tel2.txt
+Cacheing 'y4duke' from data/Bgs/06palc/det/y4duke.txt
+Cacheing 'y4stn' from data/Bgs/06palc/det/y4stn.txt
+Cacheing 'bossr' from data/Bgs/bossr/bossr.txt
+Cacheing 'ddoor' from data/chars/0misc/ddoor.txt
+Cacheing 'dgate' from data/bgs/palc00/det/dgate.txt
+Cacheing 'battle' from data/bgs/palc00/det/battle.txt
+Cacheing 'battleA' from data/bgs/palc00/det/battleA.txt
+Cacheing 'battleK' from data/bgs/palc00/det/battleK.txt
+Cacheing 'cavern' from data/bgs/palc00/det/cavern.txt
+Cacheing 'cavernA' from data/bgs/palc00/det/cavernA.txt
+Cacheing 'cavernK' from data/bgs/palc00/det/cavernK.txt
+Cacheing 'trap' from data/bgs/palc00/det/trap.txt
+Cacheing 'trapA' from data/bgs/palc00/det/trapA.txt
+Cacheing 'pathsel' from data/bgs/palc00/det/pathsel.txt
+Cacheing '00inpal' from data/bgs/palc00/det/00inpal.txt
+Cacheing 'doorz' from data/bgs/Z2palc/det/doorz.txt
+Cacheing 'elvsta' from data/bgs/Z2palc/det/elvsta.txt
+Cacheing 'elvsto' from data/bgs/Z2palc/det/elvsto.txt
+Cacheing 'liftce1' from data/bgs/Z2palc/det/liftce1.txt
+Cacheing 'liftce2' from data/bgs/Z2palc/det/liftce2.txt
+Cacheing 'liftli' from data/bgs/Z2palc/det/liftli.txt
+Cacheing 'zwfall' from data/bgs/Z3palc/det/zwfall.txt
+Cacheing 'z3pillar' from data/bgs/Z3palc/det/z3pillar.txt
+Cacheing 'bursta' from data/bgs/Z3palc/det/bursta.txt
+Cacheing 'dli' from data/bgs/Z3palc/det/dli.txt
+Cacheing 'dfli' from data/bgs/Z3palc/det/dfli.txt
+Cacheing 'dbli' from data/bgs/Z3palc/det/dbli.txt
+Cacheing 'dtv' from data/bgs/Z3palc/det/dtv.txt
+Cacheing 'people01' from data/bgs/Z3palc/det/people01.txt
+Cacheing 'people02' from data/bgs/Z3palc/det/people02.txt
+Cacheing 'people03' from data/bgs/Z3palc/det/people03.txt
+Cacheing 'draf' from data/bgs/Z3palc/det/draf.txt
+Cacheing 'drafire' from data/bgs/Z3palc/det/drafire.txt
+Cacheing 'paudi' from data/bgs/Z4palc/det/paudi.txt
+Cacheing 'paudi2' from data/bgs/Z4palc/det/paudi2.txt
+Cacheing 'ringli01' from data/bgs/Z4palc/det/ringli01.txt
+Cacheing 'ringfl01' from data/bgs/Z4palc/det/ringfl01.txt
+Cacheing 'ringfl02' from data/bgs/Z4palc/det/ringfl02.txt
+Cacheing 'ringbo' from data/bgs/Z4palc/det/ringbo.txt
+Cacheing 'fight01' from data/bgs/Z4palc/det/fight01.txt
+Cacheing 'ringfen' from data/bgs/Z4palc/det/ringfen.txt
+Cacheing 'ringsmk' from data/bgs/Z4palc/det/ringsmk.txt
+Cacheing 'ringbeam' from data/bgs/Z4palc/det/ringbeam.txt
+Cacheing 'rboo1' from data/bgs/Z4palc/det/rboo1.txt
+Cacheing 'count00' from data/bgs/Z4palc/det/count00.txt
+Cacheing 'wins1' from data/bgs/Z4palc/det/wins1.txt
+Cacheing 'wins2' from data/bgs/Z4palc/det/wins2.txt
+Cacheing '4men' from data/bgs/Z4palc/det/4men.txt
+Cacheing 'ringbosd' from data/bgs/Z4palc/det/ringbosd.txt
+Cacheing 'Z5plight' from data/bgs/Z5palc/det/Z5plight.txt
+Cacheing 'Z5fence1' from data/bgs/Z5palc/det/Z5fence1.txt
+Cacheing 'Z5fence2' from data/bgs/Z5palc/det/Z5fence2.txt
+Cacheing 'Z5pilar' from data/bgs/Z5palc/det/Z5pilar.txt
+Cacheing 'Z5door' from data/bgs/Z5palc/det/Z5door.txt
+Cacheing 'Z5wall' from data/bgs/Z5palc/det/Z5wall.txt
+Cacheing 'Z5ffi' from data/bgs/Z5palc/det/Z5ffi.txt
+Cacheing 'pwtfall' from data/bgs/X1palc/det/pwtfall.txt
+Cacheing 'fog2' from data/bgs/X1palc/det/fog2.txt
+Cacheing 'ctorch' from data/bgs/X1palc/det/ctorch.txt
+Cacheing 'cfire' from data/bgs/X1palc/det/cfire.txt
+Cacheing 'bats0' from data/bgs/X1palc/det/bats0.txt
+Cacheing 'bats1' from data/bgs/X1palc/det/bats1.txt
+Cacheing 'batsC0' from data/bgs/X1palc/det/batsC0.txt
+Cacheing 'batsC1' from data/bgs/X1palc/det/batsC1.txt
+Cacheing 'trlige' from data/bgs/X1palc/det/trlige.txt
+Cacheing 'trligf' from data/bgs/X1palc/det/trligf.txt
+Cacheing 'trplig' from data/bgs/X1palc/det/trplig.txt
+Cacheing 'ferryc' from data/bgs/X1palc/det/ferryc.txt
+Cacheing 'splash' from data/bgs/X1palc/det/splash.txt
+Cacheing 'kpalax3' from data/bgs/X2palc/kpalax3.txt
+Cacheing 'elevX3' from data/bgs/X3palc/det/elevX3.txt
+Cacheing 'elvbord' from data/bgs/X3palc/det/elvbord.txt
+Cacheing 'gryzor01' from data/bgs/X3palc/det/gryzor01.txt
+Cacheing 'gryzor02' from data/bgs/X3palc/det/gryzor02.txt
+Cacheing 'doombar' from data/bgs/X3palc/det/doombar.txt
+Cacheing 'doomgun' from data/bgs/X3palc/det/doomgun.txt
+Cacheing 'spikes01' from data/bgs/X3palc/det/spikes01.txt
+Cacheing 'spikes02' from data/bgs/X3palc/det/spikes02.txt
+Cacheing 'fencelv' from data/bgs/X3palc/det/fencelv.txt
+Cacheing 'bgheli' from data/bgs/X3palc/det/bgheli.txt
+Cacheing 'pflag1' from data/bgs/X4palc/det/pflag1.txt
+Cacheing 'pflag2' from data/bgs/X4palc/det/pflag2.txt
+Cacheing 'X4pillar' from data/bgs/X4palc/det/X4pillar.txt
+Cacheing 'X4pillar2' from data/bgs/X4palc/det/X4pillar2.txt
+Cacheing 'X4lamp' from data/bgs/X4palc/det/X4lamp.txt
+Cacheing 'spike01' from data/bgs/X4palc/det/spike01.txt
+Cacheing 'heliw4' from data/bgs/X4palc/det/heliw4.txt
+Cacheing 'heliw5' from data/bgs/X4palc/det/heliw5.txt
+Cacheing 'hmiss01' from data/bgs/X4palc/det/hmiss01.txt
+Cacheing 'hmiss02' from data/bgs/X4palc/det/hmiss02.txt
+Cacheing 'nap01' from data/bgs/X4palc/det/nap01.txt
+Cacheing 'danger01' from data/bgs/X4palc/det/danger01.txt
+Cacheing 'aimhel2' from data/bgs/X4palc/det/aimhel2.txt
+Cacheing 'X4fire01' from data/bgs/X4palc/det/x4fire01.txt
+Cacheing 'X4fire02' from data/bgs/X4palc/det/x4fire02.txt
+Cacheing 'X4fire03' from data/bgs/X4palc/det/x4fire03.txt
+Cacheing 'doorx4' from data/bgs/X4palc/det/doorx4.txt
+Cacheing 'wkduke01' from data/bgs/X4palc/det/wkduke01.txt
+Cacheing 'X5fire01' from data/bgs/X5palc/det/X5fire01.txt
+Cacheing 'X5fire02' from data/bgs/X5palc/det/X5fire02.txt
+Cacheing 'zmet' from data/chars/0weap/zmet.txt
+Cacheing 'zmet2' from data/chars/0weap/zmet2.txt
+Cacheing 'tz' from data/Bgs/stgin/tz.txt
+Cacheing 'smdoor' from data/bgs/zxtra1/smdoor.txt
+Cacheing 'smdoor2' from data/bgs/zxtra1/smdoor2.txt
+Cacheing 'smelv1' from data/bgs/zxtra1/smelv1.txt
+Cacheing 'smelv2' from data/bgs/zxtra1/smelv2.txt
+Cacheing 'smglass' from data/bgs/zxtra1/smglass.txt
+Cacheing 'g12' from data/bgs/zxtra1/g12.txt
+Cacheing 'h12' from data/bgs/zxtra1/h12.txt
+Cacheing 'dead01' from data/bgs/zxtra1/dead01.txt
+Cacheing 'mb' from data/bgs/zxtra1/mb.txt
+Cacheing 'et01' from data/bgs/zxtra1/et01.txt
+Cacheing 'et02' from data/bgs/zxtra1/et02.txt
+Cacheing 'et03' from data/bgs/zxtra1/et03.txt
+Cacheing 'dac01' from data/bgs/zxtra1/dac01.txt
+Cacheing 'dac02' from data/bgs/zxtra1/dac02.txt
+Cacheing 'brifl' from data/bgs/zxtra1/brifl.txt
+Cacheing 'mosca' from data/bgs/zxtra1/mosca.txt
+Cacheing 'mosca2' from data/bgs/zxtra1/mosca2.txt
+Cacheing 'xpar' from data/bgs/zxtra1/xpar.txt
+Cacheing 'bug1' from data/bgs/zxtra1/bug1.txt
+Cacheing 'bug2' from data/bgs/zxtra1/bug2.txt
+Cacheing 'bug3' from data/bgs/zxtra1/bug3.txt
+Cacheing 'torizo' from data/bgs/zxtra1/torizo.txt
+Cacheing 'tbe' from data/bgs/zxtra1/tbe.txt
+Cacheing 'tbomb' from data/bgs/zxtra1/tbomb.txt
+Cacheing 'lorb' from data/bgs/zxtra1/lorb.txt
+Cacheing 'zrid1' from data/bgs/zxtra1/zrid1.txt
+Cacheing 'zrid2' from data/bgs/zxtra1/zrid2.txt
+Cacheing 'ridf' from data/bgs/zxtra1/ridf.txt
+Cacheing 'samb' from data/bgs/zxtra1/samb.txt
+Cacheing 'zbs' from data/bgs/zxtra1/zbs.txt
+Cacheing 'xduke' from data/bgs/zxtra1/xduke.txt
+Cacheing '3nwill' from data/chars/3nwill/3nwill.txt
+Cacheing '3nrop' from data/chars/3nrop/3nrop.txt
+Cacheing '3nabo' from data/chars/3nabo/3nabo.txt
+Cacheing 'portal1' from data/bgs/zxtra3/portal1.txt
+Cacheing 'portal2' from data/bgs/zxtra3/portal2.txt
+Cacheing 'sddcrew' from data/bgs/zxtra3/sddcrew.txt
+Cacheing 'nesin' from data/bgs/zxtra3/nesin.txt
+Cacheing 'pep' from data/bgs/zxtra4/pep.txt
+Cacheing 'clk' from data/bgs/zxtra4/clk.txt
+Cacheing 'dtorch' from data/bgs/zxtra4/dtorch.txt
+Cacheing 'thwin' from data/bgs/zxtra4/thwin.txt
+Cacheing 'rich' from data/bgs/zxtra4/rich.txt
+Cacheing 'casint' from data/bgs/zxtra4/casint.txt
+Cacheing 'bxx' from data/bgs/zxtra4/bxx.txt
+Cacheing 'arma1' from data/bgs/zxtra4/arma1.txt
+Cacheing 'arma2' from data/bgs/zxtra4/arma2.txt
+Cacheing 'gar' from data/bgs/zxtra4/gar.txt
+Cacheing 'cvfire' from data/bgs/zxtra4/cvfire.txt
+Cacheing 'bswd' from data/bgs/zxtra4/bswd.txt
+Cacheing 'mar' from data/bgs/zxtra4/mar.txt
+Cacheing 'cvpor' from data/bgs/zxtra4/cvpor.txt
+Cacheing 'gbat' from data/bgs/zxtra4/gbat.txt
+Cacheing 'mds' from data/bgs/zxtra4/mds.txt
+Cacheing 'snk' from data/bgs/zxtra4/snk.txt
+Cacheing 'mum' from data/bgs/zxtra4/mum.txt
+Cacheing 'mumb' from data/bgs/zxtra4/mumb.txt
+Cacheing 'creat' from data/bgs/zxtra4/creat.txt
+Cacheing 'cresto' from data/bgs/zxtra4/cresto.txt
+Cacheing 'creli' from data/bgs/zxtra4/creli.txt
+Cacheing 'dea' from data/bgs/zxtra4/dea.txt
+Cacheing 'desku' from data/bgs/zxtra4/desku.txt
+Cacheing 'deskug1' from data/bgs/zxtra4/deskug1.txt
+Cacheing 'deskug2' from data/bgs/zxtra4/deskug2.txt
+Cacheing 'cvorb' from data/bgs/zxtra4/cvorb.txt
+Cacheing 'ridd' from data/bgs/zxtra2/ridd.txt
+Cacheing 'vrridin' from data/bgs/zxtra2/vrriddin.txt
+Cacheing 'vrridou' from data/bgs/zxtra2/vrriddou.txt
+Cacheing 'trpligb' from data/bgs/zxtra2/trpligb.txt
+Cacheing 'hq' from data/bgs/zxtra2/hq.txt
+Cacheing 'catw' from data/bgs/zxtra2/catw.txt
+Cacheing 'scc' from data/bgs/zxtra2/scc.txt
+Cacheing 'chop' from data/bgs/zxtra2/chop.txt
+Cacheing 'shothw2' from data/bgs/zxtra2/shothw2.txt
+Cacheing 'pen' from data/bgs/zxtra2/pen.txt
+Cacheing 'clay' from data/bgs/zxtra2/clay.txt
+Cacheing 'joker' from data/bgs/zxtra2/jok.txt
+Cacheing 'joker2' from data/bgs/zxtra2/jok2.txt
+Cacheing 'zdoor' from data/chars/misc/zdoor/zdoor.txt
+Cacheing 'zdoorN' from data/chars/misc/zdoor/zdoorN.txt
+Cacheing 'tomb' from data/chars/misc/zdoor/tomb.txt
+Cacheing 'zdoorC' from data/chars/misc/zdoor/zdoorC.txt
+Cacheing 'zdoorM' from data/chars/misc/zdoor/zdoorM.txt
+Cacheing 'zdoorB' from data/chars/misc/zdoor/zdoorB.txt
+Cacheing 'bossr' from data/Bgs/bossr/bossr.txt
+Cacheing 'night00' from data/Bgs/stgin/night00.txt
+Cacheing 'night03' from data/Bgs/stgin/night03.txt
+Cacheing 'night05' from data/Bgs/stgin/night05.txt
+Cacheing 'night07' from data/Bgs/stgin/night07.txt
+
+Loaded 'Flash' from data/chars/0misc/Flash.txt 
+Loaded 'QFlash' from data/chars/0misc/QFlash.txt 
+Loaded 'Qmkout' from data/chars/0misc/Qmkout.txt 
+Loaded 'Qmkooh' from data/chars/0misc/Qmkooh.txt 
+Loaded 'Qmkexe' from data/chars/0misc/Qmkexe.txt 
+Loaded 'Qmksup' from data/chars/0misc/Qmksup.txt 
+Loaded 'QFlash2' from data/chars/0misc/QFlash2.txt 
+Loaded 'QFlash2b' from data/chars/0misc/QFlash2b.txt 
+Loaded 'Expflash' from data/chars/0misc/expflash.txt 
+Loaded 'fFlash' from data/chars/0misc/Fflash.txt 
+Loaded 'Bflash' from data/chars/0misc/Bflash.txt 
+Loaded 'Bflashs' from data/chars/0misc/Bflashs.txt 
+Loaded 'slow' from data/chars/0weap/slow.txt 
+Loaded 'slowt' from data/chars/0weap/slowt.txt 
+Loaded 'wflash' from data/chars/0misc/wflash.txt 
+Loaded 'brfladu' from data/chars/0misc/brfladu.txt 
+Loaded 'comult' from data/chars/0misc/comult.txt 
+Loaded 'comult2' from data/chars/0misc/comult2.txt 
+Loaded 'common' from data/chars/0misc/common.txt 
+Loaded 'common2' from data/chars/0misc/common2.txt 
+Loaded 'comkil' from data/chars/0misc/comkil.txt 
+Loaded 'comkil2' from data/chars/0misc/comkil2.txt 
+Loaded 'commas' from data/chars/0misc/commas.txt 
+Loaded 'comhyp' from data/chars/0misc/comhyp.txt 
+Loaded 'combla' from data/chars/0misc/combla.txt 
+Loaded 'combla2' from data/chars/0misc/combla2.txt 
+Loaded 'combru' from data/chars/0misc/combru.txt 
+Loaded 'comkin' from data/chars/0misc/comkin.txt 
+Loaded 'comutm' from data/chars/0misc/comutm.txt 
+Loaded 'comosom' from data/chars/0misc/comosom.txt 
+Loaded 'comwwf' from data/chars/0misc/comwwf.txt 
+WARNING: data/chars/0misc/comwwf.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'bosser' from data/chars/0weap/bosser.txt 
+Loaded 'ndra' from data/chars/1ndra/ndra.txt 
+sound_load_sample can't load sample from file 'kunio.wav'!
+Loaded 'ndra2' from data/chars/1ndra/ndra2.txt 
+sound_load_sample can't load sample from file 'kunio.wav'!
+Loaded 'Billy' from data/chars/1billy/billy.txt 
+Command 'mpblock' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'nodebug' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'dragoni' from data/chars/misc/bgfx/dragoni.txt 
+Loaded 'dragonok' from data/chars/misc/bgfx/dragonok.txt 
+Loaded 'victoBi' from data/chars/0misc/victoBi.txt 
+Loaded 'sddb01' from data/chars/0misc/sddb01.txt 
+Loaded 'sddba01' from data/chars/0misc/sddba01.txt 
+Loaded 'sddba02' from data/chars/0misc/sddba02.txt 
+Loaded 'sddbki01' from data/chars/0misc/sddbki01.txt 
+Loaded 'sddbki02' from data/chars/0misc/sddbki02.txt 
+Loaded 'sddbo' from data/chars/0misc/sddbo.txt 
+Loaded 'sddnun' from data/chars/0misc/sddnun.txt 
+Loaded 'sddwhi' from data/chars/0misc/sddwhi.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'eslam' from data/chars/0misc/eslam.txt 
+sound_load_sample can't load sample from file 'data/sounds/nw1.wav'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'brfla' from data/chars/0misc/brfla.txt 
+Loaded 'burn' from data/chars/0misc/burn.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'ssf1' from data/chars/0misc/ssf1.txt 
+Loaded 'ssf2' from data/chars/0misc/ssf2.txt 
+Loaded 'ssfd' from data/chars/0misc/ssfd.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+sound_load_sample can't load sample from file 'data/sounds/beatj.wav'!
+Loaded 'colat2' from data/chars/0misc/colat2.txt 
+Loaded 'slink' from data/chars/0misc/slink.txt 
+sound_load_sample can't load sample from file 'dayta/sounds/punch1.wav'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+sound_load_sample can't load sample from file 'dayta/sounds/punch1.wav'!
+sound_load_sample can't load sample from file 'dayta/sounds/dragon1.wav'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'ulf1' from data/chars/0misc/ulf1.txt 
+sound_load_sample can't load sample from file 'dayta/sounds/punch1.wav'!
+Loaded 'ulf2' from data/chars/0misc/ulf2.txt 
+Loaded 'ulf3' from data/chars/0misc/ulf3.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'super01' from data/chars/0misc/super01.txt 
+Loaded 'mulf' from data/chars/0misc/mulf.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'sa' from data/chars/0misc/sa.txt 
+Loaded 'sab' from data/chars/0misc/sab.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy.txt'!
+Loaded 'Billy2' from data/chars/1billy/billy2.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billy2.txt'!
+Loaded 'dd2b01' from data/chars/0misc/dd2b01.txt 
+Loaded 'dd2bwfb01' from data/chars/0misc/dd2bwfb01.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy2.txt'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy2.txt'!
+sound_load_sample can't load sample from file 'data/sounds/beatc.wav'!
+Loaded 'colat1' from data/chars/0misc/colat1.txt 
+Loaded 'moron' from data/chars/0misc/moron.txt 
+Loaded 'uwwf' from data/chars/0misc/uwwf.txt 
+Loaded 'Billy3' from data/chars/1billy/billy3.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'nodebug' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billy3.txt'!
+Loaded 'dd3b01' from data/chars/0misc/dd3b01.txt 
+Loaded 'dd3sbmb01' from data/chars/0misc/dd3sbmb01.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+sound_load_sample can't load sample from file 'data/sounds/beatj.wav'!
+sound_load_sample can't load sample from file 'data/sounds/beatg.wav'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'rangex' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'tae' not understood in file 'data/chars/1billy/billy3.txt'!
+Loaded 'sonicbm' from data/chars/0misc/sonicbm.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Loaded 'critic' from data/chars/0misc/critic.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/billy3.txt'!
+Loaded 'Jimmy' from data/chars/1jimmy/jimmy.txt 
+Loaded 'victoJi' from data/chars/0misc/victoJi.txt 
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+Loaded 'sddj01' from data/chars/0misc/sddj01.txt 
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy.txt'!
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy.txt'!
+sound_load_sample can't load sample from file 'dayta/sounds/punch1.wav'!
+Loaded 'jimmysa' from data/chars/1jimmy/jimmysa.txt 
+Loaded 'Jimmy2' from data/chars/1jimmy/jimmy2.txt 
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+Loaded 'dd2j01' from data/chars/0misc/dd2j01.txt 
+Loaded 'dd2Jwf01' from data/chars/0misc/dd2Jwf01.txt 
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy2.txt'!
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy2.txt'!
+sound_load_sample can't load sample from file 'data/sounds/dragonz.wav'!
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy2.txt'!
+Loaded 'Jimmy3' from data/chars/1jimmy/jimmy3.txt 
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+sound_load_sample can't load sample from file 'data/sounds/dragonu.wav'!
+Loaded 'dd3j01' from data/chars/0misc/dd3j01.txt 
+Loaded 'dd3sbmj01' from data/chars/0misc/dd3sbmj01.txt 
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy3.txt'!
+Command 'rangex' not understood in file 'data/chars/1jimmy/jimmy3.txt'!
+Command 'attak' not understood in file 'data/chars/1jimmy/jimmy3.txt'!
+Loaded '1jeff' from data/chars/2jeff/1jeff.txt 
+Loaded 'jeffi' from data/chars/misc/bgfx/jeffi.txt 
+Loaded 'jeffok' from data/chars/misc/bgfx/jeffok.txt 
+Loaded 'victoJe' from data/chars/0misc/victoJe.txt 
+Loaded 'sddje01' from data/chars/0misc/sddje01.txt 
+Loaded 'sddje02' from data/chars/0misc/sddje02.txt 
+Loaded 'sddje03' from data/chars/0misc/sddje03.txt 
+Command '}}' not understood in file 'data/chars/0misc/sddje03.txt'!
+Loaded 'sddjki02' from data/chars/0misc/sddjki02.txt 
+Loaded 'sddsbm01' from data/chars/0misc/sddsbm01.txt 
+Loaded 'sddmk301' from data/chars/0misc/sddmk301.txt 
+Loaded 'sddjkni' from data/chars/0misc/sddjkni.txt 
+Loaded 'sddjgun' from data/chars/0misc/sddjgun.txt 
+Command 'rangex' not understood in file 'data/chars/2jeff/1jeff.txt'!
+Command 'rangex' not understood in file 'data/chars/2jeff/1jeff.txt'!
+Loaded 'brfla2' from data/chars/0misc/brfla2.txt 
+Loaded 'knife01' from data/chars/0weap/knife01.txt 
+Loaded 'ssj1' from data/chars/0misc/ssj1.txt 
+Loaded 'ssj2' from data/chars/0misc/ssj2.txt 
+Command 'rangex' not understood in file 'data/chars/2jeff/1jeff.txt'!
+Loaded 'dx' from data/chars/0misc/dx.txt 
+Loaded 'agress' from data/chars/0misc/agress.txt 
+Loaded 'agress02' from data/chars/0misc/agress02.txt 
+Loaded 'ulf4' from data/chars/0misc/ulf4.txt 
+Command 'ultra' not understood in file 'data/chars/2jeff/1jeff.txt'!
+Loaded 'Sonny' from data/chars/1sonny/sonny.txt 
+Loaded 'phoenixi' from data/chars/misc/bgfx/phoenixi.txt 
+Loaded 'phoeok' from data/chars/misc/bgfx/phoeok.txt 
+Loaded 'victoSo' from data/chars/0misc/victoSo.txt 
+Loaded 'sddso01' from data/chars/0misc/sddso01.txt 
+Loaded 'sddso02' from data/chars/0misc/sddso02.txt 
+Loaded 'sddso03' from data/chars/0misc/sddso03.txt 
+Loaded 'sddski02' from data/chars/0misc/sddski02.txt 
+Loaded 'sddwhi2' from data/chars/0misc/sddwhi2.txt 
+Command 'rangex' not understood in file 'data/chars/1sonny/sonny.txt'!
+Command 'rangex' not understood in file 'data/chars/1sonny/sonny.txt'!
+Loaded 'ssfs' from data/chars/0misc/ssfs.txt 
+Loaded 'ssfso' from data/chars/0misc/ssfso.txt 
+Command 'rangex' not understood in file 'data/chars/1sonny/sonny.txt'!
+Loaded 'exc' from data/chars/0misc/exc.txt 
+Loaded 'phoenix' from data/chars/0misc/phoenix.txt 
+sound_load_sample can't load sample from file 'dayta/sounds/punch1.wav'!
+sound_load_sample can't load sample from file 'dayta/sounds/dragonz2.wav'!
+Loaded 'ulf5' from data/chars/0misc/ulf5.txt 
+Loaded 'Sonny2' from data/chars/1sonny/sonny2.txt 
+Loaded 'sonph' from data/chars/1sonny/sonph.txt 
+Loaded 'sddso04' from data/chars/0misc/sddso04.txt 
+Loaded 'sddso05' from data/chars/0misc/sddso05.txt 
+Loaded 'sddsbm02' from data/chars/0misc/sddsbm02.txt 
+Loaded 'sddmk302' from data/chars/0misc/sddmk302.txt 
+Command 'rangex' not understood in file 'data/chars/1sonny/sonny2.txt'!
+Command 'rangex' not understood in file 'data/chars/1sonny/sonny2.txt'!
+Loaded 'ssfs2' from data/chars/0misc/ssfs2.txt 
+Loaded 'chinsei' from data/chars/1seiran/chinsei.txt 
+Loaded 'seirani' from data/chars/misc/bgfx/seirani.txt 
+Loaded 'seiranok' from data/chars/misc/bgfx/seiranok.txt 
+Loaded 'victoCR' from data/chars/0misc/victoCR.txt 
+Loaded '11ranzw1' from data/chars/1seiran/11ranzw1.txt 
+WARNING: data/chars/1seiran/11ranzw1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '13ranzc4' from data/chars/1seiran/13ranzc4.txt 
+Loaded '08ranzc1' from data/chars/1seiran/08ranzc1.txt 
+WARNING: data/chars/1seiran/08ranzc1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '09ranzc2' from data/chars/1seiran/09ranzc2.txt 
+Loaded '10ranzc3' from data/chars/1seiran/10ranzc3.txt 
+sound_load_sample can't load sample from file 'data/sounds/seiran09.wav'!
+Loaded '14ranzc5' from data/chars/1seiran/14ranzc5.txt 
+Loaded 'chin01' from data/chars/0misc/chin01.txt 
+Loaded 'chin02' from data/chars/0misc/chin02.txt 
+Loaded 'chin03' from data/chars/0misc/chin03.txt 
+Loaded 'chin04' from data/chars/0misc/chin04.txt 
+Loaded 'chin05' from data/chars/0misc/chin05.txt 
+Loaded 'chin07' from data/chars/0misc/chin07.txt 
+Loaded '00charge' from data/chars/1seiran/00charge.txt 
+Command 'rangex' not understood in file 'data/chars/1seiran/chinsei.txt'!
+Loaded 'seiransw' from data/chars/0misc/seiransw.txt 
+Command 'rangex' not understood in file 'data/chars/1seiran/chinsei.txt'!
+Loaded '01ranz' from data/chars/1seiran/01ranz.txt 
+WARNING: data/chars/1seiran/01ranz.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '02ranz' from data/chars/1seiran/02ranz.txt 
+WARNING: data/chars/1seiran/02ranz.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '03ranz' from data/chars/1seiran/03ranz.txt 
+WARNING: data/chars/1seiran/03ranz.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '00ninf' from data/chars/1seiran/00ninf.txt 
+Loaded '04ranzl1' from data/chars/1seiran/04ranzl1.txt 
+WARNING: data/chars/1seiran/04ranzl1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '05ranzl2' from data/chars/1seiran/05ranzl2.txt 
+WARNING: data/chars/1seiran/05ranzl2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+Loaded '06ranzu1' from data/chars/1seiran/06ranzu1.txt 
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+WARNING: data/chars/1seiran/06ranzu1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+Loaded '07ranzu2' from data/chars/1seiran/07ranzu2.txt 
+WARNING: data/chars/1seiran/07ranzu2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+WARNING: data/chars/1seiran/07ranzu2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/07ranzu2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/07ranzu2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/07ranzu2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'exsuper' from data/chars/0misc/exsuper.txt 
+Loaded '00sbomb' from data/chars/1seiran/00sbomb.txt 
+Loaded 'CBilly' from data/chars/1billy/cbilly.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'nodebug' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/cbilly.txt'!
+Loaded 'ogi' from data/chars/misc/bgfx/ogi.txt 
+Loaded 'dragoxok' from data/chars/misc/bgfx/dragoxok.txt 
+Loaded 'victoOG' from data/chars/0misc/victoOG.txt 
+Loaded 'sddog1' from data/chars/0misc/sddog1.txt 
+Loaded 'sddog2' from data/chars/0misc/sddog2.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/cbilly.txt'!
+Loaded 'brflaog' from data/chars/0misc/brflaog.txt 
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'freespecial2' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'freespecial3' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'freespecial21' not understood in file 'data/chars/1billy/cbilly.txt'!
+Command 'freespecial22' not understood in file 'data/chars/1billy/cbilly.txt'!
+Loaded 'ess' from data/chars/misc/ess/ess.txt 
+Loaded 'essi' from data/chars/misc/bgfx/essi.txt 
+Loaded 'essok' from data/chars/misc/bgfx/essok.txt 
+Loaded 'victoSP' from data/chars/0misc/victoSP.txt 
+Loaded 'hellt' from data/chars/misc/ess/hellt.txt 
+Loaded 'lightnn' from data/chars/0misc/lightnn.txt 
+Loaded 'ess01' from data/chars/0misc/ess01.txt 
+WARNING: data/chars/0misc/ess01.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'ess02' from data/chars/0misc/ess02.txt 
+Loaded 'ess03' from data/chars/0misc/ess03.txt 
+Loaded 'ess04' from data/chars/0misc/ess04.txt 
+Loaded 'ess05' from data/chars/0misc/ess05.txt 
+Loaded 'ess06' from data/chars/0misc/ess06.txt 
+Loaded 'essaw1' from data/chars/misc/ess/essaw1.txt 
+Loaded 'esscro' from data/chars/misc/ess/esscro.txt 
+Loaded 'essfpi' from data/chars/misc/ess/essfpi.txt 
+WARNING: data/chars/misc/ess/essfpi.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/misc/ess/essfpi.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/misc/ess/essfpi.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/misc/ess/essfpi.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/misc/ess/ess.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/misc/ess/ess.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'essfla' from data/chars/misc/ess/essfla.txt 
+Loaded 'essour' from data/chars/misc/ess/essour.txt 
+WARNING: data/chars/misc/ess/essour.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/jump6.wav'!
+Loaded 'essotn' from data/chars/misc/ess/essotn.txt 
+sound_load_sample can't load sample from file 'data/sounds/knife.wav'!
+sound_load_sample can't load sample from file 'data/sounds/jump6.wav'!
+Loaded 'ulf6' from data/chars/0misc/ulf6.txt 
+Loaded 'essbloo' from data/chars/misc/ess/essbloo.txt 
+Loaded 'quake02' from data/chars/0misc/quake02.txt 
+Loaded 'xr01' from data/chars/misc/ess/xr01.txt 
+Loaded 'xr02' from data/chars/misc/ess/xr02.txt 
+Loaded 'xr03' from data/chars/misc/ess/xr03.txt 
+Loaded 'essde1' from data/chars/misc/ess/essde1.txt 
+Loaded 'essde2' from data/chars/misc/ess/essde2.txt 
+Loaded 'essde3' from data/chars/misc/ess/essde3.txt 
+Loaded 'fball' from data/chars/misc/ess/fball.txt 
+Loaded 'itemcess' from data/chars/misc/ess/itemcess.txt 
+WARNING: data/chars/misc/ess/ess.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'esseker' from data/chars/misc/ess/seek.txt 
+Loaded 'esseker2' from data/chars/misc/ess/esseker2.txt 
+Loaded 'esq' from data/chars/misc/esq/esq.txt 
+Loaded 'esqi' from data/chars/misc/bgfx/esqi.txt 
+Loaded 'esqok' from data/chars/misc/bgfx/esqok.txt 
+Loaded 'victoSQ' from data/chars/0misc/victoSQ.txt 
+Loaded 'esq01' from data/chars/0misc/esq01.txt 
+WARNING: data/chars/0misc/esq01.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'esq02' from data/chars/0misc/esq02.txt 
+Loaded 'esq03' from data/chars/0misc/esq03.txt 
+Loaded 'esq04' from data/chars/0misc/esq04.txt 
+Loaded 'esq05' from data/chars/0misc/esq05.txt 
+Loaded 'esq06' from data/chars/0misc/esq06.txt 
+sound_load_sample can't load sample from file 'data/sounds/punch5,wav'!
+Loaded 'wbot' from data/chars/misc/esq/wbot.txt 
+Command 'rangex' not understood in file 'data/chars/misc/esq/esq.txt'!
+Command 'rangex' not understood in file 'data/chars/misc/esq/esq.txt'!
+Loaded 'kabom' from data/chars/misc/esq/kabom.txt 
+Command 'rangex' not understood in file 'data/chars/misc/esq/esq.txt'!
+Loaded 'wball2' from data/chars/misc/esq/wball2.txt 
+Loaded 'sesq1' from data/chars/misc/esq/sesq1.txt 
+Loaded 'sesq2' from data/chars/misc/esq/sesq2.txt 
+Loaded 'wball' from data/chars/misc/esq/wball.txt 
+Loaded 'tunesq1' from data/chars/misc/esq/tunesq1.txt 
+Loaded 'tunesq2' from data/chars/misc/esq/tunesq2.txt 
+Loaded 'tunesq3' from data/chars/misc/esq/tunesq3.txt 
+Loaded 'tunesq4' from data/chars/misc/esq/tunesq4.txt 
+Loaded 'tsflash' from data/chars/misc/esq/tsflash.txt 
+Loaded 'tsscore' from data/chars/misc/esq/tsscore.txt 
+WARNING: data/chars/misc/esq/tsscore.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded 'exsuper2' from data/chars/0misc/exsuper2.txt 
+Loaded 'wball3' from data/chars/misc/esq/wball3.txt 
+Loaded 'BillyN' from data/chars/1billy/billyN.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyN.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyN.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyN.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyN.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyN.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyN.txt'!
+WARNING: data/chars/1billy/billyN.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'BillyB' from data/chars/1billy/billyB.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyB.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyB.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyB.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyB.txt'!
+Command 'nodebug' not understood in file 'data/chars/1billy/billyB.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyB.txt'!
+WARNING: data/chars/1billy/billyB.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'CBillyB' from data/chars/1billy/CbillyB.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'nodebug' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyB.txt'!
+WARNING: data/chars/1billy/CbillyB.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyB.txt'!
+Loaded 'CBillyboo' from data/chars/1billy/Cbillyboo.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/Cbillyboo.txt'!
+Loaded 'BoomerangS' from data/chars/0weap/BoomerangS.txt 
+Loaded 'BoomerangW2' from data/chars/0weap/BoomerangW2.txt 
+Loaded 'CBillyN' from data/chars/1billy/CbillyN.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyN.txt'!
+WARNING: data/chars/1billy/CbillyN.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyN.txt'!
+Loaded 'CBillyK' from data/chars/1billy/CbillyK.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyK.txt'!
+Loaded 'knife03' from data/chars/0weap/knife03.txt 
+WARNING: data/chars/1billy/CbillyK.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'CBillyD' from data/chars/1billy/CbillyD.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyD.txt'!
+Loaded 'drum03' from data/chars/0weap/drum03.txt 
+Loaded 'drum01' from data/chars/0weap/drum01.txt 
+Loaded 'CBillyR' from data/chars/1billy/CbillyR.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyR.txt'!
+Loaded 'rock03' from data/chars/0weap/rock03.txt 
+WARNING: data/chars/0weap/rock03.txt tries to load a non-numeric value at spawnframe, where a number is expected!
+erroneus string: rock01
+WARNING: data/chars/0weap/rock03.txt tries to load a non-numeric value at spawnframe, where a number is expected!
+erroneus string: rock01
+Loaded 'CBillyW' from data/chars/1billy/CbillyW.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyW.txt'!
+Command 'attack.size.z.background' not understood in file 'data/chars/1billy/CbillyW.txt'!
+WARNING: data/chars/1billy/CbillyW.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'BillyK' from data/chars/1billy/billyK.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyK.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyK.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyK.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyK.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyK.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyK.txt'!
+WARNING: data/chars/1billy/billyK.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'BillyR' from data/chars/1billy/billyR.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyR.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyR.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyR.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyR.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyR.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyR.txt'!
+Loaded 'BillyD' from data/chars/1billy/billyD.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyD.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyD.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyD.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyD.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyD.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyD.txt'!
+Loaded 'Billyboo' from data/chars/1billy/billyboo.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyboo.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyboo.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyboo.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyboo.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyboo.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyboo.txt'!
+Loaded 'BillyW' from data/chars/1billy/billyW.txt 
+Command 'blockratio' not understood in file 'data/chars/1billy/billyW.txt'!
+Command 'mpblock' not understood in file 'data/chars/1billy/billyW.txt'!
+Command 'grabbackwalk' not understood in file 'data/chars/1billy/billyW.txt'!
+Command 'noaircancel' not understood in file 'data/chars/1billy/billyW.txt'!
+Command 'nocheats' not understood in file 'data/chars/1billy/billyW.txt'!
+Command 'onblockscript' not understood in file 'data/chars/1billy/billyW.txt'!
+WARNING: data/chars/1billy/billyW.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: billy
+Loaded 'JimmyN' from data/chars/1jimmy/JimmyN.txt 
+WARNING: data/chars/1jimmy/JimmyN.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: jimmy
+Loaded 'JimmyB' from data/chars/1jimmy/JimmyB.txt 
+WARNING: data/chars/1jimmy/JimmyB.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: jimmy
+Loaded 'JimmyK' from data/chars/1jimmy/JimmyK.txt 
+WARNING: data/chars/1jimmy/JimmyK.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: jimmy
+Loaded 'JimmyR' from data/chars/1jimmy/JimmyR.txt 
+Loaded 'JimmyD' from data/chars/1jimmy/JimmyD.txt 
+Loaded 'Jimmyboo' from data/chars/1jimmy/Jimmyboo.txt 
+Loaded 'JimmyW' from data/chars/1jimmy/JimmyW.txt 
+WARNING: data/chars/1jimmy/JimmyW.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: jimmy
+Loaded '1jeffkni' from data/chars/2jeff/1jeffkni.txt 
+sound_load_sample can't load sample from file 'data/sounds/wcryb.wav'!
+sound_load_sample can't load sample from file 'data/sounds/wcryb.wav'!
+sound_load_sample can't load sample from file 'data/sounds/wcryb.wav'!
+sound_load_sample can't load sample from file 'data/sounds/wcryb.wav'!
+sound_load_sample can't load sample from file 'data/sounds/wcryb.wav'!
+Loaded '1jeffgun' from data/chars/2jeff/1jeffgun.txt 
+Loaded 'bullet2' from data/chars/0weap/bullet2.txt 
+Loaded 'gsmoke' from data/chars/2gunguy/gsmoke.txt 
+Loaded 'SonnyB' from data/chars/1sonny/sonnyB.txt 
+WARNING: data/chars/1sonny/sonnyB.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: sonny
+Loaded 'SonnyW' from data/chars/1sonny/sonnyW.txt 
+WARNING: data/chars/1sonny/sonnyW.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: sonny
+Loaded 'SonnyN' from data/chars/1sonny/sonnyN.txt 
+WARNING: data/chars/1sonny/sonnyN.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: sonny
+Loaded 'SonnyK' from data/chars/1sonny/sonnyK.txt 
+WARNING: data/chars/1sonny/sonnyK.txt tries to load a non-numeric value at weaponframe, where a number is expected!
+erroneus string: sonny
+Loaded 'SonnyR' from data/chars/1sonny/sonnyR.txt 
+Loaded 'SonnyD' from data/chars/1sonny/sonnyD.txt 
+Loaded 'Sonnyboo' from data/chars/1sonny/sonnyBoo.txt 
+Loaded 'yagyura' from data/chars/1seiran/Yagyura.txt 
+Loaded '11chinsw1' from data/chars/1seiran/11chinsw1.txt 
+WARNING: data/chars/1seiran/11chinsw1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '12chinsw2' from data/chars/1seiran/12chinsw2.txt 
+Loaded '12ranzsw' from data/chars/1seiran/12ranzsw.txt 
+Loaded 'ranzou01' from data/chars/0misc/ranzou01.txt 
+Loaded 'ranzou02' from data/chars/0misc/ranzou02.txt 
+Loaded 'ranzou03' from data/chars/0misc/ranzou03.txt 
+Loaded 'ranzou04' from data/chars/0misc/ranzou04.txt 
+Loaded 'ranzou05' from data/chars/0misc/ranzou05.txt 
+Loaded 'samsho01' from data/chars/0misc/samsho01.txt 
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '00ranoob' from data/chars/1seiran/00ranoob.txt 
+sound_load_sample can't load sample from file 'data/sounds/sword.wav'!
+Loaded '01chins' from data/chars/1seiran/01chins.txt 
+WARNING: data/chars/1seiran/01chins.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '02chins' from data/chars/1seiran/02chins.txt 
+WARNING: data/chars/1seiran/02chins.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/sword1.wav'!
+Loaded '04chinsl1' from data/chars/1seiran/04chinsl1.txt 
+WARNING: data/chars/1seiran/04chinsl1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '05chinsl2' from data/chars/1seiran/05chinsl2.txt 
+WARNING: data/chars/1seiran/05chinsl2.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+sound_load_sample can't load sample from file 'data/sounds/sword1.wav'!
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '00bak' from data/chars/1seiran/00bak.txt 
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+WARNING: data/chars/1seiran/Yagyura.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '06chinsu1' from data/chars/1seiran/06chinsu1.txt 
+sound_load_sample can't load sample from file 'data/sounds/beat0.wav'!
+WARNING: data/chars/1seiran/06chinsu1.txt tries to load a non-numeric value at drawmethod, where a number is expected!
+erroneus string: off
+Loaded '00rfire' from data/chars/1seiran/00rfire.txt 
+Loaded 'reyes' from data/chars/1seiran/reyes.txt 
+Loaded 'yrstar' from data/chars/0weap/yrstar.txt 
+Loaded 'yagyuC1' from data/chars/1seiran/yagyuC1.txt 
+Loaded 'yagyuC2' from data/chars/1seiran/yagyuC2.txt 
+Loaded '00rwood' from data/chars/1seiran/00rwood.txt 
+Loaded 'bgfx' from data/chars/misc/bgfx/bgfx.txt 
+Loaded 'fogss' from data/chars/misc/bgfx/fogss.txt 
+Loaded 'boltss' from data/chars/misc/bgfx/boltss.txt 
+Loaded 'lighte' from data/chars/misc/bgfx/lighte.txt 
+Loaded 'smokess' from data/chars/misc/bgfx/smokess.txt 
+Loaded 'fogss'Loaded 'bgfx2' from data/chars/misc/bgfx2/bgfx2.txt 
+Loaded 'options' from data/chars/misc/options.txt 
+Loaded 'zoomin' from data/chars/0misc/zoomin.txt 
+Loaded 'zoomout' from data/chars/0misc/zoomout.txt 
+Loaded 'ulf1'Loaded 'ulf2'Loaded 'ulf3'Loaded 'ulf4'Loaded 'ulf5'Loaded 'uwwf'Loaded 'slowitm' from data/chars/0weap/slowitm.txt 
+Loaded 'slow2' from data/chars/0weap/slow2.txt 
+Loaded 'slow3' from data/chars/0weap/slow3.txt 
+Loaded 'stclear' from data/chars/misc/staclear/stclear.txt 
+Loaded 'sentkiller' from data/chars/0weap/sentkiller.txt 
+Loaded 'slowitx1' from data/chars/0weap/slowitx1.txt 
+Loaded 'slowitm2' from data/chars/0weap/slowitm2.txt 
+Loaded 'stclear2' from data/chars/misc/staclear/stclear2.txt 
+Loaded 'slowitm3' from data/chars/0weap/slowitm3.txt 
+Loaded 'stclbur' from data/chars/misc/staclear/stclbur.txt 
+Loaded 'slowitx2' from data/chars/0weap/slowitx2.txt 
+Loaded 'slowitmL' from data/chars/0weap/slowitmL.txt 
+Loaded 'stclearL' from data/chars/misc/staclear/stclearL.txt 
+Loaded 'slowitxl' from data/chars/0weap/slowitxL.txt 
+Loaded 'slowitXA' from data/chars/0weap/slowitxA.txt 
+Loaded 'stclearA' from data/chars/misc/staclear/stclearA.txt 
+Loaded 'sentkiller'Loaded 'slowitmA' from data/chars/0weap/slowitmA.txt 
+Loaded 'slow'Loaded 'slow2'Loaded 'slow3'Loaded 'slow5' from data/chars/0weap/slow5.txt 
+Loaded 'slowt'Loaded 'Awilliam' from data/chars/2wllms/awilliam.txt 
+sound_load_sample can't load sample from file 'data/sounds/mk-run1.wav'!
+sound_load_sample can't load sample from file 'data/sounds/mk-run1.wav'!
+Loaded 'Wilkni' from data/chars/2wllms/wilkni.txt 
+Loaded 'knife02' from data/chars/0weap/knife02.txt 
+Loaded 'Wilboo' from data/chars/2wllms/wilboo.txt 
+Loaded 'BoomerangS2' from data/chars/0weap/BoomerangS2.txt 
+Loaded 'Aroper' from data/chars/2roper/aroper.txt 
+Loaded 'Ropbo' from data/chars/2roper/ropbo.txt 
+Loaded 'Ropnu' from data/chars/2roper/ropnu.txt 
+Loaded 'Willtrn' from data/chars/2wllms/willtrn.txt 
+Loaded 'Ropertrn' from data/chars/2roper/ropertrn.txt 
+Loaded 'bottle' from data/chars/2roper/bottle.txt 
+Loaded 'coin' from data/Bgs/01airp/det/coin.txt 
+sound_load_sample can't load sample from file 'data/sounds/mk-run2.wav'!
+Loaded 'Linda1W' from data/chars/2linda1/linda1W.txt 
+Loaded 'Jeffg' from data/chars/2jeff/Jeffg.txt 
+Command 'bullet' not understood in file 'data/chars/2jeff/Jeffg.txt'!
+Loaded 'dukeu2' from data/chars/2duke/dukeU2.txt 
+Loaded 'ssfduke1' from data/chars/2duke/ssfduke1.txt 
+Loaded 'ssfduke2' from data/chars/2duke/ssfduke2.txt 
+Loaded 'dpow01' from data/chars/0misc/dpow01.txt 
+Loaded 'dpow00' from data/chars/0misc/dpow00.txt 
+Loaded 'dpow02' from data/chars/0misc/dpow02.txt 
+sound_load_sample can't load sample from file 'data/sounds/pain3.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain1.wav'!
+Loaded 'dukeu4' from data/chars/2duke/dukeU4.txt 
+Loaded 'ssfduke3' from data/chars/2duke/ssfduke3.txt 
+Loaded 'ssfduke4' from data/chars/2duke/ssfduke4.txt 
+Loaded 'quake01' from data/chars/0misc/quake01.txt 
+Loaded 'bolt02' from data/chars/0weap/bolt02.txt 
+Loaded 'rsto' from data/chars/0weap/rsto.txt 
+sound_load_sample can't load sample from file 'data/sounds/pain3.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain1.wav'!
+Loaded 'dukeu6' from data/chars/2duke/dukeU6.txt 
+Loaded 'upfire1' from data/chars/2duke/upfire1.txt 
+Loaded 'upfire2' from data/chars/2duke/upfire2.txt 
+Loaded 'dball' from data/chars/2duke/dball.txt 
+Loaded 'dtel' from data/chars/2duke/dtel.txt 
+Loaded 'icef' from data/chars/2duke/icef.txt 
+Loaded 'bull' from data/chars/2duke/bull.txt 
+sound_load_sample can't load sample from file 'data/sounds/pain3.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain1.wav'!
+Loaded 'dukeu7' from data/chars/2duke/dukeU7.txt 
+sound_load_sample can't load sample from file 'Qflash2'!
+Loaded 'clashb1' from data/chars/2duke/clashb1.txt 
+Loaded 'pbomb1' from data/chars/2duke/pbomb1.txt 
+Loaded 'pbomb2' from data/chars/2duke/pbomb2.txt 
+sound_load_sample can't load sample from file 'data/sounds/pain3.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain1.wav'!
+Loaded 'dukeu8' from data/chars/2duke/dukeU8.txt 
+Loaded 'dukeli' from data/chars/0weap/dukeli.txt 
+Loaded 'dminion' from data/chars/2duke/dminion.txt 
+Loaded 'suich' from data/chars/2duke/suich.txt 
+Loaded 'dukeres1' from data/chars/2duke/dukeres1.txt 
+Loaded 'resur' from data/chars/0weap/resur.txt 
+Loaded '1up' from data/chars/0item/1up.txt 
+sound_load_sample can't load sample from file 'data/sounds/enta04.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain3.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/pain1.wav'!
+Loaded 'BoomerangW' from data/chars/0weap/BoomerangW.txt 
+Loaded 'BoomerangW2'
+Loading models...............	Done!
+Object engine init...........	Done!
+Input init...................	
+2 joystick(s) found!
+1. UNKNOWN - 6 axes, 15 buttons, 1 hat(s)
+
+2. UNKNOWN - 4 axes, 12 buttons, 1 hat(s)
+Done!
+Create blending tables.......	Done!
+Save settings so far........	Done!
+
+
+
+Can't play music file 'data/music/remix'
+Loaded 'bgfx2'Loaded 'bgfx'Level Loading:   'data/levels/dojo3rop.txt'
+Total Ram: 17005608960 Bytes
+ Free Ram: 8191516672 Bytes
+ Used Ram: 360374272 Bytes
+
+Loaded 'ropert' from data/chars/2roper/ropert.txt 
+sound_load_sample can't load sample from file 'data/sounds/mk-run2.wav'!
+sound_load_sample can't load sample from file 'data/sounds/mk-run2.wav'!
+Loaded 'tbox1' from data/Bgs/dojo/tbox1.txt 
+Loaded 'tbox2' from data/Bgs/dojo/tbox2.txt 
+Loaded 'tbox3' from data/Bgs/dojo/tbox3.txt 
+Loaded 'tbox4' from data/Bgs/dojo/tbox4.txt 
+Loaded 'tbox5' from data/Bgs/dojo/tbox5.txt 
+Loaded 'tbox6' from data/Bgs/dojo/tbox6.txt 
+Loaded 'tbox7' from data/Bgs/dojo/tbox7.txt 
+Loaded 'tbox8' from data/Bgs/dojo/tbox8.txt 
+Loaded 'tbox9' from data/Bgs/dojo/tbox9.txt 
+Loaded 'tboxa' from data/Bgs/dojo/tboxa.txt 
+Loaded 'tboxb' from data/Bgs/dojo/tboxb.txt 
+Loaded 'tboxc' from data/Bgs/dojo/tboxc.txt 
+Loaded 'tboxd' from data/Bgs/dojo/tboxd.txt 
+Loaded 'tboxe' from data/Bgs/dojo/tboxe.txt 
+Loaded 'tboxf' from data/Bgs/dojo/tboxf.txt 
+Loaded 'tboxg' from data/Bgs/dojo/tboxg.txt 
+Loaded 'tboxh' from data/Bgs/dojo/tboxh.txt 
+Loaded 'tboxi' from data/Bgs/dojo/tboxi.txt 
+Loaded 'tboxj' from data/Bgs/dojo/tboxj.txt 
+Loaded 'tboxk' from data/Bgs/dojo/tboxk.txt 
+Loaded 'tboxl' from data/Bgs/dojo/tboxl.txt 
+Loaded 'tboxm' from data/Bgs/dojo/tboxm.txt 
+Loaded 'tboxn' from data/Bgs/dojo/tboxn.txt 
+Loaded 'tboxo' from data/Bgs/dojo/tboxo.txt 
+Loaded 'tboxp' from data/Bgs/dojo/tboxp.txt 
+Loaded 'tboxq' from data/Bgs/dojo/tboxq.txt 
+Loaded 'tboxr' from data/Bgs/dojo/tboxr.txt 
+Loaded 'tboxrb' from data/Bgs/dojo/tboxrb.txt 
+Loaded 'tboxs' from data/Bgs/dojo/tboxs.txt 
+Loaded 'tboxsb' from data/Bgs/dojo/tboxsb.txt 
+Loaded 'tboxt' from data/Bgs/dojo/tboxt.txt 
+Loaded 'tboxu' from data/Bgs/dojo/tboxu.txt 
+Loaded 'tboxv' from data/Bgs/dojo/tboxv.txt 
+Loaded 'tboxw' from data/Bgs/dojo/tboxw.txt 
+Loaded 'tboxx' from data/Bgs/dojo/tboxx.txt 
+Loaded 'tboxy' from data/Bgs/dojo/tboxy.txt 
+Loaded 'tboxz' from data/Bgs/dojo/tboxz.txt 
+Loaded 'tboxzb' from data/Bgs/dojo/tboxzb.txt 
+Loaded 'tboxyb' from data/Bgs/dojo/tboxyb.txt 
+Loaded 'tboxxb' from data/Bgs/dojo/tboxxb.txt 
+Loaded 'tboxwb' from data/Bgs/dojo/tboxwb.txt 
+Loaded 'tboxVb' from data/Bgs/dojo/tboxvb.txt 
+Loaded 'tboxub' from data/Bgs/dojo/tboxub.txt 
+Loaded 'tboxtb' from data/Bgs/dojo/tboxtb.txt 
+Loaded 'tboxqb' from data/Bgs/dojo/tboxqb.txt 
+Loaded 'tboxpb' from data/Bgs/dojo/tboxpb.txt 
+Loaded 'tboxob' from data/Bgs/dojo/tboxob.txt 
+Loaded 'tboxnb' from data/Bgs/dojo/tboxnb.txt 
+Loaded 'tboxmb' from data/Bgs/dojo/tboxmb.txt 
+Loaded 'tboxlb' from data/Bgs/dojo/tboxlb.txt 
+Loaded 'tboxkb' from data/Bgs/dojo/tboxkb.txt 
+Loaded 'tboxjb' from data/Bgs/dojo/tboxjb.txt 
+Loaded 'tboxib' from data/Bgs/dojo/tboxib.txt 
+Loaded 'tboxhb' from data/Bgs/dojo/tboxhb.txt 
+Loaded 'tboxgb' from data/Bgs/dojo/tboxgb.txt 
+Loaded 'tboxfb' from data/Bgs/dojo/tboxfb.txt 
+Loaded 'tboxeb' from data/Bgs/dojo/tboxeb.txt 
+Loaded 'tboxdb' from data/Bgs/dojo/tboxdb.txt 
+Loaded 'tboxcb' from data/Bgs/dojo/tboxcb.txt 
+Loaded 'tboxbb' from data/Bgs/dojo/tboxbb.txt 
+Loaded 'tboxab' from data/Bgs/dojo/tboxab.txt 
+Loaded 'tbox9b' from data/Bgs/dojo/tbox9b.txt 
+Loaded 'tbox8b' from data/Bgs/dojo/tbox8b.txt 
+Loaded 'tbox7b' from data/Bgs/dojo/tbox7b.txt 
+Loaded 'tbox6b' from data/Bgs/dojo/tbox6b.txt 
+Loaded 'tbox5b' from data/Bgs/dojo/tbox5b.txt 
+Loaded 'tbox4b' from data/Bgs/dojo/tbox4b.txt 
+Loaded 'tbox3b' from data/Bgs/dojo/tbox3b.txt 
+Loaded 'tbox2b' from data/Bgs/dojo/tbox2b.txt 
+Loaded 'nunchuck' from data/chars/0weap/nunchuck.txt 
+sound_load_sample can't load sample from file 'data/sounds/weap2.wav'!
+Loaded 'bo' from data/chars/0weap/bo.txt 
+sound_load_sample can't load sample from file 'data/sounds/weap1.wav'!
+Loaded 'whip' from data/chars/0weap/whip.txt 
+Loaded 'gun01' from data/chars/0weap/gun01.txt 
+
+Level Loaded:    'data/levels/dojo3rop.txt'
+Total Ram: 17005608960 Bytes
+ Free Ram: 8162820096 Bytes
+ Used Ram: 394702848 Bytes
+Total sprites mapped: 6956
+
+mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=0/100mpincreaseonhit.c: MP increased to 1mpincreaseonhit.c: Entity 'Billy' (block=0, anim=45) mp=48/100mpincreaseonhit.c: MP increased to 49mpincreaseonhit.c: Entity 'Billy' (block=0, anim=46) mp=90/100mpincreaseonhit.c: MP increased to 91mpincreaseonhit.c: Entity 'Billy' (block=0, anim=46) mp=91/100mpincreaseonhit.c: MP increased to 92mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=67/100mpincreaseonhit.c: MP increased to 68mpincreaseonhit.c: Entity 'Billy' (block=0, anim=9) mp=68/100mpincreaseonhit.c: MP increased to 69mpincreaseonhit.c: Entity 'Billy' (block=0, anim=10) mp=69/100mpincreaseonhit.c: MP increased to 70mpincreaseonhit.c: Entity 'Billy' (block=0, anim=11) mp=70/100mpincreaseonhit.c: MP increased to 71mpincreaseonhit.c: Entity 'Billy' (block=0, anim=1) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=5) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=285) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=285) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=9) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=10) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=285) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=285) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=9) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=9) mp=100/100mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=50/100mpincreaseonhit.c: MP increased to 51mpincreaseonhit.c: Entity 'Billy' (block=0, anim=0) mp=51/100mpincreaseonhit.c: MP increased to 52mpincreaseonhit.c: Entity 'Billy' (block=0, anim=70) mp=52/100mpincreaseonhit.c: MP increased to 53mpincreaseonhit.c: Entity 'Billy' (block=0, anim=5) mp=53/100mpincreaseonhit.c: MP increased to 54mpincreaseonhit.c: Entity 'Billy' (block=0, anim=26) mp=29/100mpincreaseonhit.c: MP increased to 30mpincreaseonhit.c: Entity 'Billy' (block=0, anim=26) mp=30/100mpincreaseonhit.c: MP increased to 31mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=31/100mpincreaseonhit.c: MP increased to 32mpincreaseonhit.c: Entity 'Billy' (block=0, anim=0) mp=32/100mpincreaseonhit.c: MP increased to 33mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=33/100mpincreaseonhit.c: MP increased to 34mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=34/100mpincreaseonhit.c: MP increased to 35mpincreaseonhit.c: Entity 'Billy' (block=0, anim=1) mp=35/100mpincreaseonhit.c: MP increased to 36mpincreaseonhit.c: Entity 'Billy' (block=0, anim=1) mp=36/100mpincreaseonhit.c: MP increased to 37mpincreaseonhit.c: Entity 'Billy' (block=0, anim=8) mp=37/100mpincreaseonhit.c: MP increased to 38Level Unloading: 'data/levels/dojo3rop.txt'
+Total Ram: 17005608960 Bytes
+ Free Ram: 8782626816 Bytes
+ Used Ram: 394752000 Bytes
+
+RAM Status:
+Total Ram: 17005608960 Bytes
+ Free Ram: 8782626816 Bytes
+ Used Ram: 394752000 Bytes
+
+
+Can't play music file 'data/music/remix'
+Loaded 'bgfx2'
+Can't play music file 'data/music/remix'
+
+************ Shutting Down ************
+
+OpenBOR v3.0 Build , Compile Date: Aug 29 2018
+Presented by the OpenBOR Team.
+www.chronocrash.com
+OpenBOR is the open source continuation of Beats of Rage by Senile Team.
+
+Special thanks to SEGA and SNK.
+
+Total Ram: 17005608960 Bytes
+ Free Ram: 8804163584 Bytes
+ Used Ram: 394752000 Bytes
+
+Release level data...........
+Done!
+
+Release graphics data........	Done!
+Release game data............
+
+Unload 'Flash' ............Done.
+Unload 'QFlash' ............Done.
+Unload 'Qmkout' ............Done.
+Unload 'Qmkooh' ............Done.
+Unload 'Qmkexe' ............Done.
+Unload 'Qmksup' ............Done.
+Unload 'QFlash2' ............Done.
+Unload 'QFlash2b' ............Done.
+Unload 'Expflash' ............Done.
+Unload 'fFlash' ............Done.
+Unload 'Bflash' ............Done.
+Unload 'Bflashs' ............Done.
+Unload 'slow' ............Done.
+Unload 'slowt' ............Done.
+Unload 'wflash' ............Done.
+Unload 'brfladu' ............Done.
+Unload 'comult' ............Done.
+Unload 'comult2' ............Done.
+Unload 'common' ............Done.
+Unload 'common2' ............Done.
+Unload 'comkil' ............Done.
+Unload 'comkil2' ............Done.
+Unload 'commas' ............Done.
+Unload 'comhyp' ............Done.
+Unload 'combla' ............Done.
+Unload 'combla2' ............Done.
+Unload 'combru' ............Done.
+Unload 'comkin' ............Done.
+Unload 'comutm' ............Done.
+Unload 'comosom' ............Done.
+Unload 'comwwf' ............Done.
+Unload 'bosser' ............Done.
+Unload 'ndra' ............Done.
+Unload 'ndra2' ............Done.
+Unload 'Billy' ............Done.
+Unload 'dragoni' ............Done.
+Unload 'dragonok' ............Done.
+Unload 'victoBi' ............Done.
+Unload 'sddb01' ............Done.
+Unload 'sddba01' ............Done.
+Unload 'sddba02' ............Done.
+Unload 'sddbki01' ............Done.
+Unload 'sddbki02' ............Done.
+Unload 'sddbo' ............Done.
+Unload 'sddnun' ............Done.
+Unload 'sddwhi' ............Done.
+Unload 'eslam' ............Done.
+Unload 'brfla' ............Done.
+Unload 'burn' ............Done.
+Unload 'ssf1' ............Done.
+Unload 'ssf2' ............Done.
+Unload 'ssfd' ............Done.
+Unload 'colat2' ............Done.
+Unload 'slink' ............Done.
+Unload 'ulf1' ............Done.
+Unload 'ulf2' ............Done.
+Unload 'ulf3' ............Done.
+Unload 'super01' ............Done.
+Unload 'mulf' ............Done.
+Unload 'sa' ............Done.
+Unload 'sab' ............Done.
+Unload 'Billy2' ............Done.
+Unload 'dd2b01' ............Done.
+Unload 'dd2bwfb01' ............Done.
+Unload 'colat1' ............Done.
+Unload 'moron' ............Done.
+Unload 'uwwf' ............Done.
+Unload 'Billy3' ............Done.
+Unload 'dd3b01' ............Done.
+Unload 'dd3sbmb01' ............Done.
+Unload 'sonicbm' ............Done.
+Unload 'critic' ............Done.
+Unload 'Jimmy' ............Done.
+Unload 'victoJi' ............Done.
+Unload 'sddj01' ............Done.
+Unload 'jimmysa' ............Done.
+Unload 'Jimmy2' ............Done.
+Unload 'dd2j01' ............Done.
+Unload 'dd2Jwf01' ............Done.
+Unload 'Jimmy3' ............Done.
+Unload 'dd3j01' ............Done.
+Unload 'dd3sbmj01' ............Done.
+Unload '1jeff' ............Done.
+Unload 'jeffi' ............Done.
+Unload 'jeffok' ............Done.
+Unload 'victoJe' ............Done.
+Unload 'sddje01' ............Done.
+Unload 'sddje02' ............Done.
+Unload 'sddje03' ............Done.
+Unload 'sddjki02' ............Done.
+Unload 'sddsbm01' ............Done.
+Unload 'sddmk301' ............Done.
+Unload 'sddjkni' ............Done.
+Unload 'sddjgun' ............Done.
+Unload 'brfla2' ............Done.
+Unload 'knife01' ............Done.
+Unload 'ssj1' ............Done.
+Unload 'ssj2' ............Done.
+Unload 'dx' ............Done.
+Unload 'agress' ............Done.
+Unload 'agress02' ............Done.
+Unload 'ulf4' ............Done.
+Unload 'Sonny' ............Done.
+Unload 'phoenixi' ............Done.
+Unload 'phoeok' ............Done.
+Unload 'victoSo' ............Done.
+Unload 'sddso01' ............Done.
+Unload 'sddso02' ............Done.
+Unload 'sddso03' ............Done.
+Unload 'sddski02' ............Done.
+Unload 'sddwhi2' ............Done.
+Unload 'ssfs' ............Done.
+Unload 'ssfso' ............Done.
+Unload 'exc' ............Done.
+Unload 'phoenix' ............Done.
+Unload 'ulf5' ............Done.
+Unload 'Sonny2' ............Done.
+Unload 'sonph' ............Done.
+Unload 'sddso04' ............Done.
+Unload 'sddso05' ............Done.
+Unload 'sddsbm02' ............Done.
+Unload 'sddmk302' ............Done.
+Unload 'ssfs2' ............Done.
+Unload 'chinsei' ............Done.
+Unload 'seirani' ............Done.
+Unload 'seiranok' ............Done.
+Unload 'victoCR' ............Done.
+Unload '11ranzw1' ............Done.
+Unload '13ranzc4' ............Done.
+Unload '08ranzc1' ............Done.
+Unload '09ranzc2' ............Done.
+Unload '10ranzc3' ............Done.
+Unload '14ranzc5' ............Done.
+Unload 'chin01' ............Done.
+Unload 'chin02' ............Done.
+Unload 'chin03' ............Done.
+Unload 'chin04' ............Done.
+Unload 'chin05' ............Done.
+Unload 'chin07' ............Done.
+Unload '00charge' ............Done.
+Unload 'seiransw' ............Done.
+Unload '01ranz' ............Done.
+Unload '02ranz' ............Done.
+Unload '03ranz' ............Done.
+Unload '00ninf' ............Done.
+Unload '04ranzl1' ............Done.
+Unload '05ranzl2' ............Done.
+Unload '06ranzu1' ............Done.
+Unload '07ranzu2' ............Done.
+Unload 'exsuper' ............Done.
+Unload '00sbomb' ............Done.
+Unload 'CBilly' ............Done.
+Unload 'ogi' ............Done.
+Unload 'dragoxok' ............Done.
+Unload 'victoOG' ............Done.
+Unload 'sddog1' ............Done.
+Unload 'sddog2' ............Done.
+Unload 'brflaog' ............Done.
+Unload 'ess' ............Done.
+Unload 'essi' ............Done.
+Unload 'essok' ............Done.
+Unload 'victoSP' ............Done.
+Unload 'hellt' ............Done.
+Unload 'lightnn' ............Done.
+Unload 'ess01' ............Done.
+Unload 'ess02' ............Done.
+Unload 'ess03' ............Done.
+Unload 'ess04' ............Done.
+Unload 'ess05' ............Done.
+Unload 'ess06' ............Done.
+Unload 'essaw1' ............Done.
+Unload 'esscro' ............Done.
+Unload 'essfpi' ............Done.
+Unload 'essfla' ............Done.
+Unload 'essour' ............Done.
+Unload 'essotn' ............Done.
+Unload 'ulf6' ............Done.
+Unload 'essbloo' ............Done.
+Unload 'quake02' ............Done.
+Unload 'xr01' ............Done.
+Unload 'xr02' ............Done.
+Unload 'xr03' ............Done.
+Unload 'essde1' ............Done.
+Unload 'essde2' ............Done.
+Unload 'essde3' ............Done.
+Unload 'fball' ............Done.
+Unload 'itemcess' ............Done.
+Unload 'esseker' ............Done.
+Unload 'esseker2' ............Done.
+Unload 'esq' ............Done.
+Unload 'esqi' ............Done.
+Unload 'esqok' ............Done.
+Unload 'victoSQ' ............Done.
+Unload 'esq01' ............Done.
+Unload 'esq02' ............Done.
+Unload 'esq03' ............Done.
+Unload 'esq04' ............Done.
+Unload 'esq05' ............Done.
+Unload 'esq06' ............Done.
+Unload 'wbot' ............Done.
+Unload 'kabom' ............Done.
+Unload 'wball2' ............Done.
+Unload 'sesq1' ............Done.
+Unload 'sesq2' ............Done.
+Unload 'wball' ............Done.
+Unload 'tunesq1' ............Done.
+Unload 'tunesq2' ............Done.
+Unload 'tunesq3' ............Done.
+Unload 'tunesq4' ............Done.
+Unload 'tsflash' ............Done.
+Unload 'tsscore' ............Done.
+Unload 'exsuper2' ............Done.
+Unload 'wball3' ............Done.
+Unload 'BillyN' ............Done.
+Unload 'BillyB' ............Done.
+Unload 'CBillyB' ............Done.
+Unload 'CBillyboo' ............Done.
+Unload 'BoomerangS' ............Done.
+Unload 'BoomerangW2' ............Done.
+Unload 'CBillyN' ............Done.
+Unload 'CBillyK' ............Done.
+Unload 'knife03' ............Done.
+Unload 'CBillyD' ............Done.
+Unload 'drum03' ............Done.
+Unload 'drum01' ............Done.
+Unload 'CBillyR' ............Done.
+Unload 'rock03' ............Done.
+Unload 'CBillyW' ............Done.
+Unload 'BillyK' ............Done.
+Unload 'BillyR' ............Done.
+Unload 'BillyD' ............Done.
+Unload 'Billyboo' ............Done.
+Unload 'BillyW' ............Done.
+Unload 'JimmyN' ............Done.
+Unload 'JimmyB' ............Done.
+Unload 'JimmyK' ............Done.
+Unload 'JimmyR' ............Done.
+Unload 'JimmyD' ............Done.
+Unload 'Jimmyboo' ............Done.
+Unload 'JimmyW' ............Done.
+Unload '1jeffkni' ............Done.
+Unload '1jeffgun' ............Done.
+Unload 'bullet2' ............Done.
+Unload 'gsmoke' ............Done.
+Unload 'SonnyB' ............Done.
+Unload 'SonnyW' ............Done.
+Unload 'SonnyN' ............Done.
+Unload 'SonnyK' ............Done.
+Unload 'SonnyR' ............Done.
+Unload 'SonnyD' ............Done.
+Unload 'Sonnyboo' ............Done.
+Unload 'yagyura' ............Done.
+Unload '11chinsw1' ............Done.
+Unload '12chinsw2' ............Done.
+Unload '12ranzsw' ............Done.
+Unload 'ranzou01' ............Done.
+Unload 'ranzou02' ............Done.
+Unload 'ranzou03' ............Done.
+Unload 'ranzou04' ............Done.
+Unload 'ranzou05' ............Done.
+Unload 'samsho01' ............Done.
+Unload '00ranoob' ............Done.
+Unload '01chins' ............Done.
+Unload '02chins' ............Done.
+Unload '04chinsl1' ............Done.
+Unload '05chinsl2' ............Done.
+Unload '00bak' ............Done.
+Unload '06chinsu1' ............Done.
+Unload '00rfire' ............Done.
+Unload 'reyes' ............Done.
+Unload 'yrstar' ............Done.
+Unload 'yagyuC1' ............Done.
+Unload 'yagyuC2' ............Done.
+Unload '00rwood' ............Done.
+Unload 'bgfx' ............Done.
+Unload 'fogss' ............Done.
+Unload 'boltss' ............Done.
+Unload 'lighte' ............Done.
+Unload 'smokess' ............Done.
+Unload 'bgfx2' ............Done.
+Unload 'options' ............Done.
+Unload 'zoomin' ............Done.
+Unload 'zoomout' ............Done.
+Unload 'slowitm' ............Done.
+Unload 'slow2' ............Done.
+Unload 'slow3' ............Done.
+Unload 'stclear' ............Done.
+Unload 'sentkiller' ............Done.
+Unload 'slowitx1' ............Done.
+Unload 'slowitm2' ............Done.
+Unload 'stclear2' ............Done.
+Unload 'slowitm3' ............Done.
+Unload 'stclbur' ............Done.
+Unload 'slowitx2' ............Done.
+Unload 'slowitmL' ............Done.
+Unload 'stclearL' ............Done.
+Unload 'slowitxl' ............Done.
+Unload 'slowitXA' ............Done.
+Unload 'stclearA' ............Done.
+Unload 'slowitmA' ............Done.
+Unload 'slow5' ............Done.
+Unload 'Awilliam' ............Done.
+Unload 'Wilkni' ............Done.
+Unload 'knife02' ............Done.
+Unload 'Wilboo' ............Done.
+Unload 'BoomerangS2' ............Done.
+Unload 'Aroper' ............Done.
+Unload 'Ropbo' ............Done.
+Unload 'Ropnu' ............Done.
+Unload 'Willtrn' ............Done.
+Unload 'Ropertrn' ............Done.
+Unload 'bottle' ............Done.
+Unload 'coin' ............Done.
+Unload 'Linda1W' ............Done.
+Unload 'Jeffg' ............Done.
+Unload 'dukeu2' ............Done.
+Unload 'ssfduke1' ............Done.
+Unload 'ssfduke2' ............Done.
+Unload 'dpow01' ............Done.
+Unload 'dpow00' ............Done.
+Unload 'dpow02' ............Done.
+Unload 'dukeu4' ............Done.
+Unload 'ssfduke3' ............Done.
+Unload 'ssfduke4' ............Done.
+Unload 'quake01' ............Done.
+Unload 'bolt02' ............Done.
+Unload 'rsto' ............Done.
+Unload 'dukeu6' ............Done.
+Unload 'upfire1' ............Done.
+Unload 'upfire2' ............Done.
+Unload 'dball' ............Done.
+Unload 'dtel' ............Done.
+Unload 'icef' ............Done.
+Unload 'bull' ............Done.
+Unload 'dukeu7' ............Done.
+Unload 'clashb1' ............Done.
+Unload 'pbomb1' ............Done.
+Unload 'pbomb2' ............Done.
+Unload 'dukeu8' ............Done.
+Unload 'dukeli' ............Done.
+Unload 'dminion' ............Done.
+Unload 'suich' ............Done.
+Unload 'dukeres1' ............Done.
+Unload 'resur' ............Done.
+Unload '1up' ............Done.
+Unload 'BoomerangW' ............Done.
+Unload 'Ropert' ............Done.
+Unload 'tbox1' ............Done.
+Unload 'tbox2' ............Done.
+Unload 'tbox3' ............Done.
+Unload 'tbox4' ............Done.
+Unload 'tbox5' ............Done.
+Unload 'tbox6' ............Done.
+Unload 'tbox7' ............Done.
+Unload 'tbox8' ............Done.
+Unload 'tbox9' ............Done.
+Unload 'tboxa' ............Done.
+Unload 'tboxb' ............Done.
+Unload 'tboxc' ............Done.
+Unload 'tboxd' ............Done.
+Unload 'tboxe' ............Done.
+Unload 'tboxf' ............Done.
+Unload 'tboxg' ............Done.
+Unload 'tboxh' ............Done.
+Unload 'tboxi' ............Done.
+Unload 'tboxj' ............Done.
+Unload 'tboxk' ............Done.
+Unload 'tboxl' ............Done.
+Unload 'tboxm' ............Done.
+Unload 'tboxn' ............Done.
+Unload 'tboxo' ............Done.
+Unload 'tboxp' ............Done.
+Unload 'tboxq' ............Done.
+Unload 'tboxr' ............Done.
+Unload 'tboxrb' ............Done.
+Unload 'tboxs' ............Done.
+Unload 'tboxsb' ............Done.
+Unload 'tboxt' ............Done.
+Unload 'tboxu' ............Done.
+Unload 'tboxv' ............Done.
+Unload 'tboxw' ............Done.
+Unload 'tboxx' ............Done.
+Unload 'tboxy' ............Done.
+Unload 'tboxz' ............Done.
+Unload 'tboxzb' ............Done.
+Unload 'tboxyb' ............Done.
+Unload 'tboxxb' ............Done.
+Unload 'tboxwb' ............Done.
+Unload 'tboxvb' ............Done.
+Unload 'tboxub' ............Done.
+Unload 'tboxtb' ............Done.
+Unload 'tboxqb' ............Done.
+Unload 'tboxpb' ............Done.
+Unload 'tboxob' ............Done.
+Unload 'tboxnb' ............Done.
+Unload 'tboxmb' ............Done.
+Unload 'tboxlb' ............Done.
+Unload 'tboxkb' ............Done.
+Unload 'tboxjb' ............Done.
+Unload 'tboxib' ............Done.
+Unload 'tboxhb' ............Done.
+Unload 'tboxgb' ............Done.
+Unload 'tboxfb' ............Done.
+Unload 'tboxeb' ............Done.
+Unload 'tboxdb' ............Done.
+Unload 'tboxcb' ............Done.
+Unload 'tboxbb' ............Done.
+Unload 'tboxab' ............Done.
+Unload 'tbox9b' ............Done.
+Unload 'tbox8b' ............Done.
+Unload 'tbox7b' ............Done.
+Unload 'tbox6b' ............Done.
+Unload 'tbox5b' ............Done.
+Unload 'tbox4b' ............Done.
+Unload 'tbox3b' ............Done.
+Unload 'tbox2b' ............Done.
+Unload 'Nunchuck' ............Done.
+Unload 'Bo' ............Done.
+Unload 'Whip' ............Done.
+Unload 'gun01' ............Done.
+
+Release game data............	Done!
+Release timer................	Done!
+Release input hardware.......	Done!
+Release sound system.........	Done!
+Release FileCaching System...	Done!
+
+**************** Done *****************
+
+OpenBOR v3.0 Build , Compile Date: Aug 29 2018
+Presented by the OpenBOR Team.
+www.chronocrash.com
+OpenBOR is the open source continuation of Beats of Rage by Senile Team.
+
+Special thanks to SEGA and SNK.
+
