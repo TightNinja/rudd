@@ -36,12 +36,12 @@ mprate       	1
 mpblock 		1
 grabwalk 		1
 grabturn 		0
-grabbackwalk    0
+grabbackwalk    1
 guardpoints 	0
 noaircancel     1
 nocheats        0
 nodebug        0
-jumpmove 0                 #-------change orientation in mid air during jump 
+jumpmove        0          #-------change orientation in mid air during jump 
 
 
 onmoveascript	   data/scripts/hithead.c
@@ -52,7 +52,7 @@ ondrawscript	   data/scripts/shadowon.c
 onblockWscript     data/scripts/spikesw2.c 
 ondoattackscript   data/scripts/multihits.c
 ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
-#onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
+onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
 #ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
 
 anim freespecial98
@@ -75,7 +75,7 @@ anim freespecial98
 	attack.block.penetrate 1
 	attack.damage.force 9
 	attack.damage.type 13
-	attack.effect.hit.flash.disable 0
+	attack.effect.hit.flash.disable 1
 	attack.position.x 80
 	attack.position.y 92
 	attack.reaction.fall.force 1
@@ -4165,7 +4165,7 @@ anim freespecial60
 
 
 #JAGO WIND KICK OPENER
-com      d f j + a2  freespecial61  #----------------------Kit Additiion---------------------
+com      d f s  freespecial61  #----------------------Kit Additiion---------------------
 
 anim freespecial61
 	 loop       0
