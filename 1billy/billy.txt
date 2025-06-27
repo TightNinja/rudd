@@ -41,7 +41,7 @@ guardpoints 	0
 noaircancel     1
 nocheats        0
 nodebug        0
-jumpmove        0          #-------change orientation in mid air during jump 
+jumpmove        1          #-------change orientation in mid air during jump 
 
 
 onmoveascript	   data/scripts/hithead.c
