@@ -1,0 +1,22 @@
+"in_cheat_options", - detects cheat options
+"in_control_options", - detects control options
+"in_gameoverscreen", - detects GAME OVER screen
+"in_halloffamescreen", detects HALL OF FAME screen
+"in_level", Whether you are in a level (e.g., select screen is not a level).
+"in_load_game", - detects LOAD GAME screen
+"in_menuscreen", - detects MENU screen
+"in_new_game", - detects NEW GAME screen
+"in_options", - detects OPTIONS screen
+"in_selectscreen", detects CHARACTER SELECT screen
+"in_showcomplete", detects COMPLETE SCREEN screen
+"in_sound_options", detects SOUND OPTIONS screen
+"in_start_game", detects GAME OVER screen
+"in_system_options", detects START GAME option
+"in_titlescreen", detects TITLE screen (the one with PRESS START)
+"in_enginecreditsscreen", detects if the engine's credits is displayed, but placed the variables for it in the shutdown command so that it can be called for even if the credits is not displayed.
+"in_video_options", detects VIDEO OPTIONS screen
+
+Nice to have all these commands but...
+still they all work like shit!!
+
+magggas 21.05.2019

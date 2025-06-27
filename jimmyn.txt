@@ -1,0 +1,757 @@
+name          JimmyN
+candamage     enemy obstacle pshot shot npc
+type          none
+subject_to_obstacle 0
+health        100
+mp            100
+speed         7
+throw         2 3
+throwdamage   20
+holdblock     1
+jumpheight    2.43
+jumpspeed     8
+grabdistance  35
+shadow        0
+gfxshadow     1
+noquake       1
+makeinv       1
+nodieblink    1
+antigravity   40
+grabforce    -1
+atchain       1 2 3 4 0
+typeshot      0
+weaploss      0
+weapons       Jimmy3 Jimmy2 Jimmy JimmyB JimmyK JimmyR JimmyD Jimmyboo JimmyW none JimmyN
+icon          data/chars/1jimmy/iconn.gif 1
+#parrow         
+#parrow2 
+
+animationscript   data/scripts/lib001.c
+#didhitscript      data/scripts/didhit.c
+
+palette        data/chars/1jimmy/icon.gif   
+alternatepal   data/chars/1jimmy/alter01.gif   
+alternatepal   data/chars/1jimmy/alter02.gif   
+alternatepal   data/chars/1jimmy/alter03.gif   
+alternatepal   data/chars/1jimmy/alter04.gif  
+alternatepal   data/chars/1jimmy/alter05.gif   
+alternatepal   data/chars/1jimmy/alter06.gif  
+alternatepal   data/chars/1jimmy/alter07.gif  
+alternatepal   data/chars/1jimmy/alter08.gif   
+alternatepal   data/chars/1jimmy/alter09.gif  
+alternatepal   data/chars/1jimmy/alter10.gif  
+alternatepal   data/chars/1jimmy/alter11.gif  
+alternatepal   data/chars/1jimmy/alter12.gif  
+alternatepal   data/chars/1jimmy/alter13.gif  
+alternatepal   data/chars/1jimmy/alter14.gif  
+alternatepal   data/chars/1jimmy/alter15.gif  
+alternatepal   data/chars/1jimmy/alter16.gif  
+alternatepal   data/chars/1jimmy/alter17.gif  
+alternatepal   data/chars/1jimmy/alter18.gif  
+alternatepal   data/chars/1jimmy/alter19.gif  
+alternatepal   data/chars/1jimmy/alter20.gif  
+
+com      a2     freespecial1
+com      a3     freespecial2
+com      a4     freespecial3
+
+#-------Select screen
+
+#-------The rest of the moves
+
+anim spawn
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuidle.gif
+
+anim charge
+
+anim idle
+@cmd clearL
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuidle.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+anim walk
+	 loop       1
+	 delay      14
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuwk01.gif
+         frame      data/chars/1jimmyw/nuwk02.gif
+         frame      data/chars/1jimmyw/nuwk03.gif
+         frame      data/chars/1jimmyw/nuwk04.gif
+         frame      data/chars/1jimmyw/nuwk05.gif
+         frame      data/chars/1jimmyw/nuwk06.gif
+
+anim run
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nurun01.gif
+         frame      data/chars/1jimmyw/nurun02.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1jimmyw/nurun03.gif
+         frame      data/chars/1jimmyw/nurun04.gif
+         frame      data/chars/1jimmyw/nurun05.gif
+	 sound      data/sounds/run.wav
+         frame      data/chars/1jimmyw/nurun06.gif
+
+anim runattack
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/1jimmyw/nua101.gif
+         frame      data/chars/1jimmyw/nua201.gif
+         frame      data/chars/1jimmyw/nua202.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 attack4    94 75 39 16 8 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/nua203.gif
+	 attack4    94 58 36 31 8 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/nua204.gif
+	 delay      5
+	 attack4    0 0 0 0
+         frame      data/chars/1jimmyw/nua205.gif
+         frame      data/chars/1jimmyw/nua206.gif
+
+anim attackbackward
+
+anim attack1
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_ATTACK3") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 sound      data/sounds/punch2.wav
+         frame      data/chars/1jimmyw/nua101.gif
+         frame      data/chars/1jimmyw/nua201.gif
+         frame      data/chars/1jimmyw/nua202.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 attack4    94 75 39 16 8 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/nua203.gif
+	 attack4    94 58 36 31 8 0 0 0 8 5
+	 jugglecost 5
+	 dropv      1.3 0.8 0
+      @cmd  knife 70 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/nua204.gif
+	 delay      5
+	 attack4    0 0 0 0
+         frame      data/chars/1jimmyw/nua205.gif
+         frame      data/chars/1jimmyw/nua206.gif
+
+anim attack2
+	 range      5 60
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmyw/nua101.gif
+	 sound      data/sounds/punch9.wav
+         frame      data/chars/1jimmyw/nua102.gif
+	 hitfx      data/sounds/beatkil1.wav
+	 attack8    94 58 36 31 8 0 0 0 8 5
+	 jugglecost 7
+	 dropv      1.3 0.8 0
+         frame      data/chars/1jimmyw/nua103.gif
+	 attack8    94 75 39 16 8 0 0 0 8 5
+	 jugglecost 7
+	 dropv      1.3 0.8 0
+         frame      data/chars/1jimmyw/nua104.gif
+	 attack8    94 84 37 32 8 0 0 0 8 5
+	 jugglecost 7
+	 dropv      1.3 0.8 0
+         frame      data/chars/1jimmyw/nua105.gif
+	 delay      7
+	 attack8    0 0 0 0
+         frame      data/chars/1jimmyw/nua106.gif
+         frame      data/chars/1jimmyw/nua205.gif
+	 
+anim attack3
+	 range      5 60
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_ATTACK4") openborconstant("ANI_PAIN7")
+	 sound      data/sounds/punch3.wav
+         frame      data/chars/1jimmyw/nua309.gif
+         frame      data/chars/1jimmyw/nua401.gif
+	 delay      4
+         frame      data/chars/1jimmyw/nua402.gif
+         frame      data/chars/1jimmyw/nua403.gif
+         frame      data/chars/1jimmyw/nua404.gif
+	 hitfx      data/sounds/beatbl1.wav
+	 attack7    94 75 39 16 9 0 0 0 8 5
+	 jugglecost 7
+	 dropv      1.3 0.8 0
+         frame      data/chars/1jimmyw/nua405.gif
+	 delay      7
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmyw/nua406.gif
+         frame      data/chars/1jimmyw/nua101.gif
+
+anim attack4
+	 range      5 60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmyw/nua301.gif
+         frame      data/chars/1jimmyw/nua302.gif
+         frame      data/chars/1jimmyw/nua303.gif
+         frame      data/chars/1jimmyw/nua304.gif
+	 delay      4
+         frame      data/chars/1jimmyw/nua305.gif
+         frame      data/chars/1jimmyw/nua306.gif
+	 hitfx      data/sounds/beatmk3.wav
+	 attack6    92 76 43 23 17 1 0 0 8 5
+	 jugglecost 7
+	 dropv      3 0.8 0
+         frame      data/chars/1jimmyw/nua307.gif
+	 delay      12
+	 attack6    0 0 0 0
+         frame      data/chars/1jimmyw/nua308.gif
+	 delay      7
+         frame      data/chars/1jimmyw/nua206.gif
+
+#kick button
+anim freespecial1
+	 range      5 60
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+@cmd ani0020 openborconstant("ANI_FOLLOW3") openborconstant("ANI_PAIN8")
+         frame      data/chars/1jimmyw/nub101.gif
+         frame      data/chars/1jimmyw/nub102.gif
+	 delay      14
+	 hitfx      data/sounds/beat2.wav
+	 attack3    85 78 24 26 9 0 0 0 8 5
+	 jugglecost 5
+	 dropv      2 0.5 0
+      @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmyw/nub103.gif
+	 delay      9
+	 attack3    0 0 0 0
+         frame      data/chars/1jimmyw/nub104.gif
+
+#kick stunner
+anim follow1
+	 range      5 60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmyw/nub101.gif
+         frame      data/chars/1jimmyw/nub201.gif
+	 delay      10
+	 attack7    85 78 24 26 13 0 0 0 8 5
+	 jugglecost 5
+	 dropv      2 0.5 0
+         frame      data/chars/1jimmyw/nub202.gif
+	 delay      9
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmyw/nub203.gif
+         frame      data/chars/1jimmyw/nub104.gif
+
+#kick finisher
+anim follow2
+	 range      5 60
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nua406.gif
+	 sound      data/sounds/dragon2.wav
+	 delay      6
+         frame      data/chars/1jimmyw/nub408.gif
+         frame      data/chars/1jimmyw/nub407.gif
+	 hitfx      data/sounds/beat3.wav
+	 attack14   89 78 29 23 19 1 0 0 8 5
+	 jugglecost 5
+	 dropv      2 1.5 0
+         frame      data/chars/1jimmyw/nub406.gif
+	 attack14   0 0 0 0
+	 delay      8
+         frame      data/chars/1jimmyw/nub405.gif
+         frame      data/chars/1jimmy/b404.gif
+         frame      data/chars/1jimmyw/nub303.gif
+	 delay      15
+         frame      data/chars/1jimmyw/nub302.gif
+	 delay      9
+         frame      data/chars/1jimmyw/nub301.gif
+
+#extra knockdown kick for punch chain
+anim follow3
+	 range      5 60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nub101.gif
+         frame      data/chars/1jimmyw/nub201.gif
+	 delay      10
+	 attack     85 78 24 26 17 1 0 0 8 5
+	 jugglecost 5
+	 dropv      2 0.7 0
+         frame      data/chars/1jimmyw/nub202.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/1jimmyw/nub203.gif
+         frame      data/chars/1jimmyw/nub104.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  1
+         frame      data/chars/1jimmyw/nuju01.gif
+	 delay      10
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+anim jump
+	 loop       0
+	 delay      17
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/dragon4.wav
+	 cancel     1 3 0 a2 freespecial50
+         frame      data/chars/1jimmyw/nuju01.gif
+	 delay      10
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/nuju02.gif
+         frame      data/chars/1jimmyw/nuju03.gif
+         frame      data/chars/1jimmyw/nuju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+anim follow50
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd toss0001 140
+	 jumpframe  1 1 1.5 0
+	 landframe  3
+	 sound      data/sounds/wallj.wav
+         frame      data/chars/1jimmyw/nuwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/nuju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   84 96 32 16 12 1 0 0 12 5
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/nuak10.gif
+	 delay      15
+	 attack11   0 0 0 0
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+anim jumpattack
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 hitfx      data/sounds/beat2.wav
+	 attack11   79 97 34 17 12 1 0 0 12 5
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+	 forcedirection -1
+         frame      data/chars/1jimmyw/nuak10.gif
+	 delay      15
+	 attack11   0 0 0 0
+         frame      data/chars/1jimmyw/nuju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuju01.gif
+
+anim jumpattack2
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 flipframe  0
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmyw/nuak02.gif
+         frame      data/chars/1jimmyw/nuak03.gif
+	 hitfx      data/sounds/beat2.wav
+         delay      15
+	 attack90   76 102 27 23 6 1 0 0 12 5
+	 forcedirection -1
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/nuak06.gif
+         delay      12
+	 attack90   0 0 0 0
+         frame      data/chars/1jimmyw/nuju01.gif
+
+anim jumpattack3
+	 loop       0
+	 delay      25
+	 offset     80 129
+	 bbox       69 88 24 25
+	 followanim 17
+	 followcond 3
+	 hitfx      data/sounds/beat2.wav
+	 attack92   79 97 34 17 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/nuak10.gif
+	 delay      15
+	 attack92   0 0 0 0
+         frame      data/chars/1jimmyw/nuju02.gif
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmyw/nuju01.gif
+
+#ENEMY JUMP
+anim follow17
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       68 83 24 44
+#@cmd toss0001 10
+	 flipframe  0
+	 jumpframe  0 1 1.5 0
+	 landframe  3
+         frame      data/chars/1jimmyw/nuwallj.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/1jimmyw/nuju03.gif
+	 delay      999
+	 hitfx      data/sounds/beat2.wav
+	 attack11   79 97 34 17 12 1 0 0 12 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/nuak10.gif
+	 delay      15
+	 attack11   0 
+	 bbox       0  
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+#DIVE KICK
+anim freespecial50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       69 88 24 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch8.wav
+	 hitfx      data/sounds/beatpr4.wav
+         frame      data/chars/1jimmyw/nuak02.gif
+         frame      data/chars/1jimmyw/nuak03.gif
+	 delay      999
+	 attack11   79 99 24 29 9 1 0 0 12 5
+	 jugglecost 5
+	 dropv      1.5 1.2 0
+         frame      data/chars/1jimmyw/nuak06.gif
+         delay      12
+	 attack11   0 0 0 0
+         frame      data/chars/1jimmyw/nucrouch.gif
+
+anim block
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       69 105 24 25
+	 weaponframe 1 jimmy
+         frame      data/chars/1jimmyw/nucrouch.gif
+         frame      data/chars/1jimmy/idle01.gif
+
+anim special
+
+anim grab
+
+anim grabattack
+
+anim grabattack2
+
+anim grabup
+
+anim grabdown
+
+anim grabdown2
+
+#throw
+anim grabbackward
+
+anim pain1
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain01.gif
+
+anim pain2
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain02.gif
+
+#breathless
+anim pain3
+	 loop       0
+	 delay      27
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain01.gif
+	 delay      45
+         frame      data/chars/1jimmy/pain03.gif
+
+#stun
+anim pain4
+	 loop       0
+	 delay      19
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain04.gif
+         frame      data/chars/1jimmy/pain05.gif
+         frame      data/chars/1jimmy/pain06.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       68 83 24 44
+	 landframe  2
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall01.gif
+	 delay      999
+	 bbox       0 0 0 0
+         frame      data/chars/1jimmy/fall02.gif
+	 delay      12
+         frame      data/chars/1jimmy/fall02.gif
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/1jimmy/fall03.gif
+
+anim rise
+	 loop       0
+	 delay      20
+	 offset     80 129
+	 bbox       0 0 0 0
+@cmd bind 0 0 0 0 0
+         frame      data/chars/1jimmy/fall03.gif
+	 delay      12
+         frame      data/chars/1jimmy/rise01.gif
+         frame      data/chars/1jimmy/rise02.gif
+
+#########extra moves
+
+#backfist attack
+anim freespecial4
+
+#one extra backfist attack
+anim follow4
+
+#fierce kick attack
+anim freespecial5
+
+#SDD tatsumaki
+anim freespecial6
+
+#double kick
+anim freespecial7
+
+anim follow5
+
+######################################### NUNCHUCK SPECIALS
+
+anim freespecial2
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+1); 
+@end_script
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/nun01.wav
+	 cancel     5 6 0 a4 freespecial3
+	 cancel     5 6 0 a  freespecial20
+         frame      data/chars/1jimmyw/nua106.gif
+         frame      data/chars/1jimmyw/nusp01.gif
+         frame      data/chars/1jimmyw/nusp02.gif
+         frame      data/chars/1jimmyw/nusp01.gif
+         frame      data/chars/1jimmyw/nusp02.gif
+	 delay      9
+         frame      data/chars/1jimmyw/nusp03.gif
+         frame      data/chars/1jimmyw/nuidle.gif
+
+anim freespecial3
+@script
+void self = getlocalvar("self"); //get the self var
+void power = getentityproperty(self,"mp"); // get target's current mp
+changeentityproperty(self, "mp", power+1); 
+@end_script
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/nun02.wav
+	 cancel     5 6 0 a3 freespecial2
+	 cancel     5 6 0 a  freespecial20
+         frame      data/chars/1jimmyw/nusp03.gif
+         frame      data/chars/1jimmyw/nusp04.gif
+         frame      data/chars/1jimmyw/nusp05.gif
+         frame      data/chars/1jimmyw/nusp04.gif
+         frame      data/chars/1jimmyw/nusp05.gif
+	 delay      9
+         frame      data/chars/1jimmyw/nusp06.gif
+         frame      data/chars/1jimmyw/nuidle.gif
+
+anim freespecial20
+@cmd ani0020 openborconstant("ANI_FREESPECIAL21") openborconstant("ANI_PAIN7")
+	 energycost 40
+         mponly     1
+	 loop       0
+	 delay      5
+	 hitflash   Qflash2
+	 offset     80 129
+	 bbox       68 83 24 44
+	 sound      data/sounds/nun01.wav
+#         frame      data/chars/1jimmyw/nuex01.gif
+         frame      data/chars/1jimmyw/nuex02.gif
+         frame      data/chars/1jimmyw/nuex03.gif
+         frame      data/chars/1jimmyw/nuex04.gif
+	 hitfx      data/sounds/beatbl2.wav
+	 attack3    83 79 55 19 8 0 0 0 7 5 
+	 forcedirection -1
+	 dropv      1.5 1 0 
+	 jugglecost 5
+         frame      data/chars/1jimmyw/nuex05.gif
+	 delay      8
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmyw/nuex06.gif
+	 sound      data/sounds/nun02.wav
+         frame      data/chars/1jimmyw/nuex07.gif
+	 delay      5
+	 attack7    87 72 53 19 8 0 0 0 7 5 
+	 forcedirection -1
+	 dropv      1.5 1 0 
+	 jugglecost 5
+         frame      data/chars/1jimmyw/nuex08.gif
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmyw/nuex09.gif
+         frame      data/chars/1jimmyw/nuex02.gif
+         frame      data/chars/1jimmyw/nuex01.gif
+         frame      data/chars/1jimmyw/nuidle.gif
+
+anim freespecial21
+	 energycost 40
+         mponly     1
+	 range      0 70
+	 loop       0
+	 delay      6
+	 hitflash   Qflash2
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  1 1.5 0.5 0
+	 landframe  11
+         frame      data/chars/1jimmyw/nuha01.gif
+         frame      data/chars/1jimmyw/nuha02.gif
+	 delay      4
+	 sound      data/sounds/nun02.wav
+         frame      data/chars/1jimmyw/nuha03.gif
+         frame      data/chars/1jimmyw/nuha05.gif
+         frame      data/chars/1jimmyw/nuha03.gif
+         frame      data/chars/1jimmyw/nuha05.gif
+         frame      data/chars/1jimmyw/nuha03.gif
+         frame      data/chars/1jimmyw/nuha05.gif
+         frame      data/chars/1jimmyw/nuha03.gif
+         frame      data/chars/1jimmyw/nuha05.gif
+         frame      data/chars/1jimmyw/nuha03.gif
+	 hitfx      data/sounds/beatbl3.wav
+	 delay      9
+	 attack     84 77 49 21 12 1 0 0 7 5 
+	 forcedirection -1
+	 dropv      1.5 2 0 
+	 jugglecost 5
+         frame      data/chars/1jimmyw/nuha06.gif
+	 delay      8
+	 attack     0 0 0 0
+         frame      data/chars/1jimmyw/nuha07.gif
+         frame      data/chars/1jimmyw/nuha08.gif
+         frame      data/chars/1jimmyw/nuha09.gif
+         frame      data/chars/1jimmyw/nuex01.gif
+         frame      data/chars/1jimmyw/nuidle.gif
+
+#########DD1 style cancels
+
+anim follow6
+
+anim freespecial22
+
+#########DD2 style cancels
+
+anim freespecial23
+
+anim freespecial24
+
+anim freespecial25
+
+anim freespecial26
+
+anim freespecial27
+
+anim freespecial28
+
+anim follow7
+
