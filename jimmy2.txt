@@ -3,11 +3,11 @@ candamage     enemy obstacle pshot shot npc
 running       12 2.2 1.5 1 0 
 type          none
 subject_to_obstacle 0
-health        100
+health        250
 mp            100
 falldie       2
 jugglepoints  15
-chargerate    5
+chargerate    2
 speed         7
 throw         2 3
 throwdamage   20
@@ -29,12 +29,13 @@ icon          data/chars/1jimmy/icon2.gif 1
 #parrow         
 #parrow2 
 
-script data/scripts/spawn.c
-animationscript   data/scripts/lib001.c
-ondrawscript	  data/scripts/shadowon.c
-#didhitscript      data/scripts/didhit.c
-onblockWscript         data/scripts/spikesw2.c
-ondoattackscript data/scripts/multihits.c
+onmoveascript	   data/scripts/hithead.c
+script             data/scripts/spawn.c
+animationscript    data/scripts/lib001.c
+ondrawscript	   data/scripts/shadowon.c
+onblockWscript     data/scripts/spikesw2.c 
+ondoattackscript     data/scripts/multihits.c
+ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
 
 fmap           21
 palette        data/chars/1jimmy/icon.gif   
@@ -66,6 +67,557 @@ hmap    21 22
 com      a2    freespecial1
 com      a3    freespecial4
 com      a4    freespecial5
+
+
+#####################################################-----------------------------BEGINNING OF ADDITION----------------------------------###############################################
+
+
+####-------DUCK
+
+anim freespecial200
+    loop       1 2 2
+    delay      6
+    offset     80 129
+	bbox.position.x 63
+	bbox.position.y 109
+	bbox.size.x 34
+	bbox.size.y 21
+    energycost -5  # Charges 5 MP per cycle
+    mponly     0
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       63 122 34 7
+	 cancel     0 2 0 u u d d  freespecial95   #movelist
+	 cancel     1 3 0 a   freespecial2 #hyper upper
+	 cancel     1 3 0 a2  freespecial3 #hyper knee
+	 cancel     1 3 0 f f  freespecial100 #FWD DODGE
+	 cancel     1 3 0 b b  freespecial99 #BACK DODGE
+	 cancel     1 3 0 j   freespecial54 #FORWARD LEAP
+	 cancel     1 3 0 d f d f a4   freespecial72
+	 cancel     1 3 0 d b d f a4   freespecial73
+         frame      data/chars/1jimmy/fin02.gif
+	 delay      5
+         frame      data/chars/1jimmy/dodge.gif
+     delay      45 
+         frame      data/chars/1jimmy/dodge.gif
+         
+####-------STANDARD BLOCK         
+
+anim block
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 2 0 u u d d  freespecial95   #movelist
+	 cancel     1 3 0 f f  freespecial100 #FWD DODGE
+	 cancel     1 3 0 b b  freespecial99 #BACK DODGE
+	 cancel     0 2 0 a  freespecial193 #SPINNING BACKFIST
+	 cancel     0 2 0 a2 freespecial192 #FIERCE KICK
+	 cancel     0 2 0 b a2 freespecial194
+	 cancel     0 2 0 j  freespecial42
+	 cancel     0 2 0 d f d f a4 freespecial59
+	 cancel     0 2 0 d b d f a4 freespecial58
+	 cancel     0 2 0 d  freespecial200 #DUCK
+         frame      data/chars/1jimmy/b104.gif
+         frame      data/chars/1jimmy/block.gif         
+         
+         
+####-------BLOCK 2       
+
+anim freespecial197
+     loop       1 2 2
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 cancel     0 2 0 u u d d  freespecial95   #movelist
+	 cancel     1 3 0 f f  freespecial100 #FWD DODGE
+	 cancel     1 3 0 b b  freespecial99 #BACK DODGE
+	 cancel     0 2 0 a  freespecial193 #SPINNING BACKFIST
+	 cancel     0 2 0 a2 freespecial192 #FIERCE KICK
+	 cancel     0 2 0 b a2 freespecial194
+	 cancel     0 2 0 j  freespecial42
+	 cancel     0 2 0 d f d f a4 freespecial59
+	 cancel     0 2 0 d b d f a4 freespecial58
+	 cancel     0 2 0 d  freespecial200 #DUCK
+         frame      data/chars/1jimmy/b104.gif
+         frame      data/chars/1jimmy/block.gif        
+
+
+
+####-----FWD DODGE
+
+anim freespecial100
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       63 122 34 7
+	 move       2
+	 energycost 10
+	 mponly 1
+	 flipframe  21
+         frame      data/chars/1jimmy/fin01.gif
+	 move       4
+	 delay      2
+@cmd shadow 10 25 60 0 2 250 80 80
+	 sound      data/sounds/dragon5.wav
+	 
+	 cancel 4 20 0 s freespecial99 #fwd dodge back dodge
+	 cancel 4 12 0 a2 freespecial49 #CROSS
+	 cancel 4 12 0 a freespecial33 #rush tackle?
+	 cancel 4 12 0 j
+         frame      data/chars/1jimmy/cw05.gif
+         frame      data/chars/1jimmy/cw05.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmy/cw05.gif
+         frame      data/chars/1jimmy/cw05.gif
+         frame      data/chars/1jimmy/cw04.gif
+         frame      data/chars/1jimmy/cw04.gif
+         frame      data/chars/1jimmy/cw04.gif
+         frame      data/chars/1jimmy/cw04.gif
+         frame      data/chars/1jimmy/cw03.gif
+         frame      data/chars/1jimmy/cw03.gif
+         frame      data/chars/1jimmy/cw03.gif
+         frame      data/chars/1jimmy/cw03.gif
+         frame      data/chars/1jimmy/cw02.gif
+         frame      data/chars/1jimmy/cw02.gif
+         frame      data/chars/1jimmy/cw02.gif
+         frame      data/chars/1jimmy/cw02.gif
+         frame      data/chars/1jimmy/cw01.gif
+         frame      data/chars/1jimmy/cw01.gif
+         frame      data/chars/1jimmy/cw01.gif
+         frame      data/chars/1jimmy/cw01.gif
+	 move       0
+	 delay      15
+         frame      data/chars/1jimmy/fin01.gif
+
+####-----BACK DODGE
+
+anim freespecial99
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1 1.3 0
+	 landframe  7
+	 flipframe  0
+	 energycost 10
+	 mponly 1
+	 
+	 
+	 cancel 1 4 0 s freespecial100 #backdoge into fwd dodge
+@cmd shadow 10 25 60 0 2 250 80 80
+         frame      data/chars/1jimmy/rise02.gif
+	 sound      data/sounds/dragon3.wav
+	 delay      10
+         frame      data/chars/1jimmy/roll01.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmy/roll02.gif
+         frame      data/chars/1jimmy/roll03.gif
+         frame      data/chars/1jimmy/roll04.gif
+         frame      data/chars/1jimmy/roll05.gif
+	 delay      999
+         frame      data/chars/1jimmy/roll06.gif
+	 delay      2
+	 move       3
+         frame      data/chars/1jimmy/roll06.gif
+         frame      data/chars/1jimmy/roll06.gif
+         frame      data/chars/1jimmy/roll06.gif
+         frame      data/chars/1jimmy/roll06.gif
+	 move       2
+         frame      data/chars/1jimmy/roll06.gif
+	 move       1
+         frame      data/chars/1jimmy/roll06.gif
+	 delay      8
+	 move       0
+         frame      data/chars/1jimmy/rise01.gif
+         frame      data/chars/1jimmy/rise02.gif
+         
+         
+         
+#########----SPINNING BACK FIST AND FIERCE KCIK
+
+#backfist attack
+
+anim freespecial193
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 1
+	 mponly     1
+@cmd ani0020 openborconstant("ANI_FOLLOW4") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmy/a501.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmy/a502.gif
+         frame      data/chars/1jimmy/a503.gif
+	 hitfx      data/sounds/beat1.wav
+	 attack7    89 85 26 12 10 0 0 0 8 5
+	 jugglecost 5
+	 dropv      2 0.5 0
+	 forcedirection -1
+         frame      data/chars/1jimmy/a504.gif
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmy/a505.gif
+         frame      data/chars/1jimmy/a506.gif
+	 delay      14
+         frame      data/chars/1jimmy/a204.gif
+
+#one extra backfist attack
+
+anim follow4
+	 range      0 60
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 1
+	 mponly     1
+         frame      data/chars/1jimmy/a501.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmy/a502.gif
+         frame      data/chars/1jimmy/a503.gif
+	 attack     89 85 26 12 9 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 0.5 0
+         frame      data/chars/1jimmy/a504.gif
+	 attack     0 0 0 0
+         frame      data/chars/1jimmy/a505.gif
+         frame      data/chars/1jimmy/a506.gif
+	 delay      14
+         frame      data/chars/1jimmy/a204.gif
+
+#fierce kick attack
+
+anim freespecial192
+	 loop       0
+	 delay      7
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 jumpframe  3 1.3 0.9 0
+	 landframe  10
+	 energycost 25
+	 mponly     1
+         frame      data/chars/1jimmy/hk01.gif
+	 delay      10
+         frame      data/chars/1jimmy/hk02.gif
+	 delay      5
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1jimmy/hk03.gif
+         frame      data/chars/1jimmy/hk04.gif
+         frame      data/chars/1jimmy/hk05.gif
+         frame      data/chars/1jimmy/hk06.gif
+	 delay      10
+	attack.block.penetrate 0
+	attack.damage.force 11
+	attack.damage.type 14
+	attack.effect.hit.flash.disable 0
+	attack.position.x 80
+	attack.position.y 88
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 31
+	attack.size.y 16
+	attack.size.z.background 5
+	 forcedirection -1
+	 jugglecost 5
+         frame      data/chars/1jimmy/hk07.gif
+	 delay      6
+	 attack14   0 0 0 0 0 0 0 0 0
+         frame      data/chars/1jimmy/hk08.gif
+         frame      data/chars/1jimmy/hk09.gif
+	 delay      999
+         frame      data/chars/1jimmy/ju01.gif
+	 delay      3
+         frame      data/chars/1jimmy/idle01.gif     
+         
+/*        
+       
+######-----STANDARD SDD KICK COMBO
+
+anim freespecial1 
+	 range      -10 60
+	 loop       0
+	 delay      9
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+@cmd ani0020 openborconstant("ANI_FOLLOW3") openborconstant("ANI_PAIN8")
+         frame      data/chars/1jimmy/b101.gif
+         frame      data/chars/1jimmy/b102.gif
+	 delay      14
+	attack.block.penetrate 0
+	attack.damage.force 9
+	attack.damage.type 3
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+	attack.position.x 85
+	attack.position.y 78
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 24
+	attack.size.y 26
+	attack.size.z.background 5
+	 jugglecost 5
+	 forcedirection -1
+      @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmy/b103.gif
+	 delay      9
+	 attack3    0 0 0 0
+         frame      data/chars/1jimmy/b104.gif
+
+#HOOK KICK STUNNER
+
+anim follow1
+	 range      -10 60
+	 loop       0
+	 delay      6
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmy/b101.gif
+         frame      data/chars/1jimmy/b201.gif
+	 delay      10
+	attack.block.penetrate 1
+	attack.damage.force 13
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 85
+	attack.position.y 78
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 24
+	attack.size.y 26
+	attack.size.z.background 5
+	 jugglecost 5
+	 forcedirection -1
+         frame      data/chars/1jimmy/b202.gif
+	 delay      9
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmy/b203.gif
+         frame      data/chars/1jimmy/b104.gif
+
+#STANDARD JIMMY SPIN KICK FINISHER
+
+anim follow2
+	 range      -10 60
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       68 83 24 44
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+         frame      data/chars/1jimmy/a205.gif
+	 sound      data/sounds/dragon2.wav
+	 delay      6
+         frame      data/chars/1jimmy/b408.gif
+         frame      data/chars/1jimmy/b407.gif
+	 hitfx      data/sounds/beat3.wav
+	 attack14   89 78 29 23 19 1 1 0 8 5
+	 jugglecost 5
+	 dropv      2 1.5 0
+	 forcedirection -1
+         frame      data/chars/1jimmy/b406.gif
+	 attack14   0 0 0 0
+	 delay      8
+         frame      data/chars/1jimmy/b405.gif
+         frame      data/chars/1jimmy/b404.gif
+         frame      data/chars/1jimmy/b303.gif
+	 delay      15
+         frame      data/chars/1jimmy/b302.gif
+	 delay      9
+         frame      data/chars/1jimmy/b301.gif
+         
+                 
+####----DOUBLE KICK STUN COMBO - WITH SIDE KICK FINISH (PRESS D,K AGAIN )
+
+anim freespecial7
+	 loop       0
+	 delay      12
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+@cmd ani0020 openborconstant("ANI_FOLLOW5") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW5") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW5") openborconstant("ANI_PAIN7")
+@cmd ani0020 openborconstant("ANI_FOLLOW5") openborconstant("ANI_PAIN8")
+         frame      data/chars/1jimmy/b101.gif
+         frame      data/chars/1jimmy/b501.gif
+	attack.block.penetrate 0
+	attack.damage.force 6
+	attack.damage.type 3
+	attack.effect.hit.flash.disable 0
+	attack.position.x 94
+	attack.position.y 97
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 25
+	attack.size.y 22
+	attack.size.z.background 5
+	 forcedirection -1
+         frame      data/chars/1jimmy/b502.gif
+	 attack3    0 0 0 0 0 0 0 0 0
+         frame      data/chars/1jimmy/b501.gif
+	attack.block.penetrate 1
+	attack.damage.force 6
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 91
+	attack.position.y 76
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 30
+	attack.size.y 28
+	attack.size.z.background 5
+	 forcedirection -1
+         frame      data/chars/1jimmy/b503.gif
+	 attack7    0 0 0 0 0 0 0 0 0
+         frame      data/chars/1jimmy/b101.gif
+         frame      data/chars/1jimmy/b104.gif
+
+anim follow5
+	 range      5 50
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+         frame      data/chars/1jimmy/b101.gif
+         frame      data/chars/1jimmy/b601.gif
+	 delay      12
+	 hitfx      data/sounds/beat2.wav
+	 attack     94 97 25 22 6 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.5 2 0
+         frame      data/chars/1jimmy/b602.gif
+	 delay      9
+	 attack     0 0 0 0 0 0 0 0 0
+         frame      data/chars/1jimmy/b601.gif
+         frame      data/chars/1jimmy/b104.gif        
+         
+  
+         
+ 
+ 
+ 
+####----BACK KICKS
+
+anim freespecial194
+	 range      -50 50
+	 loop       0
+	 delay      7
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 sound      data/sounds/punch4.wav
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
+         frame      data/chars/1jimmy/bc01.gif
+	 delay      14
+	attack.block.penetrate 0
+	attack.damage.force 10
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf3.wav
+	attack.position.x 56
+	attack.position.y 89
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 29
+	attack.size.y 15
+	attack.size.z.background 5
+	 jugglecost 5
+@cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1jimmy/bc02.gif
+	 delay      10
+	 attack7    0 0 0 0
+         frame      data/chars/1jimmy/bc01.gif
+
+#BACK KICK FINISHER
+
+anim follow1
+	 range      -50 50
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 flipframe  1
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+         frame      data/chars/1jimmy/bd01.gif
+	 sound      data/sounds/dragon3.wav
+         frame      data/chars/1jimmy/bd02.gif
+         frame      data/chars/1jimmy/bd03.gif
+         frame      data/chars/1jimmy/bd04.gif
+	 delay      14
+	 hitfx      data/sounds/beatsf2.wav
+	 attack     76 76 31 27 16 1 1 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      2 0.8 0
+         frame      data/chars/1jimmy/bd05.gif
+	 delay      8
+	 move       0
+	 attack     0 0 0 0
+         frame      data/chars/1jimmy/bd04.gif
+         frame      data/chars/1jimmy/bd03.gif
+	 delay      22
+         frame      data/chars/1jimmy/a204.gif
+
+anim attackbackward
+
+ */
+         
+ #####################################################------------------------------END OF ADDITIONS--------------------------------################################################
+        
+         
+         
+         
+
+
+
+
+
+
+
+
+
+
 
 #-------Select screen
 
