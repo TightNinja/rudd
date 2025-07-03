@@ -7,7 +7,7 @@ mp            100
 speed         7
 throw         2 3
 throwdamage   20
-holdblock     1
+holdblock     2
 jumpheight    2.43
 jumpspeed     8
 grabdistance  35
@@ -28,20 +28,16 @@ icon          data/chars/1billy/iconb.gif 1
 
 #-------Kit's Additions---------------------------------------------------------------------------------
 
-#blockback     	1
-blockratio      0
-#mprate       	1
-mpblock 		0
-grabwalk 		1
-grabturn 		1
-#grabbackwalk    1
-guardpoints 	0
-noaircancel     1
-nocheats        0
-nodebug        0
-jumpmove 1                 #-------change orientation in mid air during jump 
-
-
+blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
+#blockratio     1          #Percent chance AI or NPC helper will  block attacks, typically when controlled by AI.  100 = always block, 0 = never block
+#mpblock         1          #MP cost for guarding.according to 3.0 6258 engine build
+#grabwalk 		1          #move while grabbing "grabdrag", "walk" and "grabwaL" are the engine defined anim constanr, not in 3.0 builds?
+#grabturn 		0          #face target when grabbing 0==false 1=true
+grabbackwalk    1
+noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1= no air canceling
+nocheats        0          #enable cheats 0=true 1=false
+nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
+jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
 
 
 
@@ -49,12 +45,16 @@ onmoveascript	   data/scripts/hithead.c
 script             data/scripts/spawn.c
 animationscript    data/scripts/lib001.c
 ondrawscript	   data/scripts/shadowon.c
-#didhitscript      data/scripts/didhit.c
 onblockWscript     data/scripts/spikesw2.c 
-ondoattackscript   data/scripts/multihits.c
-ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
-onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
-#ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
+ondoattackscript     data/scripts/multihits.c
+ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
+ondoattackscript     data/scripts/nompgainonhit.c
+ondoattackscript      data/scripts/nompgainonblock.c
+didhitscript       data/scripts/movedamagelog.c  #dameage log
+
+#didhitscript       data/scripts/mpdecreaseonhit.c #mp log    #buggy?
+#didhitscript      data/scripts/didhit.c      #buggy?
+
 
 
 

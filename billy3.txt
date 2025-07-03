@@ -1,17 +1,16 @@
 name          Billy3
 candamage     enemy obstacle pshot npc
 running       12 2.2 1.5 1 0 
-type          none
-walkoffmove 0.5 0
+type          player
 health        250
 mp            100
 falldie       2
 jugglepoints  15
-chargerate    5
+chargerate    2
 speed         7
 throw         2 3
 throwdamage   20
-holdblock     1
+holdblock     2
 jumpheight    2.43
 jumpspeed     8
 grabdistance  35
@@ -31,22 +30,13 @@ icon          data/chars/1billy/icon3.gif 1
 #parrow         
 #parrow2 
 
-#-------Kit's Additions---------------------------------------------------------------------------------
+################################################################################-------Kit's Additions----##########################################################################
 
-#blockback     	1
-blockratio      -1
-#mprate       	1
-mpblock 		1
-grabwalk 		1
-grabturn 		0
-grabbackwalk    0
-guardpoints 	0
-noaircancel     1
-nocheats        0
-nodebug        0
-jumpmove 1                 #-------change orientation in mid air during jump 
-
-
+blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
+noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1= no air canceling
+nocheats        0          #enable cheats 0=true 1=false
+nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
+jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
 
 
 
@@ -54,24 +44,372 @@ onmoveascript	   data/scripts/hithead.c
 script             data/scripts/spawn.c
 animationscript    data/scripts/lib001.c
 ondrawscript	   data/scripts/shadowon.c
-#didhitscript      data/scripts/didhit.c
 onblockWscript     data/scripts/spikesw2.c 
-ondoattackscript   data/scripts/multihits.c
-ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
-onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
-#ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
+ondoattackscript     data/scripts/multihits.c
+ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
+didhitscript       data/scripts/movedamagelog.c  #dameage log
 
 
 
 
 
-#-------Kit's Additions---------------------------------------------------------------------------------
+
+
+############### Duck, CHARGE AND HYPERS for super - precise 5MP/sec------------------------------------------------
+
+##DUCK
+
+anim freespecial200
+    loop       1 3 3
+    delay      6
+    offset     80 129
+	bbox.position.x 63
+	bbox.position.y 109
+	bbox.size.x 34
+	bbox.size.y 21
+    energycost -5  # Charges 5 MP per cycle
+    mponly     0
+	
+	
+	 cancel     1 3 0 f f  freespecial100 #fwd dodge
+	 cancel     1 3 0 b b  freespecial99 #back dodge
+	 cancel     1 3 0 j    freespecial53 #foward leap
+	 cancel     1 3 0 a    freespecial198 #Hyper Upper 198 for super
+	 cancel     1 3 0 a2   freespecial199 #Hyper Knee  199 for super
+     cancel     1 3 0 s   freespecial197 #more control over block
+	attack.reaction.fall.velocity.y -1.0
+         frame      data/chars/1billy/fin02.gif
+	 delay      5
+         frame      data/chars/1billy/dodge.gif
+     delay      45 
+         frame      data/chars/1billy/dodge.gif
+         
+##BLOCK 2       
+
+anim freespecial197
+	 loop       1 3 3
+	 delay      6
+	 offset     80 129
+	 bbox       68 83 24 44
+	 
+	 cancel     0 2 0 a  freespecial193 #SPINING BACKFIST sdd move need new freespecial number to use
+	 cancel     0 2 0 a2 freespecial192 #FIERCE KICK sdd move need new freespecial number to use
+	 cancel     0 2 0 j  freespecial36 #FOWARD LEAP
+	 cancel     1 3 0 b a    freespecial80 #back elbow
+	 cancel     1 3 0 b a2 freespecial194 #BACK KICK
+	 cancel     0 2 0 f f  freespecial100 #FWD DODGE
+	 cancel     0 2 0 b b  freespecial99 #BACK DODGE
+	 cancel     0 2 0 d    freespecial200 #duck 
+	 
+         frame      data/chars/1billy/a301.gif
+     delay      5    
+         frame      data/chars/1billy/block.gif
+     delay      45
+         frame      data/chars/1billy/block.gif         
+
+
+#############################-------SPINNING CYCLONE------############################
+
+anim freespecial98  
+	 loop       0
+	 delay      5
+	 offset     80 120
+	bbox.position.x 79
+	bbox.position.y 82
+	bbox.size.x 6
+	bbox.size.y 17
+	 landframe  9
+	 dropframe  8
+	 energycost 15
+	 mponly     1
+@cmd toss0001 110
+	 sound      data/sounds/hurric.wav
+	attack.effect.hit.sound.path data/sounds/beats.wav
+         frame      data/chars/1billy/hk04.gif
+         frame      data/chars/1billy/hk05.gif
+	attack.block.penetrate 1
+	attack.damage.force 9
+	attack.damage.type 13
+	attack.effect.hit.flash.disable 1
+	attack.position.x 80
+	attack.position.y 92
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 37
+	attack.size.y 32
+	attack.size.z.background 5
+         frame      data/chars/1billy/hk07.gif
+	 attack13   0 0 0 0 
+         frame      data/chars/1billy/hk09.gif
+         frame      data/chars/1billy/hk10.gif
+	attack.block.penetrate 1
+	attack.damage.force 9
+	attack.damage.type 13
+	attack.effect.hit.flash.disable 1  
+	attack.position.x 48
+	attack.position.y 81
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 31
+	attack.size.y 39
+	attack.size.z.background 5
+         frame      data/chars/1billy/hk11.gif
+	 attack13   0 0 0 0 
+         frame      data/chars/1billy/hk12.gif
+@cmd	updateframe getlocalvar("self") 2
+	 delay      1
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+         frame      data/chars/1billy/ju01.gif
+	 offset     80 129
+	 delay      999
+         frame      data/chars/1billy/ju01.gif
+	 delay      14
+         frame      data/chars/1billy/rise02.gif         
+
+################----------------------JUMP LAND, cancellable into hyper upper & hyper knee------------------------###########################
+
+anim jumpland
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       0 0 0 0
+	 cancel     1 3 0 a   freespecial198
+	 cancel     1 3 0 a2  freespecial199
+         frame      data/chars/1billy/rise02.gif
+	 delay      2
+         frame      data/chars/1billy/rise02.gif
+	 delay      3
+         frame      data/chars/1billy/rise02.gif
+
+####################################  hyper upper
+
+anim freespecial198
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 energycost 10
+	 mponly     1
+	 hitflash   Qflash2
+	 sound      data/sounds/dragon1.wav
+@cmd ani0020 openborconstant("ANI_FOLLOW3") openborconstant("ANI_FALL6")
+         frame      data/chars/1billy/rise02.gif
+	 delay      2
+	 move       1
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a501.gif
+         frame      data/chars/1billy/a501.gif
+         frame      data/chars/1billy/a501.gif
+	 hitfx      data/sounds/beats.wav
+	 attack6    92 85 20 15 8 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      3 0.3 0
+         frame      data/chars/1billy/a502.gif
+         frame      data/chars/1billy/a502.gif
+         frame      data/chars/1billy/a502.gif
+	 move       0
+	 delay      25
+	 attack6    83 69 12 24 8 1 0 0 8 5
+	 jugglecost 5
+	 dropv      3 0.5 0
+         frame      data/chars/1billy/a503.gif
+	 delay      17
+	 attack6    0 0 0 0
+         frame      data/chars/1billy/a601.gif
+
+###############hyper upper 2
+
+anim follow3
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 10
+	 mponly     1
+	 hitflash   Qflash2
+@cmd ani0020 openborconstant("ANI_FOLLOW3") openborconstant("ANI_FALL6")
+         frame      data/chars/1billy/rise02.gif
+	 sound      data/sounds/dragon1.wav
+	 delay      2
+	 move       1
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a101.gif
+         frame      data/chars/1billy/a501.gif
+         frame      data/chars/1billy/a501.gif
+         frame      data/chars/1billy/a501.gif
+	 hitfx      data/sounds/beat3.wav
+	 attack11   92 85 20 15 8 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      3 0.3 0
+         frame      data/chars/1billy/a502.gif
+         frame      data/chars/1billy/a502.gif
+         frame      data/chars/1billy/a502.gif
+	 move       0
+	 delay      25
+	 attack11   83 69 12 24 7 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      3 0.5 0
+         frame      data/chars/1billy/a503.gif
+	 delay      17
+	 attack11   0 0 0 0
+         frame      data/chars/1billy/a601.gif
+
+##########################hyper knee
+
+anim freespecial199
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 2 0 0
+ 	 landframe  17
+	 energycost 20
+	 mponly     1
+	 hitflash   Qflash2
+	 hitfx      data/sounds/beats.wav
+         frame      data/chars/1billy/rise02.gif
+	 sound      data/sounds/hknee.wav
+	 delay      2
+	 move       2
+	 attack     79 99 17 15 15 1 1 0 0 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 2.5 0
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+         frame      data/chars/1billy/knee.gif
+	 delay      999
+	 move       0
+	 attack     0 0 0 0 
+         frame      data/chars/1billy/ju01.gif
+	 delay      14
+         frame      data/chars/1billy/rise02.gif
+
+######### SPINNING BACKFIST
+
+anim freespecial193
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 1
+	 mponly     1
+@cmd ani0020 openborconstant("ANI_FOLLOW4") openborconstant("ANI_PAIN7")
+         frame      data/chars/1billy/a601.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/a602.gif
+         frame      data/chars/1billy/a603.gif
+	 attack7    89 85 26 12 10 0 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 0.5 0
+         frame      data/chars/1billy/a604.gif
+	 attack7    0 0 0 0 
+         frame      data/chars/1billy/a605.gif
+         frame      data/chars/1billy/a606.gif
+	 delay      14
+         frame      data/chars/1billy/a402.gif
+
+##one extra backfist attack
+
+anim follow4
+	 range      5 60
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       68 83 24 44
+	 energycost 1
+	 mponly     1
+         frame      data/chars/1billy/a601.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/a602.gif
+         frame      data/chars/1billy/a603.gif
+	 attack7    89 85 26 12 9 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 0.5 0
+         frame      data/chars/1billy/a604.gif
+	 attack7    0 0 0 0 
+         frame      data/chars/1billy/a605.gif
+         frame      data/chars/1billy/a606.gif
+	 delay      14
+         frame      data/chars/1billy/a402.gif
+
+###fierce kick attack
+
+anim freespecial192
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       68 83 24 44
+	 jumpframe  3 1.3 0.9 0
+	 landframe  10
+	 energycost 1
+	 mponly     1
+         frame      data/chars/1billy/hk01.gif
+	 delay      10
+         frame      data/chars/1billy/hk02.gif
+	 delay      5
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/hk03.gif
+         frame      data/chars/1billy/hk04.gif
+         frame      data/chars/1billy/hk05.gif
+         frame      data/chars/1billy/hk06.gif
+	 delay      10
+	 attack14   80 88 31 16 11 1 0 0 8 5
+	 forcedirection -1
+	 jugglecost 5
+	 dropv      2 1 0
+         frame      data/chars/1billy/hk07.gif
+	 delay      6
+	 attack14   0 0 0 0 
+         frame      data/chars/1billy/hk08.gif
+         frame      data/chars/1billy/hk09.gif
+	 delay      999
+         frame      data/chars/1billy/ju01.gif
+	 delay      3
+         frame      data/chars/1billy/idle01.gif
+
+
+
+
+################################################################################-------Kit's Additions----##########################################################################
 
 
 com           a2    freespecial1
 com           a3    freespecial2
 com           a4    freespecial3
-com       j + a2    freespecial84
+com       d   a2    freespecial7 #1-2-3 KICK
+ 
 
 fmap           21
 palette        data/chars/1billy/icon.gif   
@@ -693,22 +1031,37 @@ anim freespecial1
 	 loop       0
 	 delay      9
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 range      -10 50
 @cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
 @cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
 @cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
 @cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
          frame      data/chars/1billy/b101.gif
-         frame      data/chars/1billy/b102.gif
-	 hitfx      data/sounds/beatpr4.wav
+         frame      data/chars/1billy/b601.gif
 	 delay      14
-	 attack3    85 78 24 26 9 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 9
+	attack.damage.type 3
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatpr4.wav
+	attack.position.x 85
+	attack.position.y 78
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 24
+	attack.size.y 26
+	attack.size.z.background 5
 	 forcedirection -1
 	 jugglecost 5
-	 dropv      2 0.5 0
       @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
-         frame      data/chars/1billy/b103.gif
+         frame      data/chars/1billy/ffury05.gif
 	 delay      9
 	 attack3    0 0 0 0 
          frame      data/chars/1billy/b104.gif
@@ -720,21 +1073,199 @@ anim follow1
 	 loop       0
 	 delay      9
 	 offset     80 129
-	 bbox       68 83 24 44
-@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
          frame      data/chars/1billy/b101.gif
          frame      data/chars/1billy/b102.gif
-	 hitfx      data/sounds/beatpr3.wav
 	 delay      14
-	 attack11   85 78 24 26 20 1 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 20
+	attack.damage.type 11
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatpr3.wav
+	attack.position.x 85
+	attack.position.y 78
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 24
+	attack.size.y 26
+	attack.size.z.background 5
 	 forcedirection -1
 	 jugglecost 5
-	 dropv      2 1 0
          frame      data/chars/1billy/b202.gif
 	 delay      12
 	 attack11   0 0 0 0 
          frame      data/chars/1billy/b601.gif
          frame      data/chars/1billy/b602.gif
+         
+         
+###1-2-3 Kick Combo (dd2 freespeial7 original)
+         
+anim freespecial7
+	 loop       0
+	 delay      12
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+         frame      data/chars/1billy/b101.gif
+         frame      data/chars/1billy/b901.gif
+	attack.block.penetrate 0
+	attack.damage.force 2
+	attack.damage.type 3
+	attack.effect.hit.flash.disable 0
+	attack.position.x 94
+	attack.position.y 88
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 29
+	attack.size.y 22
+	attack.size.z.background 5
+	 forcedirection -1
+	 jugglecost 5
+         frame      data/chars/1billy/b902.gif
+	 attack3    0 0 0 0
+         frame      data/chars/1billy/b102.gif
+	attack.block.penetrate 1
+	attack.damage.force 3
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 97
+	attack.position.y 82
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 25
+	attack.size.y 24
+	attack.size.z.background 5
+	 forcedirection -1
+	 jugglecost 5
+         frame      data/chars/1billy/b902.gif
+	 attack7    0 0 0 0 
+	     frame      data/chars/1billy/b901.gif
+	 delay      9
+	attack.block.penetrate 0
+	attack.damage.force 4
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+	attack.position.x 90
+	attack.position.y 74
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 2.0
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 25
+	attack.size.y 22
+	attack.size.z.background 5
+	 forcedirection -1
+	     frame      data/chars/1billy/b202.gif
+	attack     0 0 0 0 
+	     frame      data/chars/1billy/b102.gif
+	     delay      9
+         frame      data/chars/1billy/b101.gif
+         delay      9
+         frame      data/chars/1billy/b104.gif    
+         
+####--------------BACK KICKS
+
+anim freespecial194 BACK KICK
+	 range      -50 50
+	 loop       0
+	 delay      7
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 sound      data/sounds/punch5.wav
+@cmd ani0020 openborconstant("ANI_FREESPECIAL194") openborconstant("ANI_FALL102")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN4")
+@cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN7")
+	attack.effect.hit.sound.path data/sounds/beatbl2.wav
+	     frame      data/chars/1billy/hk04.gif
+         frame      data/chars/1billy/b502.gif
+	 delay      14
+	attack.block.penetrate 0
+	attack.damage.force 10
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 51
+	attack.position.y 90
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 32
+	attack.size.y 18
+	attack.size.z.background 5
+	 jugglecost 5
+      @cmd  knife 60 7 0 45 "ANI_FOLLOW1"
+         frame      data/chars/1billy/shao02.gif
+	 delay      10
+	 attack7    0 0 0 0
+         frame      data/chars/1billy/hk04.gif
+
+####BACK KICK FINISHER
+
+	 range      -50 50
+	 loop       0
+	 delay      4
+	 offset     80 129
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 flipframe  7
+	 sound      data/sounds/punch5.wav
+@cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
+	attack.effect.hit.sound.path data/sounds/beatbl1.wav
+         frame      data/chars/1billy/b501.gif
+	 delay      9
+	attack.block.penetrate 0
+	attack.damage.force 16
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.position.x 50
+	attack.position.y 81
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 33
+	attack.size.y 25
+	attack.size.z.background 5
+	 jugglecost 5
+	 forcedirection 1
+         frame      data/chars/1billy/b504.gif
+	 attack     0 0 0 0 
+         frame      data/chars/1billy/b505.gif
+      delay 14  
+         frame      data/chars/1billy/b501.gif
+      delay 5  
+         frame      data/chars/1billy/b508.gif
+	 delay      22
+         frame      data/chars/1billy/a402.gif
+
+anim attackbackward
+
+anim grabbackward
+
 
 anim jump
 @cmd clearL
@@ -742,8 +1273,10 @@ anim jump
 	 delay      17
 	 offset     80 129
 	 bbox       68 83 24 44
-	 cancel     1 3 0 s  freespecial91
-	 cancel     1 3 0 a2 freespecial50
+	 cancel     1 3 0 s  freespecial91 #Izuna Drop
+	 cancel     1 3 0 a2 freespecial50 #dd2 jump kick
+	 cancel     2 3 0 j freespecial98 #spinning cyclone
+	 #cancel     1 3 0 a freespecial81 #hyper throw test jump attack 3
 	 sound      data/sounds/dragon9.wav
          frame      data/chars/1billy/ju01.gif
 	 delay      10
@@ -884,51 +1417,113 @@ anim jumpattack
          frame      data/chars/1billy/ju02.gif
 	 bbox       68 83 24 44
          frame      data/chars/1billy/ju01.gif
-
+         
+         
+anim jumpattack3
+	 loop       0
+	 delay      25
+	 offset     80 129
+	bbox.position.x 69
+	bbox.position.y 88
+	bbox.size.x 24
+	bbox.size.y 25
+	 followanim 17
+	 followcond 3
+	attack.block.penetrate 0
+	attack.damage.force 12
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+	attack.position.x 79
+	attack.position.y 98
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.2
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 33
+	attack.size.y 19
+	attack.size.z.background 5
+	 forcedirection -1
+	 	##ADDED 14 FRAME FOR EXTRA DELAY TEST
+	     frame      data/chars/1billy/ak01.gif  
+	 delay      14
+         frame      data/chars/1billy/ak01.gif
+	 delay      15
+	 attack92   0 0 0 0
+         frame      data/chars/1billy/ju02.gif
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+         frame      data/chars/1billy/ju01.gif
 #DIVE KICK
 
 anim freespecial50
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       69 88 24 25
+	bbox.position.x 69
+	bbox.position.y 88
+	bbox.size.x 24
+	bbox.size.y 25
 	 jumpframe  2 -3 3 0
 	 landframe  3
 	 sound      data/sounds/punch1.wav
          frame      data/chars/1billy/ak02.gif
          frame      data/chars/1billy/ak03.gif
 	 delay      999
-	 hitfx      data/sounds/beat2.wav
-	 attack11   76 102 27 23 9 1 0 0 12 5
+	attack.block.penetrate 0
+	attack.damage.force 9
+	attack.damage.type 11
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+	attack.position.x 76
+	attack.position.y 102
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.2
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 27
+	attack.size.y 23
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.5 1.2 0
          frame      data/chars/1billy/ak04.gif
          delay      12
 	 attack11   0 0 0 0
          frame      data/chars/1billy/item.gif
 
-#DODGE TRIGGER
+##UPDATED BLOCK MECHANIC SAME FOR ALL 3 SYTLES
 
 anim block
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       63 122 34 7
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 cancel     0 2 0 u u d d freespecial95  #movelist
-	 cancel     1 3 0 a    freespecial80
-	 cancel     1 3 0 a2   freespecial81
-	 cancel     1 3 0 a3   freespecial61
-	 cancel     1 3 0 a4   freespecial61
-	 cancel     1 3 0 j    freespecial53
-	 cancel     1 3 0 f f  freespecial100
-	 cancel     1 3 0 b b  freespecial99
-	 cancel     1 3 0 d f d f a4  freespecial65
-	 cancel     1 3 0 d f d f a3  freespecial66
-         frame      data/chars/1billy/fin02.gif
-	 delay      120
-         frame      data/chars/1billy/dodge.gif
-         delay      1 
-         frame      data/chars/1billy/dodge.gif
+	 cancel     0 2 0 a  freespecial193 #SPINING BACKFIST 
+	 cancel     0 2 0 a2 freespecial192 #FIERCE KICK 
+	 cancel     1 3 0 b a    freespecial80 #back elbow
+	 cancel     1 3 0 b a2 freespecial194 #BACK KICK
+	 cancel     1 3 0 j   freespecial81 #hyper throw
+	 cancel     1 3 0 a3   freespecial61 #sonic blast trigger
+	 cancel     1 3 0 a4   freespecial61 #sonic blast trigger
+	 cancel     1 3 0 a2    freespecial53 #fwd leap
+	 cancel     1 3 0 f f  freespecial100 #fwd dodge
+	 cancel     1 3 0 b b  freespecial99  #back dodge
+	 cancel     1 3 0 d f d f a4  freespecial65 #ism
+	 cancel     1 3 0 d f d f a3  freespecial66 #ism
+	 cancel     0 2 0 d    freespecial200 #duck 
+         frame      data/chars/1billy/a301.gif
+         frame      data/chars/1billy/block.gif
+         frame      data/chars/1billy/block.gif
+
+
+#foward leap
 
 anim freespecial53
 	 loop       0
@@ -948,9 +1543,21 @@ anim freespecial53
 	 delay      10
          frame      data/chars/1billy/leap03.gif
 	 delay      999
-	 attack3    69 82 39 28 2 0 0 0 12 5
-	dropv 1.3 1.7 0.0
-	hitfx data/sounds/beatbl3.wav
+	attack.block.penetrate 0
+	attack.damage.force 2
+	attack.damage.type 3
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbl3.wav
+	attack.position.x 69
+	attack.position.y 82
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 1.7
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 39
+	attack.size.y 28
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/leap04.gif
 	 delay      12
@@ -967,9 +1574,20 @@ anim freespecial100
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       63 122 34 7
+	bbox.position.x 63
+	bbox.position.y 122
+	bbox.size.x 34
+	bbox.size.y 7
 	 move       2
 	 flipframe  21
+	 energycost 10  #-----added
+	 mponly     1   #------added
+	 
+	 
+	 cancel 3 20 0 s freespecial99 #fwd dodge back dodge
+	 cancel 5 7 0 a  freespecial30  #backdoge into IP MAN BARRAGE
+	 cancel 3 12 0 j freespecial81 #hyper throw
+	 cancel 4 7 0 a2 freespecial31 #jumping round house
 @cmd shadow 10 25 60 0 2 80 80 250
          frame      data/chars/1billy/fin01.gif
 	 move       4
@@ -1007,8 +1625,15 @@ anim freespecial99
 	 delay      12
 	 offset     80 129
 	 bbox       0
-	 jumpframe  1 1.7 -1 0
+	 jumpframe  1 2.0 -1.5 0 #1=frame jump starts, 1.8=(y axis speed) -1.2=(x axis speed, -1.0=left, 1.0=right) 0 = (z axis speed -1.0=up, 1.0=down) 
 	 landframe  7
+	 energycost 10  #-----added
+	 mponly     1   #------added
+	 
+	 cancel 6 7 0 j freespecial58 # cross jump
+	 cancel 5 7 0 s freespecial100 #backdoge to fwd dodge
+	 cancel 5 7 0 a2 freespecial50 # dive kick
+	 cancel 6 7 0 a  freespecial64  #fwd dodge into hadoken
 @cmd shadow 10 25 60 0 2 80 80 250
          frame      data/chars/1billy/rise02.gif
 	 sound      data/sounds/dragon6.wav
@@ -1023,6 +1648,48 @@ anim freespecial99
          frame      data/chars/1billy/bfl06.gif
 	 delay      15
          frame      data/chars/1billy/fin01.gif
+         
+###@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ KNOCKBACK-----CRASH ON CANCEL@@@@@@@@@@@@@@@@@
+
+anim freespecial59
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 1.8 0.4
+	 landframe  7
+	 followanim 39
+	 followcond 3
+         frame      data/chars/1billy/fin02.gif
+         frame      data/chars/1billy/ju01.gif
+         frame      data/chars/1billy/ju02.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/ak02.gif
+	 delay      18
+         frame      data/chars/1billy/ak03.gif
+	 delay      7
+	attack.block.penetrate 0
+	attack.damage.force 4
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbl3.wav
+	attack.position.x 75
+	attack.position.y 101
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.2
+	attack.reaction.fall.velocity.y 1.2
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 27
+	attack.size.y 25
+	attack.size.z.background 5
+	 forcedirection -1
+         frame      data/chars/1billy/ak04.gif
+	 attack     0 0 0 0
+ 	 delay      99
+         frame      data/chars/1billy/ak02.gif
+ 	 delay      15
+         frame      data/chars/1billy/fin02.gif         
 
 #hyper throw
 
@@ -1030,7 +1697,10 @@ anim freespecial81
 	 loop       0
 	 delay      15
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 jumpframe  1 2 0.7 0
 	 landframe  6
 	 followanim 2
@@ -1043,8 +1713,18 @@ anim freespecial81
          frame      data/chars/1billy/ju01.gif
 	 delay      12
          frame      data/chars/1billy/flip01.gif
-	 attack11   84 93 22 18 0 0 0 1 8 5
-	hitfx data/sounds/beat2.wav
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 11
+	attack.effect.hit.flash.disable 1
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+	attack.position.x 84
+	attack.position.y 93
+	attack.reaction.fall.force 0
+	attack.reaction.pause.time 8
+	attack.size.x 22
+	attack.size.y 18
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/flip02.gif
 	 attack11   0 0 0 0 
@@ -1127,21 +1807,39 @@ anim freespecial82
          frame      data/chars/1billy/ju01.gif
 	 delay      12
          frame      data/chars/1billy/rise02.gif
+         
+         
+#BACK ELBOW
 
 anim freespecial80
 	 loop       0
 	 delay      10
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 sound      data/sounds/dragon6.wav
-	 hitfx      data/sounds/beatkil1.wav
+	attack.effect.hit.sound.path data/sounds/beatkil1.wav
          frame      data/chars/1billy/elb01.gif
 	 delay      6
          frame      data/chars/1billy/elb02.gif
 	 delay      17
-	 attack5    58 85 18 13 5 1 0 0 12 5
+	attack.block.penetrate 0
+	attack.damage.force 5
+	attack.damage.type 5
+	attack.effect.hit.flash.disable 0
+	attack.position.x 58
+	attack.position.y 85
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x -0.5
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 18
+	attack.size.y 13
+	attack.size.z.background 5
 	 jugglecost 5
-	 dropv      1.5 -0.5 0
          frame      data/chars/1billy/elb03.gif
 	 delay      10
 	 attack5    0 0 0 0 
@@ -1153,12 +1851,15 @@ anim freespecial84
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 jumpframe  2 1.8 0 0 0
 	 flipframe  3
 	 landframe  9
 	 sound      data/sounds/dragon9.wav
-	 hitfx      data/sounds/beatmk3.wav
+	attack.effect.hit.sound.path data/sounds/beatmk3.wav
          frame      data/chars/1billy/fin02.gif
          frame      data/chars/1billy/rise02.gif
 	 delay      20
@@ -1167,9 +1868,21 @@ anim freespecial84
          frame      data/chars/1billy/ak02.gif
          frame      data/chars/1billy/ak03.gif
 	 delay      9
-	 attack5    76 102 27 23 8 1 0 0 12 5
+	attack.block.penetrate 0
+	attack.damage.force 8
+	attack.damage.type 5
+	attack.effect.hit.flash.disable 0
+	attack.position.x 76
+	attack.position.y 102
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 2.0
+	attack.reaction.fall.velocity.y 1.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 27
+	attack.size.y 23
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1 2 0
          frame      data/chars/1billy/ak04.gif
 	 delay      5
 	 attack5    0 0 0 0 
@@ -1364,33 +2077,77 @@ anim freespecial102
 	 sound      data/sounds/punch4.wav
 	 delay      4
          frame      data/chars/1billy/ult14.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack93   80 89 36 24 0 1 0 0 12 5 
-	 dropv      1.6 0.8
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 93
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.6
+	attack.reaction.pause.time 12
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult15.gif
 	 sound      data/sounds/punch4.wav
 	 attack93   0 0 0 0
          frame      data/chars/1billy/ult16.gif
-	 hitfx      data/sounds/beatkil1.wav
-	 attack92   80 89 36 24 0 1 0 0 12 5
-	 dropv      0.5 1
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatkil1.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.pause.time 12
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult17.gif
 	 sound      data/sounds/punch4.wav
 	 attack92   0 0 0 0
          frame      data/chars/1billy/ult14.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack93   80 89 36 24 0 1 0 0 12 5
-	 dropv      1.6 0.8
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 93
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.6
+	attack.reaction.pause.time 12
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult15.gif
 	 sound      data/sounds/punch4.wav
 	 attack93   0 0 0 0
          frame      data/chars/1billy/ult16.gif
-	 hitfx      data/sounds/beatkil1.wav
-	 attack92   80 89 36 24 0 1 0 0 12 5
-	 dropv      0.5 1
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatkil1.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.pause.time 12
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult17.gif
 	 attack92   0 0 0 0
@@ -1398,18 +2155,40 @@ anim freespecial102
          frame      data/chars/1billy/ult18.gif
 	 sound      data/sounds/punch4.wav
          frame      data/chars/1billy/ult19.gif
-	 hitfx      data/sounds/beatbr2.wav
 	 delay      4
-	 attack93   80 89 36 24 0 1 0 0 12 5 
-	 dropv      1.6 0.8
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 93
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.6
+	attack.reaction.pause.time 12
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult20.gif
 	 sound      data/sounds/punch4.wav
 	 attack93   0 0 0 0
          frame      data/chars/1billy/ult21.gif
-	 hitfx      data/sounds/beatkil2.wav
-	 attack     80 89 36 24 17 1 0 0 30 5
-	 dropv      2.5 1
+	attack.block.penetrate 0
+	attack.damage.force 17
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatkil2.wav
+	attack.position.x 80
+	attack.position.y 89
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 2.5
+	attack.reaction.pause.time 30
+	attack.size.x 36
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult22.gif
 	 attack     0 0 0 0
@@ -1441,31 +2220,75 @@ anim freespecial103
          frame      data/chars/1billy/ult08.gif
          frame      data/chars/1billy/ult09.gif
          frame      data/chars/1billy/ult10.gif
-	 hitfx      data/sounds/beatsf4.wav
 	 delay      6
-	 attack92   76 70 19 42 0 1 0 0 15 5
-	 dropv      1 0.1
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 76
+	attack.position.y 70
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 1.0
+	attack.reaction.pause.time 15
+	attack.size.x 19
+	attack.size.y 42
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult10.gif
 	 attack92   0 0 0 0
          frame      data/chars/1billy/ult10.gif
-	 hitfx      data/sounds/beatsf4.wav
-	 attack93   76 70 19 42 0 1 0 0 15 5
-	 dropv      1 0.1
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 93
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 76
+	attack.position.y 70
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 1.0
+	attack.reaction.pause.time 15
+	attack.size.x 19
+	attack.size.y 42
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult11.gif
 	 attack93   0 0 0 0
          frame      data/chars/1billy/ult11.gif
-	 hitfx      data/sounds/beatsf4.wav
-	 attack92   76 70 19 42 0 1 0 0 15 5
-	 dropv      1 0.1
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 76
+	attack.position.y 70
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 1.0
+	attack.reaction.pause.time 15
+	attack.size.x 19
+	attack.size.y 42
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/ult12.gif
 	 attack92   0 0 0 0
          frame      data/chars/1billy/ult12.gif
-	 hitfx      data/sounds/beatsf4.wav
-	 attack     76 70 19 42 17 1 0 0 30 5 
-	 dropv      3 0.5
+	attack.block.penetrate 0
+	attack.damage.force 17
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 76
+	attack.position.y 70
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.5
+	attack.reaction.fall.velocity.y 3.0
+	attack.reaction.pause.time 30
+	attack.size.x 19
+	attack.size.y 42
+	attack.size.z.background 5
 	 forcedirection -1  
          frame      data/chars/1billy/ult13.gif
 	 attack     0 0 0 0
@@ -1600,7 +2423,7 @@ anim pain1
 	 delay      7
 	 offset     80 129
 	 bbox       68 83 24 44
-	 cancel     1 4 0 s freespecial90
+	 cancel     1 4 0 a4 freespecial90
          frame      data/chars/1billy/pain01.gif
          frame      data/chars/1billy/pain01.gif
          frame      data/chars/1billy/pain01.gif
@@ -1614,7 +2437,7 @@ anim pain2
 	 delay      27
 	 offset     80 129
 	 bbox       68 83 24 44
-	 cancel     0 1 0 s freespecial90
+	 cancel     0 1 0 a4 freespecial90
          frame      data/chars/1billy/pain01.gif
 	 delay      45
          frame      data/chars/1billy/pain03.gif
@@ -1624,7 +2447,7 @@ anim pain3
 	 delay      7
 	 offset     80 129
 	 bbox       68 83 24 44
-	 cancel     1 4 0 s freespecial90
+	 cancel     1 4 0 a4 freespecial90
          frame      data/chars/1billy/pain02.gif
          frame      data/chars/1billy/pain02.gif
          frame      data/chars/1billy/pain02.gif
@@ -1638,7 +2461,7 @@ anim pain4
 	 delay      27
 	 offset     80 129
 	 bbox       68 83 24 44
-	 cancel     0 1 0 s freespecial90
+	 cancel     0 1 0 a4 freespecial90
          frame      data/chars/1billy/pain02.gif
 	 delay      45
          frame      data/chars/1billy/pain03.gif
@@ -1792,7 +2615,6 @@ anim fall10
 	 sound      data/sounds/fall2.wav
          frame      data/chars/1billy/fall03.gif
 
-#######force push
 
 anim fall7
 	 loop       0
@@ -1817,7 +2639,9 @@ anim rise
 	 delay      40
 	 offset     80 129
 	 bbox       0 0 0 0
-	 cancel     1 2 0 s freespecial82
+	 cancel     1 2 0 a4 freespecial82
+	 cancel     1 3 0 a    freespecial198 #Hyper Upper 198 for super
+	 cancel     1 3 0 a2   freespecial199 #Hyper Knee  199 for super
          frame      data/chars/1billy/fall03.gif
 	 delay      12
          frame      data/chars/1billy/rise01.gif
@@ -1853,19 +2677,22 @@ anim freespecial2
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 custentity ssf2
 	 spawnframe 0 0 -2 0 0
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+3); 
+changeentityproperty(self, "mp", power+1); 
 @end_script
 	 weaponframe 9 1
-	 cancel     3 4 0 a freespecial20
-	 cancel     3 4 0 a2 freespecial23
-	 cancel     0 4 0 j  freespecial100
-	 cancel     0 4 0 s  freespecial99
+	 #cancel     3 4 0 a freespecial20
+	 #cancel     3 4 0 a2 freespecial23
+	 #cancel     0 4 0 j  freespecial100
+	 #cancel     0 4 0 s  freespecial99
          frame      data/chars/1billy/tr06.gif
          frame      data/chars/1billy/tr07.gif
          frame      data/chars/1billy/tr08.gif
@@ -1894,13 +2721,13 @@ anim freespecial3
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+3); 
+changeentityproperty(self, "mp", power+1); 
 @end_script
 	 weaponframe 7 2
 	 cancel     3 4 0 a2 freespecial26
 	 cancel     3 4 0 a freespecial27
-	 cancel     0 4 0 j  freespecial100
-	 cancel     0 4 0 s  freespecial99
+	 #cancel     0 4 0 j  freespecial100
+	 #cancel     0 4 0 s  freespecial99
          frame      data/chars/1billy/tr10.gif
          frame      data/chars/1billy/tr11.gif
          frame      data/chars/1billy/tr12.gif
@@ -1926,7 +2753,10 @@ anim freespecial20
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 energycost 30
 	 mponly     1
 	 cancel     10 12 2 a   freespecial45 #cyrax chain
@@ -1940,9 +2770,21 @@ anim freespecial20
          frame      data/chars/1billy/a701.gif
          frame      data/chars/1billy/a702.gif
 	 delay      10
-	 attack     90 86 23 10 6 0 0 0 8 5
-	dropv 0.5 0.0 0.0
-	hitfx data/sounds/beatsf1.wav
+	attack.block.penetrate 0
+	attack.damage.force 6
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf1.wav
+	attack.position.x 90
+	attack.position.y 86
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 23
+	attack.size.y 10
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/a703.gif
 	 sound      data/sounds/punch4.wav
@@ -1951,8 +2793,20 @@ anim freespecial20
          frame      data/chars/1billy/a401.gif
          frame      data/chars/1billy/a402.gif
 	 delay      10
-	 attack2    90 80 23 13 6 0 0 0 8 5
-	dropv 0.5 0.0 0.0
+	attack.block.penetrate 0
+	attack.damage.force 6
+	attack.damage.type 2
+	attack.effect.hit.flash.disable 0
+	attack.position.x 90
+	attack.position.y 80
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 23
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/a403.gif
 	 sound      data/sounds/punch4.wav
@@ -1961,8 +2815,20 @@ anim freespecial20
          frame      data/chars/1billy/a701.gif
          frame      data/chars/1billy/a704.gif
 	 delay      10
-	 attack7    90 93 23 7 10 0 0 0 8 5
-	dropv 1.5 0.0 0.0
+	attack.block.penetrate 0
+	attack.damage.force 10
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 90
+	attack.position.y 93
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 23
+	attack.size.y 7
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/a705.gif
 	 delay      8
@@ -1984,14 +2850,24 @@ anim freespecial41
 	 followanim 3
 	 followcond 3
  	 move       2
-	hitfx data/sounds/grab.wav
+	attack.effect.hit.sound.path data/sounds/grab.wav
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/a301.gif
  	 move       1
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/a301.gif
 	 delay      10
-	 attack     89 80 18 14 0 0 0 1 5 5
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 1
+	attack.position.x 89
+	attack.position.y 80
+	attack.reaction.fall.force 0
+	attack.reaction.pause.time 5
+	attack.size.x 18
+	attack.size.y 14
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/grab01.gif
  	 move       0
@@ -2060,12 +2936,15 @@ anim freespecial42
 	 loop       0
 	 delay      2
 	 offset     80 129
-	 bbox       76 79 31 52
+	bbox.position.x 76
+	bbox.position.y 79
+	bbox.size.x 31
+	bbox.size.y 52
 	 attackone  1
-	 hitfx      data/sounds/grab.wav
 	 followanim 13
 	 followcond 3
  	 move       2
+	attack.effect.hit.sound.path data/sounds/grab.wav
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/a301.gif
@@ -2073,7 +2952,17 @@ anim freespecial42
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/a301.gif
 	 delay      10
-	 attack     93 81 12 10 0 0 0 1 5 5
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 1
+	attack.position.x 93
+	attack.position.y 81
+	attack.reaction.fall.force 0
+	attack.reaction.pause.time 5
+	attack.size.x 12
+	attack.size.y 10
+	attack.size.z.background 5
 	 forcedirection -1
          frame      data/chars/1billy/grab01.gif
  	 move       0
@@ -2160,17 +3049,74 @@ anim freespecial43
 	 delay      6
          frame      data/chars/1billy/airp05.gif
          frame      data/chars/1billy/ak03.gif
-	 hitfx      data/sounds/beatff1.wav
 	 delay      12
-	 attack     78 83 36 28 5 1 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 5
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatff1.wav
+	attack.position.x 78
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 36
+	attack.size.y 28
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      2 1.5 0
          frame      data/chars/1billy/ak05.gif
 	 delay      99
 	 attack     0 0 0 0
          frame      data/chars/1billy/ult19.gif
 	 delay      12
          frame      data/chars/1billy/fin02.gif
+         
+         
+##CROSS SIDES (dd2 move)
+
+anim freespecial58
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  2 1.5 1.5 0
+	 landframe  7
+         frame      data/chars/1billy/coltos00.gif
+         frame      data/chars/1billy/fin02.gif
+	 sound      data/sounds/punch1.wav
+	 delay      6
+         frame      data/chars/1billy/zt01.gif
+         frame      data/chars/1billy/zt02.gif
+         frame      data/chars/1billy/zt03.gif
+	 delay      20
+	attack.block.penetrate 0
+	attack.damage.force 5
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf2.wav
+	attack.position.x 72
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 41
+	attack.size.y 30
+	attack.size.z.background 5
+	 jugglecost 3
+	 forcedirection -1
+         frame      data/chars/1billy/ak05.gif
+	 delay      99
+	 attack     0 0 0 0
+	 delay      99
+         frame      data/chars/1billy/ju01.gif
+	 delay      12
+         frame      data/chars/1billy/item.gif
+
+
 
 #KNOCKBACK
 
@@ -2402,7 +3348,10 @@ anim freespecial22
 	 loop       0
 	 delay      7
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 jumpframe  4 1.1 0.1 0
 	 landframe  9
 	 cancel     10 12 0 a2  freespecial31
@@ -2418,11 +3367,23 @@ anim freespecial22
          frame      data/chars/1billy/b404.gif
          frame      data/chars/1billy/jk01.gif
 	 offset     80 132
-	 hitfx      data/sounds/beatbl3.wav
+	attack.effect.hit.sound.path data/sounds/beatbl3.wav
          frame      data/chars/1billy/jk02.gif
-	 attack7    76 96 35 12 7 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 7
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.position.x 76
+	attack.position.y 96
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 35
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      2 0.1 0
          frame      data/chars/1billy/jk03.gif
 	 offset     80 129
 	 attack     0 0 0 0 
@@ -2440,7 +3401,10 @@ anim freespecial31
 	 loop       0
 	 delay      7
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 jumpframe  3 1.2 0.2 0
 	 landframe  8
 	 sound      data/sounds/dragone.wav
@@ -2451,10 +3415,22 @@ anim freespecial31
          frame      data/chars/1billy/jk01.gif
          frame      data/chars/1billy/fk01.gif
          frame      data/chars/1billy/fk02.gif
-	 hitfx      data/sounds/beatkill.wav
-	 attack14   81 83 27 23 15 1 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 15
+	attack.damage.type 14
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatkill.wav
+	attack.position.x 81
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.7
+	attack.reaction.fall.velocity.y 1.4
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 27
+	attack.size.y 23
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.4 1.7 0
          frame      data/chars/1billy/fk03.gif
 	 delay      999
 	 attack14   0 0 0 0 
@@ -2528,8 +3504,11 @@ anim freespecial23
 	 loop       0
 	 delay      7
 	 offset     80 129
-	 bbox       68 83 24 44
-	 energycost 33
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 energycost 30
 	 mponly     1
 	 fastattack 1
 	 cancel     10 13 0 a2 freespecial24
@@ -2539,13 +3518,25 @@ anim freespecial23
 	 cancel     10 13 1 a4  freespecial41 #front slam
 	 cancel     10 13 1 a3  freespecial42 #back throw def jam kick
 	 sound      data/sounds/punch1.wav
-	 hitfx      data/sounds/beatsf3.wav
+	attack.effect.hit.sound.path data/sounds/beatsf3.wav
          frame      data/chars/1billy/b101.gif
          frame      data/chars/1billy/b102.gif
 	 delay      9
-	 attack1    85 75 28 26 7 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 7
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.position.x 85
+	attack.position.y 75
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 28
+	attack.size.y 26
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.3 0 0
          frame      data/chars/1billy/b103.gif
 	 sound      data/sounds/punch4.wav
 	 delay      7
@@ -2553,10 +3544,22 @@ anim freespecial23
          frame      data/chars/1billy/b102.gif
          frame      data/chars/1billy/b201.gif
 	 delay      9
-	 hitfx      data/sounds/beatsf3.wav
-	 attack2    85 75 28 26 7 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 7
+	attack.damage.type 2
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf3.wav
+	attack.position.x 85
+	attack.position.y 75
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 28
+	attack.size.y 26
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.3 0 0
          frame      data/chars/1billy/b202.gif
 	 sound      data/sounds/punch4.wav
 	 delay      7
@@ -2564,10 +3567,22 @@ anim freespecial23
          frame      data/chars/1billy/b102.gif
          frame      data/chars/1billy/b201.gif
 	 delay      9
-	 hitfx      data/sounds/beatsf2.wav
-	 attack7    85 75 28 26 7 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 7
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf2.wav
+	attack.position.x 85
+	attack.position.y 75
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 28
+	attack.size.y 26
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.5 0 0
          frame      data/chars/1billy/ll04.gif
 	 delay      8
 	 attack7    0 0 0 0
@@ -2593,18 +3608,42 @@ anim freespecial24
 	 sound      data/sounds/punch4.wav
 	 delay      5
          frame      data/chars/1billy/rob01.gif
-	 hitfx      data/sounds/beatsbm1.wav
-	 attack     90 99 33 12 0 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsbm1.wav
+	attack.position.x 90
+	attack.position.y 99
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 33
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.3 0 0
          frame      data/chars/1billy/rob02.gif
 	 attack     0
          frame      data/chars/1billy/rob03.gif
 	 sound      data/sounds/punch4.wav
-	 hitfx      data/sounds/beatsbm1.wav
-	 attack2    90 90 33 11 0 0 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 2
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsbm1.wav
+	attack.position.x 90
+	attack.position.y 90
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.0
+	attack.reaction.fall.velocity.y 0.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 33
+	attack.size.y 11
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.5 0 0
          frame      data/chars/1billy/rob04.gif
 	 sound      data/sounds/dragong.wav
 	 attack2    0
@@ -2800,13 +3839,25 @@ anim freespecial25
          frame      data/chars/1billy/fin06.gif
 	 move       6
          frame      data/chars/1billy/fin07.gif
-	 hitfx      data/sounds/beatsf4.wav
 	 move       2
 	 delay      2
-	 attack6    92 85 21 11 11 1 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 11
+	attack.damage.type 6
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 92
+	attack.position.y 85
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.7
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 21
+	attack.size.y 11
+	attack.size.z.background 5
 	 forcedirection -1
 	 jugglecost 5
-	 dropv      1.5 1.7 0
          frame      data/chars/1billy/fin08.gif
          frame      data/chars/1billy/fin08.gif
          frame      data/chars/1billy/fin08.gif
@@ -3011,7 +4062,10 @@ anim freespecial29
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 jumpframe  3 1.2 0.8 0
 	 landframe  8
          frame      data/chars/1billy/b301.gif
@@ -3028,10 +4082,22 @@ anim freespecial29
          frame      data/chars/1billy/jk01.gif
 	 move       -3
 	 delay      8
-	 hitfx      data/sounds/beatpr3.wav
-	 attack14   87 78 32 24 18 1 0 0 8 5
+	attack.block.penetrate 0
+	attack.damage.force 18
+	attack.damage.type 14
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatpr3.wav
+	attack.position.x 87
+	attack.position.y 78
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.5
+	attack.reaction.fall.velocity.y 2.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 32
+	attack.size.y 24
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      2 1.5 0
          frame      data/chars/1billy/b406.gif
 	 move       0
 	 attack     0 0 0 0
@@ -3171,84 +4237,219 @@ anim freespecial33
 	 loop       0
 	 delay      4
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 fastattack 1
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip08.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr4.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr4.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip09.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip08.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr4.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr4.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip09.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip08.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr4.wav
-	 attack74   90 101 18 12 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr4.wav
+	attack.position.x 90
+	attack.position.y 101
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 18
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip09.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack74   88 109 14 13 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 88
+	attack.position.y 109
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 14
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip10.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr4.wav
-	 attack74   88 109 14 13 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr4.wav
+	attack.position.x 88
+	attack.position.y 109
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 14
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip11.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr2.wav
-	 attack74   88 109 14 13 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 74
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr2.wav
+	attack.position.x 88
+	attack.position.y 109
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 14
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip10.gif
 	 attack74   0 0 0 0
          frame      data/chars/1billy/ip07.gif
-	 hitfx      data/sounds/beatbr4.wav
-	 attack75   88 109 14 13 1 0 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 75
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatbr4.wav
+	attack.position.x 88
+	attack.position.y 109
+	attack.reaction.fall.force 0
+	attack.reaction.fall.velocity.x 0.8
+	attack.reaction.fall.velocity.y 1.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 14
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.3 0.8 0
          frame      data/chars/1billy/ip11.gif
 	 attack75   0 0 0 0
 	 delay      15
          frame      data/chars/1billy/ip12.gif
-	 hitfx      data/sounds/beatsf1.wav
-	 attack75   88 109 14 13 1 1 1 0 8 5
+	attack.block.penetrate 1
+	attack.damage.force 1
+	attack.damage.type 75
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf1.wav
+	attack.position.x 88
+	attack.position.y 109
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.0
+	attack.reaction.fall.velocity.y 0.3
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 8
+	attack.size.x 14
+	attack.size.y 13
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.3 1 0
          frame      data/chars/1billy/ip13.gif
 	 delay      15
 	 attack75   0 0 0 0
@@ -3315,15 +4516,30 @@ anim freespecial35
 	 loop       0
 	 delay      7
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 sound      data/sounds/punch1.wav
          frame      data/chars/1billy/g202.gif
          frame      data/chars/1billy/hardk01.gif
 	 delay      12
-	 hitfx      data/sounds/beatkill.wav
-	 attack     102 94 20 11 5 1 1 0 13 5
+	attack.block.penetrate 1
+	attack.damage.force 5
+	attack.damage.type 1
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatkill.wav
+	attack.position.x 102
+	attack.position.y 94
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.7
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 13
+	attack.size.x 20
+	attack.size.y 11
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.5 1.7 0
          frame      data/chars/1billy/hardk02.gif
 	 delay      8
 	 attack     0 0 0 0
@@ -3352,7 +4568,10 @@ anim freespecial61
 	 loop       0
 	 delay      12
 	 offset     80 129
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 	 load       sonicbm
 	 custentity sonicbm
 	 spawnframe 1 4 -1 3 0
@@ -3435,9 +4654,19 @@ anim follow20
 	 followcond 3
 	 jumpframe  0 0.3 1.2
 	 landframe  1
-	 attack7    0 0 0 0
+	attack.block.penetrate 0
+	attack.damage.force 0
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.flash.model Qflash2
+	attack.position.x 0
+	attack.position.y 0
+	attack.reaction.fall.force 0
+	attack.reaction.pause.time 0
+	attack.size.x 0
+	attack.size.y 0
+	attack.size.z.background 0
 	 fastattack 1
-	 hitflash   Qflash2
          frame      data/chars/1billy/ffury05.gif
 	 delay      5
          frame      data/chars/1billy/fin02.gif
@@ -3446,11 +4675,23 @@ anim follow20
          frame      data/chars/1billy/bfl01.gif
          frame      data/chars/1billy/bfl02.gif
 	 move       0
-	 hitfx      data/sounds/beatsf3.wav
 	 delay      13
-	 attack92   75 75 28 39 0 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 0
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf3.wav
+	attack.position.x 75
+	attack.position.y 75
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.2
+	attack.reaction.fall.velocity.y 3.0
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 28
+	attack.size.y 39
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      3 0.2 0
          frame      data/chars/1billy/bfl07.gif
 	 delay      9
 	 attack92   0 0 0 0
@@ -3880,12 +5121,12 @@ anim freespecial66
 	 landframe  24
 	 delay      6
 	 fastattack 1
-	 hitflash   Qflash2
 @cmd shadow 10 25 60 0 2 80 80 250
 load     sa
 custentity sa
 spawnframe 0 0 0 0 0
 #	 sound      data/sounds/draguy1.wav
+	attack.effect.hit.flash.model Qflash2
          frame      data/chars/1billy/ffc34.gif
 	 delay      7
          frame      data/chars/1billy/ffc12.gif
@@ -3893,23 +5134,50 @@ sound      data/sounds/draguy2.wav
 	 delay      6
          frame      data/chars/1billy/ffc25.gif
 	 delay      8
-	 hitfx      data/sounds/beatsf4.wav
-	 attack90   77 83 29 12 5 1 0 0 7 5
+	attack.block.penetrate 0
+	attack.damage.force 5
+	attack.damage.type 90
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 77
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 0.9
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 29
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.9 0.1 0
          frame      data/chars/1billy/ffc26.gif
 	 delay      5
 	 attack     0
          frame      data/chars/1billy/ffc25.gif
-	 bbox       68 83 24 44
+	bbox.position.x 68
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
 @cmd jump001 0.8 0.3 0
 sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/ffc27.gif
 	 delay      8
-	 hitfx      data/sounds/beatsf4.wav
-	 attack91   77 83 29 12 0 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 0
+	attack.damage.type 91
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 77
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 0.9
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 29
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.9 0.1 0
          frame      data/chars/1billy/ffc28.gif
 	 delay      5
 	 attack     0
@@ -3918,10 +5186,22 @@ sound      data/sounds/draguy2.wav
 sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/ffc30.gif
 	 delay      8
-	 hitfx      data/sounds/beatsf4.wav
-	 attack90   77 83 29 12 0 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 0
+	attack.damage.type 90
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 77
+	attack.position.y 83
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 0.9
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 29
+	attack.size.y 12
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.9 0.1 0
          frame      data/chars/1billy/ffc31.gif
 	 delay      5
 	 attack     0
@@ -3931,10 +5211,22 @@ sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/ffc33.gif
          frame      data/chars/1billy/ffc35.gif
 	 delay      8
-	 hitfx      data/sounds/beatsf4.wav
-	 attack91   77 75 30 36 0 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 0
+	attack.damage.type 91
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 77
+	attack.position.y 75
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 0.9
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 30
+	attack.size.y 36
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      0.9 0.1 0
          frame      data/chars/1billy/zt31.gif
 	 attack     0
 	 delay      5
@@ -3943,10 +5235,22 @@ sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/wind01.gif
          frame      data/chars/1billy/wind02.gif
 	 delay      8
-	 hitfx      data/sounds/beatsf4.wav
-	 attack91   77 75 30 36 0 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 0
+	attack.damage.type 91
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf4.wav
+	attack.position.x 77
+	attack.position.y 75
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 0.1
+	attack.reaction.fall.velocity.y 1.2
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 30
+	attack.size.y 36
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.2 0.1 0
          frame      data/chars/1billy/wind03.gif
 @cmd jump001 1 0.2 0
 	 delay      5
@@ -3957,10 +5261,22 @@ sound      data/sounds/draguy2.wav
          frame      data/chars/1billy/hflip02.gif
 @cmd toss0001 25
          frame      data/chars/1billy/ffc22.gif
-	 hitfx      data/sounds/beatsf5.wav
-	 attack7    77 75 30 36 30 1 1 0 7 5
+	attack.block.penetrate 1
+	attack.damage.force 30
+	attack.damage.type 7
+	attack.effect.hit.flash.disable 0
+	attack.effect.hit.sound.path data/sounds/beatsf5.wav
+	attack.position.x 77
+	attack.position.y 75
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 2.0
+	attack.reaction.fall.velocity.y -0.9
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 7
+	attack.size.x 30
+	attack.size.y 36
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      -0.9 2 0
          frame      data/chars/1billy/ffc23.gif
 	 attack     0
 	 delay      7
