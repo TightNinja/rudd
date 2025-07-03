@@ -1,0 +1,1087 @@
+ajspecial       1
+nolost          1
+autoland        2
+versusdamage    0
+spdirection     1 1
+nodropen  
+maxattacks      200
+maxfreespecials 200
+maxattacktypes  200
+maxfollows      200
+colourselect    1
+lifescore       9999999999999
+
+
+
+
+
+#-------Misc stuff
+load	Flash         data/chars/0misc/Flash.txt
+load	Qflash        data/chars/0misc/QFlash.txt   #mk flash
+load	Qmkout        data/chars/0misc/Qmkout.txt   #mk flash
+load	Qmkooh        data/chars/0misc/Qmkooh.txt   #mk flash
+load	Qmkexe        data/chars/0misc/Qmkexe.txt   #mk flash
+load	Qmksup        data/chars/0misc/Qmksup.txt   #mk flash
+load	Qflash2       data/chars/0misc/QFlash2.txt   #ki flash
+load	Qflash2b      data/chars/0misc/QFlash2b.txt  #bloody ki flash
+load	Expflash      data/chars/0misc/expflash.txt
+load	Fflash        data/chars/0misc/Fflash.txt
+load	Bflash        data/chars/0misc/Bflash.txt
+load	BflashS       data/chars/0misc/Bflashs.txt   #bloody flash for high slash attacks (slow)
+load	wflash        data/chars/0misc/wflash.txt    #water flash
+know	Brfla         data/chars/0misc/brfla.txt     #breaker flash
+know	Brfla2        data/chars/0misc/brfla2.txt    #breaker flash JEFF
+know	Brflaog       data/chars/0misc/brflaog.txt    #breaker flash OG
+load	Brfladu       data/chars/0misc/brfladu.txt   #breaker flash DUKE
+know	moron         data/chars/0misc/moron.txt     #wwf moron
+load    comult        data/chars/0misc/comult.txt
+load    comult2       data/chars/0misc/comult2.txt   #musical ultras
+load    common        data/chars/0misc/common.txt     
+load    common2       data/chars/0misc/common2.txt    #essk02
+load    comkil        data/chars/0misc/comkil.txt
+load    comkil2       data/chars/0misc/comkil2.txt   #essk01
+load    commas        data/chars/0misc/commas.txt
+load    comhyp        data/chars/0misc/comhyp.txt
+load    combla        data/chars/0misc/combla.txt
+load    combla2       data/chars/0misc/combla2.txt   #essk03
+load    combru        data/chars/0misc/combru.txt
+load    comkin        data/chars/0misc/comkin.txt
+load    comutm        data/chars/0misc/comutm.txt
+load    comosom       data/chars/0misc/comosom.txt
+load    comwwf        data/chars/0misc/comwwf.txt
+know    victoBi       data/chars/0misc/victoBi.txt
+know    victoJi       data/chars/0misc/victoJi.txt
+know    victoJe       data/chars/0misc/victoJe.txt
+know    victoSo       data/chars/0misc/victoSo.txt
+know    victoOG       data/chars/0misc/victoOG.txt
+know    victoCR       data/chars/0misc/victoCR.txt
+know    victoSP       data/chars/0misc/victoSP.txt
+know    victoSQ       data/chars/0misc/victoSQ.txt
+know    bolt01        data/chars/0weap/bolt01.txt    #duke5 bolt
+know    bolt02        data/chars/0weap/bolt02.txt    #dukeu3 bolt
+load    bosser        data/chars/0weap/bosser.txt
+know    scnkq3        data/chars/0misc/scnkq3.txt
+know    scnkq4        data/chars/0misc/scnkq4.txt
+know    super01       data/chars/0misc/super01.txt
+know    eslam         data/chars/0misc/eslam.txt
+know    levelxnd      data/chars/0misc/levelxnd.txt
+know    levelxxd      data/chars/0misc/levelxxd.txt
+know    ssf1          data/chars/0misc/ssf1.txt
+know    ssf2          data/chars/0misc/ssf2.txt
+know    ssfd          data/chars/0misc/ssfd.txt
+know    ssj1          data/chars/0misc/ssj1.txt
+know    ssj2          data/chars/0misc/ssj2.txt
+know    ssfs          data/chars/0misc/ssfs.txt
+know    ssfs2         data/chars/0misc/ssfs2.txt
+know    ssfso         data/chars/0misc/ssfso.txt
+know    seiransw      data/chars/0misc/seiransw.txt
+know    colat1        data/chars/0misc/colat1.txt
+know    colat2        data/chars/0misc/colat2.txt
+know    slink         data/chars/0misc/slink.txt
+know    slink2        data/chars/0misc/slink2.txt         #sfx for chen
+know    sonicbm       data/chars/0misc/sonicbm.txt        #sonic blast man
+know    sa            data/chars/0misc/sa.txt             #3rdS super art
+know	Jimmysa       data/chars/1jimmy/jimmysa.txt       #jimmy sa taunt
+know    sab           data/chars/0misc/sab.txt            #3rdS super art black background
+know    critic        data/chars/0misc/critic.txt
+know    quake01       data/chars/0misc/quake01.txt        #quakeframe for whatever reason
+know    quake02       data/chars/0misc/quake02.txt        #quakeframe for whatever reason (faster)
+
+#-------Playables
+
+load	ndra          data/chars/1ndra/ndra.txt
+load	ndra2         data/chars/1ndra/ndra2.txt
+load	Billy         data/chars/1billy/billy.txt
+load	Billy2        data/chars/1billy/billy2.txt
+load	Billy3        data/chars/1billy/billy3.txt
+load	Jimmy         data/chars/1jimmy/jimmy.txt
+load	Jimmy2        data/chars/1jimmy/jimmy2.txt
+load	Jimmy3        data/chars/1jimmy/jimmy3.txt
+load	1Jeff         data/chars/2jeff/1jeff.txt
+load	Sonny         data/chars/1sonny/sonny.txt
+load	Sonny2        data/chars/1sonny/sonny2.txt
+load	Chinsei       data/chars/1seiran/chinsei.txt
+load	CBilly        data/chars/1billy/cbilly.txt
+load	ess           data/chars/misc/ess/ess.txt
+load	esq           data/chars/misc/esq/esq.txt
+
+#-------Player (Dragons) weapons
+load	BillyN        data/chars/1billy/billyN.txt
+load	BillyB        data/chars/1billy/billyB.txt
+load	CBillyB       data/chars/1billy/CbillyB.txt   #OG DRAGON
+load	CBillyBoo     data/chars/1billy/Cbillyboo.txt #OG DRAGON
+load	CBillyN       data/chars/1billy/CbillyN.txt   #OG DRAGON
+load	CBillyK       data/chars/1billy/CbillyK.txt   #OG DRAGON
+load	CBillyD       data/chars/1billy/CbillyD.txt   #OG DRAGON
+load	CBillyR       data/chars/1billy/CbillyR.txt   #OG DRAGON
+load	CBillyW       data/chars/1billy/CbillyW.txt   #OG DRAGON
+load	BillyK        data/chars/1billy/billyK.txt
+load	BillyR        data/chars/1billy/billyR.txt
+load	BillyD        data/chars/1billy/billyD.txt
+load	BillyBoo      data/chars/1billy/billyboo.txt
+load	BillyW        data/chars/1billy/billyW.txt
+load	JimmyN        data/chars/1jimmy/JimmyN.txt
+load	JimmyB        data/chars/1jimmy/JimmyB.txt
+load	JimmyK        data/chars/1jimmy/JimmyK.txt
+load	JimmyR        data/chars/1jimmy/JimmyR.txt
+load	JimmyD        data/chars/1jimmy/JimmyD.txt
+load	Jimmyboo      data/chars/1jimmy/Jimmyboo.txt
+load	JimmyW        data/chars/1jimmy/JimmyW.txt
+load	1Jeffkni      data/chars/2jeff/1jeffkni.txt
+load	1Jeffgun      data/chars/2jeff/1jeffgun.txt
+load	SonnyB        data/chars/1sonny/sonnyB.txt
+load	SonnyW        data/chars/1sonny/sonnyW.txt
+load	SonnyN        data/chars/1sonny/sonnyN.txt
+load	SonnyK        data/chars/1sonny/sonnyK.txt
+load	SonnyR        data/chars/1sonny/sonnyR.txt
+load	SonnyD        data/chars/1sonny/sonnyD.txt
+load	SonnyBoo      data/chars/1sonny/sonnyBoo.txt
+load	Yagyura       data/chars/1seiran/Yagyura.txt
+
+#-------Grandmasters stuff
+know    00charge      data/chars/1seiran/00charge.txt
+know    00ranoob      data/chars/1seiran/00ranoob.txt
+know    00bak         data/chars/1seiran/00bak.txt   #bakuen ryu
+know    00rfire       data/chars/1seiran/00rfire.txt   #ranzou fire super
+know    00ninf        data/chars/1seiran/00ninf.txt   #ninpo of fire wheel
+know    00sbomb       data/chars/1seiran/00sbomb.txt    #smoke bomb teleport
+know    00rwood       data/chars/1seiran/00rwood.txt    #teleport wood log
+know    yagyuC1       data/chars/1seiran/yagyuC1.txt   #clone ranzou 1
+know    yagyuC2       data/chars/1seiran/yagyuC2.txt   #clone ranzou 2
+know    01ranz        data/chars/1seiran/01ranz.txt   #assist 1
+know    02ranz        data/chars/1seiran/02ranz.txt   #assist 2
+know    03ranz        data/chars/1seiran/03ranz.txt   #assist 3
+know    04ranzl1      data/chars/1seiran/04ranzl1.txt    #slinker 1
+know    04chinsl1     data/chars/1seiran/04chinsl1.txt    #slinker 1
+know    05ranzl2      data/chars/1seiran/05ranzl2.txt    #slinker 2
+know    05chinsl2     data/chars/1seiran/05chinsl2.txt    #slinker 2
+know    06ranzu1      data/chars/1seiran/06ranzu1.txt    #ultra 1
+know    07ranzu2      data/chars/1seiran/07ranzu2.txt    #ultra 2
+know    08ranzc1      data/chars/1seiran/08ranzc1.txt    #stage cutscene
+know    09ranzc2      data/chars/1seiran/09ranzc2.txt    #stage cutscene 2
+know    10ranzc3      data/chars/1seiran/10ranzc3.txt    #stage cutscene 3 (bosses)
+know    12ranzsw      data/chars/1seiran/12ranzsw.txt    #ranzou samsho win sword
+know    13ranzc4      data/chars/1seiran/13ranzc4.txt    #stage cutscene 3 (2-3airport)
+know    14ranzc5      data/chars/1seiran/14ranzc5.txt    #stage cutscene palace x
+know    15ranzc6      data/chars/1seiran/15ranzc6.txt    #zankoken win pose
+know    11ranzw1      data/chars/1seiran/11ranzw1.txt    #chin winpose
+know    11chinsw1     data/chars/1seiran/11chinsw1.txt    #ranzou winpose
+know    12chinsw2     data/chars/1seiran/12chinsw2.txt    #ranzou winpose 2
+know    01chins       data/chars/1seiran/01chins.txt
+know    02chins       data/chars/1seiran/02chins.txt
+know    06chinsu1     data/chars/1seiran/06chinsu1.txt    #ultra 1
+know    samsho01      data/chars/0misc/samsho01.txt     #special attack for ranzou
+know    exsuper       data/chars/0misc/exsuper.txt      #super attacks for the grandmasters
+know    mulf          data/chars/0misc/mulf.txt         #musical ultra flash
+know    reyes         data/chars/1seiran/reyes.txt      #ranzou eyes
+know    rsswin1       data/chars/1seiran/rsswin1.txt    #ranzou samsho win1
+know    rsswin2       data/chars/1seiran/rsswin2.txt    #ranzou samsho win2
+know    rsswin3       data/chars/1seiran/rsswin3.txt    #ranzou samsho win3 flashing red n logo
+know    rsswin4       data/chars/1seiran/rsswin4.txt    #ranzou samsho win4 conclusion
+know	yrstar        data/chars/0weap/yrstar.txt       #ranzou stars
+know    sfexw1        data/chars/1seiran/sfexw1.txt     #chin win1
+know    sfexw2        data/chars/1seiran/sfexw2.txt     #chin win2
+know    sfexw3        data/chars/1seiran/sfexw3.txt     #chin win3
+know    sfexw4        data/chars/1seiran/sfexw4.txt     #chin win4
+know    chin01        data/chars/0misc/chin01.txt       #movelist
+know    chin02        data/chars/0misc/chin02.txt       #movelist
+know    chin03        data/chars/0misc/chin03.txt       #movelist
+know    chin04        data/chars/0misc/chin04.txt       #movelist
+know    chin05        data/chars/0misc/chin05.txt       #movelist
+know    chin07        data/chars/0misc/chin07.txt       #movelist
+know    ranzou01      data/chars/0misc/ranzou01.txt       #movelist
+know    ranzou02      data/chars/0misc/ranzou02.txt       #movelist
+know    ranzou03      data/chars/0misc/ranzou03.txt       #movelist
+know    ranzou04      data/chars/0misc/ranzou04.txt       #movelist
+know    ranzou05      data/chars/0misc/ranzou05.txt       #movelist
+
+#-------other stuff
+know    wbot         data/chars/misc/esq/wbot.txt      #water bottle
+know    kabom        data/chars/misc/esq/kabom.txt     #kaboom!!
+know    sesq1        data/chars/misc/esq/sesq1.txt     #magic
+know    sesq2        data/chars/misc/esq/sesq2.txt     #lakers
+know    wball        data/chars/misc/esq/wball.txt     #basket ball
+know    wball2       data/chars/misc/esq/wball2.txt    #basket ball (no sfx nba)
+know    wball3       data/chars/misc/esq/wball3.txt    #basket ball (no sfx nba)
+know	tsflash      data/chars/misc/esq/tsflash.txt   #looney tunes ultra
+know	tunesq1      data/chars/misc/esq/tunesq1.txt   #looney tunes 1
+know	tunesq2      data/chars/misc/esq/tunesq2.txt   #looney tunes 2
+know	tunesq3      data/chars/misc/esq/tunesq3.txt   #looney tunes 3
+know	tunesq4      data/chars/misc/esq/tunesq4.txt   #looney tunes 4
+know	tsscore      data/chars/misc/esq/tsscore.txt   #looney tunes bball
+know    exsuper2     data/chars/0misc/exsuper2.txt     #clayfighter super
+know	esscro       data/chars/misc/ess/esscro.txt    #big cross 1
+know	essfpi       data/chars/misc/ess/essfpi.txt    #big fire pillar
+know	essfla       data/chars/misc/ess/essfla.txt    #big flames pillar
+know	essour       data/chars/misc/ess/essour.txt    #ess ouroboros
+know	esseker      data/chars/misc/ess/seek.txt      #ess spark bullets
+know	essde1       data/chars/misc/ess/essde1.txt    #death 01
+know	essde2       data/chars/misc/ess/essde2.txt    #death 02
+know	essde3       data/chars/misc/ess/essde3.txt    #death 03
+know	fball        data/chars/misc/ess/fball.txt     #ess fire ball
+know	itemcess     data/chars/misc/ess/itemcess.txt  #ess item crash
+know	essaw1       data/chars/misc/ess/essaw1.txt    #ess dio sega 1
+know	esseker2     data/chars/misc/ess/esseker2.txt  #ess homing fireball
+know	essotn       data/chars/misc/ess/essotn.txt    #ess sotn explosion
+know	essbloo      data/chars/misc/ess/essbloo.txt   #ess blood
+know    xr01         data/chars/misc/ess/xr01.txt      #ess xray 1
+know    xr02         data/chars/misc/ess/xr02.txt      #ess xray 2 hands
+know    xr03         data/chars/misc/ess/xr03.txt      #ess xray 3 spear
+know	hellt        data/chars/misc/ess/hellt.txt     #ess hell teleport
+
+#-------character select
+load	bgfx	      data/chars/misc/bgfx/bgfx.txt
+load	fogss         data/chars/misc/bgfx/fogss.txt
+know	boltss        data/chars/misc/bgfx/boltss.txt
+know	smokess       data/chars/misc/bgfx/smokess.txt
+know	lighte        data/chars/misc/bgfx/lighte.txt
+know	dragoni       data/chars/misc/bgfx/dragoni.txt
+know	dragonok      data/chars/misc/bgfx/dragonok.txt
+know	phoenok       data/chars/misc/bgfx/phoeok.txt
+know	ogi           data/chars/misc/bgfx/ogi.txt
+know	phoenixi      data/chars/misc/bgfx/phoenixi.txt
+know	dragoxok      data/chars/misc/bgfx/dragoxok.txt
+know	jeffi         data/chars/misc/bgfx/jeffi.txt
+know	jeffok        data/chars/misc/bgfx/jeffok.txt
+know	seirani       data/chars/misc/bgfx/seirani.txt
+know	seiranok      data/chars/misc/bgfx/seiranok.txt
+know	esqi          data/chars/misc/bgfx/esqi.txt
+know	esqok         data/chars/misc/bgfx/esqok.txt
+know	essi          data/chars/misc/bgfx/essi.txt
+know	essok         data/chars/misc/bgfx/essok.txt
+load	bgfx2         data/chars/misc/bgfx2/bgfx2.txt
+
+#-------Player projectiles & effects
+load	options       data/chars/misc/options.txt
+load	zoomin        data/chars/0misc/zoomin.txt
+load	zoomout	      data/chars/0misc/zoomout.txt
+load	ulf1          data/chars/0misc/ulf1.txt
+load	ulf2          data/chars/0misc/ulf2.txt
+load	ulf3          data/chars/0misc/ulf3.txt
+load	ulf4          data/chars/0misc/ulf4.txt           #ULTRA FOR JEFF
+load	ulf5          data/chars/0misc/ulf5.txt           #ULTRA FOR SONNY
+know	ulf6          data/chars/0misc/ulf6.txt           #XRAY FOR ESS
+load	uwwf          data/chars/0misc/uwwf.txt           #WWF TRIGGER
+know	dx            data/chars/0misc/dx.txt             #X FOR JEFF
+know	agress        data/chars/0misc/agress.txt         #BRUTALITY - JEFF
+know	agress02      data/chars/0misc/agress02.txt       #BRUTALITY - JEFF
+know	wwfinish      data/chars/0misc/wwfinish.txt       #WWF RED EFFECT
+know	sonph         data/chars/1sonny/sonph.txt         #sonny's phoenix win screen
+know	phoenix       data/chars/0misc/phoenix.txt        #EX SS SONNY
+know	exc           data/chars/0misc/exc.txt            #EX SS SONNY
+know	negrito       data/chars/0misc/negrito.txt        #EASTER EGG CAT
+know	secret02      data/chars/0misc/secret02.txt
+know	secret03      data/chars/0misc/secret03.txt
+know	secret04      data/chars/0misc/secret04.txt
+know	lightnn       data/chars/0misc/lightnn.txt     #thunder intro for chen
+know	torn01        data/chars/0misc/torn01.txt      #wind intro for chen
+know	crain         data/chars/0misc/crain.txt       #rain intro for chen
+know	cgasa         data/chars/0misc/cgasa.txt       #hat intro for chen
+know	lightnn2      data/chars/0misc/lightnn2.txt
+know	lightnn3      data/chars/0misc/lightnn3.txt
+know	cshock        data/chars/0weap/cshock.txt      #chen magnetic shockwave
+know	torn02        data/chars/0misc/torn02.txt      #wind attack for chen
+know	rste          data/chars/0weap/rste.txt        #rain steps for chen
+know	rslash1       data/chars/0weap/rslash1.txt     #rain slash for chen
+know	rslash2       data/chars/0weap/rslash2.txt     #rain slash for chen
+know	rtyp          data/chars/0weap/rtyp.txt        #rain typhoon for chen
+know	rwhi          data/chars/0weap/rwhi.txt        #rain whirlwind for chen
+know	xportal       data/chars/2chen/xportal.txt     #rain chen
+know	xvani         data/chars/2chen/xvani.txt       #rain chen
+know	xforce        data/chars/2chen/xforce.txt      #rain chen
+know	xforcec       data/chars/2chen/xforcec.txt     #rain chen
+know	xseal         data/chars/2chen/xseal.txt       #rain chen
+know    thunder       data/chars/0misc/thunder.txt
+know    tcrash        data/chars/0misc/tcrash.txt      #truck crash
+know    tcrash2       data/chars/0misc/tcrash2.txt     #truck brakes
+load	slowitm       data/chars/0weap/slowitm.txt
+load	slowitmX1     data/chars/0weap/slowitx1.txt    #NO SENTKILLER
+load	slowitm2      data/chars/0weap/slowitm2.txt    #FOR KRAUSER MODE
+load	slowitm3      data/chars/0weap/slowitm3.txt    #FOR BURNOV NW
+load	slowitmX2     data/chars/0weap/slowitx2.txt    #FOR KRAUSER MODE NO SENTKILLER
+load	slowitmL      data/chars/0weap/slowitmL.txt    #FOR LEGENDARY MODE
+load	slowitmXL     data/chars/0weap/slowitxL.txt    #FOR LEGENDARY MODE NO SENTKILLER
+load	slowitmXA     data/chars/0weap/slowitxA.txt    #FOR ARRANGED MODE NO SENTKILLER
+load	sentkiller    data/chars/0weap/sentkiller.txt 
+load	slowitmA      data/chars/0weap/slowitmA.txt   #ARRANGED
+know	stclearA      data/chars/misc/staclear/stclearA.txt    #CLEAR FOR ARRANGED
+know	enemkill      data/chars/0weap/enemkill.txt
+know	dpow00        data/chars/0misc/dpow00.txt      #BLINKING EFFECT FOR DUKE
+know	dpow01        data/chars/0misc/dpow01.txt      #DUKE'S POWER UP SPAWN 101
+know	dpow02        data/chars/0misc/dpow02.txt      #DUKE'S POWER UP SPAWN 102
+load	slow          data/chars/0weap/slow.txt
+load	slow2         data/chars/0weap/slow2.txt
+load	slow3         data/chars/0weap/slow3.txt
+load	slow5         data/chars/0weap/slow5.txt
+load	slowt         data/chars/0weap/slowt.txt
+know    bossdef       data/chars/0misc/bossdef.txt 
+know    burn          data/chars/0misc/burn.txt        #burning flames
+
+#----------------------------------------------------------PLAYERS MOVELIST
+know	sddb01        data/chars/0misc/sddb01.txt
+know	sddba01       data/chars/0misc/sddba01.txt
+know	sddba02       data/chars/0misc/sddba02.txt
+know	sddbki01      data/chars/0misc/sddbki01.txt
+know	sddbki02      data/chars/0misc/sddbki02.txt
+know	dd2b01        data/chars/0misc/dd2b01.txt
+know	dd2bwfb01     data/chars/0misc/dd2bwfb01.txt
+know	dd3b01        data/chars/0misc/dd3b01.txt
+know    dd3sbmb01     data/chars/0misc/dd3sbmb01.txt
+know	sddbo         data/chars/0misc/sddbo.txt
+know	sddnun        data/chars/0misc/sddnun.txt
+know	sddwhi        data/chars/0misc/sddwhi.txt
+know	sddwhi2       data/chars/0misc/sddwhi2.txt
+know	sddjkni       data/chars/0misc/sddjkni.txt
+know	sddjgun       data/chars/0misc/sddjgun.txt
+
+know	sddj01        data/chars/0misc/sddj01.txt
+know	dd2j01        data/chars/0misc/dd2j01.txt
+know	dd2Jwf01      data/chars/0misc/dd2Jwf01.txt
+know	dd3j01        data/chars/0misc/dd3j01.txt
+know    dd3sbmj01     data/chars/0misc/dd3sbmj01.txt
+
+know	sddje01       data/chars/0misc/sddje01.txt
+know	sddje02       data/chars/0misc/sddje02.txt
+know	sddje03       data/chars/0misc/sddje03.txt
+know	sddjki02      data/chars/0misc/sddjki02.txt
+know	sddsbm01      data/chars/0misc/sddsbm01.txt
+know	sddmk301      data/chars/0misc/sddmk301.txt
+
+know	sddso01       data/chars/0misc/sddso01.txt
+know	sddso02       data/chars/0misc/sddso02.txt
+know	sddso03       data/chars/0misc/sddso03.txt
+know	sddso04       data/chars/0misc/sddso04.txt
+know	sddso05       data/chars/0misc/sddso05.txt
+know    sddski02      data/chars/0misc/sddski02.txt
+know    sddmk302      data/chars/0misc/sddmk302.txt
+know    sddsbm02      data/chars/0misc/sddsbm02.txt
+
+know	sddog1        data/chars/0misc/sddog1.txt
+know	sddog2        data/chars/0misc/sddog2.txt
+
+know	ess01        data/chars/0misc/ess01.txt
+know	ess02        data/chars/0misc/ess02.txt
+know	ess03        data/chars/0misc/ess03.txt
+know	ess04        data/chars/0misc/ess04.txt
+know	ess05        data/chars/0misc/ess05.txt
+know	ess06        data/chars/0misc/ess06.txt
+
+know	esq01        data/chars/0misc/esq01.txt
+know	esq02        data/chars/0misc/esq02.txt
+know	esq03        data/chars/0misc/esq03.txt
+know	esq04        data/chars/0misc/esq04.txt
+know	esq05        data/chars/0misc/esq05.txt
+know	esq06        data/chars/0misc/esq06.txt
+
+#----------------------------------------------------------ENEMIES
+know	Williams      data/chars/2wllms/wllms.txt
+know	WilliamsH     data/chars/2wllms/wllmsh.txt      #harder williams
+load	Awilliam      data/chars/2wllms/awilliam.txt
+load    Wilkni	      data/chars/2wllms/wilkni.txt      #knife
+load    Wilboo	      data/chars/2wllms/wilboo.txt      #boomerang
+know	Roper         data/chars/2roper/roper.txt
+know	bottle        data/chars/2roper/bottle.txt      #roper's drink
+load	Aroper        data/chars/2roper/aroper.txt
+load	Ropbo         data/chars/2roper/ropbo.txt       #bo
+load	Ropnu         data/chars/2roper/ropnu.txt       #nunchuck
+know	RoperT        data/chars/2roper/ropert.txt
+
+
+load	Willtrn      data/chars/2wllms/willtrn.txt  	//----------------------Kit Additiion---------------------
+know	Willtrn      data/chars/2wllms/willtrn.txt      //----------------------Kit Additiion---------------------
+load	Ropertrn     data/chars/2roper/ropertrn.txt	//----------------------Kit Additiion---------------------
+know	Ropertrn     data/chars/2roper/ropertrn.txt	//----------------------Kit Additiion---------------------
+
+know	RoperH        data/chars/2roper/roperH.txt      #harder roper
+know	biker1        data/chars/2biker1/biker1.txt     #biker roper
+know	Roperb1       data/chars/2biker1/roperb1.txt    #biker roper
+know	Roperb2       data/chars/2biker1/roperb2.txt    #biker roper
+know	bikeli        data/chars/2biker1/bikeli.txt     #biker light
+know	Baker         data/chars/2baker/baker.txt
+know	BakerH        data/chars/2baker/bakerH.txt      #harder baker
+know	Gunguy        data/chars/2gunguy/gunguy.txt
+know	GunguyG       data/chars/2gunguy/gunguyG.txt    #grenade version
+know	Gunguyj1      data/chars/2gunguy/gunguyj1.txt   #jumps from doors
+know	gsmoke        data/chars/2gunguy/gsmoke.txt     #gun smoke
+know	egre01        data/chars/0weap/egre01.txt       #gunguyg grenade
+know	emiss01       data/chars/0weap/emiss01.txt       #enemy missile
+know	Linda         data/chars/2linda1/linda1.txt
+know	LindaH        data/chars/2linda1/lindah.txt     #harder linda
+load	Linda1W       data/chars/2linda1/linda1W.txt
+know	Steve         data/chars/2steve/steve.txt
+know	Jeff          data/chars/2jeff/jeff.txt
+know	Jeffj1        data/chars/2jeff/jeffj1.txt        #spawn, jumping in z axis
+know    jeffpose      data/chars/2jeff/jeffpose.txt      #taunting with arms crossed
+load	Jeffg         data/chars/2jeff/Jeffg.txt         #gun jeff
+know	Jefstone      data/chars/2jeff/jefstone.txt      #jeff and the stone
+know	Jackson       data/chars/2jackson/jackson.txt
+know	Chen1         data/chars/2chen/chen1.txt
+know	Chen2         data/chars/2chen/chen2.txt         #wind chen  
+know	Chen2ch       data/chars/2chen/chen2ch.txt       #wind chen with runaway anim
+know	Chen3         data/chars/2chen/chen3.txt         #thunder chen
+know	Chen3ch       data/chars/2chen/chen3ch.txt       #thunder chen with runaway anim
+know	Chen4         data/chars/2chen/chen4.txt         #rain chen
+know	Chen4b        data/chars/2chen/chen4b.txt        #rain chen BOSS
+know	Chenclo       data/chars/2chen/chenclo.txt       #clone chen 3-6
+know	Mcguire       data/chars/2mcguire/mcguire.txt
+know	Carlem        data/chars/2carlem/carlem.txt
+know	DukeU1        data/chars/2duke/dukeU1.txt        #ultimate duke 1 (sdd/demon) PHASE 1
+load	DukeU2        data/chars/2duke/dukeU2.txt        #ultimate duke 2 (mantis) PHASE 1
+know	DukeU3        data/chars/2duke/dukeU3.txt        #ultimate duke 3 (hyppogriff) PHASE 2
+load	DukeU4        data/chars/2duke/dukeU4.txt        #ultimate duke 4 (centaur) PHASE 2
+know	DukeU5        data/chars/2duke/dukeU5.txt        #ultimate duke 5 (death) PHASE 3-1
+load	DukeU6        data/chars/2duke/dukeU6.txt        #ultimate duke 6 (death) PHASE 3-2
+load	DukeU7        data/chars/2duke/dukeU7.txt        #ultimate duke 7 (death) PHASE 3-3
+load	DukeU8        data/chars/2duke/dukeU8.txt        #ultimate duke 8 (weakened)
+know	Dukeres1      data/chars/2duke/dukeres1.txt      #duke 1st resurection
+know	Dukeres2      data/chars/2duke/dukeres2.txt      #omega duke 2nd resurection
+know	Dukefa1       data/chars/2duke/dukefa1.txt       #ultimate duke finish him doll
+know	Dukefa2       data/chars/2duke/dukefa2.txt       #ultimate duke finish him doll true ending
+know	kifall0       data/chars/2duke/kifall0.txt       #ultimate duke falling for ki1
+know	kifall1       data/chars/2duke/kifall1.txt       #ultimate duke falling for ki1
+know	kifall2       data/chars/2duke/kifall2.txt       #ultimate duke falling for ki1
+know	kifall3       data/chars/2duke/kifall3.txt       #ultimate duke falling for ki1 / ground slam
+know	kidukef       data/chars/2duke/kidukef.txt       #ultimate duke spinning
+know	kiroutb1      data/chars/2duke/kiroutb1.txt      #ultimate duke routeb bg ki
+know	kiroutb2      data/chars/2duke/kiroutb2.txt      #ultimate duke routeb bg ki
+know	bp01          data/chars/2duke/bp01.txt          #ultimate duke brutality 
+know	bp02          data/chars/2duke/bp02.txt          #ultimate duke brutality 
+know	bp03          data/chars/2duke/bp03.txt          #ultimate duke brutality 
+know	bp04          data/chars/2duke/bp04.txt          #ultimate duke brutality 
+know	bp05          data/chars/2duke/bp05.txt          #ultimate duke brutality 
+know	bp06          data/chars/2duke/bp06.txt          #ultimate duke brutality 
+know	bp07          data/chars/2duke/bp07.txt          #ultimate duke brutality 
+know	bp08          data/chars/2duke/bp08.txt          #ultimate duke brutality 
+know	beamdu        data/chars/2duke/beamdu.txt        #ultimate duke sonicblastman
+know	ssfduke1      data/chars/2duke/ssfduke1.txt      #style switch demon head 
+know	ssfduke2      data/chars/2duke/ssfduke2.txt      #style switch mantis
+know	ssfduke3      data/chars/2duke/ssfduke3.txt      #style switch hyppogriff
+know	ssfduke4      data/chars/2duke/ssfduke4.txt      #style switch centaur
+know	suich         data/chars/2duke/suich.txt         #ultimate duke suichosei hnk
+know	dminion       data/chars/2duke/dminion.txt       #ultimate duke invisible minion
+know	resur         data/chars/0weap/resur.txt         #ultimate duke resurrection effect blue ball
+know    dukeli        data/chars/0weap/dukeli.txt        #ultimate duke resurrection effect beam light
+know    dukein        data/chars/0weap/dukein.txt        #ultimate duke castlevania 4 intro
+know    garg          data/chars/0misc/garg.txt          #ultimate duke gargos explosion 1
+know    dblow         data/chars/2duke/dblow.txt         #ultimate duke gargos explosion 2
+know    explo         data/chars/2duke/explo.txt         #ultimate duke stone explosion
+know    firebi        data/chars/0weap/firebi.txt        #duke's firebird
+know    rsto          data/chars/0weap/rsto.txt          #duke's raging storm
+know    mmxinl        data/chars/0weap/mmxinl.txt        #duke's megaman x lifebar
+know    udukemet      data/chars/0weap/udukemet.txt      #duke's portal intro metroids
+know    uduketel      data/chars/0weap/uduketel.txt      #duke's portal intro
+know    armain        data/chars/2duke/armain.txt        #duke's arma intro    
+know    fflashbg      data/chars/2duke/fflashbg.txt      #fflash background
+know    fflashat      data/chars/2duke/fflashat.txt      #fflash duke attack anim
+know    fflashbe      data/chars/2duke/fflashbe.txt      #fflash duke beam
+know    xbuster1      data/chars/2duke/xbuster1.txt      #duke xbuster 1
+know    xbuster2      data/chars/2duke/xbuster2.txt      #duke xbuster 2
+know    mbchar        data/chars/2duke/mbchar.txt        #m brain hy beam 1
+know    mblaser       data/chars/2duke/mblaser.txt       #m brain hy beam 2
+know    bfield        data/chars/2duke/bfield.txt        #m brain bubble field
+know    mtensei1      data/chars/2duke/mtensei1.txt      #musou tensei breaker
+know    upfire1       data/chars/2duke/upfire1.txt       #shang tsung up fireballs 1
+know    upfire2       data/chars/2duke/upfire2.txt       #shang tsung up fireballs 2
+know    dball         data/chars/2duke/dball.txt         #dracula's fireball
+know    dtel          data/chars/2duke/dtel.txt          #dracula's teleport
+know    icef          data/chars/2duke/icef.txt          #ice force field
+know    bull          data/chars/2duke/bull.txt          #minotaur breaker
+know    pbomb1        data/chars/2duke/pbomb1.txt        #power bomb
+know    pbomb2        data/chars/2duke/pbomb2.txt        #power bomb
+know    clashb1       data/chars/2duke/clashb1.txt       #clash bomb
+know    rose          data/chars/2duke/rose.txt          #rosetta
+know    roseb         data/chars/2duke/roseb.txt         #rosetta blink
+know    dtor          data/chars/2duke/dtor.txt          #tornado
+know    tmnti         data/chars/2duke/tmnti.txt         #for shredder duke intro
+know    dfinal1       data/chars/2duke/dfinal1.txt       #true duke death 1
+know    dtel2         data/chars/2duke/dtel2.txt         #true duke death 2
+know    toki01        data/chars/2duke/toki01.txt        #true duke toki death sky
+know    toki02        data/chars/2duke/toki02.txt        #true duke toki death sky duke falling
+know    toki03        data/chars/2duke/toki03.txt        #true duke toki death red screen
+know    sgsabo        data/chars/2duke/sgsabo.txt        #sgs abore 
+know    mtduke2       data/chars/2duke/mtduke2.txt       #musou duke 2
+know    mtduke3       data/chars/2duke/mtduke3.txt       #musou duke 3
+know    mtduke4       data/chars/2duke/mtduke4.txt       #musou duke 4
+know    mtduke5       data/chars/2duke/mtduke5.txt       #musou duke 5
+
+
+
+know	Duke2         data/chars/2duke2/duke2.txt
+know	Duke3         data/chars/2duke3/duke3.txt
+know	Duke4         data/chars/2duke4/duke4.txt
+know	Duke5         data/chars/2duke5/duke5.txt
+know	Abobo         data/chars/2abobo/abobo.txt
+know	Bolo          data/chars/2bolo/bolo.txt
+know	Boloch        data/chars/2bolo/boloch.txt        #china floor 4
+know	Ohara         data/chars/2ohara/ohara.txt
+know	Jick          data/chars/2jick/jick.txt
+know	BJick         data/chars/2jick/Bjick.txt
+know	BSteve        data/chars/2steve/BSteve.txt
+know	BJackson      data/chars/2jackson/bjackson.txt
+know	BMcguire      data/chars/2mcguire/bmcguire.txt
+know	Bcarlem       data/chars/2carlem/bcarlem.txt
+know    taimei1       data/chars/2taimei/taimei1.txt
+know    taimei2       data/chars/2taimei/taimei2.txt
+know    burnov        data/chars/2burnov/burnov.txt    #boss version
+know    bburnov       data/chars/2burnov/bburnov.txt   #boss version
+know    burnov2       data/chars/2burnov/burnov2.txt   #normal version 
+know    bburnov2      data/chars/2burnov/bburnov2.txt  #normal version
+know    abore         data/chars/2abore/abore.txt
+know    ninspe        data/chars/2abore/ninspe.txt     #escapehits & counter ninja
+know    ninair        data/chars/2abore/ninair.txt     #anti air assist ninja
+know    ninsla        data/chars/2abore/ninsla.txt     #slasher ninja
+know    nindea        data/chars/2abore/nindea.txt     #abore's death ninja
+know    smkb01        data/chars/0weap/smkb01.txt      #ninja smoke bomb
+
+#-------Enemy projectiles
+know	Star          data/chars/0weap/Star.txt
+know	knife02       data/chars/0weap/knife02.txt
+know    drum02        data/chars/0weap/drum02.txt
+know    rock02        data/chars/0weap/rock02.txt
+know	Bullet        data/chars/0weap/bullet.txt    #gunguy bullet
+know	Bullet2       data/chars/0weap/bullet2.txt   #jeff's bullet
+know	Missi01       data/chars/0weap/missi01.txt   #gunguy missile
+know	mgs           data/chars/0misc/mgs.txt       #gunguy weapon select
+
+#-------Playable characters' items
+know	nunchuck      data/chars/0weap/nunchuck.txt
+know	bo            data/chars/0weap/bo.txt
+know	knife01       data/chars/0weap/knife01.txt 
+know	knife03       data/chars/0weap/knife03.txt
+know	rock01        data/chars/0weap/rock01.txt
+know    rock03        data/chars/0weap/rock03.txt
+know    drum01        data/chars/0weap/drum01.txt
+know    drum03        data/chars/0weap/drum03.txt
+load	BoomerangW    data/chars/0weap/BoomerangW.txt
+load	BoomerangW2   data/chars/0weap/BoomerangW2.txt
+know	BoomerangS    data/chars/0weap/BoomerangS.txt
+know	BoomerangS2   data/chars/0weap/BoomerangS2.txt
+know	empty2        data/chars/0weap/empty2.txt
+know	whip          data/chars/0weap/whip.txt
+know	gun01         data/chars/0weap/gun01.txt
+know    1up           data/chars/0item/1up.txt
+
+#-------Everyone's dialogs
+
+
+#-------Stage elements
+know	aichange     data/chars/misc/aichange.txt
+know	stagein      data/chars/misc/stagetr/stagein.txt
+know	stageinT     data/chars/misc/stagetr/stageinT.txt #DELAY FOR EARLY SPAWNS
+know	stageou      data/chars/misc/stagetr/stageou.txt
+know	stageblk     data/chars/misc/stagetr/stageblk.txt
+know	stend        data/chars/misc/stend/stend.txt
+know	stendb       data/chars/misc/stend/stendb.txt
+know	stclear      data/chars/misc/staclear/stclear.txt
+know	stclear2     data/chars/misc/staclear/stclear2.txt    #CLEAR FOR KRAUSER MODE
+know	stclearL     data/chars/misc/staclear/stclearL.txt    #CLEAR FOR LEGENDARY MODE
+know	staclrmk     data/chars/misc/staclear/staclrmk.txt    #BRUTALITY CLEAR JEFF
+know	staclmks     data/chars/misc/staclear/staclmks.txt    #BRUTALITY CLEAR SONNY
+know	staclrki     data/chars/misc/staclear/staclrki.txt    #ULTRA COMBOS CLEAR
+know	kiflash      data/chars/0misc/kiflash.txt             #ULTRA COMBOS BIG FLASH
+know	sbflash      data/chars/0misc/sbflash.txt             #SONIC BLASTMAN BIG FLASH
+know	staclwfb1    data/chars/misc/staclear/staclwfb1.txt     #WWF WIN BILLY 1
+know	staclwfj1    data/chars/misc/staclear/staclwfj1.txt     #WWF WIN JIMMY 1
+know    mpsecret     data/chars/misc/stend/mpsecret.txt
+know	stclbur      data/chars/misc/staclear/stclbur.txt     #CLEAR FOR NW BURNOV
+know	staclrsq     data/chars/misc/staclear/staclrsq.txt    #ULTRA COMBOS CLEAR esq
+know	essstc1      data/chars/misc/ess/essstc1.txt          #ULTRA COMBOS CLEAR ess
+know	essstc2      data/chars/misc/ess/essstc2.txt          #MK CLEAR ess
+
+know	levelend2    data/chars/0misc/levelend2.txt
+
+know	staint1      data/chars/misc/staint/staint1.txt
+know	staint2      data/chars/misc/staint/staint2.txt
+know	staint3      data/chars/misc/staint/staint3.txt
+know	staint4      data/chars/misc/staint/staint4.txt
+know	staint5      data/chars/misc/staint/staint5.txt
+know	staint6      data/chars/misc/staint/staint6.txt
+know	staint7      data/chars/misc/staint/staint7.txt
+
+know	staclrd1     data/chars/misc/staclr/staclrd1.txt #duke's death 1 n 2
+know	staclrd3     data/chars/misc/staclr/staclrd3.txt #duke's death 3
+know	staclrd2     data/chars/misc/staclr/staclrd2.txt #zombie duke's death 
+############################################################ TRAINING
+know	tbox1        data/Bgs/dojo/tbox1.txt
+know	tbox2        data/Bgs/dojo/tbox2.txt
+know	tbox2b       data/Bgs/dojo/tbox2b.txt
+know	tbox3        data/Bgs/dojo/tbox3.txt
+know	tbox3b       data/Bgs/dojo/tbox3b.txt
+know	tbox4        data/Bgs/dojo/tbox4.txt
+know	tbox4b       data/Bgs/dojo/tbox4b.txt
+know	tbox5        data/Bgs/dojo/tbox5.txt
+know	tbox5b       data/Bgs/dojo/tbox5b.txt
+know	tbox6        data/Bgs/dojo/tbox6.txt
+know	tbox6b       data/Bgs/dojo/tbox6b.txt
+know	tbox7        data/Bgs/dojo/tbox7.txt
+know	tbox7b       data/Bgs/dojo/tbox7b.txt
+know	tbox8        data/Bgs/dojo/tbox8.txt
+know	tbox8b       data/Bgs/dojo/tbox8b.txt
+know	tbox9        data/Bgs/dojo/tbox9.txt
+know	tbox9b       data/Bgs/dojo/tbox9b.txt
+know	tboxa        data/Bgs/dojo/tboxa.txt
+know	tboxab       data/Bgs/dojo/tboxab.txt
+know	tboxb        data/Bgs/dojo/tboxb.txt
+know	tboxbb       data/Bgs/dojo/tboxbb.txt
+know	tboxc        data/Bgs/dojo/tboxc.txt
+know	tboxcb       data/Bgs/dojo/tboxcb.txt
+know	tboxd        data/Bgs/dojo/tboxd.txt
+know	tboxdb       data/Bgs/dojo/tboxdb.txt
+know	tboxe        data/Bgs/dojo/tboxe.txt
+know	tboxeb       data/Bgs/dojo/tboxeb.txt
+know	tboxg        data/Bgs/dojo/tboxg.txt
+know	tboxgb       data/Bgs/dojo/tboxgb.txt
+know	tboxf        data/Bgs/dojo/tboxf.txt
+know	tboxfb       data/Bgs/dojo/tboxfb.txt
+know	tboxh        data/Bgs/dojo/tboxh.txt
+know	tboxhb       data/Bgs/dojo/tboxhb.txt
+know	tboxi        data/Bgs/dojo/tboxi.txt
+know	tboxib       data/Bgs/dojo/tboxib.txt
+know	tboxj        data/Bgs/dojo/tboxj.txt
+know	tboxjb       data/Bgs/dojo/tboxjb.txt
+know	tboxk        data/Bgs/dojo/tboxk.txt
+know	tboxkb       data/Bgs/dojo/tboxkb.txt
+know	tboxl        data/Bgs/dojo/tboxl.txt
+know	tboxlb       data/Bgs/dojo/tboxlb.txt
+know	tboxm        data/Bgs/dojo/tboxm.txt
+know	tboxmb       data/Bgs/dojo/tboxmb.txt
+know	tboxn        data/Bgs/dojo/tboxn.txt
+know	tboxnb       data/Bgs/dojo/tboxnb.txt
+know	tboxo        data/Bgs/dojo/tboxo.txt
+know	tboxob       data/Bgs/dojo/tboxob.txt
+know	tboxp        data/Bgs/dojo/tboxp.txt
+know	tboxpb       data/Bgs/dojo/tboxpb.txt
+know	tboxq        data/Bgs/dojo/tboxq.txt
+know	tboxqb       data/Bgs/dojo/tboxqb.txt
+know	tboxr        data/Bgs/dojo/tboxr.txt
+know	tboxrb       data/Bgs/dojo/tboxrb.txt
+know	tboxs        data/Bgs/dojo/tboxs.txt
+know	tboxsb       data/Bgs/dojo/tboxsb.txt
+know	tboxt        data/Bgs/dojo/tboxt.txt
+know	tboxtb       data/Bgs/dojo/tboxtb.txt
+know	tboxu        data/Bgs/dojo/tboxu.txt
+know	tboxub       data/Bgs/dojo/tboxub.txt
+know	tboxv        data/Bgs/dojo/tboxv.txt
+know	tboxvb       data/Bgs/dojo/tboxvb.txt
+know	tboxw        data/Bgs/dojo/tboxw.txt
+know	tboxwb       data/Bgs/dojo/tboxwb.txt
+know	tboxx        data/Bgs/dojo/tboxx.txt
+know	tboxxb       data/Bgs/dojo/tboxxb.txt
+know	tboxy        data/Bgs/dojo/tboxy.txt
+know	tboxyb       data/Bgs/dojo/tboxyb.txt
+know	tboxz        data/Bgs/dojo/tboxz.txt
+know	tboxzb       data/Bgs/dojo/tboxzb.txt
+know	intro01      data/Bgs/stgin/intro01.txt
+know	air01        data/Bgs/stgin/air01.txt
+know	chi01        data/Bgs/stgin/chi01.txt
+know	tru01        data/Bgs/stgin/tru01.txt
+know	slu01        data/Bgs/stgin/slu01.txt
+know	woo01        data/Bgs/stgin/woo01.txt
+know	woo02        data/Bgs/stgin/woo02.txt
+know	ucx          data/Bgs/stgin/ucx.txt
+know	pal01        data/Bgs/stgin/pal01.txt
+know	intro03      data/Bgs/stgin/intro03.txt
+know	intro04      data/Bgs/stgin/intro04.txt
+know	introcas     data/Bgs/stgin/introcas.txt
+know	introair     data/Bgs/stgin/introair.txt
+know	introchi     data/Bgs/stgin/introchi.txt
+know	introtru     data/Bgs/stgin/introtru.txt
+know	introslu     data/Bgs/stgin/introslu.txt
+know	introwoo     data/Bgs/stgin/introwoo.txt
+know	sunset1      data/Bgs/stgin/sunset1.txt
+know	sunset2      data/Bgs/stgin/sunset2.txt
+know	sunset2k     data/Bgs/stgin/sunset2k.txt           #KMODE
+know	sunset3      data/Bgs/stgin/sunset3.txt
+know	sunset4      data/Bgs/stgin/sunset4.txt
+know	sunset5      data/Bgs/stgin/sunset5.txt
+know	intropal     data/Bgs/stgin/intropal.txt
+########################################################### CASINO
+know	00incas      data/bgs/01lasv/det/00incas.txt
+know	cas01        data/bgs/01lasv/det/cas01.txt
+know	caskiller    data/Bgs/01lasv/det/caskiller.txt
+know	cas02        data/bgs/01lasv/det/cas02.txt
+know	kun01        data/bgs/01lasv/det/kun01.txt
+know	kun02        data/bgs/01lasv/det/kun02.txt
+know	kun03        data/bgs/01lasv/det/kun03.txt
+know	kun04        data/bgs/01lasv/det/kun04.txt
+know	kun05        data/bgs/01lasv/det/kun05.txt
+know	elv01        data/bgs/02lasv/det/elv01.txt
+know	elvd         data/bgs/02lasv/det/elvd.txt 
+know	elvhole      data/bgs/02lasv/det/elvhole.txt 
+know	fworkf       data/bgs/03lasv/det/fworkf.txt 
+know	fworks       data/bgs/03lasv/det/fworks.txt 
+know    fglas3       data/Bgs/03lasv/fglas3.txt
+############################################################ AIRPORT
+know	00inair      data/bgs/01airp/det/00inair.txt
+know	gbelter5     data/Bgs/02airp/gbelter5.txt
+know	gbelter6     data/Bgs/02airp/gbelter6.txt
+know	aguy1	     data/Bgs/01airp/det/aguy1.txt
+know	coin 	     data/Bgs/01airp/det/coin.txt
+know	delay	     data/chars/misc/delay.txt
+know	delay2	     data/chars/misc/delay2.txt
+know	delaydra     data/chars/misc/delaydra.txt         #DRACULA INTRO EFFECT FOR ULTIMATE DUKE
+know	lugg1        data/Bgs/02airp/det/lugg1.txt
+know	lugg2        data/Bgs/02airp/det/lugg2.txt
+know	apeeps	     data/Bgs/02airp/det/apeeps.txt
+know	apchairs     data/Bgs/02airp/det/apchairs.txt
+know	fgair1	     data/Bgs/02airp/fgair1.txt
+know	fgair2	     data/Bgs/02airp/fgair2.txt
+know	fgair3	     data/Bgs/02airp/fgair3.txt
+know	belt2	     data/Bgs/02airp/belt2.txt
+know	belt3	     data/Bgs/02airp/belt3.txt
+know	gbelter2     data/Bgs/02airp/gbelter2.txt
+know	gbelter3     data/Bgs/02airp/gbelter3.txt
+know	gbelter4     data/Bgs/02airp/gbelter4.txt
+know	scrmove	     data/Bgs/02airp/scrmove.txt
+know	scrmove2     data/Bgs/02airp/scrmove2.txt
+know	scrmove3     data/Bgs/02airp/scrmove3.txt
+know	spawair	     data/Bgs/02airp/spawair.txt
+know	spawair2     data/Bgs/02airp/spawair2.txt
+know	movezblo     data/Bgs/02airp/movezblo.txt
+know	blkille	     data/Bgs/02airp/blkiller.txt
+know	delay6	     data/Bgs/02airp/delay6.txt
+know	subjpp	     data/Bgs/02airp/subjpp.txt
+know	pplane       data/Bgs/03airp/det/pplane.txt
+know	bplane       data/Bgs/03airp/det/bplane.txt
+know	bplane2      data/Bgs/03airp/det/bplane2.txt
+know	bchoppes     data/Bgs/03airp/det/bchoppes.txt
+know	bchopper     data/Bgs/03airp/det/bchopper.txt   #FOR KMODE
+know	hdust        data/Bgs/03airp/det/hdust.txt
+know	hduke        data/Bgs/03airp/det/hduke.txt
+know	hduke2       data/Bgs/03airp/det/hduke2.txt    #FOR KMODE
+know	airphe1      data/Bgs/03airp/det/airphe1.txt
+know	airphe2      data/Bgs/03airp/det/airphe2.txt
+know	airphe3      data/Bgs/03airp/det/airphe3.txt    #KRAUSER OST BOSS THEME
+know	airphe4      data/Bgs/03airp/det/airphe4.txt    #ARRANGED
+know	airphe5      data/Bgs/03airp/det/airphe5.txt    #USJP
+know	airpheL      data/Bgs/03airp/det/airpheL.txt    #FOR LEGENDARY MODE
+############################################################ CHINATOWN  
+know	00inchi      data/bgs/01chin/det/00inchi.txt
+know	cmouse       data/bgs/01chin/det/cmouse.txt
+know	chpeep       data/bgs/01chin/det/chpeep.txt
+know	light01      data/bgs/01chin/det/light01.txt
+know	truck01      data/bgs/01chin/det/truck01.txt
+know    rainb	     data/Bgs/01chin/det/rainb.txt
+know    rains1	     data/Bgs/01chin/det/rains1.txt
+know    rains2	     data/Bgs/01chin/det/rains2.txt
+know    doorch       data/Bgs/01chin/det/doorch.txt
+know    doorch2      data/Bgs/01chin/det/doorch2.txt
+know	stai	     data/Bgs/02chin/stai.txt
+know	fgchi	     data/Bgs/02chin/fgchi.txt
+know    Pball        data/Bgs/02chin/det/pball.txt
+know    Pbag         data/Bgs/03chin/det/pbag.txt
+know	fgsti	     data/Bgs/03chin/fgsti.txt
+know	pcpiece1     data/Bgs/03chin/det/pcpiece1.txt
+know	pcpiece2     data/Bgs/03chin/det/pcpiece2.txt
+know	pcurt01      data/Bgs/03chin/det/pcurt01.txt
+know	pcurt02      data/Bgs/03chin/det/pcurt02.txt
+know	fgsti2	     data/Bgs/04chin/fgsti2.txt
+know    fgchi4	     data/Bgs/04chin/fgchi4.txt
+know    cwindow      data/Bgs/04chin/det/cwindow.txt
+know    rain	     data/Bgs/05chin/det/rain.txt
+know	fgchi5	     data/Bgs/05chin/fgchi5.txt
+know    playmove     data/Bgs/05chin/playmove.txt
+know    playju	     data/Bgs/05chin/playju.txt
+know    truckch5     data/Bgs/05chin/truckch5.txt
+know    trckrain     data/Bgs/06chin/det/trckrain.txt
+############################################################ TRUCK 
+know    00intrk2     data/bgs/01trck/det/00intrk2.txt
+know    00intrk3     data/bgs/01trck/det/00intrk3.txt  #for the cut intro 
+know	struck       data/bgs/01trck/det/struck.txt
+know    chenc1       data/bgs/02trck/det/chenc1.txt
+know    chenc2       data/bgs/02trck/det/chenc2.txt
+know    chenc3       data/bgs/02trck/det/chenc3.txt
+know    mcguic1      data/bgs/02trck/det/mcguic1.txt
+know    carlemc1     data/bgs/02trck/det/carlemc1.txt
+know    dukec1       data/bgs/02trck/det/dukec1.txt
+know    dukec2       data/bgs/02trck/det/dukec2.txt  #krauser's
+know    dukecL       data/bgs/02trck/det/dukecL.txt  #legendary
+know    dukecUJ      data/bgs/02trck/det/dukecUJ.txt  #USJP
+know    bossescn     data/bgs/02trck/det/bossescn.txt
+know    trwa         data/bgs/02trck/det/trwa.txt
+know    trwdeb1      data/bgs/02trck/det/trwdeb1.txt
+know    trwdeb2      data/bgs/02trck/det/trwdeb2.txt
+############################################################ SLUMS
+know    00inslu      data/Bgs/02slum/det/00inslu.txt
+know	staisl2	     data/Bgs/01slum/det/fac01.txt
+know	fgslu	     data/Bgs/02slum/fgslu.txt
+know    slwall	     data/Bgs/02slum/slwall.txt
+know    slwall2	     data/Bgs/02slum/slwall2.txt
+know	fgslu2	     data/Bgs/03slum/fgslu2.txt
+know	staisl	     data/Bgs/02slum/staisl.txt
+know	staisl2	     data/Bgs/02slum/staisl2.txt
+know	windg	     data/Bgs/02slum/det/windg.txt
+know	trash1 	     data/Bgs/02slum/det/trash1.txt
+know	trash2 	     data/Bgs/02slum/det/trash2.txt
+know	trash3 	     data/Bgs/02slum/det/trash3.txt
+know	trash4 	     data/Bgs/02slum/det/trash4.txt
+know	trash5 	     data/Bgs/02slum/det/trash5.txt
+know	cat1 	     data/Bgs/02slum/det/cat1.txt
+know	post1	     data/Bgs/02slum/det/post1.txt
+know    fac01        data/Bgs/01slum/det/fac01.txt
+know    cdslums1     data/chars/0misc/cdslums1.txt
+############################################################ WOODS
+know	00inwoo      data/Bgs/01wood/det/00inwoo.txt
+know	wfall1       data/Bgs/01wood/det/wfall1.txt
+know	wfall2       data/Bgs/01wood/det/wfall2.txt
+know	wfall3       data/Bgs/01wood/det/wfall3.txt
+know	wfall4       data/Bgs/01wood/det/wfall4.txt
+know	fog1         data/Bgs/01wood/det/fog1.txt
+know	tree1        data/Bgs/01wood/det/tree1.txt
+know	tree2        data/Bgs/01wood/det/tree2.txt
+know	tree3        data/Bgs/01wood/det/tree3.txt
+know	birds0       data/Bgs/01wood/det/birds0.txt    #bird spawner
+know	birds1       data/Bgs/01wood/det/birds1.txt    #actual birds
+know	birdM        data/Bgs/01wood/det/birdM.txt     #mom bird
+know	leaf0        data/Bgs/01wood/det/leaf0.txt     #leaves
+know	heliw1       data/Bgs/01wood/det/heliw1.txt 
+know	heliw2       data/Bgs/01wood/det/heliw2.txt     #the one that shoots several times
+know	heliw3       data/Bgs/01wood/det/heliw3.txt     #the one that shoots once 
+know	shothw       data/Bgs/01wood/det/shothw.txt     #heli bullets
+know	shotar1      data/Bgs/01wood/det/shotar1.txt    #heli bullets
+know	shotar2      data/Bgs/01wood/det/shotar2.txt    #heli bullets
+know	aimheli      data/Bgs/01wood/det/aimheli.txt    #heli aim
+know	statuew      data/Bgs/01wood/det/statuew.txt
+know	stonew1      data/Bgs/01wood/det/stonew1.txt
+know	stonew2      data/Bgs/01wood/det/stonew2.txt
+know	stonew2      data/Bgs/01wood/det/stonew3.txt
+know    cdchina1     data/chars/0misc/cdchina1.txt      #dragon bruce lee sisters
+know    cdwood1      data/chars/0misc/cdwood1.txt       #ffight italy
+
+############################################################ PALACE 1
+know	lasst        data/Bgs/01palc/det/lasst.txt            #statue lasers
+know	y2fen        data/Bgs/02palc/det/y2fen.txt            #elevator fence
+know	y2fenr       data/Bgs/02palc/det/y2fenr.txt           #elevator fence reversed
+know	pilar01      data/Bgs/03palc/det/pilar01.txt
+know	torch01      data/Bgs/03palc/det/torch01.txt
+know	flare01      data/Bgs/03palc/det/flare01.txt
+know	doorp01      data/Bgs/03palc/det/doorp01.txt
+know	Y3light      data/Bgs/03palc/det/y3light.txt
+know	Y3hor1       data/Bgs/03palc/det/y3hor1.txt        #abore intro
+know	Y3hor2       data/Bgs/03palc/det/y3hor2.txt        #abore intro
+know	Y3hor3       data/Bgs/03palc/det/y3hor3.txt        #abore intro
+know	Y3hor4       data/Bgs/03palc/det/y3hor4.txt        #abore intro
+know	trap01       data/Bgs/06palc/det/trap01.txt
+know    fwall        data/Bgs/06palc/det/fwall.txt
+know    jumper       data/Bgs/06palc/det/jumper.txt
+know    danger02     data/Bgs/06palc/det/danger02.txt
+know    fball0       data/Bgs/06palc/det/fball0.txt         #fireball spawner trap
+know    fballst      data/Bgs/06palc/det/fballst.txt        #fireball spawner decoration
+know    fball1       data/Bgs/06palc/det/fball1.txt         #the fireballs
+know    fball2       data/Bgs/06palc/det/fball2.txt         #the small fireballs
+know    bfr          data/Bgs/06palc/det/bfr.txt            #big fucking robot
+know    bfrf         data/Bgs/06palc/det/bfrf.txt           #big fucking robot fire
+know	slasher      data/Bgs/06palc/det/slasher.txt        #sword statue
+know	y4tel        data/Bgs/06palc/det/y4tel.txt          #duke's teleport
+know	y4tel        data/Bgs/06palc/det/y4tel2.txt         #duke's teleport 2
+know	y4duke       data/Bgs/06palc/det/y4duke.txt         #duke's arrival
+know	y4stn        data/Bgs/06palc/det/y4stn.txt          #duke's arrival lightning
+know	bossr        data/Bgs/bossr/bossr.txt
+know    ddoor        data/chars/0misc/ddoor.txt
+
+############################################################ PALACE ENTRANCE
+know	dgate        data/bgs/palc00/det/dgate.txt
+know	battle       data/bgs/palc00/det/battle.txt
+know	battleA      data/bgs/palc00/det/battleA.txt
+know	battleK      data/bgs/palc00/det/battleK.txt      #FOR KRAUSER OST
+know	cavern       data/bgs/palc00/det/cavern.txt
+know	cavernA      data/bgs/palc00/det/cavernA.txt
+know	cavernK      data/bgs/palc00/det/cavernK.txt      #FOR KRAUSER OST
+know	trap         data/bgs/palc00/det/trap.txt
+know	trapA        data/bgs/palc00/det/trapA.txt        #FOR SNES OST
+know	pathsel      data/bgs/palc00/det/pathsel.txt
+know	00inpal      data/bgs/palc00/det/00inpal.txt
+
+############################################################ PALACE 1
+
+
+############################################################ PALACE 2
+know	doorz        data/bgs/Z2palc/det/doorz.txt
+know	elvsta       data/bgs/Z2palc/det/elvsta.txt
+know	elvsto       data/bgs/Z2palc/det/elvsto.txt
+know	liftce1      data/bgs/Z2palc/det/liftce1.txt
+know	liftce2      data/bgs/Z2palc/det/liftce2.txt
+know	liftli       data/bgs/Z2palc/det/liftli.txt
+know	zwfall       data/bgs/Z3palc/det/zwfall.txt
+know	z3pillar     data/bgs/Z3palc/det/z3pillar.txt
+know	bursta       data/bgs/Z3palc/det/bursta.txt   #burnov statue
+know	dli          data/bgs/Z3palc/det/dli.txt      #disco tri beam lights
+know	dfli         data/bgs/Z3palc/det/dfli.txt     #disco floor star lights
+know	dbli         data/bgs/Z3palc/det/dbli.txt     #disco big lights
+know	dtv          data/bgs/Z3palc/det/dtv.txt      #disco tv
+know	people01     data/bgs/Z3palc/det/people01.txt   
+know	people02     data/bgs/Z3palc/det/people02.txt   
+know	people03     data/bgs/Z3palc/det/people03.txt  
+know	draf         data/bgs/Z3palc/det/draf.txt   
+know	drafire      data/bgs/Z3palc/det/drafire.txt   
+know	paudi        data/bgs/Z4palc/det/paudi.txt     #palace audience 1
+know	paudi2       data/bgs/Z4palc/det/paudi2.txt    #palace audience 2
+know	ringli01     data/bgs/Z4palc/det/ringli01.txt  #palace fighters entrance lights 1
+know	ringfl01     data/bgs/Z4palc/det/ringfl01.txt  #palace photos flash 1
+know	ringfl02     data/bgs/Z4palc/det/ringfl02.txt  #palace photos flash for enemy supers
+know	ringbo       data/bgs/Z4palc/det/ringbo.txt    #palace big colorful lights
+know	fight01      data/bgs/Z4palc/det/fight01.txt   #palace ring fight!
+know	ringfen      data/bgs/Z4palc/det/ringfen.txt   #palace ring fence
+know	ringsmk      data/bgs/Z4palc/det/ringsmk.txt   #palace ring smoke
+know	ringbeam     data/bgs/Z4palc/det/ringbeam.txt  #palace ring beam
+know	rboo1        data/bgs/Z4palc/det/rboo1.txt     #palace ring boo1 for players
+know	count00      data/bgs/Z4palc/det/count00.txt   #palace ring numbers
+know	wins1        data/bgs/Z4palc/det/wins1.txt     #palace ring win text
+know	wins2        data/bgs/Z4palc/det/wins2.txt     #palace ring fireworks
+know	4men         data/bgs/Z4palc/det/4men.txt      #4 horsemen intro
+know	ringbosd     data/bgs/Z4palc/det/ringbosd.txt  #4 horsmen death item
+know	Z5plight     data/bgs/Z5palc/det/Z5plight.txt  #palace lightining
+know	Z5fence1     data/bgs/Z5palc/det/Z5fence1.txt  #palace fence1
+know	Z5fence2     data/bgs/Z5palc/det/Z5fence2.txt  #palace fence2
+know	Z5pilar      data/bgs/Z5palc/det/Z5pilar.txt   #palace pilar
+know	Z5door       data/bgs/Z5palc/det/Z5door.txt    #palace door
+know	Z5wall       data/bgs/Z5palc/det/Z5wall.txt    #palace wall for final boss rush
+know	Z5ffi        data/bgs/Z5palc/det/Z5ffi.txt     #force field for Duke phase 3
+
+
+############################################################ PALACE 3
+know	pwtfall      data/bgs/X1palc/det/pwtfall.txt
+know	fog2         data/bgs/X1palc/det/fog2.txt
+know	ctorch       data/bgs/X1palc/det/ctorch.txt
+know	cfire        data/bgs/X1palc/det/cfire.txt
+know	bats0        data/bgs/X1palc/det/bats0.txt    #palace bats spawner
+know	bats1        data/bgs/X1palc/det/bats1.txt    #palace bats 
+know	batsC0       data/bgs/X1palc/det/batsC0.txt    #intro bats spawner
+know	batsC1       data/bgs/X1palc/det/batsC1.txt    #intro bats
+know	trlige       data/bgs/X1palc/det/trlige.txt   #the enemy
+know	trligf       data/bgs/X1palc/det/trligf.txt   #spawning the light
+know	trplig       data/bgs/X1palc/det/trplig.txt   #the tracking light
+know	ferryc       data/bgs/X1palc/det/ferryc.txt   #the ferryman
+know	splash       data/bgs/X1palc/det/splash.txt   
+know	kpalax3      data/bgs/X2palc/kpalax3.txt      #FOR KRAUSER MODE
+know	elevX3       data/bgs/X3palc/det/elevX3.txt   
+know	elvbord      data/bgs/X3palc/det/elvbord.txt 
+know	gryzor01     data/bgs/X3palc/det/gryzor01.txt  
+know	gryzor02     data/bgs/X3palc/det/gryzor02.txt  
+know	doombar      data/bgs/X3palc/det/doombar.txt  
+know	doomgun      data/bgs/X3palc/det/doomgun.txt  
+know	spikes01     data/bgs/X3palc/det/spikes01.txt 
+know	spikes02     data/bgs/X3palc/det/spikes02.txt  
+know	fencelv      data/bgs/X3palc/det/fencelv.txt 
+know	bgheli       data/bgs/X3palc/det/bgheli.txt 
+know	pflag1       data/bgs/X4palc/det/pflag1.txt   
+know	pflag2       data/bgs/X4palc/det/pflag2.txt   
+know	X4pillar     data/bgs/X4palc/det/X4pillar.txt   
+know	X4pillar2    data/bgs/X4palc/det/X4pillar2.txt   
+know	X4lamp       data/bgs/X4palc/det/X4lamp.txt  
+know	spike01      data/bgs/X4palc/det/spike01.txt 
+know	heliw4       data/bgs/X4palc/det/heliw4.txt   
+know	heliw5       data/bgs/X4palc/det/heliw5.txt    
+know	hmiss01      data/bgs/X4palc/det/hmiss01.txt 
+know	hmiss02      data/bgs/X4palc/det/hmiss02.txt  
+know	nap01        data/bgs/X4palc/det/nap01.txt    
+know	danger01     data/bgs/X4palc/det/danger01.txt    
+know	aimhel2      data/bgs/X4palc/det/aimhel2.txt   
+know	X4fire01     data/bgs/X4palc/det/x4fire01.txt
+know	X4fire02     data/bgs/X4palc/det/x4fire02.txt
+know	X4fire03     data/bgs/X4palc/det/x4fire03.txt
+know    doorx4       data/bgs/X4palc/det/doorx4.txt
+know    wkduke01     data/bgs/X4palc/det/wkduke01.txt
+know	X5fire01     data/bgs/X5palc/det/X5fire01.txt   #fire pillars for duke phase 3
+know	X5fire02     data/bgs/X5palc/det/X5fire02.txt   #fire pillars for duke phase 3
+
+############ EXTRA STAGES
+know    zmet         data/chars/0weap/zmet.txt           #zebes metroid small
+know    zmet2        data/chars/0weap/zmet2.txt          #zebes metroid big af
+know	tz	     data/Bgs/stgin/tz.txt		 #twilight zone portal
+know	smdoor	     data/bgs/zxtra1/smdoor.txt          #zebes door
+know	smdoor2	     data/bgs/zxtra1/smdoor2.txt         #zebes door (closing)
+know	smelv1	     data/bgs/zxtra1/smelv1.txt          #zebes 1st elevator
+know	smelv2	     data/bgs/zxtra1/smelv2.txt          #zebes 2nd elevator brinstar
+know	smglass	     data/bgs/zxtra1/smglass.txt         #zebes glass
+know	g12 	     data/bgs/zxtra1/g12.txt             #zebes metroid container
+know	h12 	     data/bgs/zxtra1/h12.txt             #zebes metroid container glass
+know	dead01	     data/bgs/zxtra1/dead01.txt          #zebes dead people
+know	mb  	     data/bgs/zxtra1/mb.txt              #zebes mother brain
+know	et01	     data/bgs/zxtra1/et01.txt            #ete tatsu
+know	et02	     data/bgs/zxtra1/et02.txt            #ete 02
+know	et03	     data/bgs/zxtra1/et03.txt            #ete 03
+know	dac01	     data/bgs/zxtra1/dac01.txt           #dachora
+know	dac02	     data/bgs/zxtra1/dac02.txt           #dachora
+know	brifl	     data/bgs/zxtra1/brifl.txt           #brinstar floor
+know	mosca	     data/bgs/zxtra1/mosca.txt           #brinstar mosca
+know	mosca2	     data/bgs/zxtra1/mosca2.txt          #brinstar mosca spawner
+know	xpar	     data/bgs/zxtra1/xpar.txt            #x parasite
+know	bug1	     data/bgs/zxtra1/bug1.txt            #bug 1
+know	bug2	     data/bgs/zxtra1/bug2.txt            #bug 2
+know	bug3	     data/bgs/zxtra1/bug3.txt            #bug 3
+know	torizo	     data/bgs/zxtra1/torizo.txt          #torizo
+know	tbe	     data/bgs/zxtra1/tbe.txt             #torizo laser
+know	tbomb	     data/bgs/zxtra1/tbomb.txt           #torizo bomb
+know    lorb         data/bgs/zxtra1/lorb.txt            #life orb
+know    zrid1        data/bgs/zxtra1/zrid1.txt           #ridely intro
+know    zrid2        data/bgs/zxtra1/zrid2.txt           #ridely 
+know    ridf         data/bgs/zxtra1/ridf.txt            #ridley fireball 
+know    samb         data/bgs/zxtra1/samb.txt            #sa mball
+know    zbs          data/bgs/zxtra1/zbs.txt             #zbsian
+know    xduke        data/bgs/zxtra1/xduke.txt           #zbduke
+know	3nwill       data/chars/3nwill/3nwill.txt        #nes williams
+know	3nrop        data/chars/3nrop/3nrop.txt          #nes roper
+know	3nabo        data/chars/3nabo/3nabo.txt          #nes abobo
+know	portal1      data/bgs/zxtra3/portal1.txt         #portal 8bit
+know	portal2      data/bgs/zxtra3/portal2.txt         #portal 8bit
+know	sddcrew      data/bgs/zxtra3/sddcrew.txt         #sddcrew
+know	nesin        data/bgs/zxtra3/nesin.txt           #nes intro
+know	pep          data/bgs/zxtra4/pep.txt             #big eye
+know	clk          data/bgs/zxtra4/clk.txt             #clk
+know	dtorch       data/bgs/zxtra4/dtorch.txt          #dracula torch
+know	thwin        data/bgs/zxtra4/thwin.txt           #thunder windows
+know	rich         data/bgs/zxtra4/rich.txt            #richter
+know	casint       data/bgs/zxtra4/casint.txt          #cv intro
+know	bxx          data/bgs/zxtra4/bxx.txt             #cv map
+know	arma1        data/bgs/zxtra4/arma1.txt           #arma1
+know	arma2        data/bgs/zxtra4/arma2.txt           #arma2
+know	gar          data/bgs/zxtra4/gar.txt             #axe lord
+know	cvfire       data/bgs/zxtra4/cvfire.txt          #fire cv
+know	bswd         data/bgs/zxtra4/bswd.txt            #bat sword
+know	mar          data/bgs/zxtra4/mar.txt             #maria renard
+know	cvpor        data/bgs/zxtra4/cvpor.txt           #cv portal
+know	gbat         data/bgs/zxtra4/gbat.txt            #giant bat
+know	mds          data/bgs/zxtra4/mds.txt             #medusa
+know	snk          data/bgs/zxtra4/snk.txt             #snake
+know	mum          data/bgs/zxtra4/mum.txt             #mummy
+know	mumb         data/bgs/zxtra4/mumb.txt            #mummy block
+know	creat        data/bgs/zxtra4/creat.txt           #creature
+know	cresto       data/bgs/zxtra4/cresto.txt          #creature stones
+know	creli        data/bgs/zxtra4/creli.txt           #creature bolt
+know	dea          data/bgs/zxtra4/dea.txt             #death
+know	desku        data/bgs/zxtra4/desku.txt           #death skull1
+know	deskug1      data/bgs/zxtra4/deskug1.txt         #death skulll
+know	deskug2      data/bgs/zxtra4/deskug2.txt         #death skullr
+know	cvorb        data/bgs/zxtra4/cvorb.txt           #orb
+know	ridd         data/bgs/zxtra2/ridd.txt            #riddler
+know	vrridin      data/bgs/zxtra2/vrriddin.txt        #vr in
+know	vrridou      data/bgs/zxtra2/vrriddou.txt        #vr out
+know	trpligb      data/bgs/zxtra2/trpligb.txt         #search light
+know	hq           data/bgs/zxtra2/hq.txt              #harley
+know	catw         data/bgs/zxtra2/catw.txt            #catwoman
+know	scc          data/bgs/zxtra2/scc.txt             #scarecrow
+know	chop         data/bgs/zxtra2/chop.txt            #penguin chopper
+know	shothw2      data/bgs/zxtra2/shothw2.txt         #penguin chopper
+know	pen          data/bgs/zxtra2/pen.txt             #penguin
+know	clay         data/bgs/zxtra2/clay.txt            #clayface
+know	joker        data/bgs/zxtra2/jok.txt             #joker
+know	joker2       data/bgs/zxtra2/jok2.txt            #joker2
+know	zdoor        data/chars/misc/zdoor/zdoor.txt     #door trigger
+know	zdoorN       data/chars/misc/zdoor/zdoorN.txt    #dd1
+know	tomb         data/chars/misc/zdoor/tomb.txt      #cvania trigger
+know	zdoorC       data/chars/misc/zdoor/zdoorC.txt    #cvania
+know	zdoorM       data/chars/misc/zdoor/zdoorM.txt    #smetroid
+know	zdoorB       data/chars/misc/zdoor/zdoorB.txt    #batman
+know	bossr        data/Bgs/bossr/bossr.txt
+know	night00      data/Bgs/stgin/night00.txt
+know	night03      data/Bgs/stgin/night03.txt
+know	night05      data/Bgs/stgin/night05.txt
+know	night07      data/Bgs/stgin/night07.txt
+
+
+
+
+
+
+

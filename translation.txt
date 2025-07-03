@@ -1,0 +1,29 @@
+msgid 
+"This file should be place in data folder"
+"msgid : this is original text in code."
+"msgstr : this is your translation."
+msgstr 
+"Leave this blank if you don't want to translate it."
+"Lines below this are what you need to modify."
+
+
+msgid "PRESS START"
+msgstr "PRESS ANY BUTTON" 
+
+msgid "Brightness:"
+msgstr "__________Brightness:"
+msgid "Window Offset:"
+msgstr "__________Window Offset"
+msgid "Gamma:"
+msgstr "__________Gamma:"
+msgid "Display Mode:"
+msgstr "__________Display Mode:"
+msgid "Video Backend:"
+msgstr "__________Video Backend"
+msgid "Scale:"
+msgstr "          Scale:"
+msgid "Hardware Filter:"
+msgstr "          Hardware Filter:"
+msgid "Software Filter:"
+msgstr "__________Software Filter:"
+

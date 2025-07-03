@@ -1,0 +1,17 @@
+#video	0
+video	256x224
+ColourDepth 16bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+

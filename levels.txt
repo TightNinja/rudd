@@ -1,0 +1,922 @@
+loadingbg  1 -999 -999 100 -999 -999 0
+loadingbg2 1 -999 -999 100 -999 -999 0
+#-------game spec
+
+noslowfx   1
+completebg 1
+maxplayers 4
+hiscorebg  1
+
+#-------Select screen positions
+
+#p1smenu 63 224 500 500
+p1smenu 0 224 500 500
+#p2smenu 193 224 500 500
+p2smenu 256 224 500 500
+
+#-------lifebars & others
+
+lbarsize   94 10 1 0 0 -300 -300 -9999 -9999  ##fourth number should prevent long bar
+mpbarsize  97  4 1 0 0 -300 -300 -9999 -9999  ##fourth number should prevent long bar
+
+p1life      -999    -8
+p1lifex     25   22 2
+p1lifen     32   22 2
+p1namej    -10  -10  -10  -10  24    7
+p1score    -10  -10  -10  -10  84   22
+p1mp        25   31
+p1icon       1   8
+e1life -999 -999
+e1icon -999 -999
+e1name -999 -999
+
+p2life     -157    -8
+p2lifex    155   22 2
+p2lifen    162   22 2
+p2namej    -10  -10  -10  -10 154    7
+p2score    -10  -10  -10  -10 215   22
+p2mp       155   31
+p2icon     131    8
+e2life -999 -999
+e2icon -999 -999
+e2name -999 -999
+#--------------------------
+
+
+
+
+####################################################### TRAINING MODE
+set	   TRAINING_MODE
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/selectT.txt
+
+z          162 224 224
+file       data/levels/dojo3rop.txt
+end
+
+####################################################### TRAINING MODE
+
+
+
+
+
+
+####################################################### SNES SDD
+set	   STORY_MODE_-_16-BIT_MODE
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select1.txt
+scene      data/scenes/ost16b.txt
+scene      data/scenes/00story/00sto16b.txt
+####################################################### SNES SDD
+
+
+z          160 224 
+file       data/levels/lasv00.txt
+scene      data/scenes/st_intros/INTROCAS.txt
+z          159 224 224
+file       data/levels/lasv01.txt
+z          207 215 224
+file       data/levels/lasv02.txt
+z          152 224 224
+file       data/levels/lasv03.txt
+next
+scene      data/scenes/01casino/cas16b.txt
+z          160 224 
+file       data/levels/airp00.txt
+scene      data/scenes/st_intros/INTROAIR.txt
+z          152 224 224
+file       data/levels/airp01.txt
+z          305 467 224
+file       data/levels/airp02.txt
+z          175 224 224
+file       data/levels/airp03.txt
+next
+scene      data/scenes/02airp/air16b.txt
+z          160 224 
+file       data/levels/chin00.txt
+scene      data/scenes/st_intros/INTROCHI.txt
+z          167 224 224
+file       data/levels/chin01.txt
+z          176 224
+file       data/levels/chin02.txt
+z          196 244
+file       data/levels/chin03.txt
+z          181 244
+file       data/levels/chin04.txt
+z          456 647
+file       data/levels/chin05.txt
+scene      data/scenes/st_intros/INTROTRK1.txt
+z          160 210
+file       data/levels/chin06.txt
+next
+scene      data/scenes/03china/chi16b.txt
+z          160 224 
+file       data/levels/trck00.txt
+z          125 179 224
+file       data/levels/trck01.txt
+scene      data/scenes/04truck/truA16b.txt
+z          364 465
+file       data/levels/trck02.txt
+next
+scene      data/scenes/04truck/truB16b.txt
+z          160 224 
+file       data/levels/slum00.txt
+z          356 473
+file       data/levels/slum02.txt
+z          140 217
+file       data/levels/slum01.txt
+z          356 469
+file       data/levels/slum03.txt
+next
+scene      data/scenes/05slum/slu16b.txt
+z          160 224 
+file       data/levels/wood0A.txt
+scene      data/scenes/st_intros/INTROWOO.txt
+z          165 204
+file       data/levels/wood01.txt
+next
+scene      data/scenes/06woods/woo16b.txt
+z          160 224 
+file       data/levels/pala00.txt
+z          145 215
+file       data/levels/palac00.txt
+
+
+branch     traproom ############## ROUTE A
+scene      data/scenes/07palace/pal16b.txt
+z          164 211
+file       data/levels/palacY1.txt
+z          150 190
+file       data/levels/palacY2.txt
+z	   163 224
+file       data/levels/palacY3.txt
+z	   124 225
+file       data/levels/palacY4.txt
+scene      data/scenes/08duke/00du16b.txt
+z	   184 330
+file       data/levels/palacY5.txt
+scene      data/scenes/09end/end16b.txt
+scene      data/scenes/10epilo/epi16b.txt
+scene      data/scenes/11credit/credits.txt
+scene      data/scenes/11credit/creditsX.txt
+end
+
+branch     caverns    ############## ROUTE B
+scene      data/scenes/07palace/pal16b.txt
+z          246 517
+file       data/levels/palacX1.txt
+z          165 220
+file       data/levels/palacX2.txt
+z          177 193
+file       data/levels/palacX3.txt
+z          170 220
+file       data/levels/palacX4.txt
+scene      data/scenes/08duke/00du16b.txt
+z	   184 330
+file       data/levels/palacX5.txt
+scene      data/scenes/11credit/credits.txt
+end
+
+branch     colisseum ############## ROUTE C
+scene      data/scenes/07palace/pal16b.txt
+z          150 220
+file       data/levels/palacZ1.txt
+z          168 195
+file       data/levels/palacZ2.txt
+z          160 220
+file       data/levels/palacZ3.txt
+z          168 195
+file       data/levels/palacZ2b.txt
+z          125 220
+file       data/levels/palacZ4.txt
+z          168 195
+file       data/levels/palacZ2c.txt
+scene      data/scenes/08duke/00du16b.txt
+z          153 215
+file       data/levels/palacZ5.txt
+scene      data/scenes/11credit/credits.txt
+end
+
+
+#NES DD1 BRANCH
+branch     NESDD
+z          100 224 
+file       data/levels/tz04.txt
+skipselect ndra ndra2
+scene      Data/Scenes/xtra/nesdd.txt
+z	   145 220
+file       data/levels/znxtra1.txt
+scene      Data/Scenes/11credit/ncredit.txt
+end
+
+####################################################### KRAUSER MODE
+set	   STORY_MODE_-_80's-K_MODE
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select1k.txt
+scene      data/scenes/ostkra.txt
+scene      data/scenes/00story/00sto16b.txt
+####################################################### KRAUSER MODE
+
+
+z          160 224 
+file       data/levels/Kmode/lasv00.txt
+scene      data/scenes/st_intros/KINTROCAS.txt
+z          159 224 224
+file       data/levels/Kmode/lasv01.txt
+z          207 215 224
+file       data/levels/Kmode/lasv02.txt
+z          152 224 224
+file       data/levels/Kmode/lasv03.txt
+next
+scene      data/scenes/01casino/cas80k.txt
+z          160 224 
+file       data/levels/Kmode/airp00.txt
+scene      data/scenes/st_intros/KINTROAIR.txt
+z          152 224 224
+file       data/levels/Kmode/airp01.txt
+z          305 467 224
+file       data/levels/Kmode/airp02.txt
+z          175 224 224
+file       data/levels/Kmode/airp03.txt
+next
+scene      data/scenes/02airp/air80k.txt
+z          160 224 
+file       data/levels/Kmode/chin00.txt
+scene      data/scenes/st_intros/KINTROCHI.txt
+z          167 224 224
+file       data/levels/Kmode/chin01.txt
+z          176 224
+file       data/levels/Kmode/chin02.txt
+z          196 244
+file       data/levels/Kmode/chin03.txt
+z          181 244
+file       data/levels/Kmode/chin04.txt
+z          456 647
+file       data/levels/Kmode/chin05.txt
+scene      data/scenes/st_intros/INTROTRK1.txt
+z          160 210
+file       data/levels/Kmode/chin06.txt
+next
+scene      data/scenes/03china/chi80k.txt
+z          160 224 
+file       data/levels/Kmode/trck00.txt
+z          125 179 224
+file       data/levels/Kmode/trck01.txt
+scene      data/scenes/04truck/truA80k.txt
+z          364 465
+file       data/levels/Kmode/trck02.txt
+next
+scene      data/scenes/04truck/truB80k.txt
+z          160 224 
+file       data/levels/kmode/slum00.txt
+z          356 473
+file       data/levels/Kmode/slum02.txt
+z          140 217
+file       data/levels/Kmode/slum01.txt
+z          356 469
+file       data/levels/Kmode/slum03.txt
+next
+scene      data/scenes/05slum/slu80k.txt
+z          160 224 
+file       data/levels/Kmode/wood0A.txt
+scene      data/scenes/st_intros/INTROWOO.txt
+z          165 204
+file       data/levels/Kmode/wood01.txt
+next
+scene      data/scenes/06woods/woo80k.txt
+z          160 224 
+file       data/levels/Kmode/pala00.txt
+z          145 215
+file       data/levels/Kmode/palac00.txt
+
+
+branch     cavernk
+scene      data/scenes/07palace/pal80k.txt
+z          246 517
+file       data/levels/Kmode/palacX1.txt
+z          165 220
+file       data/levels/Kmode/palacX2.txt
+branch     kpalax3
+z          177 193
+file       data/levels/Kmode/palacX3.txt
+z          170 220
+file       data/levels/Kmode/palacX4.txt
+scene      data/scenes/08duke/00du80k.txt
+z	   184 330
+file       data/levels/Kmode/palacX5.txt
+scene      data/scenes/11credit/credits.txt
+end
+
+#CASTLEVANIA BRANCH
+branch     CVANIA
+z          100 224 
+file       data/levels/tz03.txt
+scene      Data/Scenes/xtra/cintro.txt
+select     data/bgs/selectC.txt
+z	   153 153
+file       data/levels/zxcas0.txt
+z          160 224 
+file       data/levels/zxcas0i.txt
+z	   140 210 
+file       data/levels/zxcas1.txt
+z	   202 202
+file       data/levels/zxcas2.txt
+scene      Data/Scenes/xtra/cinter.txt
+z	   202 202
+file       data/levels/zxcas3.txt
+z	   204 204
+file       data/levels/zxcas4.txt
+scene      Data/Scenes/11credit/ccredit.txt
+end
+
+branch     traproom
+scene      data/scenes/07palace/pal80k.txt
+z          164 211
+file       data/levels/Kmode/palacY1.txt
+z          150 190
+file       data/levels/Kmode/palacY2.txt
+z	   163 224
+file       data/levels/Kmode/palacY3.txt
+z	   124 225
+file       data/levels/Kmode/palacY4.txt
+scene      data/scenes/08duke/00du80k.txt
+z	   184 330
+file       data/levels/Kmode/palacY5.txt
+scene      data/scenes/09end/end80k.txt
+scene      data/scenes/10epilo/epi80k.txt
+scene      data/scenes/11credit/credits.txt
+scene      data/scenes/11credit/creditsX.txt
+end
+
+branch     coliseumk
+scene      data/scenes/07palace/pal80k.txt
+z          150 220
+file       data/levels/Kmode/palacZ1.txt
+z          168 195
+file       data/levels/Kmode/palacZ2.txt
+z          160 220
+file       data/levels/Kmode/palacZ3.txt
+z          168 195
+file       data/levels/Kmode/palacZ2b.txt
+z          125 220
+file       data/levels/Kmode/palacZ4.txt
+z          168 195
+file       data/levels/Kmode/palacZ2c.txt
+scene      data/scenes/08duke/00du80k.txt
+z          153 215
+file       data/levels/Kmode/palacZ5.txt
+scene      data/scenes/11credit/credits.txt
+end
+
+####################################################### ARRANGED SOUNDTRACK
+set	   STORY_MODE_-_ARRANGED_OST
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select1k.txt
+scene      data/scenes/ostarr.txt
+scene      data/scenes/00story/00sto16b.txt
+####################################################### ARRANGED SOUNDTRACK
+
+z          160 224 
+file       data/levels/AST/lasv00.txt
+scene      data/scenes/st_intros/AINTROCAS.txt
+z          159 224 224
+file       data/levels/AST/lasv01.txt
+z          207 215 224
+file       data/levels/AST/lasv02.txt
+z          152 224 224
+file       data/levels/AST/lasv03.txt
+next
+scene      data/scenes/01casino/casARR.txt
+z          160 224 
+file       data/levels/AST/airp00.txt
+scene      data/scenes/st_intros/KINTROAIR.txt
+z          152 224 224
+file       data/levels/AST/airp01.txt
+z          305 467 224
+file       data/levels/AST/airp02.txt
+z          175 224 224
+file       data/levels/AST/airp03.txt
+next
+scene      data/scenes/02airp/airARR.txt
+z          160 224 
+file       data/levels/AST/chin00.txt
+scene      data/scenes/st_intros/AINTROCHI.txt
+z          167 224 224
+file       data/levels/AST/chin01.txt
+z          176 224
+file       data/levels/AST/chin02.txt
+z          196 244
+file       data/levels/AST/chin03.txt
+z          181 244
+file       data/levels/AST/chin04.txt
+z          456 647
+file       data/levels/AST/chin05.txt
+scene      data/scenes/st_intros/INTROTRK1.txt
+z          160 210
+file       data/levels/AST/chin06.txt
+next
+scene      data/scenes/03china/chiARR.txt
+z          160 224 
+file       data/levels/AST/trck00.txt
+z          125 179 224
+file       data/levels/AST/trck01.txt
+scene      data/scenes/04truck/truAARR.txt
+z          364 465
+file       data/levels/AST/trck02.txt
+next
+scene      data/scenes/04truck/truBARR.txt
+z          160 224 
+file       data/levels/AST/slum00.txt
+z          356 473
+file       data/levels/AST/slum02.txt
+z          140 217
+file       data/levels/AST/slum01.txt
+z          356 469
+file       data/levels/AST/slum03.txt
+next
+scene      data/scenes/05slum/sluARR.txt
+z          160 224 
+file       data/levels/AST/wood0A.txt
+scene      data/scenes/st_intros/INTROWOO.txt
+z          165 204
+file       data/levels/AST/wood01.txt
+next
+scene      data/scenes/06woods/wooARR.txt
+z          160 224 
+file       data/levels/AST/pala00.txt
+z          145 215
+file       data/levels/AST/palac00.txt
+scene      data/scenes/07palace/palARR.txt
+z          164 211
+file       data/levels/AST/palacY1.txt
+z          150 190
+file       data/levels/AST/palacY2.txt
+z	   163 224
+file       data/levels/AST/palacY3.txt
+z	   124 225
+file       data/levels/AST/palacY4.txt
+scene      data/scenes/08duke/00duARR.txt
+z	   184 330
+file       data/levels/AST/palacY5.txt
+scene      data/scenes/09end/endARR.txt
+scene      data/scenes/10epilo/epiARR.txt
+scene      data/scenes/11credit/crediARR.txt
+scene      data/scenes/11credit/creditsX.txt
+end
+
+
+
+#ADV BATMAN&ROBIN BRANCH
+branch     BATMAN
+z          100 224 
+file       data/levels/tz02.txt
+scene      Data/Scenes/xtra/bintro.txt
+select     data/bgs/selectB.txt
+z	    190 220
+file       data/levels/zxbat1.txt
+z	    180 220
+file       data/levels/zxbat2.txt
+z	    185 205
+file       data/levels/zxbat3.txt
+z	    176 176
+file       data/levels/zxbat4.txt
+z	   155 200
+file       data/levels/zxbat5.txt
+z	   215 215
+file       data/levels/zxbat6.txt
+z	   195 220
+file       data/levels/zxbat7.txt
+z	   196 196
+file       data/levels/zxbat8.txt
+scene      Data/Scenes/11credit/bcredit.txt
+end
+
+
+
+####################################################### ARCADE MODE: UNITED STATES
+set	   ARCADE_MODE_-_US_RELEASE
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+####################################################### ARCADE MODE: UNITED STATES
+
+z          159 224 224
+file       data/levels/USMODE/lasv01.txt
+z          207 215 224
+file       data/levels/USMODE/lasv02.txt
+z          152 224 224
+file       data/levels/USMODE/lasv03.txt
+next
+z          152 224 224
+file       data/levels/USMODE/airp01.txt
+z          305 467 224
+file       data/levels/USMODE/airp02.txt
+z          175 224 224
+file       data/levels/USMODE/airp03.txt
+next
+z          167 224 224
+file       data/levels/USMODE/chin01.txt
+z          176 224
+file       data/levels/USMODE/chin02.txt
+z          196 244
+file       data/levels/USMODE/chin03.txt
+z          181 244
+file       data/levels/USMODE/chin04.txt
+z          456 647
+file       data/levels/USMODE/chin05.txt
+next
+z          125 179 224
+file       data/levels/USMODE/trck01.txt
+z          364 465
+file       data/levels/USMODE/trck02.txt
+next
+z          356 473
+file       data/levels/USMODE/slum02.txt
+z          356 469
+file       data/levels/USMODE/slum03.txt
+next
+z          165 204
+file       data/levels/USMODE/wood01.txt
+next
+z          164 211
+file       data/levels/USMODE/palac01.txt
+z          150 190
+file       data/levels/USMODE/palac02.txt
+z	   163 224
+file       data/levels/USMODE/palac03.txt
+scene      data/scenes/11credit/credits.txt
+scene      data/scenes/10epilo/sdemon.txt
+END
+
+
+####################################################### ARCADE MODE: JAPAN
+set	   ARCADE_MODE_-_JP_RELEASE
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+####################################################### ARCADE MODE: JAPAN
+
+z          159 224 224
+file       data/levels/JPMODE/lasv01.txt
+z          207 215 224
+file       data/levels/JPMODE/lasv02.txt
+z          152 224 224
+file       data/levels/JPMODE/lasv03.txt
+next
+z          152 224 224
+file       data/levels/JPMODE/airp01.txt
+z          305 467 224
+file       data/levels/JPMODE/airp02.txt
+z          175 224 224
+file       data/levels/JPMODE/airp03.txt
+next
+z          167 224 224
+file       data/levels/JPMODE/chin01.txt
+z          176 224
+file       data/levels/JPMODE/chin02.txt
+z          196 244
+file       data/levels/JPMODE/chin03.txt
+z          181 244
+file       data/levels/JPMODE/chin04.txt
+z          456 647
+file       data/levels/JPMODE/chin05.txt
+next
+z          125 179 224
+file       data/levels/JPMODE/trck01.txt
+z          364 465
+file       data/levels/JPMODE/trck02.txt
+next
+z          356 473
+file       data/levels/JPMODE/slum02.txt
+z          356 469
+file       data/levels/JPMODE/slum03.txt
+next
+z          165 204
+file       data/levels/JPMODE/wood01.txt
+next
+z          164 211
+file       data/levels/JPMODE/palac01.txt
+z          150 190
+file       data/levels/JPMODE/palac02.txt
+z	   163 224
+file       data/levels/JPMODE/palac03.txt
+z	   124 225
+file       data/levels/JPMODE/palac04.txt
+z	   184 330
+file       data/levels/JPMODE/palac05.txt
+scene      data/scenes/11credit/credits.txt
+scene      data/scenes/10epilo/sdemon.txt
+END
+
+
+####################################################### ARCADE MODE: LEGENDARY!
+set	   ARCADE_MODE_-_LEGENDARY!
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          5
+credits        5
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select1k2.txt
+####################################################### ARCADE MODE: LEGENDARY!
+
+z          159 224 224
+file       data/levels/LMODE/lasv01.txt
+z          207 215 224
+file       data/levels/LMODE/lasv02.txt
+z          152 224 224
+file       data/levels/LMODE/lasv03.txt
+next
+z          152 224 224
+file       data/levels/LMODE/airp01.txt
+z          305 467 224
+file       data/levels/LMODE/airp02.txt
+z          175 224 224
+file       data/levels/LMODE/airp03.txt
+next
+z          167 224 224
+file       data/levels/LMODE/chin01.txt
+z          176 224
+file       data/levels/LMODE/chin02.txt
+z          196 244
+file       data/levels/LMODE/chin03.txt
+z          181 244
+file       data/levels/LMODE/chin04.txt
+z          456 647
+file       data/levels/LMODE/chin05.txt
+scene      data/scenes/st_intros/INTROTRK1.txt
+z          160 210
+file       data/levels/LMODE/chin06.txt
+next
+z          125 179 224
+file       data/levels/LMODE/trck01.txt
+z          364 465
+file       data/levels/LMODE/trck02.txt
+next
+z          356 473
+file       data/levels/LMODE/slum02.txt
+z          140 217
+file       data/levels/LMODE/slum01.txt
+z          356 469
+file       data/levels/LMODE/slum03.txt
+next
+z          165 204
+file       data/levels/LMODE/wood01.txt
+next
+z          145 215
+file       data/levels/LMODE/palac00.txt
+z          150 220
+file       data/levels/LMODE/palac01.txt
+z          168 195
+file       data/levels/LMODE/palac02.txt
+z          160 220
+file       data/levels/LMODE/palac03.txt
+z          168 195
+file       data/levels/LMODE/palac04.txt
+z          125 220
+file       data/levels/LMODE/palac05.txt
+z          168 195
+file       data/levels/LMODE/palac06.txt
+z          164 211
+file       data/levels/LMODE/palac07.txt
+z          150 190
+file       data/levels/LMODE/palac08.txt
+z	   163 224
+file       data/levels/LMODE/palac09.txt
+scene      data/scenes/11credit/credits.txt
+scene      data/scenes/10epilo/sdemon.txt
+END
+
+#SUPER METROID BRANCH
+branch     SMETROID
+z          100 224 
+file       data/levels/tz01.txt
+scene      Data/Scenes/xtra/zeb01.txt
+select     data/bgs/selectM.txt
+z	   1232 1232
+file       data/levels/zxtra1.txt
+z	   170 170
+file       data/levels/zxtra2.txt
+scene      Data/Scenes/xtra/zeb02.txt
+z	   770 770
+file       data/levels/zxtra3.txt
+z	   175 175
+file       data/levels/zxtra4.txt
+z	   202 202
+file       data/levels/zxtra5.txt
+z	   170 170
+file       data/levels/zxtra6.txt
+z	   769 769
+file       data/levels/zxtra7.txt
+z	   219 219
+file       data/levels/zxtra8.txt
+z	   190 190
+file       data/levels/zxtra9.txt
+z	   169 169
+file       data/levels/zxtraA.txt
+z	   150 150
+file       data/levels/zxtraB.txt
+scene      Data/Scenes/xtra/zeb03.txt
+z	   151 200
+file       data/levels/zxtraC.txt
+z	   187 187
+file       data/levels/zxtraE.txt
+z	   215 215
+file       data/levels/zxtraF.txt
+scene      Data/Scenes/11credit/zcredit.txt
+end
+
+###############################
+
+
+
+
+
+####################################################### +_ULTIMATE_CHALLENGE_+
+set	    ULTIMATE_CHALLENGE_MODE+
+ifcomplete     1
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          2
+credits        1
+noshare        1
+cansave        0
+custfade       250
+musicoverlap   1
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+
+z          168 195
+file       data/levels/uc1.txt
+z          125 220
+file       data/levels/uc2.txt
+z          145 215
+file       data/levels/uc3.txt
+end
+
+
+
+
+####################################################### NIGHTMARE 1
+set	   TWINS'_NIGHTMARE_LV1
+ifcomplete     2
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          2
+credits        1
+noshare        1
+cansave        0
+custfade       250
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+
+z          170 220 224
+file       data/levels/zdragon1.txt
+z          145 215
+file       data/levels/zdragon1x.txt
+end
+#####################################
+
+####################################################### NIGHTMARE 2
+set	   TWINS'_NIGHTMARE_LV2
+ifcomplete     2
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          2
+credits        1
+noshare        1
+cansave        0
+custfade       250
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+
+z          153 215
+file       data/levels/zdragon2.txt
+z          145 215
+file       data/levels/zdragon2x.txt
+end
+#####################################
+
+####################################################### NIGHTMARE 3
+set	   TWINS'_NIGHTMARE_LV3
+ifcomplete    2
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          2
+credits        1
+noshare        1
+cansave        0
+custfade       250
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+#####################################
+
+z	   153 224
+file       data/levels/zdragon3.txt
+z          145 215
+file       data/levels/zdragon3x.txt
+end
+#####################################
+
+
+####################################################### DUKE'S REVENGE
+set	   DUKE'S_REVENGE
+ifcomplete     2
+disablehof     1
+noshowcomplete 1
+typemp         2
+lives          3
+credits        1
+noshare        1
+cansave        0
+custfade       250
+skipselect  
+scene      data/scenes/tran.txt
+select     data/bgs/select2.txt
+#####################################
+
+z	   184 330
+file       data/levels/zdragon4.txt
+z          145 215
+file       data/levels/zdragon4x.txt
+end
+
+
+
+
+
+
+
+
+
