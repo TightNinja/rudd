@@ -2,7 +2,7 @@ name          JimmyR
 candamage     enemy obstacle pshot shot npc
 type          none
 subject_to_obstacle 0
-health        100
+health        250
 mp            100
 speed         7
 throw         2 3
@@ -25,8 +25,22 @@ icon          data/chars/1jimmy/iconr.gif 1
 #parrow         
 #parrow2 
 
-animationscript   data/scripts/lib001.c
-#didhitscript      data/scripts/didhit.c
+blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
+grabbackwalk    1
+noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1= no air canceling
+nocheats        0          #enable cheats 0=true 1=false
+nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
+jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
+
+
+
+onmoveascript	   data/scripts/hithead.c
+script             data/scripts/spawn.c
+animationscript    data/scripts/lib001.c
+ondrawscript	   data/scripts/shadowon.c
+onblockWscript     data/scripts/spikesw2.c 
+ondoattackscript     data/scripts/multihits.c
+ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
 
 palette        data/chars/1jimmy/icon.gif   
 alternatepal   data/chars/1jimmy/alter01.gif   
