@@ -11,7 +11,7 @@ falldie       2     #---- 0 = die immediately, 1=die specific state or event, 2=
 jugglepoints  15    #juggle hp before entity can no longer be juggled
 chargerate    2     #MP rate of charge
 speed         7     #charater movement speed max is 20
-throw         2 3   #Billy can throw an enemy within a range of 2 units using the throw animation or type 3. Increase first number to throw farther, second for anim.
+throw         2 3   #(distance) (height)
 throwdamage   20    #throw damage
 holdblock     2     #maintain block stance by holding block "s" button 0=false, 1=until pain 2=hold
 jumpheight    2.43  #jump height max 4.0 -  higher number = higher jump
@@ -38,12 +38,12 @@ icon          data/chars/1billy/icon.gif 1
 #########################################################################-------Kit's Additions---#################################################################
 
 blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
-noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1= no air canceling
+noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1 = only after anim fishies 2 = no air canceling
 nocheats        0          #enable cheats 0=true 1=false
 nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
 jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
-
-
+guardpoints     1          #only weapon attacks use up guardpoints
+guardrate       0.5
 
 onmoveascript	   data/scripts/hithead.c
 script             data/scripts/spawn.c
@@ -52,9 +52,12 @@ ondrawscript	   data/scripts/shadowon.c
 onblockWscript     data/scripts/spikesw2.c 
 ondoattackscript     data/scripts/multihits.c
 ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
+#takedamagescript
+#didhitscript       data/scripts/movedamagelog.c  #dameage log
 
 
 
+#####-----HURRICANE KICK 
 
 anim freespecial98  
 	 loop       0
@@ -74,7 +77,7 @@ anim freespecial98
          frame      data/chars/1billy/hk04.gif
          frame      data/chars/1billy/hk05.gif
 	attack.block.penetrate 1
-	attack.damage.force 9
+	attack.damage.force 10
 	attack.damage.type 13
 	attack.effect.hit.flash.disable 1
 	attack.position.x 80
@@ -129,7 +132,7 @@ anim freespecial98
 ##DUCK
 
 anim freespecial200
-    loop       1 3 3
+    loop       0
     delay      6
     offset     80 129
 	bbox.position.x 63
@@ -147,12 +150,14 @@ anim freespecial200
 	 cancel     1 3 0 s   freespecial197 #more control over block
 	 cancel     0 2 0 d f d f a4  freespecial59 #CVS ISM SUPER ART I
 	 cancel     0 2 0 d f d f a3  freespecial58 #CVS ISM SUPER ART II
+	 cancel     0 2 0 u u  freespecial190 #UP DODGE
+	 cancel     0 2 0 d d  freespecial189 #DOWN DODGE
 	 
 	 	attack.reaction.fall.velocity.y -1.0
          frame      data/chars/1billy/fin02.gif
-	 delay      5
+	 delay      10
          frame      data/chars/1billy/dodge.gif
-     delay      45 
+     delay      55 
          frame      data/chars/1billy/dodge.gif
          
          
@@ -276,7 +281,7 @@ anim freespecial199
 	 bbox       0 0 0 0
 	 jumpframe  1 2 0 0
  	 landframe  17
-	 energycost 20
+	 energycost 15
 	 mponly     1
 	attack.effect.hit.flash.model Qflash2
 	attack.effect.hit.sound.path data/sounds/beats.wav
@@ -322,7 +327,7 @@ anim freespecial199
 	 delay      14
          frame      data/chars/1billy/rise02.gif
 
-#JUMPING BACK KICK (freespecial 84 dd3)
+#####----FLYING JUMPING BACK KICK (freespecial 84 dd3)
 
 anim freespecial195
 	 loop       0
@@ -372,8 +377,7 @@ anim freespecial195
 
 
 
-com d f d f a2    freespecial86  #ULTRA - MUSICAL
-com       j b a2  freespecial195 #JUMPING BACK KICK
+com   d f d f a2  freespecial86  #ULTRA - MUSICAL
 
 
 
@@ -383,8 +387,159 @@ com       j b a2  freespecial195 #JUMPING BACK KICK
 
 
 
-################################################################################-------Kit's Additions----
+########------UP DODGE (back dodge animation)
+         
+anim freespecial190
 
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1.0 0 -1.0 #1=frame jump starts, #2 1.8=(y axis speed) #3 -1.2=(x axis speed, -1.0=left, 1.0=right) #4 0 = (z axis speed -1.0=up, 1.0=down) #5 dust land
+	 landframe  7
+	 energycost 15
+	 mponly     1
+	 
+	 cancel 5 7 0 a2 freespecial30  #awesome spin kick
+	 cancel 0 2 0 s  freespecial36  #FOWARD LEAP
+	 cancel 5 7 0 j  freespecial24   #flying burn back kick (cross)
+	 cancel 4 7 0 a  Freespecial34  #REVERSE BODY SLAM
+	 
+@cmd shadow 10 25 60 0 2 80 80 250
+         frame      data/chars/1billy/rise02.gif
+	 sound      data/sounds/dragon6.wav
+	 delay      10
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/bfl01.gif
+         frame      data/chars/1billy/bfl02.gif
+         frame      data/chars/1billy/bfl03.gif
+         frame      data/chars/1billy/bfl04.gif
+         frame      data/chars/1billy/bfl05.gif
+	 delay      20
+         frame      data/chars/1billy/bfl06.gif
+	 delay      15
+         frame      data/chars/1billy/fin01.gif
+         
+########------DOWN DODGE (back dodge animation)
+         
+anim freespecial189
+
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1.0 0 1.0 #1=frame jump starts, #2 1.8=(y axis speed) #3 -1.2=(x axis speed, -1.0=left, 1.0=right) #4 0 = (z axis speed -1.0=up, 1.0=down) #5 dust land
+	 landframe  7
+	 energycost 15
+	 mponly     1
+	 
+	 cancel 5 7 0 a2  freespecial30  #awesome spin kick
+	 cancel 0 2 0 s  freespecial36  #FOWARD LEAP
+	 cancel 5 7 0 j freespecial24  #flying burn back kick (cross)
+	 cancel 4 7 0 a  freespecial34  #REVERSE BODY SLAM
+	 
+         frame      data/chars/1billy/rise02.gif
+	 sound      data/sounds/dragon6.wav
+	 delay      10
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/bfl01.gif
+         frame      data/chars/1billy/bfl02.gif
+         frame      data/chars/1billy/bfl03.gif
+         frame      data/chars/1billy/bfl04.gif
+         frame      data/chars/1billy/bfl05.gif
+	 delay      20
+         frame      data/chars/1billy/bfl06.gif
+	 delay      15
+         frame      data/chars/1billy/fin01.gif
+         
+         
+
+#####-----#FWD DODGE
+
+anim freespecial100
+	 loop       0
+	 delay      6
+	 offset     80 129
+	bbox.position.x 63
+	bbox.position.y 122
+	bbox.size.x 34
+	bbox.size.y 7
+	 move       2
+	 flipframe  21 #face enemy after you get behind them!!
+	 energycost 10  #-----added
+	 mponly     1   #------added
+	
+	 cancel 5 7 0 j freespecial31 #fwd dodge into knee to face
+	 cancel 0 5 0 s freespecial99 #fwd dodge back dodge
+	 cancel 5 7 0 a2 freespecial26  #fwd dodge into jump axe kick combo (2 button press)
+	 cancel 4 7 0 a freespecial30 #elbo combi
+@cmd shadow 10 25 60 0 2 80 80 250
+         frame      data/chars/1billy/fin01.gif
+	 move       4
+	 delay      2
+	 sound      data/sounds/dragon9.wav
+         frame      data/chars/1billy/cw01.gif
+         frame      data/chars/1billy/cw01.gif
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/cw01.gif
+         frame      data/chars/1billy/cw01.gif
+         frame      data/chars/1billy/cw02.gif
+         frame      data/chars/1billy/cw02.gif
+         frame      data/chars/1billy/cw02.gif
+         frame      data/chars/1billy/cw02.gif
+         frame      data/chars/1billy/cw03.gif
+         frame      data/chars/1billy/cw03.gif
+         frame      data/chars/1billy/cw03.gif
+         frame      data/chars/1billy/cw03.gif
+         frame      data/chars/1billy/cw04.gif
+         frame      data/chars/1billy/cw04.gif
+         frame      data/chars/1billy/cw04.gif
+         frame      data/chars/1billy/cw04.gif
+         frame      data/chars/1billy/cw05.gif
+         frame      data/chars/1billy/cw05.gif
+         frame      data/chars/1billy/cw05.gif
+         frame      data/chars/1billy/cw05.gif
+	 move       0
+	 delay      15
+         frame      data/chars/1billy/fin01.gif
+
+######-----BACK DODGE
+
+anim freespecial99
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 jumpframe  1 1.9 -1.4 0 #1=frame jump starts, 1.8=(y axis speed) -1.2=(x axis speed, -1.0=left, 1.0=right) 0 = (z axis speed -1.0=up, 1.0=down) 
+	 landframe  7
+	 energycost 10
+	 mponly     1
+	 cancel 5 7 0 j  freespecial30  #backdoge into awesome spin kick
+	 cancel 5 7 0 s freespecial100 #backdoge another fwd dodge
+	 cancel 5 7 0 a2 freespecial87 #dive kick
+	 cancel 4 7 0 a freespecial91 #scorp piledriver
+@cmd shadow 10 25 60 0 2 80 80 250
+         frame      data/chars/1billy/rise02.gif
+	 sound      data/sounds/dragon6.wav
+	 delay      10
+	 sound      data/sounds/punch1.wav
+         frame      data/chars/1billy/bfl01.gif
+         frame      data/chars/1billy/bfl02.gif
+         frame      data/chars/1billy/bfl03.gif
+         frame      data/chars/1billy/bfl04.gif
+         frame      data/chars/1billy/bfl05.gif
+	 delay      20
+         frame      data/chars/1billy/bfl06.gif
+	 delay      15
+         frame      data/chars/1billy/fin01.gif
+         
+         
+         
+
+
+
+
+################################################################################-------END OF Additions BUT FIRST TRY SO NOT COMPLETE----
 
 
 fmap           21
@@ -1771,31 +1926,16 @@ anim follow1
 	 loop       0
 	 delay      6
 	 offset     80 129
-	bbox.position.x 68
-	bbox.position.y 83
-	bbox.size.x 24
-	bbox.size.y 44
+	 bbox       68 83 24 44
 @cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
 @cmd ani0020 openborconstant("ANI_FOLLOW2") openborconstant("ANI_PAIN7")
          frame      data/chars/1billy/b101.gif
          frame      data/chars/1billy/b201.gif
 	 delay      10
-	attack.block.penetrate 1
-	attack.damage.force 13
-	attack.damage.type 7
-	attack.effect.hit.flash.disable 0
-	attack.position.x 85
-	attack.position.y 78
-	attack.reaction.fall.force 0
-	attack.reaction.fall.velocity.x 0.8
-	attack.reaction.fall.velocity.y 1.3
-	attack.reaction.fall.velocity.z 0.0
-	attack.reaction.pause.time 8
-	attack.size.x 24
-	attack.size.y 26
-	attack.size.z.background 5
+	 attack7    85 78 24 26 13 0 1 0 8 5
 	 jugglecost 5
 	 forcedirection -1
+	 dropv      1.3 0.8 0
          frame      data/chars/1billy/b202.gif
 	 delay      9
 	 attack7    0 0 0 0
@@ -1809,12 +1949,9 @@ anim follow2
 	 loop       0
 	 delay      10
 	 offset     80 129
-	bbox.position.x 68
-	bbox.position.y 83
-	bbox.size.x 24
-	bbox.size.y 44
+	 bbox       68 83 24 44
+	 hitfx      data/sounds/beat3.wav
 @cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
-	attack.effect.hit.sound.path data/sounds/beat3.wav
          frame      data/chars/1billy/b301.gif
          frame      data/chars/1billy/b302.gif
 	 delay      7
@@ -1822,22 +1959,10 @@ anim follow2
          frame      data/chars/1billy/b303.gif
          frame      data/chars/1billy/b404.gif
          frame      data/chars/1billy/b405.gif
-	attack.block.penetrate 1
-	attack.damage.force 19
-	attack.damage.type 14
-	attack.effect.hit.flash.disable 0
-	attack.position.x 89
-	attack.position.y 78
-	attack.reaction.fall.force 1
-	attack.reaction.fall.velocity.x 1.5
-	attack.reaction.fall.velocity.y 2.0
-	attack.reaction.fall.velocity.z 0.0
-	attack.reaction.pause.time 8
-	attack.size.x 29
-	attack.size.y 23
-	attack.size.z.background 5
+	 attack14   89 78 29 23 19 1 1 0 8 5
 	 jugglecost 5
 	 forcedirection -1
+	 dropv      2 1.5 0
          frame      data/chars/1billy/b406.gif
 	 attack14   0 0 0 0
          frame      data/chars/1billy/b407.gif
@@ -1852,43 +1977,21 @@ anim follow3
 	 loop       0
 	 delay      6
 	 offset     80 129
-	bbox.position.x 68
-	bbox.position.y 83
-	bbox.size.x 24
-	bbox.size.y 44
+	 bbox       68 83 24 44
 @cmd ani0020 openborconstant("ANI_FREESPECIAL102") openborconstant("ANI_FALL102")
          frame      data/chars/1billy/b101.gif
          frame      data/chars/1billy/b201.gif
 	 delay      10
-	attack.block.penetrate 1
-	attack.damage.force 17
-	attack.damage.type 1
-	attack.effect.hit.flash.disable 0
-	attack.position.x 85
-	attack.position.y 78
-	attack.reaction.fall.force 1
-	attack.reaction.fall.velocity.x 0.7
-	attack.reaction.fall.velocity.y 2.0
-	attack.reaction.fall.velocity.z 0.0
-	attack.reaction.pause.time 8
-	attack.size.x 24
-	attack.size.y 26
-	attack.size.z.background 5
+	 attack     85 78 24 26 17 1 1 0 8 5
 	 jugglecost 5
 	 forcedirection -1
+	 dropv      2 0.7 0
          frame      data/chars/1billy/b202.gif
 	 delay      9
 	 attack     0 0 0 0
          frame      data/chars/1billy/b203.gif
          frame      data/chars/1billy/b104.gif
          
-         
-         
-         
-##need to be here any effect?
-
-anim attackbackward  
-
 
 
 
@@ -1899,10 +2002,10 @@ anim freespecial194
 	 loop       0
 	 delay      7
 	 offset     80 129
-	bbox.position.x 68
-	bbox.position.y 83
-	bbox.size.x 24
-	bbox.size.y 44
+	 bbox.position.x 68
+	 bbox.position.y 83
+	 bbox.size.x 24
+	 bbox.size.y 44
 	 sound      data/sounds/punch5.wav
 @cmd ani0020 openborconstant("ANI_FREESPECIAL194") openborconstant("ANI_FALL102")
 @cmd ani0020 openborconstant("ANI_FOLLOW1") openborconstant("ANI_PAIN3")
@@ -1968,16 +2071,17 @@ anim freespecial194
          frame      data/chars/1billy/b504.gif
 	 attack     0 0 0 0 
          frame      data/chars/1billy/b505.gif
-      delay 14  
+      delay 2  
          frame      data/chars/1billy/b501.gif
-      delay 5  
+      delay 2  
+      bbox none
          frame      data/chars/1billy/b508.gif
-	 delay      22
+	 delay      1
+	 bbox none
          frame      data/chars/1billy/a402.gif
 
-anim attackbackward
 
-anim grabbackward
+
 
 
 
@@ -1997,9 +2101,12 @@ anim jump
 	 offset     80 129
 	 bbox       68 83 24 44
 	 sound      data/sounds/jump1.wav
-	 cancel     1 3 0 a2 freespecial50
-	 cancel     1 3 0 s  freespecial91
-	 cancel     2 3 0 j freespecial98    #spining cyclone DD2
+	 
+	 cancel     1 3 0 b a2  freespecial50 #jumping back kick
+	 cancel     1 3 0 s     freespecial91 #AIR GRAB
+	 cancel     2 3 0 j     freespecial98 #spining cyclone DD2
+	 cancel     2 3 0 a2  freespecial187 #DIVE KICK 2
+	 
          frame      data/chars/1billy/ju01.gif
 	 delay      10
 	 bbox       70 85 21 28
@@ -2008,24 +2115,44 @@ anim jump
          frame      data/chars/1billy/ju02.gif
 	 bbox       68 83 24 44
          frame      data/chars/1billy/ju01.gif
+         
+######--  JUMPING BACK KICK (orignal jumpattack2)
 
-anim jumpattack2
+anim freespecial50
 	 loop       0
 	 delay      6
 	 offset     80 129
-	 bbox       69 88 24 25
+	bbox.position.x 69
+	bbox.position.y 88
+	bbox.size.x 24
+	bbox.size.y 25
 	 flipframe  0
-	 hitfx      data/sounds/beat2.wav
+	attack.effect.hit.sound.path data/sounds/beat2.wav
          frame      data/chars/1billy/ak02.gif
          frame      data/chars/1billy/ak03.gif
          delay      15
-	 attack92   76 102 27 23 6 1 0 0 12 5
+	attack.block.penetrate 0
+	attack.damage.force 6
+	attack.damage.type 92
+	attack.effect.hit.flash.disable 0
+	attack.position.x 76
+	attack.position.y 102
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.2
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 27
+	attack.size.y 23
+	attack.size.z.background 5
 	 forcedirection -1
-	 dropv      1.5 1.2 0
          frame      data/chars/1billy/ak04.gif
          delay      12
 	 attack92   0 0 0 0
          frame      data/chars/1billy/ju01.gif
+         
+         
+#####---SDD AERIAL FLOAT KICK
 
 anim jumpattack3
 	 loop       0
@@ -2235,9 +2362,53 @@ anim jumpattack
 	 bbox       68 83 24 44
          frame      data/chars/1billy/ju01.gif
 
-#DIVEKICK
+######----DIVE KICK (original ANIM freespecial 50)
 
-anim freespecial50
+anim jumpattack2
+
+	 loop       0
+	 delay      6
+	 offset     80 129
+	bbox.position.x 69
+	bbox.position.y 88
+	bbox.size.x 24
+	bbox.size.y 25
+	 jumpframe  2 -3 3 0
+	 landframe  3
+	 sound      data/sounds/punch1.wav
+	attack.effect.hit.sound.path data/sounds/beat2.wav
+         frame      data/chars/1billy/ak02.gif
+         frame      data/chars/1billy/ak03.gif
+         delay      99
+	attack.block.penetrate 0
+	attack.damage.force 6
+	attack.damage.type 11
+	attack.effect.hit.flash.disable 0
+	attack.position.x 76
+	attack.position.y 102
+	attack.reaction.fall.force 1
+	attack.reaction.fall.velocity.x 1.2
+	attack.reaction.fall.velocity.y 1.5
+	attack.reaction.fall.velocity.z 0.0
+	attack.reaction.pause.time 12
+	attack.size.x 27
+	attack.size.y 23
+	attack.size.z.background 5
+	 forcedirection -1
+         frame      data/chars/1billy/ak04.gif
+         delay      12
+	 attack11   0 0 0 0
+	
+	bbox.position.x 53
+	bbox.position.y -71
+	bbox.size.x 1
+	bbox.size.y 1
+         frame      data/chars/1billy/item.gif
+         
+######----DIVE KICK 2
+
+anim freespecial187
+
 	 loop       0
 	 delay      6
 	 offset     80 129
@@ -2309,7 +2480,8 @@ anim block
 	 cancel     1 3 0 b a2 freespecial194 #BACK KICK
 	 cancel     0 2 0 d f d f a4  freespecial59 #CVS ISM SUPER ART I
 	 cancel     0 2 0 d f d f a3  freespecial58 #CVS ISM SUPER ART II
-	 
+	 cancel     0 2 0 u u  freespecial190 #UP DODGE
+	 cancel     0 2 0 d d  freespecial189 #DOWN DODGE
          frame      data/chars/1billy/a301.gif
          frame      data/chars/1billy/block.gif
          frame      data/chars/1billy/block.gif
@@ -2350,6 +2522,7 @@ anim freespecial196
 	 attack5    0 0 0 0 
          frame      data/chars/1billy/a601.gif  
 
+#####----LEAP ATTACK
 
 anim freespecial36
 	 loop       0
@@ -2359,7 +2532,7 @@ anim freespecial36
 	 jumpframe  5 1.8 1.5 0
 	 landframe  8
 	 dropframe  6
-	 energycost 25
+	 energycost 15
          mponly     1	
 	 sound      data/sounds/punch7.wav
          frame      data/chars/1billy/fin02.gif
@@ -2404,19 +2577,26 @@ anim grab
     setlocalvar("Target" + self, target);
   }
 @end_script
+
 	 delay      1
 	 offset     80 129
-	 cancel     2 3 0 a2  freespecial51
-	 cancel     2 3 0 j   freespecial52
-	 cancel     2 3 0 s   freespecial101
-	 cancel     2 3 0 a3  freespecial82
-	 cancel     2 3 0 a4  freespecial24
+	bbox.position.x 77
+	bbox.position.y 83
+	bbox.size.x 24
+	bbox.size.y 44
+	 cancel     2 3 0 a2  freespecial51 #gatling kicks
+	 cancel     2 3 0 j   freespecial52 #gatling punches
+	 cancel     2 3 0 s   freespecial101 #coop leg toss
+	 cancel     2 3 0 a3  freespecial82 #escape
+	 cancel     2 3 0 a4  freespecial24 #cross
+	 cancel     2 3 0 b a2  freespecial194 #GRABBING BACK KICKS
+
          frame      data/chars/1billy/grab01.gif
 	 delay      10
          frame      data/chars/1billy/grab01.gif
          frame      data/chars/1billy/grab02.gif
 
-#GATLING KICKS
+#####---GATLING KICKS
          
 anim freespecial51  
 	 delay      8
@@ -2424,6 +2604,8 @@ anim freespecial51
 @cmd slamstart
 @cmd antiwall2 85 -10 0
 @cmd position 39 38 1 0 0
+energycost -5
+mponly 1
 	 sound      data/sounds/grab.wav
          frame      data/chars/1billy/ho01.gif
          frame      data/chars/1billy/ho06.gif
@@ -2467,14 +2649,16 @@ anim freespecial51
 	 delay      18
          frame      data/chars/1billy/tr05.gif
 
-#GATLING PUNCH
-         
+#####-----GATLING PUNCH
+        
 anim freespecial52
 	 delay      7
 	 offset     80 129
 @cmd slamstart
 @cmd antiwall2 85 -10 0
 @cmd position 39 38 1 0 0
+energycost -5
+mponly 1
 	 sound      data/sounds/grab.wav
          frame      data/chars/1billy/ho01.gif
          frame      data/chars/1billy/ho02.gif
@@ -2838,7 +3022,7 @@ anim grabdown2
 	 attack     0 0 0 0 
          frame      data/chars/1billy/g404.gif
 
-#throw
+#####-----GRAB SHOULDER THROW 
 
 anim grabbackward
 	 loop       0
@@ -2952,7 +3136,7 @@ anim freespecial90
 	 offset     80 129
 	 bbox       0 0 0 0
 	 fastattack 1
-	 energycost 60
+	 energycost 40
 	 mponly     1
 	 jumpframe  2 2.5 0.5 0
 	 dropframe  4
@@ -3058,6 +3242,11 @@ anim rise
 	 cancel     1 2 0 a4 freespecial82
 	 cancel     1 3 0 a    freespecial198 #Hyper Upper 198 for super
 	 cancel     1 3 0 a2   freespecial199 #Hyper Knee  199 for super
+	 cancel     1 3 0 f f  freespecial100 #fwd dodge
+	 cancel     1 3 0 b b  freespecial99 #back dodge
+	 cancel     0 2 0 u u  freespecial190 #UP DODGE
+	 cancel     0 2 0 d d  freespecial189 #DOWN DODGE
+         
          frame      data/chars/1billy/fall03.gif
 	 delay      12
          frame      data/chars/1billy/rise01.gif
@@ -3070,7 +3259,7 @@ anim freespecial82
 	 bbox       0 0 0 0
 	 jumpframe  8 2 0 0
 	 landframe  19
-	 energycost 30
+	 energycost 25
 	 mponly     1
 	 sound      data/sounds/dragon6.wav
          frame      data/chars/1billy/b101.gif
@@ -3229,7 +3418,7 @@ anim freespecial6
 	bbox.position.y 79
 	bbox.size.x 6
 	bbox.size.y 33
-	 energycost 35
+	 energycost 25
 	 mponly     1
 	 jumpframe  3 1.5 1 0
 	 landframe  35
@@ -3535,85 +3724,10 @@ anim death
          frame      data/chars/1billy/fall02.gif
 	 sound      data/sounds/fall1.wav
          frame      data/chars/1billy/fall03.gif
+         
 
-#FWD DODGE
-
-anim freespecial100
-	 loop       0
-	 delay      6
-	 offset     80 129
-	bbox.position.x 63
-	bbox.position.y 122
-	bbox.size.x 34
-	bbox.size.y 7
-	 move       2
-	 flipframe  21 #face enemy after you get behind them!!
-	 energycost 10  #-----added
-	 mponly     1   #------added
-	
-	 cancel 5 7 0 j freespecial31 #fwd dodge into knee to face
-	 cancel 0 5 0 s freespecial99 #fwd dodge back dodge
-	 cancel 5 7 0 a2 freespecial26  #fwd dodge into jump axe kick combo (2 button press)
-	 cancel 4 7 0 a freespecial30 #elbo combi
-@cmd shadow 10 25 60 0 2 80 80 250
-         frame      data/chars/1billy/fin01.gif
-	 move       4
-	 delay      2
-	 sound      data/sounds/dragon9.wav
-         frame      data/chars/1billy/cw01.gif
-         frame      data/chars/1billy/cw01.gif
-	 sound      data/sounds/punch1.wav
-         frame      data/chars/1billy/cw01.gif
-         frame      data/chars/1billy/cw01.gif
-         frame      data/chars/1billy/cw02.gif
-         frame      data/chars/1billy/cw02.gif
-         frame      data/chars/1billy/cw02.gif
-         frame      data/chars/1billy/cw02.gif
-         frame      data/chars/1billy/cw03.gif
-         frame      data/chars/1billy/cw03.gif
-         frame      data/chars/1billy/cw03.gif
-         frame      data/chars/1billy/cw03.gif
-         frame      data/chars/1billy/cw04.gif
-         frame      data/chars/1billy/cw04.gif
-         frame      data/chars/1billy/cw04.gif
-         frame      data/chars/1billy/cw04.gif
-         frame      data/chars/1billy/cw05.gif
-         frame      data/chars/1billy/cw05.gif
-         frame      data/chars/1billy/cw05.gif
-         frame      data/chars/1billy/cw05.gif
-	 move       0
-	 delay      15
-         frame      data/chars/1billy/fin01.gif
-
-#BACK DODGE
-
-anim freespecial99
-	 loop       0
-	 delay      12
-	 offset     80 129
-	 bbox       0
-	 jumpframe  1 1.9 -1.4 0 #1=frame jump starts, 1.8=(y axis speed) -1.2=(x axis speed, -1.0=left, 1.0=right) 0 = (z axis speed -1.0=up, 1.0=down) 
-	 landframe  7
-	 energycost 10
-	 mponly     1
-	 cancel 5 7 0 j  freespecial30  #backdoge into awesome spin kick
-	 cancel 5 7 0 s freespecial100 #backdoge another fwd dodge
-	 cancel 5 7 0 a2 freespecial50 # dive kick
-	 cancel 4 7 0 a freespecial91 #scorp piledriver
-@cmd shadow 10 25 60 0 2 80 80 250
-         frame      data/chars/1billy/rise02.gif
-	 sound      data/sounds/dragon6.wav
-	 delay      10
-	 sound      data/sounds/punch1.wav
-         frame      data/chars/1billy/bfl01.gif
-         frame      data/chars/1billy/bfl02.gif
-         frame      data/chars/1billy/bfl03.gif
-         frame      data/chars/1billy/bfl04.gif
-         frame      data/chars/1billy/bfl05.gif
-	 delay      20
-         frame      data/chars/1billy/bfl06.gif
-	 delay      15
-         frame      data/chars/1billy/fin01.gif
+         
+         
 
 #########styles switch
 load ssf1
@@ -3633,7 +3747,7 @@ anim freespecial2
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+1); 
+changeentityproperty(self, "mp", power+2); 
 @end_script
 	 weaponframe 9 1
      cancel     4 5 0 a  freespecial20 
@@ -3663,7 +3777,7 @@ anim freespecial3
 @script
 void self = getlocalvar("self"); //get the self var
 void power = getentityproperty(self,"mp"); // get target's current mp
-changeentityproperty(self, "mp", power+1); 
+changeentityproperty(self, "mp", power+2); 
 @end_script
 	 weaponframe 9 2
  
@@ -3697,7 +3811,7 @@ anim freespecial20
 	 delay      5
 	 offset     80 129
 	 bbox       68 83 24 44
-	 energycost 35
+	 energycost 25
 	 mponly     1
 	 sound      data/sounds/punch3.wav
 	 cancel     4 7 0 a  freespecial21
@@ -3781,7 +3895,7 @@ anim freespecial22
 	 cancel     4 6 0 j  freespecial24 #cross
 	 cancel     4 6 0 s  freespecial35 #knockback
 	 cancel     4 6 1 a4 freespecial31 #throw knee to the face
-	 cancel     4 6 1 a3 freespecial34 #back throw
+	 cancel     4 6 1 a3 freespecial34 #REVERSE BODY SLAM
 	attack.effect.hit.sound.path data/sounds/beatbl1.wav
          frame      data/chars/1billy/pcom02.gif
          frame      data/chars/1billy/pcom02.gif
@@ -4019,14 +4133,14 @@ anim freespecial25
 	 loop       0
 	 delay      7
 	 offset     80 129
-	 energycost 35
+	 energycost 25
 	 mponly     1
 	 cancel     8 9 0 a2 freespecial26
 	 cancel     8 9 0 a  freespecial29
 	 cancel     8 9 0 j  freespecial24 #cross
 	 cancel     8 9 0 s  freespecial35 #knockback
 	 cancel     8 9 1 a4 freespecial31 #throw knee to the face
-	 cancel     8 9 1 a3 freespecial34 #back throw
+	 cancel     8 9 1 a3 freespecial34 #REVERSE BODY SLAM
 	 bbox       68 83 24 44
 	 jumpframe  2 1.5 0.4 0
 	 landframe  8
@@ -4221,7 +4335,7 @@ anim freespecial15
 	 delay      6
 	 offset     80 129
 	 bbox       68 83 24 44
-	 energycost 33
+	 energycost 25
 	 mponly     1
 	 cancel     10 11 1 a2 freespecial16
 	 cancel     10 11 1 a  freespecial19
@@ -4372,7 +4486,7 @@ anim freespecial28
 	 landframe  7
 	 flipframe  4
 	 move       1
-	 energycost 35
+	 energycost 25
 	 mponly     1
 	 followanim 18
 	 followcond 3
@@ -4866,7 +4980,7 @@ anim follow6
 	 delay      13
          frame      data/chars/1billy/rise02.gif
 
-#kick throw
+#####----REVERSE BODY SLAM
 
 anim freespecial34
 	 loop       0
@@ -5410,7 +5524,7 @@ anim freespecial66
 	 load       slink
 	 custentity slink
 	 spawnframe 0 0 1 0 0
-	 energycost 25
+	 energycost 10
 	 mponly     1
 	 cancel     24 26 4 a  freespecial67  #punch auto triple 2
 	 cancel     24 26 4 a2 freespecial68  #kick auto triple 2
@@ -5507,7 +5621,7 @@ anim freespecial80
 	 custentity slink
 	 spawnframe 0 0 1 0 0
 	 hitflash   Qflash2
-	 energycost 25
+	 energycost 10
 	 mponly     1
          frame      data/chars/1billy/b301.gif
          frame      data/chars/1billy/b302.gif
@@ -9827,7 +9941,7 @@ anim freespecial58
 	 loop       0
 	 offset     80 129
 	 bbox       0
-	 energycost 40
+	 energycost 50
 	 mponly     1
 	 jumpframe  2 2 0.2
 	 landframe  24

@@ -7,7 +7,7 @@ mp            100
 speed         7
 throw         2 3
 throwdamage   20
-holdblock     1
+holdblock     2
 jumpheight    2.43
 jumpspeed     8
 grabdistance  35
@@ -25,22 +25,14 @@ icon          data/chars/1billy/iconr.gif 1
 #parrow         
 #parrow2 
 
-#-------Kit's Additions---------------------------------------------------------------------------------
+#########################################################################-------Kit's Additions---#################################################################
 
-blockback     	1
-blockratio      1
-mprate       	1
-mpblock 		1
-grabwalk 		1
-grabturn 		1
+blockback     	1          #--1=can block attacks from behind, currently cannot turn around, 0=no backblock
 grabbackwalk    1
-guardpoints 	0
-noaircancel     1
-nocheats        0
-#nodebug        1
-jumpmove 1                 #-------change orientation in mid air during jump 
-
-
+noaircancel     1          #0=air canceling allowed multiple kick in a single jump 1= no air canceling
+nocheats        0          #enable cheats 0=true 1=false
+nodebug         0          #enable in game debug men (show hit boxes) 0=true 1= false
+jumpmove        1          #change direction you face in mid air during jump, cannot change trajectory
 
 
 
@@ -48,15 +40,12 @@ onmoveascript	   data/scripts/hithead.c
 script             data/scripts/spawn.c
 animationscript    data/scripts/lib001.c
 ondrawscript	   data/scripts/shadowon.c
-#didhitscript      data/scripts/didhit.c
 onblockWscript     data/scripts/spikesw2.c 
-ondoattackscript   data/scripts/multihits.c
-ondoattackscript   data/scripts/mpincreaseonhit.c   #-------Kit's Additions----
-onblockscript      data/scripts/mpdecreaseonhit.c   #-------Kit's Additions----
-#ondrawscript 	   data/scripts/mpincreasebystyle.c		#-------Kit's Additions----
+ondoattackscript     data/scripts/multihits.c
+ondoattackscript     data/scripts/mpincreaseonhit.c # +1MP on succesful
 
+#########################################################################-------Kit's Additions---#################################################################
 
-#-------Kit's Additions---------------------------------------------------------------------------------
 
 
 

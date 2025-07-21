@@ -1,29 +1,28 @@
 name          CBilly
 type          player
 candamage     enemy obstacle pshot npc
-running       12 2.2 1.5 1 0 
-subject_to_obstacle 0
-health        250
-mp            100
-falldie       2
-jugglepoints  20
-chargerate    5
-speed         7
-#speed         10
-throw         2 3
-throwdamage   20
-holdblock     1
-jumpheight    2.43
-jumpspeed     8
-grabdistance  35
-shadow        0
-gfxshadow     1
-noquake       1
-makeinv       1
-nodieblink    1
-antigravity   40
-riseinv       1
-atchain       1 2 3 4 0
+running       12 2.2 1.5 1 0   #--12=run anim, 2.2=run speed 1.5=jump multipier 1=speed mulitplier 0=no cancel (run attakc works though, engine script ovride?) 1=cancelable
+subject_to_obstacle 0  #--allows Billy to ignore obstacles and move freely through them.obstacles are probably the background immages and weapons 1=no walk through
+health        250   #--HPmax
+mp            100   #--MPmax
+falldie       2     #---- 0 = die immediately, 1=die specific state or event, 2=die only on knockdown health can be 0HP
+jugglepoints  15    #juggle hp before entity can no longer be juggled
+chargerate    0     #MP rate of charge
+speed         7     #charater movement speed max is 20
+throw         2 3   #Billy can throw an enemy within a range of 2 units using the throw animation or type 3. Increase first number to throw farther, second for anim.
+throwdamage   20    #throw damage
+holdblock     1     #maintain block stance by holding block "s" button 0=false, 1=true
+jumpheight    2.43  #jump height max 4.0 -  higher number = higher jump
+jumpspeed     8     #speed to max jump height, (min jump speed 4, max jump speed 12)
+grabdistance  35    #grab distance based on screen pixels 35 is recmmended and feels good no min or max
+shadow        0     #determines if player has shadow on grounnd 0=false, 1= true
+gfxshadow     1     # 0 = engine shadow   1 = custom sprite shadow
+noquake       1     #--Billy will not trigger screen shake effects during his actions, even if his attacks or landings would normally cause one. CYCLONE DOES DD2!!!
+makeinv       1     #------ (1 true, 0 false) invincible (cannot take damage) during specific states or actions, depending on how the engine interprets this flag.
+nodieblink    1     # 0 = blink when killed 1 = no blink when killed
+antigravity   40    #---Jump Hang time Max = 100
+atchain       1 2 3 4 0   #---sets Billy's basic combo to use attack animations 1, 2, 3, and 4 in sequence. The 0 marks the end of the combo chain. multi chanin is possible
+riseinv       1                   #------ (1 true, 0 false) invincible (cannot take damage)
 weapons       none none CBillyN CBillyB CBillyK CBillyR CBillyD CBillyboo CBillyW none CBilly
 icon          data/chars/1billy/ogicon.gif 1
 #parrow         
