@@ -1,0 +1,94 @@
+name          clashb1
+shootnum      1
+health        1
+antigravity   40
+speed         6
+jumpheight    1
+gfxshadow     0
+candamage     player
+nolife        1
+
+noquake  1 1
+
+script  data/scripts/bounce2.c
+animationscript   data/scripts/lib001.c
+
+
+anim idle
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+    if(frame==2){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+    }
+@end_script
+	   loop      0
+	   delay     999
+	   bbox      0
+	   offset    9 14
+	   landframe 1
+	   frame     data/chars/2duke/cbomb1.gif
+	   delay     7
+	   sound     data/sounds/bcwire2.wav
+	   frame     data/chars/2duke/cbomb2.gif
+	   frame     data/chars/2duke/cbomb1.gif
+	   frame     data/chars/2duke/cbomb2.gif
+	   frame     data/chars/2duke/cbomb1.gif
+	   frame     data/chars/2duke/cbomb2.gif
+	   frame     data/chars/2duke/cbomb1.gif
+	   frame     data/chars/2duke/cbomb2.gif
+	   frame     data/chars/2duke/cbomb1.gif
+	   frame     data/chars/2duke/cbomb2.gif
+	   frame     data/chars/2duke/cbomb1.gif
+	   frame     data/chars/2duke/cbomb2.gif
+	   sound     data/sounds/clashman.wav
+	   hitfx     data/sounds/exp02.wav
+	   delay     4
+	   offset    50 70
+	   frame     data/chars/2duke/shot01.gif
+	   frame     data/chars/2duke/shot02.gif
+	   attack    28 53 42 32 20 1 1 0 8 10
+	   forcedirection -1
+	   dropv     1.6 1.8 0
+	   frame     data/chars/2duke/shot03.gif
+	   frame     data/chars/2duke/shot04.gif
+	   frame     data/chars/2duke/shot05.gif
+	   offset    31 56
+	   frame     data/chars/2duke/shot01.gif
+	   frame     data/chars/2duke/shot02.gif
+	   frame     data/chars/2duke/shot03.gif
+	   frame     data/chars/2duke/shot04.gif
+	   frame     data/chars/2duke/shot05.gif
+	   offset    70 67
+	   frame     data/chars/2duke/shot01.gif
+	   frame     data/chars/2duke/shot02.gif
+	   frame     data/chars/2duke/shot03.gif
+	   frame     data/chars/2duke/shot04.gif
+	   frame     data/chars/2duke/shot05.gif
+	   offset    25 71
+	   frame     data/chars/2duke/shot01.gif
+	   frame     data/chars/2duke/shot02.gif
+	   frame     data/chars/2duke/shot03.gif
+	   frame     data/chars/2duke/shot04.gif
+	   frame     data/chars/2duke/shot05.gif
+	   offset    56 51
+	   frame     data/chars/2duke/shot01.gif
+	   frame     data/chars/2duke/shot02.gif
+	   frame     data/chars/2duke/shot03.gif
+	   frame     data/chars/2duke/shot04.gif
+	   frame     data/chars/2duke/shot05.gif
+
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/2duke/empty.gif
+@cmd killentity getlocalvar("self")
+	   frame     data/chars/2duke/empty.gif
+
+
+
+
+
+

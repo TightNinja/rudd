@@ -1,0 +1,54 @@
+name    sgsabo
+health  0
+type	none
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+#lifespan  8
+
+anim idle
+	 loop       0
+	 delay      200
+	 offset     80 129
+	 bbox       70 71 25 57
+	 flipframe  6
+         frame      data/chars/2abore/idle01.gif 
+	 delay      7
+         frame      data/chars/2abore/a101.gif
+	 delay      11
+	 sound      data/sounds/punch5.wav
+         frame      data/chars/2abore/a201.gif
+	 hitfx      data/sounds/beatbr3.wav
+	 delay      6
+         frame      data/chars/2abore/a202.gif
+	 delay      12
+         frame      data/chars/2abore/a203.gif  
+	 delay      170
+         frame      data/chars/2abore/idle01.gif  
+	 delay      47
+         frame      data/chars/2abore/pain01.gif  
+	 delay      100
+	 frame      data/chars/0misc/empty.gif
+	 delay      80
+         frame      data/chars/2abore/fall04.gif
+	 delay      5
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+	 frame      data/chars/0misc/empty.gif
+         frame      data/chars/2abore/fall04.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

@@ -1,0 +1,79 @@
+name    dblow
+health  1
+type	none
+subtype noskip
+#alpha   1
+lifespan 2
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+animationscript  data/scripts/lib001.c
+
+load    quake02
+
+anim idle
+	 loop    0
+	 delay   3
+	 offset  150 191
+	 bbox    0
+sound   data/sounds/dukede01.wav
+	 frame   data/chars/2duke/dblow09.gif
+	 frame   data/chars/2duke/dblow08.gif
+	 frame   data/chars/2duke/dblow07.gif
+	 frame   data/chars/2duke/dblow06.gif
+	 frame   data/chars/2duke/dblow05.gif
+	 frame   data/chars/2duke/dblow04.gif
+	 frame   data/chars/2duke/dblow03.gif
+	 frame   data/chars/2duke/dblow02.gif
+	 frame   data/chars/2duke/dblow01.gif
+	 delay   25
+sound   data/chars/misc/ess/essbla5.wav
+	 frame   data/chars/0misc/empty.gif
+	 delay   3
+sound   data/chars/misc/ess/essbla6.wav
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow10.gif
+	 frame     data/chars/0misc/empty.gif
+@cmd spawn001 "quake02" "quake02" 0 0 0 0 0
+	 frame   data/chars/2duke/dblow11.gif
+
+@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif

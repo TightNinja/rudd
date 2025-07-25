@@ -1,0 +1,105 @@
+name	fflashat
+type	text
+subtype  noskip
+shadow	0
+setlayer 999999999
+animationscript   data/scripts/lib001.c
+
+anim spawn
+	 loop       0
+	 delay      55
+	 offset     130 60
+@cmd velo001 0 0 3
+         frame      data/chars/2duke/fflash01.gif
+	 delay      6
+@cmd velo001  0 0 0
+	 sound      data/chars/2duke/fflash01.wav
+         frame      data/chars/2duke/fflash02.gif
+         frame      data/chars/2duke/fflash03.gif
+         frame      data/chars/2duke/fflash04.gif
+         frame      data/chars/2duke/fflash05.gif
+
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+         frame      data/chars/2duke/fflash06.gif
+         frame      data/chars/2duke/fflash07.gif
+
+	 sound      data/chars/2duke/fflash04.wav
+
+
+
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+         frame      data/chars/2duke/fflash08.gif
+         frame      data/chars/2duke/fflash09.gif
+	 delay      3
+         frame      data/chars/2duke/fflash10.gif
+         frame      data/chars/2duke/fflash11.gif
+	 sound      data/chars/2duke/fflash02.wav
+         frame      data/chars/2duke/fflash12.gif
+         frame      data/chars/2duke/fflash13.gif
+         frame      data/chars/2duke/fflash14.gif
+         frame      data/chars/2duke/fflash15.gif
+
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+         frame      data/chars/2duke/fflash16.gif
+         frame      data/chars/2duke/fflash17.gif
+
+
+#	@cmd killentity getlocalvar("self")
+#	 frame     data/chars/0misc/empty.gif
+
+

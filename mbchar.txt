@@ -1,0 +1,40 @@
+name    mbchar
+health  1
+type	text
+subtype noskip
+#alpha   1
+lifespan 1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+lifespan   4
+
+anim idle
+	 loop    1
+	 delay   3
+	 offset  45 75
+	 bbox    0 0 0 0
+	 frame   data/chars/0misc/slink36.gif
+	 frame   data/chars/0misc/slink35.gif
+	 frame   data/chars/0misc/slink34.gif
+	 frame   data/chars/0misc/slink33.gif
+	 frame   data/chars/0misc/slink32.gif
+	 frame   data/chars/0misc/slink31.gif
+	 frame   data/chars/0misc/slink30.gif
+	 frame   data/chars/0misc/slink29.gif
+	 frame   data/chars/0misc/slink28.gif
+	 frame   data/chars/0misc/slink27.gif
+	 frame   data/chars/0misc/slink26.gif
+	 frame   data/chars/0misc/slink25.gif
+	 frame   data/chars/0misc/slink24.gif
+	 frame   data/chars/0misc/slink23.gif
+	 frame   data/chars/0misc/slink21.gif
+	 frame   data/chars/0misc/slink20.gif
+	 delay   50
+	 frame   data/chars/0misc/empty.gif
+
+#	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

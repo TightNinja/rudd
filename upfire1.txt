@@ -1,0 +1,33 @@
+name     upfire1
+type     none
+shadow   0
+nomove   1
+facing   1
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+load    upfire2
+
+anim spawn
+	loop	 0
+	offset   80 125
+	delay    5
+	bbox     0
+	drawmethod scale 0.8
+	sound    data/sounds/exp02.wav
+	frame    data/chars/2duke/upfire1.gif
+	hitfx    data/sounds/beat2.wav
+	attack   70 99 31 28 10 1 1 0 8 5
+	dropv    1.7 0.9 0
+	frame    data/chars/2duke/upfire2.gif
+	frame    data/chars/2duke/upfire3.gif
+	frame    data/chars/2duke/upfire4.gif
+	attack   67 87 35 42 10 1 1 0 8 5
+	dropv    1.7 0.9 0
+	frame    data/chars/2duke/upfire5.gif
+	frame    data/chars/2duke/upfire6.gif
+@cmd	 vPro001    "upfire2" 0 0 0 0 0 3.5 0
+@cmd killentity getlocalvar("self")
+        frame     data/chars/0weap/empty.gif
+
+

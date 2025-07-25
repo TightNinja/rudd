@@ -1,0 +1,22 @@
+name        mtensei1
+health      1
+type	    text
+subtype     noskip
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+ondrawscript	  data/scripts/shadowon.c
+lifespan    0.8
+
+
+anim spawn
+@cmd shadow 10 5 60 6 2 250 250 10
+	loop	 1
+	offset   80 129
+	delay    10
+	bbox     0
+	move     10
+	frame    data/chars/2duke/wk02.gif
+
+

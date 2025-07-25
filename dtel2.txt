@@ -1,0 +1,48 @@
+name    dtel2
+health  0
+type	none
+facing  1
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_platform 1
+subject_to_gravity 0
+
+anim idle
+	 loop    0
+	 delay   3
+	 offset  25 267
+	 bbox    0  
+	 drawmethod alpha 6
+	 drawmethod channel 0.75
+	 frame   data/chars/2duke/dtel01.gif
+	 frame   data/chars/2duke/dtel02.gif
+	 frame   data/chars/2duke/dtel03.gif
+#	 delay   30
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel04.gif
+	 delay   3
+	 frame   data/chars/2duke/dtel03.gif
+	 frame   data/chars/2duke/dtel02.gif
+	 frame   data/chars/2duke/dtel01.gif
+
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+

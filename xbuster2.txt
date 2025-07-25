@@ -1,0 +1,26 @@
+name     xbuster2
+health      1
+type	    pshot
+shootnum    1
+speed	    13
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+
+anim idle
+	loop	 1
+	offset   80 129
+	delay    4
+	bbox     0
+	hitflash Qflash2
+	hitfx    data/sounds/beatsf1.wav
+	attack   72 67 33 33 14 1 1 0 18 5
+	forcedirection -1
+	dropv    1.4 1.9 0
+	frame    data/chars/2duke/xb07.gif
+	frame    data/chars/2duke/xb08.gif
+	frame    data/chars/2duke/xb09.gif
+	frame    data/chars/2duke/xb10.gif
+

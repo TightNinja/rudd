@@ -1,0 +1,308 @@
+name        kidukef
+health      1
+type	    text
+facing      1
+#subtype     noskip
+setlayer 999999999
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+#ondrawscript	  data/scripts/shadowon.c
+
+load    kiroutb1
+load    kifall1
+
+anim spawn
+	loop	 0
+	offset   81 89
+	delay    7
+	bbox     0
+@cmd spawn044 "kiroutb1" 128 0 228
+@cmd velo001 -0.3 -1.7 0
+sound   data/chars/2duke/kiduke1.wav
+	drawmethod scale 0.10
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.11
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.12
+	frame    data/chars/2duke/kifall03.gif
+@cmd velo001 0.3  -1.3 0
+	drawmethod scale 0.13
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.14 
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.15 
+	frame    data/chars/2duke/kifall06.gif
+@cmd velo001 0.3  -1 0
+	drawmethod scale 0.16
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.17
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.18
+	frame    data/chars/2duke/kifall01.gif
+@cmd velo001 0.2 -0.7 0
+	drawmethod scale 0.19
+	frame    data/chars/2duke/kifall02.gif
+#10
+	drawmethod scale 0.20
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.21
+	frame    data/chars/2duke/kifall04.gif
+@cmd velo001 0.1 -0.3 0
+	drawmethod scale 0.22
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.23
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.24
+	frame    data/chars/2duke/kifall07.gif
+@cmd velo001 0 0 0
+	drawmethod scale 0.25
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.26
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.27
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.28
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.29
+	frame    data/chars/2duke/kifall04.gif
+#20
+sound   data/sounds/wind.wav
+	drawmethod scale 0.30
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.31
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.32
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.33
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.34
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.35
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.36
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.37
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.38
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.39
+	frame    data/chars/2duke/kifall06.gif
+@cmd velo001 -0.06 0.05 0
+#30
+	drawmethod scale 0.40
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.41
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.42
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.43
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.44
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.45
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.46
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.47
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.48
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.49
+	frame    data/chars/2duke/kifall08.gif
+#40
+	drawmethod scale 0.50
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.51
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.52
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.53
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.54
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.55
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.56
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.57
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.58
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.59
+	frame    data/chars/2duke/kifall02.gif
+@cmd velo001 -0.06 0.1 0
+#50
+	drawmethod scale 0.60
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.61
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.62
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.63
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.64
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.65
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.66
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.67
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.68
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.69
+	frame    data/chars/2duke/kifall04.gif
+#60
+	drawmethod scale 0.70
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.71
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.72
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.73
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.74
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.75
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.76
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.77
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.78
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.79
+	frame    data/chars/2duke/kifall06.gif
+@cmd velo001 -0.09 0.2 0
+#70
+	drawmethod scale 0.80
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.81
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.82
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.83
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.84
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.85
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.86
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.87
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.88
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.89
+	frame    data/chars/2duke/kifall08.gif
+@cmd velo001 -0.09 0.3 0
+#80
+	drawmethod scale 0.90
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.91
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 0.92
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 0.93
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 0.94
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 0.95
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 0.96
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 0.97
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 0.98
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 0.99
+	frame    data/chars/2duke/kifall02.gif
+@cmd velo001 -0.09 0.5 0
+#90
+sound   data/chars/2duke/kiduke2.wav
+	drawmethod scale 1
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 1.02
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 1.04
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 1.06
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 1.08
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 1.10
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 1.12
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 1.14
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 1.16
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 1.18
+	frame    data/chars/2duke/kifall04.gif
+#100
+	drawmethod scale 1.20
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 1.22
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 1.24
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 1.26
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 1.28
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 1.30
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 1.32
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 1.34
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 1.36
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 1.38
+	frame    data/chars/2duke/kifall06.gif
+#110
+	drawmethod scale 1.40
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 1.42
+	frame    data/chars/2duke/kifall08.gif
+	drawmethod scale 1.46
+	frame    data/chars/2duke/kifall01.gif
+	drawmethod scale 1.48
+	frame    data/chars/2duke/kifall02.gif
+	drawmethod scale 1.50
+	frame    data/chars/2duke/kifall03.gif
+	drawmethod scale 1.52
+	frame    data/chars/2duke/kifall04.gif
+	drawmethod scale 1.54
+	frame    data/chars/2duke/kifall05.gif
+	drawmethod scale 1.56
+	frame    data/chars/2duke/kifall06.gif
+	drawmethod scale 1.58
+	frame    data/chars/2duke/kifall07.gif
+	drawmethod scale 1.60
+	frame    data/chars/2duke/kifall08.gif
+@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+name        pbomb1
+health      1
+type	    pshot
+shootnum    1
+speed	    0
+nomove      1
+candamage   player 
+subject_to_hole 0
+subject_to_obstacle 0
+subject_to_wall 0
+animationscript	data/scripts/lib001.c
+
+load    pbomb2
+anim idle
+	loop	 0
+	offset   10 20
+	delay    13
+	bbox     0
+	sound    data/sounds/pbomb1.wav
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	delay    6
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+	frame    data/chars/2duke/pbomb01.gif
+	frame    data/chars/2duke/pbomb02.gif
+@cmd	 vPro001    "pbomb2" 0 0 0 0 0 0 0
+	@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+

@@ -1,0 +1,36 @@
+name	fflashbg
+type	text
+subtype  noskip
+shadow	0
+setlayer 999999988
+animationscript   data/scripts/lib001.c
+lifespan  4
+
+
+palette       data/chars/2duke/special00.gif
+
+anim idle
+	 loop       1 1 14
+	 delay      3
+	 offset     130 228
+load     fflashat
+@cmd spawn044 "fflashat" 128 0 228
+         frame      data/chars/2duke/special01.gif
+         frame      data/chars/2duke/special02.gif
+         frame      data/chars/2duke/special03.gif
+         frame      data/chars/2duke/special04.gif
+         frame      data/chars/2duke/special05.gif
+         frame      data/chars/2duke/special06.gif
+         frame      data/chars/2duke/special07.gif
+         frame      data/chars/2duke/special08.gif
+         frame      data/chars/2duke/special09.gif
+         frame      data/chars/2duke/special10.gif
+         frame      data/chars/2duke/special11.gif
+         frame      data/chars/2duke/special12.gif
+         frame      data/chars/2duke/special13.gif
+         frame      data/chars/2duke/special01.gif
+         frame      data/chars/2duke/special01.gif
+	@cmd killentity getlocalvar("self")
+	 frame     data/chars/0misc/empty.gif
+
+

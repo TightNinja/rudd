@@ -1,0 +1,25 @@
+name	suich
+type	panel
+speed   10
+shadow  0
+facing  1
+setlayer 999999999
+lifespan 1
+animationscript   data/scripts/lib001.c
+
+anim idle
+	loop        0
+	delay       2
+	offset      128 244
+	frame       data/chars/2duke/suich01.gif
+	frame       data/chars/2duke/suich02.gif
+	frame       data/chars/2duke/suich03.gif
+	frame       data/chars/2duke/suich04.gif
+	frame       data/chars/2duke/suich05.gif
+	frame       data/chars/2duke/suich06.gif
+	frame       data/chars/2duke/suich07.gif
+	frame       data/chars/2duke/suich08.gif
+	delay       25
+	frame       data/chars/2duke/suich09.gif
+	delay       1
+	frame       data/chars/0misc/empty.gif
