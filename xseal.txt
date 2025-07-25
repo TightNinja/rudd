@@ -1,0 +1,130 @@
+name     xseal
+type     text
+setlayer 999999999
+facing   1
+#lifespan 1
+subject_to_gravity 0
+animationscript	data/scripts/lib001.c
+
+palette  data/chars/2chen/xseal01.gif
+
+anim idle
+	loop	 0
+	offset   128 228
+	delay    200
+	drawmethod alpha 6
+	drawmethod channel 0.10
+
+	frame    data/chars/0misc/empty.gif
+	sound    data/sounds/xseal.wav
+	delay    5
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.20
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.30
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.40
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.50
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.60
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.70
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.80
+	frame    data/chars/2chen/xseal01.gif
+	drawmethod alpha 6
+	drawmethod channel 0.90
+	frame    data/chars/2chen/xseal01.gif
+	delay    45
+	drawmethod alpha 6
+	drawmethod alpha off
+
+	frame    data/chars/2chen/xseal01.gif
+	delay    2
+	frame    data/chars/2chen/xseal02.gif
+	frame    data/chars/2chen/xseal03.gif
+	frame    data/chars/2chen/xseal04.gif
+	frame    data/chars/2chen/xseal05.gif
+	delay    30
+	frame    data/chars/2chen/xseal06.gif
+	delay    2
+	frame    data/chars/2chen/xseal07.gif
+	frame    data/chars/2chen/xseal08.gif
+	frame    data/chars/2chen/xseal09.gif
+	frame    data/chars/2chen/xseal10.gif
+	delay    50
+	frame    data/chars/2chen/xseal11.gif
+	delay    3
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	frame    data/chars/2chen/xseal11.gif
+	frame    data/chars/2chen/xseal12.gif
+	delay    5
+	drawmethod alpha 6
+	drawmethod channel 0.90
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.80
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.70
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.60
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.50
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.40
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.30
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.20
+	frame    data/chars/2chen/xseal11.gif
+	drawmethod alpha 6
+	drawmethod channel 0.10
+	frame    data/chars/2chen/xseal11.gif
+@cmd killentity getlocalvar("self")
+	 frame   data/chars/0misc/empty.gif
+
+
+
+
+
+
+
+
+
+
+
+

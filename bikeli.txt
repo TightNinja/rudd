@@ -1,0 +1,26 @@
+name	bikeli
+type	npc
+subtype follow
+shadow	0
+alpha   1
+facing  2
+#setlayer 800
+
+anim idle
+	 loop      1
+	 delay     2
+	 offset    0 45
+	 range     0 0
+	 rangez    0 0
+	 rangea    0 0
+	 frame     data/chars/2biker1/bikeli.gif
+#	 delay     2
+#	 frame     data/chars/misc/empty.gif
+
+
+
+
+
+
+
+
