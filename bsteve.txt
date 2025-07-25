@@ -1,0 +1,3790 @@
+name          BSteve
+type          enemy
+candamage     player obstacle npc
+score         1 5
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         4
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+atchain       1 2 3 0 0
+offscreen_noatk_factor 1
+blockodds     1
+thold         8
+aggression    20
+diesound      data/sounds/pain13.wav
+projectilehit enemy obstacle
+
+nopassiveblock 0
+
+script data/scripts/Custom_chase.c
+animationscript   data/scripts/lib001.c
+takedamagescript  data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c 
+
+palette        data/chars/2steve/gun05.gif   
+alternatepal   data/chars/2steve/alt01.gif   
+alternatepal   data/chars/2steve/alt02.gif   
+alternatepal   data/chars/2steve/alt03.gif   
+alternatepal   data/chars/2steve/alt04.gif  
+alternatepal   data/chars/2steve/alt05.gif   
+alternatepal   data/chars/2steve/danger.gif  
+alternatepal   data/chars/2steve/alterbr.gif
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     80 129
+         frame      data/chars/2steve/idle01.gif
+         frame      data/chars/2steve/idle01.gif
+
+anim follow101 # alternate spawn animation for lasv03
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==11){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+
+    if(frame==1)
+{
+      fademusic(0.5, "data/music/BOSSCAS.ogg", 1, 107736.3);
+}
+@end_script
+	 loop       0
+	 delay      45
+	 offset     80 129
+	 jumpframe  14 1.8 0.5 0
+	 landframe  21
+	 frame      data/chars/2steve/wk01.gif
+	 delay      15
+	@cmd velo001 0.5 0 0
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	@cmd velo001 0 0 0
+	 frame      data/chars/2steve/wk04.gif
+	 delay      10
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      11
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+@cmd jump001 1.4 0.5 0
+         frame      data/chars/2steve/ak01.gif
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 delay      20
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/ak08.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+	 delay      20
+         frame      data/chars/2steve/idle01.gif
+
+
+anim follow102 # alternate spawn animation for lasv03 KRAUSER
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==11){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+
+    if(frame==1)
+{
+      fademusic(0.5, "data/music/KMODE/KBOSS1.ogg", 1, 1);
+}
+@end_script
+	 loop       0
+	 delay      45
+	 offset     80 129
+	 jumpframe  14 1.8 0.5 0
+	 landframe  21
+	 frame      data/chars/2steve/wk01.gif
+	 delay      15
+	@cmd velo001 0.5 0 0
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	@cmd velo001 0 0 0
+	 frame      data/chars/2steve/wk04.gif
+	 delay      10
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      11
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+@cmd jump001 1.4 0.5 0
+         frame      data/chars/2steve/ak01.gif
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 delay      20
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/ak08.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+	 delay      20
+         frame      data/chars/2steve/idle01.gif
+
+anim follow103 # alternate spawn animation for lasv03 LEGENDARY
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==11){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+
+    if(frame==1)
+{
+      fademusic(0.5, "data/music/LMODE/LASV03.ogg", 1, 1);
+}
+@end_script
+	 loop       0
+	 delay      45
+	 offset     80 129
+	 jumpframe  14 1.8 0.5 0
+	 landframe  21
+	 frame      data/chars/2steve/wk01.gif
+	 delay      15
+	@cmd velo001 0.5 0 0
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	@cmd velo001 0 0 0
+	 frame      data/chars/2steve/wk04.gif
+	 delay      10
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      11
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+@cmd jump001 1.4 0.5 0
+         frame      data/chars/2steve/ak01.gif
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 delay      20
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/ak08.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+	 delay      20
+         frame      data/chars/2steve/idle01.gif
+
+anim follow104 # alternate spawn animation for lasv03 ARRANGED
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==11){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+
+    if(frame==1)
+{
+      fademusic(0.5, "data/music/AST/ABOSS.ogg", 1, 48421.8);
+}
+@end_script
+	 loop       0
+	 delay      45
+	 offset     80 129
+	 jumpframe  14 1.8 0.5 0
+	 landframe  21
+	 frame      data/chars/2steve/wk01.gif
+	 delay      15
+	@cmd velo001 0.5 0 0
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	@cmd velo001 0 0 0
+	 frame      data/chars/2steve/wk04.gif
+	 delay      10
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      11
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+@cmd jump001 1.4 0.5 0
+         frame      data/chars/2steve/ak01.gif
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 delay      20
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/ak08.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+	 delay      20
+         frame      data/chars/2steve/idle01.gif
+
+anim follow105 # alternate spawn animation for USJP
+
+
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+      changeentityproperty(self, "Subject_to_Platform", 0);
+    }
+    if(frame==11){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Platform", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      45
+	 offset     80 129
+	 jumpframe  14 1.8 0.5 0
+	 landframe  21
+	 frame      data/chars/2steve/wk01.gif
+	 delay      15
+	@cmd velo001 0.5 0 0
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	 frame      data/chars/2steve/wk04.gif
+	 frame      data/chars/2steve/wk01.gif
+	 frame      data/chars/2steve/wk02.gif
+	 frame      data/chars/2steve/wk03.gif
+	@cmd velo001 0 0 0
+	 frame      data/chars/2steve/wk04.gif
+	 delay      10
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 5 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      11
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+@cmd jump001 1.4 0.5 0
+         frame      data/chars/2steve/ak01.gif
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 delay      20
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/ak08.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+	 delay      20
+         frame      data/chars/2steve/idle01.gif
+
+anim idle
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/idle01.gif
+         frame      data/chars/2steve/idle01.gif
+
+anim walk
+	 loop       1
+	 delay      13
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/wk01.gif
+	 delay      17
+         frame      data/chars/2steve/wk02.gif
+	 delay      13
+         frame      data/chars/2steve/wk03.gif
+	 delay      17
+         frame      data/chars/2steve/wk04.gif
+
+anim block
+	 loop       0
+	 delay      2
+	 move       -3
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/block.gif   
+         frame      data/chars/2steve/block.gif   
+         frame      data/chars/2steve/block.gif   
+         frame      data/chars/2steve/block.gif   
+         frame      data/chars/2steve/block.gif   
+         frame      data/chars/2steve/block.gif   
+	 delay      15
+         frame      data/chars/2steve/block.gif   
+
+anim attack1
+	 range      8 40
+	 rangez     -3 3
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/a101.gif
+	 delay      10
+	 attack1    89 79 31 17 8 0 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/a104.gif
+	 delay      8
+	 attack1    0 0 0 0
+         frame      data/chars/2steve/a103.gif
+         frame      data/chars/2steve/idle01.gif
+anim attack2
+	 range      8 40
+	 rangez     -3 3
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 79 25 49
+	 fastattack 1
+	 hitfx      data/sounds/beatbr2.wav
+         frame      data/chars/2steve/a101.gif
+	 delay      4
+	 attack3    89 75 33 16 4 0 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/a102.gif
+	 delay      6
+	 attack3    0 0 0 0
+         frame      data/chars/2steve/a103.gif
+	 hitfx      data/sounds/beatbr2.wav
+	 delay      4
+	 attack1    89 79 31 17 4 0 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/a104.gif
+	 delay      6
+	 attack3    0 0 0 0
+         frame      data/chars/2steve/a101.gif
+	 hitfx      data/sounds/beatbr3.wav
+	 delay      8
+	 attack5    89 75 33 16 4 0 0 0 8 5
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/a102.gif
+	 delay      5
+	 attack5    0 0 0 0
+         frame      data/chars/2steve/a103.gif
+anim attack3
+	 range      8 40
+	 rangez     -3 3
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 jumpframe  10 1.4 0.5 0
+	 landframe   14
+	 move       -1
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk01.gif
+         frame      data/chars/2steve/wk02.gif
+         frame      data/chars/2steve/wk02.gif
+         frame      data/chars/2steve/wk02.gif
+         frame      data/chars/2steve/wk02.gif
+	 move       0
+	 delay      10
+	 sound      data/sounds/mk1vo01.wav
+         frame      data/chars/2steve/ak01.gif
+	 delay      7
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 hitfx      data/sounds/beatbl3.wav
+	 delay      999
+	 attack1    77 93 41 33 13 1 0 0 8 5
+	 jugglecost 5
+	 dropv      2 1 0
+         frame      data/chars/2steve/ak04.gif
+	 delay      13
+	 attack     0 0 0 0
+         frame      data/chars/2steve/rise02.gif
+
+anim freespecial
+	 range      50 65
+	 rangez     -4 4
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 25 49
+	 jumpframe  0 1.4 0.5 0
+	 landframe  4
+	 sound      data/sounds/mk1vo01.wav
+         frame      data/chars/2steve/ak01.gif
+	 delay      7
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 hitfx      data/sounds/beatnw1.wav
+	 delay      999
+	 attack1    77 93 41 33 13 1 0 0 8 5
+	 jugglecost 5
+	 dropv      2 1 0
+         frame      data/chars/2steve/ak04.gif
+	 delay      13
+	 attack     0 0 0 0
+         frame      data/chars/2steve/rise02.gif
+
+anim freespecial3
+	 range      110 220
+	 rangez     -3 3
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+load    bullet
+load    gsmoke
+	 custentity gsmoke
+	 spawnframe 7 45 25 0 0
+	 sound      data/sounds/jeff07.wav
+         frame      data/chars/2steve/idle01.gif
+	 delay      6
+         frame      data/chars/2steve/gun01.gif
+         frame      data/chars/2steve/gun02.gif
+         frame      data/chars/2steve/gun03.gif
+         frame      data/chars/2steve/gun04.gif
+	 sound      data/sounds/bullet.wav
+	 delay      4
+@cmd	 vPro001    "bullet" 0 42 38 0 3 0 0
+         frame      data/chars/2steve/gun05.gif
+         frame      data/chars/2steve/gun06.gif
+	 delay      30
+         frame      data/chars/2steve/gun04.gif
+	 delay      8
+         frame      data/chars/2steve/gun03.gif
+         frame      data/chars/2steve/gun02.gif
+
+anim upper
+	 range      5 60
+	 rangez     -3 3
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 2 0.3 0
+	 landframe  8
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 13 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 13 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      15
+         frame      data/chars/2steve/rise02.gif
+
+anim riseattack
+	 range      5 60
+	 rangez     -3 3
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  1 2 0.3 0
+	 landframe  8
+         frame      data/chars/2steve/rise02.gif
+	 delay      7
+         frame      data/chars/2steve/ju01.gif
+         frame      data/chars/2steve/ju02.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 13 1 1 0 12 3
+	 dropv      0.8 0.2 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak07.gif
+	 delay      9
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 sound      data/sounds/punch4.wav
+	 hitfx      data/sounds/beatsf2.wav
+	 delay      12
+	 attack     79 86 32 29 13 1 1 0 12 3
+	 dropv      1.5 0.8 0
+	 forcedirection -1
+         frame      data/chars/2steve/ak05.gif
+	 attack     0 0 0 0
+         frame      data/chars/2steve/ak06.gif
+	 delay      999
+         frame      data/chars/2steve/ju01.gif
+	 delay      15
+         frame      data/chars/2steve/rise02.gif
+
+anim freespecial2
+@cmd attackoff
+	 range      5 34
+	 rangez     -1 1
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       71 79 25 49
+	 followanim 2
+	 followcond 3
+         frame      data/chars/2steve/hard03.gif
+         frame      data/chars/2steve/hard01.gif
+	 sound      data/sounds/punch2.wav
+	 hitfx      data/sounds/beatbl2.wav
+	 attack2    79 82 32 23 8 0 0 0 8 3
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/hard02.gif
+	 delay      9
+	 attack2    0 0 0 0
+         frame      data/chars/2steve/hard01.gif
+         frame      data/chars/2steve/hard03.gif
+
+anim follow2
+@cmd attackoff
+	 range      5 34
+	 rangez     -1 1
+	 loop       0
+	 delay      9
+	 offset     80 129
+	 bbox       71 79 25 49
+	 jumpframe  13 1.6 0.1 0
+	 landframe  17
+	 attack2    0 0 0 0
+         frame      data/chars/2steve/hard02.gif
+         frame      data/chars/2steve/hard01.gif
+	 delay      7
+         frame      data/chars/2steve/hard03.gif
+         frame      data/chars/2steve/hard04.gif
+	 delay      9
+	 hitfx      data/sounds/beatbl1.wav
+	 attack5    84 84 39 21 11 0 0 0 8 3
+	 jugglecost 5
+	 forcedirection -1
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/hard05.gif
+	 attack5    0
+         frame      data/chars/2steve/hard04.gif
+         frame      data/chars/2steve/hard03.gif
+	 delay      12
+         frame      data/chars/2steve/idle01.gif
+	 delay      8
+	 sound      data/sounds/mk1vo02.wav
+         frame      data/chars/2steve/hard06.gif
+	 delay      15
+         frame      data/chars/2steve/hard07.gif
+	 delay      8
+         frame      data/chars/2steve/hard06.gif
+	 delay      15
+         frame      data/chars/2steve/wk02.gif
+	 delay      18
+         frame      data/chars/2steve/idle01.gif
+	 delay      10
+         frame      data/chars/2steve/ak01.gif
+	 delay      9
+         frame      data/chars/2steve/ak02.gif
+         frame      data/chars/2steve/ak03.gif
+	 hitfx      data/sounds/beatkil2.wav
+	 delay      999
+	 attack1    77 93 41 33 16 1 1 0 8 2
+	 jugglecost 5
+	 dropv      2 1.5 0
+         frame      data/chars/2steve/ak08.gif
+	 delay      13
+	 attack     0 0 0 0
+         frame      data/chars/2steve/rise02.gif
+
+anim jump
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/ju01.gif
+	 delay      35
+	 bbox       70 85 21 28
+         frame      data/chars/2steve/ju02.gif
+	 delay      999
+	 bbox       68 83 24 44
+         frame      data/chars/2steve/ju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/rise02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 79 25 49
+	 landframe  1
+         frame      data/chars/2steve/ju01.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/rise02.gif
+
+anim grabbed
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain06.gif
+	 bbox       80 87 28 23
+         frame      data/chars/2steve/grbd01.gif
+
+anim spain
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/grbd02.gif
+	 delay      8
+         frame      data/chars/2steve/pain06.gif
+
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain02.gif
+
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain01.gif
+
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2steve/pain03.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2steve/pain03.gif
+
+#stunned
+anim pain7
+	 loop       0
+	 offset     80 129
+	 bbox       71 79 25 49
+	 delay      19
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+
+#breathless3 for dd punch chain
+anim pain8
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2steve/pain03.gif
+
+anim fall1
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+
+anim burn
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+load     burn
+@cmd spawn001 "burn" "burn" 0 0 0 0 0
+	 drawmethod remap 7
+         frame      data/chars/2steve/fall03.gif
+	 drawmethod remap -1
+         frame      data/chars/2steve/fall03.gif
+@cmd	updateframe getlocalvar("self") 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall04.gif
+
+anim death
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim rise
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+#elbow fall
+anim fall5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 landframe  2
+         frame      data/chars/2steve/fall16.gif
+	 delay      999
+         frame      data/chars/2steve/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall12.gif
+         frame      data/chars/2steve/fall13.gif
+
+anim death5
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0
+	 jumpframe  0 1 0.2
+	 landframe  2
+         frame      data/chars/2steve/fall16.gif
+	 delay      999
+         frame      data/chars/2steve/fall16.gif
+	 delay      7
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall12.gif
+         frame      data/chars/2steve/fall13.gif
+
+anim rise5
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2steve/fall13.gif
+         frame      data/chars/2steve/rise02.gif
+         frame      data/chars/2steve/rise03.gif
+
+#uppercut fall
+anim fall6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  4
+         frame      data/chars/2steve/pain02.gif
+	 delay      30
+	 bbox       65 85 31 36
+         frame      data/chars/2steve/fall01.gif
+	 delay      15
+	 bbox       62 95 35 24
+         frame      data/chars/2steve/fall02.gif
+	 delay      999
+	 bbox       69 100 24 33
+         frame      data/chars/2steve/fall09.gif
+	 delay      9
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall10.gif
+         frame      data/chars/2steve/fall11.gif
+         frame      data/chars/2steve/fall12.gif
+         frame      data/chars/2steve/fall13.gif
+
+anim death6
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 3 -0.2 0
+	 landframe  4
+         frame      data/chars/2steve/pain02.gif
+	 delay      30
+         frame      data/chars/2steve/fall01.gif
+	 delay      15
+         frame      data/chars/2steve/fall02.gif
+	 delay      999
+         frame      data/chars/2steve/fall09.gif
+	 delay      9
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall10.gif
+         frame      data/chars/2steve/fall11.gif
+         frame      data/chars/2steve/fall12.gif
+         frame      data/chars/2steve/fall13.gif
+
+anim rise6
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2steve/fall13.gif
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+########anim fall's that don't allow juggling
+
+anim fall3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death3
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death4
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death11
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0 0 0 0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+########double dragons throw
+
+anim fall10
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 102 27 27
+	 landframe  3
+	 flipframe  1
+	 attack3    68 97 42 36 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall17.gif
+	 delay      15
+	 bbox       62 95 35 24
+	 attack3    61 89 42 33 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall02.gif
+	 delay      999
+	 bbox       62 104 33 26
+	 attack3    62 100 38 31 0 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death10
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/2steve/fall04.gif
+
+########double dragons flip throw
+
+anim pain11
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/pain06.gif
+
+anim fall12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+	 landframe  3
+	 flipframe  1
+	 attack     69 11 35 34 5 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall21.gif
+	 delay      15
+	 attack     69 11 35 34 5 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall02.gif
+	 delay      999
+	 attack     63 101 28 29 5 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall5.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death12
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/fall04.gif
+
+########double dragons coop throw billy
+
+anim fall102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       71 102 27 27
+	 landframe  3
+	 flipframe  1
+	 attack3    68 97 42 36 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall17.gif
+	 delay      15
+	 bbox       62 95 35 24
+	 attack3    61 89 42 33 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall02.gif
+	 delay      999
+	 bbox       62 104 33 26
+	 attack3    62 100 38 31 3 1 0 0 8 5
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 attack     0 0 0 0 0 0 0 0 0
+	 sound      data/sounds/fall3.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death102
+	 loop       0
+	 delay      50
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/fall04.gif
+
+anim rise102
+	 loop       0
+	 delay      13
+	 offset     80 129
+	 bbox       0 0
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+########Billy slam 01
+
+anim fall20
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+         frame      data/chars/2steve/fall23.gif
+	 delay      10
+         frame      data/chars/2steve/fall24.gif
+
+anim death20
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/fall24.gif
+
+anim rise20
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 flipframe  1
+         frame      data/chars/2steve/fall24.gif
+	 delay      13
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+########Billy slam 02
+
+anim fall21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall04.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death21
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/fall04.gif
+
+########screw falling
+
+#not juggling
+anim fall13
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       0
+	 landframe  5
+	 attack     68 80 21 38 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall08.gif
+	 attack     66 83 24 34 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall07.gif
+	 attack     69 85 22 35 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall06.gif
+	 attack     64 85 28 27 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall05.gif
+	 bbox       0
+	 attack     0  
+	 delay      999
+         frame      data/chars/2steve/fall01.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#juggling
+anim fall14
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 landframe  5
+	 bbox       68 80 21 38
+	 attack     68 80 21 38 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall08.gif
+	 bbox       66 83 24 34
+	 attack     66 83 24 34 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall07.gif
+	 bbox       69 85 22 35
+	 attack     69 85 22 35 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall06.gif
+	 bbox       64 85 28 27
+	 attack     64 85 28 27 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall05.gif
+	 bbox       65 85 31 36
+	 attack     0 0 0 0
+	 delay      999
+         frame      data/chars/2steve/fall01.gif
+	 bbox       0 0 0 0
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death14
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 1.5 -1.7 0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+	 bbox       0
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall19
+	 loop       0
+	 delay      6
+	 offset     80 129
+	 bbox       0
+	 landframe  5
+         frame      data/chars/2steve/fall08.gif
+         frame      data/chars/2steve/fall07.gif
+         frame      data/chars/2steve/fall06.gif
+         frame      data/chars/2steve/fall05.gif
+@cmd   updateframe getlocalvar("self") 0
+	 delay      12
+         frame      data/chars/2steve/fall03.gif
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall04.gif
+
+anim death19
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+	 dropframe  1
+	 jumpframe  0 3 0.1 0
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall04.gif
+
+########colossus falling
+
+#not juggling
+anim fall30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+	 hitfx      data/sounds/indirect.wav
+	 attack     63 78 31 41 5 1 0 0 8
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall05.gif
+	 delay      12
+	 sound      data/sounds/fall9.wav
+	 attack     0 0 0 0
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death30
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 bouncefactor 2
+         frame      data/chars/2steve/fall05.gif
+	 delay      12
+	 attack     0 0 0 0
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+########double dragons custom combos
+
+#moving backwards A01
+anim pain15
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -2
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain02.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+#moving backwards A02
+anim pain16
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -2
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+	 move       -1
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain01.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+#fast pain1
+anim pain17
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2steve/pain03.gif
+
+#fast pain2
+anim pain18
+	 loop       0
+	 delay      8
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/2steve/pain03.gif
+
+#moving backwards B01 faster
+anim pain25
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -6
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 move       -3
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 move       -1
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain02.gif
+	 delay      19
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+
+#moving backwards B02 slower
+anim pain26
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -4
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain01.gif
+	 delay      40
+         frame      data/chars/2steve/pain04.gif
+
+anim pain27
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -4
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain02.gif
+	 delay      40
+         frame      data/chars/2steve/pain04.gif
+
+#stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 jumpframe  0 0.05 0
+         frame      data/chars/2steve/fall29.gif
+	 delay      19
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+
+########ip man pain
+
+anim pain70
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain01.gif
+	 delay      15
+         frame      data/chars/2steve/pain03.gif
+
+anim pain71
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+         frame      data/chars/2steve/pain03.gif
+
+
+anim pain72
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain07.gif
+	 delay      15
+         frame      data/chars/2steve/pain09.gif
+
+anim pain73
+	 loop       0
+	 delay      4
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/pain08.gif
+	 delay      15
+         frame      data/chars/2steve/pain09.gif
+
+anim pain74
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2steve/fall03.gif
+	 delay      15
+         frame      data/chars/2steve/fall04.gif
+	 delay      15
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/fall04.gif
+	 delay      8
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+anim pain75
+	 loop       0
+	 delay      5
+	 offset     80 129
+	 bbox       71 105 33 26
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/fall04.gif
+	 delay      5
+	 bbox       71 105 33 26
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+
+anim death75
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 landframe  1
+	 jumpframe  0 0.2 -0.2 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      15
+         frame      data/chars/2steve/fall04.gif
+
+anim fall101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  2
+	 attack     62 78 36 41 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+         frame      data/chars/2steve/fall01.gif
+	 attack     63 99 41 31 3 1 0 0 8 3
+	 dropv      1.3 0.8 0
+	 delay      999
+	 bbox       62 104 33 26
+         frame      data/chars/2steve/fall03.gif
+	 attack     0 0 0 0
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death101
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#############BILLY & JIMMY ULTRA
+
+#moving backwards C01
+anim pain90
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -1
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain02.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+#moving backwards C02
+anim pain91
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -1
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain01.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+#stomach blows
+anim fall90
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+         frame      data/chars/2steve/fall29.gif
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall91
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+         frame      data/chars/2steve/fall29.gif
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#juggle blows
+anim fall92
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2steve/fall31.gif
+	 delay      21
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall93
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#jimmy super linker 02
+anim pain95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -2
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      20
+	 move       0
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+
+#jimmy stomach blows
+anim pain96
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+         frame      data/chars/2steve/fall29.gif
+	 delay      19
+	 offset     80 129
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+         frame      data/chars/2steve/pain03.gif
+
+#falling like a rock
+anim fall99
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 4 1 3
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall9.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+
+falldie  1
+nodieblink 1
+######################## DEATH ULTRA - HIGH 
+anim death99
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU01.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2steve/fall04.gif
+	 delay      100
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH ULTRA - LOW
+anim death98
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU01.ogg", 0,0);
+}@end_script
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2steve/fall03.gif
+	 delay      200
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH ULTRA - GRABS
+anim death95
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrki
+	 subentity  staclrki
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIU01.ogg", 0,0);
+}@end_script
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+#NEW
+         frame      data/chars/2steve/fall03.gif
+	 delay      200
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH BRUTALITY - JEFF
+anim death97
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 7 -0.3 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 5 1 3
+	 dropframe  3
+	 load       staclrmk
+	 subentity  staclrmk
+	 spawnframe 7 256 232 0 1
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ01.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+         frame      data/chars/2steve/fall04.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH SONIC BLAST MAN - BILLY & JIMMY 
+anim death96
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.3 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+         frame      data/chars/2steve/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==6)
+{
+      fademusic(0.5, "data/music/CLEARSBM.ogg", 0,0);
+}@end_script
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      200
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################## DEATH SONIC BLAST MAN - SONNY
+anim death89
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 3 -1 0
+	 dropframe  5
+	 landframe  6
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 load       sbflash
+         frame      data/chars/2steve/fall30.gif
+@cmd spawn001 "sbflash" "sbflash" 0 0 35 0 0
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+sound     data/sounds/fightff.wav
+	 delay      100
+         frame      data/chars/2steve/fall30.gif
+@script
+void vSelf = getlocalvar("self");
+if(frame==7)
+{
+fademusic(0.5, "data/music/CLEARSBM.ogg", 0,0);
+}@end_script
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      200
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH BRUTALITY - SONNY
+anim death88
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 7 -0.3 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 6 1 3
+	 dropframe  3
+	 load       staclmks
+	 subentity  staclmks
+	 spawnframe 7 256 232 0 1
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==3)
+{
+      fademusic(0.5, "data/music/MKJ01.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+         frame      data/chars/2steve/fall04.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+##################################### DEATHS WWF BILLY
+
+anim fall103
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death103
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFRAZR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall104
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death104
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFTAKR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+anim fall87
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death87
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFRAZR.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfb1
+custentity staclwfb1
+spawnframe 6 -77 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 3.5 -0.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+##################################### DEATHS WWF JIMMY
+
+anim fall105
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death105
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHBK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall106
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death106
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHITMN.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall86
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death86
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFHBK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+	 jumpframe  1 -0.1 -2.5 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+anim fall107
+	 loop       0
+	 delay      60
+	 offset     80 129
+	 bbox       0
+	 landframe  2
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall1.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim death107
+@script
+void vSelf = getlocalvar("self");
+if(frame==12)
+{
+fademusic(0.5, "data/music/WWFDOINK.ogg", 0,0);
+}
+@end_script
+load     wwfinish
+load     staclwfj1
+custentity staclwfj1
+spawnframe 6 333 228 0 1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 2
+	 jumpframe  1 2 -1 0
+	 landframe  3
+@cmd spawn044 "wwfinish" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/sounds/wwfinish.wav
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################################################### DEATH SAMURAI SHODOWN
+
+anim death85
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(20, "data/music/SAMSHOW1.ogg", 0,0);
+}
+@end_script
+load     rsswin1
+load     rsswin3
+load     rsswin4
+load     15ranzc6
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.8 0
+	 landframe  3
+@cmd spawn044 "rsswin4" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "rsswin3" 128 0 228
+         frame      data/chars/2steve/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 delay      25
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2steve/pain02.gif
+	 sound      data/sounds/beatswd5.wav
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+         frame      data/chars/2steve/pain03.gif
+	 sound      data/sounds/beatswd6.wav
+@cmd spawn001 "bflash" "bflash" 0 1 55 0 0
+         frame      data/chars/2steve/pain02.gif
+	 sound      data/sounds/beatswd4.wav
+@cmd spawn001 "bflash" "bflash" 0 0 50 0 0
+         frame      data/chars/2steve/pain03.gif
+	 sound      data/sounds/beatswd5.wav
+	 delay      10
+@cmd spawn001 "bflash" "bflash" 0 3 40 0 0
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 -30 0 -2
+         frame      data/chars/2steve/pain02.gif
+@cmd spawn001 "15ranzc6" "15ranzc6" 0 30 0 -2
+         frame      data/chars/2steve/pain02.gif
+	 delay      230
+         frame      data/chars/2steve/pain02.gif
+	 delay      9
+	 sound      data/sounds/pain13.wav
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd spawn044 "rsswin1" 128 0 228
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH STREET FIGHTER EX
+
+anim death84
+@script
+void vSelf = getlocalvar("self");
+if(frame==3)
+{
+fademusic(1, "data/music/00.ogg", 0,0);
+}
+@end_script
+load     sfexw3
+load     sfexw2
+load     sfexw1
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       0
+	 bouncefactor 3
+@cmd jump001 3 -0.8 0
+	 landframe  3
+@cmd spawn044 "sfexw1" 128 0 228
+         frame      data/chars/2steve/fall01.gif
+	 delay      60
+         frame      data/chars/2steve/fall01.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      999
+@cmd spawn044 "sfexw2" 128 0 228
+         frame      data/chars/2steve/fall03.gif
+@cmd spawn044 "slow" 128 0 228
+	 delay      12
+	 sound      data/sounds/fall6.wav
+         frame      data/chars/2steve/fall03.gif
+	 sound      data/sounds/sfexthats.wav
+@cmd spawn044 "slow" 128 0 228
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd velo001 0
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+	 sound      data/sounds/sfexworld.wav
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+@cmd spawn044 "sfexw3" 128 0 228
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESQ
+anim death83
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       staclrsq
+	 subentity  staclrsq
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/KIESQ.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2steve/fall04.gif
+	 delay      100
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS
+anim death82
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 6 -0.2 0
+	 landframe  5
+	 dropframe  3
+	 bouncefactor -2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 22 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW01.ogg", 0,0);
+}@end_script
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2steve/fall04.gif
+	 delay      100
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+######################################################### DEATH ULTRA - ESS LOW
+
+anim death79
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 -2 -1 0
+	 landframe  5
+	 bouncefactor 2
+	 quakeframe 5 1 3
+	 load       kiflash
+	 load       essstc1
+	 subentity  essstc1
+	 spawnframe 24 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+	 delay      2
+@script
+    void vSelf = getlocalvar("self");
+if(frame==7)
+{
+      fademusic(0.5, "data/music/ESSW01.ogg", 0,0);
+}@end_script
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+#NEW
+         frame      data/chars/2steve/fall03.gif
+	 delay      200
+         frame      data/chars/2steve/fall04.gif
+	 delay      10
+         frame      data/chars/2steve/rise01.gif
+         frame      data/chars/2steve/rise02.gif
+	 delay      22
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+	 delay      150
+	 sound      data/sounds/winner.wav
+         frame      data/chars/2steve/pain04.gif
+	 sound      data/sounds/pain13.wav
+	 delay      9
+         frame      data/chars/2steve/fall01.gif
+         frame      data/chars/2steve/fall03.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+######################## DEATH - KRUSHING BLOW ESS
+anim death81
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       0
+	 jumpframe  0 3.3 -0.2 0
+	 landframe  5
+	 bouncefactor -1
+	 quakeframe 5 1 3
+	 dropframe  3
+	 load       kiflash
+	 load       essstc2
+	 subentity  essstc2
+	 spawnframe 7 256 232 0 1
+@cmd spawn001 "kiflash" "kiflash" 0 0 35 0 0
+         frame      data/chars/2steve/fall30.gif
+	 delay      2
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+         frame      data/chars/2steve/fall30.gif
+	 delay      15
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall8.wav
+@cmd velo001 0 0 0
+         frame      data/chars/2steve/fall03.gif
+	 delay      100
+         frame      data/chars/2steve/fall04.gif
+	 sound      data/chars/misc/ess/essxr2.wav
+	 delay      50
+         frame      data/chars/2steve/fall04.gif
+	 delay      6
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+         frame      data/chars/0misc/empty.gif
+         frame      data/chars/2steve/fall04.gif
+@cmd killentity getlocalvar("self")
+         frame      data/chars/0misc/empty.gif
+
+
+
+######################################################### SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     80 129
+	 bbox       0
+         frame      data/chars/2steve/pain01.gif #follow30
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain03.gif #follow31
+         frame      data/chars/2steve/pain04.gif #follow 1 #follow27
+         frame      data/chars/2steve/pain05.gif #follow32
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain07.gif
+         frame      data/chars/2steve/pain08.gif
+         frame      data/chars/2steve/pain09.gif
+@cmd    conditionalflip3
+         frame      data/chars/2steve/fall01.gif #follow15
+#10
+         frame      data/chars/2steve/fall02.gif
+         frame      data/chars/2steve/fall03.gif #follow12
+         frame      data/chars/2steve/fall04.gif #follow17
+         frame      data/chars/2steve/fall05.gif
+         frame      data/chars/2steve/fall06.gif #follow 2
+         frame      data/chars/2steve/fall07.gif
+         frame      data/chars/2steve/fall08.gif #follow20 #follow25 #follow26
+         frame      data/chars/2steve/fall09.gif #follow 7
+         frame      data/chars/2steve/fall10.gif #follow 8
+         frame      data/chars/2steve/fall11.gif #follow 3
+#20
+         frame      data/chars/2steve/fall12.gif
+         frame      data/chars/2steve/fall13.gif
+         frame      data/chars/2steve/fall15.gif
+         frame      data/chars/2steve/fall16.gif
+         frame      data/chars/2steve/fall17.gif #follow21
+         frame      data/chars/2steve/fall18.gif
+         frame      data/chars/2steve/fall19.gif
+         frame      data/chars/2steve/fall20.gif
+         frame      data/chars/2steve/fall21.gif
+         frame      data/chars/2steve/fall22.gif #follow 9
+#30
+         frame      data/chars/2steve/fall23.gif #follow28
+         frame      data/chars/2steve/fall24.gif #follow18 follow19
+         frame      data/chars/2steve/fall25.gif #follow14
+         frame      data/chars/2steve/fall26.gif #follow22 #follow23 #follow24
+@cmd    conditionalflip3
+         frame      data/chars/2steve/fall27.gif #follow40
+         frame      data/chars/2steve/fall28.gif #follow38
+@cmd    conditionalflip3
+         frame      data/chars/2steve/fall29.gif
+         frame      data/chars/2steve/fall30.gif
+         frame      data/chars/2steve/fall31.gif
+         frame      data/chars/2steve/painh1.gif #follow33
+#40
+         frame      data/chars/2steve/painh2.gif #follow34
+         frame      data/chars/2steve/painh3.gif #follow35
+         frame      data/chars/2steve/painh4.gif #follow37
+         frame      data/chars/2steve/fall27.gif
+         frame      data/chars/2steve/fall28.gif
+         frame      data/chars/2steve/fall27.gif
+         frame      data/chars/2steve/rise01.gif
+
+##################################### pain with voice sfx 
+
+#moving backwards C01
+anim pain50
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -1
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain02.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+#moving backwards C02
+anim pain51
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -1
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+         frame      data/chars/2steve/pain01.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain01.gif
+	 delay      40
+         frame      data/chars/2steve/pain03.gif
+
+anim fall50
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall31.gif
+	 delay      21
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall51
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#stunned
+anim pain52
+	 loop       0
+	 offset     80 129
+	 bbox       71 79 25 49
+	 delay      19
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+
+anim fall52
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall31.gif
+	 delay      21
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#jimmy super linker 02
+anim pain53
+	 loop       0
+	 delay      2
+	 offset     80 129
+	 bbox       71 79 25 49
+	 move       -2
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+         frame      data/chars/2steve/pain02.gif
+	 delay      15
+	 move       0
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain04.gif
+         frame      data/chars/2steve/pain05.gif
+         frame      data/chars/2steve/pain06.gif
+
+anim fall53
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#breathless1
+anim pain54
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 49
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/pain01.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2steve/pain03.gif
+
+#breathless2
+anim pain55
+	 loop       0
+	 delay      30
+	 offset     80 129
+	 bbox       71 79 25 49
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/pain02.gif
+	 move       0
+	 delay      35
+         frame      data/chars/2steve/pain03.gif
+
+anim fall54
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall31.gif
+	 delay      21
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall55
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#jimmy stomach blows
+anim pain56
+	 loop       0
+	 delay      2
+	 offset     80 131
+	 bbox       71 79 25 49
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall29.gif
+	 delay      210
+	 offset     80 129
+         frame      data/chars/2steve/pain03.gif
+
+anim fall56
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#stomach blows
+anim fall57
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall29.gif
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall58
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       72 85 26 34
+	 landframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall29.gif
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall7.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+#juggle blows
+anim fall59
+	 loop       0
+	 delay      22
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall31.gif
+	 delay      21
+         frame      data/chars/2steve/fall31.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+anim fall60
+	 loop       0
+	 delay      1
+	 offset     80 129
+	 bbox       65 85 31 36
+	 landframe  4
+	 dropframe  3
+	 sound      data/sounds/pain08.wav
+         frame      data/chars/2steve/fall30.gif
+	 delay      21
+         frame      data/chars/2steve/fall30.gif
+	 delay      999
+	 bbox       72 85 26 34
+         frame      data/chars/2steve/fall01.gif
+	 delay      999
+         frame      data/chars/2steve/fall03.gif
+	 delay      12
+	 bbox       0 0 0 0
+	 sound      data/sounds/fall2.wav
+         frame      data/chars/2steve/fall03.gif
+         frame      data/chars/2steve/fall04.gif
+
+
+
+

@@ -1,0 +1,308 @@
+name          3nwill
+type          enemy
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         3
+jumpheight    1.7 
+grabdistance  20
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   50
+aimove chasex
+aggression    30
+atchain       1 2 3 0 0
+offscreen_noatk_factor 1
+falldie		1
+projectilehit enemy obstacle
+
+onmoveascript	data/scripts/hithead.c
+#script data/scripts/Custom_chase.c
+animationscript   data/scripts/lib001.c
+takedamagescript data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/idle01.gif
+         frame      data/chars/3nwill/idle01.gif
+
+anim idle
+	 loop       1
+	 delay      10
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/idle01.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+	 loop       1
+	 delay      17
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/wk01.gif
+	 delay      20
+         frame      data/chars/3nwill/wk02.gif
+	 delay      17
+         frame      data/chars/3nwill/wk01.gif
+	 delay      20
+         frame      data/chars/3nwill/idle01.gif
+
+anim attack1
+	 range      15 25
+	 rangez     -5 5
+	 loop       0
+	 delay      10
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nwill/a101.gif
+	 hitfx      data/sounds/beatnes1.wav
+	 attack3    46 50 26 9 5 0 0 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/3nwill/a102.gif
+	 attack3    0
+	 delay      25
+         frame      data/chars/3nwill/idle01.gif
+
+anim attack2
+	 range      15 25
+	 rangez     -5 5
+	 loop       0
+	 delay      10
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nwill/a103.gif
+	 hitfx      data/sounds/beatnes1.wav
+	 attack5    46 50 26 9 5 0 0 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1 0.5 0
+         frame      data/chars/3nwill/a104.gif
+	 attack5    0
+	 delay      25
+         frame      data/chars/3nwill/idle01.gif
+
+anim attack3
+	 range      15 25
+	 rangez     -5 5
+	 loop       0
+	 delay      13
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 sound      data/sounds/punchn1.wav
+         frame      data/chars/3nwill/a201.gif
+	 delay      16
+	 hitfx      data/sounds/beatnes3.wav
+	 attack1    46 57 24 11 7 1 0 1 8 5
+	 jugglecost 6
+	 forcedirection -1
+	 dropv      1 0.8 0
+         frame      data/chars/3nwill/a202.gif
+	 attack1    0
+	 delay      20
+         frame      data/chars/3nwill/a201.gif
+
+anim jump
+	 loop       0
+	 delay      999
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/ju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     48 82
+	 bbox       0 0 0 0
+         frame      data/chars/3nwill/land.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 landframe  1
+         frame      data/chars/3nwill/ju01.gif
+	 delay      10
+	 bbox       0 
+         frame      data/chars/3nwill/land.gif
+
+anim grabbed
+	 loop       0
+	 delay      10
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/grabbed1.gif
+         frame      data/chars/3nwill/grabbed2.gif
+
+anim spain
+	 loop       0
+	 delay      10
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/grabbed3.gif
+	 delay      8
+         frame      data/chars/3nwill/grabbed2.gif
+
+anim pain1
+	 loop       0
+	 delay      23
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/pain02.gif
+
+anim pain2
+	 loop       0
+	 delay      23
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/pain01.gif
+
+#breathless1
+anim pain3
+	 loop       0
+	 delay      30
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/pain01.gif
+	 move       0
+	 delay      45
+         frame      data/chars/3nwill/pain03.gif
+
+#breathless2
+anim pain4
+	 loop       0
+	 delay      30
+	 offset     48 82
+	 bbox 	    41 46 14 37
+         frame      data/chars/3nwill/pain02.gif
+	 move       0
+	 delay      45
+         frame      data/chars/3nwill/pain03.gif
+
+#stunned
+anim pain7
+	 loop       0
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 delay	    15
+         frame      data/chars/3nwill/pain01.gif
+	 delay      65
+         frame      data/chars/3nwill/pain03.gif
+
+anim fall1
+	 loop       0
+	 delay      8
+	 offset     48 82
+	 bbox 	    41 46 14 37
+	 landframe  2
+        frame       data/chars/3nwill/pain03.gif
+	 delay	    999
+         frame      data/chars/3nwill/fall01.gif
+	 delay      3
+	 bbox       0 
+	 sound      data/sounds/falln1.wav
+         frame      data/chars/3nwill/fall01.gif
+	 delay      12
+         frame      data/chars/3nwill/fall02.gif
+
+anim rise
+	 loop       0
+	 delay      13
+	 offset     48 82
+	 bbox       0 0
+         frame      data/chars/3nwill/fall02.gif
+         frame      data/chars/3nwill/land.gif
+
+anim death
+	 loop       0
+	 delay      8
+	 offset     48 82
+	 bbox 	    0
+	 landframe  2
+	jumpframe   0 1.5 -0.5 0
+        frame       data/chars/3nwill/pain03.gif
+	 delay	    999
+         frame      data/chars/3nwill/fall01.gif
+	 delay      3
+	 bbox       0 
+	 sound      data/sounds/kunio.wav
+         frame      data/chars/3nwill/fall01.gif
+	 delay      12
+         frame      data/chars/3nwill/fall02.gif
+
+#surrender boss
+anim death49
+	 loop       0
+	 delay      999
+	 offset     48 82
+	 jumpframe  0 1.3 -0.2 0  
+	 landframe  1
+	 bbox 	    0
+         frame      data/chars/3nwill/ju01.gif
+	 delay      50
+         frame      data/chars/3nwill/land.gif
+	 delay      4
+         frame      data/chars/misc/empty.gif
+         frame      data/chars/3nwill/land.gif
+         frame      data/chars/misc/empty.gif
+         frame      data/chars/3nwill/land.gif
+         frame      data/chars/misc/empty.gif
+         frame      data/chars/3nwill/land.gif
+         frame      data/chars/misc/empty.gif
+         frame      data/chars/3nwill/land.gif
+
+#~~~~~~~~~~~ SCRIPTED SLAMS
+
+#SCRIPTED SLAMS
+anim fall80
+	 loop       0
+	 delay      5000
+	 offset     48 82
+	 bbox       0
+         frame      data/chars/3nwill/pain01.gif 
+         frame      data/chars/3nwill/pain02.gif 
+         frame      data/chars/3nwill/pain03.gif 
+         frame      data/chars/3nwill/fall01.gif 
+         frame      data/chars/3nwill/fall02.gif 
+         frame      data/chars/3nwill/fall03.gif 
+         frame      data/chars/3nwill/fall04.gif 
+
+
+

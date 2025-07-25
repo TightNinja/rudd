@@ -1,0 +1,289 @@
+name          Wilboo
+type          none
+score         1 5
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         4
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+weaploss      0
+offscreen_noatk_factor 1
+weapons       Williams Awilliam none none Wilkni none none Williams none none Wilboo
+diesound      data/sounds/pain15.wav
+projectilehit enemy obstacle
+aimove        chasez
+
+animationscript   data/scripts/lib001.c
+takedamagescript data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c 
+
+palette        data/chars/2wllms/boo01.gif   
+alternatepal   data/chars/2wllms/alter01.gif   
+alternatepal   data/chars/2wllms/alter02.gif   
+alternatepal   data/chars/2wllms/alter03.gif   
+alternatepal   data/chars/2wllms/alter04.gif    
+alternatepal   data/chars/2wllms/alter05.gif   
+alternatepal   data/chars/2wllms/alter06.gif    
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     80 129
+         frame      data/chars/2wllms/idle01.gif
+         frame      data/chars/2wllms/idle01.gif
+
+
+anim follow100 # alternate spawn animation for the last stage.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==9){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+    if(frame==16){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	15
+	offset	80 129
+	jumpframe 9 2.5 1 0
+	landframe 16
+	frame	data/chars/2wllms/idle01.gif
+	@cmd velo001 0.7 0 0
+	frame	data/chars/2wllms/wk01.gif
+	frame	data/chars/2wllms/wk02.gif
+	frame	data/chars/2wllms/wk03.gif
+	frame	data/chars/2wllms/idle01.gif
+	frame	data/chars/2wllms/wk01.gif
+	frame	data/chars/2wllms/wk02.gif
+	frame	data/chars/2wllms/wk03.gif
+	frame	data/chars/2wllms/idle01.gif
+	delay	12
+	@cmd velo001 0 0 0
+	frame	data/chars/2wllms/ju01.gif
+	delay	7
+	frame	data/chars/2wllms/ju02.gif
+	frame	data/chars/2wllms/ju03.gif
+	frame	data/chars/2wllms/ju04.gif
+	frame	data/chars/2wllms/ju05.gif
+	frame	data/chars/2wllms/ju06.gif
+	delay	200
+	frame	data/chars/2wllms/ju01.gif
+	delay	15
+	frame	data/chars/2wllms/b104.gif
+
+anim follow103 # airp02 fence jump
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "subject_to_platform", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "subject_to_platform", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+    }
+@end_script
+	 loop       0
+	 delay      12
+	 offset     80 129
+	jumpframe 0 2.2 0 0.5
+	landframe 7
+         frame      data/chars/2wllms/gr04.gif
+	 delay      7
+         frame      data/chars/2wllms/gr05.gif
+         frame      data/chars/2wllms/ju03.gif
+         frame      data/chars/2wllms/ju04.gif
+         frame      data/chars/2wllms/ju05.gif
+	 bbox       70 85 21 28
+         frame      data/chars/2wllms/ju06.gif
+	 delay      99
+	 bbox       68 83 24 44
+         frame      data/chars/2wllms/gr04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+
+anim follow104 # airp02 fence jump
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "subject_to_platform", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+    }
+    if(frame==3){
+      changeentityproperty(self, "subject_to_platform", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+    }
+@end_script
+	 loop       0
+	 delay      12
+	 offset     80 129
+	jumpframe 0 2.2 0 -0.5
+	landframe 7
+         frame      data/chars/2wllms/gr04.gif
+	 delay      7
+         frame      data/chars/2wllms/gr05.gif
+         frame      data/chars/2wllms/ju03.gif
+         frame      data/chars/2wllms/ju04.gif
+         frame      data/chars/2wllms/ju05.gif
+	 bbox       70 85 21 28
+         frame      data/chars/2wllms/ju06.gif
+	 delay      99
+	 bbox       68 83 24 44
+         frame      data/chars/2wllms/gr04.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+
+anim spawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame      data/chars/2wllms/boo03.gif
+anim respawn
+	 loop       0
+	 delay      15
+	 offset     80 129
+         frame      data/chars/2wllms/boo03.gif
+anim follow59
+	 loop       0
+	 delay      16
+	 offset     80 129
+         frame      data/chars/2wllms/boo03.gif
+
+anim idle
+	 loop       1
+	 delay      10
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/boo04.gif
+
+anim get
+	 loop       0
+	 delay      15
+	 offset     80 129
+	 bbox       0
+	 frame	    data/chars/2wllms/b104.gif
+
+anim walk
+@script
+    void self = getlocalvar("self");
+
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+@end_script
+	 loop       1
+	 delay      15
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/boo05.gif
+	 delay      20
+         frame      data/chars/2wllms/boo06.gif
+	 delay      17
+         frame      data/chars/2wllms/boo07.gif
+	 delay      20
+         frame      data/chars/2wllms/boo04.gif
+
+anim attack1
+	 range      10 150
+	 rangez     -5 5
+	 loop       0
+	 delay      7
+	 offset     80 129
+	 bbox       0 0 0 0
+	 throwframe 0 1
+#	 load      empty2
+	 load      BoomerangS2
+	 custknife empty2
+@cmd antiwall2 7 -7 0
+         frame      data/chars/2wllms/boo01.gif
+         frame      data/chars/2wllms/boo02.gif
+	 delay      5
+	 sound      data/sounds/knife1.wav
+@cmd	vPro001 "BoomerangS2" 0 5 55 0 3 0 0
+         frame      data/chars/2wllms/kni03.gif
+	 delay      13
+	 bbox       0 
+         frame      data/chars/2wllms/a104.gif
+	 delay      9
+         frame      data/chars/2wllms/idle01.gif
+
+anim attack2
+
+anim jump
+	 loop       0
+	 delay      12
+	 offset     80 129
+	 bbox       71 79 20 49
+         frame      data/chars/2wllms/boo08.gif
+	 delay      7
+	 bbox       70 85 21 28
+         frame      data/chars/2wllms/boo09.gif
+         frame      data/chars/2wllms/ju03.gif
+         frame      data/chars/2wllms/ju04.gif
+         frame      data/chars/2wllms/ju05.gif
+         frame      data/chars/2wllms/ju06.gif
+	 delay      99
+	 bbox       68 83 24 44
+         frame      data/chars/2wllms/boo08.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     80 129
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     80 129
+	 bbox       71 79 20 49
+	 landframe  1
+         frame      data/chars/2wllms/boo08.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2wllms/b104.gif
+

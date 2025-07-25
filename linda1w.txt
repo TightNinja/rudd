@@ -1,0 +1,261 @@
+name          Linda1W
+type          none
+score         1 5
+candamage     player obstacle npc
+subject_to_obstacle 0
+health        100
+jugglepoints  20
+speed         6
+jumpheight    2.43
+grabdistance  35
+throw         2 3
+throwdamage   20
+shadow        0
+gfxshadow     1
+noquake       1
+nolife        1
+risetime      30
+paingrab      1
+antigravity   40
+weaploss      0
+aggression    60
+atchain       1 2 0 0 0 
+offscreen_noatk_factor 1
+diesound      data/sounds/linda2.wav
+projectilehit enemy obstacle
+
+aimove chasez
+
+animationscript        data/scripts/lib001.c
+takedamagescript       data/scripts/finisher.c
+onblockWscript         data/scripts/spikesw.c 
+
+palette        data/chars/2linda1/alter01.gif  
+alternatepal   data/chars/2linda1/alter01.gif   
+alternatepal   data/chars/2linda1/alter02.gif   
+alternatepal   data/chars/2linda1/alter03.gif   
+alternatepal   data/chars/2linda1/alter04.gif   
+alternatepal   data/chars/2linda1/alter05.gif   
+alternatepal   data/chars/2linda1/alter08.gif   
+alternatepal   data/chars/2linda1/alterbr.gif   
+
+anim spawn #this must be edited like this for the follow100 to work.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==1){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	 loop       0
+	 delay      2
+	 offset     83 129
+         frame      data/chars/2linda1/idle01.gif
+         frame      data/chars/2linda1/idle01.gif
+
+
+anim follow100 # alternate spawn animation for the last stage.
+@script
+    void self = getlocalvar("self");
+
+    if(frame==0){
+      changeentityproperty(self, "Subject_to_Gravity", 0);
+      changeentityproperty(self, "Subject_to_Wall", 0);
+      changeentityproperty(self, "Subject_to_MinZ", 0);
+      changeentityproperty(self, "Subject_to_MaxZ", 0);
+    }
+    if(frame==9){
+      changeentityproperty(self, "Subject_to_Gravity", 1);
+    }
+    if(frame==16){
+      changeentityproperty(self, "Subject_to_Wall", 1);
+      changeentityproperty(self, "Subject_to_MinZ", 1);
+      changeentityproperty(self, "Subject_to_MaxZ", 1);
+    }
+@end_script
+	loop	0
+	delay	15
+	offset	83 129
+	jumpframe 9 2.5 1 0
+	landframe 16
+	frame	data/chars/2linda1/wk04.gif
+	@cmd velo001 0.7 0 0
+	frame	data/chars/2linda1/whiwk01.gif
+	frame	data/chars/2linda1/whiwk02.gif
+	frame	data/chars/2linda1/whiwk03.gif
+	frame	data/chars/2linda1/whiwk04.gif
+	frame	data/chars/2linda1/whiwk01.gif
+	frame	data/chars/2linda1/whiwk02.gif
+	frame	data/chars/2linda1/whiwk03.gif
+	frame	data/chars/2linda1/whiwk04.gif
+	delay	12
+	@cmd velo001 0 0 0
+	frame	data/chars/2linda1/whiju01.gif
+	delay	7
+	frame	data/chars/2linda1/whiju02.gif
+	frame	data/chars/2linda1/whiju02.gif
+	frame	data/chars/2linda1/whiju02.gif
+	frame	data/chars/2linda1/whiju02.gif
+	frame	data/chars/2linda1/whiju02.gif
+	delay	200
+	frame	data/chars/2linda1/whiju01.gif
+	delay	15
+	frame	data/chars/2linda1/whicrouch.gif
+
+anim idle
+@cmd clearL
+	 loop       1
+	 delay      10
+	 offset     83 129
+	 bbox       73 84 22 45
+         frame      data/chars/2linda1/whiidle.gif
+
+anim walk
+	 loop       1
+	 delay      15
+	 offset     83 129
+	 bbox       73 84 22 45
+         frame      data/chars/2linda1/whiwk01.gif
+	 delay      21
+         frame      data/chars/2linda1/whiwk02.gif
+	 delay      15
+         frame      data/chars/2linda1/whiwk03.gif
+	 delay      21
+         frame      data/chars/2linda1/whiwk04.gif
+
+anim attack1
+	 range      5 75
+	 rangez     -3 3
+	 loop       0
+	 delay      6
+	 offset     83 129
+	 bbox       73 84 22 45
+	 guardcost 2
+         frame      data/chars/2linda1/whia02.gif
+	 delay      3
+	 sound      data/sounds/whip05.wav
+         frame      data/chars/2linda1/whia03.gif
+         frame      data/chars/2linda1/whia04.gif
+         frame      data/chars/2linda1/whia05.gif
+         frame      data/chars/2linda1/whia06.gif
+	 delay      4
+	 hitfx      data/sounds/whip06.wav
+	 attack3    86 89 81 28 8 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0.3 0
+         frame      data/chars/2linda1/whia07.gif
+	 attack3    82 93 72 16 8 0 0 0 8 5
+	 forcedirection -1
+	 dropv      1 0.3 0
+         frame      data/chars/2linda1/whia08.gif
+	 attack3    0
+         frame      data/chars/2linda1/whia09.gif
+	 delay      10
+         frame      data/chars/2linda1/whia01.gif
+
+anim attack2
+	 range      5 75
+	 rangez     -3 3
+	 loop       0
+	 delay      6
+	 offset     83 129
+	 bbox       73 84 22 45
+	 guardcost 2
+	 followanim 2
+	 followcond 3
+         frame      data/chars/2linda1/whia09.gif
+	 delay      4
+	 sound      data/sounds/whip05.wav
+         frame      data/chars/2linda1/whia03.gif
+         frame      data/chars/2linda1/whia10.gif
+         frame      data/chars/2linda1/whia11.gif
+	 hitfx      data/sounds/whip06.wav
+	 offset     78 129
+	 bbox       69 85 26 42
+	 attack     82 88 88 18 10 1 0 0 8 5
+	 forcedirection -1
+	 dropv      1.3 1.5 0
+         frame      data/chars/2linda1/whia12.gif
+	 offset     83 129
+	 bbox       73 84 22 45
+	 attack     0
+         frame      data/chars/2linda1/whia13.gif
+         frame      data/chars/2linda1/whia14.gif
+         frame      data/chars/2linda1/whia15.gif
+	 delay      10
+         frame      data/chars/2linda1/whia01.gif
+
+anim follow2
+	 loop       0
+	 delay      4
+	 offset     83 129
+	 bbox       73 84 22 45
+	 guardcost 2
+	 attack     0
+         frame      data/chars/2linda1/whia12.gif
+         frame      data/chars/2linda1/whia13.gif
+         frame      data/chars/2linda1/whia14.gif
+         frame      data/chars/2linda1/whia15.gif
+	 delay      10
+         frame      data/chars/2linda1/whia01.gif
+	 delay      8
+         frame      data/chars/2linda1/laugh1.gif
+	 delay      10
+	 sound      data/sounds/linda5.wav
+         frame      data/chars/2linda1/laugh2.gif
+         frame      data/chars/2linda1/laugh3.gif
+         frame      data/chars/2linda1/laugh2.gif
+         frame      data/chars/2linda1/laugh3.gif
+         frame      data/chars/2linda1/laugh2.gif
+         frame      data/chars/2linda1/laugh3.gif
+         frame      data/chars/2linda1/laugh2.gif
+         frame      data/chars/2linda1/laugh3.gif
+	 delay      12
+         frame      data/chars/2linda1/whiidle.gif
+
+anim jump
+	 loop       0
+	 delay      12
+	 offset     83 129
+	 bbox       73 84 22 45
+         frame      data/chars/2linda1/ju01.gif
+	 delay      35
+	 bbox       70 85 21 28
+         frame      data/chars/2linda1/ju02.gif
+	 delay      999
+	 bbox       68 83 24 44
+         frame      data/chars/2linda1/ju01.gif
+
+anim jumpland
+	 loop       0
+	 delay      10
+	 offset     83 129
+	 bbox       0 0 0 0
+         frame      data/chars/2linda1/rise02.gif
+
+anim walkoff
+	 loop       0
+	 delay      999
+	 offset     83 129
+	 bbox       73 84 22 45
+	 landframe  1
+         frame      data/chars/2linda1/ju01.gif
+	 delay      10
+	 bbox       0 0 0 0
+         frame      data/chars/2linda1/whicrouch.gif
+
+anim freespecial1
+anim freespecial2
+anim freespecial3
+anim freespecial4
+
+

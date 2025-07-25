@@ -1,0 +1,35 @@
+name        bottle
+health      1
+type	    npc
+shootnum    1
+remove      1
+speed         6
+antigravity   40
+jumpheight    1
+noquake  1 1
+subject_to_hole 1
+subject_to_wall 0
+
+animationscript   data/scripts/lib001.c
+
+anim idle
+	   loop      0
+	   delay     500
+	   bbox      0
+	   offset    11 19
+@cmd jump001 0.1 0.1 0 0
+	   landframe 1
+	   delay     99
+	   frame     data/chars/2roper/bottle1.gif
+	   delay     2
+	   sound     data/sounds/glass2.wav
+	   frame     data/chars/2roper/bottle2.gif
+	   frame     data/chars/0misc/empty.gif
+	   frame     data/chars/2roper/bottle3.gif
+	   frame     data/chars/0misc/empty.gif
+	   frame     data/chars/2roper/bottle3.gif
+@cmd killentity getlocalvar("self")
+	   frame     data/chars/0misc/empty.gif
+
+
+
